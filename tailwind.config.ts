@@ -16,7 +16,8 @@ const config: Config = {
       fontFamily: {
         sans: [
           "var(--font-sans)",
-          "Source Sans 3",
+          "Arimo",
+          "Arial",
           "ui-sans-serif",
           "system-ui",
           "sans-serif",

@@ -104,7 +104,7 @@
 .recharts-legend-item-text,
 .recharts-default-legend,
 .recharts-tooltip-wrapper {
-  font-family: var(--font-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif !important;
+  font-family: var(--font-sans), "Arimo", "Arial", ui-sans-serif, system-ui, sans-serif !important;
 }
 
 /* Leaflet: ensure tiles/controls render correctly inside dark theme */

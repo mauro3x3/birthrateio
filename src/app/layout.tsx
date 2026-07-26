@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
+import { Arimo, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 import { SiteHeader } from "@/components/site-header";
@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { AssistantWidget } from "@/components/assistant-widget";
 import { siteConfig } from "@/lib/site";
 
-const sans = Source_Sans_3({
+const sans = Arimo({
   subsets: ["latin"],
   variable: "--font-sans",
   display: "swap",
