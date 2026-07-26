@@ -1,0 +1,357 @@
+// birthrate.io — Prisma schema
+// ---------------------------------------------------------------------------
+// Design goals:
+//  * Scale to tens of millions of indicator rows (narrow fact tables + indexes)
+//  * One generic IndicatorValue fact table powers fertility/population/GDP/
+//    migration time series so new indicators need zero schema changes.
+//  * Specialised tables only where the shape genuinely differs (projections by
+//    scenario, age/sex pyramids, origin-destination migration flows).
+//  * Future modules (ethnic/religious composition & fertility, elections,
+//    housing, education) plug in via Indicator.category + IndicatorValue
+//    breakdown dimensions, or the generic GroupComposition table — no refactor.
+// ---------------------------------------------------------------------------
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ---------------------------------------------------------------------------
+// Datasource
+// ---------------------------------------------------------------------------
+// Local dev uses SQLite for ZERO setup (a file at prisma/dev.db) — just run
+// `npm run db:push && npm run db:seed && npm run ingest`.
+//
+// For PRODUCTION (Vercel + Postgres / Neon / Supabase) switch to:
+//   datasource db {
+//     provider  = "postgresql"
+//     url       = env("DATABASE_URL")
+//     directUrl = env("DIRECT_URL")
+//   }
+// The rest of the schema and all application code is provider-agnostic.
+// ---------------------------------------------------------------------------
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+// ---------------------------------------------------------------------------
+// "Enums" are modelled as String columns so the schema is portable across
+// SQLite (local) and PostgreSQL (production). Allowed values are documented in
+// src/lib/enums.ts and enforced in application code.
+//
+//   SubjectType       : COUNTRY | REGION | CITY
+//   IndicatorCategory : FERTILITY | POPULATION | MIGRATION | ECONOMY |
+//                       MORTALITY | HEALTH | EDUCATION | HOUSING | ELECTION |
+//                       ETHNICITY | RELIGION | OTHER
+//   ValueKind         : ESTIMATE | PROJECTION
+//   ReleaseStatus     : SCHEDULED | TENTATIVE | RELEASED | DELAYED
+//   GroupKind         : ETHNICITY | RELIGION | LANGUAGE | ANCESTRY
+// ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Provenance
+// ---------------------------------------------------------------------------
+
+model DataSource {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique // e.g. "WORLD_BANK", "UN_WPP", "OECD", "IMF"
+  name        String
+  url         String?
+  description String?
+  license     String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  indicators       Indicator[]
+  indicatorValues  IndicatorValue[]
+  releases         DataRelease[]
+  projections      PopulationProjection[]
+  ageStructures    PopulationByAge[]
+  migrationFlows   MigrationFlow[]
+  groupCompositions GroupComposition[]
+
+  @@map("data_sources")
+}
+
+// ---------------------------------------------------------------------------
+// Geography
+// ---------------------------------------------------------------------------
+
+// Regions are hierarchical and many-typed: continents, UN sub-regions,
+// World Bank income groups, custom aggregates. `kind` distinguishes them.
+model Region {
+  id        Int     @id @default(autoincrement())
+  slug      String  @unique
+  name      String
+  kind      String  @default("region") // continent | subregion | income_group | custom
+  parentId  Int?
+  parent    Region? @relation("RegionTree", fields: [parentId], references: [id])
+  children  Region[] @relation("RegionTree")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  countries        Country[]
+  indicatorValues  IndicatorValue[]
+
+  @@index([kind])
+  @@index([parentId])
+  @@map("regions")
+}
+
+model Country {
+  id          Int     @id @default(autoincrement())
+  // ISO codes — the join keys for every external dataset.
+  iso3        String  @unique // e.g. "JPN"
+  iso2        String? @unique // e.g. "JP"
+  m49         Int?    // UN numeric code
+  slug        String  @unique // e.g. "japan"
+  name        String
+  officialName String?
+
+  capital     String?
+  flagEmoji   String?
+  latitude    Float?
+  longitude   Float?
+  area        Float?  // km²
+
+  regionId    Int?
+  region      Region? @relation(fields: [regionId], references: [id])
+  // Denormalised groupings for fast filtering without joins.
+  continent   String?
+  subregion   String?
+  incomeGroup String?
+
+  isAggregate Boolean @default(false) // true for "World", regional aggregates
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  cities            City[]
+  indicatorValues   IndicatorValue[]
+  projections       PopulationProjection[]
+  ageStructures     PopulationByAge[]
+  migrationOut      MigrationFlow[] @relation("MigrationOrigin")
+  migrationIn       MigrationFlow[] @relation("MigrationDestination")
+  groupCompositions GroupComposition[]
+
+  @@index([continent])
+  @@index([subregion])
+  @@index([incomeGroup])
+  @@index([regionId])
+  @@map("countries")
+}
+
+model City {
+  id         Int     @id @default(autoincrement())
+  slug       String  @unique // e.g. "tokyo"
+  name       String
+  countryId  Int
+  country    Country @relation(fields: [countryId], references: [id])
+  admin1     String? // state / province / prefecture
+  latitude   Float?
+  longitude  Float?
+  isCapital  Boolean @default(false)
+  population Int?    // latest known, denormalised for ranking
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  indicatorValues IndicatorValue[]
+
+  @@index([countryId])
+  @@index([population])
+  @@map("cities")
+}
+
+// ---------------------------------------------------------------------------
+// Indicators (metadata) + generic fact table
+// ---------------------------------------------------------------------------
+
+model Indicator {
+  id          Int         @id @default(autoincrement())
+  code        String      @unique // source code, e.g. "SP.DYN.TFRT.IN"
+  slug        String      @unique // friendly, e.g. "fertility-rate"
+  name        String
+  shortName   String?
+  description String?
+  unit        String?     // "births per woman", "people", "current US$"
+  category    String      @default("OTHER") // see enum docs above
+  // Higher = "better" for ranking colour scales; null = neutral.
+  higherIsBetter Boolean?
+  decimals    Int         @default(2)
+
+  sourceId    Int?
+  source      DataSource? @relation(fields: [sourceId], references: [id])
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  values      IndicatorValue[]
+
+  @@index([category])
+  @@map("indicators")
+}
+
+// THE big fact table. One row per (subject, indicator, year, breakdown).
+// Polymorphic subject via nullable FKs + subjectType discriminator keeps it
+// narrow and index-friendly across countries, regions and cities.
+model IndicatorValue {
+  // Int autoincrement (SQLite-friendly). For very large Postgres deployments
+  // (billions of rows) switch this to BigInt.
+  id          Int         @id @default(autoincrement())
+  subjectType String      // COUNTRY | REGION | CITY
+  indicatorId Int
+  indicator   Indicator   @relation(fields: [indicatorId], references: [id])
+  year        Int
+  value       Float
+  kind        String      @default("ESTIMATE") // ESTIMATE | PROJECTION
+
+  // Optional breakdown dimension (e.g. sex=female, age=15-19, group=urban).
+  // Powers future ethnic/religious/education splits without new tables.
+  dimension   String?     // dimension name, null for headline value
+  dimensionValue String?  // dimension member
+
+  countryId   Int?
+  country     Country?    @relation(fields: [countryId], references: [id])
+  regionId    Int?
+  region      Region?     @relation(fields: [regionId], references: [id])
+  cityId      Int?
+  city        City?       @relation(fields: [cityId], references: [id])
+
+  sourceId    Int?
+  source      DataSource? @relation(fields: [sourceId], references: [id])
+
+  createdAt   DateTime    @default(now())
+
+  // Uniqueness guards against duplicate ingestion.
+  @@unique([subjectType, indicatorId, countryId, regionId, cityId, year, dimension, dimensionValue], name: "uniq_value")
+  // Country time-series lookups (country page charts).
+  @@index([countryId, indicatorId, year])
+  // Cross-country rankings & maps for a given year.
+  @@index([indicatorId, year, subjectType])
+  @@index([cityId, indicatorId, year])
+  @@index([regionId, indicatorId, year])
+  @@map("indicator_values")
+}
+
+// ---------------------------------------------------------------------------
+// Specialised demographic tables
+// ---------------------------------------------------------------------------
+
+// Population projections by scenario (UN WPP variants or simulator output).
+model PopulationProjection {
+  id         Int         @id @default(autoincrement())
+  countryId  Int
+  country    Country     @relation(fields: [countryId], references: [id])
+  year       Int
+  scenario   String      @default("medium") // medium | low | high | constant | custom
+  population Float
+  sourceId   Int?
+  source     DataSource? @relation(fields: [sourceId], references: [id])
+  createdAt  DateTime    @default(now())
+
+  @@unique([countryId, scenario, year])
+  @@index([countryId, scenario, year])
+  @@map("population_projections")
+}
+
+// Age/sex structure for population pyramids (observed or projected).
+model PopulationByAge {
+  id         Int         @id @default(autoincrement())
+  countryId  Int
+  country    Country     @relation(fields: [countryId], references: [id])
+  year       Int
+  ageGroup   String      // "0-4", "5-9", ... "100+"
+  ageStart   Int         // for ordering
+  sex        String      // "male" | "female" | "both"
+  population Float
+  kind       String      @default("ESTIMATE") // ESTIMATE | PROJECTION
+  sourceId   Int?
+  source     DataSource? @relation(fields: [sourceId], references: [id])
+  createdAt  DateTime    @default(now())
+
+  @@unique([countryId, year, ageGroup, sex])
+  @@index([countryId, year])
+  @@map("population_by_age")
+}
+
+// Origin-destination migration corridors (bilateral stocks/flows).
+model MigrationFlow {
+  id            Int         @id @default(autoincrement())
+  originId      Int
+  origin        Country     @relation("MigrationOrigin", fields: [originId], references: [id])
+  destinationId Int
+  destination   Country     @relation("MigrationDestination", fields: [destinationId], references: [id])
+  year          Int
+  value         Float       // migrant stock or flow count
+  metric        String      @default("stock") // stock | flow
+  sourceId      Int?
+  source        DataSource? @relation(fields: [sourceId], references: [id])
+  createdAt     DateTime    @default(now())
+
+  @@unique([originId, destinationId, year, metric])
+  @@index([destinationId, year])
+  @@index([originId, year])
+  @@map("migration_flows")
+}
+
+// Compositional data: ethnic / religious / language groups (future modules).
+// Designed now so these datasets need no schema migration later.
+model GroupComposition {
+  id        Int         @id @default(autoincrement())
+  countryId Int
+  country   Country     @relation(fields: [countryId], references: [id])
+  year      Int
+  groupKind String      // ETHNICITY | RELIGION | LANGUAGE | ANCESTRY
+  groupName String      // e.g. "Christian", "Han", "Yoruba"
+  share     Float?      // % of population (0-100)
+  population Float?     // absolute count if known
+  fertilityRate Float?  // group-specific TFR (future)
+  sourceId  Int?
+  source    DataSource? @relation(fields: [sourceId], references: [id])
+  createdAt DateTime    @default(now())
+
+  @@unique([countryId, year, groupKind, groupName])
+  @@index([countryId, groupKind, year])
+  @@map("group_compositions")
+}
+
+// ---------------------------------------------------------------------------
+// Data release calendar
+// ---------------------------------------------------------------------------
+
+model DataRelease {
+  id          Int           @id @default(autoincrement())
+  title       String
+  dataset     String
+  sourceId    Int?
+  source      DataSource?   @relation(fields: [sourceId], references: [id])
+  sourceName  String?       // free-text when not a tracked DataSource
+  region      String?       // "Global", "OECD", "EU", country name
+  category    String        @default("OTHER") // see enum docs above
+  releaseDate DateTime
+  status      String        @default("SCHEDULED") // SCHEDULED | TENTATIVE | RELEASED | DELAYED
+  url         String?
+  notes       String?
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([releaseDate])
+  @@index([status])
+  @@map("data_releases")
+}
+
+// Bookkeeping for ingestion runs (observability + incremental loads).
+model IngestionRun {
+  id          Int      @id @default(autoincrement())
+  source      String   // "worldbank" | "un" | "oecd"
+  indicator   String?
+  status      String   @default("running") // running | success | failed
+  rowsWritten Int      @default(0)
+  message     String?
+  startedAt   DateTime @default(now())
+  finishedAt  DateTime?
+
+  @@index([source, startedAt])
+  @@map("ingestion_runs")
+}

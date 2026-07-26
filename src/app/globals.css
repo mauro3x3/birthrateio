@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Institutional palette — warm paper, deep navy, gold headlines */
+    --brand-navy: 213 74% 15%;
+    --brand-gold: 43 88% 60%;
+    --brand-donate: 4 74% 51%;
+
+    --background: 40 33% 99%;
+    --foreground: 213 40% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 40% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 40% 11%;
+
+    --primary: 213 74% 24%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 20% 95%;
+    --secondary-foreground: 213 40% 11%;
+
+    --muted: 40 16% 94%;
+    --muted-foreground: 213 12% 40%;
+
+    --accent: 40 24% 93%;
+    --accent-foreground: 213 40% 11%;
+
+    --destructive: 4 74% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 213 74% 24%;
+
+    --map-ocean: 205 32% 91%;
+
+    --chart-1: 213 70% 40%;
+    --chart-2: 155 50% 34%;
+    --chart-3: 28 78% 46%;
+    --chart-4: 268 46% 52%;
+    --chart-5: 340 62% 48%;
+    --chart-6: 190 68% 34%;
+
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Editorial serif headings with a clean sans body (encyclopedic feel). */
+  h1,
+  h2,
+  h3 {
+    @apply font-serif text-foreground;
+    letter-spacing: -0.015em;
+  }
+  h1 {
+    font-weight: 700;
+    line-height: 1.12;
+  }
+  h2,
+  h3 {
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  /* Numeric data reads better with lining tabular figures. */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+}
+
+/* Site header — always institutional navy (Our World in Data style). */
+.site-header {
+  background: hsl(var(--brand-navy));
+  color: white;
+  border-bottom: 1px solid hsl(0 0% 100% / 0.08);
+}
+
+/* Reusable editorial section heading with a hairline rule. */
+.section-rule {
+  @apply mb-5 flex items-baseline justify-between gap-4 border-b pb-2;
+}
+
+/* Inline text links read like reference links. */
+.link-editorial {
+  @apply text-primary underline-offset-2 hover:underline;
+}
+
+/* Recharts SVG text — inherit site sans */
+.recharts-cartesian-axis-tick text,
+.recharts-legend-item-text,
+.recharts-default-legend,
+.recharts-tooltip-wrapper {
+  font-family: var(--font-sans), "Source Sans 3", ui-sans-serif, system-ui, sans-serif !important;
+}
+
+/* Leaflet: ensure tiles/controls render correctly inside dark theme */
+.leaflet-container {
+  /* Seamless with the card — no "ocean box", Datawrapper-style clean infographic. */
+  background: transparent;
+  font: inherit;
+  z-index: 0;
+}
+/* Hide Leaflet's default zoom buttons for a cleaner frame (scroll/pinch still work). */
+.leaflet-control-zoom {
+  border: none !important;
+  box-shadow: none !important;
+}
+.leaflet-control-zoom a {
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--muted-foreground)) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  border-radius: 6px !important;
+  margin-bottom: 4px;
+}
+/* Crisper vector edges + subtle depth so filled countries read clearly */
+.leaflet-container svg path {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  shape-rendering: geometricPrecision;
+}
+.leaflet-tooltip {
+  border: 1px solid hsl(var(--border));
+  background: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+  border-radius: var(--radius);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.15);
+  font-size: 12px;
+}
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+  display: none;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 9999px;
+}
