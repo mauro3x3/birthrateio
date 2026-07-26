@@ -30,9 +30,11 @@ generator client {
 // The rest of the schema and all application code is provider-agnostic.
 // ---------------------------------------------------------------------------
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  // Note: `directUrl` intentionally omitted. Runtime (Vercel) only needs
+  // DATABASE_URL, which Neon/Vercel auto-injects. Schema pushes / migrations
+  // are run manually with the direct (unpooled) connection string.
 }
 
 // ---------------------------------------------------------------------------
