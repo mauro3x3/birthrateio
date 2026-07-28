@@ -51,6 +51,14 @@ export const DATA_SOURCES = [
       "Ethnic & racial composition compiled from national population censuses.",
   },
   {
+    code: "NATIONAL_STATS",
+    name: "National statistical offices (vital statistics & census)",
+    url: "",
+    license: "Various national licenses",
+    description:
+      "City-level fertility, age structure and foreign-born shares from national statistical offices (MHLW/e-Stat, CDC/NCHS, ONS, INSEE, KOSTAT, Destatis, DOS, C&SD, etc.).",
+  },
+  {
     code: "WHO_GUTTMACHER",
     name: "WHO / Guttmacher Institute",
     url: "https://www.guttmacher.org",
@@ -73,6 +81,14 @@ export const DATA_SOURCES = [
     license: "UN terms (CC BY 3.0 IGO)",
     description:
       "Bilateral international migrant stock by country of origin and destination (mid-2024 estimates), UN Population Division.",
+  },
+  {
+    code: "UN_WUP",
+    name: "UN World Urbanization Prospects 2018",
+    url: "https://population.un.org/wup/",
+    license: "CC BY 3.0 IGO",
+    description:
+      "Population of urban agglomerations with 300,000+ inhabitants, annual 1950–2035 (estimates to 2018, projections thereafter), UN Population Division.",
   },
 ];
 

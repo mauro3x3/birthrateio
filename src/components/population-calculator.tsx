@@ -21,9 +21,10 @@ export function PopulationCalculator({
   const data = React.useMemo(() => {
     const out: { year: number; value: number }[] = [];
     const startYear = new Date().getFullYear();
-    let current = pop;
+    // Keep floating values so the chart stays smooth; round only for display.
+    let current = Math.max(0, pop);
     for (let i = 0; i <= years; i++) {
-      out.push({ year: startYear + i, value: Math.round(current) });
+      out.push({ year: startYear + i, value: current });
       current *= 1 + growth / 100;
     }
     return out;
@@ -95,7 +96,12 @@ export function PopulationCalculator({
           </div>
         </div>
 
-        <TimeSeriesChart data={data} type="area" decimals={0} height={240} />
+        <TimeSeriesChart
+          data={data}
+          decimals={0}
+          height={240}
+          color="hsl(211 62% 45%)"
+        />
       </CardContent>
     </Card>
   );

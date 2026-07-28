@@ -271,6 +271,64 @@ export const INDICATORS: IndicatorDef[] = [
     decimals: 1,
     source: "OECD",
   },
+  {
+    // City-level urban agglomeration population, annual 1950–2035, from the UN
+    // World Urbanization Prospects. Stored against City rows (subjectType=CITY).
+    code: "CITY.POP.WUP",
+    slug: "city-population",
+    name: "Urban Agglomeration Population",
+    shortName: "City Population",
+    description:
+      "Population of the urban agglomeration (contiguous built-up area), annual 1950–2035. Estimates through 2018 and UN projections thereafter.",
+    unit: "people",
+    category: "POPULATION",
+    higherIsBetter: null,
+    decimals: 0,
+    source: "UN_WUP",
+  },
+  {
+    // City / metro-area TFR from national statistical offices. Caller must run
+    // ensureIndicators so slug "city-fertility" exists before seedCityFertility.
+    code: "CITY.TFR",
+    slug: "city-fertility",
+    name: "City Total Fertility Rate",
+    shortName: "City TFR",
+    description:
+      "Total fertility rate for a city or matching administrative geography (prefecture, borough set, département, etc.), compiled from national statistical offices. Geography notes on each series clarify the exact unit.",
+    unit: "births per woman",
+    category: "FERTILITY",
+    higherIsBetter: null,
+    decimals: 2,
+    source: "NATIONAL_STATS",
+  },
+  {
+    code: "CITY.FOREIGN.BORN.SHARE",
+    slug: "city-foreign-born-share",
+    name: "City Foreign-born / Foreign Citizenship Share",
+    shortName: "City Foreign-born %",
+    description:
+      "Share of the city population that is foreign-born or holds foreign citizenship, per the definition used by the national statistical office (noted per series).",
+    unit: "% of population",
+    category: "MIGRATION",
+    higherIsBetter: null,
+    decimals: 1,
+    source: "NATIONAL_STATS",
+  },
+  {
+    // Age-structure shares stored with dimension="age" /
+    // dimensionValue in {"0-14","15-64","65+"}.
+    code: "CITY.AGE.SHARE",
+    slug: "city-age-share",
+    name: "City Population Age Share",
+    shortName: "City Age Share",
+    description:
+      "Share of the city population in broad age groups (0–14, 15–64, 65+), from national censuses and official estimates. Breakdown via dimension=age.",
+    unit: "% of population",
+    category: "POPULATION",
+    higherIsBetter: null,
+    decimals: 1,
+    source: "NATIONAL_STATS",
+  },
 ];
 
 export const INDICATOR_BY_SLUG = new Map(INDICATORS.map((i) => [i.slug, i]));
@@ -297,4 +355,8 @@ export const SLUG = {
   divorceRate: "divorce-rate",
   nonmaritalBirths: "nonmarital-births",
   homeownershipRate: "homeownership-rate",
+  cityPopulation: "city-population",
+  cityFertility: "city-fertility",
+  cityForeignBornShare: "city-foreign-born-share",
+  cityAgeShare: "city-age-share",
 } as const;

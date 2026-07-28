@@ -64,7 +64,17 @@ export default async function PopulationPage() {
           height={540}
         />
 
-        <PopulationCalculator />
+        <div className="space-y-2">
+          <PopulationCalculator defaultPopulation={8_000_000_000} defaultGrowth={0.9} />
+          <p className="text-xs text-muted-foreground">
+            Illustrative compound-growth calculator — not a demographic projection.
+            For country forecasts see the{" "}
+            <a href="/simulator" className="underline underline-offset-2 hover:text-foreground">
+              demographic simulator
+            </a>
+            .
+          </p>
+        </div>
 
         <div className="grid gap-6 xl:grid-cols-2">
           <Card>

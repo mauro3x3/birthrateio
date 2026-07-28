@@ -583,6 +583,183 @@ export async function getCityBySlug(slug: string) {
   });
 }
 
+/** Annual urban-agglomeration population (1950–2035) for a city, UN WUP. */
+export async function getCityPopulationSeries(
+  cityId: number,
+): Promise<TimeSeriesPoint[]> {
+  const id = await indicatorId(SLUG.cityPopulation);
+  if (!id) return [];
+  const rows = await prisma.indicatorValue.findMany({
+    where: { cityId, indicatorId: id, subjectType: "CITY", dimension: null },
+    select: { year: true, value: true, kind: true },
+    orderBy: { year: "asc" },
+  });
+  return rows.map((r) => ({ year: r.year, value: r.value, kind: r.kind }));
+}
+
+export type CityPopulationStats = {
+  latestYear: number;
+  latestValue: number;
+  peakYear: number;
+  peakValue: number;
+  projected2035: number | null;
+  /** Growth over the last 20 observed years, as a fraction (0.12 = +12%). */
+  growth20yr: number | null;
+  /** Compound annual growth rate over the last 20 observed years (fraction). */
+  cagr20yr: number | null;
+  since1990: number | null;
+};
+
+/** Derived growth summary for a city's population series. */
+export function computeCityPopulationStats(
+  series: TimeSeriesPoint[],
+): CityPopulationStats | null {
+  const est = series.filter((p) => p.kind === "ESTIMATE");
+  if (est.length === 0) return null;
+  const latest = est[est.length - 1];
+  const at = (y: number) => series.find((p) => p.year === y)?.value ?? null;
+
+  let peak = est[0];
+  for (const p of series) if (p.value > peak.value) peak = p;
+
+  const twentyAgo = at(latest.year - 20);
+  const growth20yr =
+    twentyAgo && twentyAgo > 0 ? latest.value / twentyAgo - 1 : null;
+  const cagr20yr =
+    twentyAgo && twentyAgo > 0
+      ? Math.pow(latest.value / twentyAgo, 1 / 20) - 1
+      : null;
+  const y1990 = at(1990);
+  const since1990 = y1990 && y1990 > 0 ? latest.value / y1990 - 1 : null;
+
+  return {
+    latestYear: latest.year,
+    latestValue: latest.value,
+    peakYear: peak.year,
+    peakValue: peak.value,
+    projected2035: at(2035),
+    growth20yr,
+    cagr20yr,
+    since1990,
+  };
+}
+
+/** City / metro TFR series from national statistical offices (when available). */
+export async function getCityFertilitySeries(
+  cityId: number,
+): Promise<TimeSeriesPoint[]> {
+  const id = await indicatorId(SLUG.cityFertility);
+  if (!id) return [];
+  const rows = await prisma.indicatorValue.findMany({
+    where: { cityId, indicatorId: id, subjectType: "CITY", dimension: null },
+    select: { year: true, value: true, kind: true },
+    orderBy: { year: "asc" },
+  });
+  return rows.map((r) => ({ year: r.year, value: r.value, kind: r.kind }));
+}
+
+/** Foreign-born / foreign-citizenship share time series for a city. */
+export async function getCityForeignBornSeries(
+  cityId: number,
+): Promise<TimeSeriesPoint[]> {
+  const id = await indicatorId(SLUG.cityForeignBornShare);
+  if (!id) return [];
+  const rows = await prisma.indicatorValue.findMany({
+    where: { cityId, indicatorId: id, subjectType: "CITY", dimension: null },
+    select: { year: true, value: true, kind: true },
+    orderBy: { year: "asc" },
+  });
+  return rows.map((r) => ({ year: r.year, value: r.value, kind: r.kind }));
+}
+
+export type CityAgeShares = {
+  year: number;
+  share0to14: number;
+  share15to64: number;
+  share65plus: number;
+};
+
+/** Latest age-structure shares for a city (0–14 / 15–64 / 65+). */
+export async function getCityAgeShares(
+  cityId: number,
+): Promise<CityAgeShares | null> {
+  const id = await indicatorId(SLUG.cityAgeShare);
+  if (!id) return null;
+  const rows = await prisma.indicatorValue.findMany({
+    where: {
+      cityId,
+      indicatorId: id,
+      subjectType: "CITY",
+      dimension: "age",
+    },
+    select: { year: true, value: true, dimensionValue: true },
+    orderBy: { year: "desc" },
+  });
+  if (rows.length === 0) return null;
+  const year = rows[0].year;
+  const atYear = rows.filter((r) => r.year === year);
+  const get = (key: string) =>
+    atYear.find((r) => r.dimensionValue === key)?.value;
+  const share0to14 = get("0-14");
+  const share15to64 = get("15-64");
+  const share65plus = get("65+");
+  if (share0to14 == null || share15to64 == null || share65plus == null) {
+    return null;
+  }
+  return { year, share0to14, share15to64, share65plus };
+}
+
+export async function getCitySubdivisions(cityId: number) {
+  return prisma.citySubdivision.findMany({
+    where: { cityId },
+    orderBy: [{ population: "desc" }, { sortOrder: "asc" }, { name: "asc" }],
+  });
+}
+
+/** Milestone years for a readable historical population table. */
+export function cityPopulationMilestones(
+  series: TimeSeriesPoint[],
+  years: number[] = [1950, 1960, 1970, 1980, 1985, 1990, 2000, 2010, 2015, 2018, 2025, 2035],
+): Array<{ year: number; value: number; kind: string; changeFromPrev: number | null }> {
+  const byYear = new Map(series.map((p) => [p.year, p]));
+  const out: Array<{
+    year: number;
+    value: number;
+    kind: string;
+    changeFromPrev: number | null;
+  }> = [];
+  for (const y of years) {
+    const p = byYear.get(y);
+    if (!p) continue;
+    const prev = out[out.length - 1];
+    const changeFromPrev =
+      prev && prev.value > 0 ? p.value / prev.value - 1 : null;
+    out.push({
+      year: p.year,
+      value: p.value,
+      kind: p.kind,
+      changeFromPrev,
+    });
+  }
+  return out;
+}
+
+/** Rank of a city among all seeded cities by (denormalised) population. */
+export async function getCityRank(
+  cityId: number,
+): Promise<{ rank: number; total: number } | null> {
+  const city = await prisma.city.findUnique({
+    where: { id: cityId },
+    select: { population: true },
+  });
+  if (!city?.population) return null;
+  const [ahead, total] = await Promise.all([
+    prisma.city.count({ where: { population: { gt: city.population } } }),
+    prisma.city.count({ where: { population: { not: null } } }),
+  ]);
+  return { rank: ahead + 1, total };
+}
+
 /** Search countries + cities by name for the global search box. */
 export async function search(query: string) {
   if (!query.trim()) return { countries: [], cities: [] };

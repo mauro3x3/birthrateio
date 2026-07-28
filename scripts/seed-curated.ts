@@ -12,6 +12,10 @@ import { seedReligion } from "../src/lib/sources/religion-data";
 import { seedMigrationFlows } from "../src/lib/sources/migration-flows-data";
 import { seedBirthBackground } from "../src/lib/sources/birth-background-data";
 import { seedWppProjections } from "../src/lib/sources/wpp-projections-data";
+import { seedWupCities } from "../src/lib/sources/wup-cities-data";
+import { seedCityFertility } from "../src/lib/sources/city-fertility-data";
+import { seedCitySubdivisions } from "../src/lib/sources/city-subdivisions-data";
+import { seedCityDemographics } from "../src/lib/sources/city-demographics-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -23,6 +27,10 @@ async function main() {
   await seedMigrationFlows(prisma);
   await seedBirthBackground(prisma);
   await seedWppProjections(prisma);
+  await seedWupCities(prisma);
+  await seedCityFertility(prisma);
+  await seedCitySubdivisions(prisma);
+  await seedCityDemographics(prisma);
 }
 
 main()

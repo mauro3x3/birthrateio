@@ -159,10 +159,34 @@ model City {
   updatedAt  DateTime @updatedAt
 
   indicatorValues IndicatorValue[]
+  subdivisions    CitySubdivision[]
 
   @@index([countryId])
   @@index([population])
   @@map("cities")
+}
+
+// Administrative subdivisions within a city (wards, boroughs, arrondissements).
+// Population is a point-in-time census figure — not a full time series.
+model CitySubdivision {
+  id         Int     @id @default(autoincrement())
+  cityId     Int
+  city       City    @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  slug       String
+  name       String
+  kind       String // ward | borough | district | arrondissement | municipality
+  population Int?
+  year       Int?
+  areaKm2    Float?
+  sourceNote String?
+  sourceUrl  String?
+  sortOrder  Int     @default(0)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([cityId, slug])
+  @@index([cityId])
+  @@map("city_subdivisions")
 }
 
 // ---------------------------------------------------------------------------
