@@ -90,6 +90,14 @@ export const DATA_SOURCES = [
     description:
       "Population of urban agglomerations with 300,000+ inhabitants, annual 1950–2035 (estimates to 2018, projections thereafter), UN Population Division.",
   },
+  {
+    code: "US_CENSUS",
+    name: "U.S. Census Bureau (ACS / Decennial)",
+    url: "https://www.census.gov",
+    license: "U.S. Government public domain",
+    description:
+      "American Community Survey and Decennial Census figures for U.S. cities, counties and ZCTAs (accessed via Census Reporter).",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {

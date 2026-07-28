@@ -160,6 +160,8 @@ model City {
 
   indicatorValues IndicatorValue[]
   subdivisions    CitySubdivision[]
+  groupCompositions CityGroupComposition[]
+  zipStats        CityZipStat[]
 
   @@index([countryId])
   @@index([population])
@@ -187,6 +189,45 @@ model CitySubdivision {
   @@unique([cityId, slug])
   @@index([cityId])
   @@map("city_subdivisions")
+}
+
+// City-level ethnic / racial / religious composition over time.
+model CityGroupComposition {
+  id         Int     @id @default(autoincrement())
+  cityId     Int
+  city       City    @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  year       Int
+  groupKind  String // ETHNICITY | RACE | RELIGION
+  groupName  String
+  share      Float // % of population (0–100)
+  population Float?
+  geographyNote String?
+  sourceNote String?
+  sourceUrl  String?
+  createdAt  DateTime @default(now())
+
+  @@unique([cityId, year, groupKind, groupName])
+  @@index([cityId, groupKind, year])
+  @@map("city_group_compositions")
+}
+
+// ZIP / ZCTA statistics (income, population) for cities with ACS coverage.
+model CityZipStat {
+  id                     Int     @id @default(autoincrement())
+  cityId                 Int
+  city                   City    @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  zip                    String
+  year                   Int
+  population             Int?
+  medianHouseholdIncome  Int?
+  sourceNote             String?
+  sourceUrl              String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  @@unique([cityId, zip, year])
+  @@index([cityId, year])
+  @@map("city_zip_stats")
 }
 
 // ---------------------------------------------------------------------------
@@ -380,4 +421,20 @@ model IngestionRun {
 
   @@index([source, startedAt])
   @@map("ingestion_runs")
+}
+
+// User-submitted tips when new official demographic data is released.
+model DataTip {
+  id        Int      @id @default(autoincrement())
+  name      String?
+  email     String?
+  url       String?
+  subject   String?  // country or city name
+  category  String   // tfr | population | migration | city | other
+  message   String
+  status    String   @default("NEW") // NEW | REVIEWED | ADDED | REJECTED
+  createdAt DateTime @default(now())
+
+  @@index([status, createdAt])
+  @@map("data_tips")
 }

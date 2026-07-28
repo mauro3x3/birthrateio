@@ -1,0 +1,535 @@
+{
+  "source": "U.S. Census Bureau via Census Reporter",
+  "sourceUrl": "https://censusreporter.org",
+  "release": {
+    "id": "acs2024_1yr",
+    "name": "ACS 2024 1-year",
+    "years": "2024"
+  },
+  "nyc": {
+    "citySlug": "new-york",
+    "year": 2024,
+    "race": {
+      "White (non-Hispanic)": 30.7,
+      "Black (non-Hispanic)": 20.0,
+      "Asian (non-Hispanic)": 15.1,
+      "Hispanic": 28.7,
+      "Other / Multiple": 5.5
+    },
+    "medianHouseholdIncome": 81228,
+    "boroughs": [
+      {
+        "slug": "bronx",
+        "name": "The Bronx",
+        "population": 1384724,
+        "groups": {
+          "White (non-Hispanic)": 8.6,
+          "Black (non-Hispanic)": 28.4,
+          "Asian (non-Hispanic)": 4.3,
+          "Hispanic": 55.4,
+          "Other / Multiple": 3.2
+        },
+        "medianHouseholdIncome": 46040
+      },
+      {
+        "slug": "brooklyn",
+        "name": "Brooklyn",
+        "population": 2617631,
+        "groups": {
+          "White (non-Hispanic)": 36.3,
+          "Black (non-Hispanic)": 25.8,
+          "Asian (non-Hispanic)": 12.6,
+          "Hispanic": 19.1,
+          "Other / Multiple": 6.3
+        },
+        "medianHouseholdIncome": 81027
+      },
+      {
+        "slug": "manhattan",
+        "name": "Manhattan",
+        "population": 1660664,
+        "groups": {
+          "White (non-Hispanic)": 44.7,
+          "Black (non-Hispanic)": 12.6,
+          "Asian (non-Hispanic)": 12.9,
+          "Hispanic": 24.5,
+          "Other / Multiple": 5.4
+        },
+        "medianHouseholdIncome": 106403
+      },
+      {
+        "slug": "queens",
+        "name": "Queens",
+        "population": 2316841,
+        "groups": {
+          "White (non-Hispanic)": 22.5,
+          "Black (non-Hispanic)": 16.3,
+          "Asian (non-Hispanic)": 26.3,
+          "Hispanic": 28.5,
+          "Other / Multiple": 6.4
+        },
+        "medianHouseholdIncome": 85273
+      },
+      {
+        "slug": "staten-island",
+        "name": "Staten Island",
+        "population": 498212,
+        "groups": {
+          "White (non-Hispanic)": 53.9,
+          "Black (non-Hispanic)": 8.0,
+          "Asian (non-Hispanic)": 14.3,
+          "Hispanic": 19.6,
+          "Other / Multiple": 4.2
+        },
+        "medianHouseholdIncome": 97911
+      }
+    ],
+    "zips": [
+      {
+        "zip": "11215",
+        "population": 70441,
+        "medianHouseholdIncome": 185865
+      },
+      {
+        "zip": "10024",
+        "population": 63115,
+        "medianHouseholdIncome": 181560
+      },
+      {
+        "zip": "10014",
+        "population": 29230,
+        "medianHouseholdIncome": 176395
+      },
+      {
+        "zip": "11201",
+        "population": 70674,
+        "medianHouseholdIncome": 173136
+      },
+      {
+        "zip": "11217",
+        "population": 43490,
+        "medianHouseholdIncome": 162863
+      },
+      {
+        "zip": "10013",
+        "population": 27219,
+        "medianHouseholdIncome": 161154
+      },
+      {
+        "zip": "10023",
+        "population": 69455,
+        "medianHouseholdIncome": 159874
+      },
+      {
+        "zip": "10021",
+        "population": 39868,
+        "medianHouseholdIncome": 158677
+      },
+      {
+        "zip": "10003",
+        "population": 53560,
+        "medianHouseholdIncome": 154262
+      },
+      {
+        "zip": "10128",
+        "population": 57976,
+        "medianHouseholdIncome": 147772
+      },
+      {
+        "zip": "10011",
+        "population": 48277,
+        "medianHouseholdIncome": 145987
+      },
+      {
+        "zip": "10016",
+        "population": 52971,
+        "medianHouseholdIncome": 140381
+      },
+      {
+        "zip": "11231",
+        "population": 38276,
+        "medianHouseholdIncome": 139930
+      },
+      {
+        "zip": "10012",
+        "population": 21426,
+        "medianHouseholdIncome": 137106
+      },
+      {
+        "zip": "10017",
+        "population": 15297,
+        "medianHouseholdIncome": 136705
+      },
+      {
+        "zip": "11238",
+        "population": 58345,
+        "medianHouseholdIncome": 134523
+      },
+      {
+        "zip": "10001",
+        "population": 30511,
+        "medianHouseholdIncome": 129852
+      },
+      {
+        "zip": "10019",
+        "population": 44942,
+        "medianHouseholdIncome": 128559
+      },
+      {
+        "zip": "11222",
+        "population": 42853,
+        "medianHouseholdIncome": 125734
+      },
+      {
+        "zip": "11101",
+        "population": 42219,
+        "medianHouseholdIncome": 121062
+      },
+      {
+        "zip": "10312",
+        "population": 63469,
+        "medianHouseholdIncome": 110719
+      },
+      {
+        "zip": "10025",
+        "population": 93065,
+        "medianHouseholdIncome": 108940
+      },
+      {
+        "zip": "11211",
+        "population": 65314,
+        "medianHouseholdIncome": 107506
+      },
+      {
+        "zip": "11375",
+        "population": 76839,
+        "medianHouseholdIncome": 105904
+      },
+      {
+        "zip": "10314",
+        "population": 93915,
+        "medianHouseholdIncome": 104613
+      },
+      {
+        "zip": "11216",
+        "population": 60685,
+        "medianHouseholdIncome": 101277
+      },
+      {
+        "zip": "11234",
+        "population": 83187,
+        "medianHouseholdIncome": 97479
+      },
+      {
+        "zip": "11218",
+        "population": 72042,
+        "medianHouseholdIncome": 97366
+      },
+      {
+        "zip": "10306",
+        "population": 57428,
+        "medianHouseholdIncome": 96866
+      },
+      {
+        "zip": "10036",
+        "population": 31036,
+        "medianHouseholdIncome": 95638
+      },
+      {
+        "zip": "11205",
+        "population": 51676,
+        "medianHouseholdIncome": 93887
+      },
+      {
+        "zip": "11209",
+        "population": 71004,
+        "medianHouseholdIncome": 93854
+      },
+      {
+        "zip": "10009",
+        "population": 60209,
+        "medianHouseholdIncome": 92876
+      },
+      {
+        "zip": "11385",
+        "population": 101704,
+        "medianHouseholdIncome": 88838
+      },
+      {
+        "zip": "11225",
+        "population": 58158,
+        "medianHouseholdIncome": 88568
+      },
+      {
+        "zip": "11221",
+        "population": 91588,
+        "medianHouseholdIncome": 85736
+      },
+      {
+        "zip": "10301",
+        "population": 41052,
+        "medianHouseholdIncome": 85609
+      },
+      {
+        "zip": "11237",
+        "population": 45334,
+        "medianHouseholdIncome": 85196
+      },
+      {
+        "zip": "11236",
+        "population": 88051,
+        "medianHouseholdIncome": 81464
+      },
+      {
+        "zip": "11226",
+        "population": 95144,
+        "medianHouseholdIncome": 81014
+      },
+      {
+        "zip": "11435",
+        "population": 56826,
+        "medianHouseholdIncome": 79710
+      },
+      {
+        "zip": "11372",
+        "population": 64756,
+        "medianHouseholdIncome": 78606
+      },
+      {
+        "zip": "11434",
+        "population": 68263,
+        "medianHouseholdIncome": 77598
+      },
+      {
+        "zip": "10033",
+        "population": 54838,
+        "medianHouseholdIncome": 75040
+      },
+      {
+        "zip": "10463",
+        "population": 69470,
+        "medianHouseholdIncome": 74974
+      },
+      {
+        "zip": "11432",
+        "population": 62892,
+        "medianHouseholdIncome": 74096
+      },
+      {
+        "zip": "11377",
+        "population": 81690,
+        "medianHouseholdIncome": 73073
+      },
+      {
+        "zip": "11368",
+        "population": 105716,
+        "medianHouseholdIncome": 72270
+      },
+      {
+        "zip": "10304",
+        "population": 45658,
+        "medianHouseholdIncome": 71561
+      },
+      {
+        "zip": "11373",
+        "population": 98403,
+        "medianHouseholdIncome": 71480
+      },
+      {
+        "zip": "11229",
+        "population": 78377,
+        "medianHouseholdIncome": 70603
+      },
+      {
+        "zip": "11230",
+        "population": 86978,
+        "medianHouseholdIncome": 70027
+      },
+      {
+        "zip": "11220",
+        "population": 90652,
+        "medianHouseholdIncome": 69883
+      },
+      {
+        "zip": "11203",
+        "population": 74817,
+        "medianHouseholdIncome": 67897
+      },
+      {
+        "zip": "10034",
+        "population": 37758,
+        "medianHouseholdIncome": 67754
+      },
+      {
+        "zip": "11354",
+        "population": 53028,
+        "medianHouseholdIncome": 66010
+      },
+      {
+        "zip": "11214",
+        "population": 89397,
+        "medianHouseholdIncome": 65895
+      },
+      {
+        "zip": "10031",
+        "population": 61058,
+        "medianHouseholdIncome": 65283
+      },
+      {
+        "zip": "11213",
+        "population": 68846,
+        "medianHouseholdIncome": 65127
+      },
+      {
+        "zip": "11223",
+        "population": 78093,
+        "medianHouseholdIncome": 63368
+      },
+      {
+        "zip": "11233",
+        "population": 81822,
+        "medianHouseholdIncome": 62411
+      },
+      {
+        "zip": "11208",
+        "population": 105428,
+        "medianHouseholdIncome": 62077
+      },
+      {
+        "zip": "11206",
+        "population": 93020,
+        "medianHouseholdIncome": 61430
+      },
+      {
+        "zip": "10462",
+        "population": 76320,
+        "medianHouseholdIncome": 60966
+      },
+      {
+        "zip": "11235",
+        "population": 78558,
+        "medianHouseholdIncome": 59661
+      },
+      {
+        "zip": "10027",
+        "population": 63885,
+        "medianHouseholdIncome": 59587
+      },
+      {
+        "zip": "11219",
+        "population": 94196,
+        "medianHouseholdIncome": 58347
+      },
+      {
+        "zip": "10032",
+        "population": 55610,
+        "medianHouseholdIncome": 56829
+      },
+      {
+        "zip": "11207",
+        "population": 93198,
+        "medianHouseholdIncome": 56523
+      },
+      {
+        "zip": "11355",
+        "population": 80801,
+        "medianHouseholdIncome": 55326
+      },
+      {
+        "zip": "10467",
+        "population": 96421,
+        "medianHouseholdIncome": 49330
+      },
+      {
+        "zip": "10002",
+        "population": 76873,
+        "medianHouseholdIncome": 48386
+      },
+      {
+        "zip": "10468",
+        "population": 75557,
+        "medianHouseholdIncome": 46233
+      },
+      {
+        "zip": "10035",
+        "population": 38862,
+        "medianHouseholdIncome": 45121
+      },
+      {
+        "zip": "10457",
+        "population": 79543,
+        "medianHouseholdIncome": 42683
+      },
+      {
+        "zip": "11212",
+        "population": 89020,
+        "medianHouseholdIncome": 41355
+      },
+      {
+        "zip": "10452",
+        "population": 75682,
+        "medianHouseholdIncome": 41288
+      },
+      {
+        "zip": "10458",
+        "population": 74898,
+        "medianHouseholdIncome": 40800
+      },
+      {
+        "zip": "10451",
+        "population": 50942,
+        "medianHouseholdIncome": 38770
+      },
+      {
+        "zip": "10029",
+        "population": 77447,
+        "medianHouseholdIncome": 38695
+      },
+      {
+        "zip": "10456",
+        "population": 87533,
+        "medianHouseholdIncome": 34954
+      },
+      {
+        "zip": "10453",
+        "population": 76282,
+        "medianHouseholdIncome": 33186
+      }
+    ]
+  },
+  "otherCities": {
+    "Los Angeles, CA": {
+      "population": 3878718,
+      "groups": {
+        "White (non-Hispanic)": 27.8,
+        "Black (non-Hispanic)": 7.9,
+        "Asian (non-Hispanic)": 12.1,
+        "Hispanic": 47.2,
+        "Other / Multiple": 4.9
+      },
+      "medianHouseholdIncome": 82263
+    },
+    "San Francisco, CA": {
+      "population": 827526,
+      "groups": {
+        "White (non-Hispanic)": 36.3,
+        "Black (non-Hispanic)": 4.7,
+        "Asian (non-Hispanic)": 35.1,
+        "Hispanic": 16.8,
+        "Other / Multiple": 7.2
+      },
+      "medianHouseholdIncome": 139801
+    },
+    "Chicago, IL": {
+      "population": 2721326,
+      "groups": {
+        "White (non-Hispanic)": 32.3,
+        "Black (non-Hispanic)": 25.8,
+        "Asian (non-Hispanic)": 7.8,
+        "Hispanic": 30.2,
+        "Other / Multiple": 3.9
+      },
+      "medianHouseholdIncome": 80613
+    }
+  }
+}

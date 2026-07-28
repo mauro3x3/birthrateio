@@ -19,8 +19,10 @@ const SITE_MAP = `
 - /cities : Cities database
 - /compare?countries=slug1,slug2,slug3 : Overlay multiple countries on any indicator
 - /simulator : Build custom population projections from assumptions (TFR, life expectancy, migration), animate the age pyramid over time, export video/GIF, and project GDP per capita & total GDP. It accepts URL params to pre-fill a scenario: country=<slug>, tfr=<0.5–8>, life=<40–95 life expectancy>, migration=<net migrants per 5-yr step>, years=<20–150 horizon>, gdp=<starting GDP per capita US$>, growth=<-2–10 % annual real growth>, pop=<custom starting population, omit country to use it>. Example: /simulator?country=italy&tfr=1.2&years=80
-- /calendar : Upcoming demographic data releases
-- /country/<slug> : Full country profile — population, fertility, GDP, migration, foreign-born/diaspora, population pyramid, modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
+- /clock : Live fertility / world population clock (illustrative extrapolation from annual rates)
+- /calendar : Upcoming demographic data releases (TFR/fertility highlighted)
+- /contribute : Tip form to report newly released official demographic data
+- /country/<slug> : Full country profile — population, fertility, births vs deaths, GDP, migration, foreign-born/diaspora, population pyramid, modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
 `.trim();
 
 function buildSystemPrompt(countryList: string): string {
@@ -52,7 +54,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /fertility /population /migration /gdp /cities /calendar.
+- Explorers: /fertility /population /migration /gdp /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {

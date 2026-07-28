@@ -16,10 +16,13 @@ import { seedWupCities } from "../src/lib/sources/wup-cities-data";
 import { seedCityFertility } from "../src/lib/sources/city-fertility-data";
 import { seedCitySubdivisions } from "../src/lib/sources/city-subdivisions-data";
 import { seedCityDemographics } from "../src/lib/sources/city-demographics-data";
+import { seedCityRace, seedCityIncome } from "../src/lib/sources/city-race-income-data";
+import { seedCities } from "../src/lib/sources/cities-data";
 
 async function main() {
   await ensureSources(prisma);
   await ensureIndicators(prisma);
+  await seedCities(prisma);
   await seedEthnicity(prisma);
   await seedAbortion(prisma);
   await seedSocial(prisma);
@@ -31,6 +34,8 @@ async function main() {
   await seedCityFertility(prisma);
   await seedCitySubdivisions(prisma);
   await seedCityDemographics(prisma);
+  await seedCityRace(prisma);
+  await seedCityIncome(prisma);
 }
 
 main()

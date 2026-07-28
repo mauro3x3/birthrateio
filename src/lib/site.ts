@@ -24,6 +24,7 @@ export const mainNav = [
   { title: "GDP", href: "/gdp" },
   { title: "Compare", href: "/compare" },
   { title: "Simulator", href: "/simulator" },
+  { title: "Clock", href: "/clock" },
   { title: "Cities", href: "/cities" },
   { title: "Calendar", href: "/calendar" },
 ];

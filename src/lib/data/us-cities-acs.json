@@ -1,0 +1,221 @@
+{
+  "source": "U.S. Census Bureau ACS 2024 1-year via Census Reporter",
+  "sourceUrl": "https://censusreporter.org",
+  "release": {
+    "id": "acs2024_1yr",
+    "name": "ACS 2024 1-year",
+    "years": "2024"
+  },
+  "cities": {
+    "phoenix": {
+      "citySlug": "phoenix",
+      "geographyNote": "Phoenix, AZ (Census place)",
+      "year": 2024,
+      "population": 1673122,
+      "race": {
+        "White (non-Hispanic)": 39.6,
+        "Black (non-Hispanic)": 7.2,
+        "Asian (non-Hispanic)": 4.6,
+        "Hispanic": 42.7,
+        "Other / Multiple": 5.9
+      },
+      "medianHouseholdIncome": 85246
+    },
+    "los-angeles": {
+      "citySlug": "los-angeles",
+      "geographyNote": "Los Angeles, CA (Census place)",
+      "year": 2024,
+      "population": 3878718,
+      "race": {
+        "White (non-Hispanic)": 27.8,
+        "Black (non-Hispanic)": 7.9,
+        "Asian (non-Hispanic)": 12.1,
+        "Hispanic": 47.2,
+        "Other / Multiple": 4.9
+      },
+      "medianHouseholdIncome": 82263
+    },
+    "san-diego": {
+      "citySlug": "san-diego",
+      "geographyNote": "San Diego, CA (Census place)",
+      "year": 2024,
+      "population": 1404461,
+      "race": {
+        "White (non-Hispanic)": 40.5,
+        "Black (non-Hispanic)": 5.2,
+        "Asian (non-Hispanic)": 17.4,
+        "Hispanic": 30.5,
+        "Other / Multiple": 6.4
+      },
+      "medianHouseholdIncome": 111032
+    },
+    "san-francisco": {
+      "citySlug": "san-francisco",
+      "geographyNote": "San Francisco, CA (Census place)",
+      "year": 2024,
+      "population": 827526,
+      "race": {
+        "White (non-Hispanic)": 36.3,
+        "Black (non-Hispanic)": 4.7,
+        "Asian (non-Hispanic)": 35.1,
+        "Hispanic": 16.8,
+        "Other / Multiple": 7.2
+      },
+      "medianHouseholdIncome": 139801
+    },
+    "san-jose": {
+      "citySlug": "san-jose",
+      "geographyNote": "San Jose, CA (Census place)",
+      "year": 2024,
+      "population": 997395,
+      "race": {
+        "White (non-Hispanic)": 20.6,
+        "Black (non-Hispanic)": 3.0,
+        "Asian (non-Hispanic)": 41.8,
+        "Hispanic": 30.0,
+        "Other / Multiple": 4.7
+      },
+      "medianHouseholdIncome": 148226
+    },
+    "washington": {
+      "citySlug": "washington",
+      "geographyNote": "Washington, DC (Census place)",
+      "year": 2024,
+      "population": 702250,
+      "race": {
+        "White (non-Hispanic)": 36.2,
+        "Black (non-Hispanic)": 40.7,
+        "Asian (non-Hispanic)": 4.9,
+        "Hispanic": 12.6,
+        "Other / Multiple": 5.6
+      },
+      "medianHouseholdIncome": 109707
+    },
+    "miami": {
+      "citySlug": "miami",
+      "geographyNote": "Miami, FL (Census place)",
+      "year": 2024,
+      "population": 487006,
+      "race": {
+        "White (non-Hispanic)": 13.3,
+        "Black (non-Hispanic)": 10.0,
+        "Asian (non-Hispanic)": 1.8,
+        "Hispanic": 71.5,
+        "Other / Multiple": 3.4
+      },
+      "medianHouseholdIncome": 66337
+    },
+    "atlanta": {
+      "citySlug": "atlanta",
+      "geographyNote": "Atlanta, GA (Census place)",
+      "year": 2024,
+      "population": 520066,
+      "race": {
+        "White (non-Hispanic)": 37.8,
+        "Black (non-Hispanic)": 43.4,
+        "Asian (non-Hispanic)": 5.5,
+        "Hispanic": 7.1,
+        "Other / Multiple": 6.2
+      },
+      "medianHouseholdIncome": 88165
+    },
+    "chicago": {
+      "citySlug": "chicago",
+      "geographyNote": "Chicago, IL (Census place)",
+      "year": 2024,
+      "population": 2721326,
+      "race": {
+        "White (non-Hispanic)": 32.3,
+        "Black (non-Hispanic)": 25.8,
+        "Asian (non-Hispanic)": 7.8,
+        "Hispanic": 30.2,
+        "Other / Multiple": 3.9
+      },
+      "medianHouseholdIncome": 80613
+    },
+    "boston": {
+      "citySlug": "boston",
+      "geographyNote": "Boston, MA (Census place)",
+      "year": 2024,
+      "population": 673822,
+      "race": {
+        "White (non-Hispanic)": 44.1,
+        "Black (non-Hispanic)": 18.0,
+        "Asian (non-Hispanic)": 10.6,
+        "Hispanic": 20.7,
+        "Other / Multiple": 6.6
+      },
+      "medianHouseholdIncome": 97791
+    },
+    "philadelphia": {
+      "citySlug": "philadelphia",
+      "geographyNote": "Philadelphia, PA (Census place)",
+      "year": 2024,
+      "population": 1573916,
+      "race": {
+        "White (non-Hispanic)": 32.8,
+        "Black (non-Hispanic)": 37.7,
+        "Asian (non-Hispanic)": 8.3,
+        "Hispanic": 16.4,
+        "Other / Multiple": 4.9
+      },
+      "medianHouseholdIncome": 60521
+    },
+    "austin": {
+      "citySlug": "austin",
+      "geographyNote": "Austin, TX (Census place)",
+      "year": 2024,
+      "population": 993771,
+      "race": {
+        "White (non-Hispanic)": 45.2,
+        "Black (non-Hispanic)": 7.4,
+        "Asian (non-Hispanic)": 10.7,
+        "Hispanic": 32.1,
+        "Other / Multiple": 4.6
+      },
+      "medianHouseholdIncome": 90430
+    },
+    "dallas": {
+      "citySlug": "dallas",
+      "geographyNote": "Dallas, TX (Census place)",
+      "year": 2024,
+      "population": 1326093,
+      "race": {
+        "White (non-Hispanic)": 26.5,
+        "Black (non-Hispanic)": 22.2,
+        "Asian (non-Hispanic)": 4.1,
+        "Hispanic": 43.8,
+        "Other / Multiple": 3.4
+      },
+      "medianHouseholdIncome": 74323
+    },
+    "houston": {
+      "citySlug": "houston",
+      "geographyNote": "Houston, TX (Census place)",
+      "year": 2024,
+      "population": 2387910,
+      "race": {
+        "White (non-Hispanic)": 22.1,
+        "Black (non-Hispanic)": 22.0,
+        "Asian (non-Hispanic)": 7.0,
+        "Hispanic": 45.5,
+        "Other / Multiple": 3.4
+      },
+      "medianHouseholdIncome": 64361
+    },
+    "seattle": {
+      "citySlug": "seattle",
+      "geographyNote": "Seattle, WA (Census place)",
+      "year": 2024,
+      "population": 780992,
+      "race": {
+        "White (non-Hispanic)": 56.9,
+        "Black (non-Hispanic)": 6.7,
+        "Asian (non-Hispanic)": 17.8,
+        "Hispanic": 9.1,
+        "Other / Multiple": 9.4
+      },
+      "medianHouseholdIncome": 118745
+    }
+  }
+}

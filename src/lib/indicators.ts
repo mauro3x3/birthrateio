@@ -43,6 +43,18 @@ export const INDICATORS: IndicatorDef[] = [
     source: "WORLD_BANK",
   },
   {
+    code: "SP.DYN.CDRT.IN",
+    slug: "death-rate",
+    name: "Crude Death Rate",
+    shortName: "Death Rate",
+    description: "Number of deaths per 1,000 people per year.",
+    unit: "per 1,000 people",
+    category: "MORTALITY",
+    higherIsBetter: false,
+    decimals: 1,
+    source: "WORLD_BANK",
+  },
+  {
     code: "SP.POP.TOTL",
     slug: "population",
     name: "Total Population",
@@ -329,6 +341,19 @@ export const INDICATORS: IndicatorDef[] = [
     decimals: 1,
     source: "NATIONAL_STATS",
   },
+  {
+    code: "CITY.MEDIAN.INCOME",
+    slug: "city-median-income",
+    name: "City Median Household Income",
+    shortName: "City median income",
+    description:
+      "Median household income for the city (Census place), U.S. dollars. U.S. cities from ACS.",
+    unit: "current US$",
+    category: "ECONOMY",
+    higherIsBetter: true,
+    decimals: 0,
+    source: "US_CENSUS",
+  },
 ];
 
 export const INDICATOR_BY_SLUG = new Map(INDICATORS.map((i) => [i.slug, i]));
@@ -338,6 +363,7 @@ export const INDICATOR_BY_CODE = new Map(INDICATORS.map((i) => [i.code, i]));
 export const SLUG = {
   fertility: "fertility-rate",
   birthRate: "birth-rate",
+  deathRate: "death-rate",
   population: "population",
   populationGrowth: "population-growth",
   lifeExpectancy: "life-expectancy",
@@ -359,4 +385,5 @@ export const SLUG = {
   cityFertility: "city-fertility",
   cityForeignBornShare: "city-foreign-born-share",
   cityAgeShare: "city-age-share",
+  cityMedianIncome: "city-median-income",
 } as const;

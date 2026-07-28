@@ -93,6 +93,18 @@ export async function getLatestValue(
   return row ? { value: row.value, year: row.year } : null;
 }
 
+/** Latest World Bank "World" (WLD) aggregate value for an indicator. */
+export async function getWorldLatestValue(
+  slug: string,
+): Promise<{ value: number; year: number } | null> {
+  const world = await prisma.country.findFirst({
+    where: { iso3: "WLD" },
+    select: { id: true },
+  });
+  if (!world) return null;
+  return getLatestValue(world.id, slug);
+}
+
 /** Mean of a country's most recent `n` annual values — smooths single-year
  * spikes (e.g. a migration surge) so defaults aren't driven by one outlier. */
 export async function getRecentMean(
@@ -714,6 +726,133 @@ export async function getCitySubdivisions(cityId: number) {
     where: { cityId },
     orderBy: [{ population: "desc" }, { sortOrder: "asc" }, { name: "asc" }],
   });
+}
+
+/** City racial / ethnic composition time series (stacked chart ready). */
+export async function getCityRaceComposition(cityId: number): Promise<{
+  years: number[];
+  groups: string[];
+  rows: Record<string, number>[];
+  sourceNote: string | null;
+  sourceUrl: string | null;
+  geographyNote: string | null;
+} | null> {
+  const records = await prisma.cityGroupComposition.findMany({
+    where: { cityId, groupKind: "RACE" },
+    orderBy: [{ year: "asc" }, { groupName: "asc" }],
+  });
+  if (records.length === 0) return null;
+  const years = [...new Set(records.map((r) => r.year))].sort((a, b) => a - b);
+  const groupSet = new Set(records.map((r) => r.groupName));
+  // Prefer a stable display order when present.
+  const preferred = [
+    "White (non-Hispanic)",
+    "Hispanic",
+    "Black (non-Hispanic)",
+    "Asian (non-Hispanic)",
+    "Other / Multiple",
+  ];
+  const groups = [
+    ...preferred.filter((g) => groupSet.has(g)),
+    ...[...groupSet].filter((g) => !preferred.includes(g)).sort(),
+  ];
+  const rows = years.map((year) => {
+    const row: Record<string, number> = { year };
+    for (const g of groups) {
+      const hit = records.find((r) => r.year === year && r.groupName === g);
+      if (hit) row[g] = hit.share;
+    }
+    return row;
+  });
+  const meta = records[records.length - 1];
+  return {
+    years,
+    groups,
+    rows,
+    sourceNote: meta.sourceNote,
+    sourceUrl: meta.sourceUrl,
+    geographyNote: meta.geographyNote,
+  };
+}
+
+/** Borough-level race shares (NYC counties etc.), latest year. */
+export async function getCityBoroughRace(cityId: number): Promise<{
+  year: number;
+  groupOrder: string[];
+  rows: Array<{
+    name: string;
+    population: number | null;
+    groups: Record<string, number>;
+  }>;
+  sourceNote: string | null;
+  sourceUrl: string | null;
+} | null> {
+  const records = await prisma.cityGroupComposition.findMany({
+    where: { cityId, groupKind: "RACE_BOROUGH" },
+    orderBy: [{ geographyNote: "asc" }, { groupName: "asc" }],
+  });
+  if (records.length === 0) return null;
+  const year = Math.max(...records.map((r) => r.year));
+  const atYear = records.filter((r) => r.year === year);
+  const byBorough = new Map<
+    string,
+    { population: number | null; groups: Record<string, number> }
+  >();
+  const groupSet = new Set<string>();
+  for (const r of atYear) {
+    const borough = r.geographyNote ?? "Unknown";
+    const groupName = r.groupName.includes("::")
+      ? r.groupName.split("::").slice(1).join("::")
+      : r.groupName;
+    groupSet.add(groupName);
+    const cur = byBorough.get(borough) ?? { population: null, groups: {} };
+    cur.groups[groupName] = r.share;
+    if (r.population != null) cur.population = r.population;
+    byBorough.set(borough, cur);
+  }
+  const preferred = [
+    "White (non-Hispanic)",
+    "Hispanic",
+    "Black (non-Hispanic)",
+    "Asian (non-Hispanic)",
+    "Other / Multiple",
+  ];
+  const groupOrder = [
+    ...preferred.filter((g) => groupSet.has(g)),
+    ...[...groupSet].filter((g) => !preferred.includes(g)).sort(),
+  ];
+  const meta = atYear[0];
+  return {
+    year,
+    groupOrder,
+    rows: [...byBorough.entries()].map(([name, v]) => ({
+      name,
+      population: v.population,
+      groups: v.groups,
+    })),
+    sourceNote: meta.sourceNote,
+    sourceUrl: meta.sourceUrl,
+  };
+}
+
+export async function getCityZipStats(cityId: number) {
+  return prisma.cityZipStat.findMany({
+    where: { cityId },
+    orderBy: [{ medianHouseholdIncome: "desc" }, { zip: "asc" }],
+  });
+}
+
+export async function getCityMedianIncome(
+  cityId: number,
+): Promise<{ year: number; value: number } | null> {
+  const id = await indicatorId(SLUG.cityMedianIncome);
+  if (!id) return null;
+  const row = await prisma.indicatorValue.findFirst({
+    where: { cityId, indicatorId: id, subjectType: "CITY" },
+    orderBy: { year: "desc" },
+    select: { year: true, value: true },
+  });
+  return row;
 }
 
 /** Milestone years for a readable historical population table. */

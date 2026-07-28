@@ -27,6 +27,9 @@ export function SiteFooter() {
             <Link href="/support" className="text-primary hover:underline">
               Donate
             </Link>
+            <Link href="/contribute" className="text-primary hover:underline">
+              Contribute
+            </Link>
           </div>
         </div>
 
@@ -61,6 +64,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/clock" className="hover:text-foreground">
+                Fertility clock
+              </Link>
+            </li>
+            <li>
               <Link href="/calendar" className="hover:text-foreground">
                 Release calendar
               </Link>
@@ -68,6 +76,11 @@ export function SiteFooter() {
             <li>
               <Link href="/cities" className="hover:text-foreground">
                 Cities database
+              </Link>
+            </li>
+            <li>
+              <Link href="/contribute" className="hover:text-foreground">
+                Report new data
               </Link>
             </li>
           </ul>

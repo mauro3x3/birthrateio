@@ -82,6 +82,8 @@ export default async function CountryPage({
   const [
     population,
     fertility,
+    birthRate,
+    deathRate,
     gdp,
     gdpPerCapita,
     migration,
@@ -105,6 +107,8 @@ export default async function CountryPage({
   ] = await Promise.all([
     safe(getCountryTimeSeries(country.id, SLUG.population), []),
     safe(getCountryTimeSeries(country.id, SLUG.fertility), []),
+    safe(getCountryTimeSeries(country.id, SLUG.birthRate), []),
+    safe(getCountryTimeSeries(country.id, SLUG.deathRate), []),
     safe(getCountryTimeSeries(country.id, SLUG.gdp), []),
     safe(getCountryTimeSeries(country.id, SLUG.gdpPerCapita), []),
     safe(getCountryTimeSeries(country.id, SLUG.netMigration), []),
@@ -167,6 +171,24 @@ export default async function CountryPage({
   const hasProjection = populationTrajectory.some(
     (r) => typeof r.projected === "number",
   );
+
+  // Crude birth vs death rates (per 1,000) — only chart when both series exist.
+  const birthsVsDeaths: Record<string, number | null>[] = (() => {
+    if (!birthRate.length || !deathRate.length) return [];
+    const years = new Set([
+      ...birthRate.map((p) => p.year),
+      ...deathRate.map((p) => p.year),
+    ]);
+    const bMap = new Map(birthRate.map((p) => [p.year, p.value]));
+    const dMap = new Map(deathRate.map((p) => [p.year, p.value]));
+    return Array.from(years)
+      .sort((a, b) => a - b)
+      .map((year) => ({
+        year,
+        birthRate: bMap.get(year) ?? null,
+        deathRate: dMap.get(year) ?? null,
+      }));
+  })();
 
   // Pyramid transform.
   const pyramidMap = new Map<
@@ -397,6 +419,39 @@ export default async function CountryPage({
               color="hsl(340 82% 52%)"
             />
           </ChartCard>
+
+          {birthsVsDeaths.length > 0 && (
+            <ChartCard
+              title="Births vs deaths"
+              description="Crude birth rate and crude death rate · per 1,000 population (not absolute counts)"
+              source="World Bank"
+              csvRows={birthsVsDeaths}
+              csvName={`${slug}-births-vs-deaths`}
+            >
+              <MultiSeriesChart
+                data={birthsVsDeaths}
+                decimals={1}
+                unit="per 1,000"
+                series={[
+                  {
+                    key: "birthRate",
+                    label: "Birth rate",
+                    color: "hsl(155 55% 38%)",
+                  },
+                  {
+                    key: "deathRate",
+                    label: "Death rate",
+                    color: "hsl(0 65% 48%)",
+                  },
+                ]}
+              />
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                Rates per 1,000 people per year — not absolute birth or death
+                counts. When the birth rate exceeds the death rate, natural
+                increase is positive (before migration).
+              </p>
+            </ChartCard>
+          )}
 
           <ChartCard
             title="GDP over time"

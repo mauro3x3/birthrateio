@@ -19,11 +19,21 @@ import {
   getCityForeignBornSeries,
   getCityAgeShares,
   getCitySubdivisions,
+  getCityRaceComposition,
+  getCityBoroughRace,
+  getCityZipStats,
+  getCityMedianIncome,
   getCountryTimeSeries,
   getLatestValue,
 } from "@/lib/queries";
 import { CITY_FERTILITY } from "@/lib/sources/city-fertility-data";
 import { CITY_FOREIGN_BORN, CITY_AGE_SHARES } from "@/lib/sources/city-demographics-data";
+import nycAcs from "@/lib/data/nyc-acs.json";
+import { CityRaceChart } from "@/components/charts/city-race-chart";
+import {
+  CityZipIncomeTable,
+  BoroughRaceTable,
+} from "@/components/city-income-race";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
 import { formatCompact, formatNumber } from "@/lib/utils";
@@ -73,6 +83,10 @@ export default async function CityPage({
     cityForeignBorn,
     cityAge,
     subdivisions,
+    raceComp,
+    boroughRace,
+    zipStats,
+    medianIncome,
     nationalFertilityLatest,
     nationalGdpLatest,
     countryFertility,
@@ -84,6 +98,10 @@ export default async function CityPage({
     safe(getCityForeignBornSeries(city.id), []),
     safe(getCityAgeShares(city.id), null),
     safe(getCitySubdivisions(city.id), []),
+    safe(getCityRaceComposition(city.id), null),
+    safe(getCityBoroughRace(city.id), null),
+    safe(getCityZipStats(city.id), []),
+    safe(getCityMedianIncome(city.id), null),
     safe(getLatestValue(city.countryId, SLUG.fertility), null),
     safe(getLatestValue(city.countryId, SLUG.gdpPerCapita), null),
     safe(getCountryTimeSeries(city.countryId, SLUG.fertility), []),
@@ -231,6 +249,12 @@ export default async function CityPage({
               value={`${formatNumber(latestForeign.value, 1)}%`}
               sub={`${latestForeign.year}${foreignMeta ? ` · ${foreignMeta.definition.split("—")[0].trim()}` : ""}`}
             />
+          ) : medianIncome ? (
+            <StatCard
+              label="Median household income"
+              value={`$${formatCompact(medianIncome.value)}`}
+              sub={`${medianIncome.year} · ACS`}
+            />
           ) : (
             <StatCard
               label="Projected 2035"
@@ -243,6 +267,47 @@ export default async function CityPage({
             />
           )}
         </div>
+
+        {medianIncome && latestForeign && (
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+            <StatCard
+              label="Median household income"
+              value={`$${formatCompact(medianIncome.value)}`}
+              sub={`${medianIncome.year} · ACS / Census`}
+            />
+            {raceComp && (
+              <StatCard
+                label="Largest racial group"
+                value={(() => {
+                  const latest = raceComp.rows[raceComp.rows.length - 1];
+                  let best = raceComp.groups[0];
+                  let bestV = -1;
+                  for (const g of raceComp.groups) {
+                    const v = latest[g];
+                    if (typeof v === "number" && v > bestV) {
+                      bestV = v;
+                      best = g;
+                    }
+                  }
+                  return `${bestV.toFixed(0)}%`;
+                })()}
+                sub={(() => {
+                  const latest = raceComp.rows[raceComp.rows.length - 1];
+                  let best = raceComp.groups[0];
+                  let bestV = -1;
+                  for (const g of raceComp.groups) {
+                    const v = latest[g];
+                    if (typeof v === "number" && v > bestV) {
+                      bestV = v;
+                      best = g;
+                    }
+                  }
+                  return `${best} · ${latest.year}`;
+                })()}
+              />
+            )}
+          </div>
+        )}
 
         {/* Historical population — centrepiece */}
         {hasHistory && (
@@ -492,6 +557,57 @@ export default async function CityPage({
               </p>
             )}
           </section>
+        )}
+
+        {/* Racial / ethnic composition */}
+        {raceComp && (
+          <ChartCard
+            title={`Racial / ethnic composition — ${city.name}`}
+            description={
+              raceComp.geographyNote
+                ? `${raceComp.geographyNote} · share of population`
+                : "Share of population by race / ethnicity"
+            }
+            source={raceComp.sourceNote ?? "National census"}
+            csvRows={raceComp.rows}
+            csvName={`${slug}-race`}
+          >
+            <CityRaceChart data={raceComp.rows} groups={raceComp.groups} />
+          </ChartCard>
+        )}
+
+        {boroughRace && (
+          <BoroughRaceTable
+            year={boroughRace.year}
+            groupOrder={boroughRace.groupOrder}
+            sourceNote={boroughRace.sourceNote}
+            sourceUrl={boroughRace.sourceUrl}
+            rows={boroughRace.rows.map((r) => {
+              const income =
+                slug === "new-york"
+                  ? nycAcs.nyc.boroughs.find((b) => b.name === r.name)
+                      ?.medianHouseholdIncome
+                  : null;
+              return {
+                ...r,
+                medianHouseholdIncome: income ?? null,
+              };
+            })}
+          />
+        )}
+
+        {zipStats.length > 0 && (
+          <CityZipIncomeTable
+            cityName={city.name}
+            rows={zipStats.map((z) => ({
+              zip: z.zip,
+              population: z.population,
+              medianHouseholdIncome: z.medianHouseholdIncome,
+              year: z.year,
+              sourceNote: z.sourceNote,
+              sourceUrl: z.sourceUrl,
+            }))}
+          />
         )}
 
         {/* Neighborhoods / wards / boroughs */}
