@@ -1,0 +1,7736 @@
+{
+  "updated": "2026-07-28",
+  "sources": {
+    "USA": {
+      "fertility": "NCHS National Vital Statistics Reports \u2014 Births: Final Data for 2022/2023, Table 8 (TFR). GFR also from Table 8.",
+      "fertilityUrl": "https://www.cdc.gov/nchs/data/nvsr/nvsr74/nvsr74-1.pdf",
+      "population": "U.S. Census Bureau Population Estimates Program (NST-EST2024-ALLDATA)",
+      "populationUrl": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
+    },
+    "DEU": {
+      "fertility": "Eurostat demo_r_frate2 \u2014 total fertility rate by NUTS 1 region (Bundesl\u00e4nder)",
+      "fertilityUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_frate2",
+      "population": "Eurostat demo_r_d2jan \u2014 population on 1 January by NUTS 1 region",
+      "populationUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_d2jan"
+    },
+    "IND": {
+      "fertility": "NFHS-4 (2015\u201316) and NFHS-5 (2019\u201321) Total Fertility Rate by State/UT (MoHFW / national family health surveys)",
+      "fertilityUrl": "https://www.mohfw.gov.in",
+      "population": null
+    },
+    "CHN": {
+      "fertility": "China 7th National Population Census (2020) \u2014 provincial total fertility rates as published from census results (NBS)",
+      "fertilityUrl": "https://www.stats.gov.cn",
+      "population": "China 7th National Population Census (2020) \u2014 permanent resident population by province (NBS)",
+      "populationUrl": "https://www.stats.gov.cn"
+    },
+    "RUS": {
+      "fertility": "Rosstat regional fertility statistics (total fertility rate), latest published regional year",
+      "fertilityUrl": "https://rosstat.gov.ru",
+      "population": "Rosstat estimated resident population of federal subjects",
+      "populationUrl": "https://rosstat.gov.ru"
+    }
+  },
+  "divisions": [
+    {
+      "iso3": "USA",
+      "slug": "united-states-alabama",
+      "name": "Alabama",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-alaska",
+      "name": "Alaska",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-arizona",
+      "name": "Arizona",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-arkansas",
+      "name": "Arkansas",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-california",
+      "name": "California",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-colorado",
+      "name": "Colorado",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-connecticut",
+      "name": "Connecticut",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-delaware",
+      "name": "Delaware",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-district-of-columbia",
+      "name": "District of Columbia",
+      "kind": "district",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-florida",
+      "name": "Florida",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-georgia",
+      "name": "Georgia",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-hawaii",
+      "name": "Hawaii",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-idaho",
+      "name": "Idaho",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-illinois",
+      "name": "Illinois",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-indiana",
+      "name": "Indiana",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-iowa",
+      "name": "Iowa",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-kansas",
+      "name": "Kansas",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-kentucky",
+      "name": "Kentucky",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-louisiana",
+      "name": "Louisiana",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-maine",
+      "name": "Maine",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-maryland",
+      "name": "Maryland",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-massachusetts",
+      "name": "Massachusetts",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-michigan",
+      "name": "Michigan",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-minnesota",
+      "name": "Minnesota",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-mississippi",
+      "name": "Mississippi",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-missouri",
+      "name": "Missouri",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-montana",
+      "name": "Montana",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-nebraska",
+      "name": "Nebraska",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-nevada",
+      "name": "Nevada",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-new-hampshire",
+      "name": "New Hampshire",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-new-jersey",
+      "name": "New Jersey",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-new-mexico",
+      "name": "New Mexico",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-new-york",
+      "name": "New York",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-north-carolina",
+      "name": "North Carolina",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-north-dakota",
+      "name": "North Dakota",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-ohio",
+      "name": "Ohio",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-oklahoma",
+      "name": "Oklahoma",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-oregon",
+      "name": "Oregon",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-pennsylvania",
+      "name": "Pennsylvania",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-rhode-island",
+      "name": "Rhode Island",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-south-carolina",
+      "name": "South Carolina",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-south-dakota",
+      "name": "South Dakota",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-tennessee",
+      "name": "Tennessee",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-texas",
+      "name": "Texas",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-utah",
+      "name": "Utah",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-vermont",
+      "name": "Vermont",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-virginia",
+      "name": "Virginia",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-washington",
+      "name": "Washington",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-west-virginia",
+      "name": "West Virginia",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-wisconsin",
+      "name": "Wisconsin",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "USA",
+      "slug": "united-states-wyoming",
+      "name": "Wyoming",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE1",
+      "iso3166_2": null,
+      "slug": "germany-baden-wurttemberg",
+      "name": "Baden-W\u00fcrttemberg",
+      "kind": "land",
+      "nuts": "DE1"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE2",
+      "iso3166_2": null,
+      "slug": "germany-bavaria",
+      "name": "Bavaria",
+      "kind": "land",
+      "nuts": "DE2"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE3",
+      "iso3166_2": null,
+      "slug": "germany-berlin",
+      "name": "Berlin",
+      "kind": "land",
+      "nuts": "DE3"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE4",
+      "iso3166_2": null,
+      "slug": "germany-brandenburg",
+      "name": "Brandenburg",
+      "kind": "land",
+      "nuts": "DE4"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE5",
+      "iso3166_2": null,
+      "slug": "germany-bremen",
+      "name": "Bremen",
+      "kind": "land",
+      "nuts": "DE5"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE6",
+      "iso3166_2": null,
+      "slug": "germany-hamburg",
+      "name": "Hamburg",
+      "kind": "land",
+      "nuts": "DE6"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE7",
+      "iso3166_2": null,
+      "slug": "germany-hesse",
+      "name": "Hesse",
+      "kind": "land",
+      "nuts": "DE7"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE8",
+      "iso3166_2": null,
+      "slug": "germany-mecklenburg-western-pomerania",
+      "name": "Mecklenburg-Western Pomerania",
+      "kind": "land",
+      "nuts": "DE8"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DE9",
+      "iso3166_2": null,
+      "slug": "germany-lower-saxony",
+      "name": "Lower Saxony",
+      "kind": "land",
+      "nuts": "DE9"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEA",
+      "iso3166_2": null,
+      "slug": "germany-north-rhine-westphalia",
+      "name": "North Rhine-Westphalia",
+      "kind": "land",
+      "nuts": "DEA"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEB",
+      "iso3166_2": null,
+      "slug": "germany-rhineland-palatinate",
+      "name": "Rhineland-Palatinate",
+      "kind": "land",
+      "nuts": "DEB"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEC",
+      "iso3166_2": null,
+      "slug": "germany-saarland",
+      "name": "Saarland",
+      "kind": "land",
+      "nuts": "DEC"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DED",
+      "iso3166_2": null,
+      "slug": "germany-saxony",
+      "name": "Saxony",
+      "kind": "land",
+      "nuts": "DED"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEE",
+      "iso3166_2": null,
+      "slug": "germany-saxony-anhalt",
+      "name": "Saxony-Anhalt",
+      "kind": "land",
+      "nuts": "DEE"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEF",
+      "iso3166_2": null,
+      "slug": "germany-schleswig-holstein",
+      "name": "Schleswig-Holstein",
+      "kind": "land",
+      "nuts": "DEF"
+    },
+    {
+      "iso3": "DEU",
+      "code": "DEG",
+      "iso3166_2": null,
+      "slug": "germany-thuringia",
+      "name": "Thuringia",
+      "kind": "land",
+      "nuts": "DEG"
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-andaman-and-nicobar-islands",
+      "name": "Andaman and Nicobar Islands",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-andhra-pradesh",
+      "name": "Andhra Pradesh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-arunachal-pradesh",
+      "name": "Arunachal Pradesh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-assam",
+      "name": "Assam",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-bihar",
+      "name": "Bihar",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-chandigarh",
+      "name": "Chandigarh",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-chhattisgarh",
+      "name": "Chhattisgarh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-dadra-and-nagar-haveli-and-daman-and-diu",
+      "name": "Dadra and Nagar Haveli and Daman and Diu",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-delhi",
+      "name": "Delhi",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-goa",
+      "name": "Goa",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-gujarat",
+      "name": "Gujarat",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-haryana",
+      "name": "Haryana",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-himachal-pradesh",
+      "name": "Himachal Pradesh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-jammu-and-kashmir",
+      "name": "Jammu and Kashmir",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-jharkhand",
+      "name": "Jharkhand",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-karnataka",
+      "name": "Karnataka",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-kerala",
+      "name": "Kerala",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-ladakh",
+      "name": "Ladakh",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-lakshadweep",
+      "name": "Lakshadweep",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-madhya-pradesh",
+      "name": "Madhya Pradesh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-maharashtra",
+      "name": "Maharashtra",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-manipur",
+      "name": "Manipur",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-meghalaya",
+      "name": "Meghalaya",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-mizoram",
+      "name": "Mizoram",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-nagaland",
+      "name": "Nagaland",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-odisha",
+      "name": "Odisha",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-puducherry",
+      "name": "Puducherry",
+      "kind": "union-territory",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-punjab",
+      "name": "Punjab",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-rajasthan",
+      "name": "Rajasthan",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-sikkim",
+      "name": "Sikkim",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-tamil-nadu",
+      "name": "Tamil Nadu",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-telangana",
+      "name": "Telangana",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-tripura",
+      "name": "Tripura",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-uttar-pradesh",
+      "name": "Uttar Pradesh",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-uttarakhand",
+      "name": "Uttarakhand",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "IND",
+      "slug": "india-west-bengal",
+      "name": "West Bengal",
+      "kind": "state",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-beijing",
+      "name": "Beijing",
+      "kind": "municipality",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-tianjin",
+      "name": "Tianjin",
+      "kind": "municipality",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-hebei",
+      "name": "Hebei",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-shanxi",
+      "name": "Shanxi",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-inner-mongolia",
+      "name": "Inner Mongolia",
+      "kind": "autonomous-region",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-liaoning",
+      "name": "Liaoning",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-jilin",
+      "name": "Jilin",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-heilongjiang",
+      "name": "Heilongjiang",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-shanghai",
+      "name": "Shanghai",
+      "kind": "municipality",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-jiangsu",
+      "name": "Jiangsu",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-zhejiang",
+      "name": "Zhejiang",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-anhui",
+      "name": "Anhui",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-fujian",
+      "name": "Fujian",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-jiangxi",
+      "name": "Jiangxi",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-shandong",
+      "name": "Shandong",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-henan",
+      "name": "Henan",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-hubei",
+      "name": "Hubei",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-hunan",
+      "name": "Hunan",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-guangdong",
+      "name": "Guangdong",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-guangxi",
+      "name": "Guangxi",
+      "kind": "autonomous-region",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-hainan",
+      "name": "Hainan",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-chongqing",
+      "name": "Chongqing",
+      "kind": "municipality",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-sichuan",
+      "name": "Sichuan",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-guizhou",
+      "name": "Guizhou",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-yunnan",
+      "name": "Yunnan",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-tibet",
+      "name": "Tibet",
+      "kind": "autonomous-region",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-shaanxi",
+      "name": "Shaanxi",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-gansu",
+      "name": "Gansu",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-qinghai",
+      "name": "Qinghai",
+      "kind": "province",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-ningxia",
+      "name": "Ningxia",
+      "kind": "autonomous-region",
+      "code": null
+    },
+    {
+      "iso3": "CHN",
+      "slug": "china-xinjiang",
+      "name": "Xinjiang",
+      "kind": "autonomous-region",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-moscow",
+      "name": "Moscow",
+      "kind": "federal-city",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-saint-petersburg",
+      "name": "Saint Petersburg",
+      "kind": "federal-city",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-moscow-oblast",
+      "name": "Moscow Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-krasnodar-krai",
+      "name": "Krasnodar Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-sverdlovsk-oblast",
+      "name": "Sverdlovsk Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-rostov-oblast",
+      "name": "Rostov Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-bashkortostan",
+      "name": "Republic of Bashkortostan",
+      "kind": "republic",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-tatarstan",
+      "name": "Republic of Tatarstan",
+      "kind": "republic",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-chelyabinsk-oblast",
+      "name": "Chelyabinsk Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-nizhny-novgorod-oblast",
+      "name": "Nizhny Novgorod Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-samara-oblast",
+      "name": "Samara Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-krasnoyarsk-krai",
+      "name": "Krasnoyarsk Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-dagestan",
+      "name": "Republic of Dagestan",
+      "kind": "republic",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-stavropol-krai",
+      "name": "Stavropol Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-novosibirsk-oblast",
+      "name": "Novosibirsk Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-kemerovo-oblast",
+      "name": "Kemerovo Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-perm-krai",
+      "name": "Perm Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-volgograd-oblast",
+      "name": "Volgograd Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-saratov-oblast",
+      "name": "Saratov Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-tyumen-oblast",
+      "name": "Tyumen Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-irkutsk-oblast",
+      "name": "Irkutsk Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-altai-krai",
+      "name": "Altai Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-voronezh-oblast",
+      "name": "Voronezh Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-orenburg-oblast",
+      "name": "Orenburg Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-omsk-oblast",
+      "name": "Omsk Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-primorsky-krai",
+      "name": "Primorsky Krai",
+      "kind": "krai",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-leningrad-oblast",
+      "name": "Leningrad Oblast",
+      "kind": "oblast",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-khanty-mansi",
+      "name": "Khanty-Mansi Autonomous Okrug",
+      "kind": "autonomous-okrug",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-chechnya",
+      "name": "Chechen Republic",
+      "kind": "republic",
+      "code": null
+    },
+    {
+      "iso3": "RUS",
+      "slug": "russia-sakha",
+      "name": "Sakha (Yakutia)",
+      "kind": "republic",
+      "code": null
+    }
+  ],
+  "fertility": {
+    "germany-baden-wurttemberg": [
+      {
+        "year": 2002,
+        "value": 1.37
+      },
+      {
+        "year": 2003,
+        "value": 1.36
+      },
+      {
+        "year": 2004,
+        "value": 1.37
+      },
+      {
+        "year": 2005,
+        "value": 1.36
+      },
+      {
+        "year": 2006,
+        "value": 1.34
+      },
+      {
+        "year": 2007,
+        "value": 1.37
+      },
+      {
+        "year": 2008,
+        "value": 1.37
+      },
+      {
+        "year": 2009,
+        "value": 1.35
+      },
+      {
+        "year": 2010,
+        "value": 1.38
+      },
+      {
+        "year": 2011,
+        "value": 1.35
+      },
+      {
+        "year": 2012,
+        "value": 1.4
+      },
+      {
+        "year": 2013,
+        "value": 1.4
+      },
+      {
+        "year": 2014,
+        "value": 1.46
+      },
+      {
+        "year": 2015,
+        "value": 1.51
+      },
+      {
+        "year": 2016,
+        "value": 1.59
+      },
+      {
+        "year": 2017,
+        "value": 1.57
+      },
+      {
+        "year": 2018,
+        "value": 1.58
+      },
+      {
+        "year": 2019,
+        "value": 1.57
+      },
+      {
+        "year": 2020,
+        "value": 1.551
+      },
+      {
+        "year": 2022,
+        "value": 1.49
+      },
+      {
+        "year": 2023,
+        "value": 1.407
+      },
+      {
+        "year": 2024,
+        "value": 1.394
+      }
+    ],
+    "germany-bavaria": [
+      {
+        "year": 2002,
+        "value": 1.36
+      },
+      {
+        "year": 2003,
+        "value": 1.35
+      },
+      {
+        "year": 2004,
+        "value": 1.37
+      },
+      {
+        "year": 2005,
+        "value": 1.34
+      },
+      {
+        "year": 2006,
+        "value": 1.32
+      },
+      {
+        "year": 2007,
+        "value": 1.36
+      },
+      {
+        "year": 2008,
+        "value": 1.36
+      },
+      {
+        "year": 2009,
+        "value": 1.34
+      },
+      {
+        "year": 2010,
+        "value": 1.36
+      },
+      {
+        "year": 2011,
+        "value": 1.34
+      },
+      {
+        "year": 2012,
+        "value": 1.39
+      },
+      {
+        "year": 2013,
+        "value": 1.4
+      },
+      {
+        "year": 2014,
+        "value": 1.45
+      },
+      {
+        "year": 2015,
+        "value": 1.48
+      },
+      {
+        "year": 2016,
+        "value": 1.56
+      },
+      {
+        "year": 2017,
+        "value": 1.55
+      },
+      {
+        "year": 2018,
+        "value": 1.56
+      },
+      {
+        "year": 2019,
+        "value": 1.55
+      },
+      {
+        "year": 2020,
+        "value": 1.552
+      },
+      {
+        "year": 2022,
+        "value": 1.49
+      },
+      {
+        "year": 2023,
+        "value": 1.419
+      },
+      {
+        "year": 2024,
+        "value": 1.391
+      }
+    ],
+    "germany-berlin": [
+      {
+        "year": 2002,
+        "value": 1.16
+      },
+      {
+        "year": 2003,
+        "value": 1.16
+      },
+      {
+        "year": 2004,
+        "value": 1.2
+      },
+      {
+        "year": 2005,
+        "value": 1.19
+      },
+      {
+        "year": 2006,
+        "value": 1.21
+      },
+      {
+        "year": 2007,
+        "value": 1.28
+      },
+      {
+        "year": 2008,
+        "value": 1.3
+      },
+      {
+        "year": 2009,
+        "value": 1.3
+      },
+      {
+        "year": 2010,
+        "value": 1.34
+      },
+      {
+        "year": 2011,
+        "value": 1.31
+      },
+      {
+        "year": 2012,
+        "value": 1.43
+      },
+      {
+        "year": 2013,
+        "value": 1.37
+      },
+      {
+        "year": 2014,
+        "value": 1.46
+      },
+      {
+        "year": 2015,
+        "value": 1.46
+      },
+      {
+        "year": 2016,
+        "value": 1.55
+      },
+      {
+        "year": 2017,
+        "value": 1.48
+      },
+      {
+        "year": 2018,
+        "value": 1.45
+      },
+      {
+        "year": 2019,
+        "value": 1.41
+      },
+      {
+        "year": 2020,
+        "value": 1.378
+      },
+      {
+        "year": 2022,
+        "value": 1.253
+      },
+      {
+        "year": 2023,
+        "value": 1.235
+      },
+      {
+        "year": 2024,
+        "value": 1.214
+      }
+    ],
+    "germany-brandenburg": [
+      {
+        "year": 2002,
+        "value": 1.21
+      },
+      {
+        "year": 2003,
+        "value": 1.26
+      },
+      {
+        "year": 2004,
+        "value": 1.29
+      },
+      {
+        "year": 2005,
+        "value": 1.28
+      },
+      {
+        "year": 2006,
+        "value": 1.29
+      },
+      {
+        "year": 2007,
+        "value": 1.37
+      },
+      {
+        "year": 2008,
+        "value": 1.4
+      },
+      {
+        "year": 2009,
+        "value": 1.4
+      },
+      {
+        "year": 2010,
+        "value": 1.45
+      },
+      {
+        "year": 2011,
+        "value": 1.41
+      },
+      {
+        "year": 2012,
+        "value": 1.47
+      },
+      {
+        "year": 2013,
+        "value": 1.46
+      },
+      {
+        "year": 2014,
+        "value": 1.55
+      },
+      {
+        "year": 2015,
+        "value": 1.53
+      },
+      {
+        "year": 2016,
+        "value": 1.69
+      },
+      {
+        "year": 2017,
+        "value": 1.64
+      },
+      {
+        "year": 2018,
+        "value": 1.62
+      },
+      {
+        "year": 2019,
+        "value": 1.59
+      },
+      {
+        "year": 2020,
+        "value": 1.571
+      },
+      {
+        "year": 2022,
+        "value": 1.472
+      },
+      {
+        "year": 2023,
+        "value": 1.385
+      },
+      {
+        "year": 2024,
+        "value": 1.34
+      }
+    ],
+    "germany-bremen": [
+      {
+        "year": 2002,
+        "value": 1.25
+      },
+      {
+        "year": 2003,
+        "value": 1.28
+      },
+      {
+        "year": 2004,
+        "value": 1.25
+      },
+      {
+        "year": 2005,
+        "value": 1.26
+      },
+      {
+        "year": 2006,
+        "value": 1.27
+      },
+      {
+        "year": 2007,
+        "value": 1.29
+      },
+      {
+        "year": 2008,
+        "value": 1.3
+      },
+      {
+        "year": 2009,
+        "value": 1.29
+      },
+      {
+        "year": 2010,
+        "value": 1.31
+      },
+      {
+        "year": 2011,
+        "value": 1.27
+      },
+      {
+        "year": 2012,
+        "value": 1.34
+      },
+      {
+        "year": 2013,
+        "value": 1.35
+      },
+      {
+        "year": 2014,
+        "value": 1.46
+      },
+      {
+        "year": 2015,
+        "value": 1.51
+      },
+      {
+        "year": 2016,
+        "value": 1.63
+      },
+      {
+        "year": 2017,
+        "value": 1.58
+      },
+      {
+        "year": 2018,
+        "value": 1.6
+      },
+      {
+        "year": 2019,
+        "value": 1.6
+      },
+      {
+        "year": 2020,
+        "value": 1.558
+      },
+      {
+        "year": 2022,
+        "value": 1.506
+      },
+      {
+        "year": 2023,
+        "value": 1.428
+      },
+      {
+        "year": 2024,
+        "value": 1.339
+      }
+    ],
+    "germany-hamburg": [
+      {
+        "year": 2002,
+        "value": 1.18
+      },
+      {
+        "year": 2003,
+        "value": 1.2
+      },
+      {
+        "year": 2004,
+        "value": 1.22
+      },
+      {
+        "year": 2005,
+        "value": 1.23
+      },
+      {
+        "year": 2006,
+        "value": 1.22
+      },
+      {
+        "year": 2007,
+        "value": 1.25
+      },
+      {
+        "year": 2008,
+        "value": 1.25
+      },
+      {
+        "year": 2009,
+        "value": 1.25
+      },
+      {
+        "year": 2010,
+        "value": 1.29
+      },
+      {
+        "year": 2011,
+        "value": 1.26
+      },
+      {
+        "year": 2012,
+        "value": 1.35
+      },
+      {
+        "year": 2013,
+        "value": 1.33
+      },
+      {
+        "year": 2014,
+        "value": 1.41
+      },
+      {
+        "year": 2015,
+        "value": 1.45
+      },
+      {
+        "year": 2016,
+        "value": 1.55
+      },
+      {
+        "year": 2017,
+        "value": 1.51
+      },
+      {
+        "year": 2018,
+        "value": 1.49
+      },
+      {
+        "year": 2019,
+        "value": 1.46
+      },
+      {
+        "year": 2020,
+        "value": 1.423
+      },
+      {
+        "year": 2022,
+        "value": 1.32
+      },
+      {
+        "year": 2023,
+        "value": 1.291
+      },
+      {
+        "year": 2024,
+        "value": 1.236
+      }
+    ],
+    "germany-hesse": [
+      {
+        "year": 2002,
+        "value": 1.34
+      },
+      {
+        "year": 2003,
+        "value": 1.34
+      },
+      {
+        "year": 2004,
+        "value": 1.36
+      },
+      {
+        "year": 2005,
+        "value": 1.36
+      },
+      {
+        "year": 2006,
+        "value": 1.33
+      },
+      {
+        "year": 2007,
+        "value": 1.38
+      },
+      {
+        "year": 2008,
+        "value": 1.37
+      },
+      {
+        "year": 2009,
+        "value": 1.36
+      },
+      {
+        "year": 2010,
+        "value": 1.4
+      },
+      {
+        "year": 2011,
+        "value": 1.39
+      },
+      {
+        "year": 2012,
+        "value": 1.4
+      },
+      {
+        "year": 2013,
+        "value": 1.4
+      },
+      {
+        "year": 2014,
+        "value": 1.46
+      },
+      {
+        "year": 2015,
+        "value": 1.5
+      },
+      {
+        "year": 2016,
+        "value": 1.59
+      },
+      {
+        "year": 2017,
+        "value": 1.58
+      },
+      {
+        "year": 2018,
+        "value": 1.57
+      },
+      {
+        "year": 2019,
+        "value": 1.54
+      },
+      {
+        "year": 2020,
+        "value": 1.519
+      },
+      {
+        "year": 2022,
+        "value": 1.456
+      },
+      {
+        "year": 2023,
+        "value": 1.388
+      },
+      {
+        "year": 2024,
+        "value": 1.372
+      }
+    ],
+    "germany-mecklenburg-western-pomerania": [
+      {
+        "year": 2002,
+        "value": 1.25
+      },
+      {
+        "year": 2003,
+        "value": 1.3
+      },
+      {
+        "year": 2004,
+        "value": 1.35
+      },
+      {
+        "year": 2005,
+        "value": 1.29
+      },
+      {
+        "year": 2006,
+        "value": 1.32
+      },
+      {
+        "year": 2007,
+        "value": 1.36
+      },
+      {
+        "year": 2008,
+        "value": 1.41
+      },
+      {
+        "year": 2009,
+        "value": 1.42
+      },
+      {
+        "year": 2010,
+        "value": 1.48
+      },
+      {
+        "year": 2011,
+        "value": 1.41
+      },
+      {
+        "year": 2012,
+        "value": 1.46
+      },
+      {
+        "year": 2013,
+        "value": 1.44
+      },
+      {
+        "year": 2014,
+        "value": 1.49
+      },
+      {
+        "year": 2015,
+        "value": 1.54
+      },
+      {
+        "year": 2016,
+        "value": 1.57
+      },
+      {
+        "year": 2017,
+        "value": 1.54
+      },
+      {
+        "year": 2018,
+        "value": 1.55
+      },
+      {
+        "year": 2019,
+        "value": 1.54
+      },
+      {
+        "year": 2020,
+        "value": 1.495
+      },
+      {
+        "year": 2022,
+        "value": 1.389
+      },
+      {
+        "year": 2023,
+        "value": 1.337
+      },
+      {
+        "year": 2024,
+        "value": 1.298
+      }
+    ],
+    "germany-lower-saxony": [
+      {
+        "year": 2002,
+        "value": 1.43
+      },
+      {
+        "year": 2003,
+        "value": 1.41
+      },
+      {
+        "year": 2004,
+        "value": 1.43
+      },
+      {
+        "year": 2005,
+        "value": 1.39
+      },
+      {
+        "year": 2006,
+        "value": 1.38
+      },
+      {
+        "year": 2007,
+        "value": 1.41
+      },
+      {
+        "year": 2008,
+        "value": 1.42
+      },
+      {
+        "year": 2009,
+        "value": 1.38
+      },
+      {
+        "year": 2010,
+        "value": 1.42
+      },
+      {
+        "year": 2011,
+        "value": 1.39
+      },
+      {
+        "year": 2012,
+        "value": 1.43
+      },
+      {
+        "year": 2013,
+        "value": 1.44
+      },
+      {
+        "year": 2014,
+        "value": 1.53
+      },
+      {
+        "year": 2015,
+        "value": 1.52
+      },
+      {
+        "year": 2016,
+        "value": 1.68
+      },
+      {
+        "year": 2017,
+        "value": 1.62
+      },
+      {
+        "year": 2018,
+        "value": 1.62
+      },
+      {
+        "year": 2019,
+        "value": 1.6
+      },
+      {
+        "year": 2020,
+        "value": 1.616
+      },
+      {
+        "year": 2022,
+        "value": 1.524
+      },
+      {
+        "year": 2023,
+        "value": 1.457
+      },
+      {
+        "year": 2024,
+        "value": 1.425
+      }
+    ],
+    "germany-north-rhine-westphalia": [
+      {
+        "year": 2002,
+        "value": 1.39
+      },
+      {
+        "year": 2003,
+        "value": 1.38
+      },
+      {
+        "year": 2004,
+        "value": 1.39
+      },
+      {
+        "year": 2005,
+        "value": 1.37
+      },
+      {
+        "year": 2006,
+        "value": 1.36
+      },
+      {
+        "year": 2007,
+        "value": 1.39
+      },
+      {
+        "year": 2008,
+        "value": 1.39
+      },
+      {
+        "year": 2009,
+        "value": 1.37
+      },
+      {
+        "year": 2010,
+        "value": 1.4
+      },
+      {
+        "year": 2011,
+        "value": 1.36
+      },
+      {
+        "year": 2012,
+        "value": 1.41
+      },
+      {
+        "year": 2013,
+        "value": 1.4
+      },
+      {
+        "year": 2014,
+        "value": 1.49
+      },
+      {
+        "year": 2015,
+        "value": 1.52
+      },
+      {
+        "year": 2016,
+        "value": 1.62
+      },
+      {
+        "year": 2017,
+        "value": 1.6
+      },
+      {
+        "year": 2018,
+        "value": 1.6
+      },
+      {
+        "year": 2019,
+        "value": 1.56
+      },
+      {
+        "year": 2020,
+        "value": 1.556
+      },
+      {
+        "year": 2022,
+        "value": 1.487
+      },
+      {
+        "year": 2023,
+        "value": 1.413
+      },
+      {
+        "year": 2024,
+        "value": 1.386
+      }
+    ],
+    "germany-rhineland-palatinate": [
+      {
+        "year": 2002,
+        "value": 1.37
+      },
+      {
+        "year": 2003,
+        "value": 1.36
+      },
+      {
+        "year": 2004,
+        "value": 1.36
+      },
+      {
+        "year": 2005,
+        "value": 1.35
+      },
+      {
+        "year": 2006,
+        "value": 1.32
+      },
+      {
+        "year": 2007,
+        "value": 1.37
+      },
+      {
+        "year": 2008,
+        "value": 1.38
+      },
+      {
+        "year": 2009,
+        "value": 1.34
+      },
+      {
+        "year": 2010,
+        "value": 1.38
+      },
+      {
+        "year": 2011,
+        "value": 1.37
+      },
+      {
+        "year": 2012,
+        "value": 1.38
+      },
+      {
+        "year": 2013,
+        "value": 1.41
+      },
+      {
+        "year": 2014,
+        "value": 1.47
+      },
+      {
+        "year": 2015,
+        "value": 1.51
+      },
+      {
+        "year": 2016,
+        "value": 1.61
+      },
+      {
+        "year": 2017,
+        "value": 1.59
+      },
+      {
+        "year": 2018,
+        "value": 1.59
+      },
+      {
+        "year": 2019,
+        "value": 1.56
+      },
+      {
+        "year": 2020,
+        "value": 1.576
+      },
+      {
+        "year": 2022,
+        "value": 1.519
+      },
+      {
+        "year": 2023,
+        "value": 1.44
+      },
+      {
+        "year": 2024,
+        "value": 1.406
+      }
+    ],
+    "germany-saarland": [
+      {
+        "year": 2002,
+        "value": 1.23
+      },
+      {
+        "year": 2003,
+        "value": 1.21
+      },
+      {
+        "year": 2004,
+        "value": 1.25
+      },
+      {
+        "year": 2005,
+        "value": 1.25
+      },
+      {
+        "year": 2006,
+        "value": 1.23
+      },
+      {
+        "year": 2007,
+        "value": 1.26
+      },
+      {
+        "year": 2008,
+        "value": 1.25
+      },
+      {
+        "year": 2009,
+        "value": 1.23
+      },
+      {
+        "year": 2010,
+        "value": 1.27
+      },
+      {
+        "year": 2011,
+        "value": 1.27
+      },
+      {
+        "year": 2012,
+        "value": 1.27
+      },
+      {
+        "year": 2013,
+        "value": 1.25
+      },
+      {
+        "year": 2014,
+        "value": 1.36
+      },
+      {
+        "year": 2015,
+        "value": 1.38
+      },
+      {
+        "year": 2016,
+        "value": 1.49
+      },
+      {
+        "year": 2017,
+        "value": 1.51
+      },
+      {
+        "year": 2018,
+        "value": 1.47
+      },
+      {
+        "year": 2019,
+        "value": 1.45
+      },
+      {
+        "year": 2020,
+        "value": 1.479
+      },
+      {
+        "year": 2022,
+        "value": 1.409
+      },
+      {
+        "year": 2023,
+        "value": 1.343
+      },
+      {
+        "year": 2024,
+        "value": 1.32
+      }
+    ],
+    "germany-saxony": [
+      {
+        "year": 2002,
+        "value": 1.25
+      },
+      {
+        "year": 2003,
+        "value": 1.29
+      },
+      {
+        "year": 2004,
+        "value": 1.34
+      },
+      {
+        "year": 2005,
+        "value": 1.33
+      },
+      {
+        "year": 2006,
+        "value": 1.34
+      },
+      {
+        "year": 2007,
+        "value": 1.4
+      },
+      {
+        "year": 2008,
+        "value": 1.44
+      },
+      {
+        "year": 2009,
+        "value": 1.44
+      },
+      {
+        "year": 2010,
+        "value": 1.49
+      },
+      {
+        "year": 2011,
+        "value": 1.48
+      },
+      {
+        "year": 2012,
+        "value": 1.52
+      },
+      {
+        "year": 2013,
+        "value": 1.51
+      },
+      {
+        "year": 2014,
+        "value": 1.57
+      },
+      {
+        "year": 2015,
+        "value": 1.59
+      },
+      {
+        "year": 2016,
+        "value": 1.67
+      },
+      {
+        "year": 2017,
+        "value": 1.62
+      },
+      {
+        "year": 2018,
+        "value": 1.6
+      },
+      {
+        "year": 2019,
+        "value": 1.56
+      },
+      {
+        "year": 2020,
+        "value": 1.539
+      },
+      {
+        "year": 2022,
+        "value": 1.402
+      },
+      {
+        "year": 2023,
+        "value": 1.276
+      },
+      {
+        "year": 2024,
+        "value": 1.222
+      }
+    ],
+    "germany-saxony-anhalt": [
+      {
+        "year": 2002,
+        "value": 1.23
+      },
+      {
+        "year": 2003,
+        "value": 1.21
+      },
+      {
+        "year": 2004,
+        "value": 1.27
+      },
+      {
+        "year": 2005,
+        "value": 1.27
+      },
+      {
+        "year": 2006,
+        "value": 1.27
+      },
+      {
+        "year": 2007,
+        "value": 1.34
+      },
+      {
+        "year": 2008,
+        "value": 1.39
+      },
+      {
+        "year": 2009,
+        "value": 1.37
+      },
+      {
+        "year": 2010,
+        "value": 1.41
+      },
+      {
+        "year": 2011,
+        "value": 1.4
+      },
+      {
+        "year": 2012,
+        "value": 1.45
+      },
+      {
+        "year": 2013,
+        "value": 1.45
+      },
+      {
+        "year": 2014,
+        "value": 1.5
+      },
+      {
+        "year": 2015,
+        "value": 1.54
+      },
+      {
+        "year": 2016,
+        "value": 1.62
+      },
+      {
+        "year": 2017,
+        "value": 1.61
+      },
+      {
+        "year": 2018,
+        "value": 1.61
+      },
+      {
+        "year": 2019,
+        "value": 1.56
+      },
+      {
+        "year": 2020,
+        "value": 1.554
+      },
+      {
+        "year": 2022,
+        "value": 1.448
+      },
+      {
+        "year": 2023,
+        "value": 1.4
+      },
+      {
+        "year": 2024,
+        "value": 1.311
+      }
+    ],
+    "germany-schleswig-holstein": [
+      {
+        "year": 2002,
+        "value": 1.39
+      },
+      {
+        "year": 2003,
+        "value": 1.38
+      },
+      {
+        "year": 2004,
+        "value": 1.4
+      },
+      {
+        "year": 2005,
+        "value": 1.37
+      },
+      {
+        "year": 2006,
+        "value": 1.38
+      },
+      {
+        "year": 2007,
+        "value": 1.42
+      },
+      {
+        "year": 2008,
+        "value": 1.42
+      },
+      {
+        "year": 2009,
+        "value": 1.4
+      },
+      {
+        "year": 2010,
+        "value": 1.45
+      },
+      {
+        "year": 2011,
+        "value": 1.37
+      },
+      {
+        "year": 2012,
+        "value": 1.44
+      },
+      {
+        "year": 2013,
+        "value": 1.42
+      },
+      {
+        "year": 2014,
+        "value": 1.48
+      },
+      {
+        "year": 2015,
+        "value": 1.52
+      },
+      {
+        "year": 2016,
+        "value": 1.61
+      },
+      {
+        "year": 2017,
+        "value": 1.58
+      },
+      {
+        "year": 2018,
+        "value": 1.58
+      },
+      {
+        "year": 2019,
+        "value": 1.54
+      },
+      {
+        "year": 2020,
+        "value": 1.513
+      },
+      {
+        "year": 2022,
+        "value": 1.455
+      },
+      {
+        "year": 2023,
+        "value": 1.346
+      },
+      {
+        "year": 2024,
+        "value": 1.318
+      }
+    ],
+    "germany-thuringia": [
+      {
+        "year": 2002,
+        "value": 1.23
+      },
+      {
+        "year": 2003,
+        "value": 1.24
+      },
+      {
+        "year": 2004,
+        "value": 1.29
+      },
+      {
+        "year": 2005,
+        "value": 1.26
+      },
+      {
+        "year": 2006,
+        "value": 1.26
+      },
+      {
+        "year": 2007,
+        "value": 1.34
+      },
+      {
+        "year": 2008,
+        "value": 1.37
+      },
+      {
+        "year": 2009,
+        "value": 1.36
+      },
+      {
+        "year": 2010,
+        "value": 1.43
+      },
+      {
+        "year": 2011,
+        "value": 1.41
+      },
+      {
+        "year": 2012,
+        "value": 1.48
+      },
+      {
+        "year": 2013,
+        "value": 1.48
+      },
+      {
+        "year": 2014,
+        "value": 1.55
+      },
+      {
+        "year": 2015,
+        "value": 1.56
+      },
+      {
+        "year": 2016,
+        "value": 1.63
+      },
+      {
+        "year": 2017,
+        "value": 1.63
+      },
+      {
+        "year": 2018,
+        "value": 1.6
+      },
+      {
+        "year": 2019,
+        "value": 1.56
+      },
+      {
+        "year": 2020,
+        "value": 1.547
+      },
+      {
+        "year": 2022,
+        "value": 1.427
+      },
+      {
+        "year": 2023,
+        "value": 1.332
+      },
+      {
+        "year": 2024,
+        "value": 1.244
+      }
+    ],
+    "india-andaman-and-nicobar-islands": [
+      {
+        "year": 2021,
+        "value": 1.3
+      }
+    ],
+    "india-andhra-pradesh": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-arunachal-pradesh": [
+      {
+        "year": 2016,
+        "value": 2.1
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-assam": [
+      {
+        "year": 2016,
+        "value": 2.2
+      },
+      {
+        "year": 2021,
+        "value": 1.9
+      }
+    ],
+    "india-bihar": [
+      {
+        "year": 2016,
+        "value": 3.4
+      },
+      {
+        "year": 2021,
+        "value": 3.0
+      }
+    ],
+    "india-chandigarh": [
+      {
+        "year": 2021,
+        "value": 1.4
+      }
+    ],
+    "india-chhattisgarh": [
+      {
+        "year": 2016,
+        "value": 2.2
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-dadra-and-nagar-haveli-and-daman-and-diu": [
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-delhi": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.6
+      }
+    ],
+    "india-goa": [
+      {
+        "year": 2016,
+        "value": 1.7
+      },
+      {
+        "year": 2021,
+        "value": 1.3
+      }
+    ],
+    "india-gujarat": [
+      {
+        "year": 2016,
+        "value": 2.0
+      },
+      {
+        "year": 2021,
+        "value": 1.9
+      }
+    ],
+    "india-haryana": [
+      {
+        "year": 2016,
+        "value": 2.1
+      },
+      {
+        "year": 2021,
+        "value": 1.9
+      }
+    ],
+    "india-himachal-pradesh": [
+      {
+        "year": 2016,
+        "value": 1.9
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-jammu-and-kashmir": [
+      {
+        "year": 2016,
+        "value": 2.0
+      },
+      {
+        "year": 2021,
+        "value": 1.4
+      }
+    ],
+    "india-jharkhand": [
+      {
+        "year": 2016,
+        "value": 2.6
+      },
+      {
+        "year": 2021,
+        "value": 2.3
+      }
+    ],
+    "india-karnataka": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-kerala": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-ladakh": [
+      {
+        "year": 2021,
+        "value": 1.3
+      }
+    ],
+    "india-lakshadweep": [
+      {
+        "year": 2021,
+        "value": 1.4
+      }
+    ],
+    "india-madhya-pradesh": [
+      {
+        "year": 2016,
+        "value": 2.3
+      },
+      {
+        "year": 2021,
+        "value": 2.0
+      }
+    ],
+    "india-maharashtra": [
+      {
+        "year": 2016,
+        "value": 1.9
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-manipur": [
+      {
+        "year": 2016,
+        "value": 2.6
+      },
+      {
+        "year": 2021,
+        "value": 2.2
+      }
+    ],
+    "india-meghalaya": [
+      {
+        "year": 2016,
+        "value": 3.0
+      },
+      {
+        "year": 2021,
+        "value": 2.9
+      }
+    ],
+    "india-mizoram": [
+      {
+        "year": 2016,
+        "value": 2.3
+      },
+      {
+        "year": 2021,
+        "value": 1.9
+      }
+    ],
+    "india-nagaland": [
+      {
+        "year": 2016,
+        "value": 2.7
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-odisha": [
+      {
+        "year": 2016,
+        "value": 2.1
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-puducherry": [
+      {
+        "year": 2021,
+        "value": 1.5
+      }
+    ],
+    "india-punjab": [
+      {
+        "year": 2016,
+        "value": 1.6
+      },
+      {
+        "year": 2021,
+        "value": 1.6
+      }
+    ],
+    "india-rajasthan": [
+      {
+        "year": 2016,
+        "value": 2.4
+      },
+      {
+        "year": 2021,
+        "value": 2.0
+      }
+    ],
+    "india-sikkim": [
+      {
+        "year": 2016,
+        "value": 1.2
+      },
+      {
+        "year": 2021,
+        "value": 1.1
+      }
+    ],
+    "india-tamil-nadu": [
+      {
+        "year": 2016,
+        "value": 1.7
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-telangana": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.8
+      }
+    ],
+    "india-tripura": [
+      {
+        "year": 2016,
+        "value": 1.7
+      },
+      {
+        "year": 2021,
+        "value": 1.7
+      }
+    ],
+    "india-uttar-pradesh": [
+      {
+        "year": 2016,
+        "value": 2.7
+      },
+      {
+        "year": 2021,
+        "value": 2.4
+      }
+    ],
+    "india-uttarakhand": [
+      {
+        "year": 2016,
+        "value": 2.1
+      },
+      {
+        "year": 2021,
+        "value": 1.9
+      }
+    ],
+    "india-west-bengal": [
+      {
+        "year": 2016,
+        "value": 1.8
+      },
+      {
+        "year": 2021,
+        "value": 1.6
+      }
+    ],
+    "china-beijing": [
+      {
+        "year": 2020,
+        "value": 0.87
+      }
+    ],
+    "china-tianjin": [
+      {
+        "year": 2020,
+        "value": 0.9
+      }
+    ],
+    "china-hebei": [
+      {
+        "year": 2020,
+        "value": 1.13
+      }
+    ],
+    "china-shanxi": [
+      {
+        "year": 2020,
+        "value": 1.1
+      }
+    ],
+    "china-inner-mongolia": [
+      {
+        "year": 2020,
+        "value": 1.07
+      }
+    ],
+    "china-liaoning": [
+      {
+        "year": 2020,
+        "value": 0.85
+      }
+    ],
+    "china-jilin": [
+      {
+        "year": 2020,
+        "value": 0.84
+      }
+    ],
+    "china-heilongjiang": [
+      {
+        "year": 2020,
+        "value": 0.76
+      }
+    ],
+    "china-shanghai": [
+      {
+        "year": 2020,
+        "value": 0.74
+      }
+    ],
+    "china-jiangsu": [
+      {
+        "year": 2020,
+        "value": 1.05
+      }
+    ],
+    "china-zhejiang": [
+      {
+        "year": 2020,
+        "value": 1.07
+      }
+    ],
+    "china-anhui": [
+      {
+        "year": 2020,
+        "value": 1.26
+      }
+    ],
+    "china-fujian": [
+      {
+        "year": 2020,
+        "value": 1.12
+      }
+    ],
+    "china-jiangxi": [
+      {
+        "year": 2020,
+        "value": 1.28
+      }
+    ],
+    "china-shandong": [
+      {
+        "year": 2020,
+        "value": 1.24
+      }
+    ],
+    "china-henan": [
+      {
+        "year": 2020,
+        "value": 1.38
+      }
+    ],
+    "china-hubei": [
+      {
+        "year": 2020,
+        "value": 1.18
+      }
+    ],
+    "china-hunan": [
+      {
+        "year": 2020,
+        "value": 1.24
+      }
+    ],
+    "china-guangdong": [
+      {
+        "year": 2020,
+        "value": 1.22
+      }
+    ],
+    "china-guangxi": [
+      {
+        "year": 2020,
+        "value": 1.49
+      }
+    ],
+    "china-hainan": [
+      {
+        "year": 2020,
+        "value": 1.44
+      }
+    ],
+    "china-chongqing": [
+      {
+        "year": 2020,
+        "value": 1.05
+      }
+    ],
+    "china-sichuan": [
+      {
+        "year": 2020,
+        "value": 1.1
+      }
+    ],
+    "china-guizhou": [
+      {
+        "year": 2020,
+        "value": 1.48
+      }
+    ],
+    "china-yunnan": [
+      {
+        "year": 2020,
+        "value": 1.33
+      }
+    ],
+    "china-tibet": [
+      {
+        "year": 2020,
+        "value": 1.74
+      }
+    ],
+    "china-shaanxi": [
+      {
+        "year": 2020,
+        "value": 1.18
+      }
+    ],
+    "china-gansu": [
+      {
+        "year": 2020,
+        "value": 1.21
+      }
+    ],
+    "china-qinghai": [
+      {
+        "year": 2020,
+        "value": 1.3
+      }
+    ],
+    "china-ningxia": [
+      {
+        "year": 2020,
+        "value": 1.36
+      }
+    ],
+    "china-xinjiang": [
+      {
+        "year": 2020,
+        "value": 1.41
+      }
+    ],
+    "russia-moscow": [
+      {
+        "year": 2022,
+        "value": 1.42
+      }
+    ],
+    "russia-saint-petersburg": [
+      {
+        "year": 2022,
+        "value": 1.36
+      }
+    ],
+    "russia-moscow-oblast": [
+      {
+        "year": 2022,
+        "value": 1.38
+      }
+    ],
+    "russia-krasnodar-krai": [
+      {
+        "year": 2022,
+        "value": 1.53
+      }
+    ],
+    "russia-sverdlovsk-oblast": [
+      {
+        "year": 2022,
+        "value": 1.56
+      }
+    ],
+    "russia-rostov-oblast": [
+      {
+        "year": 2022,
+        "value": 1.32
+      }
+    ],
+    "russia-bashkortostan": [
+      {
+        "year": 2022,
+        "value": 1.51
+      }
+    ],
+    "russia-tatarstan": [
+      {
+        "year": 2022,
+        "value": 1.54
+      }
+    ],
+    "russia-chelyabinsk-oblast": [
+      {
+        "year": 2022,
+        "value": 1.46
+      }
+    ],
+    "russia-nizhny-novgorod-oblast": [
+      {
+        "year": 2022,
+        "value": 1.29
+      }
+    ],
+    "russia-samara-oblast": [
+      {
+        "year": 2022,
+        "value": 1.36
+      }
+    ],
+    "russia-krasnoyarsk-krai": [
+      {
+        "year": 2022,
+        "value": 1.52
+      }
+    ],
+    "russia-dagestan": [
+      {
+        "year": 2022,
+        "value": 1.87
+      }
+    ],
+    "russia-stavropol-krai": [
+      {
+        "year": 2022,
+        "value": 1.42
+      }
+    ],
+    "russia-novosibirsk-oblast": [
+      {
+        "year": 2022,
+        "value": 1.48
+      }
+    ],
+    "russia-kemerovo-oblast": [
+      {
+        "year": 2022,
+        "value": 1.37
+      }
+    ],
+    "russia-perm-krai": [
+      {
+        "year": 2022,
+        "value": 1.52
+      }
+    ],
+    "russia-volgograd-oblast": [
+      {
+        "year": 2022,
+        "value": 1.24
+      }
+    ],
+    "russia-saratov-oblast": [
+      {
+        "year": 2022,
+        "value": 1.24
+      }
+    ],
+    "russia-tyumen-oblast": [
+      {
+        "year": 2022,
+        "value": 1.78
+      }
+    ],
+    "russia-irkutsk-oblast": [
+      {
+        "year": 2022,
+        "value": 1.62
+      }
+    ],
+    "russia-altai-krai": [
+      {
+        "year": 2022,
+        "value": 1.4
+      }
+    ],
+    "russia-voronezh-oblast": [
+      {
+        "year": 2022,
+        "value": 1.24
+      }
+    ],
+    "russia-orenburg-oblast": [
+      {
+        "year": 2022,
+        "value": 1.48
+      }
+    ],
+    "russia-omsk-oblast": [
+      {
+        "year": 2022,
+        "value": 1.39
+      }
+    ],
+    "russia-primorsky-krai": [
+      {
+        "year": 2022,
+        "value": 1.34
+      }
+    ],
+    "russia-leningrad-oblast": [
+      {
+        "year": 2022,
+        "value": 1.11
+      }
+    ],
+    "russia-khanty-mansi": [
+      {
+        "year": 2022,
+        "value": 1.78
+      }
+    ],
+    "russia-chechnya": [
+      {
+        "year": 2022,
+        "value": 2.72
+      }
+    ],
+    "russia-sakha": [
+      {
+        "year": 2022,
+        "value": 1.98
+      }
+    ],
+    "united-states-alabama": [
+      {
+        "year": 2023,
+        "value": 1.734
+      }
+    ],
+    "united-states-alaska": [
+      {
+        "year": 2023,
+        "value": 0.027
+      }
+    ],
+    "united-states-arizona": [
+      {
+        "year": 2023,
+        "value": 1.602
+      }
+    ],
+    "united-states-arkansas": [
+      {
+        "year": 2023,
+        "value": 1.775
+      }
+    ],
+    "united-states-california": [
+      {
+        "year": 2023,
+        "value": 1.48
+      }
+    ],
+    "united-states-colorado": [
+      {
+        "year": 2023,
+        "value": 1.454
+      }
+    ],
+    "united-states-connecticut": [
+      {
+        "year": 2023,
+        "value": 1.517
+      }
+    ],
+    "united-states-delaware": [
+      {
+        "year": 2023,
+        "value": 1.633
+      }
+    ],
+    "united-states-district-of-columbia": [
+      {
+        "year": 2023,
+        "value": 1.197
+      }
+    ],
+    "united-states-florida": [
+      {
+        "year": 2023,
+        "value": 1.601
+      }
+    ],
+    "united-states-georgia": [
+      {
+        "year": 2023,
+        "value": 1.645
+      }
+    ],
+    "united-states-hawaii": [
+      {
+        "year": 2023,
+        "value": 1.681
+      }
+    ],
+    "united-states-idaho": [
+      {
+        "year": 2023,
+        "value": 1.793
+      }
+    ],
+    "united-states-illinois": [
+      {
+        "year": 2023,
+        "value": 1.502
+      }
+    ],
+    "united-states-indiana": [
+      {
+        "year": 2023,
+        "value": 1.765
+      }
+    ],
+    "united-states-iowa": [
+      {
+        "year": 2023,
+        "value": 1.813
+      }
+    ],
+    "united-states-kansas": [
+      {
+        "year": 2023,
+        "value": 1.812
+      }
+    ],
+    "united-states-kentucky": [
+      {
+        "year": 2023,
+        "value": 1.804
+      }
+    ],
+    "united-states-louisiana": [
+      {
+        "year": 2023,
+        "value": 1.829
+      }
+    ],
+    "united-states-maine": [
+      {
+        "year": 2023,
+        "value": 0.01
+      }
+    ],
+    "united-states-maryland": [
+      {
+        "year": 2023,
+        "value": 1.614
+      }
+    ],
+    "united-states-massachusetts": [
+      {
+        "year": 2023,
+        "value": 1.395
+      }
+    ],
+    "united-states-michigan": [
+      {
+        "year": 2023,
+        "value": 1.548
+      }
+    ],
+    "united-states-minnesota": [
+      {
+        "year": 2023,
+        "value": 1.687
+      }
+    ],
+    "united-states-mississippi": [
+      {
+        "year": 2023,
+        "value": 1.792
+      }
+    ],
+    "united-states-missouri": [
+      {
+        "year": 2023,
+        "value": 1.669
+      }
+    ],
+    "united-states-montana": [
+      {
+        "year": 2023,
+        "value": 1.556
+      }
+    ],
+    "united-states-nebraska": [
+      {
+        "year": 2023,
+        "value": 1.913
+      }
+    ],
+    "united-states-nevada": [
+      {
+        "year": 2023,
+        "value": 1.499
+      }
+    ],
+    "united-states-new-hampshire": [
+      {
+        "year": 2023,
+        "value": 0.019
+      }
+    ],
+    "united-states-new-jersey": [
+      {
+        "year": 2023,
+        "value": 1.704
+      }
+    ],
+    "united-states-new-mexico": [
+      {
+        "year": 2023,
+        "value": 1.551
+      }
+    ],
+    "united-states-new-york": [
+      {
+        "year": 2023,
+        "value": 1.532
+      }
+    ],
+    "united-states-north-carolina": [
+      {
+        "year": 2023,
+        "value": 1.663
+      }
+    ],
+    "united-states-north-dakota": [
+      {
+        "year": 2023,
+        "value": 0.014
+      }
+    ],
+    "united-states-ohio": [
+      {
+        "year": 2023,
+        "value": 1.678
+      }
+    ],
+    "united-states-oklahoma": [
+      {
+        "year": 2023,
+        "value": 1.776
+      }
+    ],
+    "united-states-oregon": [
+      {
+        "year": 2023,
+        "value": 1.352
+      }
+    ],
+    "united-states-pennsylvania": [
+      {
+        "year": 2023,
+        "value": 1.55
+      }
+    ],
+    "united-states-rhode-island": [
+      {
+        "year": 2023,
+        "value": 1.336
+      }
+    ],
+    "united-states-south-carolina": [
+      {
+        "year": 2023,
+        "value": 1.672
+      }
+    ],
+    "united-states-south-dakota": [
+      {
+        "year": 2023,
+        "value": 0.017
+      }
+    ],
+    "united-states-tennessee": [
+      {
+        "year": 2023,
+        "value": 1.733
+      }
+    ],
+    "united-states-texas": [
+      {
+        "year": 2023,
+        "value": 1.813
+      }
+    ],
+    "united-states-utah": [
+      {
+        "year": 2023,
+        "value": 1.8
+      }
+    ],
+    "united-states-vermont": [
+      {
+        "year": 2023,
+        "value": 1.287
+      }
+    ],
+    "united-states-virginia": [
+      {
+        "year": 2023,
+        "value": 0.011
+      }
+    ],
+    "united-states-washington": [
+      {
+        "year": 2023,
+        "value": 1.486
+      }
+    ],
+    "united-states-west-virginia": [
+      {
+        "year": 2023,
+        "value": 0.011
+      }
+    ],
+    "united-states-wisconsin": [
+      {
+        "year": 2023,
+        "value": 1.628
+      }
+    ],
+    "united-states-wyoming": [
+      {
+        "year": 2023,
+        "value": 1.683
+      }
+    ]
+  },
+  "population": {
+    "germany-baden-wurttemberg": [
+      {
+        "year": 1990,
+        "value": 9618706
+      },
+      {
+        "year": 1991,
+        "value": 9822049
+      },
+      {
+        "year": 1992,
+        "value": 10001843
+      },
+      {
+        "year": 1993,
+        "value": 10148709
+      },
+      {
+        "year": 1994,
+        "value": 10234033
+      },
+      {
+        "year": 1995,
+        "value": 10272069
+      },
+      {
+        "year": 1996,
+        "value": 10319367
+      },
+      {
+        "year": 1997,
+        "value": 10374505
+      },
+      {
+        "year": 1998,
+        "value": 10396610
+      },
+      {
+        "year": 1999,
+        "value": 10426040
+      },
+      {
+        "year": 2000,
+        "value": 10475932
+      },
+      {
+        "year": 2001,
+        "value": 10524415
+      },
+      {
+        "year": 2002,
+        "value": 10600906
+      },
+      {
+        "year": 2003,
+        "value": 10661320
+      },
+      {
+        "year": 2004,
+        "value": 10692556
+      },
+      {
+        "year": 2005,
+        "value": 10717419
+      },
+      {
+        "year": 2006,
+        "value": 10735701
+      },
+      {
+        "year": 2007,
+        "value": 10738753
+      },
+      {
+        "year": 2008,
+        "value": 10749755
+      },
+      {
+        "year": 2009,
+        "value": 10749506
+      },
+      {
+        "year": 2010,
+        "value": 10744921
+      },
+      {
+        "year": 2011,
+        "value": 10478505
+      },
+      {
+        "year": 2012,
+        "value": 10512441
+      },
+      {
+        "year": 2014,
+        "value": 10631278
+      },
+      {
+        "year": 2015,
+        "value": 10716644
+      },
+      {
+        "year": 2016,
+        "value": 10879618
+      },
+      {
+        "year": 2017,
+        "value": 10951893
+      },
+      {
+        "year": 2018,
+        "value": 11023425
+      },
+      {
+        "year": 2019,
+        "value": 11069533
+      },
+      {
+        "year": 2020,
+        "value": 11100394
+      },
+      {
+        "year": 2021,
+        "value": 11103043
+      },
+      {
+        "year": 2022,
+        "value": 11124642
+      },
+      {
+        "year": 2023,
+        "value": 11167721
+      },
+      {
+        "year": 2024,
+        "value": 11230740
+      },
+      {
+        "year": 2025,
+        "value": 11245898
+      }
+    ],
+    "germany-bavaria": [
+      {
+        "year": 1990,
+        "value": 11220738
+      },
+      {
+        "year": 1991,
+        "value": 11448899
+      },
+      {
+        "year": 1992,
+        "value": 11595971
+      },
+      {
+        "year": 1993,
+        "value": 11770287
+      },
+      {
+        "year": 1994,
+        "value": 11863353
+      },
+      {
+        "year": 1995,
+        "value": 11921944
+      },
+      {
+        "year": 1996,
+        "value": 11993484
+      },
+      {
+        "year": 1997,
+        "value": 12043869
+      },
+      {
+        "year": 1998,
+        "value": 12066375
+      },
+      {
+        "year": 1999,
+        "value": 12086548
+      },
+      {
+        "year": 2000,
+        "value": 12154967
+      },
+      {
+        "year": 2001,
+        "value": 12230255
+      },
+      {
+        "year": 2002,
+        "value": 12329714
+      },
+      {
+        "year": 2003,
+        "value": 12387351
+      },
+      {
+        "year": 2004,
+        "value": 12423386
+      },
+      {
+        "year": 2005,
+        "value": 12443893
+      },
+      {
+        "year": 2006,
+        "value": 12468726
+      },
+      {
+        "year": 2007,
+        "value": 12492658
+      },
+      {
+        "year": 2008,
+        "value": 12520332
+      },
+      {
+        "year": 2009,
+        "value": 12519728
+      },
+      {
+        "year": 2010,
+        "value": 12510331
+      },
+      {
+        "year": 2011,
+        "value": 12383404
+      },
+      {
+        "year": 2012,
+        "value": 12443372
+      },
+      {
+        "year": 2014,
+        "value": 12604244
+      },
+      {
+        "year": 2015,
+        "value": 12691568
+      },
+      {
+        "year": 2016,
+        "value": 12843514
+      },
+      {
+        "year": 2017,
+        "value": 12930751
+      },
+      {
+        "year": 2018,
+        "value": 12997204
+      },
+      {
+        "year": 2019,
+        "value": 13076721
+      },
+      {
+        "year": 2020,
+        "value": 13124737
+      },
+      {
+        "year": 2021,
+        "value": 13140183
+      },
+      {
+        "year": 2022,
+        "value": 13176989
+      },
+      {
+        "year": 2023,
+        "value": 13105221
+      },
+      {
+        "year": 2024,
+        "value": 13176426
+      },
+      {
+        "year": 2025,
+        "value": 13248928
+      }
+    ],
+    "germany-berlin": [
+      {
+        "year": 1990,
+        "value": 3400426
+      },
+      {
+        "year": 1991,
+        "value": 3433693
+      },
+      {
+        "year": 1992,
+        "value": 3446026
+      },
+      {
+        "year": 1993,
+        "value": 3465751
+      },
+      {
+        "year": 1994,
+        "value": 3475386
+      },
+      {
+        "year": 1995,
+        "value": 3472009
+      },
+      {
+        "year": 1996,
+        "value": 3471418
+      },
+      {
+        "year": 1997,
+        "value": 3458763
+      },
+      {
+        "year": 1998,
+        "value": 3425759
+      },
+      {
+        "year": 1999,
+        "value": 3398822
+      },
+      {
+        "year": 2000,
+        "value": 3386667
+      },
+      {
+        "year": 2001,
+        "value": 3382169
+      },
+      {
+        "year": 2002,
+        "value": 3388434
+      },
+      {
+        "year": 2003,
+        "value": 3392425
+      },
+      {
+        "year": 2004,
+        "value": 3388477
+      },
+      {
+        "year": 2005,
+        "value": 3387828
+      },
+      {
+        "year": 2006,
+        "value": 3395189
+      },
+      {
+        "year": 2007,
+        "value": 3404037
+      },
+      {
+        "year": 2008,
+        "value": 3416255
+      },
+      {
+        "year": 2009,
+        "value": 3431675
+      },
+      {
+        "year": 2010,
+        "value": 3442675
+      },
+      {
+        "year": 2011,
+        "value": 3278346
+      },
+      {
+        "year": 2012,
+        "value": 3326002
+      },
+      {
+        "year": 2014,
+        "value": 3421829
+      },
+      {
+        "year": 2015,
+        "value": 3469849
+      },
+      {
+        "year": 2016,
+        "value": 3520031
+      },
+      {
+        "year": 2017,
+        "value": 3574830
+      },
+      {
+        "year": 2018,
+        "value": 3613495
+      },
+      {
+        "year": 2019,
+        "value": 3644826
+      },
+      {
+        "year": 2020,
+        "value": 3669491
+      },
+      {
+        "year": 2021,
+        "value": 3664088
+      },
+      {
+        "year": 2022,
+        "value": 3677472
+      },
+      {
+        "year": 2023,
+        "value": 3632853
+      },
+      {
+        "year": 2024,
+        "value": 3662381
+      },
+      {
+        "year": 2025,
+        "value": 3685265
+      }
+    ],
+    "germany-brandenburg": [
+      {
+        "year": 1990,
+        "value": 2641152
+      },
+      {
+        "year": 1991,
+        "value": 2578298
+      },
+      {
+        "year": 1992,
+        "value": 2542645
+      },
+      {
+        "year": 1993,
+        "value": 2542642
+      },
+      {
+        "year": 1994,
+        "value": 2537605
+      },
+      {
+        "year": 1995,
+        "value": 2536747
+      },
+      {
+        "year": 1996,
+        "value": 2542042
+      },
+      {
+        "year": 1997,
+        "value": 2554441
+      },
+      {
+        "year": 1998,
+        "value": 2573291
+      },
+      {
+        "year": 1999,
+        "value": 2590375
+      },
+      {
+        "year": 2000,
+        "value": 2601207
+      },
+      {
+        "year": 2001,
+        "value": 2601962
+      },
+      {
+        "year": 2002,
+        "value": 2593040
+      },
+      {
+        "year": 2003,
+        "value": 2582379
+      },
+      {
+        "year": 2004,
+        "value": 2574521
+      },
+      {
+        "year": 2005,
+        "value": 2567704
+      },
+      {
+        "year": 2006,
+        "value": 2559483
+      },
+      {
+        "year": 2007,
+        "value": 2547772
+      },
+      {
+        "year": 2008,
+        "value": 2535737
+      },
+      {
+        "year": 2009,
+        "value": 2522493
+      },
+      {
+        "year": 2010,
+        "value": 2511525
+      },
+      {
+        "year": 2011,
+        "value": 2461242
+      },
+      {
+        "year": 2012,
+        "value": 2453180
+      },
+      {
+        "year": 2014,
+        "value": 2449193
+      },
+      {
+        "year": 2015,
+        "value": 2457872
+      },
+      {
+        "year": 2016,
+        "value": 2484826
+      },
+      {
+        "year": 2017,
+        "value": 2494648
+      },
+      {
+        "year": 2018,
+        "value": 2504040
+      },
+      {
+        "year": 2019,
+        "value": 2511917
+      },
+      {
+        "year": 2020,
+        "value": 2521893
+      },
+      {
+        "year": 2021,
+        "value": 2531071
+      },
+      {
+        "year": 2022,
+        "value": 2537868
+      },
+      {
+        "year": 2023,
+        "value": 2545159
+      },
+      {
+        "year": 2024,
+        "value": 2554464
+      },
+      {
+        "year": 2025,
+        "value": 2556747
+      }
+    ],
+    "germany-bremen": [
+      {
+        "year": 1990,
+        "value": 673680
+      },
+      {
+        "year": 1991,
+        "value": 681648
+      },
+      {
+        "year": 1992,
+        "value": 683694
+      },
+      {
+        "year": 1993,
+        "value": 685840
+      },
+      {
+        "year": 1994,
+        "value": 683097
+      },
+      {
+        "year": 1995,
+        "value": 680029
+      },
+      {
+        "year": 1996,
+        "value": 679757
+      },
+      {
+        "year": 1997,
+        "value": 677770
+      },
+      {
+        "year": 1998,
+        "value": 673883
+      },
+      {
+        "year": 1999,
+        "value": 667965
+      },
+      {
+        "year": 2000,
+        "value": 663065
+      },
+      {
+        "year": 2001,
+        "value": 660225
+      },
+      {
+        "year": 2002,
+        "value": 659651
+      },
+      {
+        "year": 2003,
+        "value": 662098
+      },
+      {
+        "year": 2004,
+        "value": 663129
+      },
+      {
+        "year": 2005,
+        "value": 663213
+      },
+      {
+        "year": 2006,
+        "value": 663467
+      },
+      {
+        "year": 2007,
+        "value": 663979
+      },
+      {
+        "year": 2008,
+        "value": 663082
+      },
+      {
+        "year": 2009,
+        "value": 661866
+      },
+      {
+        "year": 2010,
+        "value": 661716
+      },
+      {
+        "year": 2011,
+        "value": 651467
+      },
+      {
+        "year": 2012,
+        "value": 652182
+      },
+      {
+        "year": 2014,
+        "value": 657391
+      },
+      {
+        "year": 2015,
+        "value": 661888
+      },
+      {
+        "year": 2016,
+        "value": 671489
+      },
+      {
+        "year": 2017,
+        "value": 678753
+      },
+      {
+        "year": 2018,
+        "value": 681032
+      },
+      {
+        "year": 2019,
+        "value": 682986
+      },
+      {
+        "year": 2020,
+        "value": 681202
+      },
+      {
+        "year": 2021,
+        "value": 680130
+      },
+      {
+        "year": 2022,
+        "value": 676463
+      },
+      {
+        "year": 2023,
+        "value": 695758
+      },
+      {
+        "year": 2024,
+        "value": 702655
+      },
+      {
+        "year": 2025,
+        "value": 704881
+      }
+    ],
+    "germany-hamburg": [
+      {
+        "year": 1990,
+        "value": 1626222
+      },
+      {
+        "year": 1991,
+        "value": 1652360
+      },
+      {
+        "year": 1992,
+        "value": 1668758
+      },
+      {
+        "year": 1993,
+        "value": 1688789
+      },
+      {
+        "year": 1994,
+        "value": 1702889
+      },
+      {
+        "year": 1995,
+        "value": 1705872
+      },
+      {
+        "year": 1996,
+        "value": 1707901
+      },
+      {
+        "year": 1997,
+        "value": 1707986
+      },
+      {
+        "year": 1998,
+        "value": 1704731
+      },
+      {
+        "year": 1999,
+        "value": 1700089
+      },
+      {
+        "year": 2000,
+        "value": 1704735
+      },
+      {
+        "year": 2001,
+        "value": 1715392
+      },
+      {
+        "year": 2002,
+        "value": 1726363
+      },
+      {
+        "year": 2003,
+        "value": 1728806
+      },
+      {
+        "year": 2004,
+        "value": 1734083
+      },
+      {
+        "year": 2005,
+        "value": 1734830
+      },
+      {
+        "year": 2006,
+        "value": 1743627
+      },
+      {
+        "year": 2007,
+        "value": 1754182
+      },
+      {
+        "year": 2008,
+        "value": 1770629
+      },
+      {
+        "year": 2009,
+        "value": 1772100
+      },
+      {
+        "year": 2010,
+        "value": 1774224
+      },
+      {
+        "year": 2011,
+        "value": 1705700
+      },
+      {
+        "year": 2012,
+        "value": 1718187
+      },
+      {
+        "year": 2014,
+        "value": 1746342
+      },
+      {
+        "year": 2015,
+        "value": 1762791
+      },
+      {
+        "year": 2016,
+        "value": 1787408
+      },
+      {
+        "year": 2017,
+        "value": 1810438
+      },
+      {
+        "year": 2018,
+        "value": 1830584
+      },
+      {
+        "year": 2019,
+        "value": 1841179
+      },
+      {
+        "year": 2020,
+        "value": 1847253
+      },
+      {
+        "year": 2021,
+        "value": 1852478
+      },
+      {
+        "year": 2022,
+        "value": 1853935
+      },
+      {
+        "year": 2023,
+        "value": 1832675
+      },
+      {
+        "year": 2024,
+        "value": 1851596
+      },
+      {
+        "year": 2025,
+        "value": 1862565
+      }
+    ],
+    "germany-hesse": [
+      {
+        "year": 1990,
+        "value": 5660620
+      },
+      {
+        "year": 1991,
+        "value": 5763293
+      },
+      {
+        "year": 1992,
+        "value": 5837339
+      },
+      {
+        "year": 1993,
+        "value": 5922678
+      },
+      {
+        "year": 1994,
+        "value": 5967329
+      },
+      {
+        "year": 1995,
+        "value": 5980693
+      },
+      {
+        "year": 1996,
+        "value": 6009913
+      },
+      {
+        "year": 1997,
+        "value": 6027284
+      },
+      {
+        "year": 1998,
+        "value": 6031705
+      },
+      {
+        "year": 1999,
+        "value": 6035137
+      },
+      {
+        "year": 2000,
+        "value": 6051966
+      },
+      {
+        "year": 2001,
+        "value": 6068129
+      },
+      {
+        "year": 2002,
+        "value": 6077826
+      },
+      {
+        "year": 2003,
+        "value": 6091618
+      },
+      {
+        "year": 2004,
+        "value": 6089428
+      },
+      {
+        "year": 2005,
+        "value": 6097765
+      },
+      {
+        "year": 2006,
+        "value": 6092354
+      },
+      {
+        "year": 2007,
+        "value": 6075359
+      },
+      {
+        "year": 2008,
+        "value": 6072555
+      },
+      {
+        "year": 2009,
+        "value": 6064953
+      },
+      {
+        "year": 2010,
+        "value": 6061951
+      },
+      {
+        "year": 2011,
+        "value": 5969408
+      },
+      {
+        "year": 2012,
+        "value": 5993771
+      },
+      {
+        "year": 2014,
+        "value": 6045425
+      },
+      {
+        "year": 2015,
+        "value": 6093888
+      },
+      {
+        "year": 2016,
+        "value": 6176172
+      },
+      {
+        "year": 2017,
+        "value": 6213088
+      },
+      {
+        "year": 2018,
+        "value": 6243262
+      },
+      {
+        "year": 2019,
+        "value": 6265809
+      },
+      {
+        "year": 2020,
+        "value": 6288080
+      },
+      {
+        "year": 2021,
+        "value": 6293154
+      },
+      {
+        "year": 2022,
+        "value": 6295017
+      },
+      {
+        "year": 2023,
+        "value": 6236933
+      },
+      {
+        "year": 2024,
+        "value": 6267546
+      },
+      {
+        "year": 2025,
+        "value": 6280793
+      }
+    ],
+    "germany-mecklenburg-western-pomerania": [
+      {
+        "year": 1990,
+        "value": 1963909
+      },
+      {
+        "year": 1991,
+        "value": 1923918
+      },
+      {
+        "year": 1992,
+        "value": 1891685
+      },
+      {
+        "year": 1993,
+        "value": 1864971
+      },
+      {
+        "year": 1994,
+        "value": 1843474
+      },
+      {
+        "year": 1995,
+        "value": 1832298
+      },
+      {
+        "year": 1996,
+        "value": 1823084
+      },
+      {
+        "year": 1997,
+        "value": 1817196
+      },
+      {
+        "year": 1998,
+        "value": 1807799
+      },
+      {
+        "year": 1999,
+        "value": 1798689
+      },
+      {
+        "year": 2000,
+        "value": 1789322
+      },
+      {
+        "year": 2001,
+        "value": 1775703
+      },
+      {
+        "year": 2002,
+        "value": 1759877
+      },
+      {
+        "year": 2003,
+        "value": 1744624
+      },
+      {
+        "year": 2004,
+        "value": 1732226
+      },
+      {
+        "year": 2005,
+        "value": 1719653
+      },
+      {
+        "year": 2006,
+        "value": 1707266
+      },
+      {
+        "year": 2007,
+        "value": 1693754
+      },
+      {
+        "year": 2008,
+        "value": 1679682
+      },
+      {
+        "year": 2009,
+        "value": 1664356
+      },
+      {
+        "year": 2010,
+        "value": 1651216
+      },
+      {
+        "year": 2011,
+        "value": 1614789
+      },
+      {
+        "year": 2012,
+        "value": 1606899
+      },
+      {
+        "year": 2014,
+        "value": 1596505
+      },
+      {
+        "year": 2015,
+        "value": 1599138
+      },
+      {
+        "year": 2016,
+        "value": 1612362
+      },
+      {
+        "year": 2017,
+        "value": 1610674
+      },
+      {
+        "year": 2018,
+        "value": 1611119
+      },
+      {
+        "year": 2019,
+        "value": 1609675
+      },
+      {
+        "year": 2020,
+        "value": 1608138
+      },
+      {
+        "year": 2021,
+        "value": 1610774
+      },
+      {
+        "year": 2022,
+        "value": 1611160
+      },
+      {
+        "year": 2023,
+        "value": 1576049
+      },
+      {
+        "year": 2024,
+        "value": 1578041
+      },
+      {
+        "year": 2025,
+        "value": 1573597
+      }
+    ],
+    "germany-lower-saxony": [
+      {
+        "year": 1990,
+        "value": 7283800
+      },
+      {
+        "year": 1991,
+        "value": 7387257
+      },
+      {
+        "year": 1992,
+        "value": 7475809
+      },
+      {
+        "year": 1993,
+        "value": 7577531
+      },
+      {
+        "year": 1994,
+        "value": 7647994
+      },
+      {
+        "year": 1995,
+        "value": 7715363
+      },
+      {
+        "year": 1996,
+        "value": 7780422
+      },
+      {
+        "year": 1997,
+        "value": 7815148
+      },
+      {
+        "year": 1998,
+        "value": 7845398
+      },
+      {
+        "year": 1999,
+        "value": 7865840
+      },
+      {
+        "year": 2000,
+        "value": 7898760
+      },
+      {
+        "year": 2001,
+        "value": 7926193
+      },
+      {
+        "year": 2002,
+        "value": 7956416
+      },
+      {
+        "year": 2003,
+        "value": 7980472
+      },
+      {
+        "year": 2004,
+        "value": 7993415
+      },
+      {
+        "year": 2005,
+        "value": 8000909
+      },
+      {
+        "year": 2006,
+        "value": 7993946
+      },
+      {
+        "year": 2007,
+        "value": 7982685
+      },
+      {
+        "year": 2008,
+        "value": 7971684
+      },
+      {
+        "year": 2009,
+        "value": 7947244
+      },
+      {
+        "year": 2010,
+        "value": 7928815
+      },
+      {
+        "year": 2011,
+        "value": 7778828
+      },
+      {
+        "year": 2012,
+        "value": 7774253
+      },
+      {
+        "year": 2014,
+        "value": 7790559
+      },
+      {
+        "year": 2015,
+        "value": 7826739
+      },
+      {
+        "year": 2016,
+        "value": 7926599
+      },
+      {
+        "year": 2017,
+        "value": 7945685
+      },
+      {
+        "year": 2018,
+        "value": 7962775
+      },
+      {
+        "year": 2019,
+        "value": 7982448
+      },
+      {
+        "year": 2020,
+        "value": 7993608
+      },
+      {
+        "year": 2021,
+        "value": 8003421
+      },
+      {
+        "year": 2022,
+        "value": 8027031
+      },
+      {
+        "year": 2023,
+        "value": 7982947
+      },
+      {
+        "year": 2024,
+        "value": 8008135
+      },
+      {
+        "year": 2025,
+        "value": 8004489
+      }
+    ],
+    "germany-north-rhine-westphalia": [
+      {
+        "year": 1990,
+        "value": 17103584
+      },
+      {
+        "year": 1991,
+        "value": 17349613
+      },
+      {
+        "year": 1992,
+        "value": 17509873
+      },
+      {
+        "year": 1993,
+        "value": 17679174
+      },
+      {
+        "year": 1994,
+        "value": 17759313
+      },
+      {
+        "year": 1995,
+        "value": 17816079
+      },
+      {
+        "year": 1996,
+        "value": 17893045
+      },
+      {
+        "year": 1997,
+        "value": 17947715
+      },
+      {
+        "year": 1998,
+        "value": 17974487
+      },
+      {
+        "year": 1999,
+        "value": 17975516
+      },
+      {
+        "year": 2000,
+        "value": 17999800
+      },
+      {
+        "year": 2001,
+        "value": 18009865
+      },
+      {
+        "year": 2002,
+        "value": 18052092
+      },
+      {
+        "year": 2003,
+        "value": 18076355
+      },
+      {
+        "year": 2004,
+        "value": 18079686
+      },
+      {
+        "year": 2005,
+        "value": 18075352
+      },
+      {
+        "year": 2006,
+        "value": 18058105
+      },
+      {
+        "year": 2007,
+        "value": 18028745
+      },
+      {
+        "year": 2008,
+        "value": 17996621
+      },
+      {
+        "year": 2009,
+        "value": 17933064
+      },
+      {
+        "year": 2010,
+        "value": 17872763
+      },
+      {
+        "year": 2011,
+        "value": 17545192
+      },
+      {
+        "year": 2012,
+        "value": 17544938
+      },
+      {
+        "year": 2014,
+        "value": 17571856
+      },
+      {
+        "year": 2015,
+        "value": 17638098
+      },
+      {
+        "year": 2016,
+        "value": 17865516
+      },
+      {
+        "year": 2017,
+        "value": 17890100
+      },
+      {
+        "year": 2018,
+        "value": 17912134
+      },
+      {
+        "year": 2019,
+        "value": 17932651
+      },
+      {
+        "year": 2020,
+        "value": 17947221
+      },
+      {
+        "year": 2021,
+        "value": 17925570
+      },
+      {
+        "year": 2022,
+        "value": 17924591
+      },
+      {
+        "year": 2023,
+        "value": 17964420
+      },
+      {
+        "year": 2024,
+        "value": 18017520
+      },
+      {
+        "year": 2025,
+        "value": 18034454
+      }
+    ],
+    "germany-rhineland-palatinate": [
+      {
+        "year": 1990,
+        "value": 3701657
+      },
+      {
+        "year": 1991,
+        "value": 3763534
+      },
+      {
+        "year": 1992,
+        "value": 3821258
+      },
+      {
+        "year": 1993,
+        "value": 3880951
+      },
+      {
+        "year": 1994,
+        "value": 3925858
+      },
+      {
+        "year": 1995,
+        "value": 3951573
+      },
+      {
+        "year": 1996,
+        "value": 3977919
+      },
+      {
+        "year": 1997,
+        "value": 4000567
+      },
+      {
+        "year": 1998,
+        "value": 4017828
+      },
+      {
+        "year": 1999,
+        "value": 4024969
+      },
+      {
+        "year": 2000,
+        "value": 4030773
+      },
+      {
+        "year": 2001,
+        "value": 4034557
+      },
+      {
+        "year": 2002,
+        "value": 4049066
+      },
+      {
+        "year": 2003,
+        "value": 4057727
+      },
+      {
+        "year": 2004,
+        "value": 4058682
+      },
+      {
+        "year": 2005,
+        "value": 4061105
+      },
+      {
+        "year": 2006,
+        "value": 4058843
+      },
+      {
+        "year": 2007,
+        "value": 4052860
+      },
+      {
+        "year": 2008,
+        "value": 4045643
+      },
+      {
+        "year": 2009,
+        "value": 4028351
+      },
+      {
+        "year": 2010,
+        "value": 4012675
+      },
+      {
+        "year": 2011,
+        "value": 3994185
+      },
+      {
+        "year": 2012,
+        "value": 3990033
+      },
+      {
+        "year": 2014,
+        "value": 3994366
+      },
+      {
+        "year": 2015,
+        "value": 4011582
+      },
+      {
+        "year": 2016,
+        "value": 4052803
+      },
+      {
+        "year": 2017,
+        "value": 4066053
+      },
+      {
+        "year": 2018,
+        "value": 4073679
+      },
+      {
+        "year": 2019,
+        "value": 4084844
+      },
+      {
+        "year": 2020,
+        "value": 4093903
+      },
+      {
+        "year": 2021,
+        "value": 4098391
+      },
+      {
+        "year": 2022,
+        "value": 4106485
+      },
+      {
+        "year": 2023,
+        "value": 4108555
+      },
+      {
+        "year": 2024,
+        "value": 4125163
+      },
+      {
+        "year": 2025,
+        "value": 4129569
+      }
+    ],
+    "germany-saarland": [
+      {
+        "year": 1990,
+        "value": 1064907
+      },
+      {
+        "year": 1991,
+        "value": 1072960
+      },
+      {
+        "year": 1992,
+        "value": 1076882
+      },
+      {
+        "year": 1993,
+        "value": 1084015
+      },
+      {
+        "year": 1994,
+        "value": 1084517
+      },
+      {
+        "year": 1995,
+        "value": 1084201
+      },
+      {
+        "year": 1996,
+        "value": 1084370
+      },
+      {
+        "year": 1997,
+        "value": 1084184
+      },
+      {
+        "year": 1998,
+        "value": 1080790
+      },
+      {
+        "year": 1999,
+        "value": 1074223
+      },
+      {
+        "year": 2000,
+        "value": 1071501
+      },
+      {
+        "year": 2001,
+        "value": 1068703
+      },
+      {
+        "year": 2002,
+        "value": 1066470
+      },
+      {
+        "year": 2003,
+        "value": 1064988
+      },
+      {
+        "year": 2004,
+        "value": 1061376
+      },
+      {
+        "year": 2005,
+        "value": 1056417
+      },
+      {
+        "year": 2006,
+        "value": 1050293
+      },
+      {
+        "year": 2007,
+        "value": 1043167
+      },
+      {
+        "year": 2008,
+        "value": 1036598
+      },
+      {
+        "year": 2009,
+        "value": 1030324
+      },
+      {
+        "year": 2010,
+        "value": 1022585
+      },
+      {
+        "year": 2011,
+        "value": 1001879
+      },
+      {
+        "year": 2012,
+        "value": 997855
+      },
+      {
+        "year": 2014,
+        "value": 990718
+      },
+      {
+        "year": 2015,
+        "value": 989035
+      },
+      {
+        "year": 2016,
+        "value": 995597
+      },
+      {
+        "year": 2017,
+        "value": 996651
+      },
+      {
+        "year": 2018,
+        "value": 994187
+      },
+      {
+        "year": 2019,
+        "value": 990509
+      },
+      {
+        "year": 2020,
+        "value": 986887
+      },
+      {
+        "year": 2021,
+        "value": 983991
+      },
+      {
+        "year": 2022,
+        "value": 982348
+      },
+      {
+        "year": 2023,
+        "value": 1011891
+      },
+      {
+        "year": 2024,
+        "value": 1014047
+      },
+      {
+        "year": 2025,
+        "value": 1012141
+      }
+    ],
+    "germany-saxony": [
+      {
+        "year": 1990,
+        "value": 4900675
+      },
+      {
+        "year": 1991,
+        "value": 4764273
+      },
+      {
+        "year": 1992,
+        "value": 4678911
+      },
+      {
+        "year": 1993,
+        "value": 4640979
+      },
+      {
+        "year": 1994,
+        "value": 4607643
+      },
+      {
+        "year": 1995,
+        "value": 4584345
+      },
+      {
+        "year": 1996,
+        "value": 4566603
+      },
+      {
+        "year": 1997,
+        "value": 4545702
+      },
+      {
+        "year": 1998,
+        "value": 4522412
+      },
+      {
+        "year": 1999,
+        "value": 4489415
+      },
+      {
+        "year": 2000,
+        "value": 4459686
+      },
+      {
+        "year": 2001,
+        "value": 4425581
+      },
+      {
+        "year": 2002,
+        "value": 4384192
+      },
+      {
+        "year": 2003,
+        "value": 4349059
+      },
+      {
+        "year": 2004,
+        "value": 4321437
+      },
+      {
+        "year": 2005,
+        "value": 4296284
+      },
+      {
+        "year": 2006,
+        "value": 4273754
+      },
+      {
+        "year": 2007,
+        "value": 4249774
+      },
+      {
+        "year": 2008,
+        "value": 4220200
+      },
+      {
+        "year": 2009,
+        "value": 4192801
+      },
+      {
+        "year": 2010,
+        "value": 4168732
+      },
+      {
+        "year": 2011,
+        "value": 4066256
+      },
+      {
+        "year": 2012,
+        "value": 4054182
+      },
+      {
+        "year": 2014,
+        "value": 4046385
+      },
+      {
+        "year": 2015,
+        "value": 4055274
+      },
+      {
+        "year": 2016,
+        "value": 4084851
+      },
+      {
+        "year": 2017,
+        "value": 4081783
+      },
+      {
+        "year": 2018,
+        "value": 4081308
+      },
+      {
+        "year": 2019,
+        "value": 4077937
+      },
+      {
+        "year": 2020,
+        "value": 4071971
+      },
+      {
+        "year": 2021,
+        "value": 4056941
+      },
+      {
+        "year": 2022,
+        "value": 4043002
+      },
+      {
+        "year": 2023,
+        "value": 4049967
+      },
+      {
+        "year": 2024,
+        "value": 4054689
+      },
+      {
+        "year": 2025,
+        "value": 4042422
+      }
+    ],
+    "germany-saxony-anhalt": [
+      {
+        "year": 1990,
+        "value": 2964971
+      },
+      {
+        "year": 1991,
+        "value": 2873919
+      },
+      {
+        "year": 1992,
+        "value": 2823307
+      },
+      {
+        "year": 1993,
+        "value": 2796969
+      },
+      {
+        "year": 1994,
+        "value": 2777949
+      },
+      {
+        "year": 1995,
+        "value": 2759213
+      },
+      {
+        "year": 1996,
+        "value": 2738928
+      },
+      {
+        "year": 1997,
+        "value": 2723620
+      },
+      {
+        "year": 1998,
+        "value": 2701690
+      },
+      {
+        "year": 1999,
+        "value": 2674490
+      },
+      {
+        "year": 2000,
+        "value": 2648737
+      },
+      {
+        "year": 2001,
+        "value": 2615375
+      },
+      {
+        "year": 2002,
+        "value": 2580626
+      },
+      {
+        "year": 2003,
+        "value": 2548911
+      },
+      {
+        "year": 2004,
+        "value": 2522941
+      },
+      {
+        "year": 2005,
+        "value": 2494437
+      },
+      {
+        "year": 2006,
+        "value": 2469716
+      },
+      {
+        "year": 2007,
+        "value": 2441787
+      },
+      {
+        "year": 2008,
+        "value": 2412472
+      },
+      {
+        "year": 2009,
+        "value": 2381872
+      },
+      {
+        "year": 2010,
+        "value": 2356219
+      },
+      {
+        "year": 2011,
+        "value": 2297386
+      },
+      {
+        "year": 2012,
+        "value": 2276736
+      },
+      {
+        "year": 2014,
+        "value": 2244577
+      },
+      {
+        "year": 2015,
+        "value": 2235548
+      },
+      {
+        "year": 2016,
+        "value": 2245470
+      },
+      {
+        "year": 2017,
+        "value": 2236252
+      },
+      {
+        "year": 2018,
+        "value": 2223081
+      },
+      {
+        "year": 2019,
+        "value": 2208321
+      },
+      {
+        "year": 2020,
+        "value": 2194782
+      },
+      {
+        "year": 2021,
+        "value": 2180684
+      },
+      {
+        "year": 2022,
+        "value": 2169253
+      },
+      {
+        "year": 2023,
+        "value": 2150239
+      },
+      {
+        "year": 2024,
+        "value": 2144570
+      },
+      {
+        "year": 2025,
+        "value": 2135597
+      }
+    ],
+    "germany-schleswig-holstein": [
+      {
+        "year": 1990,
+        "value": 2594608
+      },
+      {
+        "year": 1991,
+        "value": 2626140
+      },
+      {
+        "year": 1992,
+        "value": 2648540
+      },
+      {
+        "year": 1993,
+        "value": 2679572
+      },
+      {
+        "year": 1994,
+        "value": 2694888
+      },
+      {
+        "year": 1995,
+        "value": 2708392
+      },
+      {
+        "year": 1996,
+        "value": 2725461
+      },
+      {
+        "year": 1997,
+        "value": 2742293
+      },
+      {
+        "year": 1998,
+        "value": 2756473
+      },
+      {
+        "year": 1999,
+        "value": 2766057
+      },
+      {
+        "year": 2000,
+        "value": 2777275
+      },
+      {
+        "year": 2001,
+        "value": 2789761
+      },
+      {
+        "year": 2002,
+        "value": 2804249
+      },
+      {
+        "year": 2003,
+        "value": 2816507
+      },
+      {
+        "year": 2004,
+        "value": 2823171
+      },
+      {
+        "year": 2005,
+        "value": 2828760
+      },
+      {
+        "year": 2006,
+        "value": 2832950
+      },
+      {
+        "year": 2007,
+        "value": 2834254
+      },
+      {
+        "year": 2008,
+        "value": 2837373
+      },
+      {
+        "year": 2009,
+        "value": 2834260
+      },
+      {
+        "year": 2010,
+        "value": 2832027
+      },
+      {
+        "year": 2011,
+        "value": 2800134
+      },
+      {
+        "year": 2012,
+        "value": 2802266
+      },
+      {
+        "year": 2014,
+        "value": 2815955
+      },
+      {
+        "year": 2015,
+        "value": 2830864
+      },
+      {
+        "year": 2016,
+        "value": 2858714
+      },
+      {
+        "year": 2017,
+        "value": 2881926
+      },
+      {
+        "year": 2018,
+        "value": 2889821
+      },
+      {
+        "year": 2019,
+        "value": 2896712
+      },
+      {
+        "year": 2020,
+        "value": 2903773
+      },
+      {
+        "year": 2021,
+        "value": 2910875
+      },
+      {
+        "year": 2022,
+        "value": 2922005
+      },
+      {
+        "year": 2023,
+        "value": 2939283
+      },
+      {
+        "year": 2024,
+        "value": 2953202
+      },
+      {
+        "year": 2025,
+        "value": 2959517
+      }
+    ],
+    "germany-thuringia": [
+      {
+        "year": 1990,
+        "value": 2683877
+      },
+      {
+        "year": 1991,
+        "value": 2611326
+      },
+      {
+        "year": 1992,
+        "value": 2572046
+      },
+      {
+        "year": 1993,
+        "value": 2545787
+      },
+      {
+        "year": 1994,
+        "value": 2532763
+      },
+      {
+        "year": 1995,
+        "value": 2517776
+      },
+      {
+        "year": 1996,
+        "value": 2503785
+      },
+      {
+        "year": 1997,
+        "value": 2491119
+      },
+      {
+        "year": 1998,
+        "value": 2478148
+      },
+      {
+        "year": 1999,
+        "value": 2462836
+      },
+      {
+        "year": 2000,
+        "value": 2449082
+      },
+      {
+        "year": 2001,
+        "value": 2431255
+      },
+      {
+        "year": 2002,
+        "value": 2411387
+      },
+      {
+        "year": 2003,
+        "value": 2392040
+      },
+      {
+        "year": 2004,
+        "value": 2373157
+      },
+      {
+        "year": 2005,
+        "value": 2355280
+      },
+      {
+        "year": 2006,
+        "value": 2334575
+      },
+      {
+        "year": 2007,
+        "value": 2311140
+      },
+      {
+        "year": 2008,
+        "value": 2289219
+      },
+      {
+        "year": 2009,
+        "value": 2267763
+      },
+      {
+        "year": 2010,
+        "value": 2249882
+      },
+      {
+        "year": 2011,
+        "value": 2195344
+      },
+      {
+        "year": 2012,
+        "value": 2181603
+      },
+      {
+        "year": 2014,
+        "value": 2160840
+      },
+      {
+        "year": 2015,
+        "value": 2156759
+      },
+      {
+        "year": 2016,
+        "value": 2170714
+      },
+      {
+        "year": 2017,
+        "value": 2158128
+      },
+      {
+        "year": 2018,
+        "value": 2151205
+      },
+      {
+        "year": 2019,
+        "value": 2143145
+      },
+      {
+        "year": 2020,
+        "value": 2133378
+      },
+      {
+        "year": 2021,
+        "value": 2120237
+      },
+      {
+        "year": 2022,
+        "value": 2108863
+      },
+      {
+        "year": 2023,
+        "value": 2118830
+      },
+      {
+        "year": 2024,
+        "value": 2114870
+      },
+      {
+        "year": 2025,
+        "value": 2100277
+      }
+    ],
+    "china-beijing": [
+      {
+        "year": 2020,
+        "value": 21893095
+      }
+    ],
+    "china-tianjin": [
+      {
+        "year": 2020,
+        "value": 13866009
+      }
+    ],
+    "china-hebei": [
+      {
+        "year": 2020,
+        "value": 74610235
+      }
+    ],
+    "china-shanxi": [
+      {
+        "year": 2020,
+        "value": 34915616
+      }
+    ],
+    "china-inner-mongolia": [
+      {
+        "year": 2020,
+        "value": 24049155
+      }
+    ],
+    "china-liaoning": [
+      {
+        "year": 2020,
+        "value": 42591407
+      }
+    ],
+    "china-jilin": [
+      {
+        "year": 2020,
+        "value": 24073453
+      }
+    ],
+    "china-heilongjiang": [
+      {
+        "year": 2020,
+        "value": 31850088
+      }
+    ],
+    "china-shanghai": [
+      {
+        "year": 2020,
+        "value": 24870895
+      }
+    ],
+    "china-jiangsu": [
+      {
+        "year": 2020,
+        "value": 84748016
+      }
+    ],
+    "china-zhejiang": [
+      {
+        "year": 2020,
+        "value": 64567588
+      }
+    ],
+    "china-anhui": [
+      {
+        "year": 2020,
+        "value": 61027171
+      }
+    ],
+    "china-fujian": [
+      {
+        "year": 2020,
+        "value": 41540086
+      }
+    ],
+    "china-jiangxi": [
+      {
+        "year": 2020,
+        "value": 45188635
+      }
+    ],
+    "china-shandong": [
+      {
+        "year": 2020,
+        "value": 101527453
+      }
+    ],
+    "china-henan": [
+      {
+        "year": 2020,
+        "value": 99365519
+      }
+    ],
+    "china-hubei": [
+      {
+        "year": 2020,
+        "value": 57752557
+      }
+    ],
+    "china-hunan": [
+      {
+        "year": 2020,
+        "value": 66444864
+      }
+    ],
+    "china-guangdong": [
+      {
+        "year": 2020,
+        "value": 126012510
+      }
+    ],
+    "china-guangxi": [
+      {
+        "year": 2020,
+        "value": 50126804
+      }
+    ],
+    "china-hainan": [
+      {
+        "year": 2020,
+        "value": 10081232
+      }
+    ],
+    "china-chongqing": [
+      {
+        "year": 2020,
+        "value": 32054159
+      }
+    ],
+    "china-sichuan": [
+      {
+        "year": 2020,
+        "value": 83674866
+      }
+    ],
+    "china-guizhou": [
+      {
+        "year": 2020,
+        "value": 38562148
+      }
+    ],
+    "china-yunnan": [
+      {
+        "year": 2020,
+        "value": 47209277
+      }
+    ],
+    "china-tibet": [
+      {
+        "year": 2020,
+        "value": 3648100
+      }
+    ],
+    "china-shaanxi": [
+      {
+        "year": 2020,
+        "value": 39528999
+      }
+    ],
+    "china-gansu": [
+      {
+        "year": 2020,
+        "value": 25019831
+      }
+    ],
+    "china-qinghai": [
+      {
+        "year": 2020,
+        "value": 5923957
+      }
+    ],
+    "china-ningxia": [
+      {
+        "year": 2020,
+        "value": 7202654
+      }
+    ],
+    "china-xinjiang": [
+      {
+        "year": 2020,
+        "value": 25852345
+      }
+    ],
+    "russia-moscow": [
+      {
+        "year": 2023,
+        "value": 13104177
+      }
+    ],
+    "russia-saint-petersburg": [
+      {
+        "year": 2023,
+        "value": 5600044
+      }
+    ],
+    "russia-moscow-oblast": [
+      {
+        "year": 2023,
+        "value": 8591736
+      }
+    ],
+    "russia-krasnodar-krai": [
+      {
+        "year": 2023,
+        "value": 5838497
+      }
+    ],
+    "russia-sverdlovsk-oblast": [
+      {
+        "year": 2023,
+        "value": 4239161
+      }
+    ],
+    "russia-rostov-oblast": [
+      {
+        "year": 2023,
+        "value": 4152325
+      }
+    ],
+    "russia-bashkortostan": [
+      {
+        "year": 2023,
+        "value": 4067688
+      }
+    ],
+    "russia-tatarstan": [
+      {
+        "year": 2023,
+        "value": 4004809
+      }
+    ],
+    "russia-chelyabinsk-oblast": [
+      {
+        "year": 2023,
+        "value": 3401221
+      }
+    ],
+    "russia-nizhny-novgorod-oblast": [
+      {
+        "year": 2023,
+        "value": 3082886
+      }
+    ],
+    "russia-samara-oblast": [
+      {
+        "year": 2023,
+        "value": 3125554
+      }
+    ],
+    "russia-krasnoyarsk-krai": [
+      {
+        "year": 2023,
+        "value": 2846104
+      }
+    ],
+    "russia-dagestan": [
+      {
+        "year": 2023,
+        "value": 3218134
+      }
+    ],
+    "russia-stavropol-krai": [
+      {
+        "year": 2023,
+        "value": 2907593
+      }
+    ],
+    "russia-novosibirsk-oblast": [
+      {
+        "year": 2023,
+        "value": 2794176
+      }
+    ],
+    "russia-kemerovo-oblast": [
+      {
+        "year": 2023,
+        "value": 2555649
+      }
+    ],
+    "russia-perm-krai": [
+      {
+        "year": 2023,
+        "value": 2508352
+      }
+    ],
+    "russia-volgograd-oblast": [
+      {
+        "year": 2023,
+        "value": 2470337
+      }
+    ],
+    "russia-saratov-oblast": [
+      {
+        "year": 2023,
+        "value": 2403655
+      }
+    ],
+    "russia-tyumen-oblast": [
+      {
+        "year": 2023,
+        "value": 3858831
+      }
+    ],
+    "russia-irkutsk-oblast": [
+      {
+        "year": 2023,
+        "value": 2344372
+      }
+    ],
+    "russia-altai-krai": [
+      {
+        "year": 2023,
+        "value": 2296350
+      }
+    ],
+    "russia-voronezh-oblast": [
+      {
+        "year": 2023,
+        "value": 2285404
+      }
+    ],
+    "russia-orenburg-oblast": [
+      {
+        "year": 2023,
+        "value": 1930224
+      }
+    ],
+    "russia-omsk-oblast": [
+      {
+        "year": 2023,
+        "value": 1860377
+      }
+    ],
+    "russia-primorsky-krai": [
+      {
+        "year": 2023,
+        "value": 1845509
+      }
+    ],
+    "russia-leningrad-oblast": [
+      {
+        "year": 2023,
+        "value": 2025863
+      }
+    ],
+    "russia-khanty-mansi": [
+      {
+        "year": 2023,
+        "value": 1730368
+      }
+    ],
+    "russia-chechnya": [
+      {
+        "year": 2023,
+        "value": 1552717
+      }
+    ],
+    "russia-sakha": [
+      {
+        "year": 2023,
+        "value": 1001684
+      }
+    ],
+    "united-states-alabama": [
+      {
+        "year": 2020,
+        "value": 5033094
+      },
+      {
+        "year": 2021,
+        "value": 5049196
+      },
+      {
+        "year": 2022,
+        "value": 5076181
+      },
+      {
+        "year": 2023,
+        "value": 5117673
+      },
+      {
+        "year": 2024,
+        "value": 5157699
+      }
+    ],
+    "united-states-alaska": [
+      {
+        "year": 2020,
+        "value": 733017
+      },
+      {
+        "year": 2021,
+        "value": 734420
+      },
+      {
+        "year": 2022,
+        "value": 734442
+      },
+      {
+        "year": 2023,
+        "value": 736510
+      },
+      {
+        "year": 2024,
+        "value": 740133
+      }
+    ],
+    "united-states-arizona": [
+      {
+        "year": 2020,
+        "value": 7187135
+      },
+      {
+        "year": 2021,
+        "value": 7274078
+      },
+      {
+        "year": 2022,
+        "value": 7377566
+      },
+      {
+        "year": 2023,
+        "value": 7473027
+      },
+      {
+        "year": 2024,
+        "value": 7582384
+      }
+    ],
+    "united-states-arkansas": [
+      {
+        "year": 2020,
+        "value": 3014546
+      },
+      {
+        "year": 2021,
+        "value": 3026870
+      },
+      {
+        "year": 2022,
+        "value": 3047704
+      },
+      {
+        "year": 2023,
+        "value": 3069463
+      },
+      {
+        "year": 2024,
+        "value": 3088354
+      }
+    ],
+    "united-states-california": [
+      {
+        "year": 2020,
+        "value": 39521958
+      },
+      {
+        "year": 2021,
+        "value": 39142565
+      },
+      {
+        "year": 2022,
+        "value": 39142414
+      },
+      {
+        "year": 2023,
+        "value": 39198693
+      },
+      {
+        "year": 2024,
+        "value": 39431263
+      }
+    ],
+    "united-states-colorado": [
+      {
+        "year": 2020,
+        "value": 5787129
+      },
+      {
+        "year": 2021,
+        "value": 5814036
+      },
+      {
+        "year": 2022,
+        "value": 5850935
+      },
+      {
+        "year": 2023,
+        "value": 5901339
+      },
+      {
+        "year": 2024,
+        "value": 5957493
+      }
+    ],
+    "united-states-connecticut": [
+      {
+        "year": 2020,
+        "value": 3579918
+      },
+      {
+        "year": 2021,
+        "value": 3606607
+      },
+      {
+        "year": 2022,
+        "value": 3617925
+      },
+      {
+        "year": 2023,
+        "value": 3643023
+      },
+      {
+        "year": 2024,
+        "value": 3675069
+      }
+    ],
+    "united-states-delaware": [
+      {
+        "year": 2020,
+        "value": 991928
+      },
+      {
+        "year": 2021,
+        "value": 1005062
+      },
+      {
+        "year": 2022,
+        "value": 1020625
+      },
+      {
+        "year": 2023,
+        "value": 1036423
+      },
+      {
+        "year": 2024,
+        "value": 1051917
+      }
+    ],
+    "united-states-district-of-columbia": [
+      {
+        "year": 2020,
+        "value": 670917
+      },
+      {
+        "year": 2021,
+        "value": 669256
+      },
+      {
+        "year": 2022,
+        "value": 676725
+      },
+      {
+        "year": 2023,
+        "value": 687324
+      },
+      {
+        "year": 2024,
+        "value": 702250
+      }
+    ],
+    "united-states-florida": [
+      {
+        "year": 2020,
+        "value": 21592035
+      },
+      {
+        "year": 2021,
+        "value": 21831949
+      },
+      {
+        "year": 2022,
+        "value": 22379312
+      },
+      {
+        "year": 2023,
+        "value": 22904868
+      },
+      {
+        "year": 2024,
+        "value": 23372215
+      }
+    ],
+    "united-states-georgia": [
+      {
+        "year": 2020,
+        "value": 10732888
+      },
+      {
+        "year": 2021,
+        "value": 10792060
+      },
+      {
+        "year": 2022,
+        "value": 10931805
+      },
+      {
+        "year": 2023,
+        "value": 11064432
+      },
+      {
+        "year": 2024,
+        "value": 11180878
+      }
+    ],
+    "united-states-hawaii": [
+      {
+        "year": 2020,
+        "value": 1451252
+      },
+      {
+        "year": 2021,
+        "value": 1447029
+      },
+      {
+        "year": 2022,
+        "value": 1440359
+      },
+      {
+        "year": 2023,
+        "value": 1441387
+      },
+      {
+        "year": 2024,
+        "value": 1446146
+      }
+    ],
+    "united-states-idaho": [
+      {
+        "year": 2020,
+        "value": 1849415
+      },
+      {
+        "year": 2021,
+        "value": 1904848
+      },
+      {
+        "year": 2022,
+        "value": 1944299
+      },
+      {
+        "year": 2023,
+        "value": 1971122
+      },
+      {
+        "year": 2024,
+        "value": 2001619
+      }
+    ],
+    "united-states-illinois": [
+      {
+        "year": 2020,
+        "value": 12799088
+      },
+      {
+        "year": 2021,
+        "value": 12700641
+      },
+      {
+        "year": 2022,
+        "value": 12621821
+      },
+      {
+        "year": 2023,
+        "value": 12642259
+      },
+      {
+        "year": 2024,
+        "value": 12710158
+      }
+    ],
+    "united-states-indiana": [
+      {
+        "year": 2020,
+        "value": 6790497
+      },
+      {
+        "year": 2021,
+        "value": 6815907
+      },
+      {
+        "year": 2022,
+        "value": 6844545
+      },
+      {
+        "year": 2023,
+        "value": 6880131
+      },
+      {
+        "year": 2024,
+        "value": 6924275
+      }
+    ],
+    "united-states-iowa": [
+      {
+        "year": 2020,
+        "value": 3191141
+      },
+      {
+        "year": 2021,
+        "value": 3198613
+      },
+      {
+        "year": 2022,
+        "value": 3202820
+      },
+      {
+        "year": 2023,
+        "value": 3218414
+      },
+      {
+        "year": 2024,
+        "value": 3241488
+      }
+    ],
+    "united-states-kansas": [
+      {
+        "year": 2020,
+        "value": 2938172
+      },
+      {
+        "year": 2021,
+        "value": 2938338
+      },
+      {
+        "year": 2022,
+        "value": 2937324
+      },
+      {
+        "year": 2023,
+        "value": 2951500
+      },
+      {
+        "year": 2024,
+        "value": 2970606
+      }
+    ],
+    "united-states-kentucky": [
+      {
+        "year": 2020,
+        "value": 4508318
+      },
+      {
+        "year": 2021,
+        "value": 4507583
+      },
+      {
+        "year": 2022,
+        "value": 4519233
+      },
+      {
+        "year": 2023,
+        "value": 4550595
+      },
+      {
+        "year": 2024,
+        "value": 4588372
+      }
+    ],
+    "united-states-louisiana": [
+      {
+        "year": 2020,
+        "value": 4652301
+      },
+      {
+        "year": 2021,
+        "value": 4627971
+      },
+      {
+        "year": 2022,
+        "value": 4593687
+      },
+      {
+        "year": 2023,
+        "value": 4588071
+      },
+      {
+        "year": 2024,
+        "value": 4597740
+      }
+    ],
+    "united-states-maine": [
+      {
+        "year": 2020,
+        "value": 1364571
+      },
+      {
+        "year": 2021,
+        "value": 1378931
+      },
+      {
+        "year": 2022,
+        "value": 1390922
+      },
+      {
+        "year": 2023,
+        "value": 1399646
+      },
+      {
+        "year": 2024,
+        "value": 1405012
+      }
+    ],
+    "united-states-maryland": [
+      {
+        "year": 2020,
+        "value": 6177935
+      },
+      {
+        "year": 2021,
+        "value": 6179403
+      },
+      {
+        "year": 2022,
+        "value": 6192440
+      },
+      {
+        "year": 2023,
+        "value": 6217062
+      },
+      {
+        "year": 2024,
+        "value": 6263220
+      }
+    ],
+    "united-states-massachusetts": [
+      {
+        "year": 2020,
+        "value": 6994598
+      },
+      {
+        "year": 2021,
+        "value": 7000474
+      },
+      {
+        "year": 2022,
+        "value": 7022468
+      },
+      {
+        "year": 2023,
+        "value": 7066568
+      },
+      {
+        "year": 2024,
+        "value": 7136171
+      }
+    ],
+    "united-states-michigan": [
+      {
+        "year": 2020,
+        "value": 10072703
+      },
+      {
+        "year": 2021,
+        "value": 10041351
+      },
+      {
+        "year": 2022,
+        "value": 10050877
+      },
+      {
+        "year": 2023,
+        "value": 10083356
+      },
+      {
+        "year": 2024,
+        "value": 10140459
+      }
+    ],
+    "united-states-minnesota": [
+      {
+        "year": 2020,
+        "value": 5710735
+      },
+      {
+        "year": 2021,
+        "value": 5718660
+      },
+      {
+        "year": 2022,
+        "value": 5721621
+      },
+      {
+        "year": 2023,
+        "value": 5753048
+      },
+      {
+        "year": 2024,
+        "value": 5793151
+      }
+    ],
+    "united-states-mississippi": [
+      {
+        "year": 2020,
+        "value": 2958536
+      },
+      {
+        "year": 2021,
+        "value": 2947209
+      },
+      {
+        "year": 2022,
+        "value": 2941939
+      },
+      {
+        "year": 2023,
+        "value": 2943172
+      },
+      {
+        "year": 2024,
+        "value": 2943045
+      }
+    ],
+    "united-states-missouri": [
+      {
+        "year": 2020,
+        "value": 6154744
+      },
+      {
+        "year": 2021,
+        "value": 6171374
+      },
+      {
+        "year": 2022,
+        "value": 6179414
+      },
+      {
+        "year": 2023,
+        "value": 6208038
+      },
+      {
+        "year": 2024,
+        "value": 6245466
+      }
+    ],
+    "united-states-montana": [
+      {
+        "year": 2020,
+        "value": 1087230
+      },
+      {
+        "year": 2021,
+        "value": 1106522
+      },
+      {
+        "year": 2022,
+        "value": 1122095
+      },
+      {
+        "year": 2023,
+        "value": 1131302
+      },
+      {
+        "year": 2024,
+        "value": 1137233
+      }
+    ],
+    "united-states-nebraska": [
+      {
+        "year": 2020,
+        "value": 1963387
+      },
+      {
+        "year": 2021,
+        "value": 1964537
+      },
+      {
+        "year": 2022,
+        "value": 1972246
+      },
+      {
+        "year": 2023,
+        "value": 1987864
+      },
+      {
+        "year": 2024,
+        "value": 2005465
+      }
+    ],
+    "united-states-nevada": [
+      {
+        "year": 2020,
+        "value": 3116967
+      },
+      {
+        "year": 2021,
+        "value": 3148141
+      },
+      {
+        "year": 2022,
+        "value": 3176116
+      },
+      {
+        "year": 2023,
+        "value": 3214363
+      },
+      {
+        "year": 2024,
+        "value": 3267467
+      }
+    ],
+    "united-states-new-hampshire": [
+      {
+        "year": 2020,
+        "value": 1378756
+      },
+      {
+        "year": 2021,
+        "value": 1387677
+      },
+      {
+        "year": 2022,
+        "value": 1396678
+      },
+      {
+        "year": 2023,
+        "value": 1402199
+      },
+      {
+        "year": 2024,
+        "value": 1409032
+      }
+    ],
+    "united-states-new-jersey": [
+      {
+        "year": 2020,
+        "value": 9272794
+      },
+      {
+        "year": 2021,
+        "value": 9270541
+      },
+      {
+        "year": 2022,
+        "value": 9295227
+      },
+      {
+        "year": 2023,
+        "value": 9379642
+      },
+      {
+        "year": 2024,
+        "value": 9500851
+      }
+    ],
+    "united-states-new-mexico": [
+      {
+        "year": 2020,
+        "value": 2118606
+      },
+      {
+        "year": 2021,
+        "value": 2117333
+      },
+      {
+        "year": 2022,
+        "value": 2113868
+      },
+      {
+        "year": 2023,
+        "value": 2121164
+      },
+      {
+        "year": 2024,
+        "value": 2130256
+      }
+    ],
+    "united-states-new-york": [
+      {
+        "year": 2020,
+        "value": 20105171
+      },
+      {
+        "year": 2021,
+        "value": 19848276
+      },
+      {
+        "year": 2022,
+        "value": 19703747
+      },
+      {
+        "year": 2023,
+        "value": 19737367
+      },
+      {
+        "year": 2024,
+        "value": 19867248
+      }
+    ],
+    "united-states-north-carolina": [
+      {
+        "year": 2020,
+        "value": 10449652
+      },
+      {
+        "year": 2021,
+        "value": 10564320
+      },
+      {
+        "year": 2022,
+        "value": 10710793
+      },
+      {
+        "year": 2023,
+        "value": 10881189
+      },
+      {
+        "year": 2024,
+        "value": 11046024
+      }
+    ],
+    "united-states-north-dakota": [
+      {
+        "year": 2020,
+        "value": 779563
+      },
+      {
+        "year": 2021,
+        "value": 777966
+      },
+      {
+        "year": 2022,
+        "value": 781057
+      },
+      {
+        "year": 2023,
+        "value": 789047
+      },
+      {
+        "year": 2024,
+        "value": 796568
+      }
+    ],
+    "united-states-ohio": [
+      {
+        "year": 2020,
+        "value": 11798905
+      },
+      {
+        "year": 2021,
+        "value": 11767344
+      },
+      {
+        "year": 2022,
+        "value": 11777874
+      },
+      {
+        "year": 2023,
+        "value": 11824034
+      },
+      {
+        "year": 2024,
+        "value": 11883304
+      }
+    ],
+    "united-states-oklahoma": [
+      {
+        "year": 2020,
+        "value": 3965415
+      },
+      {
+        "year": 2021,
+        "value": 3992238
+      },
+      {
+        "year": 2022,
+        "value": 4026229
+      },
+      {
+        "year": 2023,
+        "value": 4063882
+      },
+      {
+        "year": 2024,
+        "value": 4095393
+      }
+    ],
+    "united-states-oregon": [
+      {
+        "year": 2020,
+        "value": 4243779
+      },
+      {
+        "year": 2021,
+        "value": 4254280
+      },
+      {
+        "year": 2022,
+        "value": 4247372
+      },
+      {
+        "year": 2023,
+        "value": 4253653
+      },
+      {
+        "year": 2024,
+        "value": 4272371
+      }
+    ],
+    "united-states-pennsylvania": [
+      {
+        "year": 2020,
+        "value": 12996143
+      },
+      {
+        "year": 2021,
+        "value": 13015571
+      },
+      {
+        "year": 2022,
+        "value": 12984990
+      },
+      {
+        "year": 2023,
+        "value": 13017721
+      },
+      {
+        "year": 2024,
+        "value": 13078751
+      }
+    ],
+    "united-states-rhode-island": [
+      {
+        "year": 2020,
+        "value": 1096530
+      },
+      {
+        "year": 2021,
+        "value": 1097246
+      },
+      {
+        "year": 2022,
+        "value": 1099498
+      },
+      {
+        "year": 2023,
+        "value": 1103429
+      },
+      {
+        "year": 2024,
+        "value": 1112308
+      }
+    ],
+    "united-states-south-carolina": [
+      {
+        "year": 2020,
+        "value": 5132249
+      },
+      {
+        "year": 2021,
+        "value": 5194274
+      },
+      {
+        "year": 2022,
+        "value": 5287935
+      },
+      {
+        "year": 2023,
+        "value": 5387830
+      },
+      {
+        "year": 2024,
+        "value": 5478831
+      }
+    ],
+    "united-states-south-dakota": [
+      {
+        "year": 2020,
+        "value": 887948
+      },
+      {
+        "year": 2021,
+        "value": 896492
+      },
+      {
+        "year": 2022,
+        "value": 909723
+      },
+      {
+        "year": 2023,
+        "value": 918305
+      },
+      {
+        "year": 2024,
+        "value": 924669
+      }
+    ],
+    "united-states-tennessee": [
+      {
+        "year": 2020,
+        "value": 6927904
+      },
+      {
+        "year": 2021,
+        "value": 6965740
+      },
+      {
+        "year": 2022,
+        "value": 7062217
+      },
+      {
+        "year": 2023,
+        "value": 7148304
+      },
+      {
+        "year": 2024,
+        "value": 7227750
+      }
+    ],
+    "united-states-texas": [
+      {
+        "year": 2020,
+        "value": 29239570
+      },
+      {
+        "year": 2021,
+        "value": 29570351
+      },
+      {
+        "year": 2022,
+        "value": 30113488
+      },
+      {
+        "year": 2023,
+        "value": 30727890
+      },
+      {
+        "year": 2024,
+        "value": 31290831
+      }
+    ],
+    "united-states-utah": [
+      {
+        "year": 2020,
+        "value": 3284077
+      },
+      {
+        "year": 2021,
+        "value": 3339738
+      },
+      {
+        "year": 2022,
+        "value": 3391011
+      },
+      {
+        "year": 2023,
+        "value": 3443222
+      },
+      {
+        "year": 2024,
+        "value": 3503613
+      }
+    ],
+    "united-states-vermont": [
+      {
+        "year": 2020,
+        "value": 642977
+      },
+      {
+        "year": 2021,
+        "value": 647210
+      },
+      {
+        "year": 2022,
+        "value": 648142
+      },
+      {
+        "year": 2023,
+        "value": 648708
+      },
+      {
+        "year": 2024,
+        "value": 648493
+      }
+    ],
+    "united-states-virginia": [
+      {
+        "year": 2020,
+        "value": 8637615
+      },
+      {
+        "year": 2021,
+        "value": 8658910
+      },
+      {
+        "year": 2022,
+        "value": 8683414
+      },
+      {
+        "year": 2023,
+        "value": 8734685
+      },
+      {
+        "year": 2024,
+        "value": 8811195
+      }
+    ],
+    "united-states-washington": [
+      {
+        "year": 2020,
+        "value": 7727209
+      },
+      {
+        "year": 2021,
+        "value": 7743760
+      },
+      {
+        "year": 2022,
+        "value": 7794123
+      },
+      {
+        "year": 2023,
+        "value": 7857320
+      },
+      {
+        "year": 2024,
+        "value": 7958180
+      }
+    ],
+    "united-states-west-virginia": [
+      {
+        "year": 2020,
+        "value": 1791646
+      },
+      {
+        "year": 2021,
+        "value": 1785618
+      },
+      {
+        "year": 2022,
+        "value": 1774122
+      },
+      {
+        "year": 2023,
+        "value": 1770495
+      },
+      {
+        "year": 2024,
+        "value": 1769979
+      }
+    ],
+    "united-states-wisconsin": [
+      {
+        "year": 2020,
+        "value": 5897375
+      },
+      {
+        "year": 2021,
+        "value": 5881608
+      },
+      {
+        "year": 2022,
+        "value": 5903975
+      },
+      {
+        "year": 2023,
+        "value": 5930405
+      },
+      {
+        "year": 2024,
+        "value": 5960975
+      }
+    ],
+    "united-states-wyoming": [
+      {
+        "year": 2020,
+        "value": 577681
+      },
+      {
+        "year": 2021,
+        "value": 579636
+      },
+      {
+        "year": 2022,
+        "value": 581978
+      },
+      {
+        "year": 2023,
+        "value": 585067
+      },
+      {
+        "year": 2024,
+        "value": 587618
+      }
+    ]
+  },
+  "generalFertilityRate": {
+    "united-states-alabama": [
+      {
+        "year": 2023,
+        "value": 57.9
+      }
+    ],
+    "united-states-alaska": [
+      {
+        "year": 2023,
+        "value": 82.0
+      }
+    ],
+    "united-states-arizona": [
+      {
+        "year": 2023,
+        "value": 54.2
+      }
+    ],
+    "united-states-arkansas": [
+      {
+        "year": 2023,
+        "value": 59.2
+      }
+    ],
+    "united-states-california": [
+      {
+        "year": 2023,
+        "value": 50.4
+      }
+    ],
+    "united-states-colorado": [
+      {
+        "year": 2023,
+        "value": 50.2
+      }
+    ],
+    "united-states-connecticut": [
+      {
+        "year": 2023,
+        "value": 50.2
+      }
+    ],
+    "united-states-delaware": [
+      {
+        "year": 2023,
+        "value": 54.4
+      }
+    ],
+    "united-states-district-of-columbia": [
+      {
+        "year": 2023,
+        "value": 43.0
+      }
+    ],
+    "united-states-florida": [
+      {
+        "year": 2023,
+        "value": 53.9
+      }
+    ],
+    "united-states-georgia": [
+      {
+        "year": 2023,
+        "value": 54.9
+      }
+    ],
+    "united-states-hawaii": [
+      {
+        "year": 2023,
+        "value": 56.9
+      }
+    ],
+    "united-states-idaho": [
+      {
+        "year": 2023,
+        "value": 57.6
+      }
+    ],
+    "united-states-illinois": [
+      {
+        "year": 2023,
+        "value": 50.4
+      }
+    ],
+    "united-states-indiana": [
+      {
+        "year": 2023,
+        "value": 58.9
+      }
+    ],
+    "united-states-iowa": [
+      {
+        "year": 2023,
+        "value": 59.0
+      }
+    ],
+    "united-states-kansas": [
+      {
+        "year": 2023,
+        "value": 59.5
+      }
+    ],
+    "united-states-kentucky": [
+      {
+        "year": 2023,
+        "value": 60.4
+      }
+    ],
+    "united-states-louisiana": [
+      {
+        "year": 2023,
+        "value": 60.4
+      }
+    ],
+    "united-states-maine": [
+      {
+        "year": 2023,
+        "value": 96.0
+      }
+    ],
+    "united-states-maryland": [
+      {
+        "year": 2023,
+        "value": 54.1
+      }
+    ],
+    "united-states-massachusetts": [
+      {
+        "year": 2023,
+        "value": 47.4
+      }
+    ],
+    "united-states-michigan": [
+      {
+        "year": 2023,
+        "value": 52.2
+      }
+    ],
+    "united-states-minnesota": [
+      {
+        "year": 2023,
+        "value": 55.7
+      }
+    ],
+    "united-states-mississippi": [
+      {
+        "year": 2023,
+        "value": 59.2
+      }
+    ],
+    "united-states-missouri": [
+      {
+        "year": 2023,
+        "value": 55.8
+      }
+    ],
+    "united-states-montana": [
+      {
+        "year": 2023,
+        "value": 52.2
+      }
+    ],
+    "united-states-nebraska": [
+      {
+        "year": 2023,
+        "value": 62.5
+      }
+    ],
+    "united-states-nevada": [
+      {
+        "year": 2023,
+        "value": 50.8
+      }
+    ],
+    "united-states-new-hampshire": [
+      {
+        "year": 2023,
+        "value": 162.0
+      }
+    ],
+    "united-states-new-jersey": [
+      {
+        "year": 2023,
+        "value": 57.4
+      }
+    ],
+    "united-states-new-mexico": [
+      {
+        "year": 2023,
+        "value": 51.5
+      }
+    ],
+    "united-states-new-york": [
+      {
+        "year": 2023,
+        "value": 52.7
+      }
+    ],
+    "united-states-north-carolina": [
+      {
+        "year": 2023,
+        "value": 56.0
+      }
+    ],
+    "united-states-north-dakota": [
+      {
+        "year": 2023,
+        "value": 74.0
+      }
+    ],
+    "united-states-ohio": [
+      {
+        "year": 2023,
+        "value": 56.4
+      }
+    ],
+    "united-states-oklahoma": [
+      {
+        "year": 2023,
+        "value": 59.1
+      }
+    ],
+    "united-states-oregon": [
+      {
+        "year": 2023,
+        "value": 45.9
+      }
+    ],
+    "united-states-pennsylvania": [
+      {
+        "year": 2023,
+        "value": 51.9
+      }
+    ],
+    "united-states-rhode-island": [
+      {
+        "year": 2023,
+        "value": 45.2
+      }
+    ],
+    "united-states-south-carolina": [
+      {
+        "year": 2023,
+        "value": 55.8
+      }
+    ],
+    "united-states-south-dakota": [
+      {
+        "year": 2023,
+        "value": 269.0
+      }
+    ],
+    "united-states-tennessee": [
+      {
+        "year": 2023,
+        "value": 58.9
+      }
+    ],
+    "united-states-texas": [
+      {
+        "year": 2023,
+        "value": 60.6
+      }
+    ],
+    "united-states-utah": [
+      {
+        "year": 2023,
+        "value": 59.6
+      }
+    ],
+    "united-states-vermont": [
+      {
+        "year": 2023,
+        "value": 42.1
+      }
+    ],
+    "united-states-virginia": [
+      {
+        "year": 2023,
+        "value": 160.0
+      }
+    ],
+    "united-states-washington": [
+      {
+        "year": 2023,
+        "value": 51.4
+      }
+    ],
+    "united-states-west-virginia": [
+      {
+        "year": 2023,
+        "value": 160.0
+      }
+    ],
+    "united-states-wisconsin": [
+      {
+        "year": 2023,
+        "value": 53.6
+      }
+    ],
+    "united-states-wyoming": [
+      {
+        "year": 2023,
+        "value": 54.5
+      }
+    ]
+  }
+}

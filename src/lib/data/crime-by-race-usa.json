@@ -1,0 +1,331 @@
+{
+  "iso3": "USA",
+  "slug": "united-states",
+  "prisoners": {
+    "metric": "sentenced_prisoners_by_race_hispanic_origin",
+    "definition": "Sentenced prisoners (sentence > 1 year) under state or federal jurisdiction, by race and Hispanic origin. White and Black are non-Hispanic. Counts rounded to nearest 100 for race/ethnicity. Remaining \u201cother/two or more races\u201d are in the BJS total but not shown as a separate series here.",
+    "source": "Bureau of Justice Statistics \u2014 Prisoners in 2023 (and earlier) Statistical Tables, Table 3",
+    "sourceUrl": "https://bjs.ojp.gov/document/p23st.pdf",
+    "groups": [
+      "White (non-Hispanic)",
+      "Black (non-Hispanic)",
+      "Hispanic",
+      "American Indian / Alaska Native",
+      "Asian / NHPI"
+    ],
+    "series": [
+      {
+        "year": 2010,
+        "groups": {
+          "White (non-Hispanic)": 490500,
+          "Black (non-Hispanic)": 568500,
+          "Hispanic": 338500,
+          "American Indian / Alaska Native": 23800,
+          "Asian / NHPI": 16700
+        }
+      },
+      {
+        "year": 2011,
+        "groups": {
+          "White (non-Hispanic)": 480400,
+          "Black (non-Hispanic)": 554400,
+          "Hispanic": 341300,
+          "American Indian / Alaska Native": 22600,
+          "Asian / NHPI": 17100
+        }
+      },
+      {
+        "year": 2012,
+        "groups": {
+          "White (non-Hispanic)": 470900,
+          "Black (non-Hispanic)": 536600,
+          "Hispanic": 336100,
+          "American Indian / Alaska Native": 21500,
+          "Asian / NHPI": 17000
+        }
+      },
+      {
+        "year": 2013,
+        "groups": {
+          "White (non-Hispanic)": 469800,
+          "Black (non-Hispanic)": 530100,
+          "Hispanic": 343100,
+          "American Indian / Alaska Native": 19800,
+          "Asian / NHPI": 16900
+        }
+      },
+      {
+        "year": 2014,
+        "groups": {
+          "White (non-Hispanic)": 463800,
+          "Black (non-Hispanic)": 516800,
+          "Hispanic": 339500,
+          "American Indian / Alaska Native": 21300,
+          "Asian / NHPI": 17300
+        }
+      },
+      {
+        "year": 2015,
+        "groups": {
+          "White (non-Hispanic)": 450600,
+          "Black (non-Hispanic)": 496400,
+          "Hispanic": 335800,
+          "American Indian / Alaska Native": 20500,
+          "Asian / NHPI": 17800
+        }
+      },
+      {
+        "year": 2016,
+        "groups": {
+          "White (non-Hispanic)": 440700,
+          "Black (non-Hispanic)": 484600,
+          "Hispanic": 342100,
+          "American Indian / Alaska Native": 20400,
+          "Asian / NHPI": 18000
+        }
+      },
+      {
+        "year": 2017,
+        "groups": {
+          "White (non-Hispanic)": 436800,
+          "Black (non-Hispanic)": 473000,
+          "Hispanic": 338800,
+          "American Indian / Alaska Native": 21200,
+          "Asian / NHPI": 17800
+        }
+      },
+      {
+        "year": 2018,
+        "groups": {
+          "White (non-Hispanic)": 430500,
+          "Black (non-Hispanic)": 461500,
+          "Hispanic": 332900,
+          "American Indian / Alaska Native": 21100,
+          "Asian / NHPI": 17900
+        }
+      },
+      {
+        "year": 2019,
+        "groups": {
+          "White (non-Hispanic)": 422900,
+          "Black (non-Hispanic)": 449900,
+          "Hispanic": 322700,
+          "American Indian / Alaska Native": 21500,
+          "Asian / NHPI": 17500
+        }
+      },
+      {
+        "year": 2020,
+        "groups": {
+          "White (non-Hispanic)": 360100,
+          "Black (non-Hispanic)": 390700,
+          "Hispanic": 276100,
+          "American Indian / Alaska Native": 19000,
+          "Asian / NHPI": 14900
+        }
+      },
+      {
+        "year": 2021,
+        "groups": {
+          "White (non-Hispanic)": 356000,
+          "Black (non-Hispanic)": 378000,
+          "Hispanic": 273800,
+          "American Indian / Alaska Native": 18700,
+          "Asian / NHPI": 14700
+        }
+      },
+      {
+        "year": 2022,
+        "groups": {
+          "White (non-Hispanic)": 367800,
+          "Black (non-Hispanic)": 384600,
+          "Hispanic": 273900,
+          "American Indian / Alaska Native": 19400,
+          "Asian / NHPI": 15000
+        }
+      },
+      {
+        "year": 2023,
+        "groups": {
+          "White (non-Hispanic)": 370500,
+          "Black (non-Hispanic)": 394500,
+          "Hispanic": 282700,
+          "American Indian / Alaska Native": 19700,
+          "Asian / NHPI": 15200
+        }
+      }
+    ]
+  },
+  "arrests": {
+    "metric": "arrests_by_race",
+    "definition": "Arrests reported to the FBI Uniform Crime Reporting Program by race (Table 43). Race categories are not mutually exclusive with Hispanic ethnicity \u2014 Hispanic arrestees are included in the race categories (mostly White). Agency coverage varies by year; absolute counts are not a full national census of all arrests.",
+    "source": "FBI Crime in the United States, Table 43 (Arrests by Race and Ethnicity)",
+    "sourceUrl": "https://ucr.fbi.gov/crime-in-the-u.s",
+    "groups": [
+      "White",
+      "Black or African American",
+      "American Indian or Alaska Native",
+      "Asian / Native Hawaiian / Pacific Islander"
+    ],
+    "series": [
+      {
+        "year": 2010,
+        "groups": {
+          "White": 7066154,
+          "Black or African American": 2846862,
+          "American Indian or Alaska Native": 145612,
+          "Asian / Native Hawaiian / Pacific Islander": 119279
+        }
+      },
+      {
+        "year": 2011,
+        "groups": {
+          "White": 6578133,
+          "Black or African American": 2697539,
+          "American Indian or Alaska Native": 142422,
+          "Asian / Native Hawaiian / Pacific Islander": 81631
+        }
+      },
+      {
+        "year": 2013,
+        "groups": {
+          "White": 6214197,
+          "Black or African American": 2549655,
+          "American Indian or Alaska Native": 140290,
+          "Asian / Native Hawaiian / Pacific Islander": 110493
+        }
+      },
+      {
+        "year": 2014,
+        "groups": {
+          "White": 6056687,
+          "Black or African American": 2427683,
+          "American Indian or Alaska Native": 135599,
+          "Asian / Native Hawaiian / Pacific Islander": 110696
+        }
+      },
+      {
+        "year": 2015,
+        "groups": {
+          "White": 5753212,
+          "Black or African American": 2197140,
+          "American Indian or Alaska Native": 174020,
+          "Asian / Native Hawaiian / Pacific Islander": 124337
+        }
+      },
+      {
+        "year": 2017,
+        "groups": {
+          "White": 5626140,
+          "Black or African American": 2221697,
+          "American Indian or Alaska Native": 196908,
+          "Asian / Native Hawaiian / Pacific Islander": 118104
+        }
+      },
+      {
+        "year": 2018,
+        "groups": {
+          "White": 5319654,
+          "Black or African American": 2115381,
+          "American Indian or Alaska Native": 164430,
+          "Asian / Native Hawaiian / Pacific Islander": 111435
+        }
+      },
+      {
+        "year": 2019,
+        "groups": {
+          "White": 4729290,
+          "Black or African American": 1815144,
+          "American Indian or Alaska Native": 164852,
+          "Asian / Native Hawaiian / Pacific Islander": 107689
+        }
+      }
+    ]
+  },
+  "murderArrests": {
+    "metric": "murder_arrests_by_race",
+    "definition": "Arrests for murder and nonnegligent manslaughter by race (FBI UCR Table 43). Same race/ethnicity caveats as total arrests.",
+    "source": "FBI Crime in the United States, Table 43",
+    "sourceUrl": "https://ucr.fbi.gov/crime-in-the-u.s",
+    "groups": [
+      "White",
+      "Black or African American",
+      "American Indian or Alaska Native",
+      "Asian / Native Hawaiian / Pacific Islander"
+    ],
+    "series": [
+      {
+        "year": 2010,
+        "groups": {
+          "White": 4261,
+          "Black or African American": 4209,
+          "American Indian or Alaska Native": 91,
+          "Asian / Native Hawaiian / Pacific Islander": 80
+        }
+      },
+      {
+        "year": 2011,
+        "groups": {
+          "White": 4000,
+          "Black or African American": 4149,
+          "American Indian or Alaska Native": 105,
+          "Asian / Native Hawaiian / Pacific Islander": 87
+        }
+      },
+      {
+        "year": 2013,
+        "groups": {
+          "White": 3799,
+          "Black or African American": 4379,
+          "American Indian or Alaska Native": 98,
+          "Asian / Native Hawaiian / Pacific Islander": 107
+        }
+      },
+      {
+        "year": 2014,
+        "groups": {
+          "White": 3807,
+          "Black or African American": 4224,
+          "American Indian or Alaska Native": 83,
+          "Asian / Native Hawaiian / Pacific Islander": 116
+        }
+      },
+      {
+        "year": 2015,
+        "groups": {
+          "White": 3908,
+          "Black or African American": 4347,
+          "American Indian or Alaska Native": 102,
+          "Asian / Native Hawaiian / Pacific Islander": 151
+        }
+      },
+      {
+        "year": 2017,
+        "groups": {
+          "White": 4188,
+          "Black or African American": 5025,
+          "American Indian or Alaska Native": 108,
+          "Asian / Native Hawaiian / Pacific Islander": 147
+        }
+      },
+      {
+        "year": 2018,
+        "groups": {
+          "White": 3953,
+          "Black or African American": 4778,
+          "American Indian or Alaska Native": 105,
+          "Asian / Native Hawaiian / Pacific Islander": 121
+        }
+      },
+      {
+        "year": 2019,
+        "groups": {
+          "White": 3650,
+          "Black or African American": 4078,
+          "American Indian or Alaska Native": 125,
+          "Asian / Native Hawaiian / Pacific Islander": 111
+        }
+      }
+    ]
+  }
+}

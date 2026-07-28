@@ -1,0 +1,127 @@
+{
+  "metric": "crime_by_origin_or_ancestry",
+  "updated": "2026-07-28",
+  "note": "National statistical offices differ sharply. Denmark publishes convicted persons by ancestry (Danish origin / immigrants / descendants). Many others publish only citizenship of suspects or prisoners, or nothing at all. We never invent figures.",
+  "countries": [
+    {
+      "iso3": "DNK",
+      "status": "AVAILABLE",
+      "level": "ancestry",
+      "detail": "Statistics Denmark STRAFNA9 \u2014 persons guilty in crimes by ancestry (Danish origin, immigrants, descendants), annual.",
+      "sourceUrl": "https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer"
+    },
+    {
+      "iso3": "NOR",
+      "status": "PARTIAL",
+      "level": "citizenship",
+      "detail": "SSB StatBank 09421 publishes persons charged by citizenship annually. Immigrant-background (including Norwegian-born to immigrant parents) is published only in periodic ad-hoc Excel tables, not a continuous StatBank series.",
+      "sourceUrl": "https://www.ssb.no/en/statbank/table/09421"
+    },
+    {
+      "iso3": "SWE",
+      "status": "PARTIAL",
+      "level": "background_reports",
+      "detail": "Br\u00e5 publishes research reports on registered offending by native/non-native background (e.g. report 2021:9 with 2007\u20132018 offence shares). Not a continuous open StatBank series like Denmark\u2019s STRAFNA9.",
+      "sourceUrl": "https://bra.se/download/18.45e4b8e192705389a34c2b/1729515966490/2021_9_Registered_offending_among_persons.pdf"
+    },
+    {
+      "iso3": "NLD",
+      "status": "HISTORICAL",
+      "level": "origin",
+      "detail": "Statistics Netherlands (CBS) previously published suspects by migration background; the classification was reformed and a continuous public ancestry series like Denmark is not currently maintained in the same form.",
+      "sourceUrl": "https://www.cbs.nl/en-gb"
+    },
+    {
+      "iso3": "FIN",
+      "status": "LIMITED",
+      "level": "citizenship",
+      "detail": "Statistics Finland / police statistics publish some breakdowns by citizenship or foreign background in reports; not a full open ancestry conviction time series comparable to Denmark.",
+      "sourceUrl": "https://stat.fi/en"
+    },
+    {
+      "iso3": "DEU",
+      "status": "PARTIAL",
+      "level": "nationality",
+      "detail": "Federal Criminal Police Office (BKA) Police Crime Statistics report suspects by nationality (German vs non-German). This is citizenship, not immigrant ancestry or \u201cmigration background\u201d.",
+      "sourceUrl": "https://www.bka.de"
+    },
+    {
+      "iso3": "AUT",
+      "status": "PARTIAL",
+      "level": "citizenship",
+      "detail": "Interior ministry / Statistik Austria publish some suspect or prisoner figures by citizenship. Eurostat prisoners-by-citizenship covers Austria.",
+      "sourceUrl": "https://www.statistik.at/en"
+    },
+    {
+      "iso3": "CHE",
+      "status": "PARTIAL",
+      "level": "citizenship",
+      "detail": "Federal Statistical Office publishes convictions and prisoners with citizenship breakdowns. Not full ancestry.",
+      "sourceUrl": "https://www.bfs.admin.ch"
+    },
+    {
+      "iso3": "FRA",
+      "status": "NOT_AVAILABLE",
+      "level": null,
+      "detail": "France does not publish official crime statistics by ethnicity, ancestry, or immigrant background (republican statistical tradition). Citizenship of prisoners appears in some European aggregates.",
+      "sourceUrl": null
+    },
+    {
+      "iso3": "BEL",
+      "status": "LIMITED",
+      "level": "citizenship",
+      "detail": "Some judicial / prison statistics by nationality; no Denmark-style ancestry conviction series.",
+      "sourceUrl": null
+    },
+    {
+      "iso3": "GBR",
+      "status": "PARTIAL",
+      "level": "ethnicity",
+      "detail": "Ministry of Justice publishes offender ethnicity (self-identified census categories) for England & Wales. This is race/ethnicity, not immigrant status or country-of-birth ancestry like Denmark.",
+      "sourceUrl": "https://www.gov.uk/government/collections/criminal-justice-statistics"
+    },
+    {
+      "iso3": "USA",
+      "status": "AVAILABLE",
+      "level": "race",
+      "detail": "BJS publishes sentenced state/federal prisoners by race and Hispanic origin annually. FBI UCR Table 43 publishes arrests (and murder arrests) by race. There is no continuous federal convictions-by-immigrant-ancestry series comparable to Denmark\u2019s STRAFNA9.",
+      "sourceUrl": "https://bjs.ojp.gov/document/p23st.pdf"
+    },
+    {
+      "iso3": "CAN",
+      "status": "NOT_AVAILABLE",
+      "level": null,
+      "detail": "Statistics Canada does not publish a national convictions-by-immigrant-status or ancestry time series comparable to Denmark.",
+      "sourceUrl": "https://www.statcan.gc.ca"
+    },
+    {
+      "iso3": "AUS",
+      "status": "LIMITED",
+      "level": "reports",
+      "detail": "Some state-level or one-off reports; no national ABS convictions-by-ancestry open series like Denmark.",
+      "sourceUrl": "https://www.abs.gov.au"
+    },
+    {
+      "iso3": "NZL",
+      "status": "PARTIAL",
+      "level": "ethnicity",
+      "detail": "Ministry of Justice / Stats NZ publish offender ethnicity; not immigrant ancestry.",
+      "sourceUrl": "https://www.justice.govt.nz"
+    },
+    {
+      "iso3": "ITA",
+      "status": "PARTIAL",
+      "level": "citizenship",
+      "detail": "ISTAT / Interior Ministry publish some foreign-national offender and prisoner statistics (citizenship).",
+      "sourceUrl": "https://www.istat.it"
+    },
+    {
+      "iso3": "ESP",
+      "status": "PARTIAL",
+      "level": "citizenship",
+      "detail": "INE / Interior publish foreign-national prisoner and some offender statistics.",
+      "sourceUrl": "https://www.ine.es"
+    }
+  ],
+  "eurostatPrisonCitizenship": "Eurostat crim_pris_ctz \u2014 share of prisoners with foreign citizenship \u2014 is shown for EU/EFTA countries as a related (not identical) measure where national ancestry series are missing."
+}

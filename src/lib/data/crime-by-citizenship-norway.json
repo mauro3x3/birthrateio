@@ -1,0 +1,175 @@
+{
+  "iso3": "NOR",
+  "slug": "norway",
+  "metric": "persons_charged",
+  "definition": "Persons charged (all offence groups), by citizenship. Absolute counts. Foreign citizens = all countries \u2212 Norway.",
+  "source": "Statistics Norway (SSB) table 09421",
+  "sourceUrl": "https://www.ssb.no/en/statbank/table/09421",
+  "groups": [
+    "Norwegian citizens",
+    "Foreign citizens"
+  ],
+  "series": [
+    {
+      "year": 2002,
+      "groups": {
+        "Norwegian citizens": 64548,
+        "Foreign citizens": 9327
+      }
+    },
+    {
+      "year": 2003,
+      "groups": {
+        "Norwegian citizens": 66654,
+        "Foreign citizens": 10695
+      }
+    },
+    {
+      "year": 2004,
+      "groups": {
+        "Norwegian citizens": 72351,
+        "Foreign citizens": 11311
+      }
+    },
+    {
+      "year": 2005,
+      "groups": {
+        "Norwegian citizens": 72964,
+        "Foreign citizens": 11665
+      }
+    },
+    {
+      "year": 2006,
+      "groups": {
+        "Norwegian citizens": 73411,
+        "Foreign citizens": 11803
+      }
+    },
+    {
+      "year": 2007,
+      "groups": {
+        "Norwegian citizens": 75824,
+        "Foreign citizens": 12930
+      }
+    },
+    {
+      "year": 2008,
+      "groups": {
+        "Norwegian citizens": 72301,
+        "Foreign citizens": 13505
+      }
+    },
+    {
+      "year": 2009,
+      "groups": {
+        "Norwegian citizens": 68369,
+        "Foreign citizens": 14376
+      }
+    },
+    {
+      "year": 2010,
+      "groups": {
+        "Norwegian citizens": 68309,
+        "Foreign citizens": 15231
+      }
+    },
+    {
+      "year": 2011,
+      "groups": {
+        "Norwegian citizens": 65863,
+        "Foreign citizens": 15841
+      }
+    },
+    {
+      "year": 2012,
+      "groups": {
+        "Norwegian citizens": 64005,
+        "Foreign citizens": 16864
+      }
+    },
+    {
+      "year": 2013,
+      "groups": {
+        "Norwegian citizens": 63691,
+        "Foreign citizens": 18554
+      }
+    },
+    {
+      "year": 2014,
+      "groups": {
+        "Norwegian citizens": 62281,
+        "Foreign citizens": 18848
+      }
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Norwegian citizens": 62210,
+        "Foreign citizens": 18061
+      }
+    },
+    {
+      "year": 2016,
+      "groups": {
+        "Norwegian citizens": 61908,
+        "Foreign citizens": 18030
+      }
+    },
+    {
+      "year": 2017,
+      "groups": {
+        "Norwegian citizens": 56735,
+        "Foreign citizens": 17043
+      }
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Norwegian citizens": 54525,
+        "Foreign citizens": 15942
+      }
+    },
+    {
+      "year": 2019,
+      "groups": {
+        "Norwegian citizens": 53536,
+        "Foreign citizens": 15779
+      }
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Norwegian citizens": 54526,
+        "Foreign citizens": 15331
+      }
+    },
+    {
+      "year": 2021,
+      "groups": {
+        "Norwegian citizens": 51145,
+        "Foreign citizens": 13780
+      }
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Norwegian citizens": 48188,
+        "Foreign citizens": 13334
+      }
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Norwegian citizens": 47412,
+        "Foreign citizens": 13312
+      }
+    },
+    {
+      "year": 2024,
+      "groups": {
+        "Norwegian citizens": 46008,
+        "Foreign citizens": 13631
+      }
+    }
+  ]
+}

@@ -503,13 +503,18 @@ export async function getPopulationPyramid(countryId: number, year?: number) {
 export async function getComposition(
   countryId: number,
   groupKind = "ETHNICITY",
+  opts?: { useCounts?: boolean },
 ) {
   const rows = await prisma.groupComposition.findMany({
     where: { countryId, groupKind },
-    select: { year: true, groupName: true, share: true },
+    select: { year: true, groupName: true, share: true, population: true },
     orderBy: { year: "asc" },
   });
   if (rows.length === 0) return { groups: [], data: [], note: null as string | null };
+
+  const useCounts =
+    opts?.useCounts === true &&
+    rows.some((r) => r.population != null && r.population > 0);
 
   // Union of group names, preserving first-seen order.
   const groups: string[] = [];
@@ -517,7 +522,9 @@ export async function getComposition(
   for (const r of rows) {
     if (!groups.includes(r.groupName)) groups.push(r.groupName);
     const row = byYear.get(r.year) ?? { year: r.year };
-    row[r.groupName] = r.share ?? 0;
+    row[r.groupName] = useCounts
+      ? (r.population ?? 0)
+      : (r.share ?? 0);
     byYear.set(r.year, row);
   }
   // Ensure every year has every group (0 when missing) for clean stacking.
@@ -528,7 +535,7 @@ export async function getComposition(
     })
     .sort((a, b) => (a.year as number) - (b.year as number));
 
-  return { groups, data, note: null as string | null };
+  return { groups, data, note: null as string | null, useCounts };
 }
 
 /** Latest-year composition snapshot for a single bar/list (e.g. religion). */
@@ -593,6 +600,103 @@ export async function getCityBySlug(slug: string) {
     where: { slug },
     include: { country: true },
   });
+}
+
+/** First-level admin divisions for a country (states, Länder, provinces…). */
+export async function getAdmin1ByCountry(countryId: number) {
+  return prisma.admin1.findMany({
+    where: { countryId },
+    orderBy: [{ population: "desc" }, { name: "asc" }],
+    select: {
+      id: true,
+      slug: true,
+      name: true,
+      kind: true,
+      population: true,
+      code: true,
+    },
+  });
+}
+
+export async function getAdmin1BySlug(slug: string) {
+  return prisma.admin1.findUnique({
+    where: { slug },
+    include: {
+      country: {
+        select: {
+          id: true,
+          slug: true,
+          name: true,
+          iso3: true,
+          flagEmoji: true,
+        },
+      },
+    },
+  });
+}
+
+export async function getAdmin1TimeSeries(
+  admin1Id: number,
+  indicatorSlug: string,
+): Promise<TimeSeriesPoint[]> {
+  const id = await indicatorId(indicatorSlug);
+  if (!id) return [];
+  const rows = await prisma.indicatorValue.findMany({
+    where: {
+      admin1Id,
+      indicatorId: id,
+      subjectType: "ADMIN1",
+      dimension: null,
+    },
+    select: { year: true, value: true, kind: true },
+    orderBy: { year: "asc" },
+  });
+  return rows.map((r) => ({ year: r.year, value: r.value, kind: r.kind }));
+}
+
+/** Latest fertility ranking of admin1 units within a country. */
+export async function getAdmin1FertilityRanking(countryId: number) {
+  const id = await indicatorId(SLUG.fertility);
+  if (!id) return [];
+  const divisions = await prisma.admin1.findMany({
+    where: { countryId },
+    select: { id: true, slug: true, name: true, kind: true, population: true },
+  });
+  if (!divisions.length) return [];
+  const ids = divisions.map((d) => d.id);
+  const rows = await prisma.indicatorValue.findMany({
+    where: {
+      subjectType: "ADMIN1",
+      indicatorId: id,
+      admin1Id: { in: ids },
+      dimension: null,
+    },
+    select: { admin1Id: true, year: true, value: true },
+    orderBy: { year: "desc" },
+  });
+  const latest = new Map<number, { year: number; value: number }>();
+  for (const r of rows) {
+    if (r.admin1Id == null) continue;
+    if (!latest.has(r.admin1Id)) {
+      latest.set(r.admin1Id, { year: r.year, value: r.value });
+    }
+  }
+  return divisions
+    .map((d) => {
+      const v = latest.get(d.id);
+      if (!v) return null;
+      return {
+        id: d.id,
+        slug: d.slug,
+        name: d.name,
+        kind: d.kind,
+        population: d.population,
+        year: v.year,
+        value: v.value,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null)
+    .sort((a, b) => b.value - a.value);
 }
 
 /** Annual urban-agglomeration population (1950–2035) for a city, UN WUP. */

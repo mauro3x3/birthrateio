@@ -19,6 +19,9 @@ import { seedCityDemographics } from "../src/lib/sources/city-demographics-data"
 import { seedCityRace, seedCityIncome } from "../src/lib/sources/city-race-income-data";
 import { seedCities } from "../src/lib/sources/cities-data";
 import { seedBirthGaugeNowcast } from "../src/lib/sources/birthgauge-data";
+import { seedUnemploymentByBirthplace } from "../src/lib/sources/unemployment-birthplace-data";
+import { seedCrimeByOrigin } from "../src/lib/sources/crime-by-origin-data";
+import { seedAdmin1 } from "../src/lib/sources/admin1-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -38,6 +41,9 @@ async function main() {
   await seedCityRace(prisma);
   await seedCityIncome(prisma);
   await seedBirthGaugeNowcast(prisma);
+  await seedUnemploymentByBirthplace(prisma);
+  await seedCrimeByOrigin(prisma);
+  await seedAdmin1(prisma);
 }
 
 main()

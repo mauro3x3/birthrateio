@@ -1,0 +1,46 @@
+{
+  "iso3": "SWE",
+  "slug": "sweden",
+  "metric": "share_of_registered_offences_linked_to_suspects",
+  "definition": "Share of registered offences linked to suspected offenders by native/non-native background (Swedish residents + non-residents). BR\u00c5 research study covering 2007\u20132018 \u2014 not an annual StatBank series.",
+  "source": "Swedish National Council for Crime Prevention (Br\u00e5) report 2021:9 \u2014 Registered offending among persons of native and non-native background",
+  "sourceUrl": "https://bra.se/download/18.45e4b8e192705389a34c2b/1729515966490/2021_9_Registered_offending_among_persons.pdf",
+  "groups": [
+    "Born in Sweden, both parents Sweden-born",
+    "Born in Sweden, one parent foreign-born",
+    "Born in Sweden, both parents foreign-born",
+    "Born abroad",
+    "Non-residents"
+  ],
+  "series": [
+    {
+      "year": 2007,
+      "groups": {
+        "Born in Sweden, both parents Sweden-born": 54.1,
+        "Born in Sweden, one parent foreign-born": 9.2,
+        "Born in Sweden, both parents foreign-born": 6.8,
+        "Born abroad": 23.6,
+        "Non-residents": 6.3
+      }
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Born in Sweden, both parents Sweden-born": 43.2,
+        "Born in Sweden, one parent foreign-born": 8.6,
+        "Born in Sweden, both parents foreign-born": 9.4,
+        "Born abroad": 29.8,
+        "Non-residents": 9.0
+      }
+    }
+  ],
+  "suspectRates2015_2018": {
+    "note": "Share of residents aged 15+ registered as suspected offenders at least once during 2015\u20132018 (Br\u00e5 2021:9).",
+    "groups": {
+      "Born in Sweden, both parents Sweden-born": 3.2,
+      "Born in Sweden, one parent foreign-born": 5.9,
+      "Born in Sweden, both parents foreign-born": 10.2,
+      "Born abroad": 8.0
+    }
+  }
+}

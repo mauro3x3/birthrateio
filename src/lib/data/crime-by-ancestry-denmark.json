@@ -1,0 +1,208 @@
+{
+  "iso3": "DNK",
+  "slug": "denmark",
+  "metric": "persons_guilty_in_crimes",
+  "definition": "Persons guilty in crimes (residents), by ancestry. Men+women, age total. Absolute counts \u2014 not rates or risk ratios.",
+  "source": "Statistics Denmark (DST) table STRAFNA9",
+  "sourceUrl": "https://www.dst.dk/en/Statistik/emner/sociale-forhold/kriminalitet/doemte-personer",
+  "statbank": "https://www.statistikbanken.dk/STRAFNA9",
+  "groups": [
+    "Persons of Danish origin",
+    "Immigrants, total",
+    "Descendants, total"
+  ],
+  "series": [
+    {
+      "year": 2000,
+      "groups": {
+        "Persons of Danish origin": 110854,
+        "Immigrants, total": 12086,
+        "Descendants, total": 1719
+      }
+    },
+    {
+      "year": 2002,
+      "groups": {
+        "Persons of Danish origin": 95074,
+        "Immigrants, total": 11286,
+        "Descendants, total": 1960
+      }
+    },
+    {
+      "year": 2004,
+      "groups": {
+        "Persons of Danish origin": 125123,
+        "Immigrants, total": 14952,
+        "Descendants, total": 2746
+      }
+    },
+    {
+      "year": 2005,
+      "groups": {
+        "Persons of Danish origin": 145559,
+        "Immigrants, total": 17070,
+        "Descendants, total": 3120
+      }
+    },
+    {
+      "year": 2006,
+      "groups": {
+        "Persons of Danish origin": 132262,
+        "Immigrants, total": 17129,
+        "Descendants, total": 3500
+      }
+    },
+    {
+      "year": 2007,
+      "groups": {
+        "Persons of Danish origin": 113725,
+        "Immigrants, total": 14524,
+        "Descendants, total": 3119
+      }
+    },
+    {
+      "year": 2008,
+      "groups": {
+        "Persons of Danish origin": 112581,
+        "Immigrants, total": 14766,
+        "Descendants, total": 3556
+      }
+    },
+    {
+      "year": 2009,
+      "groups": {
+        "Persons of Danish origin": 116978,
+        "Immigrants, total": 16603,
+        "Descendants, total": 4172
+      }
+    },
+    {
+      "year": 2010,
+      "groups": {
+        "Persons of Danish origin": 121611,
+        "Immigrants, total": 17380,
+        "Descendants, total": 4962
+      }
+    },
+    {
+      "year": 2011,
+      "groups": {
+        "Persons of Danish origin": 130401,
+        "Immigrants, total": 18461,
+        "Descendants, total": 5307
+      }
+    },
+    {
+      "year": 2012,
+      "groups": {
+        "Persons of Danish origin": 134551,
+        "Immigrants, total": 19943,
+        "Descendants, total": 6437
+      }
+    },
+    {
+      "year": 2013,
+      "groups": {
+        "Persons of Danish origin": 134103,
+        "Immigrants, total": 19598,
+        "Descendants, total": 6710
+      }
+    },
+    {
+      "year": 2014,
+      "groups": {
+        "Persons of Danish origin": 134886,
+        "Immigrants, total": 20520,
+        "Descendants, total": 7446
+      }
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Persons of Danish origin": 129337,
+        "Immigrants, total": 20737,
+        "Descendants, total": 7537
+      }
+    },
+    {
+      "year": 2016,
+      "groups": {
+        "Persons of Danish origin": 126230,
+        "Immigrants, total": 20262,
+        "Descendants, total": 7773
+      }
+    },
+    {
+      "year": 2017,
+      "groups": {
+        "Persons of Danish origin": 116522,
+        "Immigrants, total": 20691,
+        "Descendants, total": 8210
+      }
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Persons of Danish origin": 113111,
+        "Immigrants, total": 22264,
+        "Descendants, total": 9076
+      }
+    },
+    {
+      "year": 2019,
+      "groups": {
+        "Persons of Danish origin": 123181,
+        "Immigrants, total": 24386,
+        "Descendants, total": 10379
+      }
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Persons of Danish origin": 136297,
+        "Immigrants, total": 27976,
+        "Descendants, total": 12335
+      }
+    },
+    {
+      "year": 2021,
+      "groups": {
+        "Persons of Danish origin": 129134,
+        "Immigrants, total": 28032,
+        "Descendants, total": 12571
+      }
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Persons of Danish origin": 124175,
+        "Immigrants, total": 27016,
+        "Descendants, total": 11860
+      }
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Persons of Danish origin": 119376,
+        "Immigrants, total": 28244,
+        "Descendants, total": 12144
+      }
+    },
+    {
+      "year": 2024,
+      "groups": {
+        "Persons of Danish origin": 119105,
+        "Immigrants, total": 28033,
+        "Descendants, total": 12182
+      }
+    },
+    {
+      "year": 2025,
+      "groups": {
+        "Persons of Danish origin": 117811,
+        "Immigrants, total": 28572,
+        "Descendants, total": 12474
+      }
+    }
+  ]
+}

@@ -1,0 +1,3948 @@
+{
+  "source": "Eurostat \u2014 Prisoners by citizenship (crim_pris_ctz)",
+  "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/crim_pris_ctz/default/table",
+  "definition": "Persons held in prison by citizenship (foreign vs national). Share of prisoners with foreign citizenship. Not the same as crime rates by immigrant background or ancestry.",
+  "countries": {
+    "ALB": {
+      "iso2": "AL",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 36,
+          "total": 4916,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2009,
+          "foreign": 38,
+          "total": 4667,
+          "sharePct": 0.8
+        },
+        {
+          "year": 2010,
+          "foreign": 54,
+          "total": 4657,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2011,
+          "foreign": 69,
+          "total": 4659,
+          "sharePct": 1.5
+        },
+        {
+          "year": 2012,
+          "foreign": 68,
+          "total": 4618,
+          "sharePct": 1.5
+        },
+        {
+          "year": 2013,
+          "foreign": 84,
+          "total": 4998,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2014,
+          "foreign": 99,
+          "total": 5689,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2015,
+          "foreign": 89,
+          "total": 5981,
+          "sharePct": 1.5
+        },
+        {
+          "year": 2016,
+          "foreign": 89,
+          "total": 6031,
+          "sharePct": 1.5
+        },
+        {
+          "year": 2017,
+          "foreign": 101,
+          "total": 5674,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2018,
+          "foreign": 90,
+          "total": 5316,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2019,
+          "foreign": 113,
+          "total": 5045,
+          "sharePct": 2.2
+        },
+        {
+          "year": 2020,
+          "foreign": 109,
+          "total": 4614,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2021,
+          "foreign": 114,
+          "total": 4956,
+          "sharePct": 2.3
+        },
+        {
+          "year": 2022,
+          "foreign": 123,
+          "total": 5060,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2023,
+          "foreign": 125,
+          "total": 5017,
+          "sharePct": 2.5
+        },
+        {
+          "year": 2024,
+          "foreign": 143,
+          "total": 4741,
+          "sharePct": 3.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 143,
+        "total": 4741,
+        "sharePct": 3.0
+      }
+    },
+    "AUT": {
+      "iso2": "AT",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 3349,
+          "total": 8248,
+          "sharePct": 40.6
+        },
+        {
+          "year": 2009,
+          "foreign": 3974,
+          "total": 8708,
+          "sharePct": 45.6
+        },
+        {
+          "year": 2010,
+          "foreign": 3904,
+          "total": 8540,
+          "sharePct": 45.7
+        },
+        {
+          "year": 2011,
+          "foreign": 4055,
+          "total": 8770,
+          "sharePct": 46.2
+        },
+        {
+          "year": 2012,
+          "foreign": 4180,
+          "total": 8805,
+          "sharePct": 47.5
+        },
+        {
+          "year": 2013,
+          "foreign": 4373,
+          "total": 8862,
+          "sharePct": 49.3
+        },
+        {
+          "year": 2014,
+          "foreign": 4449,
+          "total": 8692,
+          "sharePct": 51.2
+        },
+        {
+          "year": 2015,
+          "foreign": 4702,
+          "total": 8665,
+          "sharePct": 54.3
+        },
+        {
+          "year": 2016,
+          "foreign": 4686,
+          "total": 8619,
+          "sharePct": 54.4
+        },
+        {
+          "year": 2017,
+          "foreign": 4831,
+          "total": 8852,
+          "sharePct": 54.6
+        },
+        {
+          "year": 2018,
+          "foreign": 5029,
+          "total": 9163,
+          "sharePct": 54.9
+        },
+        {
+          "year": 2019,
+          "foreign": 4794,
+          "total": 9072,
+          "sharePct": 52.8
+        },
+        {
+          "year": 2020,
+          "foreign": 4298,
+          "total": 8488,
+          "sharePct": 50.6
+        },
+        {
+          "year": 2021,
+          "foreign": 4156,
+          "total": 8436,
+          "sharePct": 49.3
+        },
+        {
+          "year": 2022,
+          "foreign": 4644,
+          "total": 8993,
+          "sharePct": 51.6
+        },
+        {
+          "year": 2023,
+          "foreign": 4800,
+          "total": 9089,
+          "sharePct": 52.8
+        },
+        {
+          "year": 2024,
+          "foreign": 5121,
+          "total": 9657,
+          "sharePct": 53.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 5121,
+        "total": 9657,
+        "sharePct": 53.0
+      }
+    },
+    "BIH": {
+      "iso2": "BA",
+      "series": [
+        {
+          "year": 2010,
+          "foreign": 24,
+          "total": 2743,
+          "sharePct": 0.9
+        },
+        {
+          "year": 2011,
+          "foreign": 67,
+          "total": 2757,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2013,
+          "foreign": 54,
+          "total": 2898,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2014,
+          "foreign": 46,
+          "total": 2825,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2015,
+          "foreign": 57,
+          "total": 2730,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2016,
+          "foreign": 49,
+          "total": 2832,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2017,
+          "foreign": 32,
+          "total": 2820,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2018,
+          "foreign": 51,
+          "total": 4377,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2019,
+          "foreign": 78,
+          "total": 4482,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2020,
+          "foreign": 174,
+          "total": 4097,
+          "sharePct": 4.2
+        },
+        {
+          "year": 2021,
+          "foreign": 100,
+          "total": 4108,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2022,
+          "foreign": 120,
+          "total": 4081,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2023,
+          "foreign": 55,
+          "total": 3498,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2024,
+          "foreign": 69,
+          "total": 4083,
+          "sharePct": 1.7
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 69,
+        "total": 4083,
+        "sharePct": 1.7
+      }
+    },
+    "BEL": {
+      "iso2": "BE",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 4124,
+          "total": 9811,
+          "sharePct": 42.0
+        },
+        {
+          "year": 2009,
+          "foreign": 4276,
+          "total": 10126,
+          "sharePct": 42.2
+        },
+        {
+          "year": 2010,
+          "foreign": 4430,
+          "total": 10526,
+          "sharePct": 42.1
+        },
+        {
+          "year": 2011,
+          "foreign": 4854,
+          "total": 11040,
+          "sharePct": 44.0
+        },
+        {
+          "year": 2012,
+          "foreign": 4902,
+          "total": 11183,
+          "sharePct": 43.8
+        },
+        {
+          "year": 2013,
+          "foreign": 5271,
+          "total": 11818,
+          "sharePct": 44.6
+        },
+        {
+          "year": 2015,
+          "foreign": 4812,
+          "total": 10994,
+          "sharePct": 43.8
+        },
+        {
+          "year": 2017,
+          "foreign": 4627,
+          "total": 10471,
+          "sharePct": 44.2
+        },
+        {
+          "year": 2018,
+          "foreign": 4555,
+          "total": 10261,
+          "sharePct": 44.4
+        },
+        {
+          "year": 2019,
+          "foreign": 4771,
+          "total": 10794,
+          "sharePct": 44.2
+        },
+        {
+          "year": 2020,
+          "foreign": 4593,
+          "total": 10357,
+          "sharePct": 44.3
+        },
+        {
+          "year": 2021,
+          "foreign": 4706,
+          "total": 10769,
+          "sharePct": 43.7
+        },
+        {
+          "year": 2022,
+          "foreign": 4730,
+          "total": 11050,
+          "sharePct": 42.8
+        },
+        {
+          "year": 2023,
+          "foreign": 5219,
+          "total": 11893,
+          "sharePct": 43.9
+        },
+        {
+          "year": 2024,
+          "foreign": 5711,
+          "total": 12581,
+          "sharePct": 45.4
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 5711,
+        "total": 12581,
+        "sharePct": 45.4
+      }
+    },
+    "BGR": {
+      "iso2": "BG",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 187,
+          "total": 9408,
+          "sharePct": 2.0
+        },
+        {
+          "year": 2009,
+          "foreign": 165,
+          "total": 9006,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2010,
+          "foreign": 146,
+          "total": 9379,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2011,
+          "foreign": 175,
+          "total": 9885,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2012,
+          "foreign": 180,
+          "total": 9493,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2013,
+          "foreign": 253,
+          "total": 8834,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2014,
+          "foreign": 232,
+          "total": 7870,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2015,
+          "foreign": 242,
+          "total": 7408,
+          "sharePct": 3.3
+        },
+        {
+          "year": 2016,
+          "foreign": 215,
+          "total": 7345,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2017,
+          "foreign": 186,
+          "total": 6988,
+          "sharePct": 2.7
+        },
+        {
+          "year": 2018,
+          "foreign": 161,
+          "total": 6651,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2019,
+          "foreign": 137,
+          "total": 6448,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2020,
+          "foreign": 154,
+          "total": 6251,
+          "sharePct": 2.5
+        },
+        {
+          "year": 2021,
+          "foreign": 159,
+          "total": 5873,
+          "sharePct": 2.7
+        },
+        {
+          "year": 2022,
+          "foreign": 134,
+          "total": 5577,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2023,
+          "foreign": 163,
+          "total": 5526,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2024,
+          "foreign": 172,
+          "total": 5440,
+          "sharePct": 3.2
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 172,
+        "total": 5440,
+        "sharePct": 3.2
+      }
+    },
+    "CHE": {
+      "iso2": "CH",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 3581,
+          "total": 5303,
+          "sharePct": 67.5
+        },
+        {
+          "year": 2009,
+          "foreign": 3831,
+          "total": 5605,
+          "sharePct": 68.3
+        },
+        {
+          "year": 2010,
+          "foreign": 4030,
+          "total": 5765,
+          "sharePct": 69.9
+        },
+        {
+          "year": 2011,
+          "foreign": 3911,
+          "total": 5626,
+          "sharePct": 69.5
+        },
+        {
+          "year": 2012,
+          "foreign": 4390,
+          "total": 6102,
+          "sharePct": 71.9
+        },
+        {
+          "year": 2013,
+          "foreign": 4857,
+          "total": 6652,
+          "sharePct": 73.0
+        },
+        {
+          "year": 2014,
+          "foreign": 4673,
+          "total": 6519,
+          "sharePct": 71.7
+        },
+        {
+          "year": 2015,
+          "foreign": 4514,
+          "total": 6498,
+          "sharePct": 69.5
+        },
+        {
+          "year": 2016,
+          "foreign": 4599,
+          "total": 6507,
+          "sharePct": 70.7
+        },
+        {
+          "year": 2017,
+          "foreign": 4615,
+          "total": 6564,
+          "sharePct": 70.3
+        },
+        {
+          "year": 2018,
+          "foreign": 4679,
+          "total": 6602,
+          "sharePct": 70.9
+        },
+        {
+          "year": 2019,
+          "foreign": 4478,
+          "total": 6568,
+          "sharePct": 68.2
+        },
+        {
+          "year": 2020,
+          "foreign": 4340,
+          "total": 6183,
+          "sharePct": 70.2
+        },
+        {
+          "year": 2021,
+          "foreign": 4230,
+          "total": 6113,
+          "sharePct": 69.2
+        },
+        {
+          "year": 2022,
+          "foreign": 4396,
+          "total": 6252,
+          "sharePct": 70.3
+        },
+        {
+          "year": 2023,
+          "foreign": 4734,
+          "total": 6629,
+          "sharePct": 71.4
+        },
+        {
+          "year": 2024,
+          "foreign": 4801,
+          "total": 6722,
+          "sharePct": 71.4
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 4801,
+        "total": 6722,
+        "sharePct": 71.4
+      }
+    },
+    "CYP": {
+      "iso2": "CY",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 377,
+          "total": 652,
+          "sharePct": 57.8
+        },
+        {
+          "year": 2009,
+          "foreign": 321,
+          "total": 578,
+          "sharePct": 55.5
+        },
+        {
+          "year": 2010,
+          "foreign": 374,
+          "total": 636,
+          "sharePct": 58.8
+        },
+        {
+          "year": 2011,
+          "foreign": 356,
+          "total": 622,
+          "sharePct": 57.2
+        },
+        {
+          "year": 2012,
+          "foreign": 404,
+          "total": 678,
+          "sharePct": 59.6
+        },
+        {
+          "year": 2013,
+          "foreign": 306,
+          "total": 553,
+          "sharePct": 55.3
+        },
+        {
+          "year": 2014,
+          "foreign": 239,
+          "total": 532,
+          "sharePct": 44.9
+        },
+        {
+          "year": 2015,
+          "foreign": 214,
+          "total": 547,
+          "sharePct": 39.1
+        },
+        {
+          "year": 2016,
+          "foreign": 237,
+          "total": 586,
+          "sharePct": 40.4
+        },
+        {
+          "year": 2017,
+          "foreign": 151,
+          "total": 592,
+          "sharePct": 25.5
+        },
+        {
+          "year": 2018,
+          "foreign": 276,
+          "total": 619,
+          "sharePct": 44.6
+        },
+        {
+          "year": 2019,
+          "foreign": 372,
+          "total": 759,
+          "sharePct": 49.0
+        },
+        {
+          "year": 2020,
+          "foreign": 260,
+          "total": 601,
+          "sharePct": 43.3
+        },
+        {
+          "year": 2021,
+          "foreign": 417,
+          "total": 795,
+          "sharePct": 52.5
+        },
+        {
+          "year": 2022,
+          "foreign": 531,
+          "total": 958,
+          "sharePct": 55.4
+        },
+        {
+          "year": 2023,
+          "foreign": 544,
+          "total": 959,
+          "sharePct": 56.7
+        },
+        {
+          "year": 2024,
+          "foreign": 521,
+          "total": 965,
+          "sharePct": 54.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 521,
+        "total": 965,
+        "sharePct": 54.0
+      }
+    },
+    "CZE": {
+      "iso2": "CZ",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 1449,
+          "total": 20502,
+          "sharePct": 7.1
+        },
+        {
+          "year": 2009,
+          "foreign": 579,
+          "total": 21853,
+          "sharePct": 2.6
+        },
+        {
+          "year": 2010,
+          "foreign": 1600,
+          "total": 21900,
+          "sharePct": 7.3
+        },
+        {
+          "year": 2011,
+          "foreign": 1730,
+          "total": 23170,
+          "sharePct": 7.5
+        },
+        {
+          "year": 2012,
+          "foreign": 1715,
+          "total": 22644,
+          "sharePct": 7.6
+        },
+        {
+          "year": 2013,
+          "foreign": 1523,
+          "total": 16645,
+          "sharePct": 9.1
+        },
+        {
+          "year": 2014,
+          "foreign": 1549,
+          "total": 18658,
+          "sharePct": 8.3
+        },
+        {
+          "year": 2015,
+          "foreign": 1670,
+          "total": 20866,
+          "sharePct": 8.0
+        },
+        {
+          "year": 2016,
+          "foreign": 1807,
+          "total": 22481,
+          "sharePct": 8.0
+        },
+        {
+          "year": 2017,
+          "foreign": 1814,
+          "total": 22159,
+          "sharePct": 8.2
+        },
+        {
+          "year": 2018,
+          "foreign": 1768,
+          "total": 21577,
+          "sharePct": 8.2
+        },
+        {
+          "year": 2019,
+          "foreign": 1794,
+          "total": 21048,
+          "sharePct": 8.5
+        },
+        {
+          "year": 2020,
+          "foreign": 1534,
+          "total": 19286,
+          "sharePct": 8.0
+        },
+        {
+          "year": 2021,
+          "foreign": 1396,
+          "total": 18748,
+          "sharePct": 7.4
+        },
+        {
+          "year": 2022,
+          "foreign": 1459,
+          "total": 19052,
+          "sharePct": 7.7
+        },
+        {
+          "year": 2023,
+          "foreign": 1651,
+          "total": 19569,
+          "sharePct": 8.4
+        },
+        {
+          "year": 2024,
+          "foreign": 1597,
+          "total": 19430,
+          "sharePct": 8.2
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 1597,
+        "total": 19430,
+        "sharePct": 8.2
+      }
+    },
+    "DNK": {
+      "iso2": "DK",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 792,
+          "total": 3451,
+          "sharePct": 22.9
+        },
+        {
+          "year": 2009,
+          "foreign": 811,
+          "total": 3721,
+          "sharePct": 21.8
+        },
+        {
+          "year": 2010,
+          "foreign": 853,
+          "total": 3944,
+          "sharePct": 21.6
+        },
+        {
+          "year": 2011,
+          "foreign": 838,
+          "total": 3947,
+          "sharePct": 21.2
+        },
+        {
+          "year": 2012,
+          "foreign": 979,
+          "total": 3829,
+          "sharePct": 25.6
+        },
+        {
+          "year": 2013,
+          "foreign": 1098,
+          "total": 4091,
+          "sharePct": 26.8
+        },
+        {
+          "year": 2014,
+          "foreign": 1002,
+          "total": 3583,
+          "sharePct": 28.0
+        },
+        {
+          "year": 2015,
+          "foreign": 865,
+          "total": 3203,
+          "sharePct": 27.0
+        },
+        {
+          "year": 2016,
+          "foreign": 954,
+          "total": 3408,
+          "sharePct": 28.0
+        },
+        {
+          "year": 2017,
+          "foreign": 968,
+          "total": 3418,
+          "sharePct": 28.3
+        },
+        {
+          "year": 2018,
+          "foreign": 1039,
+          "total": 3635,
+          "sharePct": 28.6
+        },
+        {
+          "year": 2019,
+          "foreign": 1137,
+          "total": 3920,
+          "sharePct": 29.0
+        },
+        {
+          "year": 2020,
+          "foreign": 1171,
+          "total": 4166,
+          "sharePct": 28.1
+        },
+        {
+          "year": 2021,
+          "foreign": 1074,
+          "total": 4222,
+          "sharePct": 25.4
+        },
+        {
+          "year": 2022,
+          "foreign": 1145,
+          "total": 4208,
+          "sharePct": 27.2
+        },
+        {
+          "year": 2023,
+          "foreign": 1107,
+          "total": 4154,
+          "sharePct": 26.6
+        },
+        {
+          "year": 2024,
+          "foreign": 1055,
+          "total": 4167,
+          "sharePct": 25.3
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 1055,
+        "total": 4167,
+        "sharePct": 25.3
+      }
+    },
+    "EST": {
+      "iso2": "EE",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 165,
+          "total": 3656,
+          "sharePct": 4.5
+        },
+        {
+          "year": 2009,
+          "foreign": 1399,
+          "total": 3555,
+          "sharePct": 39.4
+        },
+        {
+          "year": 2010,
+          "foreign": 1349,
+          "total": 3393,
+          "sharePct": 39.8
+        },
+        {
+          "year": 2011,
+          "foreign": 1302,
+          "total": 3400,
+          "sharePct": 38.3
+        },
+        {
+          "year": 2012,
+          "foreign": 1248,
+          "total": 3286,
+          "sharePct": 38.0
+        },
+        {
+          "year": 2013,
+          "foreign": 1192,
+          "total": 3023,
+          "sharePct": 39.4
+        },
+        {
+          "year": 2014,
+          "foreign": 1226,
+          "total": 3034,
+          "sharePct": 40.4
+        },
+        {
+          "year": 2015,
+          "foreign": 1096,
+          "total": 2823,
+          "sharePct": 38.8
+        },
+        {
+          "year": 2016,
+          "foreign": 1060,
+          "total": 2864,
+          "sharePct": 37.0
+        },
+        {
+          "year": 2017,
+          "foreign": 996,
+          "total": 2723,
+          "sharePct": 36.6
+        },
+        {
+          "year": 2018,
+          "foreign": 916,
+          "total": 2584,
+          "sharePct": 35.4
+        },
+        {
+          "year": 2019,
+          "foreign": 837,
+          "total": 2487,
+          "sharePct": 33.7
+        },
+        {
+          "year": 2020,
+          "foreign": 799,
+          "total": 2348,
+          "sharePct": 34.0
+        },
+        {
+          "year": 2021,
+          "foreign": 725,
+          "total": 2189,
+          "sharePct": 33.1
+        },
+        {
+          "year": 2022,
+          "foreign": 686,
+          "total": 2073,
+          "sharePct": 33.1
+        },
+        {
+          "year": 2023,
+          "foreign": 623,
+          "total": 1841,
+          "sharePct": 33.8
+        },
+        {
+          "year": 2024,
+          "foreign": 547,
+          "total": 1637,
+          "sharePct": 33.4
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 547,
+        "total": 1637,
+        "sharePct": 33.4
+      }
+    },
+    "GRC": {
+      "iso2": "EL",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 6176,
+          "total": 11736,
+          "sharePct": 52.6
+        },
+        {
+          "year": 2009,
+          "foreign": 6307,
+          "total": 11364,
+          "sharePct": 55.5
+        },
+        {
+          "year": 2010,
+          "foreign": 7210,
+          "total": 12349,
+          "sharePct": 58.4
+        },
+        {
+          "year": 2011,
+          "foreign": 7887,
+          "total": 12479,
+          "sharePct": 63.2
+        },
+        {
+          "year": 2012,
+          "foreign": 7875,
+          "total": 12475,
+          "sharePct": 63.1
+        },
+        {
+          "year": 2013,
+          "foreign": 7623,
+          "total": 12693,
+          "sharePct": 60.1
+        },
+        {
+          "year": 2014,
+          "foreign": 6882,
+          "total": 11798,
+          "sharePct": 58.3
+        },
+        {
+          "year": 2015,
+          "foreign": 5289,
+          "total": 9611,
+          "sharePct": 55.0
+        },
+        {
+          "year": 2016,
+          "foreign": 5195,
+          "total": 9560,
+          "sharePct": 54.3
+        },
+        {
+          "year": 2017,
+          "foreign": 5291,
+          "total": 10011,
+          "sharePct": 52.9
+        },
+        {
+          "year": 2018,
+          "foreign": 5822,
+          "total": 10654,
+          "sharePct": 54.6
+        },
+        {
+          "year": 2019,
+          "foreign": 6314,
+          "total": 10891,
+          "sharePct": 58.0
+        },
+        {
+          "year": 2020,
+          "foreign": 6799,
+          "total": 11379,
+          "sharePct": 59.8
+        },
+        {
+          "year": 2021,
+          "foreign": 6499,
+          "total": 11030,
+          "sharePct": 58.9
+        },
+        {
+          "year": 2022,
+          "foreign": 6022,
+          "total": 10526,
+          "sharePct": 57.2
+        },
+        {
+          "year": 2023,
+          "foreign": 5562,
+          "total": 10242,
+          "sharePct": 54.3
+        },
+        {
+          "year": 2024,
+          "foreign": 5973,
+          "total": 11484,
+          "sharePct": 52.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 5973,
+        "total": 11484,
+        "sharePct": 52.0
+      }
+    },
+    "ESP": {
+      "iso2": "ES",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 26201,
+          "total": 73558,
+          "sharePct": 35.6
+        },
+        {
+          "year": 2009,
+          "foreign": 27162,
+          "total": 76079,
+          "sharePct": 35.7
+        },
+        {
+          "year": 2010,
+          "foreign": 26315,
+          "total": 73929,
+          "sharePct": 35.6
+        },
+        {
+          "year": 2011,
+          "foreign": 24502,
+          "total": 70472,
+          "sharePct": 34.8
+        },
+        {
+          "year": 2012,
+          "foreign": 22893,
+          "total": 68597,
+          "sharePct": 33.4
+        },
+        {
+          "year": 2013,
+          "foreign": 21116,
+          "total": 66765,
+          "sharePct": 31.6
+        },
+        {
+          "year": 2014,
+          "foreign": 19697,
+          "total": 65017,
+          "sharePct": 30.3
+        },
+        {
+          "year": 2015,
+          "foreign": 17870,
+          "total": 61614,
+          "sharePct": 29.0
+        },
+        {
+          "year": 2016,
+          "foreign": 17130,
+          "total": 59589,
+          "sharePct": 28.7
+        },
+        {
+          "year": 2017,
+          "foreign": 16549,
+          "total": 58812,
+          "sharePct": 28.1
+        },
+        {
+          "year": 2018,
+          "foreign": 16536,
+          "total": 58883,
+          "sharePct": 28.1
+        },
+        {
+          "year": 2019,
+          "foreign": 16470,
+          "total": 58517,
+          "sharePct": 28.1
+        },
+        {
+          "year": 2020,
+          "foreign": 15918,
+          "total": 55180,
+          "sharePct": 28.8
+        },
+        {
+          "year": 2021,
+          "foreign": 16272,
+          "total": 55097,
+          "sharePct": 29.5
+        },
+        {
+          "year": 2022,
+          "foreign": 16758,
+          "total": 55751,
+          "sharePct": 30.1
+        },
+        {
+          "year": 2023,
+          "foreign": 17693,
+          "total": 56698,
+          "sharePct": 31.2
+        },
+        {
+          "year": 2024,
+          "foreign": 19339,
+          "total": 59226,
+          "sharePct": 32.7
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 19339,
+        "total": 59226,
+        "sharePct": 32.7
+      }
+    },
+    "FIN": {
+      "iso2": "FI",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 333,
+          "total": 3530,
+          "sharePct": 9.4
+        },
+        {
+          "year": 2009,
+          "foreign": 356,
+          "total": 3589,
+          "sharePct": 9.9
+        },
+        {
+          "year": 2010,
+          "foreign": 374,
+          "total": 3364,
+          "sharePct": 11.1
+        },
+        {
+          "year": 2011,
+          "foreign": 436,
+          "total": 3268,
+          "sharePct": 13.3
+        },
+        {
+          "year": 2012,
+          "foreign": 478,
+          "total": 3306,
+          "sharePct": 14.5
+        },
+        {
+          "year": 2013,
+          "foreign": 458,
+          "total": 3295,
+          "sharePct": 13.9
+        },
+        {
+          "year": 2014,
+          "foreign": 483,
+          "total": 3148,
+          "sharePct": 15.3
+        },
+        {
+          "year": 2015,
+          "foreign": 489,
+          "total": 3135,
+          "sharePct": 15.6
+        },
+        {
+          "year": 2016,
+          "foreign": 531,
+          "total": 3156,
+          "sharePct": 16.8
+        },
+        {
+          "year": 2017,
+          "foreign": 555,
+          "total": 3082,
+          "sharePct": 18.0
+        },
+        {
+          "year": 2018,
+          "foreign": 503,
+          "total": 2956,
+          "sharePct": 17.0
+        },
+        {
+          "year": 2019,
+          "foreign": 502,
+          "total": 2945,
+          "sharePct": 17.0
+        },
+        {
+          "year": 2020,
+          "foreign": 474,
+          "total": 2751,
+          "sharePct": 17.2
+        },
+        {
+          "year": 2021,
+          "foreign": 421,
+          "total": 2811,
+          "sharePct": 15.0
+        },
+        {
+          "year": 2022,
+          "foreign": 461,
+          "total": 2861,
+          "sharePct": 16.1
+        },
+        {
+          "year": 2023,
+          "foreign": 593,
+          "total": 2962,
+          "sharePct": 20.0
+        },
+        {
+          "year": 2024,
+          "foreign": 743,
+          "total": 3187,
+          "sharePct": 23.3
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 743,
+        "total": 3187,
+        "sharePct": 23.3
+      }
+    },
+    "FRA": {
+      "iso2": "FR",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 11869,
+          "total": 62252,
+          "sharePct": 19.1
+        },
+        {
+          "year": 2009,
+          "foreign": 11552,
+          "total": 60978,
+          "sharePct": 18.9
+        },
+        {
+          "year": 2010,
+          "foreign": 11597,
+          "total": 60544,
+          "sharePct": 19.2
+        },
+        {
+          "year": 2011,
+          "foreign": 12549,
+          "total": 64787,
+          "sharePct": 19.4
+        },
+        {
+          "year": 2012,
+          "foreign": 13043,
+          "total": 66572,
+          "sharePct": 19.6
+        },
+        {
+          "year": 2013,
+          "foreign": 13843,
+          "total": 67075,
+          "sharePct": 20.6
+        },
+        {
+          "year": 2014,
+          "foreign": 13814,
+          "total": 66270,
+          "sharePct": 20.8
+        },
+        {
+          "year": 2015,
+          "foreign": 14071,
+          "total": 66678,
+          "sharePct": 21.1
+        },
+        {
+          "year": 2016,
+          "foreign": 14964,
+          "total": 68432,
+          "sharePct": 21.9
+        },
+        {
+          "year": 2017,
+          "foreign": 15418,
+          "total": 68974,
+          "sharePct": 22.4
+        },
+        {
+          "year": 2018,
+          "foreign": 16151,
+          "total": 70059,
+          "sharePct": 23.1
+        },
+        {
+          "year": 2019,
+          "foreign": 16414,
+          "total": 70739,
+          "sharePct": 23.2
+        },
+        {
+          "year": 2020,
+          "foreign": 15357,
+          "total": 62543,
+          "sharePct": 24.6
+        },
+        {
+          "year": 2021,
+          "foreign": 17447,
+          "total": 69448,
+          "sharePct": 25.1
+        },
+        {
+          "year": 2022,
+          "foreign": 18068,
+          "total": 72173,
+          "sharePct": 25.0
+        },
+        {
+          "year": 2023,
+          "foreign": 18832,
+          "total": 75913,
+          "sharePct": 24.8
+        },
+        {
+          "year": 2024,
+          "foreign": 19908,
+          "total": 80669,
+          "sharePct": 24.7
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 19908,
+        "total": 80669,
+        "sharePct": 24.7
+      }
+    },
+    "HRV": {
+      "iso2": "HR",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 293,
+          "total": 4734,
+          "sharePct": 6.2
+        },
+        {
+          "year": 2009,
+          "foreign": 280,
+          "total": 4891,
+          "sharePct": 5.7
+        },
+        {
+          "year": 2010,
+          "foreign": 242,
+          "total": 5165,
+          "sharePct": 4.7
+        },
+        {
+          "year": 2011,
+          "foreign": 289,
+          "total": 5084,
+          "sharePct": 5.7
+        },
+        {
+          "year": 2012,
+          "foreign": 285,
+          "total": 4741,
+          "sharePct": 6.0
+        },
+        {
+          "year": 2013,
+          "foreign": 275,
+          "total": 4352,
+          "sharePct": 6.3
+        },
+        {
+          "year": 2014,
+          "foreign": 231,
+          "total": 3763,
+          "sharePct": 6.1
+        },
+        {
+          "year": 2015,
+          "foreign": 197,
+          "total": 3341,
+          "sharePct": 5.9
+        },
+        {
+          "year": 2016,
+          "foreign": 197,
+          "total": 3108,
+          "sharePct": 6.3
+        },
+        {
+          "year": 2017,
+          "foreign": 225,
+          "total": 3190,
+          "sharePct": 7.1
+        },
+        {
+          "year": 2018,
+          "foreign": 313,
+          "total": 3217,
+          "sharePct": 9.7
+        },
+        {
+          "year": 2019,
+          "foreign": 481,
+          "total": 3533,
+          "sharePct": 13.6
+        },
+        {
+          "year": 2020,
+          "foreign": 381,
+          "total": 3531,
+          "sharePct": 10.8
+        },
+        {
+          "year": 2021,
+          "foreign": 467,
+          "total": 3905,
+          "sharePct": 12.0
+        },
+        {
+          "year": 2022,
+          "foreign": 423,
+          "total": 4091,
+          "sharePct": 10.3
+        },
+        {
+          "year": 2023,
+          "foreign": 778,
+          "total": 4445,
+          "sharePct": 17.5
+        },
+        {
+          "year": 2024,
+          "foreign": 1080,
+          "total": 4965,
+          "sharePct": 21.8
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 1080,
+        "total": 4965,
+        "sharePct": 21.8
+      }
+    },
+    "HUN": {
+      "iso2": "HU",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 538,
+          "total": 14743,
+          "sharePct": 3.6
+        },
+        {
+          "year": 2009,
+          "foreign": 577,
+          "total": 15432,
+          "sharePct": 3.7
+        },
+        {
+          "year": 2010,
+          "foreign": 604,
+          "total": 16328,
+          "sharePct": 3.7
+        },
+        {
+          "year": 2011,
+          "foreign": 585,
+          "total": 17210,
+          "sharePct": 3.4
+        },
+        {
+          "year": 2012,
+          "foreign": 621,
+          "total": 17179,
+          "sharePct": 3.6
+        },
+        {
+          "year": 2013,
+          "foreign": 653,
+          "total": 17841,
+          "sharePct": 3.7
+        },
+        {
+          "year": 2014,
+          "foreign": 700,
+          "total": 17890,
+          "sharePct": 3.9
+        },
+        {
+          "year": 2015,
+          "foreign": 906,
+          "total": 17449,
+          "sharePct": 5.2
+        },
+        {
+          "year": 2016,
+          "foreign": 878,
+          "total": 17658,
+          "sharePct": 5.0
+        },
+        {
+          "year": 2017,
+          "foreign": 861,
+          "total": 17343,
+          "sharePct": 5.0
+        },
+        {
+          "year": 2018,
+          "foreign": 753,
+          "total": 16303,
+          "sharePct": 4.6
+        },
+        {
+          "year": 2019,
+          "foreign": 805,
+          "total": 16334,
+          "sharePct": 4.9
+        },
+        {
+          "year": 2020,
+          "foreign": 998,
+          "total": 16752,
+          "sharePct": 6.0
+        },
+        {
+          "year": 2021,
+          "foreign": 1879,
+          "total": 18623,
+          "sharePct": 10.1
+        },
+        {
+          "year": 2022,
+          "foreign": 2893,
+          "total": 19347,
+          "sharePct": 15.0
+        },
+        {
+          "year": 2023,
+          "foreign": 1066,
+          "total": 17939,
+          "sharePct": 5.9
+        },
+        {
+          "year": 2024,
+          "foreign": 758,
+          "total": 18464,
+          "sharePct": 4.1
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 758,
+        "total": 18464,
+        "sharePct": 4.1
+      }
+    },
+    "IRL": {
+      "iso2": "IE",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 443,
+          "total": 3484,
+          "sharePct": 12.7
+        },
+        {
+          "year": 2009,
+          "foreign": 500,
+          "total": 3868,
+          "sharePct": 12.9
+        },
+        {
+          "year": 2010,
+          "foreign": 397,
+          "total": 4318,
+          "sharePct": 9.2
+        },
+        {
+          "year": 2011,
+          "foreign": 386,
+          "total": 4216,
+          "sharePct": 9.2
+        },
+        {
+          "year": 2012,
+          "foreign": 398,
+          "total": 4287,
+          "sharePct": 9.3
+        },
+        {
+          "year": 2013,
+          "foreign": 420,
+          "total": 4088,
+          "sharePct": 10.3
+        },
+        {
+          "year": 2014,
+          "foreign": 371,
+          "total": 3777,
+          "sharePct": 9.8
+        },
+        {
+          "year": 2015,
+          "foreign": 342,
+          "total": 3755,
+          "sharePct": 9.1
+        },
+        {
+          "year": 2018,
+          "foreign": 520,
+          "total": 3962,
+          "sharePct": 13.1
+        },
+        {
+          "year": 2019,
+          "foreign": 615,
+          "total": 4017,
+          "sharePct": 15.3
+        },
+        {
+          "year": 2020,
+          "foreign": 592,
+          "total": 3810,
+          "sharePct": 15.5
+        },
+        {
+          "year": 2021,
+          "foreign": 575,
+          "total": 3806,
+          "sharePct": 15.1
+        },
+        {
+          "year": 2022,
+          "foreign": 651,
+          "total": 4369,
+          "sharePct": 14.9
+        },
+        {
+          "year": 2023,
+          "foreign": 738,
+          "total": 4731,
+          "sharePct": 15.6
+        },
+        {
+          "year": 2024,
+          "foreign": 847,
+          "total": 5121,
+          "sharePct": 16.5
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 847,
+        "total": 5121,
+        "sharePct": 16.5
+      }
+    },
+    "ISL": {
+      "iso2": "IS",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 29,
+          "total": 140,
+          "sharePct": 20.7
+        },
+        {
+          "year": 2009,
+          "foreign": 31,
+          "total": 148,
+          "sharePct": 20.9
+        },
+        {
+          "year": 2010,
+          "foreign": 27,
+          "total": 167,
+          "sharePct": 16.2
+        },
+        {
+          "year": 2011,
+          "foreign": 28,
+          "total": 150,
+          "sharePct": 18.7
+        },
+        {
+          "year": 2012,
+          "foreign": 37,
+          "total": 153,
+          "sharePct": 24.2
+        },
+        {
+          "year": 2013,
+          "foreign": 25,
+          "total": 147,
+          "sharePct": 17.0
+        },
+        {
+          "year": 2014,
+          "foreign": 22,
+          "total": 154,
+          "sharePct": 14.3
+        },
+        {
+          "year": 2015,
+          "foreign": 29,
+          "total": 139,
+          "sharePct": 20.9
+        },
+        {
+          "year": 2016,
+          "foreign": 26,
+          "total": 116,
+          "sharePct": 22.4
+        },
+        {
+          "year": 2017,
+          "foreign": 31,
+          "total": 137,
+          "sharePct": 22.6
+        },
+        {
+          "year": 2018,
+          "foreign": 31,
+          "total": 136,
+          "sharePct": 22.8
+        },
+        {
+          "year": 2019,
+          "foreign": 32,
+          "total": 158,
+          "sharePct": 20.3
+        },
+        {
+          "year": 2020,
+          "foreign": 34,
+          "total": 141,
+          "sharePct": 24.1
+        },
+        {
+          "year": 2021,
+          "foreign": 32,
+          "total": 142,
+          "sharePct": 22.5
+        },
+        {
+          "year": 2022,
+          "foreign": 39,
+          "total": 138,
+          "sharePct": 28.3
+        },
+        {
+          "year": 2023,
+          "foreign": 55,
+          "total": 138,
+          "sharePct": 39.9
+        },
+        {
+          "year": 2024,
+          "foreign": 53,
+          "total": 136,
+          "sharePct": 39.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 53,
+        "total": 136,
+        "sharePct": 39.0
+      }
+    },
+    "ITA": {
+      "iso2": "IT",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 22001,
+          "total": 59284,
+          "sharePct": 37.1
+        },
+        {
+          "year": 2009,
+          "foreign": 24498,
+          "total": 65598,
+          "sharePct": 37.3
+        },
+        {
+          "year": 2010,
+          "foreign": 24985,
+          "total": 69263,
+          "sharePct": 36.1
+        },
+        {
+          "year": 2011,
+          "foreign": 24649,
+          "total": 68325,
+          "sharePct": 36.1
+        },
+        {
+          "year": 2012,
+          "foreign": 23956,
+          "total": 67102,
+          "sharePct": 35.7
+        },
+        {
+          "year": 2013,
+          "foreign": 22344,
+          "total": 63848,
+          "sharePct": 35.0
+        },
+        {
+          "year": 2014,
+          "foreign": 17856,
+          "total": 54745,
+          "sharePct": 32.6
+        },
+        {
+          "year": 2015,
+          "foreign": 17799,
+          "total": 53410,
+          "sharePct": 33.3
+        },
+        {
+          "year": 2016,
+          "foreign": 19149,
+          "total": 55978,
+          "sharePct": 34.2
+        },
+        {
+          "year": 2017,
+          "foreign": 20307,
+          "total": 59038,
+          "sharePct": 34.4
+        },
+        {
+          "year": 2018,
+          "foreign": 20774,
+          "total": 61131,
+          "sharePct": 34.0
+        },
+        {
+          "year": 2019,
+          "foreign": 20352,
+          "total": 62232,
+          "sharePct": 32.7
+        },
+        {
+          "year": 2020,
+          "foreign": 17741,
+          "total": 54605,
+          "sharePct": 32.5
+        },
+        {
+          "year": 2021,
+          "foreign": 17429,
+          "total": 55349,
+          "sharePct": 31.5
+        },
+        {
+          "year": 2022,
+          "foreign": 18138,
+          "total": 57455,
+          "sharePct": 31.6
+        },
+        {
+          "year": 2023,
+          "foreign": 19790,
+          "total": 61568,
+          "sharePct": 32.1
+        },
+        {
+          "year": 2024,
+          "foreign": 20353,
+          "total": 63524,
+          "sharePct": 32.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 20353,
+        "total": 63524,
+        "sharePct": 32.0
+      }
+    },
+    "LIE": {
+      "iso2": "LI",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 65,
+          "total": 78,
+          "sharePct": 83.3
+        },
+        {
+          "year": 2009,
+          "foreign": 135,
+          "total": 149,
+          "sharePct": 90.6
+        },
+        {
+          "year": 2010,
+          "foreign": 61,
+          "total": 76,
+          "sharePct": 80.3
+        },
+        {
+          "year": 2011,
+          "foreign": 52,
+          "total": 71,
+          "sharePct": 73.2
+        },
+        {
+          "year": 2012,
+          "foreign": 49,
+          "total": 60,
+          "sharePct": 81.7
+        },
+        {
+          "year": 2013,
+          "foreign": 51,
+          "total": 68,
+          "sharePct": 75.0
+        },
+        {
+          "year": 2014,
+          "foreign": 41,
+          "total": 53,
+          "sharePct": 77.4
+        },
+        {
+          "year": 2015,
+          "foreign": 42,
+          "total": 53,
+          "sharePct": 79.2
+        },
+        {
+          "year": 2016,
+          "foreign": 62,
+          "total": 72,
+          "sharePct": 86.1
+        },
+        {
+          "year": 2017,
+          "foreign": 61,
+          "total": 73,
+          "sharePct": 83.6
+        },
+        {
+          "year": 2018,
+          "foreign": 54,
+          "total": 63,
+          "sharePct": 85.7
+        },
+        {
+          "year": 2019,
+          "foreign": 36,
+          "total": 43,
+          "sharePct": 83.7
+        },
+        {
+          "year": 2020,
+          "foreign": 38,
+          "total": 57,
+          "sharePct": 66.7
+        },
+        {
+          "year": 2022,
+          "foreign": 53,
+          "total": 58,
+          "sharePct": 91.4
+        },
+        {
+          "year": 2023,
+          "foreign": 45,
+          "total": 48,
+          "sharePct": 93.8
+        },
+        {
+          "year": 2024,
+          "foreign": 58,
+          "total": 77,
+          "sharePct": 75.3
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 58,
+        "total": 77,
+        "sharePct": 75.3
+      }
+    },
+    "LTU": {
+      "iso2": "LT",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 90,
+          "total": 8000,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2009,
+          "foreign": 118,
+          "total": 8655,
+          "sharePct": 1.4
+        },
+        {
+          "year": 2010,
+          "foreign": 100,
+          "total": 9139,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2011,
+          "foreign": 128,
+          "total": 9920,
+          "sharePct": 1.3
+        },
+        {
+          "year": 2012,
+          "foreign": 113,
+          "total": 9729,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2013,
+          "foreign": 149,
+          "total": 9261,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2014,
+          "foreign": 159,
+          "total": 8636,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2015,
+          "foreign": 128,
+          "total": 7355,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2016,
+          "foreign": 111,
+          "total": 6815,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2017,
+          "foreign": 114,
+          "total": 6599,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2018,
+          "foreign": 125,
+          "total": 6485,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2019,
+          "foreign": 128,
+          "total": 6138,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2020,
+          "foreign": 102,
+          "total": 5320,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2021,
+          "foreign": 167,
+          "total": 5086,
+          "sharePct": 3.3
+        },
+        {
+          "year": 2022,
+          "foreign": 166,
+          "total": 4973,
+          "sharePct": 3.3
+        },
+        {
+          "year": 2023,
+          "foreign": 153,
+          "total": 4551,
+          "sharePct": 3.4
+        },
+        {
+          "year": 2024,
+          "foreign": 165,
+          "total": 4480,
+          "sharePct": 3.7
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 165,
+        "total": 4480,
+        "sharePct": 3.7
+      }
+    },
+    "LUX": {
+      "iso2": "LU",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 556,
+          "total": 762,
+          "sharePct": 73.0
+        },
+        {
+          "year": 2009,
+          "foreign": 484,
+          "total": 702,
+          "sharePct": 68.9
+        },
+        {
+          "year": 2010,
+          "foreign": 463,
+          "total": 681,
+          "sharePct": 68.0
+        },
+        {
+          "year": 2011,
+          "foreign": 448,
+          "total": 637,
+          "sharePct": 70.3
+        },
+        {
+          "year": 2012,
+          "foreign": 466,
+          "total": 666,
+          "sharePct": 70.0
+        },
+        {
+          "year": 2013,
+          "foreign": 454,
+          "total": 656,
+          "sharePct": 69.2
+        },
+        {
+          "year": 2014,
+          "foreign": 465,
+          "total": 626,
+          "sharePct": 74.3
+        },
+        {
+          "year": 2015,
+          "foreign": 516,
+          "total": 691,
+          "sharePct": 74.7
+        },
+        {
+          "year": 2016,
+          "foreign": 543,
+          "total": 724,
+          "sharePct": 75.0
+        },
+        {
+          "year": 2017,
+          "foreign": 493,
+          "total": 684,
+          "sharePct": 72.1
+        },
+        {
+          "year": 2018,
+          "foreign": 491,
+          "total": 656,
+          "sharePct": 74.8
+        },
+        {
+          "year": 2019,
+          "foreign": 439,
+          "total": 594,
+          "sharePct": 73.9
+        },
+        {
+          "year": 2020,
+          "foreign": 407,
+          "total": 557,
+          "sharePct": 73.1
+        },
+        {
+          "year": 2021,
+          "foreign": 447,
+          "total": 617,
+          "sharePct": 72.4
+        },
+        {
+          "year": 2022,
+          "foreign": 549,
+          "total": 705,
+          "sharePct": 77.9
+        },
+        {
+          "year": 2023,
+          "foreign": 458,
+          "total": 605,
+          "sharePct": 75.7
+        },
+        {
+          "year": 2024,
+          "foreign": 476,
+          "total": 628,
+          "sharePct": 75.8
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 476,
+        "total": 628,
+        "sharePct": 75.8
+      }
+    },
+    "LVA": {
+      "iso2": "LV",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 82,
+          "total": 6548,
+          "sharePct": 1.3
+        },
+        {
+          "year": 2009,
+          "foreign": 85,
+          "total": 7055,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2010,
+          "foreign": 93,
+          "total": 6780,
+          "sharePct": 1.4
+        },
+        {
+          "year": 2011,
+          "foreign": 83,
+          "total": 6561,
+          "sharePct": 1.3
+        },
+        {
+          "year": 2012,
+          "foreign": 76,
+          "total": 6117,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2013,
+          "foreign": 68,
+          "total": 5136,
+          "sharePct": 1.3
+        },
+        {
+          "year": 2014,
+          "foreign": 87,
+          "total": 4745,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2015,
+          "foreign": 106,
+          "total": 4409,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2016,
+          "foreign": 142,
+          "total": 4243,
+          "sharePct": 3.3
+        },
+        {
+          "year": 2017,
+          "foreign": 94,
+          "total": 3765,
+          "sharePct": 2.5
+        },
+        {
+          "year": 2018,
+          "foreign": 84,
+          "total": 3522,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2019,
+          "foreign": 65,
+          "total": 3414,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2020,
+          "foreign": 45,
+          "total": 3104,
+          "sharePct": 1.4
+        },
+        {
+          "year": 2021,
+          "foreign": 58,
+          "total": 3183,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2022,
+          "foreign": 79,
+          "total": 3229,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2023,
+          "foreign": 115,
+          "total": 3271,
+          "sharePct": 3.5
+        },
+        {
+          "year": 2024,
+          "foreign": 181,
+          "total": 3505,
+          "sharePct": 5.2
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 181,
+        "total": 3505,
+        "sharePct": 5.2
+      }
+    },
+    "MNE": {
+      "iso2": "ME",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 48,
+          "total": 1216,
+          "sharePct": 3.9
+        },
+        {
+          "year": 2009,
+          "foreign": 85,
+          "total": 1499,
+          "sharePct": 5.7
+        },
+        {
+          "year": 2010,
+          "foreign": 115,
+          "total": 1457,
+          "sharePct": 7.9
+        },
+        {
+          "year": 2011,
+          "foreign": 82,
+          "total": 1328,
+          "sharePct": 6.2
+        },
+        {
+          "year": 2012,
+          "foreign": 202,
+          "total": 1331,
+          "sharePct": 15.2
+        },
+        {
+          "year": 2013,
+          "foreign": 234,
+          "total": 1064,
+          "sharePct": 22.0
+        },
+        {
+          "year": 2014,
+          "foreign": 374,
+          "total": 1123,
+          "sharePct": 33.3
+        },
+        {
+          "year": 2015,
+          "foreign": 171,
+          "total": 1131,
+          "sharePct": 15.1
+        },
+        {
+          "year": 2016,
+          "foreign": 284,
+          "total": 1123,
+          "sharePct": 25.3
+        },
+        {
+          "year": 2017,
+          "foreign": 187,
+          "total": 1119,
+          "sharePct": 16.7
+        },
+        {
+          "year": 2018,
+          "foreign": 174,
+          "total": 1125,
+          "sharePct": 15.5
+        },
+        {
+          "year": 2019,
+          "foreign": 192,
+          "total": 1090,
+          "sharePct": 17.6
+        },
+        {
+          "year": 2020,
+          "foreign": 132,
+          "total": 810,
+          "sharePct": 16.3
+        },
+        {
+          "year": 2021,
+          "foreign": 153,
+          "total": 920,
+          "sharePct": 16.6
+        },
+        {
+          "year": 2022,
+          "foreign": 144,
+          "total": 1026,
+          "sharePct": 14.0
+        },
+        {
+          "year": 2023,
+          "foreign": 179,
+          "total": 1046,
+          "sharePct": 17.1
+        },
+        {
+          "year": 2024,
+          "foreign": 203,
+          "total": 1191,
+          "sharePct": 17.0
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 203,
+        "total": 1191,
+        "sharePct": 17.0
+      }
+    },
+    "MKD": {
+      "iso2": "MK",
+      "series": [
+        {
+          "year": 2009,
+          "foreign": 50,
+          "total": 2210,
+          "sharePct": 2.3
+        },
+        {
+          "year": 2016,
+          "foreign": 303,
+          "total": 3231,
+          "sharePct": 9.4
+        },
+        {
+          "year": 2017,
+          "foreign": 133,
+          "total": 3031,
+          "sharePct": 4.4
+        },
+        {
+          "year": 2022,
+          "foreign": 291,
+          "total": 2227,
+          "sharePct": 13.1
+        },
+        {
+          "year": 2023,
+          "foreign": 146,
+          "total": 2265,
+          "sharePct": 6.4
+        },
+        {
+          "year": 2024,
+          "foreign": 114,
+          "total": 2241,
+          "sharePct": 5.1
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 114,
+        "total": 2241,
+        "sharePct": 5.1
+      }
+    },
+    "MLT": {
+      "iso2": "MT",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 154,
+          "total": 662,
+          "sharePct": 23.3
+        },
+        {
+          "year": 2009,
+          "foreign": 215,
+          "total": 494,
+          "sharePct": 43.5
+        },
+        {
+          "year": 2010,
+          "foreign": 286,
+          "total": 584,
+          "sharePct": 49.0
+        },
+        {
+          "year": 2015,
+          "foreign": 563,
+          "total": 569,
+          "sharePct": 98.9
+        },
+        {
+          "year": 2016,
+          "foreign": 237,
+          "total": 553,
+          "sharePct": 42.9
+        },
+        {
+          "year": 2017,
+          "foreign": 249,
+          "total": 591,
+          "sharePct": 42.1
+        },
+        {
+          "year": 2018,
+          "foreign": 257,
+          "total": 635,
+          "sharePct": 40.5
+        },
+        {
+          "year": 2019,
+          "foreign": 390,
+          "total": 754,
+          "sharePct": 51.7
+        },
+        {
+          "year": 2020,
+          "foreign": 528,
+          "total": 864,
+          "sharePct": 61.1
+        },
+        {
+          "year": 2021,
+          "foreign": 311,
+          "total": 614,
+          "sharePct": 50.7
+        },
+        {
+          "year": 2022,
+          "foreign": 264,
+          "total": 559,
+          "sharePct": 47.2
+        },
+        {
+          "year": 2023,
+          "foreign": 349,
+          "total": 672,
+          "sharePct": 51.9
+        },
+        {
+          "year": 2024,
+          "foreign": 365,
+          "total": 697,
+          "sharePct": 52.4
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 365,
+        "total": 697,
+        "sharePct": 52.4
+      }
+    },
+    "NLD": {
+      "iso2": "NL",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 2820,
+          "total": 14610,
+          "sharePct": 19.3
+        },
+        {
+          "year": 2009,
+          "foreign": 2854,
+          "total": 14364,
+          "sharePct": 19.9
+        },
+        {
+          "year": 2010,
+          "foreign": 2853,
+          "total": 14368,
+          "sharePct": 19.9
+        },
+        {
+          "year": 2011,
+          "foreign": 2707,
+          "total": 13969,
+          "sharePct": 19.4
+        },
+        {
+          "year": 2012,
+          "foreign": 2539,
+          "total": 13473,
+          "sharePct": 18.8
+        },
+        {
+          "year": 2013,
+          "foreign": 2409,
+          "total": 12721,
+          "sharePct": 18.9
+        },
+        {
+          "year": 2014,
+          "foreign": 2170,
+          "total": 11934,
+          "sharePct": 18.2
+        },
+        {
+          "year": 2015,
+          "foreign": 1893,
+          "total": 10850,
+          "sharePct": 17.4
+        },
+        {
+          "year": 2016,
+          "foreign": 1832,
+          "total": 10601,
+          "sharePct": 17.3
+        },
+        {
+          "year": 2017,
+          "foreign": 2057,
+          "total": 10874,
+          "sharePct": 18.9
+        },
+        {
+          "year": 2018,
+          "foreign": 2185,
+          "total": 11251,
+          "sharePct": 19.4
+        },
+        {
+          "year": 2019,
+          "foreign": 2295,
+          "total": 11777,
+          "sharePct": 19.5
+        },
+        {
+          "year": 2020,
+          "foreign": 2301,
+          "total": 11024,
+          "sharePct": 20.9
+        },
+        {
+          "year": 2021,
+          "foreign": 2279,
+          "total": 11309,
+          "sharePct": 20.2
+        },
+        {
+          "year": 2022,
+          "foreign": 2456,
+          "total": 11238,
+          "sharePct": 21.9
+        },
+        {
+          "year": 2023,
+          "foreign": 2665,
+          "total": 11681,
+          "sharePct": 22.8
+        },
+        {
+          "year": 2024,
+          "foreign": 2573,
+          "total": 11948,
+          "sharePct": 21.5
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 2573,
+        "total": 11948,
+        "sharePct": 21.5
+      }
+    },
+    "NOR": {
+      "iso2": "NO",
+      "series": [
+        {
+          "year": 2012,
+          "foreign": 1197,
+          "total": 4052,
+          "sharePct": 29.5
+        },
+        {
+          "year": 2013,
+          "foreign": 1212,
+          "total": 3869,
+          "sharePct": 31.3
+        },
+        {
+          "year": 2014,
+          "foreign": 1276,
+          "total": 4103,
+          "sharePct": 31.1
+        },
+        {
+          "year": 2015,
+          "foreign": 1361,
+          "total": 4056,
+          "sharePct": 33.6
+        },
+        {
+          "year": 2016,
+          "foreign": 1327,
+          "total": 4192,
+          "sharePct": 31.7
+        },
+        {
+          "year": 2017,
+          "foreign": 1328,
+          "total": 4164,
+          "sharePct": 31.9
+        },
+        {
+          "year": 2018,
+          "foreign": 1196,
+          "total": 3791,
+          "sharePct": 31.5
+        },
+        {
+          "year": 2019,
+          "foreign": 1063,
+          "total": 3561,
+          "sharePct": 29.9
+        },
+        {
+          "year": 2020,
+          "foreign": 992,
+          "total": 3533,
+          "sharePct": 28.1
+        },
+        {
+          "year": 2021,
+          "foreign": 900,
+          "total": 3651,
+          "sharePct": 24.7
+        },
+        {
+          "year": 2022,
+          "foreign": 875,
+          "total": 3687,
+          "sharePct": 23.7
+        },
+        {
+          "year": 2023,
+          "foreign": 878,
+          "total": 3432,
+          "sharePct": 25.6
+        },
+        {
+          "year": 2024,
+          "foreign": 920,
+          "total": 3359,
+          "sharePct": 27.4
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 920,
+        "total": 3359,
+        "sharePct": 27.4
+      }
+    },
+    "POL": {
+      "iso2": "PL",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 545,
+          "total": 84978,
+          "sharePct": 0.6
+        },
+        {
+          "year": 2009,
+          "foreign": 595,
+          "total": 85749,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2010,
+          "foreign": 572,
+          "total": 82372,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2011,
+          "foreign": 556,
+          "total": 82832,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2012,
+          "foreign": 567,
+          "total": 85459,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2013,
+          "foreign": 521,
+          "total": 80165,
+          "sharePct": 0.6
+        },
+        {
+          "year": 2014,
+          "foreign": 543,
+          "total": 79345,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2015,
+          "foreign": 521,
+          "total": 72695,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2016,
+          "foreign": 665,
+          "total": 72209,
+          "sharePct": 0.9
+        },
+        {
+          "year": 2017,
+          "foreign": 844,
+          "total": 74480,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2018,
+          "foreign": 1041,
+          "total": 72818,
+          "sharePct": 1.4
+        },
+        {
+          "year": 2019,
+          "foreign": 1310,
+          "total": 74612,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2020,
+          "foreign": 1268,
+          "total": 68354,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2021,
+          "foreign": 1741,
+          "total": 72269,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2022,
+          "foreign": 1829,
+          "total": 71723,
+          "sharePct": 2.6
+        },
+        {
+          "year": 2023,
+          "foreign": 2354,
+          "total": 74505,
+          "sharePct": 3.2
+        },
+        {
+          "year": 2024,
+          "foreign": 2560,
+          "total": 69850,
+          "sharePct": 3.7
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 2560,
+        "total": 69850,
+        "sharePct": 3.7
+      }
+    },
+    "PRT": {
+      "iso2": "PT",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 2190,
+          "total": 10807,
+          "sharePct": 20.3
+        },
+        {
+          "year": 2009,
+          "foreign": 2263,
+          "total": 11287,
+          "sharePct": 20.0
+        },
+        {
+          "year": 2010,
+          "foreign": 2390,
+          "total": 11839,
+          "sharePct": 20.2
+        },
+        {
+          "year": 2011,
+          "foreign": 2548,
+          "total": 12955,
+          "sharePct": 19.7
+        },
+        {
+          "year": 2012,
+          "foreign": 2602,
+          "total": 13875,
+          "sharePct": 18.8
+        },
+        {
+          "year": 2013,
+          "foreign": 2647,
+          "total": 14535,
+          "sharePct": 18.2
+        },
+        {
+          "year": 2014,
+          "foreign": 2492,
+          "total": 14198,
+          "sharePct": 17.6
+        },
+        {
+          "year": 2015,
+          "foreign": 2502,
+          "total": 14373,
+          "sharePct": 17.4
+        },
+        {
+          "year": 2016,
+          "foreign": 2307,
+          "total": 13917,
+          "sharePct": 16.6
+        },
+        {
+          "year": 2017,
+          "foreign": 2164,
+          "total": 13587,
+          "sharePct": 15.9
+        },
+        {
+          "year": 2018,
+          "foreign": 1968,
+          "total": 13021,
+          "sharePct": 15.1
+        },
+        {
+          "year": 2019,
+          "foreign": 1985,
+          "total": 12947,
+          "sharePct": 15.3
+        },
+        {
+          "year": 2020,
+          "foreign": 1769,
+          "total": 11502,
+          "sharePct": 15.4
+        },
+        {
+          "year": 2021,
+          "foreign": 1672,
+          "total": 11704,
+          "sharePct": 14.3
+        },
+        {
+          "year": 2022,
+          "foreign": 1914,
+          "total": 12502,
+          "sharePct": 15.3
+        },
+        {
+          "year": 2023,
+          "foreign": 2051,
+          "total": 12321,
+          "sharePct": 16.6
+        },
+        {
+          "year": 2024,
+          "foreign": 2166,
+          "total": 12507,
+          "sharePct": 17.3
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 2166,
+        "total": 12507,
+        "sharePct": 17.3
+      }
+    },
+    "ROU": {
+      "iso2": "RO",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 191,
+          "total": 26212,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2009,
+          "foreign": 202,
+          "total": 26716,
+          "sharePct": 0.8
+        },
+        {
+          "year": 2010,
+          "foreign": 207,
+          "total": 28244,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2011,
+          "foreign": 208,
+          "total": 30694,
+          "sharePct": 0.7
+        },
+        {
+          "year": 2012,
+          "foreign": 174,
+          "total": 31817,
+          "sharePct": 0.5
+        },
+        {
+          "year": 2013,
+          "foreign": 195,
+          "total": 33434,
+          "sharePct": 0.6
+        },
+        {
+          "year": 2014,
+          "foreign": 253,
+          "total": 30156,
+          "sharePct": 0.8
+        },
+        {
+          "year": 2015,
+          "foreign": 269,
+          "total": 28334,
+          "sharePct": 0.9
+        },
+        {
+          "year": 2016,
+          "foreign": 302,
+          "total": 27455,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2017,
+          "foreign": 286,
+          "total": 23450,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2018,
+          "foreign": 253,
+          "total": 20792,
+          "sharePct": 1.2
+        },
+        {
+          "year": 2019,
+          "foreign": 235,
+          "total": 20578,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2020,
+          "foreign": 226,
+          "total": 21753,
+          "sharePct": 1.0
+        },
+        {
+          "year": 2021,
+          "foreign": 225,
+          "total": 22989,
+          "sharePct": 1.0
+        },
+        {
+          "year": 2022,
+          "foreign": 248,
+          "total": 23082,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2023,
+          "foreign": 251,
+          "total": 23650,
+          "sharePct": 1.1
+        },
+        {
+          "year": 2024,
+          "foreign": 273,
+          "total": 24606,
+          "sharePct": 1.1
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 273,
+        "total": 24606,
+        "sharePct": 1.1
+      }
+    },
+    "SRB": {
+      "iso2": "RS",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 163,
+          "total": 9701,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2009,
+          "foreign": 192,
+          "total": 10975,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2010,
+          "foreign": 317,
+          "total": 11211,
+          "sharePct": 2.8
+        },
+        {
+          "year": 2011,
+          "foreign": 189,
+          "total": 11070,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2012,
+          "foreign": 209,
+          "total": 10226,
+          "sharePct": 2.0
+        },
+        {
+          "year": 2013,
+          "foreign": 352,
+          "total": 10031,
+          "sharePct": 3.5
+        },
+        {
+          "year": 2014,
+          "foreign": 302,
+          "total": 10288,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2015,
+          "foreign": 353,
+          "total": 10064,
+          "sharePct": 3.5
+        },
+        {
+          "year": 2016,
+          "foreign": 358,
+          "total": 10672,
+          "sharePct": 3.4
+        },
+        {
+          "year": 2017,
+          "foreign": 350,
+          "total": 10807,
+          "sharePct": 3.2
+        },
+        {
+          "year": 2018,
+          "foreign": 317,
+          "total": 10871,
+          "sharePct": 2.9
+        },
+        {
+          "year": 2019,
+          "foreign": 348,
+          "total": 11077,
+          "sharePct": 3.1
+        },
+        {
+          "year": 2020,
+          "foreign": 386,
+          "total": 10540,
+          "sharePct": 3.7
+        },
+        {
+          "year": 2021,
+          "foreign": 423,
+          "total": 10557,
+          "sharePct": 4.0
+        },
+        {
+          "year": 2022,
+          "foreign": 394,
+          "total": 10787,
+          "sharePct": 3.7
+        },
+        {
+          "year": 2023,
+          "foreign": 729,
+          "total": 11701,
+          "sharePct": 6.2
+        },
+        {
+          "year": 2024,
+          "foreign": 515,
+          "total": 11430,
+          "sharePct": 4.5
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 515,
+        "total": 11430,
+        "sharePct": 4.5
+      }
+    },
+    "SWE": {
+      "iso2": "SE",
+      "series": [
+        {
+          "year": 2012,
+          "foreign": 1984,
+          "total": 6296,
+          "sharePct": 31.5
+        },
+        {
+          "year": 2013,
+          "foreign": 1853,
+          "total": 5723,
+          "sharePct": 32.4
+        },
+        {
+          "year": 2014,
+          "foreign": 1324,
+          "total": 5807,
+          "sharePct": 22.8
+        },
+        {
+          "year": 2015,
+          "foreign": 1325,
+          "total": 5691,
+          "sharePct": 23.3
+        },
+        {
+          "year": 2016,
+          "foreign": 1274,
+          "total": 5658,
+          "sharePct": 22.5
+        },
+        {
+          "year": 2017,
+          "foreign": 1240,
+          "total": 5713,
+          "sharePct": 21.7
+        },
+        {
+          "year": 2018,
+          "foreign": 1319,
+          "total": 6114,
+          "sharePct": 21.6
+        },
+        {
+          "year": 2019,
+          "foreign": 1414,
+          "total": 6719,
+          "sharePct": 21.0
+        },
+        {
+          "year": 2020,
+          "foreign": 1466,
+          "total": 7297,
+          "sharePct": 20.1
+        },
+        {
+          "year": 2021,
+          "foreign": 2001,
+          "total": 7776,
+          "sharePct": 25.7
+        },
+        {
+          "year": 2022,
+          "foreign": 2081,
+          "total": 8414,
+          "sharePct": 24.7
+        },
+        {
+          "year": 2023,
+          "foreign": 2252,
+          "total": 9748,
+          "sharePct": 23.1
+        },
+        {
+          "year": 2024,
+          "foreign": 2397,
+          "total": 11235,
+          "sharePct": 21.3
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 2397,
+        "total": 11235,
+        "sharePct": 21.3
+      }
+    },
+    "SVN": {
+      "iso2": "SI",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 136,
+          "total": 1318,
+          "sharePct": 10.3
+        },
+        {
+          "year": 2009,
+          "foreign": 137,
+          "total": 1365,
+          "sharePct": 10.0
+        },
+        {
+          "year": 2010,
+          "foreign": 149,
+          "total": 1351,
+          "sharePct": 11.0
+        },
+        {
+          "year": 2011,
+          "foreign": 133,
+          "total": 1273,
+          "sharePct": 10.4
+        },
+        {
+          "year": 2012,
+          "foreign": 162,
+          "total": 1377,
+          "sharePct": 11.8
+        },
+        {
+          "year": 2013,
+          "foreign": 145,
+          "total": 1360,
+          "sharePct": 10.7
+        },
+        {
+          "year": 2014,
+          "foreign": 150,
+          "total": 1522,
+          "sharePct": 9.9
+        },
+        {
+          "year": 2015,
+          "foreign": 131,
+          "total": 1399,
+          "sharePct": 9.4
+        },
+        {
+          "year": 2016,
+          "foreign": 118,
+          "total": 1308,
+          "sharePct": 9.0
+        },
+        {
+          "year": 2018,
+          "foreign": 189,
+          "total": 1346,
+          "sharePct": 14.0
+        },
+        {
+          "year": 2019,
+          "foreign": 281,
+          "total": 1396,
+          "sharePct": 20.1
+        },
+        {
+          "year": 2020,
+          "foreign": 416,
+          "total": 1449,
+          "sharePct": 28.7
+        },
+        {
+          "year": 2021,
+          "foreign": 359,
+          "total": 1136,
+          "sharePct": 31.6
+        },
+        {
+          "year": 2022,
+          "foreign": 404,
+          "total": 1380,
+          "sharePct": 29.3
+        },
+        {
+          "year": 2023,
+          "foreign": 488,
+          "total": 1438,
+          "sharePct": 33.9
+        },
+        {
+          "year": 2024,
+          "foreign": 870,
+          "total": 1806,
+          "sharePct": 48.2
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 870,
+        "total": 1806,
+        "sharePct": 48.2
+      }
+    },
+    "SVK": {
+      "iso2": "SK",
+      "series": [
+        {
+          "year": 2008,
+          "foreign": 146,
+          "total": 8166,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2009,
+          "foreign": 168,
+          "total": 9316,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2010,
+          "foreign": 197,
+          "total": 10031,
+          "sharePct": 2.0
+        },
+        {
+          "year": 2011,
+          "foreign": 194,
+          "total": 10525,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2012,
+          "foreign": 206,
+          "total": 10850,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2013,
+          "foreign": 188,
+          "total": 9753,
+          "sharePct": 1.9
+        },
+        {
+          "year": 2014,
+          "foreign": 177,
+          "total": 10020,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2015,
+          "foreign": 181,
+          "total": 9913,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2016,
+          "foreign": 211,
+          "total": 9995,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2017,
+          "foreign": 219,
+          "total": 10028,
+          "sharePct": 2.2
+        },
+        {
+          "year": 2018,
+          "foreign": 209,
+          "total": 10294,
+          "sharePct": 2.0
+        },
+        {
+          "year": 2019,
+          "foreign": 256,
+          "total": 10555,
+          "sharePct": 2.4
+        },
+        {
+          "year": 2020,
+          "foreign": 219,
+          "total": 10519,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2021,
+          "foreign": 261,
+          "total": 10104,
+          "sharePct": 2.6
+        },
+        {
+          "year": 2022,
+          "foreign": 407,
+          "total": 9839,
+          "sharePct": 4.1
+        },
+        {
+          "year": 2023,
+          "foreign": 505,
+          "total": 9724,
+          "sharePct": 5.2
+        },
+        {
+          "year": 2024,
+          "foreign": 376,
+          "total": 8169,
+          "sharePct": 4.6
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 376,
+        "total": 8169,
+        "sharePct": 4.6
+      }
+    },
+    "TUR": {
+      "iso2": "TR",
+      "series": [
+        {
+          "year": 2009,
+          "foreign": 1861,
+          "total": 116340,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2010,
+          "foreign": 2116,
+          "total": 120814,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2011,
+          "foreign": 2245,
+          "total": 128604,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2012,
+          "foreign": 2193,
+          "total": 136020,
+          "sharePct": 1.6
+        },
+        {
+          "year": 2013,
+          "foreign": 2465,
+          "total": 145468,
+          "sharePct": 1.7
+        },
+        {
+          "year": 2014,
+          "foreign": 2943,
+          "total": 159397,
+          "sharePct": 1.8
+        },
+        {
+          "year": 2015,
+          "foreign": 3807,
+          "total": 178257,
+          "sharePct": 2.1
+        },
+        {
+          "year": 2016,
+          "foreign": 4441,
+          "total": 200727,
+          "sharePct": 2.2
+        },
+        {
+          "year": 2017,
+          "foreign": 6488,
+          "total": 233415,
+          "sharePct": 2.8
+        },
+        {
+          "year": 2018,
+          "foreign": 8578,
+          "total": 264842,
+          "sharePct": 3.2
+        },
+        {
+          "year": 2019,
+          "foreign": 10002,
+          "total": 291546,
+          "sharePct": 3.4
+        },
+        {
+          "year": 2020,
+          "foreign": 10299,
+          "total": 267883,
+          "sharePct": 3.8
+        },
+        {
+          "year": 2021,
+          "foreign": 12045,
+          "total": 297860,
+          "sharePct": 4.0
+        },
+        {
+          "year": 2022,
+          "foreign": 15028,
+          "total": 341294,
+          "sharePct": 4.4
+        },
+        {
+          "year": 2023,
+          "foreign": 12414,
+          "total": 291911,
+          "sharePct": 4.3
+        },
+        {
+          "year": 2024,
+          "foreign": 15046,
+          "total": 383663,
+          "sharePct": 3.9
+        }
+      ],
+      "latest": {
+        "year": 2024,
+        "foreign": 15046,
+        "total": 383663,
+        "sharePct": 3.9
+      }
+    },
+    "XKX": {
+      "iso2": "XK",
+      "series": [
+        {
+          "year": 2011,
+          "foreign": 61,
+          "total": 1441,
+          "sharePct": 4.2
+        },
+        {
+          "year": 2012,
+          "foreign": 95,
+          "total": 1737,
+          "sharePct": 5.5
+        },
+        {
+          "year": 2013,
+          "foreign": 125,
+          "total": 1776,
+          "sharePct": 7.0
+        },
+        {
+          "year": 2014,
+          "foreign": 127,
+          "total": 1854,
+          "sharePct": 6.9
+        },
+        {
+          "year": 2015,
+          "foreign": 89,
+          "total": 1478,
+          "sharePct": 6.0
+        },
+        {
+          "year": 2016,
+          "foreign": 90,
+          "total": 1648,
+          "sharePct": 5.5
+        },
+        {
+          "year": 2017,
+          "foreign": 115,
+          "total": 1709,
+          "sharePct": 6.7
+        },
+        {
+          "year": 2018,
+          "foreign": 82,
+          "total": 1567,
+          "sharePct": 5.2
+        },
+        {
+          "year": 2019,
+          "foreign": 101,
+          "total": 1806,
+          "sharePct": 5.6
+        },
+        {
+          "year": 2020,
+          "foreign": 102,
+          "total": 1396,
+          "sharePct": 7.3
+        }
+      ],
+      "latest": {
+        "year": 2020,
+        "foreign": 102,
+        "total": 1396,
+        "sharePct": 7.3
+      }
+    }
+  }
+}

@@ -130,6 +130,7 @@ model Country {
   updatedAt   DateTime @updatedAt
 
   cities            City[]
+  admin1Divisions   Admin1[]
   indicatorValues   IndicatorValue[]
   projections       PopulationProjection[]
   ageStructures     PopulationByAge[]
@@ -143,6 +144,30 @@ model Country {
   @@index([incomeGroup])
   @@index([regionId])
   @@map("countries")
+}
+
+// First-level administrative divisions: US states, German Länder, Indian
+// states/UTs, Chinese provinces, Russian federal subjects, etc.
+model Admin1 {
+  id          Int     @id @default(autoincrement())
+  slug        String  @unique // e.g. "united-states-california"
+  name        String
+  countryId   Int
+  country     Country @relation(fields: [countryId], references: [id])
+  kind        String  @default("state") // state | province | land | oblast | republic | ...
+  code        String? // NUTS / FIPS / ISO-3166-2 when known
+  iso3166_2   String?
+  latitude    Float?
+  longitude   Float?
+  population  Int?    // latest known, denormalised
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  indicatorValues IndicatorValue[]
+
+  @@index([countryId])
+  @@index([population])
+  @@map("admin1_divisions")
 }
 
 model City {
@@ -267,7 +292,7 @@ model IndicatorValue {
   // Int autoincrement (SQLite-friendly). For very large Postgres deployments
   // (billions of rows) switch this to BigInt.
   id          Int         @id @default(autoincrement())
-  subjectType String      // COUNTRY | REGION | CITY
+  subjectType String      // COUNTRY | REGION | CITY | ADMIN1
   indicatorId Int
   indicator   Indicator   @relation(fields: [indicatorId], references: [id])
   year        Int
@@ -285,6 +310,8 @@ model IndicatorValue {
   region      Region?     @relation(fields: [regionId], references: [id])
   cityId      Int?
   city        City?       @relation(fields: [cityId], references: [id])
+  admin1Id    Int?
+  admin1      Admin1?     @relation(fields: [admin1Id], references: [id])
 
   sourceId    Int?
   source      DataSource? @relation(fields: [sourceId], references: [id])
@@ -292,13 +319,14 @@ model IndicatorValue {
   createdAt   DateTime    @default(now())
 
   // Uniqueness guards against duplicate ingestion.
-  @@unique([subjectType, indicatorId, countryId, regionId, cityId, year, dimension, dimensionValue], name: "uniq_value")
+  @@unique([subjectType, indicatorId, countryId, regionId, cityId, admin1Id, year, dimension, dimensionValue], name: "uniq_value")
   // Country time-series lookups (country page charts).
   @@index([countryId, indicatorId, year])
   // Cross-country rankings & maps for a given year.
   @@index([indicatorId, year, subjectType])
   @@index([cityId, indicatorId, year])
   @@index([regionId, indicatorId, year])
+  @@index([admin1Id, indicatorId, year])
   @@map("indicator_values")
 }
 

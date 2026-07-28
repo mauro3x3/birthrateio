@@ -11,6 +11,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/fertility",
     "/population",
     "/migration",
+    "/crime",
+    "/states",
     "/gdp",
     "/compare",
     "/simulator",
@@ -28,13 +30,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   let countryRoutes: MetadataRoute.Sitemap = [];
   let cityRoutes: MetadataRoute.Sitemap = [];
+  let stateRoutes: MetadataRoute.Sitemap = [];
   try {
-    const [countries, cities] = await Promise.all([
+    const [countries, cities, states] = await Promise.all([
       prisma.country.findMany({
         where: { isAggregate: false },
         select: { slug: true, updatedAt: true },
       }),
       prisma.city.findMany({ select: { slug: true, updatedAt: true } }),
+      prisma.admin1.findMany({ select: { slug: true, updatedAt: true } }),
     ]);
     countryRoutes = countries.map((c) => ({
       url: `${base}/country/${c.slug}`,
@@ -48,9 +52,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.5,
     }));
+    stateRoutes = states.map((s) => ({
+      url: `${base}/state/${s.slug}`,
+      lastModified: s.updatedAt,
+      changeFrequency: "weekly",
+      priority: 0.55,
+    }));
   } catch {
     // DB not available at build time — static routes still emitted.
   }
 
-  return [...staticRoutes, ...countryRoutes, ...cityRoutes];
+  return [...staticRoutes, ...countryRoutes, ...stateRoutes, ...cityRoutes];
 }

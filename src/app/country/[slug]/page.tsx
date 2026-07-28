@@ -35,13 +35,20 @@ import {
   getCountryFertilityNowcast,
   getPopulationPyramid,
   getProjections,
+  getAdmin1FertilityRanking,
 } from "@/lib/queries";
 import { MigrationBreakdownList } from "@/components/migration-breakdown";
 import { BIRTH_BACKGROUND_NOTES } from "@/lib/sources/birth-background-data";
+import {
+  CRIME_AVAILABILITY_BY_ISO3,
+  getCrimeMeta,
+  USA_CRIME_NOTES,
+} from "@/lib/sources/crime-by-origin-data";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
+import { StackedBarChart } from "@/components/charts/stacked-bar-chart";
 
 export const revalidate = 86400;
 
@@ -92,6 +99,8 @@ export default async function CountryPage({
     abortion,
     foreignBorn,
     foreignBornShare,
+    unemploymentNativeBorn,
+    unemploymentForeignBorn,
     immigrationOrigins,
     emigrationDestinations,
     stats,
@@ -106,6 +115,14 @@ export default async function CountryPage({
     nonmarital,
     homeownership,
     fertilityNowcast,
+    crimeAncestry,
+    crimeCitizenship,
+    crimeBackground,
+    crimeRacePrison,
+    crimeRaceArrest,
+    crimeRaceMurder,
+    foreignPrisonerShare,
+    admin1Ranking,
   ] = await Promise.all([
     safe(getCountryTimeSeries(country.id, SLUG.population), []),
     safe(getCountryTimeSeries(country.id, SLUG.fertility), []),
@@ -118,6 +135,8 @@ export default async function CountryPage({
     safe(getCountryTimeSeries(country.id, SLUG.abortionRate), []),
     safe(getCountryTimeSeries(country.id, SLUG.migrantStock), []),
     safe(getCountryTimeSeries(country.id, SLUG.migrantStockShare), []),
+    safe(getCountryTimeSeries(country.id, SLUG.unemploymentNativeBorn), []),
+    safe(getCountryTimeSeries(country.id, SLUG.unemploymentForeignBorn), []),
     safe(getImmigrationOrigins(country.id), null),
     safe(getEmigrationDestinations(country.id), null),
     safe(getCountryStats(country.id), {}),
@@ -140,7 +159,45 @@ export default async function CountryPage({
     safe(getLatestValue(country.id, SLUG.nonmaritalBirths), null),
     safe(getLatestValue(country.id, SLUG.homeownershipRate), null),
     safe(getCountryFertilityNowcast(country.id), null),
+    safe(
+      getComposition(country.id, "CRIME_ANCESTRY", { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
+    safe(
+      getComposition(country.id, "CRIME_CITIZENSHIP", { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
+    safe(getComposition(country.id, "CRIME_BACKGROUND"), {
+      groups: [],
+      data: [],
+      note: null,
+      useCounts: false,
+    }),
+    safe(
+      getComposition(country.id, "CRIME_RACE_PRISON", { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
+    safe(
+      getComposition(country.id, "CRIME_RACE_ARREST", { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
+    safe(
+      getComposition(country.id, "CRIME_RACE_MURDER", { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
+    safe(getCountryTimeSeries(country.id, SLUG.foreignPrisonerShare), []),
+    safe(getAdmin1FertilityRanking(country.id), []),
   ]);
+
+  const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
+  const crimeMeta = getCrimeMeta(country.iso3);
+  const hasCrimeBreakdown =
+    crimeAncestry.groups.length > 0 ||
+    crimeCitizenship.groups.length > 0 ||
+    crimeBackground.groups.length > 0 ||
+    crimeRacePrison.groups.length > 0 ||
+    crimeRaceArrest.groups.length > 0 ||
+    crimeRaceMurder.groups.length > 0;
 
   // Build projection overlay rows keyed by year.
   const projByYear = new Map<number, Record<string, number>>();
@@ -589,6 +646,102 @@ export default async function CountryPage({
               />
             </ChartCard>
           )}
+
+          {unemploymentNativeBorn.length > 0 &&
+            unemploymentForeignBorn.length > 0 && (
+              <ChartCard
+                title="Unemployment: native-born vs foreign-born"
+                description="Ages 15–64 · % of labour force in each place-of-birth group. Foreign-born rates are often more cyclical."
+                source="OECD — Labour market outcomes of immigrants"
+                csvRows={(() => {
+                  const years = new Set([
+                    ...unemploymentNativeBorn.map((p) => p.year),
+                    ...unemploymentForeignBorn.map((p) => p.year),
+                  ]);
+                  const nb = new Map(
+                    unemploymentNativeBorn.map((p) => [p.year, p.value]),
+                  );
+                  const fb = new Map(
+                    unemploymentForeignBorn.map((p) => [p.year, p.value]),
+                  );
+                  return [...years]
+                    .sort((a, b) => a - b)
+                    .map((year) => ({
+                      year,
+                      ...(nb.has(year) ? { nativeBorn: nb.get(year)! } : {}),
+                      ...(fb.has(year) ? { foreignBorn: fb.get(year)! } : {}),
+                    }));
+                })()}
+                csvName={`${slug}-unemployment-birthplace`}
+              >
+                <MultiSeriesChart
+                  data={(() => {
+                    const years = new Set([
+                      ...unemploymentNativeBorn.map((p) => p.year),
+                      ...unemploymentForeignBorn.map((p) => p.year),
+                    ]);
+                    const nb = new Map(
+                      unemploymentNativeBorn.map((p) => [p.year, p.value]),
+                    );
+                    const fb = new Map(
+                      unemploymentForeignBorn.map((p) => [p.year, p.value]),
+                    );
+                    return [...years]
+                      .sort((a, b) => a - b)
+                      .map((year) => ({
+                        year,
+                        ...(nb.has(year) ? { nativeBorn: nb.get(year)! } : {}),
+                        ...(fb.has(year) ? { foreignBorn: fb.get(year)! } : {}),
+                      }));
+                  })()}
+                  decimals={1}
+                  unit="%"
+                  series={[
+                    {
+                      key: "nativeBorn",
+                      label: "Native-born",
+                      color: "hsl(211 62% 45%)",
+                    },
+                    {
+                      key: "foreignBorn",
+                      label: "Foreign-born",
+                      color: "hsl(24 85% 48%)",
+                    },
+                  ]}
+                />
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                  OECD definition: unemployed share of the labour force among
+                  native-born vs foreign-born residents aged 15–64. National
+                  offices (e.g. Statistics Sweden) may publish slightly different
+                  figures for other age bands or months — we show the
+                  internationally comparable OECD series. Latest: native-born{" "}
+                  <strong>
+                    {formatNumber(
+                      unemploymentNativeBorn[unemploymentNativeBorn.length - 1]
+                        ?.value ?? 0,
+                      1,
+                    )}
+                    %
+                  </strong>
+                  , foreign-born{" "}
+                  <strong>
+                    {formatNumber(
+                      unemploymentForeignBorn[
+                        unemploymentForeignBorn.length - 1
+                      ]?.value ?? 0,
+                      1,
+                    )}
+                    %
+                  </strong>{" "}
+                  (
+                  {
+                    unemploymentForeignBorn[unemploymentForeignBorn.length - 1]
+                      ?.year
+                  }
+                  ).
+                </p>
+              </ChartCard>
+            )}
         </div>
 
         {/* Bilateral migration: origins of immigrants & where the diaspora lives */}
@@ -894,6 +1047,262 @@ export default async function CountryPage({
                         RELIGION_COLORS[it.name] ?? RELIGION_COLOR_FALLBACK,
                     }))}
                   />
+                </ChartCard>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Subnational states / provinces */}
+        {admin1Ranking.length > 0 && (
+          <section className="space-y-4">
+            <div className="border-b pb-2">
+              <h2 className="text-xl font-semibold tracking-tight">
+                States &amp; provinces
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Total fertility rate by first-level administrative division ·{" "}
+                <Link href="/states" className="underline underline-offset-2">
+                  browse all countries
+                </Link>
+              </p>
+            </div>
+            <div className="overflow-x-auto rounded-lg border">
+              <table className="w-full min-w-[480px] text-left text-sm">
+                <thead className="border-b bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">#</th>
+                    <th className="px-4 py-3 font-medium">Division</th>
+                    <th className="px-4 py-3 font-medium text-right">
+                      Population
+                    </th>
+                    <th className="px-4 py-3 font-medium text-right">TFR</th>
+                    <th className="px-4 py-3 font-medium text-right">Year</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {admin1Ranking.map((row, i) => (
+                    <tr
+                      key={row.slug}
+                      className="border-b border-border/60 last:border-0"
+                    >
+                      <td className="px-4 py-2 text-muted-foreground tabular-nums">
+                        {i + 1}
+                      </td>
+                      <td className="px-4 py-2 font-medium">
+                        <Link
+                          href={`/state/${row.slug}`}
+                          className="hover:underline"
+                        >
+                          {row.name}
+                        </Link>
+                        <span className="ml-2 text-xs text-muted-foreground">
+                          {row.kind.replace(/-/g, " ")}
+                        </span>
+                      </td>
+                      <td className="px-4 py-2 text-right tabular-nums">
+                        {row.population != null
+                          ? formatCompact(row.population)
+                          : "—"}
+                      </td>
+                      <td className="px-4 py-2 text-right tabular-nums font-medium">
+                        {formatNumber(row.value, 2)}
+                      </td>
+                      <td className="px-4 py-2 text-right text-muted-foreground tabular-nums">
+                        {row.year}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Crime by ancestry / origin — only when published, else availability note */}
+        {(hasCrimeBreakdown ||
+          foreignPrisonerShare.length > 0 ||
+          crimeAvailability) && (
+          <section className="space-y-6">
+            <div className="border-b pb-2">
+              <h2 className="text-xl font-semibold tracking-tight">
+                Crime by ancestry, origin &amp; race
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Official statistics where published · definitions differ by
+                country ·{" "}
+                <Link href="/crime" className="underline underline-offset-2">
+                  see full availability guide
+                </Link>
+              </p>
+            </div>
+
+            {crimeAvailability && !hasCrimeBreakdown && (
+              <Card>
+                <CardContent className="space-y-2 py-5 text-sm leading-relaxed text-muted-foreground">
+                  <p>
+                    <span className="font-medium text-foreground">
+                      {country.name}:{" "}
+                      {crimeAvailability.status === "NOT_AVAILABLE"
+                        ? "does not publish"
+                        : "only limited"}{" "}
+                      comparable crime-by-ancestry statistics.
+                    </span>{" "}
+                    {crimeAvailability.detail}
+                  </p>
+                  {crimeAvailability.sourceUrl ? (
+                    <a
+                      href={crimeAvailability.sourceUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs text-primary hover:underline"
+                    >
+                      Related source
+                    </a>
+                  ) : null}
+                </CardContent>
+              </Card>
+            )}
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {crimeAncestry.groups.length > 0 && (
+                <ChartCard
+                  title="Persons guilty in crimes by ancestry"
+                  description="Absolute counts · Danish origin / immigrants / descendants"
+                  source="Statistics Denmark (STRAFNA9)"
+                  csvRows={crimeAncestry.data}
+                  csvName={`${slug}-crime-ancestry`}
+                >
+                  <CompositionLegend groups={crimeAncestry.groups} />
+                  <StackedBarChart
+                    data={crimeAncestry.data}
+                    groups={crimeAncestry.groups}
+                  />
+                  {crimeMeta ? (
+                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                      {crimeMeta.note}
+                    </p>
+                  ) : null}
+                </ChartCard>
+              )}
+
+              {crimeCitizenship.groups.length > 0 && (
+                <ChartCard
+                  title="Persons charged by citizenship"
+                  description="Absolute counts · Norwegian vs foreign citizens"
+                  source="Statistics Norway (SSB 09421)"
+                  csvRows={crimeCitizenship.data}
+                  csvName={`${slug}-crime-citizenship`}
+                >
+                  <CompositionLegend groups={crimeCitizenship.groups} />
+                  <StackedBarChart
+                    data={crimeCitizenship.data}
+                    groups={crimeCitizenship.groups}
+                  />
+                  {crimeMeta ? (
+                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                      {crimeMeta.note}
+                    </p>
+                  ) : null}
+                </ChartCard>
+              )}
+
+              {crimeBackground.groups.length > 0 && (
+                <ChartCard
+                  title="Share of registered offences by background"
+                  description="Brå research study · 2007 vs 2018"
+                  source="Brå report 2021:9"
+                  csvRows={crimeBackground.data}
+                  csvName={`${slug}-crime-background`}
+                >
+                  <CompositionLegend groups={crimeBackground.groups} />
+                  <CompositionChart
+                    data={crimeBackground.data}
+                    groups={crimeBackground.groups}
+                  />
+                  {crimeMeta ? (
+                    <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                      {crimeMeta.note}
+                    </p>
+                  ) : null}
+                </ChartCard>
+              )}
+
+              {crimeRacePrison.groups.length > 0 && (
+                <ChartCard
+                  title="Sentenced prisoners by race / Hispanic origin"
+                  description="Absolute counts · sentence of more than 1 year · state & federal"
+                  source="BJS Prisoners Statistical Tables"
+                  csvRows={crimeRacePrison.data}
+                  csvName={`${slug}-prisoners-race`}
+                >
+                  <CompositionLegend groups={crimeRacePrison.groups} />
+                  <StackedBarChart
+                    data={crimeRacePrison.data}
+                    groups={crimeRacePrison.groups}
+                  />
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    {USA_CRIME_NOTES.prisoners}
+                  </p>
+                </ChartCard>
+              )}
+
+              {crimeRaceArrest.groups.length > 0 && (
+                <ChartCard
+                  title="Arrests by race"
+                  description="Absolute counts · FBI UCR Table 43 · agency coverage varies"
+                  source="FBI Crime in the United States"
+                  csvRows={crimeRaceArrest.data}
+                  csvName={`${slug}-arrests-race`}
+                >
+                  <CompositionLegend groups={crimeRaceArrest.groups} />
+                  <StackedBarChart
+                    data={crimeRaceArrest.data}
+                    groups={crimeRaceArrest.groups}
+                  />
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    {USA_CRIME_NOTES.arrests}
+                  </p>
+                </ChartCard>
+              )}
+
+              {crimeRaceMurder.groups.length > 0 && (
+                <ChartCard
+                  title="Murder arrests by race"
+                  description="Murder and nonnegligent manslaughter arrests · FBI UCR Table 43"
+                  source="FBI Crime in the United States"
+                  csvRows={crimeRaceMurder.data}
+                  csvName={`${slug}-murder-arrests-race`}
+                >
+                  <CompositionLegend groups={crimeRaceMurder.groups} />
+                  <StackedBarChart
+                    data={crimeRaceMurder.data}
+                    groups={crimeRaceMurder.groups}
+                  />
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    {USA_CRIME_NOTES.murderArrests}
+                  </p>
+                </ChartCard>
+              )}
+
+              {foreignPrisonerShare.length > 0 && (
+                <ChartCard
+                  title="Foreign citizenship share of prisoners"
+                  description="Eurostat · citizenship, not immigrant ancestry"
+                  source="Eurostat crim_pris_ctz"
+                  csvRows={foreignPrisonerShare}
+                  csvName={`${slug}-foreign-prisoners`}
+                >
+                  <TimeSeriesChart
+                    data={foreignPrisonerShare}
+                    decimals={1}
+                    unit="%"
+                    color="hsl(0 65% 45%)"
+                  />
+                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                    Share of persons held in prison with foreign citizenship.
+                    This is not a conviction-by-ancestry series.
+                  </p>
                 </ChartCard>
               )}
             </div>

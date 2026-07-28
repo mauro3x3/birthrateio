@@ -21,6 +21,8 @@ export const mainNav = [
   { title: "Fertility", href: "/fertility" },
   { title: "Population", href: "/population" },
   { title: "Migration", href: "/migration" },
+  { title: "Crime", href: "/crime" },
+  { title: "States", href: "/states" },
   { title: "GDP", href: "/gdp" },
   { title: "Compare", href: "/compare" },
   { title: "Simulator", href: "/simulator" },

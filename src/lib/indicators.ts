@@ -367,6 +367,58 @@ export const INDICATORS: IndicatorDef[] = [
     decimals: 2,
     source: "BIRTHGAUGE",
   },
+  {
+    code: "OECD.UNE.NB",
+    slug: "unemployment-native-born",
+    name: "Native-born Unemployment Rate",
+    shortName: "Native-born unemployment",
+    description:
+      "Unemployment rate of native-born persons aged 15–64, as a share of the native-born labour force. OECD labour-market outcomes of immigrants.",
+    unit: "% of labour force",
+    category: "MIGRATION",
+    higherIsBetter: false,
+    decimals: 1,
+    source: "OECD",
+  },
+  {
+    code: "OECD.UNE.FB",
+    slug: "unemployment-foreign-born",
+    name: "Foreign-born Unemployment Rate",
+    shortName: "Foreign-born unemployment",
+    description:
+      "Unemployment rate of foreign-born persons aged 15–64, as a share of the foreign-born labour force. OECD labour-market outcomes of immigrants.",
+    unit: "% of labour force",
+    category: "MIGRATION",
+    higherIsBetter: false,
+    decimals: 1,
+    source: "OECD",
+  },
+  {
+    code: "EUROSTAT.CRIM.PRIS.FOR",
+    slug: "foreign-prisoner-share",
+    name: "Foreign Citizenship Share of Prisoners",
+    shortName: "Foreign prisoners",
+    description:
+      "Share of persons held in prison who hold foreign citizenship (%). Eurostat crim_pris_ctz. Citizenship is not the same as immigrant ancestry or migration background.",
+    unit: "% of prisoners",
+    category: "CRIME",
+    higherIsBetter: null,
+    decimals: 1,
+    source: "EUROSTAT",
+  },
+  {
+    code: "ADMIN1.GFR",
+    slug: "general-fertility-rate",
+    name: "General Fertility Rate",
+    shortName: "GFR",
+    description:
+      "Live births per 1,000 women ages 15–44. Common U.S. NCHS state fertility measure (distinct from total fertility rate).",
+    unit: "per 1,000 women 15–44",
+    category: "FERTILITY",
+    higherIsBetter: null,
+    decimals: 1,
+    source: "NATIONAL_STATS",
+  },
 ];
 
 export const INDICATOR_BY_SLUG = new Map(INDICATORS.map((i) => [i.slug, i]));
@@ -400,4 +452,8 @@ export const SLUG = {
   cityAgeShare: "city-age-share",
   cityMedianIncome: "city-median-income",
   fertilityProvisional: "fertility-provisional",
+  unemploymentNativeBorn: "unemployment-native-born",
+  unemploymentForeignBorn: "unemployment-foreign-born",
+  foreignPrisonerShare: "foreign-prisoner-share",
+  generalFertilityRate: "general-fertility-rate",
 } as const;

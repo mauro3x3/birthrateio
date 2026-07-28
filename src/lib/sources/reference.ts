@@ -106,6 +106,14 @@ export const DATA_SOURCES = [
     description:
       "Provisional / partial-year births and TFR nowcasts compiled from national statistical offices and ministries of health (BirthGauge). Not a substitute for final annual official TFR.",
   },
+  {
+    code: "EUROSTAT",
+    name: "Eurostat",
+    url: "https://ec.europa.eu/eurostat",
+    license: "Eurostat terms (CC BY 4.0)",
+    description:
+      "European statistical office — crime, population and social statistics for EU/EFTA and candidate countries.",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {
