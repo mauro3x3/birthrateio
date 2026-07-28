@@ -18,6 +18,7 @@ import { seedCitySubdivisions } from "../src/lib/sources/city-subdivisions-data"
 import { seedCityDemographics } from "../src/lib/sources/city-demographics-data";
 import { seedCityRace, seedCityIncome } from "../src/lib/sources/city-race-income-data";
 import { seedCities } from "../src/lib/sources/cities-data";
+import { seedBirthGaugeNowcast } from "../src/lib/sources/birthgauge-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -36,6 +37,7 @@ async function main() {
   await seedCityDemographics(prisma);
   await seedCityRace(prisma);
   await seedCityIncome(prisma);
+  await seedBirthGaugeNowcast(prisma);
 }
 
 main()

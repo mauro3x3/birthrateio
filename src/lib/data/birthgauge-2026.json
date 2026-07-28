@@ -1,0 +1,1767 @@
+{
+  "title": "Data on Births and the Total Fertility Rate (TFR) 2026",
+  "compiledBy": "BirthGauge",
+  "compiledByUrl": "https://x.com/BirthGauge",
+  "primarySources": "National Statistical Offices or Ministries of Health / Interior",
+  "notes": [
+    "Change = % change vs same months one year earlier",
+    "2025/2026 births cover only the months indicated",
+    "Grey / lessReliable values are based on subnational developments",
+    "* TFR corrected for unaccounted emigration",
+    "** Corrected for births outside the country",
+    "^ Estimate based on rolling 12-month figures",
+    "nn TFR refers to nationals (excluding foreigners)"
+  ],
+  "rows": [
+    {
+      "name": "United States",
+      "iso3": "USA",
+      "slug": "united-states",
+      "births2025": 1160599,
+      "births2026": 1139971,
+      "changePct": -1.8,
+      "months": 4,
+      "tfr": {
+        "2015": 1.84,
+        "2020": 1.64,
+        "2024": 1.6,
+        "2025": 1.57,
+        "2026": 1.55
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Canada",
+      "iso3": "CAN",
+      "slug": "canada",
+      "tfr": {
+        "2015": 1.6,
+        "2020": 1.41,
+        "2024": 1.25,
+        "2025": 1.25
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Australia",
+      "iso3": "AUS",
+      "slug": "australia",
+      "tfr": {
+        "2015": 1.8,
+        "2020": 1.59,
+        "2024": 1.48,
+        "2025": 1.5
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "New Zealand",
+      "iso3": "NZL",
+      "slug": "new-zealand",
+      "births2025": 14901,
+      "births2026": 14223,
+      "changePct": -4.6,
+      "months": 3,
+      "tfr": {
+        "2015": 2.0,
+        "2020": 1.61,
+        "2024": 1.57,
+        "2025": 1.55,
+        "2026": 1.48
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "United Kingdom",
+      "iso3": "GBR",
+      "slug": "united-kingdom",
+      "tfr": {
+        "2015": 1.77,
+        "2020": 1.51,
+        "2024": 1.4,
+        "2025": 1.39,
+        "2026": 1.4
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Ireland",
+      "iso3": "IRL",
+      "slug": "ireland",
+      "tfr": {
+        "2015": 1.86,
+        "2020": 1.65,
+        "2024": 1.49,
+        "2025": 1.43
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Finland",
+      "iso3": "FIN",
+      "slug": "finland",
+      "births2025": 14506,
+      "births2026": 15423,
+      "changePct": 6.3,
+      "months": 4,
+      "tfr": {
+        "2015": 1.65,
+        "2020": 1.37,
+        "2024": 1.25,
+        "2025": 1.31,
+        "2026": 1.38
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Iceland",
+      "iso3": "ISL",
+      "slug": "iceland",
+      "births2025": 1050,
+      "births2026": 1110,
+      "changePct": 5.7,
+      "months": 3,
+      "tfr": {
+        "2015": 1.86,
+        "2020": 1.79,
+        "2024": 1.58,
+        "2025": 1.58,
+        "2026": 1.63
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Norway",
+      "iso3": "NOR",
+      "slug": "norway",
+      "births2025": 13102,
+      "births2026": 13683,
+      "changePct": 4.4,
+      "months": 3,
+      "tfr": {
+        "2015": 1.73,
+        "2020": 1.48,
+        "2024": 1.44,
+        "2025": 1.49,
+        "2026": 1.55
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Sweden",
+      "iso3": "SWE",
+      "slug": "sweden",
+      "births2025": 23905,
+      "births2026": 24189,
+      "changePct": 1.2,
+      "months": 3,
+      "tfr": {
+        "2015": 1.85,
+        "2020": 1.66,
+        "2024": 1.43,
+        "2025": 1.42,
+        "2026": 1.45
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Denmark",
+      "iso3": "DNK",
+      "slug": "denmark",
+      "births2025": 14144,
+      "births2026": 14304,
+      "changePct": 1.1,
+      "months": 3,
+      "tfr": {
+        "2015": 1.71,
+        "2020": 1.67,
+        "2024": 1.47,
+        "2025": 1.51,
+        "2026": 1.51
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Netherlands",
+      "iso3": "NLD",
+      "slug": "netherlands",
+      "births2025": 52661,
+      "births2026": 53638,
+      "changePct": 1.9,
+      "months": 4,
+      "tfr": {
+        "2015": 1.66,
+        "2020": 1.55,
+        "2024": 1.43,
+        "2025": 1.41,
+        "2026": 1.43
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Belgium",
+      "iso3": "BEL",
+      "slug": "belgium",
+      "births2025": 26451,
+      "births2026": 26630,
+      "changePct": 0.7,
+      "months": 3,
+      "tfr": {
+        "2015": 1.69,
+        "2020": 1.55,
+        "2024": 1.44,
+        "2025": 1.44,
+        "2026": 1.44
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Luxembourg",
+      "iso3": "LUX",
+      "slug": "luxembourg",
+      "tfr": {
+        "2015": 1.47,
+        "2020": 1.37,
+        "2024": 1.25,
+        "2025": 1.23
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Germany",
+      "iso3": "DEU",
+      "slug": "germany",
+      "births2025": 98805,
+      "births2026": 99965,
+      "changePct": 1.2,
+      "months": 2,
+      "tfr": {
+        "2015": 1.5,
+        "2020": 1.53,
+        "2024": 1.35,
+        "2025": 1.31
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "Austria",
+      "iso3": "AUT",
+      "slug": "austria",
+      "tfr": {
+        "2015": 1.49,
+        "2020": 1.44,
+        "2024": 1.31,
+        "2025": 1.29
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Switzerland",
+      "iso3": "CHE",
+      "slug": "switzerland",
+      "births2025": 17414,
+      "births2026": 17591,
+      "changePct": 1.0,
+      "months": 3,
+      "tfr": {
+        "2015": 1.54,
+        "2020": 1.46,
+        "2024": 1.39,
+        "2025": 1.38,
+        "2026": 1.28
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "France",
+      "iso3": "FRA",
+      "slug": "france",
+      "births2025": 209467,
+      "births2026": 205710,
+      "changePct": -1.8,
+      "months": 4,
+      "tfr": {
+        "2015": 1.96,
+        "2020": 1.79,
+        "2024": 1.61,
+        "2025": 1.56,
+        "2026": 1.53
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Italy",
+      "iso3": "ITA",
+      "slug": "italy",
+      "births2025": 56850,
+      "births2026": 56187,
+      "changePct": -1.2,
+      "months": 2,
+      "tfr": {
+        "2015": 1.35,
+        "2020": 1.24,
+        "2024": 1.18,
+        "2025": 1.14
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Spain",
+      "iso3": "ESP",
+      "slug": "spain",
+      "births2025": 77521,
+      "births2026": 78688,
+      "changePct": 1.5,
+      "months": 3,
+      "tfr": {
+        "2015": 1.33,
+        "2020": 1.18,
+        "2024": 1.1,
+        "2025": 1.11,
+        "2026": 1.12
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Portugal",
+      "iso3": "PRT",
+      "slug": "portugal",
+      "births2025": 20274,
+      "births2026": 21044,
+      "changePct": 3.8,
+      "months": 3,
+      "tfr": {
+        "2015": 1.31,
+        "2020": 1.41,
+        "2024": 1.4,
+        "2025": 1.44,
+        "2026": 1.48
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Greece",
+      "iso3": "GRC",
+      "slug": "greece",
+      "births2025": 26263,
+      "births2026": 26327,
+      "changePct": 0.2,
+      "months": 5,
+      "tfr": {
+        "2015": 1.33,
+        "2020": 1.39,
+        "2024": 1.24,
+        "2025": 1.22,
+        "2026": 1.26
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Cyprus",
+      "iso3": "CYP",
+      "slug": "cyprus",
+      "tfr": {
+        "2015": 1.32,
+        "2020": 1.36,
+        "2024": 1.38,
+        "2025": 1.35
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Malta",
+      "iso3": "MLT",
+      "slug": "malta",
+      "tfr": {
+        "2015": 1.37,
+        "2020": 1.13,
+        "2024": 1.01,
+        "2025": 1.03
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Estonia",
+      "iso3": "EST",
+      "slug": "estonia",
+      "births2025": 2934,
+      "births2026": 2844,
+      "changePct": -3.1,
+      "months": 4,
+      "tfr": {
+        "2015": 1.58,
+        "2020": 1.58,
+        "2024": 1.18,
+        "2025": 1.15,
+        "2026": 1.15
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Latvia",
+      "iso3": "LVA",
+      "slug": "latvia",
+      "births2025": 2758,
+      "births2026": 2757,
+      "changePct": 0.0,
+      "months": 3,
+      "tfr": {
+        "2015": 1.71,
+        "2020": 1.55,
+        "2024": 1.24,
+        "2025": 1.16,
+        "2026": 1.19
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Lithuania",
+      "iso3": "LTU",
+      "slug": "lithuania",
+      "births2025": 6260,
+      "births2026": 6512,
+      "changePct": 4.0,
+      "months": 4,
+      "tfr": {
+        "2015": 1.63,
+        "2020": 1.36,
+        "2024": 1.11,
+        "2025": 1.04,
+        "2026": 1.1
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Poland",
+      "iso3": "POL",
+      "slug": "poland",
+      "births2025": 58000,
+      "births2026": 57500,
+      "changePct": -0.9,
+      "months": 3,
+      "tfr": {
+        "2015": 1.44,
+        "2020": 1.4,
+        "2024": 1.12,
+        "2025": 1.03,
+        "2026": 1.1
+      },
+      "lessReliable": false,
+      "flags": [
+        "**",
+        "nn"
+      ]
+    },
+    {
+      "name": "Czechia",
+      "iso3": "CZE",
+      "slug": "czechia",
+      "tfr": {
+        "2015": 1.57,
+        "2020": 1.71,
+        "2024": 1.37,
+        "2025": 1.28
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Slovakia",
+      "iso3": "SVK",
+      "slug": "slovakia",
+      "births2025": 10342,
+      "births2026": 9964,
+      "changePct": -3.7,
+      "months": 3,
+      "tfr": {
+        "2015": 1.4,
+        "2020": 1.59,
+        "2024": 1.46,
+        "2025": 1.35,
+        "2026": 1.35
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Hungary",
+      "iso3": "HUN",
+      "slug": "hungary",
+      "births2025": 23330,
+      "births2026": 22802,
+      "changePct": -2.3,
+      "months": 4,
+      "tfr": {
+        "2015": 1.44,
+        "2020": 1.56,
+        "2024": 1.39,
+        "2025": 1.31,
+        "2026": 1.3
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Slovenia",
+      "iso3": "SVN",
+      "slug": "slovenia",
+      "births2025": 3994,
+      "births2026": 3978,
+      "changePct": -0.4,
+      "months": 3,
+      "tfr": {
+        "2015": 1.57,
+        "2020": 1.59,
+        "2024": 1.52,
+        "2025": 1.54,
+        "2026": 1.55
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Romania",
+      "iso3": "ROU",
+      "slug": "romania",
+      "births2025": 33261,
+      "births2026": 33017,
+      "changePct": -0.7,
+      "months": 3,
+      "tfr": {
+        "2015": 1.48,
+        "2020": 1.7,
+        "2024": 1.31,
+        "2025": 1.29,
+        "2026": 1.28
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Moldova",
+      "iso3": "MDA",
+      "slug": "moldova",
+      "births2025": 5462,
+      "births2026": 5068,
+      "changePct": -7.2,
+      "months": 3,
+      "tfr": {
+        "2015": 1.87,
+        "2020": 1.76,
+        "2024": 1.66,
+        "2025": 1.53,
+        "2026": 1.59
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Bulgaria",
+      "iso3": "BGR",
+      "slug": "bulgaria",
+      "births2025": 11062,
+      "births2026": 11367,
+      "changePct": 2.8,
+      "months": 3,
+      "tfr": {
+        "2015": 1.53,
+        "2020": 1.69,
+        "2024": 1.51,
+        "2025": 1.6,
+        "2026": 1.67
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Croatia",
+      "iso3": "HRV",
+      "slug": "croatia",
+      "births2025": 10271,
+      "births2026": 10689,
+      "changePct": 4.1,
+      "months": 4,
+      "tfr": {
+        "2015": 1.42,
+        "2020": 1.56,
+        "2024": 1.46,
+        "2025": 1.43,
+        "2026": 1.55
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Serbia",
+      "iso3": "SRB",
+      "slug": "serbia",
+      "births2025": 17900,
+      "births2026": 18500,
+      "changePct": 3.4,
+      "months": 4,
+      "tfr": {
+        "2015": 1.61,
+        "2020": 1.59,
+        "2024": 1.64,
+        "2025": 1.61,
+        "2026": 1.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Montenegro",
+      "iso3": "MNE",
+      "slug": "montenegro",
+      "births2025": 1603,
+      "births2026": 1621,
+      "changePct": 1.1,
+      "months": 3,
+      "tfr": {
+        "2015": 1.73,
+        "2020": 1.75,
+        "2024": 1.75,
+        "2025": 1.73,
+        "2026": 1.75
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Bosnia & Herzegovina",
+      "iso3": "BIH",
+      "slug": "bosnia-and-herzegovina",
+      "tfr": {
+        "2015": 1.48,
+        "2020": 1.49,
+        "2024": 1.58,
+        "2025": 1.57
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "North Macedonia",
+      "iso3": "MKD",
+      "slug": "north-macedonia",
+      "births2025": 3526,
+      "births2026": 3380,
+      "changePct": -4.1,
+      "months": 3,
+      "tfr": {
+        "2015": 1.89,
+        "2020": 1.65,
+        "2024": 1.44,
+        "2025": 1.45,
+        "2026": 1.41
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Albania",
+      "iso3": "ALB",
+      "slug": "albania",
+      "births2025": 4662,
+      "births2026": 5146,
+      "changePct": 10.4,
+      "months": 3,
+      "tfr": {
+        "2015": 1.6,
+        "2020": 1.79,
+        "2024": 1.84,
+        "2025": 1.84,
+        "2026": 1.78
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Kosovo",
+      "iso3": "XKX",
+      "slug": "kosovo",
+      "births2025": 5007,
+      "births2026": 5305,
+      "changePct": 6.0,
+      "months": 3,
+      "tfr": {
+        "2015": 2.2,
+        "2020": 1.9,
+        "2024": 1.92,
+        "2025": 1.99,
+        "2026": 2.13
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Ukraine",
+      "iso3": "UKR",
+      "slug": "ukraine",
+      "births2025": 70551,
+      "births2026": 60867,
+      "changePct": -13.7,
+      "months": 5,
+      "tfr": {
+        "2015": 1.53,
+        "2020": 1.22,
+        "2024": 0.9,
+        "2025": 0.85,
+        "2026": 0.77
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Belarus",
+      "iso3": "BLR",
+      "slug": "belarus",
+      "tfr": {
+        "2015": 1.93,
+        "2020": 1.55,
+        "2024": 1.24,
+        "2025": 1.19
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "Russia",
+      "iso3": "RUS",
+      "slug": "russia",
+      "tfr": {
+        "2015": 1.76,
+        "2020": 1.47,
+        "2024": 1.4,
+        "2025": 1.38,
+        "2026": 1.35
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "Jamaica",
+      "iso3": "JAM",
+      "slug": "jamaica",
+      "tfr": {
+        "2015": 2.1,
+        "2020": 1.84,
+        "2024": 1.51
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Belize",
+      "iso3": "BLZ",
+      "slug": "belize",
+      "tfr": {
+        "2015": 2.51,
+        "2020": 2.34,
+        "2024": 1.88
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Suriname",
+      "iso3": "SUR",
+      "slug": "suriname",
+      "tfr": {
+        "2015": 2.24,
+        "2020": 2.15,
+        "2024": 1.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Puerto Rico",
+      "iso3": "PRI",
+      "slug": "puerto-rico",
+      "births2025": 5437,
+      "births2026": 5914,
+      "changePct": 8.8,
+      "months": 4,
+      "tfr": {
+        "2015": 1.34,
+        "2020": 0.92,
+        "2024": 0.87,
+        "2025": 0.87,
+        "2026": 0.96
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Cuba",
+      "iso3": "CUB",
+      "slug": "cuba",
+      "tfr": {
+        "2015": 1.6,
+        "2020": 1.36,
+        "2024": 1.3,
+        "2025": 1.23
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Dominican Republic",
+      "iso3": "DOM",
+      "slug": "dominican-republic",
+      "tfr": {
+        "2015": 2.47,
+        "2020": 1.92,
+        "2024": 1.85,
+        "2025": 1.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Mexico",
+      "iso3": "MEX",
+      "slug": "mexico",
+      "tfr": {
+        "2015": 2.11,
+        "2020": 1.89,
+        "2024": 1.45,
+        "2025": 1.38
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Guatemala",
+      "iso3": "GTM",
+      "slug": "guatemala",
+      "tfr": {
+        "2015": 2.87,
+        "2020": 2.25,
+        "2024": 1.83,
+        "2025": 1.71
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Honduras",
+      "iso3": "HND",
+      "slug": "honduras",
+      "tfr": {
+        "2015": 2.94,
+        "2020": 2.36,
+        "2024": 1.88
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Nicaragua",
+      "iso3": "NIC",
+      "slug": "nicaragua",
+      "tfr": {
+        "2015": 2.55,
+        "2020": 2.13
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Costa Rica",
+      "iso3": "CRI",
+      "slug": "costa-rica",
+      "births2025": 10795,
+      "births2026": 10695,
+      "changePct": -0.9,
+      "months": 3,
+      "tfr": {
+        "2015": 1.76,
+        "2020": 1.41,
+        "2024": 1.12,
+        "2025": 1.12,
+        "2026": 1.11
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Panama",
+      "iso3": "PAN",
+      "slug": "panama",
+      "tfr": {
+        "2015": 2.45,
+        "2020": 2.14,
+        "2024": 1.79,
+        "2025": 1.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Venezuela",
+      "iso3": "VEN",
+      "slug": "venezuela",
+      "tfr": {
+        "2015": 2.35,
+        "2020": 2.23
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Colombia",
+      "iso3": "COL",
+      "slug": "colombia",
+      "tfr": {
+        "2015": 1.94,
+        "2020": 1.6,
+        "2024": 1.32,
+        "2025": 1.28
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Ecuador",
+      "iso3": "ECU",
+      "slug": "ecuador",
+      "births2025": 90291,
+      "births2026": 86045,
+      "changePct": -4.7,
+      "months": 5,
+      "tfr": {
+        "2015": 2.35,
+        "2020": 1.97,
+        "2024": 1.59,
+        "2025": 1.5,
+        "2026": 1.52
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Peru",
+      "iso3": "PER",
+      "slug": "peru",
+      "births2025": 151455,
+      "births2026": 150065,
+      "changePct": -0.9,
+      "months": 5,
+      "tfr": {
+        "2015": 2.39,
+        "2020": 2.0,
+        "2024": 1.57,
+        "2025": 1.5,
+        "2026": 1.5
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Bolivia",
+      "iso3": "BOL",
+      "slug": "bolivia",
+      "tfr": {
+        "2015": 3.13,
+        "2020": 2.18,
+        "2024": 1.8
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Paraguay",
+      "iso3": "PRY",
+      "slug": "paraguay",
+      "tfr": {
+        "2015": 2.61,
+        "2020": 2.0,
+        "2024": 1.77
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Chile",
+      "iso3": "CHL",
+      "slug": "chile",
+      "births2025": 24330,
+      "births2026": 24198,
+      "changePct": -0.5,
+      "months": 2,
+      "tfr": {
+        "2015": 1.81,
+        "2020": 1.34,
+        "2024": 1.05,
+        "2025": 1.0
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Argentina",
+      "iso3": "ARG",
+      "slug": "argentina",
+      "tfr": {
+        "2015": 2.24,
+        "2020": 1.54,
+        "2024": 1.18,
+        "2025": 1.13,
+        "2026": 1.11
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "Uruguay",
+      "iso3": "URY",
+      "slug": "uruguay",
+      "tfr": {
+        "2015": 1.95,
+        "2020": 1.42,
+        "2024": 1.19,
+        "2025": 1.15
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Brazil",
+      "iso3": "BRA",
+      "slug": "brazil",
+      "births2025": 853652,
+      "births2026": 835690,
+      "changePct": -2.1,
+      "months": 4,
+      "tfr": {
+        "2015": 1.8,
+        "2020": 1.62,
+        "2024": 1.48,
+        "2025": 1.53,
+        "2026": 1.51
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Mauritius",
+      "iso3": "MUS",
+      "slug": "mauritius",
+      "tfr": {
+        "2015": 1.37,
+        "2020": 1.45,
+        "2024": 1.44,
+        "2025": 1.52
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "South Africa",
+      "iso3": "ZAF",
+      "slug": "south-africa",
+      "tfr": {
+        "2015": 2.35,
+        "2020": 2.31,
+        "2024": 2.21,
+        "2025": 2.21
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Algeria",
+      "iso3": "DZA",
+      "slug": "algeria",
+      "tfr": {
+        "2015": 3.12,
+        "2020": 2.33,
+        "2024": 2.85
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Tunisia",
+      "iso3": "TUN",
+      "slug": "tunisia",
+      "tfr": {
+        "2015": 2.42,
+        "2020": 1.95,
+        "2024": 1.43,
+        "2025": 1.3
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Egypt",
+      "iso3": "EGY",
+      "slug": "egypt",
+      "births2025": 860100,
+      "births2026": 851500,
+      "changePct": -1.0,
+      "months": 4,
+      "tfr": {
+        "2015": 3.75,
+        "2020": 3.0,
+        "2024": 2.41,
+        "2025": 2.35,
+        "2026": 2.52
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Palestine",
+      "iso3": "PSE",
+      "slug": "palestine",
+      "tfr": {
+        "2015": 3.73,
+        "2020": 3.51,
+        "2024": 2.82
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Jordan",
+      "iso3": "JOR",
+      "slug": "jordan",
+      "tfr": {
+        "2015": 2.96,
+        "2020": 2.44,
+        "2024": 2.32
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Iraq",
+      "iso3": "IRQ",
+      "slug": "iraq",
+      "tfr": {
+        "2015": 3.83,
+        "2020": 3.05,
+        "2024": 2.78
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Kuwait",
+      "iso3": "KWT",
+      "slug": "kuwait",
+      "tfr": {
+        "2015": 3.71,
+        "2020": 3.04,
+        "2024": 2.79
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Saudi Arabia",
+      "iso3": "SAU",
+      "slug": "saudi-arabia",
+      "tfr": {
+        "2015": 3.5,
+        "2020": 3.0,
+        "2024": 2.7
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "United Arab Emirates",
+      "iso3": "ARE",
+      "slug": "united-arab-emirates",
+      "tfr": {
+        "2015": 3.7,
+        "2020": 3.2,
+        "2024": 2.89
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Oman",
+      "iso3": "OMN",
+      "slug": "oman",
+      "births2025": 19000,
+      "births2026": 18874,
+      "changePct": -0.7,
+      "months": 4,
+      "tfr": {
+        "2015": 3.98,
+        "2020": 3.53,
+        "2024": 2.81,
+        "2025": 2.8,
+        "2026": 2.77
+      },
+      "lessReliable": false,
+      "flags": [
+        "**"
+      ]
+    },
+    {
+      "name": "Israel",
+      "iso3": "ISR",
+      "slug": "israel",
+      "births2025": 43549,
+      "births2026": 44067,
+      "changePct": 1.2,
+      "months": 3,
+      "tfr": {
+        "2015": 3.09,
+        "2020": 2.9,
+        "2024": 2.87,
+        "2025": 2.88,
+        "2026": 2.9
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Georgia",
+      "iso3": "GEO",
+      "slug": "georgia",
+      "tfr": {
+        "2015": 2.3,
+        "2020": 1.97,
+        "2024": 1.8,
+        "2025": 1.53
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Armenia",
+      "iso3": "ARM",
+      "slug": "armenia",
+      "births2025": 7812,
+      "births2026": 7772,
+      "changePct": -0.5,
+      "months": 3,
+      "tfr": {
+        "2015": 1.64,
+        "2020": 1.65,
+        "2024": 1.71,
+        "2025": 1.65,
+        "2026": 1.68
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Azerbaijan",
+      "iso3": "AZE",
+      "slug": "azerbaijan",
+      "births2025": 22118,
+      "births2026": 20352,
+      "changePct": -7.9,
+      "months": 3,
+      "tfr": {
+        "2015": 2.2,
+        "2020": 1.77,
+        "2024": 1.55,
+        "2025": 1.47,
+        "2026": 1.37
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "Turkey",
+      "iso3": "TUR",
+      "slug": "turkey",
+      "tfr": {
+        "2015": 2.15,
+        "2020": 1.76,
+        "2024": 1.43,
+        "2025": 1.42
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Kazakhstan",
+      "iso3": "KAZ",
+      "slug": "kazakhstan",
+      "births2025": 106111,
+      "births2026": 99390,
+      "changePct": -6.3,
+      "months": 4,
+      "tfr": {
+        "2015": 2.73,
+        "2020": 3.13,
+        "2024": 2.6,
+        "2025": 2.57,
+        "2026": 2.41
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Uzbekistan",
+      "iso3": "UZB",
+      "slug": "uzbekistan",
+      "births2025": 266475,
+      "births2026": 254081,
+      "changePct": -4.7,
+      "months": 4,
+      "tfr": {
+        "2015": 2.49,
+        "2020": 2.9,
+        "2024": 3.35,
+        "2025": 3.21,
+        "2026": 3.05
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Kyrgyzstan",
+      "iso3": "KGZ",
+      "slug": "kyrgyzstan",
+      "births2025": 31755,
+      "births2026": 32797,
+      "changePct": 3.3,
+      "months": 3,
+      "tfr": {
+        "2015": 3.39,
+        "2020": 3.37,
+        "2024": 3.45,
+        "2025": 3.45,
+        "2026": 3.55
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "Tajikistan",
+      "iso3": "TJK",
+      "slug": "tajikistan",
+      "births2025": 53809,
+      "births2026": 54326,
+      "changePct": 1.0,
+      "months": 3,
+      "tfr": {
+        "2015": 3.31,
+        "2020": 3.33,
+        "2024": 3.53,
+        "2025": 3.57,
+        "2026": 3.6
+      },
+      "lessReliable": false,
+      "flags": [
+        "*"
+      ]
+    },
+    {
+      "name": "Iran",
+      "iso3": "IRN",
+      "slug": "iran",
+      "births2025": 388409,
+      "births2026": 341600,
+      "changePct": -12.0,
+      "months": 5,
+      "tfr": {
+        "2015": 2.15,
+        "2020": 1.58,
+        "2024": 1.55,
+        "2025": 1.47,
+        "2026": 1.31
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "India",
+      "iso3": "IND",
+      "slug": "india",
+      "tfr": {
+        "2015": 2.27,
+        "2020": 2.0,
+        "2024": 1.9
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Bangladesh",
+      "iso3": "BGD",
+      "slug": "bangladesh",
+      "tfr": {
+        "2015": 2.31,
+        "2020": 2.0,
+        "2024": 2.4
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Sri Lanka",
+      "iso3": "LKA",
+      "slug": "sri-lanka",
+      "tfr": {
+        "2015": 2.11,
+        "2020": 1.33,
+        "2024": 1.45,
+        "2025": 1.45
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Mongolia",
+      "iso3": "MNG",
+      "slug": "mongolia",
+      "births2025": 18014,
+      "births2026": 17329,
+      "changePct": -3.8,
+      "months": 4,
+      "tfr": {
+        "2015": 3.01,
+        "2020": 2.84,
+        "2024": 2.43,
+        "2025": 2.4,
+        "2026": 2.38
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Japan",
+      "iso3": "JPN",
+      "slug": "japan",
+      "births2025": 162986,
+      "births2026": 163299,
+      "changePct": 0.2,
+      "months": 3,
+      "tfr": {
+        "2015": 1.45,
+        "2020": 1.33,
+        "2024": 1.15,
+        "2025": 1.14,
+        "2026": 1.15
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "South Korea",
+      "iso3": "KOR",
+      "slug": "south-korea",
+      "births2025": 65352,
+      "births2026": 75014,
+      "changePct": 14.8,
+      "months": 3,
+      "tfr": {
+        "2015": 1.24,
+        "2020": 0.84,
+        "2024": 0.75,
+        "2025": 0.8,
+        "2026": 0.92
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Taiwan",
+      "iso3": "TWN",
+      "slug": "taiwan",
+      "births2025": 37974,
+      "births2026": 32188,
+      "changePct": -15.2,
+      "months": 4,
+      "tfr": {
+        "2015": 1.18,
+        "2020": 0.99,
+        "2024": 0.86,
+        "2025": 0.7,
+        "2026": 0.65
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "China",
+      "iso3": "CHN",
+      "slug": "china",
+      "tfr": {
+        "2015": 1.75,
+        "2020": 1.28,
+        "2024": 1.1,
+        "2025": 0.95,
+        "2026": 0.9
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Hong Kong",
+      "iso3": "HKG",
+      "slug": "hong-kong",
+      "births2025": 8773,
+      "births2026": 7395,
+      "changePct": -15.7,
+      "months": 3,
+      "tfr": {
+        "2015": 1.2,
+        "2020": 0.88,
+        "2024": 0.84,
+        "2025": 0.73,
+        "2026": 0.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Macao",
+      "iso3": "MAC",
+      "slug": "macao",
+      "births2025": 750,
+      "births2026": 690,
+      "changePct": -8.0,
+      "months": 3,
+      "tfr": {
+        "2015": 1.14,
+        "2020": 0.84,
+        "2024": 0.58,
+        "2025": 0.47,
+        "2026": 0.47
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Vietnam",
+      "iso3": "VNM",
+      "slug": "vietnam",
+      "tfr": {
+        "2015": 2.1,
+        "2020": 2.12,
+        "2024": 1.91,
+        "2025": 1.93
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Thailand",
+      "iso3": "THA",
+      "slug": "thailand",
+      "births2025": 168900,
+      "births2026": 146750,
+      "changePct": -13.1,
+      "months": 5,
+      "tfr": {
+        "2015": 1.53,
+        "2020": 1.19,
+        "2024": 0.99,
+        "2025": 0.87,
+        "2026": 0.76
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Malaysia",
+      "iso3": "MYS",
+      "slug": "malaysia",
+      "births2025": 93500,
+      "births2026": 94837,
+      "changePct": 1.4,
+      "months": 3,
+      "tfr": {
+        "2015": 2.05,
+        "2020": 1.8,
+        "2024": 1.55,
+        "2025": 1.41,
+        "2026": 1.43
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Singapore",
+      "iso3": "SGP",
+      "slug": "singapore",
+      "births2025": 7693,
+      "births2026": 6680,
+      "changePct": -13.2,
+      "months": 3,
+      "tfr": {
+        "2015": 1.24,
+        "2020": 1.1,
+        "2024": 0.97,
+        "2025": 0.87,
+        "2026": 0.82
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "Philippines",
+      "iso3": "PHL",
+      "slug": "philippines",
+      "tfr": {
+        "2015": 2.77,
+        "2020": 1.88,
+        "2024": 1.73,
+        "2025": 1.7
+      },
+      "lessReliable": false,
+      "flags": []
+    },
+    {
+      "name": "England",
+      "iso3": null,
+      "slug": "england",
+      "changePct": 0.8,
+      "months": 4,
+      "tfr": {
+        "2015": 1.79,
+        "2020": 1.53,
+        "2024": 1.42,
+        "2025": 1.4,
+        "2026": 1.41
+      },
+      "lessReliable": true,
+      "flags": [
+        "^"
+      ]
+    },
+    {
+      "name": "Wales",
+      "iso3": null,
+      "slug": "wales",
+      "tfr": {
+        "2015": 1.78,
+        "2020": 1.5,
+        "2024": 1.35,
+        "2025": 1.33,
+        "2026": 1.32
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "Scotland",
+      "iso3": null,
+      "slug": "scotland",
+      "births2025": 7868,
+      "births2026": 7608,
+      "changePct": -3.3,
+      "months": 2,
+      "tfr": {
+        "2015": 1.56,
+        "2020": 1.34,
+        "2024": 1.25,
+        "2025": 1.22
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "Northern Ireland",
+      "iso3": null,
+      "slug": "northern-ireland",
+      "births2025": 6325,
+      "births2026": 6340,
+      "changePct": 0.2,
+      "months": 4,
+      "tfr": {
+        "2015": 1.94,
+        "2020": 1.58,
+        "2024": 1.61,
+        "2025": 1.59,
+        "2026": 1.6
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "British Columbia",
+      "iso3": null,
+      "slug": "british-columbia",
+      "tfr": {
+        "2015": 1.39,
+        "2020": 1.19,
+        "2024": 1.02,
+        "2025": 1.02
+      },
+      "lessReliable": true,
+      "flags": []
+    },
+    {
+      "name": "Quebec",
+      "iso3": null,
+      "slug": "quebec",
+      "births2025": 12150,
+      "births2026": 12150,
+      "changePct": 0.0,
+      "months": 2,
+      "tfr": {
+        "2015": 1.61,
+        "2020": 1.51,
+        "2024": 1.38,
+        "2025": 1.4
+      },
+      "lessReliable": true,
+      "flags": []
+    }
+  ]
+}

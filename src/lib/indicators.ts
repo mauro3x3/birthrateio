@@ -354,6 +354,19 @@ export const INDICATORS: IndicatorDef[] = [
     decimals: 0,
     source: "US_CENSUS",
   },
+  {
+    code: "SP.DYN.TFRT.PROV",
+    slug: "fertility-provisional",
+    name: "Provisional Total Fertility Rate",
+    shortName: "TFR (provisional)",
+    description:
+      "Provisional / nowcast total fertility rate compiled from national statistical offices (via BirthGauge). Covers recent years ahead of World Bank final series. Partial-year estimates may be revised.",
+    unit: "births per woman",
+    category: "FERTILITY",
+    higherIsBetter: null,
+    decimals: 2,
+    source: "BIRTHGAUGE",
+  },
 ];
 
 export const INDICATOR_BY_SLUG = new Map(INDICATORS.map((i) => [i.slug, i]));
@@ -386,4 +399,5 @@ export const SLUG = {
   cityForeignBornShare: "city-foreign-born-share",
   cityAgeShare: "city-age-share",
   cityMedianIncome: "city-median-income",
+  fertilityProvisional: "fertility-provisional",
 } as const;

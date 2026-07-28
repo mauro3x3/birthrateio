@@ -32,6 +32,7 @@ import {
   getEmigrationDestinations,
   getImmigrationOrigins,
   getLatestValue,
+  getCountryFertilityNowcast,
   getPopulationPyramid,
   getProjections,
 } from "@/lib/queries";
@@ -104,6 +105,7 @@ export default async function CountryPage({
     divorce,
     nonmarital,
     homeownership,
+    fertilityNowcast,
   ] = await Promise.all([
     safe(getCountryTimeSeries(country.id, SLUG.population), []),
     safe(getCountryTimeSeries(country.id, SLUG.fertility), []),
@@ -137,6 +139,7 @@ export default async function CountryPage({
     safe(getLatestValue(country.id, SLUG.divorceRate), null),
     safe(getLatestValue(country.id, SLUG.nonmaritalBirths), null),
     safe(getLatestValue(country.id, SLUG.homeownershipRate), null),
+    safe(getCountryFertilityNowcast(country.id), null),
   ]);
 
   // Build projection overlay rows keyed by year.
@@ -419,6 +422,76 @@ export default async function CountryPage({
               color="hsl(340 82% 52%)"
             />
           </ChartCard>
+
+          {fertilityNowcast &&
+            (fertilityNowcast.tfr2025 != null ||
+              fertilityNowcast.tfr2026 != null) && (
+              <div className="rounded-lg border bg-muted/30 p-4 text-sm">
+                <p className="font-medium text-foreground">
+                  Provisional fertility nowcast
+                </p>
+                <p className="mt-1 text-muted-foreground">
+                  {fertilityNowcast.tfr2026 != null && (
+                    <>
+                      2026 TFR ≈{" "}
+                      <strong className="text-foreground">
+                        {formatNumber(fertilityNowcast.tfr2026, 2)}
+                      </strong>
+                    </>
+                  )}
+                  {fertilityNowcast.tfr2025 != null && (
+                    <>
+                      {fertilityNowcast.tfr2026 != null ? " · " : null}
+                      2025 ≈{" "}
+                      <strong className="text-foreground">
+                        {formatNumber(fertilityNowcast.tfr2025, 2)}
+                      </strong>
+                    </>
+                  )}
+                  {fertilityNowcast.changePct != null &&
+                    fertilityNowcast.months != null && (
+                      <>
+                        {" "}
+                        · YTD births ({fertilityNowcast.months} mo){" "}
+                        <strong
+                          className={
+                            fertilityNowcast.changePct >= 0
+                              ? "text-emerald-700"
+                              : "text-red-700"
+                          }
+                        >
+                          {fertilityNowcast.changePct >= 0 ? "+" : ""}
+                          {fertilityNowcast.changePct.toFixed(1)}%
+                        </strong>{" "}
+                        YoY
+                      </>
+                    )}
+                  .
+                </p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Source: {fertilityNowcast.sourceNote}
+                  {fertilityNowcast.compiledByUrl ? (
+                    <>
+                      {" "}
+                      · compiled by{" "}
+                      <a
+                        href={fertilityNowcast.compiledByUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline underline-offset-2 hover:text-foreground"
+                      >
+                        @{fertilityNowcast.compiledBy}
+                      </a>
+                    </>
+                  ) : null}
+                  . See the{" "}
+                  <Link href="/fertility" className="underline underline-offset-2">
+                    fertility nowcast table
+                  </Link>{" "}
+                  for all countries. Provisional — may be revised.
+                </p>
+              </div>
+            )}
 
           {birthsVsDeaths.length > 0 && (
             <ChartCard

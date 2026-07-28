@@ -10,7 +10,9 @@ import {
   getRanking,
   getWeightedGlobalByYear,
   getWorldByYear,
+  getFertilityNowcasts,
 } from "@/lib/queries";
+import { FertilityNowcastTable } from "@/components/fertility-nowcast-table";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
 
@@ -19,15 +21,16 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Fertility Explorer — Global Fertility Rates & Trends",
   description:
-    "Explore total fertility rates for every country. Animated global fertility map, rankings, historical trends and the biggest fertility movers.",
+    "Explore total fertility rates for every country. Animated global fertility map, 2026 provisional nowcast, rankings, and the biggest fertility movers.",
   alternates: { canonical: "/fertility" },
 };
 
 export default async function FertilityPage() {
-  const [frames, ranking, changes] = await Promise.all([
+  const [frames, ranking, changes, nowcasts] = await Promise.all([
     safe(getMapFrames(SLUG.fertility, { step: 1, maxFrames: 60 }), []),
     safe(getRanking(SLUG.fertility, { order: "desc" }), []),
     safe(getFertilityChanges(10, 8), { increases: [], declines: [] }),
+    safe(getFertilityNowcasts("2026"), []),
   ]);
 
   // Official World fertility (World Bank "World" aggregate) per animated year,
@@ -71,6 +74,35 @@ export default async function FertilityPage() {
           declines={changes.declines}
           increases={changes.increases}
         />
+
+        {nowcasts.length > 0 && (
+          <FertilityNowcastTable
+            compiledBy={nowcasts[0]?.compiledBy ?? "BirthGauge"}
+            compiledByUrl={nowcasts[0]?.compiledByUrl}
+            sourceNote={
+              nowcasts[0]?.sourceNote ??
+              "National Statistical Offices or Ministries of Health / Interior"
+            }
+            rows={nowcasts.map((r) => ({
+              label: r.label,
+              iso3: r.iso3,
+              slug: r.slug,
+              countrySlug: r.country?.slug ?? null,
+              flagEmoji: r.country?.flagEmoji ?? null,
+              birthsPrior: r.birthsPrior,
+              birthsCurrent: r.birthsCurrent,
+              changePct: r.changePct,
+              months: r.months,
+              tfr2015: r.tfr2015,
+              tfr2020: r.tfr2020,
+              tfr2024: r.tfr2024,
+              tfr2025: r.tfr2025,
+              tfr2026: r.tfr2026,
+              lessReliable: r.lessReliable,
+              flags: r.flags,
+            }))}
+          />
+        )}
 
         <Card>
           <CardHeader>

@@ -136,6 +136,7 @@ model Country {
   migrationOut      MigrationFlow[] @relation("MigrationOrigin")
   migrationIn       MigrationFlow[] @relation("MigrationDestination")
   groupCompositions GroupComposition[]
+  fertilityNowcasts FertilityNowcast[]
 
   @@index([continent])
   @@index([subregion])
@@ -437,4 +438,38 @@ model DataTip {
 
   @@index([status, createdAt])
   @@map("data_tips")
+}
+
+// Provisional / nowcast fertility & YTD births compiled from national NSOs
+// (via BirthGauge and similar trackers). Distinct from World Bank annual TFR.
+model FertilityNowcast {
+  id              Int      @id @default(autoincrement())
+  countryId       Int?
+  country         Country? @relation(fields: [countryId], references: [id], onDelete: SetNull)
+  iso3            String?
+  label           String   // "United States" or "Quebec"
+  slug            String?  // site country slug or subnational slug
+  birthsPrior     Int?     // YTD births same months prior year
+  birthsCurrent   Int?     // YTD births current year
+  changePct       Float?
+  months          Int?
+  tfr2015         Float?
+  tfr2020         Float?
+  tfr2024         Float?
+  tfr2025         Float?
+  tfr2026         Float?
+  lessReliable    Boolean  @default(false)
+  flags           String?  // comma-separated footnote markers
+  sourceNote      String
+  compiledBy      String   @default("BirthGauge")
+  compiledByUrl   String?
+  asOfLabel       String   @default("2026")
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([label, asOfLabel])
+  @@index([iso3])
+  @@index([countryId])
+  @@index([tfr2026])
+  @@map("fertility_nowcasts")
 }

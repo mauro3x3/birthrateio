@@ -842,6 +842,24 @@ export async function getCityZipStats(cityId: number) {
   });
 }
 
+export async function getFertilityNowcasts(asOfLabel = "2026") {
+  return prisma.fertilityNowcast.findMany({
+    where: { asOfLabel },
+    include: {
+      country: {
+        select: { slug: true, flagEmoji: true, name: true },
+      },
+    },
+    orderBy: [{ tfr2026: "asc" }, { label: "asc" }],
+  });
+}
+
+export async function getCountryFertilityNowcast(countryId: number) {
+  return prisma.fertilityNowcast.findFirst({
+    where: { countryId, asOfLabel: "2026" },
+  });
+}
+
 export async function getCityMedianIncome(
   cityId: number,
 ): Promise<{ year: number; value: number } | null> {

@@ -98,6 +98,14 @@ export const DATA_SOURCES = [
     description:
       "American Community Survey and Decennial Census figures for U.S. cities, counties and ZCTAs (accessed via Census Reporter).",
   },
+  {
+    code: "BIRTHGAUGE",
+    name: "BirthGauge provisional fertility tracker",
+    url: "https://x.com/BirthGauge",
+    license: "Compiled from national NSOs",
+    description:
+      "Provisional / partial-year births and TFR nowcasts compiled from national statistical offices and ministries of health (BirthGauge). Not a substitute for final annual official TFR.",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {
