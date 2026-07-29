@@ -29,4 +29,5 @@ export const mainNav = [
   { title: "Clock", href: "/clock" },
   { title: "Cities", href: "/cities" },
   { title: "Calendar", href: "/calendar" },
+  { title: "Report data", href: "/contribute" },
 ];

@@ -481,35 +481,45 @@ export default async function CountryPage({
           </ChartCard>
 
           {fertilityNowcast &&
-            (fertilityNowcast.tfr2025 != null ||
+            (fertilityNowcast.tfr2024 != null ||
+              fertilityNowcast.tfr2025 != null ||
               fertilityNowcast.tfr2026 != null) && (
-              <div className="rounded-lg border bg-muted/30 p-4 text-sm">
-                <p className="font-medium text-foreground">
-                  Provisional fertility nowcast
-                </p>
-                <p className="mt-1 text-muted-foreground">
-                  {fertilityNowcast.tfr2026 != null && (
-                    <>
-                      2026 TFR ≈{" "}
-                      <strong className="text-foreground">
-                        {formatNumber(fertilityNowcast.tfr2026, 2)}
-                      </strong>
-                    </>
-                  )}
-                  {fertilityNowcast.tfr2025 != null && (
-                    <>
-                      {fertilityNowcast.tfr2026 != null ? " · " : null}
-                      2025 ≈{" "}
-                      <strong className="text-foreground">
-                        {formatNumber(fertilityNowcast.tfr2025, 2)}
-                      </strong>
-                    </>
-                  )}
+              <div className="lg:col-span-2 rounded-lg border bg-muted/30 p-4 sm:p-5">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="font-medium text-foreground">
+                      Provisional fertility nowcast
+                    </p>
+                    <p className="mt-1 max-w-2xl text-xs leading-relaxed text-muted-foreground">
+                      Source: {fertilityNowcast.sourceNote}
+                      {fertilityNowcast.compiledByUrl ? (
+                        <>
+                          {" "}
+                          · compiled by{" "}
+                          <a
+                            href={fertilityNowcast.compiledByUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline underline-offset-2 hover:text-foreground"
+                          >
+                            @{fertilityNowcast.compiledBy}
+                          </a>
+                        </>
+                      ) : null}
+                      .{" "}
+                      <Link
+                        href="/fertility"
+                        className="underline underline-offset-2"
+                      >
+                        Full nowcast table
+                      </Link>{" "}
+                      · provisional, may be revised.
+                    </p>
+                  </div>
                   {fertilityNowcast.changePct != null &&
                     fertilityNowcast.months != null && (
-                      <>
-                        {" "}
-                        · YTD births ({fertilityNowcast.months} mo){" "}
+                      <p className="text-sm text-muted-foreground">
+                        YTD births ({fertilityNowcast.months} mo){" "}
                         <strong
                           className={
                             fertilityNowcast.changePct >= 0
@@ -521,32 +531,48 @@ export default async function CountryPage({
                           {fertilityNowcast.changePct.toFixed(1)}%
                         </strong>{" "}
                         YoY
-                      </>
+                      </p>
                     )}
-                  .
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Source: {fertilityNowcast.sourceNote}
-                  {fertilityNowcast.compiledByUrl ? (
-                    <>
-                      {" "}
-                      · compiled by{" "}
-                      <a
-                        href={fertilityNowcast.compiledByUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline underline-offset-2 hover:text-foreground"
-                      >
-                        @{fertilityNowcast.compiledBy}
-                      </a>
-                    </>
-                  ) : null}
-                  . See the{" "}
-                  <Link href="/fertility" className="underline underline-offset-2">
-                    fertility nowcast table
-                  </Link>{" "}
-                  for all countries. Provisional — may be revised.
-                </p>
+                </div>
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                  {fertilityNowcast.tfr2024 != null && (
+                    <div className="rounded-md border bg-background px-3 py-2">
+                      <p className="text-xs text-muted-foreground">TFR 2024</p>
+                      <p className="text-xl font-semibold tabular-nums">
+                        {formatNumber(fertilityNowcast.tfr2024, 2)}
+                      </p>
+                    </div>
+                  )}
+                  {fertilityNowcast.tfr2025 != null && (
+                    <div className="rounded-md border bg-background px-3 py-2">
+                      <p className="text-xs text-muted-foreground">TFR 2025</p>
+                      <p className="text-xl font-semibold tabular-nums">
+                        {formatNumber(fertilityNowcast.tfr2025, 2)}
+                      </p>
+                    </div>
+                  )}
+                  {fertilityNowcast.tfr2026 != null && (
+                    <div className="rounded-md border bg-background px-3 py-2">
+                      <p className="text-xs text-muted-foreground">TFR 2026</p>
+                      <p className="text-xl font-semibold tabular-nums">
+                        {formatNumber(fertilityNowcast.tfr2026, 2)}
+                      </p>
+                    </div>
+                  )}
+                  {fertilityNowcast.birthsCurrent != null && (
+                    <div className="rounded-md border bg-background px-3 py-2">
+                      <p className="text-xs text-muted-foreground">
+                        Births YTD
+                        {fertilityNowcast.months != null
+                          ? ` (${fertilityNowcast.months} mo)`
+                          : ""}
+                      </p>
+                      <p className="text-xl font-semibold tabular-nums">
+                        {formatCompact(fertilityNowcast.birthsCurrent)}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
