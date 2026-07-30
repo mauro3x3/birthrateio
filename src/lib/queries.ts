@@ -1021,11 +1021,54 @@ export async function getCityRank(
   return { rank: ahead + 1, total };
 }
 
+/** Common nicknames / abbreviations → city slug. */
+const CITY_SEARCH_ALIASES: Record<string, string[]> = {
+  nyc: ["new-york"],
+  "new york city": ["new-york"],
+  "n.y.c": ["new-york"],
+  "n.y.c.": ["new-york"],
+  la: ["los-angeles"],
+  "l.a": ["los-angeles"],
+  "l.a.": ["los-angeles"],
+  sf: ["san-francisco"],
+  "sfo": ["san-francisco"],
+  "san fran": ["san-francisco"],
+  "mexico city": ["mexico-city"],
+  cdmx: ["mexico-city"],
+  "sao paulo": ["sao-paulo"],
+  "são paulo": ["sao-paulo"],
+  "hong kong": ["hong-kong"],
+  hk: ["hong-kong"],
+  "tel aviv": ["tel-aviv"],
+  "rio": ["rio-de-janeiro"],
+  "rio de janeiro": ["rio-de-janeiro"],
+  "washington dc": ["washington"],
+  "washington d.c": ["washington"],
+  "washington d.c.": ["washington"],
+  "dc": ["washington"],
+};
+
 /** Search countries, cities and states/provinces for the global search box. */
 export async function search(query: string) {
   if (!query.trim())
     return { countries: [], cities: [], regions: [] };
   const q = query.trim();
+  const qLower = q.toLowerCase();
+  // Slug form: "new york" → "new-york" so spaced queries hit hyphenated slugs.
+  const qSlug = qLower.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const aliasSlugs = CITY_SEARCH_ALIASES[qLower] ?? CITY_SEARCH_ALIASES[qSlug] ?? [];
+
+  const cityOr: Array<Record<string, unknown>> = [
+    { name: { contains: q, mode: "insensitive" } },
+    { slug: { contains: q, mode: "insensitive" } },
+  ];
+  if (qSlug && qSlug !== qLower) {
+    cityOr.push({ slug: { contains: qSlug, mode: "insensitive" } });
+  }
+  for (const slug of aliasSlugs) {
+    cityOr.push({ slug: { equals: slug } });
+  }
+
   const [countries, cities, regions] = await Promise.all([
     prisma.country.findMany({
       where: {
@@ -1033,6 +1076,9 @@ export async function search(query: string) {
         OR: [
           { name: { contains: q, mode: "insensitive" } },
           { slug: { contains: q, mode: "insensitive" } },
+          ...(qSlug
+            ? [{ slug: { contains: qSlug, mode: "insensitive" as const } }]
+            : []),
           { iso3: { contains: q.toUpperCase(), mode: "insensitive" } },
         ],
       },
@@ -1040,12 +1086,7 @@ export async function search(query: string) {
       take: 8,
     }),
     prisma.city.findMany({
-      where: {
-        OR: [
-          { name: { contains: q, mode: "insensitive" } },
-          { slug: { contains: q, mode: "insensitive" } },
-        ],
-      },
+      where: { OR: cityOr },
       select: {
         slug: true,
         name: true,
@@ -1060,6 +1101,9 @@ export async function search(query: string) {
         OR: [
           { name: { contains: q, mode: "insensitive" } },
           { slug: { contains: q, mode: "insensitive" } },
+          ...(qSlug
+            ? [{ slug: { contains: qSlug, mode: "insensitive" as const } }]
+            : []),
         ],
       },
       select: {

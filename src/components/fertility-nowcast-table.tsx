@@ -1,5 +1,9 @@
+"use client";
+
 import Link from "next/link";
-import { formatNumber } from "@/lib/utils";
+import { Download, FileSpreadsheet } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { downloadFile, formatNumber, toCSV } from "@/lib/utils";
 
 export type NowcastRow = {
   label: string;
@@ -19,6 +23,56 @@ export type NowcastRow = {
   lessReliable: boolean;
   flags: string | null;
 };
+
+type ExportRow = {
+  country: string;
+  iso3: string;
+  births_2025: number | "";
+  births_2026: number | "";
+  change_pct: number | "";
+  months: number | "";
+  tfr_2015: number | "";
+  tfr_2020: number | "";
+  tfr_2024: number | "";
+  tfr_2025: number | "";
+  tfr_2026: number | "";
+  less_reliable: string;
+  flags: string;
+};
+
+const EXPORT_HEADERS: { key: keyof ExportRow; label: string }[] = [
+  { key: "country", label: "Country" },
+  { key: "iso3", label: "ISO3" },
+  { key: "births_2025", label: "Births 2025" },
+  { key: "births_2026", label: "Births 2026" },
+  { key: "change_pct", label: "Change %" },
+  { key: "months", label: "Months" },
+  { key: "tfr_2015", label: "TFR 2015" },
+  { key: "tfr_2020", label: "TFR 2020" },
+  { key: "tfr_2024", label: "TFR 2024" },
+  { key: "tfr_2025", label: "TFR 2025" },
+  { key: "tfr_2026", label: "TFR 2026" },
+  { key: "less_reliable", label: "Less reliable" },
+  { key: "flags", label: "Flags" },
+];
+
+function toExportRows(rows: NowcastRow[]): ExportRow[] {
+  return rows.map((r) => ({
+    country: r.label,
+    iso3: r.iso3 ?? "",
+    births_2025: r.birthsPrior ?? "",
+    births_2026: r.birthsCurrent ?? "",
+    change_pct: r.changePct ?? "",
+    months: r.months ?? "",
+    tfr_2015: r.tfr2015 ?? "",
+    tfr_2020: r.tfr2020 ?? "",
+    tfr_2024: r.tfr2024 ?? "",
+    tfr_2025: r.tfr2025 ?? "",
+    tfr_2026: r.tfr2026 ?? "",
+    less_reliable: r.lessReliable ? "yes" : "",
+    flags: r.flags ?? "",
+  }));
+}
 
 function tfrCell(v: number | null, dim = false) {
   if (v == null) return <span className="text-muted-foreground">—</span>;
@@ -50,6 +104,28 @@ export function FertilityNowcastTable({
   compiledByUrl?: string | null;
   sourceNote: string;
 }) {
+  const handleCsv = () => {
+    if (!rows.length) return;
+    // BOM so Excel opens UTF-8 country names correctly
+    const csv = `\uFEFF${toCSV(toExportRows(rows), EXPORT_HEADERS)}`;
+    downloadFile("fertility-nowcast-2026.csv", csv);
+  };
+
+  const handleExcel = async () => {
+    if (!rows.length) return;
+    const XLSX = await import("xlsx");
+    const sheet = XLSX.utils.json_to_sheet(toExportRows(rows), {
+      header: EXPORT_HEADERS.map((h) => h.key),
+    });
+    // Human-readable header row
+    XLSX.utils.sheet_add_aoa(sheet, [EXPORT_HEADERS.map((h) => h.label)], {
+      origin: "A1",
+    });
+    const book = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, sheet, "Fertility nowcast");
+    XLSX.writeFile(book, "fertility-nowcast-2026.xlsx");
+  };
+
   return (
     <section className="space-y-3">
       <div className="flex flex-wrap items-end justify-between gap-3">
@@ -64,6 +140,30 @@ export function FertilityNowcastTable({
             these figures are the timely layer.
           </p>
         </div>
+        {rows.length > 0 && (
+          <div className="flex shrink-0 items-center gap-2">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleCsv}
+              className="gap-1.5"
+            >
+              <Download className="h-3.5 w-3.5" />
+              CSV
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={handleExcel}
+              className="gap-1.5"
+            >
+              <FileSpreadsheet className="h-3.5 w-3.5" />
+              Excel
+            </Button>
+          </div>
+        )}
       </div>
 
       <div className="overflow-x-auto rounded-lg border">
