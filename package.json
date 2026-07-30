@@ -16,6 +16,7 @@
     "db:seed": "tsx prisma/seed.ts",
     "seed:ethnicity": "tsx scripts/seed-ethnicity.ts",
     "seed:curated": "tsx scripts/seed-curated.ts",
+    "seed:historic-mortality": "tsx scripts/seed-historic-mortality.ts",
     "build:migration-flows": "node scripts/build-migration-flows.js",
     "build:wpp-projections": "node scripts/build-wpp-projections.js",
     "build:wup-cities": "node scripts/build-wup-cities.js",

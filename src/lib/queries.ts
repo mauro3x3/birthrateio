@@ -1021,35 +1021,58 @@ export async function getCityRank(
   return { rank: ahead + 1, total };
 }
 
-/** Search countries + cities by name for the global search box. */
+/** Search countries, cities and states/provinces for the global search box. */
 export async function search(query: string) {
-  if (!query.trim()) return { countries: [], cities: [] };
+  if (!query.trim())
+    return { countries: [], cities: [], regions: [] };
   const q = query.trim();
-  const [countries, cities] = await Promise.all([
+  const [countries, cities, regions] = await Promise.all([
     prisma.country.findMany({
       where: {
         isAggregate: false,
         OR: [
-          // SQLite LIKE is case-insensitive for ASCII; on Postgres use citext
-          // or add `mode: "insensitive"` for full case-insensitivity.
-          { name: { contains: q } },
-          { iso3: { contains: q.toUpperCase() } },
+          { name: { contains: q, mode: "insensitive" } },
+          { slug: { contains: q, mode: "insensitive" } },
+          { iso3: { contains: q.toUpperCase(), mode: "insensitive" } },
         ],
       },
       select: { slug: true, name: true, flagEmoji: true, continent: true },
       take: 8,
     }),
     prisma.city.findMany({
-      where: { name: { contains: q } },
+      where: {
+        OR: [
+          { name: { contains: q, mode: "insensitive" } },
+          { slug: { contains: q, mode: "insensitive" } },
+        ],
+      },
       select: {
         slug: true,
         name: true,
+        population: true,
         country: { select: { name: true, flagEmoji: true } },
       },
+      orderBy: [{ population: "desc" }],
+      take: 8,
+    }),
+    prisma.admin1.findMany({
+      where: {
+        OR: [
+          { name: { contains: q, mode: "insensitive" } },
+          { slug: { contains: q, mode: "insensitive" } },
+        ],
+      },
+      select: {
+        slug: true,
+        name: true,
+        kind: true,
+        country: { select: { name: true, flagEmoji: true } },
+      },
+      orderBy: [{ population: "desc" }],
       take: 6,
     }),
   ]);
-  return { countries, cities };
+  return { countries, cities, regions };
 }
 
 export async function getDataStats() {

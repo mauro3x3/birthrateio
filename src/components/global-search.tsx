@@ -26,6 +26,12 @@ type SearchResults = {
     name: string;
     country: { name: string; flagEmoji: string | null };
   }[];
+  regions: {
+    slug: string;
+    name: string;
+    kind: string;
+    country: { name: string; flagEmoji: string | null };
+  }[];
 };
 
 export function GlobalSearch({
@@ -41,6 +47,7 @@ export function GlobalSearch({
   const [results, setResults] = React.useState<SearchResults>({
     countries: [],
     cities: [],
+    regions: [],
   });
   const [loading, setLoading] = React.useState(false);
 
@@ -57,7 +64,7 @@ export function GlobalSearch({
 
   React.useEffect(() => {
     if (!query.trim()) {
-      setResults({ countries: [], cities: [] });
+      setResults({ countries: [], cities: [], regions: [] });
       return;
     }
     const controller = new AbortController();
@@ -67,7 +74,12 @@ export function GlobalSearch({
         const res = await fetch(`/api/search?q=${encodeURIComponent(query)}`, {
           signal: controller.signal,
         });
-        setResults(await res.json());
+        const data = await res.json();
+        setResults({
+          countries: data.countries ?? [],
+          cities: data.cities ?? [],
+          regions: data.regions ?? [],
+        });
       } catch {
         /* aborted */
       } finally {
@@ -85,6 +97,11 @@ export function GlobalSearch({
     setQuery("");
     router.push(href);
   };
+
+  const hasResults =
+    results.countries.length > 0 ||
+    results.cities.length > 0 ||
+    results.regions.length > 0;
 
   return (
     <>
@@ -139,12 +156,9 @@ export function GlobalSearch({
               onValueChange={setQuery}
             />
             <CommandList>
-              {!loading &&
-                query.trim() &&
-                results.countries.length === 0 &&
-                results.cities.length === 0 && (
-                  <CommandEmpty>No results found.</CommandEmpty>
-                )}
+              {!loading && query.trim() && !hasResults && (
+                <CommandEmpty>No results found.</CommandEmpty>
+              )}
               {!query.trim() && (
                 <CommandEmpty>Start typing to search…</CommandEmpty>
               )}
@@ -163,6 +177,25 @@ export function GlobalSearch({
                           {c.continent}
                         </span>
                       )}
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              )}
+              {results.regions.length > 0 && (
+                <CommandGroup heading="States & regions">
+                  {results.regions.map((r) => (
+                    <CommandItem
+                      key={r.slug}
+                      value={`region-${r.slug}`}
+                      onSelect={() => go(`/state/${r.slug}`)}
+                    >
+                      <span className="text-lg">
+                        {r.country.flagEmoji ?? "🗺️"}
+                      </span>
+                      <span>{r.name}</span>
+                      <span className="ml-auto text-xs text-muted-foreground">
+                        {r.country.name}
+                      </span>
                     </CommandItem>
                   ))}
                 </CommandGroup>

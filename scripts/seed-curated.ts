@@ -22,6 +22,7 @@ import { seedBirthGaugeNowcast } from "../src/lib/sources/birthgauge-data";
 import { seedUnemploymentByBirthplace } from "../src/lib/sources/unemployment-birthplace-data";
 import { seedCrimeByOrigin } from "../src/lib/sources/crime-by-origin-data";
 import { seedAdmin1 } from "../src/lib/sources/admin1-data";
+import { seedHistoricMortality } from "../src/lib/sources/historic-mortality-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -44,6 +45,7 @@ async function main() {
   await seedUnemploymentByBirthplace(prisma);
   await seedCrimeByOrigin(prisma);
   await seedAdmin1(prisma);
+  await seedHistoricMortality(prisma);
 }
 
 main()

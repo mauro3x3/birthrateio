@@ -96,6 +96,8 @@ export default async function CountryPage({
     gdpPerCapita,
     migration,
     lifeExp,
+    historicDeathRate,
+    childMortality,
     abortion,
     foreignBorn,
     foreignBornShare,
@@ -132,6 +134,8 @@ export default async function CountryPage({
     safe(getCountryTimeSeries(country.id, SLUG.gdpPerCapita), []),
     safe(getCountryTimeSeries(country.id, SLUG.netMigration), []),
     safe(getCountryTimeSeries(country.id, SLUG.lifeExpectancy), []),
+    safe(getCountryTimeSeries(country.id, SLUG.historicDeathRate), []),
+    safe(getCountryTimeSeries(country.id, SLUG.childMortality), []),
     safe(getCountryTimeSeries(country.id, SLUG.abortionRate), []),
     safe(getCountryTimeSeries(country.id, SLUG.migrantStock), []),
     safe(getCountryTimeSeries(country.id, SLUG.migrantStockShare), []),
@@ -198,6 +202,16 @@ export default async function CountryPage({
     crimeRacePrison.groups.length > 0 ||
     crimeRaceArrest.groups.length > 0 ||
     crimeRaceMurder.groups.length > 0;
+
+  const lifeExpStart = lifeExp.length ? lifeExp[0].year : null;
+  const hasHistoricMortality =
+    lifeExp.length > 0 ||
+    historicDeathRate.length > 0 ||
+    childMortality.length > 0;
+  const lifeExpSource =
+    lifeExpStart != null && lifeExpStart < 1960
+      ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
+      : "World Bank";
 
   // Build projection overlay rows keyed by year.
   const projByYear = new Map<number, Record<string, number>>();
@@ -954,20 +968,6 @@ export default async function CountryPage({
               color="hsl(190 90% 42%)"
             />
           </ChartCard>
-          <ChartCard
-            title="Life expectancy over time"
-            description="Years at birth"
-            source="World Bank"
-            csvRows={lifeExp}
-            csvName={`${slug}-life-expectancy`}
-          >
-            <TimeSeriesChart
-              data={lifeExp}
-              decimals={1}
-              unit="years"
-              color="hsl(25 95% 53%)"
-            />
-          </ChartCard>
 
           {abortion.length > 0 && (
             <ChartCard
@@ -986,6 +986,102 @@ export default async function CountryPage({
             </ChartCard>
           )}
         </div>
+
+        {hasHistoricMortality && (
+          <section className="space-y-6">
+            <div className="border-b pb-2">
+              <h2 className="text-xl font-semibold tracking-tight">
+                Historic mortality
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Life expectancy, death rates and child mortality as far back as
+                vital registration and historical reconstructions allow
+                {lifeExpStart != null ? ` (from ${lifeExpStart})` : ""}.
+              </p>
+            </div>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {lifeExp.length > 0 && (
+                <ChartCard
+                  title="Life expectancy over time"
+                  description="Years at birth"
+                  source={lifeExpSource}
+                  csvRows={lifeExp}
+                  csvName={`${slug}-life-expectancy`}
+                >
+                  <TimeSeriesChart
+                    data={lifeExp}
+                    decimals={1}
+                    unit="years"
+                    color="hsl(25 95% 53%)"
+                  />
+                </ChartCard>
+              )}
+
+              {historicDeathRate.length > 0 && (
+                <ChartCard
+                  title="Historic crude death rate"
+                  description="Deaths per 1,000 people · Human Mortality Database"
+                  source="HMD via Our World in Data"
+                  csvRows={historicDeathRate}
+                  csvName={`${slug}-historic-death-rate`}
+                >
+                  <TimeSeriesChart
+                    data={historicDeathRate}
+                    decimals={1}
+                    unit="per 1,000"
+                    color="hsl(0 65% 48%)"
+                  />
+                </ChartCard>
+              )}
+
+              {childMortality.length > 0 && (
+                <ChartCard
+                  title="Under-five mortality"
+                  description="Deaths before age 5 per 1,000 live births"
+                  source="Our World in Data (Gapminder · UN IGME)"
+                  csvRows={childMortality}
+                  csvName={`${slug}-child-mortality`}
+                >
+                  <TimeSeriesChart
+                    data={childMortality}
+                    decimals={1}
+                    unit="per 1,000 births"
+                    color="hsl(340 70% 42%)"
+                  />
+                </ChartCard>
+              )}
+            </div>
+
+            <p className="text-xs leading-relaxed text-muted-foreground">
+              Pre-1960 life expectancy and long child-mortality series are from{" "}
+              <Link
+                href="https://ourworldindata.org/grapher/life-expectancy"
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Our World in Data
+              </Link>{" "}
+              (Riley, Zijdeman et al., HMD, UN). Historic crude death rates cover
+              countries in the{" "}
+              <Link
+                href="https://www.mortality.org"
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Human Mortality Database
+              </Link>{" "}
+              only — Sweden from 1751, France from 1816, and so on. Crude rates
+              are not age-standardized. See also the{" "}
+              <Link href="/mortality" className="underline underline-offset-2">
+                mortality explorer
+              </Link>
+              .
+            </p>
+          </section>
+        )}
 
         {/* Society, housing & beliefs */}
         {(divorce ||

@@ -84,7 +84,7 @@ export const INDICATORS: IndicatorDef[] = [
     name: "Life Expectancy at Birth",
     shortName: "Life Expectancy",
     description:
-      "Number of years a newborn would live if mortality patterns at birth stayed constant.",
+      "Number of years a newborn would live if mortality patterns at birth stayed constant. Pre-1960 values from Our World in Data long-run reconstructions (Riley, Zijdeman, HMD, UN); from 1960 World Bank WDI.",
     unit: "years",
     category: "MORTALITY",
     higherIsBetter: true,
@@ -419,6 +419,32 @@ export const INDICATORS: IndicatorDef[] = [
     decimals: 1,
     source: "NATIONAL_STATS",
   },
+  {
+    code: "HMD.CDRT",
+    slug: "historic-death-rate",
+    name: "Historic Crude Death Rate",
+    shortName: "Historic death rate",
+    description:
+      "Deaths per 1,000 people per year from the Human Mortality Database (via Our World in Data). Covers countries with long vital-registration series, in some cases back to the mid-18th century. Not age-standardized.",
+    unit: "per 1,000 people",
+    category: "MORTALITY",
+    higherIsBetter: false,
+    decimals: 1,
+    source: "HMD",
+  },
+  {
+    code: "OWID.U5MR",
+    slug: "child-mortality",
+    name: "Under-five Mortality Rate",
+    shortName: "Child mortality",
+    description:
+      "Deaths of children under age 5 per 1,000 live births. Long-run series from Our World in Data (Gapminder historical estimates and UN IGME).",
+    unit: "per 1,000 live births",
+    category: "MORTALITY",
+    higherIsBetter: false,
+    decimals: 1,
+    source: "OWID",
+  },
 ];
 
 export const INDICATOR_BY_SLUG = new Map(INDICATORS.map((i) => [i.slug, i]));
@@ -456,4 +482,6 @@ export const SLUG = {
   unemploymentForeignBorn: "unemployment-foreign-born",
   foreignPrisonerShare: "foreign-prisoner-share",
   generalFertilityRate: "general-fertility-rate",
+  historicDeathRate: "historic-death-rate",
+  childMortality: "child-mortality",
 } as const;

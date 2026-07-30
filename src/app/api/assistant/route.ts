@@ -15,8 +15,10 @@ const SITE_MAP = `
 - /fertility : Fertility explorer (global map, rankings, movers, history)
 - /population : Population explorer (rankings, projections, growth calculator)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
+- /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
+- /demographics : US demographics map — race & Hispanic origin by state (ACS), Census-style choropleth
 - /state/<slug> : Subnational profile — population & fertility for a state/province/Land
 - /gdp : GDP explorer (rankings, GDP per capita, growth)
 - /cities : Cities database
@@ -25,7 +27,7 @@ const SITE_MAP = `
 - /clock : Live fertility / world population clock (illustrative extrapolation from annual rates)
 - /calendar : Upcoming demographic data releases (TFR/fertility highlighted)
 - /contribute : Tip form to report newly released official demographic data
-- /country/<slug> : Full country profile — population, fertility, births vs deaths, GDP, migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), population pyramid, modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
+- /country/<slug> : Full country profile — population, fertility, births vs deaths, historic mortality (life expectancy / HMD death rates / child mortality), GDP, migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), population pyramid, modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
 `.trim();
 
 function buildSystemPrompt(countryList: string): string {
@@ -57,7 +59,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /fertility /population /migration /crime /gdp /cities /calendar /clock /contribute.
+- Explorers: /fertility /population /migration /mortality /crime /demographics /gdp /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {

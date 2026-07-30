@@ -1,0 +1,1405 @@
+{
+  "source": "U.S. Census Bureau, ACS 2024 1-year (table B03002) via Census Reporter",
+  "sourceUrl": "https://censusreporter.org/tables/B03002/",
+  "year": 2024,
+  "release": {
+    "id": "acs2024_1yr",
+    "name": "ACS 2024 1-year",
+    "years": "2024"
+  },
+  "geography": "state",
+  "unit": "% of total population",
+  "groups": [
+    {
+      "id": "white_nh",
+      "label": "White alone, not Hispanic or Latino",
+      "acsVar": "B03002003"
+    },
+    {
+      "id": "black_nh",
+      "label": "Black or African American alone, not Hispanic or Latino",
+      "acsVar": "B03002004"
+    },
+    {
+      "id": "aian_nh",
+      "label": "American Indian and Alaska Native alone, not Hispanic or Latino",
+      "acsVar": "B03002005"
+    },
+    {
+      "id": "asian_nh",
+      "label": "Asian alone, not Hispanic or Latino",
+      "acsVar": "B03002006"
+    },
+    {
+      "id": "nhpi_nh",
+      "label": "Native Hawaiian and Other Pacific Islander alone, not Hispanic or Latino",
+      "acsVar": "B03002007"
+    },
+    {
+      "id": "other_nh",
+      "label": "Some Other Race alone, not Hispanic or Latino",
+      "acsVar": "B03002008"
+    },
+    {
+      "id": "multiracial_nh",
+      "label": "Two or More Races, not Hispanic or Latino",
+      "acsVar": "B03002009"
+    },
+    {
+      "id": "hispanic",
+      "label": "Hispanic or Latino (any race)",
+      "acsVar": "B03002012"
+    }
+  ],
+  "unitedStates": {
+    "population": 340110980,
+    "shares": {
+      "white_nh": 56.27,
+      "black_nh": 11.75,
+      "aian_nh": 0.52,
+      "asian_nh": 6.19,
+      "nhpi_nh": 0.17,
+      "other_nh": 0.54,
+      "multiracial_nh": 4.56,
+      "hispanic": 20.0
+    },
+    "counts": {
+      "white_nh": 191382620,
+      "black_nh": 39959480,
+      "aian_nh": 1768838,
+      "asian_nh": 21036558,
+      "nhpi_nh": 581100,
+      "other_nh": 1852889,
+      "multiracial_nh": 15515949,
+      "hispanic": 68013550
+    }
+  },
+  "states": {
+    "01": {
+      "name": "Alabama",
+      "fips": "01",
+      "slug": "united-states-alabama",
+      "population": 5157699,
+      "shares": {
+        "white_nh": 62.8,
+        "black_nh": 25.08,
+        "aian_nh": 0.32,
+        "asian_nh": 1.52,
+        "nhpi_nh": 0.08,
+        "other_nh": 0.44,
+        "multiracial_nh": 3.81,
+        "hispanic": 5.95
+      },
+      "counts": {
+        "white_nh": 3239077,
+        "black_nh": 1293728,
+        "aian_nh": 16318,
+        "asian_nh": 78339,
+        "nhpi_nh": 4078,
+        "other_nh": 22610,
+        "multiracial_nh": 196583,
+        "hispanic": 306966
+      }
+    },
+    "02": {
+      "name": "Alaska",
+      "fips": "02",
+      "slug": "united-states-alaska",
+      "population": 740133,
+      "shares": {
+        "white_nh": 57.0,
+        "black_nh": 2.41,
+        "aian_nh": 13.46,
+        "asian_nh": 5.92,
+        "nhpi_nh": 1.69,
+        "other_nh": 0.78,
+        "multiracial_nh": 11.01,
+        "hispanic": 7.73
+      },
+      "counts": {
+        "white_nh": 421910,
+        "black_nh": 17803,
+        "aian_nh": 99626,
+        "asian_nh": 43816,
+        "nhpi_nh": 12515,
+        "other_nh": 5766,
+        "multiracial_nh": 81468,
+        "hispanic": 57229
+      }
+    },
+    "04": {
+      "name": "Arizona",
+      "fips": "04",
+      "slug": "united-states-arizona",
+      "population": 7582384,
+      "shares": {
+        "white_nh": 51.2,
+        "black_nh": 4.43,
+        "aian_nh": 3.1,
+        "asian_nh": 3.82,
+        "nhpi_nh": 0.14,
+        "other_nh": 0.45,
+        "multiracial_nh": 4.74,
+        "hispanic": 32.12
+      },
+      "counts": {
+        "white_nh": 3882098,
+        "black_nh": 336277,
+        "aian_nh": 235367,
+        "asian_nh": 289457,
+        "nhpi_nh": 10570,
+        "other_nh": 33805,
+        "multiracial_nh": 359149,
+        "hispanic": 2435661
+      }
+    },
+    "05": {
+      "name": "Arkansas",
+      "fips": "05",
+      "slug": "united-states-arkansas",
+      "population": 3088354,
+      "shares": {
+        "white_nh": 66.57,
+        "black_nh": 14.06,
+        "aian_nh": 0.43,
+        "asian_nh": 1.77,
+        "nhpi_nh": 0.38,
+        "other_nh": 0.27,
+        "multiracial_nh": 6.99,
+        "hispanic": 9.54
+      },
+      "counts": {
+        "white_nh": 2055864,
+        "black_nh": 434109,
+        "aian_nh": 13145,
+        "asian_nh": 54576,
+        "nhpi_nh": 11636,
+        "other_nh": 8446,
+        "multiracial_nh": 215907,
+        "hispanic": 294671
+      }
+    },
+    "06": {
+      "name": "California",
+      "fips": "06",
+      "slug": "united-states-california",
+      "population": 39431264,
+      "shares": {
+        "white_nh": 32.57,
+        "black_nh": 5.09,
+        "aian_nh": 0.27,
+        "asian_nh": 15.83,
+        "nhpi_nh": 0.34,
+        "other_nh": 0.62,
+        "multiracial_nh": 4.52,
+        "hispanic": 40.75
+      },
+      "counts": {
+        "white_nh": 12842211,
+        "black_nh": 2008322,
+        "aian_nh": 105814,
+        "asian_nh": 6243676,
+        "nhpi_nh": 135439,
+        "other_nh": 243240,
+        "multiracial_nh": 1783347,
+        "hispanic": 16069214
+      }
+    },
+    "08": {
+      "name": "Colorado",
+      "fips": "08",
+      "slug": "united-states-colorado",
+      "population": 5957494,
+      "shares": {
+        "white_nh": 63.61,
+        "black_nh": 3.95,
+        "aian_nh": 0.38,
+        "asian_nh": 3.41,
+        "nhpi_nh": 0.14,
+        "other_nh": 0.53,
+        "multiracial_nh": 4.77,
+        "hispanic": 23.21
+      },
+      "counts": {
+        "white_nh": 3789553,
+        "black_nh": 235585,
+        "aian_nh": 22506,
+        "asian_nh": 203023,
+        "nhpi_nh": 8562,
+        "other_nh": 31358,
+        "multiracial_nh": 283959,
+        "hispanic": 1382948
+      }
+    },
+    "09": {
+      "name": "Connecticut",
+      "fips": "09",
+      "slug": "united-states-connecticut",
+      "population": 3675069,
+      "shares": {
+        "white_nh": 60.43,
+        "black_nh": 9.94,
+        "aian_nh": 0.1,
+        "asian_nh": 4.71,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.8,
+        "multiracial_nh": 4.76,
+        "hispanic": 19.23
+      },
+      "counts": {
+        "white_nh": 2221018,
+        "black_nh": 365281,
+        "aian_nh": 3756,
+        "asian_nh": 172938,
+        "nhpi_nh": 697,
+        "other_nh": 29583,
+        "multiracial_nh": 174990,
+        "hispanic": 706806
+      }
+    },
+    "10": {
+      "name": "Delaware",
+      "fips": "10",
+      "slug": "united-states-delaware",
+      "population": 1051917,
+      "shares": {
+        "white_nh": 56.59,
+        "black_nh": 21.41,
+        "aian_nh": 0.08,
+        "asian_nh": 4.81,
+        "nhpi_nh": 0.1,
+        "other_nh": 0.59,
+        "multiracial_nh": 4.75,
+        "hispanic": 11.68
+      },
+      "counts": {
+        "white_nh": 595235,
+        "black_nh": 225206,
+        "aian_nh": 830,
+        "asian_nh": 50610,
+        "nhpi_nh": 1008,
+        "other_nh": 6257,
+        "multiracial_nh": 49958,
+        "hispanic": 122813
+      }
+    },
+    "11": {
+      "name": "District of Columbia",
+      "fips": "11",
+      "slug": "united-states-district-of-columbia",
+      "population": 702250,
+      "shares": {
+        "white_nh": 36.22,
+        "black_nh": 40.7,
+        "aian_nh": 0.12,
+        "asian_nh": 4.93,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.74,
+        "multiracial_nh": 4.69,
+        "hispanic": 12.59
+      },
+      "counts": {
+        "white_nh": 254350,
+        "black_nh": 285823,
+        "aian_nh": 820,
+        "asian_nh": 34592,
+        "nhpi_nh": 126,
+        "other_nh": 5203,
+        "multiracial_nh": 32906,
+        "hispanic": 88430
+      }
+    },
+    "12": {
+      "name": "Florida",
+      "fips": "12",
+      "slug": "united-states-florida",
+      "population": 23372216,
+      "shares": {
+        "white_nh": 49.07,
+        "black_nh": 14.29,
+        "aian_nh": 0.11,
+        "asian_nh": 3.02,
+        "nhpi_nh": 0.08,
+        "other_nh": 0.69,
+        "multiracial_nh": 4.05,
+        "hispanic": 28.69
+      },
+      "counts": {
+        "white_nh": 11469118,
+        "black_nh": 3340695,
+        "aian_nh": 24930,
+        "asian_nh": 705650,
+        "nhpi_nh": 17774,
+        "other_nh": 161657,
+        "multiracial_nh": 946303,
+        "hispanic": 6706088
+      }
+    },
+    "13": {
+      "name": "Georgia",
+      "fips": "13",
+      "slug": "united-states-georgia",
+      "population": 11180878,
+      "shares": {
+        "white_nh": 48.01,
+        "black_nh": 30.25,
+        "aian_nh": 0.16,
+        "asian_nh": 4.87,
+        "nhpi_nh": 0.07,
+        "other_nh": 0.62,
+        "multiracial_nh": 4.41,
+        "hispanic": 11.62
+      },
+      "counts": {
+        "white_nh": 5367827,
+        "black_nh": 3382731,
+        "aian_nh": 17452,
+        "asian_nh": 544226,
+        "nhpi_nh": 7496,
+        "other_nh": 69411,
+        "multiracial_nh": 492535,
+        "hispanic": 1299200
+      }
+    },
+    "15": {
+      "name": "Hawaii",
+      "fips": "15",
+      "slug": "united-states-hawaii",
+      "population": 1446146,
+      "shares": {
+        "white_nh": 20.72,
+        "black_nh": 1.63,
+        "aian_nh": 0.14,
+        "asian_nh": 35.6,
+        "nhpi_nh": 9.15,
+        "other_nh": 0.36,
+        "multiracial_nh": 22.17,
+        "hispanic": 10.23
+      },
+      "counts": {
+        "white_nh": 299573,
+        "black_nh": 23542,
+        "aian_nh": 2062,
+        "asian_nh": 514880,
+        "nhpi_nh": 132266,
+        "other_nh": 5264,
+        "multiracial_nh": 320663,
+        "hispanic": 147896
+      }
+    },
+    "16": {
+      "name": "Idaho",
+      "fips": "16",
+      "slug": "united-states-idaho",
+      "population": 2001619,
+      "shares": {
+        "white_nh": 77.84,
+        "black_nh": 0.72,
+        "aian_nh": 0.63,
+        "asian_nh": 1.46,
+        "nhpi_nh": 0.15,
+        "other_nh": 0.56,
+        "multiracial_nh": 4.35,
+        "hispanic": 14.3
+      },
+      "counts": {
+        "white_nh": 1558007,
+        "black_nh": 14354,
+        "aian_nh": 12541,
+        "asian_nh": 29215,
+        "nhpi_nh": 2919,
+        "other_nh": 11285,
+        "multiracial_nh": 87113,
+        "hispanic": 286185
+      }
+    },
+    "17": {
+      "name": "Illinois",
+      "fips": "17",
+      "slug": "united-states-illinois",
+      "population": 12710158,
+      "shares": {
+        "white_nh": 57.09,
+        "black_nh": 12.93,
+        "aian_nh": 0.11,
+        "asian_nh": 6.34,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.33,
+        "multiracial_nh": 3.78,
+        "hispanic": 19.38
+      },
+      "counts": {
+        "white_nh": 7256503,
+        "black_nh": 1643989,
+        "aian_nh": 14528,
+        "asian_nh": 806129,
+        "nhpi_nh": 2965,
+        "other_nh": 42536,
+        "multiracial_nh": 480740,
+        "hispanic": 2462768
+      }
+    },
+    "18": {
+      "name": "Indiana",
+      "fips": "18",
+      "slug": "united-states-indiana",
+      "population": 6924275,
+      "shares": {
+        "white_nh": 74.26,
+        "black_nh": 8.95,
+        "aian_nh": 0.09,
+        "asian_nh": 2.69,
+        "nhpi_nh": 0.07,
+        "other_nh": 0.45,
+        "multiracial_nh": 4.44,
+        "hispanic": 9.05
+      },
+      "counts": {
+        "white_nh": 5142060,
+        "black_nh": 619678,
+        "aian_nh": 5915,
+        "asian_nh": 186325,
+        "nhpi_nh": 4551,
+        "other_nh": 31432,
+        "multiracial_nh": 307698,
+        "hispanic": 626616
+      }
+    },
+    "19": {
+      "name": "Iowa",
+      "fips": "19",
+      "slug": "united-states-iowa",
+      "population": 3241488,
+      "shares": {
+        "white_nh": 81.18,
+        "black_nh": 4.06,
+        "aian_nh": 0.2,
+        "asian_nh": 2.57,
+        "nhpi_nh": 0.18,
+        "other_nh": 0.24,
+        "multiracial_nh": 3.75,
+        "hispanic": 7.81
+      },
+      "counts": {
+        "white_nh": 2631491,
+        "black_nh": 131629,
+        "aian_nh": 6554,
+        "asian_nh": 83301,
+        "nhpi_nh": 5847,
+        "other_nh": 7879,
+        "multiracial_nh": 121563,
+        "hispanic": 253224
+      }
+    },
+    "20": {
+      "name": "Kansas",
+      "fips": "20",
+      "slug": "united-states-kansas",
+      "population": 2970606,
+      "shares": {
+        "white_nh": 71.81,
+        "black_nh": 5.12,
+        "aian_nh": 0.46,
+        "asian_nh": 3.01,
+        "nhpi_nh": 0.14,
+        "other_nh": 0.36,
+        "multiracial_nh": 4.88,
+        "hispanic": 14.23
+      },
+      "counts": {
+        "white_nh": 2133139,
+        "black_nh": 152192,
+        "aian_nh": 13550,
+        "asian_nh": 89273,
+        "nhpi_nh": 4020,
+        "other_nh": 10809,
+        "multiracial_nh": 144861,
+        "hispanic": 422762
+      }
+    },
+    "21": {
+      "name": "Kentucky",
+      "fips": "21",
+      "slug": "united-states-kentucky",
+      "population": 4588372,
+      "shares": {
+        "white_nh": 80.3,
+        "black_nh": 7.03,
+        "aian_nh": 0.13,
+        "asian_nh": 1.86,
+        "nhpi_nh": 0.03,
+        "other_nh": 0.3,
+        "multiracial_nh": 4.85,
+        "hispanic": 5.51
+      },
+      "counts": {
+        "white_nh": 3684478,
+        "black_nh": 322435,
+        "aian_nh": 5885,
+        "asian_nh": 85144,
+        "nhpi_nh": 1472,
+        "other_nh": 13745,
+        "multiracial_nh": 222573,
+        "hispanic": 252640
+      }
+    },
+    "22": {
+      "name": "Louisiana",
+      "fips": "22",
+      "slug": "united-states-louisiana",
+      "population": 4597740,
+      "shares": {
+        "white_nh": 55.15,
+        "black_nh": 30.18,
+        "aian_nh": 0.39,
+        "asian_nh": 1.77,
+        "nhpi_nh": 0.03,
+        "other_nh": 0.42,
+        "multiracial_nh": 4.29,
+        "hispanic": 7.78
+      },
+      "counts": {
+        "white_nh": 2535671,
+        "black_nh": 1387451,
+        "aian_nh": 17790,
+        "asian_nh": 81540,
+        "nhpi_nh": 1254,
+        "other_nh": 19295,
+        "multiracial_nh": 197111,
+        "hispanic": 357628
+      }
+    },
+    "23": {
+      "name": "Maine",
+      "fips": "23",
+      "slug": "united-states-maine",
+      "population": 1405012,
+      "shares": {
+        "white_nh": 89.13,
+        "black_nh": 1.99,
+        "aian_nh": 0.34,
+        "asian_nh": 1.33,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.31,
+        "multiracial_nh": 4.54,
+        "hispanic": 2.34
+      },
+      "counts": {
+        "white_nh": 1252316,
+        "black_nh": 27897,
+        "aian_nh": 4804,
+        "asian_nh": 18720,
+        "nhpi_nh": 269,
+        "other_nh": 4410,
+        "multiracial_nh": 63727,
+        "hispanic": 32869
+      }
+    },
+    "24": {
+      "name": "Maryland",
+      "fips": "24",
+      "slug": "united-states-maryland",
+      "population": 6263220,
+      "shares": {
+        "white_nh": 45.31,
+        "black_nh": 28.69,
+        "aian_nh": 0.16,
+        "asian_nh": 6.89,
+        "nhpi_nh": 0.05,
+        "other_nh": 0.72,
+        "multiracial_nh": 4.92,
+        "hispanic": 13.27
+      },
+      "counts": {
+        "white_nh": 2837686,
+        "black_nh": 1796869,
+        "aian_nh": 10053,
+        "asian_nh": 431616,
+        "nhpi_nh": 2971,
+        "other_nh": 45139,
+        "multiracial_nh": 307938,
+        "hispanic": 830948
+      }
+    },
+    "25": {
+      "name": "Massachusetts",
+      "fips": "25",
+      "slug": "united-states-massachusetts",
+      "population": 7136171,
+      "shares": {
+        "white_nh": 65.0,
+        "black_nh": 6.33,
+        "aian_nh": 0.08,
+        "asian_nh": 7.64,
+        "nhpi_nh": 0.01,
+        "other_nh": 1.31,
+        "multiracial_nh": 5.64,
+        "hispanic": 14.0
+      },
+      "counts": {
+        "white_nh": 4638530,
+        "black_nh": 451443,
+        "aian_nh": 5548,
+        "asian_nh": 545521,
+        "nhpi_nh": 989,
+        "other_nh": 93197,
+        "multiracial_nh": 402148,
+        "hispanic": 998795
+      }
+    },
+    "26": {
+      "name": "Michigan",
+      "fips": "26",
+      "slug": "united-states-michigan",
+      "population": 10140459,
+      "shares": {
+        "white_nh": 71.64,
+        "black_nh": 12.85,
+        "aian_nh": 0.33,
+        "asian_nh": 3.73,
+        "nhpi_nh": 0.04,
+        "other_nh": 0.41,
+        "multiracial_nh": 4.87,
+        "hispanic": 6.13
+      },
+      "counts": {
+        "white_nh": 7264560,
+        "black_nh": 1303275,
+        "aian_nh": 33430,
+        "asian_nh": 378447,
+        "nhpi_nh": 3942,
+        "other_nh": 41532,
+        "multiracial_nh": 493442,
+        "hispanic": 621831
+      }
+    },
+    "27": {
+      "name": "Minnesota",
+      "fips": "27",
+      "slug": "united-states-minnesota",
+      "population": 5793151,
+      "shares": {
+        "white_nh": 74.73,
+        "black_nh": 7.47,
+        "aian_nh": 0.74,
+        "asian_nh": 5.23,
+        "nhpi_nh": 0.05,
+        "other_nh": 0.41,
+        "multiracial_nh": 4.67,
+        "hispanic": 6.71
+      },
+      "counts": {
+        "white_nh": 4329205,
+        "black_nh": 432527,
+        "aian_nh": 42945,
+        "asian_nh": 302861,
+        "nhpi_nh": 3148,
+        "other_nh": 23548,
+        "multiracial_nh": 270482,
+        "hispanic": 388435
+      }
+    },
+    "28": {
+      "name": "Mississippi",
+      "fips": "28",
+      "slug": "united-states-mississippi",
+      "population": 2943045,
+      "shares": {
+        "white_nh": 54.95,
+        "black_nh": 35.81,
+        "aian_nh": 0.38,
+        "asian_nh": 1.22,
+        "nhpi_nh": 0.01,
+        "other_nh": 0.22,
+        "multiracial_nh": 3.37,
+        "hispanic": 4.03
+      },
+      "counts": {
+        "white_nh": 1617274,
+        "black_nh": 1053989,
+        "aian_nh": 11176,
+        "asian_nh": 36052,
+        "nhpi_nh": 297,
+        "other_nh": 6411,
+        "multiracial_nh": 99317,
+        "hispanic": 118529
+      }
+    },
+    "29": {
+      "name": "Missouri",
+      "fips": "29",
+      "slug": "united-states-missouri",
+      "population": 6245466,
+      "shares": {
+        "white_nh": 76.21,
+        "black_nh": 10.38,
+        "aian_nh": 0.22,
+        "asian_nh": 2.26,
+        "nhpi_nh": 0.14,
+        "other_nh": 0.4,
+        "multiracial_nh": 4.84,
+        "hispanic": 5.55
+      },
+      "counts": {
+        "white_nh": 4759544,
+        "black_nh": 648554,
+        "aian_nh": 13632,
+        "asian_nh": 141169,
+        "nhpi_nh": 8679,
+        "other_nh": 24771,
+        "multiracial_nh": 302417,
+        "hispanic": 346700
+      }
+    },
+    "30": {
+      "name": "Montana",
+      "fips": "30",
+      "slug": "united-states-montana",
+      "population": 1137233,
+      "shares": {
+        "white_nh": 83.29,
+        "black_nh": 0.3,
+        "aian_nh": 5.09,
+        "asian_nh": 0.78,
+        "nhpi_nh": 0.09,
+        "other_nh": 0.49,
+        "multiracial_nh": 5.08,
+        "hispanic": 4.88
+      },
+      "counts": {
+        "white_nh": 947221,
+        "black_nh": 3437,
+        "aian_nh": 57838,
+        "asian_nh": 8841,
+        "nhpi_nh": 1034,
+        "other_nh": 5600,
+        "multiracial_nh": 57756,
+        "hispanic": 55506
+      }
+    },
+    "31": {
+      "name": "Nebraska",
+      "fips": "31",
+      "slug": "united-states-nebraska",
+      "population": 2005466,
+      "shares": {
+        "white_nh": 73.97,
+        "black_nh": 4.49,
+        "aian_nh": 0.67,
+        "asian_nh": 2.75,
+        "nhpi_nh": 0.07,
+        "other_nh": 0.34,
+        "multiracial_nh": 4.18,
+        "hispanic": 13.54
+      },
+      "counts": {
+        "white_nh": 1483350,
+        "black_nh": 90019,
+        "aian_nh": 13416,
+        "asian_nh": 55154,
+        "nhpi_nh": 1339,
+        "other_nh": 6767,
+        "multiracial_nh": 83897,
+        "hispanic": 271524
+      }
+    },
+    "32": {
+      "name": "Nevada",
+      "fips": "32",
+      "slug": "united-states-nevada",
+      "population": 3267467,
+      "shares": {
+        "white_nh": 42.84,
+        "black_nh": 9.11,
+        "aian_nh": 0.52,
+        "asian_nh": 9.28,
+        "nhpi_nh": 0.75,
+        "other_nh": 0.74,
+        "multiracial_nh": 6.17,
+        "hispanic": 30.59
+      },
+      "counts": {
+        "white_nh": 1399628,
+        "black_nh": 297748,
+        "aian_nh": 16923,
+        "asian_nh": 303214,
+        "nhpi_nh": 24521,
+        "other_nh": 24296,
+        "multiracial_nh": 201710,
+        "hispanic": 999427
+      }
+    },
+    "33": {
+      "name": "New Hampshire",
+      "fips": "33",
+      "slug": "united-states-new-hampshire",
+      "population": 1409032,
+      "shares": {
+        "white_nh": 86.4,
+        "black_nh": 1.31,
+        "aian_nh": 0.07,
+        "asian_nh": 2.67,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.43,
+        "multiracial_nh": 4.07,
+        "hispanic": 5.03
+      },
+      "counts": {
+        "white_nh": 1217399,
+        "black_nh": 18451,
+        "aian_nh": 1007,
+        "asian_nh": 37630,
+        "nhpi_nh": 229,
+        "other_nh": 6010,
+        "multiracial_nh": 57394,
+        "hispanic": 70912
+      }
+    },
+    "34": {
+      "name": "New Jersey",
+      "fips": "34",
+      "slug": "united-states-new-jersey",
+      "population": 9500851,
+      "shares": {
+        "white_nh": 49.49,
+        "black_nh": 12.17,
+        "aian_nh": 0.07,
+        "asian_nh": 10.54,
+        "nhpi_nh": 0.03,
+        "other_nh": 0.71,
+        "multiracial_nh": 3.52,
+        "hispanic": 23.47
+      },
+      "counts": {
+        "white_nh": 4702409,
+        "black_nh": 1156409,
+        "aian_nh": 6875,
+        "asian_nh": 1001552,
+        "nhpi_nh": 2455,
+        "other_nh": 67491,
+        "multiracial_nh": 334196,
+        "hispanic": 2229464
+      }
+    },
+    "35": {
+      "name": "New Mexico",
+      "fips": "35",
+      "slug": "united-states-new-mexico",
+      "population": 2130256,
+      "shares": {
+        "white_nh": 35.06,
+        "black_nh": 2.0,
+        "aian_nh": 8.27,
+        "asian_nh": 1.89,
+        "nhpi_nh": 0.08,
+        "other_nh": 0.47,
+        "multiracial_nh": 3.12,
+        "hispanic": 49.11
+      },
+      "counts": {
+        "white_nh": 746911,
+        "black_nh": 42593,
+        "aian_nh": 176103,
+        "asian_nh": 40322,
+        "nhpi_nh": 1638,
+        "other_nh": 10074,
+        "multiracial_nh": 66362,
+        "hispanic": 1046253
+      }
+    },
+    "36": {
+      "name": "New York",
+      "fips": "36",
+      "slug": "united-states-new-york",
+      "population": 19867248,
+      "shares": {
+        "white_nh": 51.93,
+        "black_nh": 13.23,
+        "aian_nh": 0.17,
+        "asian_nh": 9.43,
+        "nhpi_nh": 0.03,
+        "other_nh": 1.01,
+        "multiracial_nh": 3.97,
+        "hispanic": 20.23
+      },
+      "counts": {
+        "white_nh": 10317249,
+        "black_nh": 2629238,
+        "aian_nh": 34287,
+        "asian_nh": 1874009,
+        "nhpi_nh": 4984,
+        "other_nh": 200110,
+        "multiracial_nh": 788083,
+        "hispanic": 4019288
+      }
+    },
+    "37": {
+      "name": "North Carolina",
+      "fips": "37",
+      "slug": "united-states-north-carolina",
+      "population": 11046024,
+      "shares": {
+        "white_nh": 58.97,
+        "black_nh": 19.48,
+        "aian_nh": 0.8,
+        "asian_nh": 3.58,
+        "nhpi_nh": 0.07,
+        "other_nh": 0.48,
+        "multiracial_nh": 4.63,
+        "hispanic": 11.99
+      },
+      "counts": {
+        "white_nh": 6514175,
+        "black_nh": 2151963,
+        "aian_nh": 87869,
+        "asian_nh": 395550,
+        "nhpi_nh": 7402,
+        "other_nh": 52862,
+        "multiracial_nh": 511633,
+        "hispanic": 1324570
+      }
+    },
+    "38": {
+      "name": "North Dakota",
+      "fips": "38",
+      "slug": "united-states-north-dakota",
+      "population": 796568,
+      "shares": {
+        "white_nh": 80.31,
+        "black_nh": 3.49,
+        "aian_nh": 4.05,
+        "asian_nh": 1.92,
+        "nhpi_nh": 0.08,
+        "other_nh": 0.49,
+        "multiracial_nh": 4.65,
+        "hispanic": 5.0
+      },
+      "counts": {
+        "white_nh": 639728,
+        "black_nh": 27802,
+        "aian_nh": 32299,
+        "asian_nh": 15325,
+        "nhpi_nh": 633,
+        "other_nh": 3918,
+        "multiracial_nh": 37010,
+        "hispanic": 39853
+      }
+    },
+    "39": {
+      "name": "Ohio",
+      "fips": "39",
+      "slug": "united-states-ohio",
+      "population": 11883304,
+      "shares": {
+        "white_nh": 74.95,
+        "black_nh": 11.94,
+        "aian_nh": 0.12,
+        "asian_nh": 2.74,
+        "nhpi_nh": 0.04,
+        "other_nh": 0.42,
+        "multiracial_nh": 4.69,
+        "hispanic": 5.11
+      },
+      "counts": {
+        "white_nh": 8907052,
+        "black_nh": 1418409,
+        "aian_nh": 13886,
+        "asian_nh": 325368,
+        "nhpi_nh": 5069,
+        "other_nh": 49631,
+        "multiracial_nh": 556956,
+        "hispanic": 606933
+      }
+    },
+    "40": {
+      "name": "Oklahoma",
+      "fips": "40",
+      "slug": "united-states-oklahoma",
+      "population": 4095393,
+      "shares": {
+        "white_nh": 61.05,
+        "black_nh": 6.38,
+        "aian_nh": 6.56,
+        "asian_nh": 2.51,
+        "nhpi_nh": 0.25,
+        "other_nh": 0.37,
+        "multiracial_nh": 9.41,
+        "hispanic": 13.46
+      },
+      "counts": {
+        "white_nh": 2500338,
+        "black_nh": 261454,
+        "aian_nh": 268736,
+        "asian_nh": 102883,
+        "nhpi_nh": 10061,
+        "other_nh": 15216,
+        "multiracial_nh": 385479,
+        "hispanic": 551226
+      }
+    },
+    "41": {
+      "name": "Oregon",
+      "fips": "41",
+      "slug": "united-states-oregon",
+      "population": 4272371,
+      "shares": {
+        "white_nh": 70.14,
+        "black_nh": 1.84,
+        "aian_nh": 0.62,
+        "asian_nh": 4.83,
+        "nhpi_nh": 0.34,
+        "other_nh": 0.42,
+        "multiracial_nh": 6.3,
+        "hispanic": 15.51
+      },
+      "counts": {
+        "white_nh": 2996550,
+        "black_nh": 78664,
+        "aian_nh": 26562,
+        "asian_nh": 206288,
+        "nhpi_nh": 14721,
+        "other_nh": 17783,
+        "multiracial_nh": 269063,
+        "hispanic": 662740
+      }
+    },
+    "42": {
+      "name": "Pennsylvania",
+      "fips": "42",
+      "slug": "united-states-pennsylvania",
+      "population": 13078751,
+      "shares": {
+        "white_nh": 71.87,
+        "black_nh": 10.13,
+        "aian_nh": 0.07,
+        "asian_nh": 4.14,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.5,
+        "multiracial_nh": 3.84,
+        "hispanic": 9.42
+      },
+      "counts": {
+        "white_nh": 9400332,
+        "black_nh": 1324582,
+        "aian_nh": 9176,
+        "asian_nh": 541852,
+        "nhpi_nh": 2060,
+        "other_nh": 65960,
+        "multiracial_nh": 502172,
+        "hispanic": 1232617
+      }
+    },
+    "44": {
+      "name": "Rhode Island",
+      "fips": "44",
+      "slug": "united-states-rhode-island",
+      "population": 1112308,
+      "shares": {
+        "white_nh": 66.13,
+        "black_nh": 4.77,
+        "aian_nh": 0.16,
+        "asian_nh": 3.66,
+        "nhpi_nh": 0.05,
+        "other_nh": 1.0,
+        "multiracial_nh": 5.45,
+        "hispanic": 18.79
+      },
+      "counts": {
+        "white_nh": 735570,
+        "black_nh": 53011,
+        "aian_nh": 1759,
+        "asian_nh": 40723,
+        "nhpi_nh": 534,
+        "other_nh": 11076,
+        "multiracial_nh": 60659,
+        "hispanic": 208976
+      }
+    },
+    "45": {
+      "name": "South Carolina",
+      "fips": "45",
+      "slug": "united-states-south-carolina",
+      "population": 5478831,
+      "shares": {
+        "white_nh": 61.61,
+        "black_nh": 23.34,
+        "aian_nh": 0.21,
+        "asian_nh": 1.97,
+        "nhpi_nh": 0.03,
+        "other_nh": 0.39,
+        "multiracial_nh": 4.52,
+        "hispanic": 7.93
+      },
+      "counts": {
+        "white_nh": 3375763,
+        "black_nh": 1278752,
+        "aian_nh": 11488,
+        "asian_nh": 107884,
+        "nhpi_nh": 1902,
+        "other_nh": 21199,
+        "multiracial_nh": 247626,
+        "hispanic": 434217
+      }
+    },
+    "46": {
+      "name": "South Dakota",
+      "fips": "46",
+      "slug": "united-states-south-dakota",
+      "population": 924669,
+      "shares": {
+        "white_nh": 78.97,
+        "black_nh": 1.81,
+        "aian_nh": 7.18,
+        "asian_nh": 1.69,
+        "nhpi_nh": 0.02,
+        "other_nh": 0.28,
+        "multiracial_nh": 5.19,
+        "hispanic": 4.86
+      },
+      "counts": {
+        "white_nh": 730197,
+        "black_nh": 16746,
+        "aian_nh": 66418,
+        "asian_nh": 15619,
+        "nhpi_nh": 152,
+        "other_nh": 2634,
+        "multiracial_nh": 47956,
+        "hispanic": 44947
+      }
+    },
+    "47": {
+      "name": "Tennessee",
+      "fips": "47",
+      "slug": "united-states-tennessee",
+      "population": 7227750,
+      "shares": {
+        "white_nh": 70.5,
+        "black_nh": 14.87,
+        "aian_nh": 0.11,
+        "asian_nh": 1.99,
+        "nhpi_nh": 0.04,
+        "other_nh": 0.37,
+        "multiracial_nh": 4.28,
+        "hispanic": 7.84
+      },
+      "counts": {
+        "white_nh": 5095402,
+        "black_nh": 1074700,
+        "aian_nh": 8257,
+        "asian_nh": 143990,
+        "nhpi_nh": 2787,
+        "other_nh": 26646,
+        "multiracial_nh": 309129,
+        "hispanic": 566839
+      }
+    },
+    "48": {
+      "name": "Texas",
+      "fips": "48",
+      "slug": "united-states-texas",
+      "population": 31290832,
+      "shares": {
+        "white_nh": 37.78,
+        "black_nh": 11.98,
+        "aian_nh": 0.17,
+        "asian_nh": 6.04,
+        "nhpi_nh": 0.06,
+        "other_nh": 0.41,
+        "multiracial_nh": 3.29,
+        "hispanic": 40.27
+      },
+      "counts": {
+        "white_nh": 11821108,
+        "black_nh": 3748137,
+        "aian_nh": 52380,
+        "asian_nh": 1890985,
+        "nhpi_nh": 19160,
+        "other_nh": 127667,
+        "multiracial_nh": 1029089,
+        "hispanic": 12602305
+      }
+    },
+    "49": {
+      "name": "Utah",
+      "fips": "49",
+      "slug": "united-states-utah",
+      "population": 3503613,
+      "shares": {
+        "white_nh": 73.1,
+        "black_nh": 1.16,
+        "aian_nh": 0.6,
+        "asian_nh": 2.65,
+        "nhpi_nh": 0.81,
+        "other_nh": 0.49,
+        "multiracial_nh": 4.28,
+        "hispanic": 16.91
+      },
+      "counts": {
+        "white_nh": 2561122,
+        "black_nh": 40763,
+        "aian_nh": 20939,
+        "asian_nh": 92852,
+        "nhpi_nh": 28493,
+        "other_nh": 17227,
+        "multiracial_nh": 149805,
+        "hispanic": 592412
+      }
+    },
+    "50": {
+      "name": "Vermont",
+      "fips": "50",
+      "slug": "united-states-vermont",
+      "population": 648493,
+      "shares": {
+        "white_nh": 89.33,
+        "black_nh": 0.9,
+        "aian_nh": 0.14,
+        "asian_nh": 2.01,
+        "nhpi_nh": 0.0,
+        "other_nh": 0.38,
+        "multiracial_nh": 4.55,
+        "hispanic": 2.68
+      },
+      "counts": {
+        "white_nh": 579324,
+        "black_nh": 5845,
+        "aian_nh": 895,
+        "asian_nh": 13049,
+        "nhpi_nh": 0,
+        "other_nh": 2480,
+        "multiracial_nh": 29499,
+        "hispanic": 17401
+      }
+    },
+    "51": {
+      "name": "Virginia",
+      "fips": "51",
+      "slug": "united-states-virginia",
+      "population": 8811195,
+      "shares": {
+        "white_nh": 57.44,
+        "black_nh": 17.91,
+        "aian_nh": 0.15,
+        "asian_nh": 7.11,
+        "nhpi_nh": 0.07,
+        "other_nh": 0.58,
+        "multiracial_nh": 5.19,
+        "hispanic": 11.55
+      },
+      "counts": {
+        "white_nh": 5060812,
+        "black_nh": 1578103,
+        "aian_nh": 13185,
+        "asian_nh": 626502,
+        "nhpi_nh": 6197,
+        "other_nh": 51530,
+        "multiracial_nh": 457033,
+        "hispanic": 1017833
+      }
+    },
+    "53": {
+      "name": "Washington",
+      "fips": "53",
+      "slug": "united-states-washington",
+      "population": 7958180,
+      "shares": {
+        "white_nh": 61.47,
+        "black_nh": 3.93,
+        "aian_nh": 0.77,
+        "asian_nh": 10.62,
+        "nhpi_nh": 0.71,
+        "other_nh": 0.52,
+        "multiracial_nh": 6.96,
+        "hispanic": 15.01
+      },
+      "counts": {
+        "white_nh": 4892095,
+        "black_nh": 312969,
+        "aian_nh": 61574,
+        "asian_nh": 845000,
+        "nhpi_nh": 56338,
+        "other_nh": 41521,
+        "multiracial_nh": 554161,
+        "hispanic": 1194522
+      }
+    },
+    "54": {
+      "name": "West Virginia",
+      "fips": "54",
+      "slug": "united-states-west-virginia",
+      "population": 1769979,
+      "shares": {
+        "white_nh": 88.86,
+        "black_nh": 3.14,
+        "aian_nh": 0.17,
+        "asian_nh": 0.68,
+        "nhpi_nh": 0.01,
+        "other_nh": 0.26,
+        "multiracial_nh": 4.56,
+        "hispanic": 2.32
+      },
+      "counts": {
+        "white_nh": 1572809,
+        "black_nh": 55539,
+        "aian_nh": 2983,
+        "asian_nh": 12098,
+        "nhpi_nh": 231,
+        "other_nh": 4590,
+        "multiracial_nh": 80727,
+        "hispanic": 41002
+      }
+    },
+    "55": {
+      "name": "Wisconsin",
+      "fips": "55",
+      "slug": "united-states-wisconsin",
+      "population": 5960975,
+      "shares": {
+        "white_nh": 77.75,
+        "black_nh": 5.95,
+        "aian_nh": 0.58,
+        "asian_nh": 3.08,
+        "nhpi_nh": 0.05,
+        "other_nh": 0.3,
+        "multiracial_nh": 3.9,
+        "hispanic": 8.39
+      },
+      "counts": {
+        "white_nh": 4634941,
+        "black_nh": 354440,
+        "aian_nh": 34534,
+        "asian_nh": 183440,
+        "nhpi_nh": 2924,
+        "other_nh": 18017,
+        "multiracial_nh": 232775,
+        "hispanic": 499904
+      }
+    },
+    "56": {
+      "name": "Wyoming",
+      "fips": "56",
+      "slug": "united-states-wyoming",
+      "population": 587618,
+      "shares": {
+        "white_nh": 80.47,
+        "black_nh": 0.74,
+        "aian_nh": 1.44,
+        "asian_nh": 0.91,
+        "nhpi_nh": 0.13,
+        "other_nh": 0.68,
+        "multiracial_nh": 4.57,
+        "hispanic": 11.07
+      },
+      "counts": {
+        "white_nh": 472841,
+        "black_nh": 4321,
+        "aian_nh": 8472,
+        "asian_nh": 5332,
+        "nhpi_nh": 746,
+        "other_nh": 3995,
+        "multiracial_nh": 26881,
+        "hispanic": 65030
+      }
+    }
+  }
+}

@@ -114,6 +114,22 @@ export const DATA_SOURCES = [
     description:
       "European statistical office — crime, population and social statistics for EU/EFTA and candidate countries.",
   },
+  {
+    code: "OWID",
+    name: "Our World in Data",
+    url: "https://ourworldindata.org",
+    license: "CC BY",
+    description:
+      "Compiled long-run demographic series (life expectancy, child mortality and related indicators) from academic reconstructions, HMD, UN IGME and UN WPP.",
+  },
+  {
+    code: "HMD",
+    name: "Human Mortality Database",
+    url: "https://www.mortality.org",
+    license: "HMD terms",
+    description:
+      "Detailed mortality and population data for countries with high-quality vital registration, via Our World in Data grapher extracts.",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {

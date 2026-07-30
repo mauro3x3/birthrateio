@@ -56,6 +56,16 @@ export default async function StatesIndexPage() {
         description="Subnational fertility and population from official sources — US states (NCHS/Census), German Länder (Eurostat), Indian states (NFHS), Chinese provinces (NBS census), Russian federal subjects (Rosstat)."
       />
       <div className="container space-y-10 py-8">
+        <p className="text-sm text-muted-foreground">
+          Looking for a U.S. race and Hispanic-origin map? See the{" "}
+          <Link
+            href="/demographics"
+            className="font-medium text-foreground underline underline-offset-2"
+          >
+            US demographics map
+          </Link>
+          .
+        </p>
         {countries.map((c) => (
           <section key={c.slug} className="space-y-3">
             <div className="flex items-baseline justify-between border-b pb-2">
