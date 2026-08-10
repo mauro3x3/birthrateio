@@ -51,7 +51,7 @@ export default async function MortalityPage() {
           unit="years"
           decimals={1}
           scaleType="sequential"
-          height={540}
+          height={400}
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -103,7 +103,7 @@ export default async function MortalityPage() {
             unit="per 1,000 births"
             decimals={1}
             scaleType="sequential"
-            height={540}
+            height={400}
           />
         )}
 

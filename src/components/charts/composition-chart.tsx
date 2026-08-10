@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import type { TooltipProps } from "recharts";
 import { colorAt } from "./palette";
+import { CompositionBar } from "./composition-bar";
 
 function CompositionTooltip({
   active,
@@ -80,6 +81,20 @@ export function CompositionChart({
       >
         No composition data available
       </div>
+    );
+  }
+
+  // A single snapshot cannot form a trend — show an explicit bar + legend
+  // instead of lonely dots on an empty "over time" area chart.
+  if (data.length === 1) {
+    const row = data[0];
+    return (
+      <CompositionBar
+        items={groups.map((g) => ({
+          name: g,
+          value: Number(row[g] ?? 0),
+        }))}
+      />
     );
   }
 

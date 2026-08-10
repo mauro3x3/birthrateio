@@ -44,7 +44,17 @@ export const ABORTION_RATES: AbortionSeed[] = [
   { iso3: "DNK", values: [Y(2020, 13.0)] },
   { iso3: "FIN", values: [Y(2020, 8.0)] },
   { iso3: "ISL", values: [Y(2020, 13.0)] },
-  { iso3: "FRA", values: [Y(2020, 17.0)] },
+  {
+    // DREES: IVG rate per 1,000 women aged 15–49 (France, including DROM where published).
+    iso3: "FRA",
+    values: [
+      Y(2010, 14.7),
+      Y(2015, 14.4),
+      Y(2019, 16.1),
+      Y(2020, 15.4),
+      Y(2022, 16.2),
+    ],
+  },
   { iso3: "DEU", values: [Y(2020, 6.0)] },
   { iso3: "NLD", values: [Y(2020, 9.0)] },
   { iso3: "BEL", values: [Y(2019, 9.0)] },

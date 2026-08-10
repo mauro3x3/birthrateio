@@ -34,6 +34,17 @@ function FitPoints({ points }: { points: CityMapPoint[] }) {
     const t = setTimeout(() => map.invalidateSize(), 60);
     return () => clearTimeout(t);
   }, [map, points]);
+
+  React.useEffect(() => {
+    const el = map.getContainer();
+    if (!el || typeof ResizeObserver === "undefined") return;
+    const ro = new ResizeObserver(() => {
+      map.invalidateSize({ animate: false });
+    });
+    ro.observe(el.parentElement ?? el);
+    return () => ro.disconnect();
+  }, [map]);
+
   return null;
 }
 
@@ -51,19 +62,26 @@ export function CitiesWorldMapInner({
   points: CityMapPoint[];
   highlightedSlug?: string | null;
   onHover?: (slug: string | null) => void;
-  height?: number;
+  height?: number | string;
 }) {
   const router = useRouter();
   const maxPop = Math.max(...points.map((p) => p.population), 1);
 
   return (
-    <div className="overflow-hidden" style={{ height }}>
+    <div
+      className="overflow-hidden"
+      style={
+        typeof height === "number"
+          ? { height }
+          : { height, width: "100%" }
+      }
+    >
       <MapContainer
         center={[20, 10]}
         zoom={2}
         scrollWheelZoom={false}
         className="br-cinema-map"
-        style={{ height: "100%", width: "100%", background: "#0a0a0a" }}
+        style={{ height: "100%", width: "100%", background: "hsl(213 55% 8%)" }}
       >
         <TileLayer
           url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"

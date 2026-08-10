@@ -61,7 +61,7 @@ export default async function PopulationPage() {
           scaleType="diverging"
           mid={0}
           frameStats={growthStats}
-          height={540}
+          height={400}
         />
 
         <div className="space-y-2">

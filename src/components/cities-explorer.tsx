@@ -81,207 +81,125 @@ export function CitiesExplorer({ cities }: { cities: CityRow[] }) {
   );
 
   const maxPop = filtered[0]?.population ?? 1;
-  const featured = filtered.slice(0, 8);
   const totalPop = filtered.reduce((s, c) => s + (c.population ?? 0), 0);
 
   return (
-    <div className="space-y-8">
-      <section className="overflow-hidden rounded-sm border border-white/10 bg-black">
-        <div className="flex flex-col gap-3 border-b border-white/10 px-4 py-3 sm:flex-row sm:items-end sm:justify-between sm:px-5">
-          <div>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-white/45">
-              Metropolitan population
-            </p>
-            <h2 className="font-serif text-lg font-semibold text-white sm:text-xl">
-              {region === "All" ? "World metros" : regionLabel(region)}
-              <span className="ml-2 font-sans text-sm font-normal text-white/50">
-                {filtered.length} cities · {formatCompact(totalPop)} people
-              </span>
-            </h2>
+    <div className="flex h-[calc(100dvh-3.75rem)] min-h-[32rem] flex-col bg-[hsl(213_55%_8%)] text-white">
+      <header className="flex shrink-0 flex-col gap-3 border-b border-white/10 px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+        <div className="min-w-0">
+          <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
+            Cities
+          </p>
+          <h1 className="truncate font-serif text-xl font-semibold tracking-tight sm:text-2xl">
+            {region === "All" ? "World metros" : regionLabel(region)}
+            <span className="ml-2 font-sans text-sm font-normal text-white/45">
+              {filtered.length} cities · {formatCompact(totalPop)} people
+            </span>
+          </h1>
+        </div>
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+          <div className="flex flex-wrap items-center gap-0.5">
+            {regions.map((r) => (
+              <button
+                key={r}
+                type="button"
+                onClick={() => setRegion(r)}
+                className={cn(
+                  "px-2.5 py-1.5 text-[0.75rem] font-medium transition-colors",
+                  region === r
+                    ? "text-white"
+                    : "text-white/40 hover:text-white/75",
+                )}
+              >
+                {regionLabel(r)}
+              </button>
+            ))}
           </div>
           <Input
             placeholder="Search cities or countries…"
             value={q}
             onChange={(e) => setQ(e.target.value)}
-            className="h-9 max-w-xs border-white/15 bg-white/5 text-white placeholder:text-white/40 focus-visible:ring-white/30"
+            className="h-9 w-full border-white/15 bg-white/5 text-white placeholder:text-white/40 focus-visible:ring-white/30 sm:w-56"
           />
         </div>
+      </header>
 
-        <div className="grid lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.85fr)]">
+      <div className="grid min-h-0 flex-1 grid-rows-[minmax(14rem,1fr)_minmax(0,1.15fr)] lg:grid-cols-[minmax(0,1.4fr)_minmax(20rem,22rem)] lg:grid-rows-none xl:grid-cols-[minmax(0,1fr)_minmax(22rem,26rem)]">
+        <div className="relative min-h-0">
           <CitiesWorldMap
             points={mapPoints}
             highlightedSlug={highlight}
             onHover={setHighlight}
-            height={460}
+            fill
           />
-
-          <div className="flex max-h-[460px] flex-col border-t border-white/10 lg:border-l lg:border-t-0">
-            <div className="flex flex-wrap gap-x-1 gap-y-1 border-b border-white/10 px-3 py-2.5">
-              {regions.map((r) => (
-                <button
-                  key={r}
-                  type="button"
-                  onClick={() => setRegion(r)}
-                  className={cn(
-                    "px-2.5 py-1 text-[0.75rem] font-medium transition-colors",
-                    region === r
-                      ? "text-white"
-                      : "text-white/45 hover:text-white/80",
-                  )}
-                >
-                  {regionLabel(r)}
-                </button>
-              ))}
-            </div>
-
-            <ol className="flex-1 overflow-y-auto">
-              {featured.map((c, i) => {
-                const pop = c.population ?? 0;
-                const share = maxPop ? (pop / maxPop) * 100 : 0;
-                const active = highlight === c.slug;
-                return (
-                  <li key={c.slug}>
-                    <Link
-                      href={`/city/${c.slug}`}
-                      onMouseEnter={() => setHighlight(c.slug)}
-                      onMouseLeave={() => setHighlight(null)}
-                      className={cn(
-                        "group relative block px-4 py-3 transition-colors",
-                        active ? "bg-white/10" : "hover:bg-white/[0.06]",
-                      )}
-                    >
-                      <div
-                        className="pointer-events-none absolute inset-y-0 left-0 bg-[#c49660]/20 transition-[width]"
-                        style={{ width: `${share}%` }}
-                        aria-hidden
-                      />
-                      <div className="relative flex items-baseline gap-3">
-                        <span className="w-5 shrink-0 font-mono text-xs text-white/35">
-                          {i + 1}
-                        </span>
-                        <div className="min-w-0 flex-1">
-                          <div className="flex items-baseline gap-2">
-                            <span className="truncate font-medium text-white group-hover:text-[#f0d5a8]">
-                              {c.name}
-                            </span>
-                            {c.isCapital && (
-                              <span className="shrink-0 text-[10px] uppercase tracking-wide text-white/35">
-                                capital
-                              </span>
-                            )}
-                          </div>
-                          <p className="truncate text-xs text-white/45">
-                            {c.country.flagEmoji} {c.country.name}
-                          </p>
-                        </div>
-                        <span className="shrink-0 font-serif text-base tabular-nums text-white/90">
-                          {formatCompact(pop)}
-                        </span>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-              {featured.length === 0 && (
-                <li className="px-4 py-10 text-center text-sm text-white/40">
-                  No cities match.
-                </li>
-              )}
-            </ol>
-          </div>
         </div>
-      </section>
 
-      <section>
-        <div className="mb-4 flex items-end justify-between gap-3">
-          <div>
-            <h2 className="font-serif text-xl font-semibold tracking-tight">
-              Full ranking
-            </h2>
-            <p className="mt-0.5 text-sm text-muted-foreground">
-              All metros in view, ordered by metropolitan population.
+        <aside className="flex min-h-0 flex-col border-t border-white/10 lg:border-l lg:border-t-0">
+          <div className="flex shrink-0 items-baseline justify-between gap-2 border-b border-white/10 px-4 py-2.5">
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/40">
+              Ranked by metro population
+            </p>
+            <p className="text-xs tabular-nums text-white/35">
+              {filtered.length}
             </p>
           </div>
-          <p className="text-sm tabular-nums text-muted-foreground">
-            {filtered.length} shown
-          </p>
-        </div>
 
-        <div className="divide-y border-y">
-          {filtered.map((c, i) => {
-            const pop = c.population ?? 0;
-            const share = maxPop ? (pop / maxPop) * 100 : 0;
-            const active = highlight === c.slug;
-            return (
-              <div
-                key={c.slug}
-                onMouseEnter={() => setHighlight(c.slug)}
-                onMouseLeave={() => setHighlight(null)}
-                className={cn(
-                  "grid grid-cols-[2rem_minmax(0,1fr)_auto] items-center gap-3 py-3 transition-colors sm:grid-cols-[2.5rem_minmax(0,1fr)_8rem_auto]",
-                  active ? "bg-muted/70" : "hover:bg-muted/40",
-                )}
-              >
-                <span className="pl-1 font-mono text-xs text-muted-foreground">
-                  {i + 1}
-                </span>
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
-                    <Link
-                      href={`/city/${c.slug}`}
-                      className="font-medium hover:text-primary"
-                    >
-                      {c.name}
-                    </Link>
-                    {c.isCapital && (
-                      <span className="text-[10px] uppercase tracking-wide text-muted-foreground">
-                        capital
-                      </span>
+          <ol className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+            {filtered.map((c, i) => {
+              const pop = c.population ?? 0;
+              const share = maxPop ? (pop / maxPop) * 100 : 0;
+              const active = highlight === c.slug;
+              return (
+                <li key={c.slug}>
+                  <Link
+                    href={`/city/${c.slug}`}
+                    onMouseEnter={() => setHighlight(c.slug)}
+                    onMouseLeave={() => setHighlight(null)}
+                    className={cn(
+                      "group relative block px-4 py-2.5 transition-colors",
+                      active ? "bg-white/10" : "hover:bg-white/[0.06]",
                     )}
-                  </div>
-                  <p className="truncate text-sm text-muted-foreground sm:hidden">
-                    <Link
-                      href={`/country/${c.country.slug}`}
-                      className="hover:text-foreground"
-                    >
-                      {c.country.flagEmoji} {c.country.name}
-                    </Link>
-                  </p>
-                  <div
-                    className="mt-1.5 h-0.5 max-w-md bg-border"
-                    aria-hidden
                   >
                     <div
-                      className="h-full bg-primary/50 transition-[width]"
+                      className="pointer-events-none absolute inset-y-0 left-0 bg-[#c49660]/18 transition-[width]"
                       style={{ width: `${share}%` }}
+                      aria-hidden
                     />
-                  </div>
-                </div>
-                <div className="hidden min-w-0 sm:block">
-                  <Link
-                    href={`/country/${c.country.slug}`}
-                    className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground"
-                  >
-                    <span>{c.country.flagEmoji}</span>
-                    <span className="truncate">{c.country.name}</span>
+                    <div className="relative flex items-baseline gap-3">
+                      <span className="w-5 shrink-0 font-mono text-xs text-white/35">
+                        {i + 1}
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-baseline gap-2">
+                          <span className="truncate font-medium text-white group-hover:text-[#f0d5a8]">
+                            {c.name}
+                          </span>
+                          {c.isCapital && (
+                            <span className="shrink-0 text-[10px] uppercase tracking-wide text-white/35">
+                              capital
+                            </span>
+                          )}
+                        </div>
+                        <p className="truncate text-xs text-white/45">
+                          {c.country.flagEmoji} {c.country.name}
+                        </p>
+                      </div>
+                      <span className="shrink-0 font-serif text-base tabular-nums text-white/90">
+                        {formatCompact(pop)}
+                      </span>
+                    </div>
                   </Link>
-                </div>
-                <Link
-                  href={`/city/${c.slug}`}
-                  className="pr-1 text-right font-serif text-lg tabular-nums tracking-tight hover:text-primary"
-                >
-                  {formatCompact(pop)}
-                </Link>
-              </div>
-            );
-          })}
-          {filtered.length === 0 && (
-            <p className="py-10 text-center text-sm text-muted-foreground">
-              No cities found.
-            </p>
-          )}
-        </div>
-      </section>
+                </li>
+              );
+            })}
+            {filtered.length === 0 && (
+              <li className="px-4 py-10 text-center text-sm text-white/40">
+                No cities match.
+              </li>
+            )}
+          </ol>
+        </aside>
+      </div>
     </div>
   );
 }

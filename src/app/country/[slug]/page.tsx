@@ -937,16 +937,26 @@ export default async function CountryPage({
           </div>
         )}
 
-        {/* Births by migrant / native background over time (only when available) */}
+        {/* Births by migrant / native background (only when available) */}
         {birthsBackground.groups.length > 0 && (
           <ChartCard
-            title="Births by migrant background over time"
+            title={
+              birthsBackground.data.length > 1
+                ? "Births by migrant background over time"
+                : `Births by migrant background${
+                    birthsBackground.data[0]?.year != null
+                      ? ` (${birthsBackground.data[0].year})`
+                      : ""
+                  }`
+            }
             description="Share of newborns born to native vs migrant-background parents"
             source="National statistical office"
             csvRows={birthsBackground.data}
             csvName={`${slug}-births-by-background`}
           >
-            <CompositionLegend groups={birthsBackground.groups} />
+            {birthsBackground.data.length > 1 && (
+              <CompositionLegend groups={birthsBackground.groups} />
+            )}
             <CompositionChart
               data={birthsBackground.data}
               groups={birthsBackground.groups}
@@ -986,7 +996,13 @@ export default async function CountryPage({
 
           {abortion.length > 0 && (
             <ChartCard
-              title="Abortion rate over time"
+              title={
+                abortion.length > 1
+                  ? "Abortion rate over time"
+                  : `Abortion rate${
+                      abortion[0]?.year != null ? ` (${abortion[0].year})` : ""
+                    }`
+              }
               description="Induced abortions per 1,000 women aged 15–49"
               source="WHO / Guttmacher (compiled)"
               csvRows={abortion}

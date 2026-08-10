@@ -3,7 +3,7 @@ import { Arimo, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
+import { SiteFooterGate } from "@/components/site-footer-gate";
 import { AssistantWidget } from "@/components/assistant-widget";
 import { siteConfig } from "@/lib/site";
 
@@ -73,7 +73,7 @@ export default function RootLayout({
         <div className="flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
-          <SiteFooter />
+          <SiteFooterGate />
         </div>
         <AssistantWidget />
       </body>

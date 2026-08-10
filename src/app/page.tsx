@@ -52,7 +52,7 @@ export default async function HomePage() {
               decimals={2}
               scaleType="diverging"
               mid={2.1}
-              height={520}
+              height={400}
             />
 
             <div className="grid gap-6 md:grid-cols-2">

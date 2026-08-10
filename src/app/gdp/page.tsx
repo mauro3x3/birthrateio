@@ -61,7 +61,7 @@ export default async function GdpPage() {
           decimals={0}
           scaleType="sequential-log"
           frameStats={gdpStats}
-          height={540}
+          height={400}
         />
 
         <Card>

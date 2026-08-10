@@ -50,7 +50,7 @@ export default async function MigrationPage() {
           decimals={0}
           scaleType="diverging"
           mid={0}
-          height={540}
+          height={400}
         />
 
         <div className="grid gap-6 lg:grid-cols-2">
@@ -117,7 +117,7 @@ export default async function MigrationPage() {
               unit="%"
               decimals={1}
               scaleType="sequential"
-              height={540}
+              height={400}
             />
 
             {foreignBornTop.length > 0 && (

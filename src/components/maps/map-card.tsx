@@ -15,7 +15,7 @@ const ChoroplethMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[480px] w-full items-center justify-center bg-black text-sm text-white/30">
+      <div className="flex h-[380px] w-full items-center justify-center bg-black text-sm text-white/30">
         Loading map…
       </div>
     ),
@@ -29,15 +29,12 @@ export interface MapFrame {
 
 function scaleHint(unit?: string, scaleType?: ScaleType): string {
   if (scaleType?.includes("diverging")) {
-    return "Colours diverge around the midpoint — lighter near the middle, stronger toward the extremes.";
+    return "Stronger colours = farther from the midpoint.";
   }
   if (unit === "US$" || unit === "$") {
-    return "Darker = higher GDP per capita. Hover a country for its value.";
+    return "Darker = higher GDP per capita.";
   }
-  if (unit?.includes("%")) {
-    return "Darker = higher value. Hover a country for its figure.";
-  }
-  return "Darker areas show higher values. Hover a country for details.";
+  return "Darker = higher value. Hover a country for details.";
 }
 
 export function MapCard({
@@ -50,7 +47,7 @@ export function MapCard({
   scaleType = "sequential",
   mid,
   frameStats,
-  height = 480,
+  height = 400,
 }: {
   title: string;
   description?: string;
@@ -148,98 +145,75 @@ export function MapCard({
 
   return (
     <section className="overflow-hidden border border-border bg-card">
-      <header className="border-b border-border px-5 py-4">
-        <h2 className="font-serif text-xl font-semibold tracking-tight text-primary">
-          {title}
-        </h2>
-        {description && (
-          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {description}
-          </p>
-        )}
-      </header>
-
-      {/* Context strip — year, world figure, colour meaning */}
-      <div className="grid gap-5 border-b border-border bg-muted/35 px-5 py-4 sm:grid-cols-3">
-        <div>
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-            Year shown
-          </p>
-          <p className="mt-1 font-serif text-3xl font-semibold tabular-nums text-primary">
-            {current?.year ?? "—"}
-          </p>
-          {animatable && firstYear != null && lastYear != null && (
-            <p className="mt-1 text-xs text-muted-foreground">
-              Timeline {firstYear}–{lastYear}. Use play or the slider below.
+      {/* Title + key figures — one compact band */}
+      <header className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b border-border px-4 py-3 sm:px-5">
+        <div className="min-w-0 max-w-xl">
+          <h2 className="font-serif text-lg font-semibold tracking-tight text-primary sm:text-xl">
+            {title}
+          </h2>
+          {description && (
+            <p className="mt-0.5 line-clamp-2 text-sm text-muted-foreground">
+              {description}
             </p>
           )}
         </div>
-
-        <div>
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-            {frameStats?.length ? "World figure" : "Selected year"}
-          </p>
-          <p className="mt-1 font-serif text-2xl font-semibold tracking-tight text-foreground">
-            {currentStat ??
-              (current
-                ? `${current.data.length.toLocaleString()} countries`
-                : "—")}
-          </p>
-          {unit && (
-            <p className="mt-1 text-xs text-muted-foreground">
-              Unit: {unit}
-              {decimals === 0 ? " (rounded)" : ""}
+        <div className="flex flex-wrap items-end gap-x-6 gap-y-2">
+          <div>
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+              Year
             </p>
-          )}
-        </div>
-
-        <div>
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-            Colour scale
-          </p>
+            <p className="font-serif text-2xl font-semibold tabular-nums leading-none text-primary">
+              {current?.year ?? "—"}
+            </p>
+          </div>
+          <div>
+            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+              {frameStats?.length ? "World" : "Coverage"}
+            </p>
+            <p className="font-serif text-lg font-semibold leading-tight tabular-nums">
+              {currentStat ??
+                (current
+                  ? `${current.data.length.toLocaleString()} countries`
+                  : "—")}
+            </p>
+            {unit && (
+              <p className="text-[0.7rem] text-muted-foreground">
+                {unit}
+                {decimals === 0 ? " · rounded" : ""}
+              </p>
+            )}
+          </div>
           {gradientCss && (
-            <div className="mt-2 space-y-1.5">
+            <div className="min-w-[10rem]">
+              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                Scale
+              </p>
               <div
-                className="h-2.5 w-full max-w-[14rem] rounded-sm"
+                className="mt-1 h-2 w-full max-w-[12rem] rounded-sm"
                 style={{ background: gradientCss }}
                 aria-hidden
               />
-              <div className="flex max-w-[14rem] justify-between text-xs tabular-nums text-muted-foreground">
+              <div className="mt-1 flex max-w-[12rem] justify-between text-[0.7rem] tabular-nums text-muted-foreground">
                 <span>{fmt(scale.min)}</span>
-                {scale.mid !== undefined && (
-                  <span className="text-foreground/70">{fmt(scale.mid)}</span>
-                )}
+                {scale.mid !== undefined && <span>{fmt(scale.mid)}</span>}
                 <span>{fmt(scale.max)}</span>
               </div>
-              <p className="text-xs leading-snug text-muted-foreground">
+              <p className="mt-0.5 max-w-[14rem] text-[0.7rem] leading-snug text-muted-foreground">
                 {scaleHint(unit, cinemaScale)}
               </p>
             </div>
           )}
         </div>
-      </div>
+      </header>
 
-      <div ref={captureRef} className="bg-black">
-        <ChoroplethMap
-          data={current?.data ?? []}
-          unit={unit}
-          decimals={decimals}
-          scaleType={cinemaScale}
-          mid={mid}
-          domain={domain}
-          height={height}
-          variant="cinema"
-          hideLegend
-        />
-      </div>
-
+      {/* Timeline ABOVE the map — always in view with the figures */}
       {animatable && (
-        <div className="flex flex-col gap-3 border-t border-border bg-card px-5 py-3.5 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-2 border-b border-border bg-muted/30 px-4 py-2.5 sm:flex-row sm:items-center sm:gap-3 sm:px-5">
           <Button
             variant="outline"
             size="sm"
             disabled={recording}
-            className="shrink-0 gap-1.5 rounded-none"
+            className="h-8 shrink-0 gap-1.5 rounded-none px-2.5"
             onClick={() => {
               if (safeIdx >= frames.length - 1) setIdx(0);
               setPlaying((p) => !p);
@@ -251,11 +225,11 @@ export function MapCard({
             ) : (
               <Play className="h-3.5 w-3.5" />
             )}
-            {playing ? "Pause" : "Play over time"}
+            {playing ? "Pause" : "Play"}
           </Button>
 
-          <div className="flex min-w-0 flex-1 items-center gap-3">
-            <span className="hidden w-10 shrink-0 text-xs tabular-nums text-muted-foreground sm:block">
+          <div className="flex min-w-0 flex-1 items-center gap-2">
+            <span className="w-9 shrink-0 text-[0.7rem] tabular-nums text-muted-foreground">
               {firstYear}
             </span>
             <Slider
@@ -271,42 +245,62 @@ export function MapCard({
               className="flex-1"
               aria-label="Year"
             />
-            <span className="hidden w-10 shrink-0 text-right text-xs tabular-nums text-muted-foreground sm:block">
+            <span className="w-9 shrink-0 text-right text-[0.7rem] tabular-nums text-muted-foreground">
               {lastYear}
             </span>
           </div>
 
-          <div className="flex items-center justify-between gap-3 sm:justify-end">
-            <span className="font-serif text-lg font-semibold tabular-nums text-primary sm:w-14 sm:text-right">
-              {current?.year}
-            </span>
-            <AnimationExportButton
-              getNode={() => captureRef.current}
-              frameCount={frames.length}
-              renderFrame={renderExportFrame}
-              holdMs={650}
-              fileBase={`${slugify(title)}-map`}
-              disabled={recording}
-              className="rounded-none"
-              onStart={() => {
-                startIdxRef.current = safeIdx;
-                setPlaying(false);
-                setRecording(true);
-              }}
-              onDone={() => {
-                setRecording(false);
-                setIdx(startIdxRef.current);
-              }}
-            />
-          </div>
+          <AnimationExportButton
+            getNode={() => captureRef.current}
+            frameCount={frames.length}
+            renderFrame={renderExportFrame}
+            holdMs={650}
+            fileBase={`${slugify(title)}-map`}
+            disabled={recording}
+            className="h-8 rounded-none"
+            onStart={() => {
+              startIdxRef.current = safeIdx;
+              setPlaying(false);
+              setRecording(true);
+            }}
+            onDone={() => {
+              setRecording(false);
+              setIdx(startIdxRef.current);
+            }}
+          />
         </div>
       )}
 
+      <div ref={captureRef} className="relative bg-black">
+        {/* Year badge burned into export frames */}
+        {current && (
+          <div className="pointer-events-none absolute left-3 top-3 z-[500] rounded-sm bg-black/55 px-2 py-1 font-serif text-sm font-semibold tabular-nums text-white backdrop-blur-sm">
+            {current.year}
+            {currentStat ? (
+              <span className="ml-2 font-sans text-[0.7rem] font-normal text-white/70">
+                {currentStat}
+              </span>
+            ) : null}
+          </div>
+        )}
+        <ChoroplethMap
+          data={current?.data ?? []}
+          unit={unit}
+          decimals={decimals}
+          scaleType={cinemaScale}
+          mid={mid}
+          domain={domain}
+          height={height}
+          variant="cinema"
+          hideLegend
+        />
+      </div>
+
       {source && (
-        <p className="border-t border-border px-5 py-2.5 text-xs text-muted-foreground">
+        <p className="border-t border-border px-4 py-2 text-[0.7rem] text-muted-foreground sm:px-5">
           Source: {source}
-          {current ? ` · Map year ${current.year}` : ""}
-          {unit ? ` · Values in ${unit}` : ""}
+          {current ? ` · ${current.year}` : ""}
+          {unit ? ` · ${unit}` : ""}
         </p>
       )}
     </section>

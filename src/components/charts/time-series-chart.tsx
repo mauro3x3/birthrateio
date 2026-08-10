@@ -58,6 +58,34 @@ export function TimeSeriesChart({
       ? formatCompact(v)
       : v.toLocaleString("en-US", { maximumFractionDigits: decimals });
 
+  // One observation is a key figure, not a trend — avoid an empty chart with a
+  // zoomed Y-axis around a single point.
+  if (data.length === 1) {
+    const point = data[0];
+    return (
+      <div
+        className="flex flex-col justify-center gap-1 py-2"
+        style={{ minHeight: Math.min(height, 140) }}
+      >
+        <p
+          className="text-4xl font-semibold tabular-nums tracking-tight"
+          style={{ color }}
+        >
+          {fmt(point.value)}
+          {unit ? (
+            <span className="ml-2 text-base font-normal text-muted-foreground">
+              {unit}
+            </span>
+          ) : null}
+        </p>
+        <p className="text-sm text-muted-foreground">{point.year}</p>
+        <p className="text-xs text-muted-foreground">
+          Only one year available — not enough points for a trend line.
+        </p>
+      </div>
+    );
+  }
+
   const domain = computeDomain(
     data.map((d) => d.value),
     referenceY,

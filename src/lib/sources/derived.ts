@@ -20,6 +20,7 @@ import { fetchRealPyramids } from "./pyramid-data";
 import { seedCities } from "./cities-data";
 import { seedWupCities } from "./wup-cities-data";
 import { seedEthnicity } from "./ethnicity-data";
+import { seedBirthBackground } from "./birth-background-data";
 import { seedAbortion } from "./abortion-data";
 import { seedSocial } from "./social-data";
 import { seedReligion } from "./religion-data";
@@ -190,6 +191,7 @@ export async function generateDerivedData(prisma: PrismaClient) {
   await seedCities(prisma);
   await seedWupCities(prisma);
   await seedEthnicity(prisma);
+  await seedBirthBackground(prisma);
   await seedAbortion(prisma);
   await seedSocial(prisma);
   await seedReligion(prisma);
