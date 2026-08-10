@@ -80,8 +80,9 @@ function normalizeAntimeridianGeo(geo: GeoJsonObject): GeoJsonObject {
 
   const fc = geo as FeatureCollection;
   if (!Array.isArray(fc.features)) return geo;
-  return {
-    ...fc,
+
+  const next: FeatureCollection = {
+    type: "FeatureCollection",
     features: fc.features.map((f) => {
       if (!f.geometry || !("coordinates" in f.geometry)) return f;
       const geometry = f.geometry as {
@@ -97,6 +98,7 @@ function normalizeAntimeridianGeo(geo: GeoJsonObject): GeoJsonObject {
       } as Feature;
     }),
   };
+  return next;
 }
 
 /**
