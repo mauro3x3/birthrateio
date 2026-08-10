@@ -1,26 +1,22 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { GlobalSearch } from "@/components/global-search";
-import { formatCompact } from "@/lib/utils";
 
-type HeroStats = {
-  countries: number;
-  indicators: number;
-  values: number;
-  releases: number;
-};
-
-export function HomeHero({ stats }: { stats: HeroStats }) {
+export function HomeHero() {
   return (
-    <section className="relative overflow-hidden bg-brand-navy text-white">
+    <section className="relative flex min-h-[calc(100dvh-3.75rem)] flex-col overflow-hidden bg-brand-navy text-white">
       <div
         className="pointer-events-none absolute inset-0 bg-[url('/hero-map.svg')] bg-[length:120%] bg-[center_40%] bg-no-repeat opacity-[0.18]"
         aria-hidden
       />
-      <div className="container relative py-12 md:py-16 lg:py-20">
+      <div
+        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/40"
+        aria-hidden
+      />
+
+      <div className="container relative flex flex-1 flex-col justify-center py-16 md:py-20 lg:py-24">
         <div className="max-w-3xl">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/55">
             UN · World Bank · OECD
@@ -31,45 +27,51 @@ export function HomeHero({ stats }: { stats: HeroStats }) {
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-base leading-relaxed text-white/75 md:text-lg">
             Charts, maps, and projections for every country — free to read, cite,
-            and share.
+            and share. Search below, or browse from the menu.
           </p>
         </div>
 
         <div className="mt-8 max-w-2xl">
           <GlobalSearch variant="hero" />
+          <p className="mt-3 text-xs text-white/40">
+            Press{" "}
+            <kbd className="rounded border border-white/20 bg-white/5 px-1.5 py-0.5 font-mono text-[10px] text-white/55">
+              ⌘K
+            </kbd>{" "}
+            anywhere to search
+          </p>
         </div>
 
-        <div className="mt-6 flex flex-wrap gap-2 text-sm">
-          {[
-            { label: "countries", value: stats.countries },
-            { label: "indicators", value: stats.indicators },
-            { label: "data points", value: formatCompact(stats.values) },
-            { label: "releases tracked", value: stats.releases },
-          ].map((s) => (
-            <div
-              key={s.label}
-              className="rounded-sm border border-white/15 bg-white/5 px-3 py-1.5 text-white/85"
-            >
-              <span className="font-semibold tabular-nums text-white">
-                {s.value}
-              </span>{" "}
-              <span className="text-white/65">{s.label}</span>
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-4 text-sm">
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
           <Link
             href="/fertility"
-            className="inline-flex items-center gap-1 font-medium text-white hover:underline"
+            className="inline-flex items-center gap-1.5 font-medium text-white transition-colors hover:text-brand-gold"
           >
             Browse fertility data <ArrowRight className="h-4 w-4" />
           </Link>
           <Link
-            href="/simulator"
-            className="inline-flex items-center gap-1 text-white/70 hover:text-white hover:underline"
+            href="/population"
+            className="text-white/65 transition-colors hover:text-white"
           >
-            Try the demographic simulator
+            Population
+          </Link>
+          <Link
+            href="/cities"
+            className="text-white/65 transition-colors hover:text-white"
+          >
+            Cities
+          </Link>
+          <Link
+            href="/compare"
+            className="text-white/65 transition-colors hover:text-white"
+          >
+            Compare countries
+          </Link>
+          <Link
+            href="/topics"
+            className="text-white/65 transition-colors hover:text-white"
+          >
+            All topics
           </Link>
         </div>
       </div>
