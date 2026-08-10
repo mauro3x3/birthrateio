@@ -15,26 +15,28 @@ export function PointMapInner({
 }) {
   return (
     <div
-      className="overflow-hidden rounded-lg border"
+      className="overflow-hidden rounded-lg border border-white/10"
       style={{ height }}
     >
       <MapContainer
         center={[lat, lng]}
         zoom={9}
         scrollWheelZoom={false}
-        style={{ height: "100%", width: "100%" }}
+        className="br-cinema-map"
+        style={{ height: "100%", width: "100%", background: "#0a0a0a" }}
       >
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
           attribution="&copy; OpenStreetMap &copy; CARTO"
         />
         <CircleMarker
           center={[lat, lng]}
           radius={10}
           pathOptions={{
-            color: "hsl(221 83% 53%)",
-            fillColor: "hsl(221 83% 53%)",
-            fillOpacity: 0.6,
+            color: "#c49660",
+            fillColor: "#c49660",
+            fillOpacity: 0.75,
+            weight: 1.5,
           }}
         >
           <Tooltip>{label}</Tooltip>

@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHeader } from "@/components/page-header";
+import { StatesExplorer } from "@/components/states-explorer";
 import { prisma } from "@/lib/prisma";
 import { safe } from "@/lib/safe";
-import { formatCompact, formatNumber } from "@/lib/utils";
 import { SLUG } from "@/lib/indicators";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "States & Provinces — Subnational Demographics",
+  title: "States & Provinces — Subnational Fertility Maps",
   description:
-    "Fertility and population for US states, German Länder, Indian states, Chinese provinces, Russian regions and more — from official statistical sources.",
+    "Interactive fertility maps for US states, German Länder, Indian states, Chinese provinces, and Russian regions — from official statistical sources.",
   alternates: { canonical: "/states" },
+};
+
+const GEO_BY_ISO3: Record<string, string> = {
+  USA: "/geo/admin1-usa.json",
+  DEU: "/geo/admin1-deu.json",
+  IND: "/geo/admin1-ind.json",
+  CHN: "/geo/admin1-chn.json",
+  RUS: "/geo/admin1-rus.json",
 };
 
 export default async function StatesIndexPage() {
@@ -49,13 +57,32 @@ export default async function StatesIndexPage() {
     [],
   );
 
+  const blocks = countries.map((c) => ({
+    slug: c.slug,
+    name: c.name,
+    iso3: c.iso3,
+    flagEmoji: c.flagEmoji,
+    geoUrl: GEO_BY_ISO3[c.iso3] ?? null,
+    divisions: c.admin1Divisions.map((d) => {
+      const tfr = d.indicatorValues[0];
+      return {
+        slug: d.slug,
+        name: d.name,
+        kind: d.kind,
+        population: d.population,
+        tfr: tfr?.value ?? null,
+        tfrYear: tfr?.year ?? null,
+      };
+    }),
+  }));
+
   return (
     <div>
       <PageHeader
         title="States & provinces"
-        description="Subnational fertility and population from official sources — US states (NCHS/Census), German Länder (Eurostat), Indian states (NFHS), Chinese provinces (NBS census), Russian federal subjects (Rosstat)."
+        description="Subnational fertility maps and tables — US states (NCHS), German Länder (Eurostat), Indian states (NFHS), Chinese provinces (NBS), Russian regions (Rosstat)."
       />
-      <div className="container space-y-10 py-8">
+      <div className="container space-y-8 py-8">
         <p className="text-sm text-muted-foreground">
           Looking for a U.S. race and Hispanic-origin map? See the{" "}
           <Link
@@ -66,75 +93,7 @@ export default async function StatesIndexPage() {
           </Link>
           .
         </p>
-        {countries.map((c) => (
-          <section key={c.slug} className="space-y-3">
-            <div className="flex items-baseline justify-between border-b pb-2">
-              <h2 className="text-xl font-semibold tracking-tight">
-                <Link
-                  href={`/country/${c.slug}`}
-                  className="hover:underline"
-                >
-                  {c.flagEmoji ? `${c.flagEmoji} ` : ""}
-                  {c.name}
-                </Link>
-              </h2>
-              <span className="text-sm text-muted-foreground">
-                {c.admin1Divisions.length} divisions
-              </span>
-            </div>
-            <div className="overflow-x-auto rounded-lg border">
-              <table className="w-full min-w-[560px] text-left text-sm">
-                <thead className="border-b bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
-                  <tr>
-                    <th className="px-4 py-3 font-medium">Name</th>
-                    <th className="px-4 py-3 font-medium">Type</th>
-                    <th className="px-4 py-3 font-medium text-right">
-                      Population
-                    </th>
-                    <th className="px-4 py-3 font-medium text-right">TFR</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {c.admin1Divisions.map((d) => {
-                    const tfr = d.indicatorValues[0];
-                    return (
-                      <tr
-                        key={d.slug}
-                        className="border-b border-border/60 last:border-0"
-                      >
-                        <td className="px-4 py-2.5 font-medium">
-                          <Link
-                            href={`/state/${d.slug}`}
-                            className="hover:underline"
-                          >
-                            {d.name}
-                          </Link>
-                        </td>
-                        <td className="px-4 py-2.5 text-muted-foreground">
-                          {d.kind.replace(/-/g, " ")}
-                        </td>
-                        <td className="px-4 py-2.5 text-right tabular-nums">
-                          {d.population != null
-                            ? formatCompact(d.population)
-                            : "—"}
-                        </td>
-                        <td className="px-4 py-2.5 text-right tabular-nums">
-                          {tfr ? (
-                            <span title={`Year ${tfr.year}`}>
-                              {formatNumber(tfr.value, 2)}
-                            </span>
-                          ) : (
-                            "—"
-                          )}
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
-            </div>
-          </section>
-        ))}
+        <StatesExplorer countries={blocks} />
       </div>
     </div>
   );

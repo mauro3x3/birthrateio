@@ -1,0 +1,27 @@
+{
+  "USA": {
+    "geoUrl": "/geo/admin1-usa.json",
+    "divisions": 51,
+    "linked": 51
+  },
+  "DEU": {
+    "geoUrl": "/geo/admin1-deu.json",
+    "divisions": 16,
+    "linked": 16
+  },
+  "IND": {
+    "geoUrl": "/geo/admin1-ind.json",
+    "divisions": 36,
+    "linked": 36
+  },
+  "CHN": {
+    "geoUrl": "/geo/admin1-chn.json",
+    "divisions": 31,
+    "linked": 31
+  },
+  "RUS": {
+    "geoUrl": "/geo/admin1-rus.json",
+    "divisions": 30,
+    "linked": 30
+  }
+}

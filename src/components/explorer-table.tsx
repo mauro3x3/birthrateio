@@ -12,7 +12,6 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import type { RankingRow } from "@/lib/queries";
 import { downloadFile, formatByUnit, toCSV } from "@/lib/utils";
 import { cn } from "@/lib/utils";
@@ -53,43 +52,53 @@ export function ExplorerTable({
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <Button
-          variant={region === "all" ? "default" : "outline"}
-          size="sm"
+      <div className="flex flex-wrap items-center gap-x-1 gap-y-2 border-b border-border pb-3">
+        <button
+          type="button"
+          className={cn(
+            "px-2.5 py-1 text-sm font-medium transition-colors",
+            region === "all"
+              ? "text-primary"
+              : "text-muted-foreground hover:text-foreground",
+          )}
           onClick={() => setRegion("all")}
         >
           All regions
-        </Button>
+        </button>
         {continents.map((c) => (
-          <Button
+          <button
             key={c}
-            variant={region === c ? "default" : "outline"}
-            size="sm"
+            type="button"
+            className={cn(
+              "px-2.5 py-1 text-sm font-medium transition-colors",
+              region === c
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground",
+            )}
             onClick={() => setRegion(c)}
           >
             {c}
-          </Button>
+          </button>
         ))}
-        <div className="ml-auto flex items-center gap-2">
+        <div className="ml-auto flex flex-wrap items-center gap-2">
           <Input
             placeholder="Filter countries…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="h-8 w-44"
+            className="h-8 w-44 rounded-none"
           />
-          <Button
-            variant="outline"
-            size="sm"
+          <button
+            type="button"
+            className="inline-flex items-center gap-1.5 px-2 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
             onClick={() => setDesc((d) => !d)}
             title="Toggle sort order"
           >
-            <ArrowDownUp className="h-4 w-4" />
+            <ArrowDownUp className="h-3.5 w-3.5" />
             {desc ? "High→Low" : "Low→High"}
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
+          </button>
+          <button
+            type="button"
+            className="link-editorial inline-flex items-center gap-1 text-xs font-medium"
             onClick={() =>
               downloadFile(
                 `${csvName}.csv`,
@@ -106,14 +115,14 @@ export function ExplorerTable({
               )
             }
           >
-            <Download className="h-4 w-4" /> CSV
-          </Button>
+            <Download className="h-3.5 w-3.5" /> CSV
+          </button>
         </div>
       </div>
 
-      <Table>
+      <Table className="table-stat">
         <TableHeader>
-          <TableRow>
+          <TableRow className="hover:bg-transparent">
             <TableHead className="w-12">#</TableHead>
             <TableHead>Country</TableHead>
             <TableHead className="hidden sm:table-cell">Region</TableHead>
@@ -124,7 +133,7 @@ export function ExplorerTable({
         <TableBody>
           {filtered.map((row, i) => (
             <TableRow key={row.iso3}>
-              <TableCell className="font-mono text-muted-foreground">
+              <TableCell className="font-mono text-xs text-muted-foreground">
                 {i + 1}
               </TableCell>
               <TableCell>
@@ -132,14 +141,14 @@ export function ExplorerTable({
                   href={`/country/${row.slug}`}
                   className="flex items-center gap-2 font-medium hover:text-primary"
                 >
-                  <span className="text-lg">{row.flagEmoji ?? "🏳️"}</span>
+                  <span className="text-base">{row.flagEmoji ?? "🏳️"}</span>
                   {row.name}
                 </Link>
               </TableCell>
               <TableCell className="hidden text-muted-foreground sm:table-cell">
                 {row.continent ?? "—"}
               </TableCell>
-              <TableCell className={cn("text-right font-medium tabular-nums")}>
+              <TableCell className="text-right font-serif text-base font-semibold tabular-nums text-primary">
                 {formatByUnit(row.value, unit, decimals)}
               </TableCell>
               <TableCell className="text-right text-muted-foreground tabular-nums">

@@ -53,8 +53,8 @@ export default async function GdpPage() {
       />
       <div className="container space-y-8 py-8">
         <MapCard
-          title="GDP per Capita Map"
-          description="GDP per capita (current US$)."
+          title="GDP per capita"
+          description="Gross domestic product divided by population (current US$). Scrub the year timeline to see how incomes changed — darker countries are richer on a per-person basis."
           source="World Bank"
           frames={frames}
           unit="US$"

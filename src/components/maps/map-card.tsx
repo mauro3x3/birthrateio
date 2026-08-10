@@ -3,32 +3,41 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Pause, Play } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { Skeleton } from "@/components/ui/skeleton";
 import { AnimationExportButton } from "@/components/animation-export-button";
-import { slugify } from "@/lib/utils";
+import { buildColorScale, type ScaleType } from "@/lib/color-scale";
+import { formatByUnit, slugify } from "@/lib/utils";
 import type { ChoroplethDatum } from "./choropleth-map";
-import type { ScaleType } from "@/lib/color-scale";
 
 const ChoroplethMap = dynamic(
   () => import("./choropleth-map").then((m) => m.ChoroplethMap),
   {
     ssr: false,
-    loading: () => <Skeleton className="h-[480px] w-full rounded-lg" />,
+    loading: () => (
+      <div className="flex h-[480px] w-full items-center justify-center bg-black text-sm text-white/30">
+        Loading map…
+      </div>
+    ),
   },
 );
 
 export interface MapFrame {
   year: number;
   data: ChoroplethDatum[];
+}
+
+function scaleHint(unit?: string, scaleType?: ScaleType): string {
+  if (scaleType?.includes("diverging")) {
+    return "Colours diverge around the midpoint — lighter near the middle, stronger toward the extremes.";
+  }
+  if (unit === "US$" || unit === "$") {
+    return "Darker = higher GDP per capita. Hover a country for its value.";
+  }
+  if (unit?.includes("%")) {
+    return "Darker = higher value. Hover a country for its figure.";
+  }
+  return "Darker areas show higher values. Hover a country for details.";
 }
 
 export function MapCard({
@@ -51,15 +60,20 @@ export function MapCard({
   decimals?: number;
   scaleType?: ScaleType;
   mid?: number;
-  /** Optional per-year readout (e.g. world average) shown in the header. */
+  /** Optional per-year readout (e.g. world average) shown in the context strip. */
   frameStats?: { year: number; label: string }[];
   height?: number;
 }) {
-  const [idx, setIdx] = React.useState(frames.length - 1);
+  const lastIdx = Math.max(0, frames.length - 1);
+  const [idx, setIdx] = React.useState(lastIdx);
   const [playing, setPlaying] = React.useState(false);
   const [recording, setRecording] = React.useState(false);
   const captureRef = React.useRef<HTMLDivElement>(null);
   const startIdxRef = React.useRef(0);
+
+  React.useEffect(() => {
+    setIdx(Math.max(0, frames.length - 1));
+  }, [frames.length]);
 
   React.useEffect(() => {
     if (!playing) return;
@@ -75,11 +89,20 @@ export function MapCard({
     return () => clearInterval(t);
   }, [playing, frames.length]);
 
-  const current = frames[Math.min(idx, frames.length - 1)] ?? frames[0];
+  const safeIdx = Math.min(Math.max(idx, 0), lastIdx);
+  const current = frames[safeIdx] ?? frames[0];
   const animatable = frames.length > 1;
+  const firstYear = frames[0]?.year;
+  const lastYear = frames[lastIdx]?.year;
 
-  // One fixed colour domain across every frame so "low" and "high" mean the
-  // same thing in every year (2nd–98th percentile of all values pooled).
+  const cinemaScale = React.useMemo((): ScaleType => {
+    if (scaleType === "diverging" || scaleType === "diverging-dark")
+      return "diverging-dark";
+    if (scaleType === "sequential" || scaleType === "sequential-dark")
+      return "sequential-dark";
+    return scaleType;
+  }, [scaleType]);
+
   const domain = React.useMemo(() => {
     const vals: number[] = [];
     for (const f of frames)
@@ -91,6 +114,18 @@ export function MapCard({
     return { min: q(0.02), max: q(0.98) };
   }, [frames]);
 
+  const scale = React.useMemo(() => {
+    const sample = current?.data.map((d) => d.value) ?? [];
+    return buildColorScale(sample, cinemaScale, mid, domain);
+  }, [cinemaScale, current?.data, domain, mid]);
+
+  const gradientCss = React.useMemo(() => {
+    if (scale.legend.length < 2) return undefined;
+    return `linear-gradient(90deg, ${scale.legend
+      .map((s, i, arr) => `${s.color} ${(i / (arr.length - 1)) * 100}%`)
+      .join(", ")})`;
+  }, [scale.legend]);
+
   const statByYear = React.useMemo(() => {
     const m = new Map<number, string>();
     for (const s of frameStats ?? []) m.set(s.year, s.label);
@@ -98,7 +133,8 @@ export function MapCard({
   }, [frameStats]);
   const currentStat = current ? statByYear.get(current.year) : undefined;
 
-  // Leaflet re-paints the choropleth when the year changes; give it a beat.
+  const fmt = (v: number) => formatByUnit(v, unit, decimals);
+
   const renderExportFrame = React.useCallback(
     (i: number) =>
       new Promise<void>((resolve) => {
@@ -111,67 +147,121 @@ export function MapCard({
   );
 
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
-        <div className="space-y-1">
-          <CardTitle className="text-base">{title}</CardTitle>
-          {description && <CardDescription>{description}</CardDescription>}
-        </div>
-        {current && (
-          <div className="flex flex-col items-end gap-1">
-            <span className="rounded-md bg-muted px-2.5 py-1 text-sm font-semibold tabular-nums">
-              {current.year}
-            </span>
-            {currentStat && (
-              <span className="text-xs font-medium text-muted-foreground">
-                {currentStat}
-              </span>
-            )}
-          </div>
+    <section className="overflow-hidden border border-border bg-card">
+      <header className="border-b border-border px-5 py-4">
+        <h2 className="font-serif text-xl font-semibold tracking-tight text-primary">
+          {title}
+        </h2>
+        {description && (
+          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
         )}
-      </CardHeader>
-      <CardContent>
-        <div ref={captureRef} className="rounded-lg bg-card">
-          <div className="mb-2 flex items-baseline justify-between gap-3">
-            <p className="font-serif text-sm font-semibold">{title}</p>
-            <span className="text-sm font-semibold tabular-nums text-muted-foreground">
-              {currentStat ? `${currentStat} · ` : ""}
-              {current?.year}
-            </span>
-          </div>
-          <ChoroplethMap
-            data={current?.data ?? []}
-            unit={unit}
-            decimals={decimals}
-            scaleType={scaleType}
-            mid={mid}
-            domain={domain}
-            height={height}
-          />
+      </header>
+
+      {/* Context strip — year, world figure, colour meaning */}
+      <div className="grid gap-5 border-b border-border bg-muted/35 px-5 py-4 sm:grid-cols-3">
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+            Year shown
+          </p>
+          <p className="mt-1 font-serif text-3xl font-semibold tabular-nums text-primary">
+            {current?.year ?? "—"}
+          </p>
+          {animatable && firstYear != null && lastYear != null && (
+            <p className="mt-1 text-xs text-muted-foreground">
+              Timeline {firstYear}–{lastYear}. Use play or the slider below.
+            </p>
+          )}
         </div>
 
-        {animatable && (
-          <div className="mt-4 flex items-center gap-3">
-            <Button
-              variant="outline"
-              size="icon"
-              disabled={recording}
-              onClick={() => {
-                if (idx >= frames.length - 1) setIdx(0);
-                setPlaying((p) => !p);
-              }}
-              aria-label={playing ? "Pause" : "Play"}
-            >
-              {playing ? (
-                <Pause className="h-4 w-4" />
-              ) : (
-                <Play className="h-4 w-4" />
-              )}
-            </Button>
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+            {frameStats?.length ? "World figure" : "Selected year"}
+          </p>
+          <p className="mt-1 font-serif text-2xl font-semibold tracking-tight text-foreground">
+            {currentStat ??
+              (current
+                ? `${current.data.length.toLocaleString()} countries`
+                : "—")}
+          </p>
+          {unit && (
+            <p className="mt-1 text-xs text-muted-foreground">
+              Unit: {unit}
+              {decimals === 0 ? " (rounded)" : ""}
+            </p>
+          )}
+        </div>
+
+        <div>
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+            Colour scale
+          </p>
+          {gradientCss && (
+            <div className="mt-2 space-y-1.5">
+              <div
+                className="h-2.5 w-full max-w-[14rem] rounded-sm"
+                style={{ background: gradientCss }}
+                aria-hidden
+              />
+              <div className="flex max-w-[14rem] justify-between text-xs tabular-nums text-muted-foreground">
+                <span>{fmt(scale.min)}</span>
+                {scale.mid !== undefined && (
+                  <span className="text-foreground/70">{fmt(scale.mid)}</span>
+                )}
+                <span>{fmt(scale.max)}</span>
+              </div>
+              <p className="text-xs leading-snug text-muted-foreground">
+                {scaleHint(unit, cinemaScale)}
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div ref={captureRef} className="bg-black">
+        <ChoroplethMap
+          data={current?.data ?? []}
+          unit={unit}
+          decimals={decimals}
+          scaleType={cinemaScale}
+          mid={mid}
+          domain={domain}
+          height={height}
+          variant="cinema"
+          hideLegend
+        />
+      </div>
+
+      {animatable && (
+        <div className="flex flex-col gap-3 border-t border-border bg-card px-5 py-3.5 sm:flex-row sm:items-center">
+          <Button
+            variant="outline"
+            size="sm"
+            disabled={recording}
+            className="shrink-0 gap-1.5 rounded-none"
+            onClick={() => {
+              if (safeIdx >= frames.length - 1) setIdx(0);
+              setPlaying((p) => !p);
+            }}
+            aria-label={playing ? "Pause" : "Play"}
+          >
+            {playing ? (
+              <Pause className="h-3.5 w-3.5" />
+            ) : (
+              <Play className="h-3.5 w-3.5" />
+            )}
+            {playing ? "Pause" : "Play over time"}
+          </Button>
+
+          <div className="flex min-w-0 flex-1 items-center gap-3">
+            <span className="hidden w-10 shrink-0 text-xs tabular-nums text-muted-foreground sm:block">
+              {firstYear}
+            </span>
             <Slider
-              value={[idx]}
+              value={[safeIdx]}
               min={0}
-              max={frames.length - 1}
+              max={lastIdx}
               step={1}
               disabled={recording}
               onValueChange={([v]) => {
@@ -179,8 +269,15 @@ export function MapCard({
                 setIdx(v);
               }}
               className="flex-1"
+              aria-label="Year"
             />
-            <span className="w-12 text-right text-sm tabular-nums text-muted-foreground">
+            <span className="hidden w-10 shrink-0 text-right text-xs tabular-nums text-muted-foreground sm:block">
+              {lastYear}
+            </span>
+          </div>
+
+          <div className="flex items-center justify-between gap-3 sm:justify-end">
+            <span className="font-serif text-lg font-semibold tabular-nums text-primary sm:w-14 sm:text-right">
               {current?.year}
             </span>
             <AnimationExportButton
@@ -190,8 +287,9 @@ export function MapCard({
               holdMs={650}
               fileBase={`${slugify(title)}-map`}
               disabled={recording}
+              className="rounded-none"
               onStart={() => {
-                startIdxRef.current = idx;
+                startIdxRef.current = safeIdx;
                 setPlaying(false);
                 setRecording(true);
               }}
@@ -201,12 +299,16 @@ export function MapCard({
               }}
             />
           </div>
-        )}
+        </div>
+      )}
 
-        {source && (
-          <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
-        )}
-      </CardContent>
-    </Card>
+      {source && (
+        <p className="border-t border-border px-5 py-2.5 text-xs text-muted-foreground">
+          Source: {source}
+          {current ? ` · Map year ${current.year}` : ""}
+          {unit ? ` · Values in ${unit}` : ""}
+        </p>
+      )}
+    </section>
   );
 }

@@ -3,12 +3,6 @@
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Select,
   SelectContent,
   SelectItem,
@@ -29,6 +23,7 @@ import {
 } from "@/components/country-multi-select";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { ChartCard } from "@/components/charts/chart-card";
+import { SectionHeading } from "@/components/section-heading";
 import { colorAt } from "@/components/charts/palette";
 import { formatByUnit } from "@/lib/utils";
 
@@ -68,7 +63,6 @@ export function CompareTool({
   });
   const [loading, setLoading] = React.useState(false);
 
-  // Keep URL in sync for shareable links.
   React.useEffect(() => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("countries", selected.join(","));
@@ -97,7 +91,6 @@ export function CompareTool({
     color: colorAt(i),
   }));
 
-  // Latest value per country for the ranking table.
   const latest = data.countries.map((c, i) => {
     let val: number | null = null;
     let year: number | null = null;
@@ -115,35 +108,42 @@ export function CompareTool({
   );
 
   return (
-    <div className="space-y-6">
-      <Card>
-        <CardContent className="flex flex-col gap-4 p-5 lg:flex-row lg:items-center lg:justify-between">
-          <CountryMultiSelect
-            options={options}
-            selected={selected}
-            onChange={setSelected}
-          />
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">Metric</span>
-            <Select value={metric} onValueChange={setMetric}>
-              <SelectTrigger className="w-52">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                {METRICS.map((m) => (
-                  <SelectItem key={m.slug} value={m.slug}>
-                    {m.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-        </CardContent>
-      </Card>
+    <div className="space-y-8">
+      <div className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-center lg:justify-between">
+        <CountryMultiSelect
+          options={options}
+          selected={selected}
+          onChange={setSelected}
+        />
+        <div className="flex items-center gap-3">
+          <label
+            htmlFor="compare-metric"
+            className="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground"
+          >
+            Indicator
+          </label>
+          <Select value={metric} onValueChange={setMetric}>
+            <SelectTrigger id="compare-metric" className="w-52 rounded-none">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {METRICS.map((m) => (
+                <SelectItem key={m.slug} value={m.slug}>
+                  {m.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
 
       <ChartCard
-        title={`${data.meta?.name ?? "Metric"} — overlay`}
-        description={loading ? "Loading…" : "Compare trends over time"}
+        title={data.meta?.name ?? "Indicator"}
+        description={
+          loading
+            ? "Loading series…"
+            : "Overlay time series for the selected countries."
+        }
         source="World Bank"
         csvRows={data.rows}
         csvName={`compare-${metric}`}
@@ -153,7 +153,7 @@ export function CompareTool({
           series={series}
           unit={data.meta?.unit}
           decimals={data.meta?.decimals ?? 2}
-          height={360}
+          height={380}
           referenceY={metric === "fertility-rate" ? 2.1 : undefined}
           referenceLabel={
             metric === "fertility-rate" ? "Replacement" : undefined
@@ -161,66 +161,68 @@ export function CompareTool({
         />
       </ChartCard>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">
-            Latest values &amp; ranking
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="w-12">#</TableHead>
-                <TableHead>Country</TableHead>
-                <TableHead className="text-right">
-                  {data.meta?.name ?? "Value"}
-                </TableHead>
-                <TableHead className="w-20 text-right">Year</TableHead>
+      <section className="border-t border-border pt-5">
+        <SectionHeading
+          title="Latest values"
+          description="Most recent observation for each selected country, ranked high to low."
+          meta={
+            sortedLatest[0]?.year != null
+              ? `As of ${sortedLatest[0].year}`
+              : undefined
+          }
+        />
+        <Table className="table-stat">
+          <TableHeader>
+            <TableRow className="hover:bg-transparent">
+              <TableHead className="w-12">#</TableHead>
+              <TableHead>Country</TableHead>
+              <TableHead className="text-right">
+                {data.meta?.name ?? "Value"}
+              </TableHead>
+              <TableHead className="w-20 text-right">Year</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {sortedLatest.map((c, i) => (
+              <TableRow key={c.slug}>
+                <TableCell className="font-mono text-xs text-muted-foreground">
+                  {i + 1}
+                </TableCell>
+                <TableCell>
+                  <span className="flex items-center gap-2.5 font-medium">
+                    <span
+                      className="h-2 w-2 shrink-0 rounded-full"
+                      style={{ background: c.color }}
+                    />
+                    <span aria-hidden>{c.flagEmoji}</span>
+                    {c.name}
+                  </span>
+                </TableCell>
+                <TableCell className="text-right font-serif text-base font-semibold tabular-nums text-primary">
+                  {formatByUnit(
+                    c.value,
+                    data.meta?.unit,
+                    data.meta?.decimals ?? 2,
+                  )}
+                </TableCell>
+                <TableCell className="text-right text-muted-foreground tabular-nums">
+                  {c.year ?? "—"}
+                </TableCell>
               </TableRow>
-            </TableHeader>
-            <TableBody>
-              {sortedLatest.map((c, i) => (
-                <TableRow key={c.slug}>
-                  <TableCell className="font-mono text-muted-foreground">
-                    {i + 1}
-                  </TableCell>
-                  <TableCell>
-                    <span className="flex items-center gap-2 font-medium">
-                      <span
-                        className="h-2.5 w-2.5 rounded-full"
-                        style={{ background: c.color }}
-                      />
-                      <span className="text-lg">{c.flagEmoji}</span>
-                      {c.name}
-                    </span>
-                  </TableCell>
-                  <TableCell className="text-right font-medium tabular-nums">
-                    {formatByUnit(
-                      c.value,
-                      data.meta?.unit,
-                      data.meta?.decimals ?? 2,
-                    )}
-                  </TableCell>
-                  <TableCell className="text-right text-muted-foreground tabular-nums">
-                    {c.year ?? "—"}
-                  </TableCell>
-                </TableRow>
-              ))}
-              {sortedLatest.length === 0 && (
-                <TableRow>
-                  <TableCell
-                    colSpan={4}
-                    className="py-8 text-center text-muted-foreground"
-                  >
-                    Add countries to compare.
-                  </TableCell>
-                </TableRow>
-              )}
-            </TableBody>
-          </Table>
-        </CardContent>
-      </Card>
+            ))}
+            {sortedLatest.length === 0 && (
+              <TableRow>
+                <TableCell
+                  colSpan={4}
+                  className="py-8 text-center text-muted-foreground"
+                >
+                  Add countries to compare.
+                </TableCell>
+              </TableRow>
+            )}
+          </TableBody>
+        </Table>
+      </section>
     </div>
   );
 }

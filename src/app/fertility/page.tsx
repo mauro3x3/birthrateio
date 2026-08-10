@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageHeader } from "@/components/page-header";
-import { MapCard } from "@/components/maps/map-card";
 import { ExplorerTable } from "@/components/explorer-table";
 import { FertilityMovers } from "@/components/fertility-movers";
+import { TimelineExplorer } from "@/components/maps/timeline-explorer";
 import {
   getFertilityChanges,
   getMapFrames,
@@ -21,20 +20,18 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Fertility Explorer — Global Fertility Rates & Trends",
   description:
-    "Explore total fertility rates for every country. Animated global fertility map, 2026 provisional nowcast, rankings, and the biggest fertility movers.",
+    "Explore total fertility rates for every country. Interactive timeline map, 2026 provisional nowcast, rankings, and the biggest fertility movers.",
   alternates: { canonical: "/fertility" },
 };
 
 export default async function FertilityPage() {
   const [frames, ranking, changes, nowcasts] = await Promise.all([
-    safe(getMapFrames(SLUG.fertility, { step: 1, maxFrames: 60 }), []),
+    safe(getMapFrames(SLUG.fertility, { step: 1, maxFrames: 66 }), []),
     safe(getRanking(SLUG.fertility, { order: "desc" }), []),
     safe(getFertilityChanges(10, 8), { increases: [], declines: [] }),
     safe(getFertilityNowcasts("2026"), []),
   ]);
 
-  // Official World fertility (World Bank "World" aggregate) per animated year,
-  // falling back to a population-weighted estimate if unavailable.
   const years = frames.map((f) => f.year);
   const world = await safe(
     getWorldByYear(SLUG.fertility, years),
@@ -46,30 +43,33 @@ export default async function FertilityPage() {
         getWeightedGlobalByYear(SLUG.fertility, SLUG.population, years),
         {} as Record<number, number>,
       );
-  const fertilityStats = years
-    .filter((y) => globalTfr[y] != null)
-    .map((y) => ({ year: y, label: `World ${globalTfr[y].toFixed(2)}` }));
+
+  const timelineFrames = frames.map((f) => ({
+    year: f.year,
+    data: f.data.map((d) => ({
+      iso3: d.iso3,
+      slug: d.slug,
+      name: d.name,
+      value: d.value,
+      continent: d.continent,
+    })),
+  }));
 
   return (
     <div>
-      <PageHeader
-        title="Fertility Explorer"
-        description="Total fertility rate (average births per woman) across the world. The replacement level is 2.1. Animate the map to watch the global fertility transition."
+      <TimelineExplorer
+        frames={timelineFrames}
+        globalByYear={globalTfr}
+        unit="births/woman"
+        decimals={2}
+        scaleType="diverging-dark"
+        mid={2.1}
+        source="World Bank"
+        headline="Global"
+        metricLabel="Births / woman"
       />
-      <div className="container space-y-8 py-8">
-        <MapCard
-          title="Global Fertility Map"
-          description="Births per woman. Red = below replacement, blue = above. Drag the slider or press play."
-          source="World Bank"
-          frames={frames}
-          unit="births/woman"
-          decimals={2}
-          scaleType="diverging"
-          mid={2.1}
-          frameStats={fertilityStats}
-          height={540}
-        />
 
+      <div className="container space-y-10 py-10">
         <FertilityMovers
           declines={changes.declines}
           increases={changes.increases}

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { mainNav, siteConfig } from "@/lib/site";
+import { navTopics, siteConfig } from "@/lib/site";
 
 const dataLinks = [
   { title: "World Bank", href: "https://data.worldbank.org" },
@@ -9,6 +9,10 @@ const dataLinks = [
 ];
 
 export function SiteFooter() {
+  const people = navTopics.find((t) => t.id === "people");
+  const tools = navTopics.find((t) => t.id === "tools");
+  const more = navTopics.filter((t) => t.id === "society" || t.id === "economy");
+
   return (
     <footer className="border-t bg-muted/40">
       <div className="container grid gap-8 py-10 md:grid-cols-4">
@@ -23,7 +27,10 @@ export function SiteFooter() {
             {siteConfig.tagline}. Open demographic data for researchers,
             journalists, and the public.
           </p>
-          <div className="flex gap-3 text-sm">
+          <div className="flex flex-wrap gap-3 text-sm">
+            <Link href="/topics" className="text-primary hover:underline">
+              Topics
+            </Link>
             <Link href="/support" className="text-primary hover:underline">
               Donate
             </Link>
@@ -35,10 +42,10 @@ export function SiteFooter() {
 
         <div>
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Explore
+            {people?.title ?? "People"}
           </h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            {mainNav.slice(0, 5).map((item) => (
+            {people?.links.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-foreground">
                   {item.title}
@@ -50,39 +57,25 @@ export function SiteFooter() {
 
         <div>
           <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Tools
+            Tools &amp; more
           </h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li>
-              <Link href="/simulator" className="hover:text-foreground">
-                Demographic simulator
-              </Link>
-            </li>
-            <li>
-              <Link href="/compare" className="hover:text-foreground">
-                Compare countries
-              </Link>
-            </li>
-            <li>
-              <Link href="/clock" className="hover:text-foreground">
-                Fertility clock
-              </Link>
-            </li>
-            <li>
-              <Link href="/calendar" className="hover:text-foreground">
-                Release calendar
-              </Link>
-            </li>
-            <li>
-              <Link href="/cities" className="hover:text-foreground">
-                Cities database
-              </Link>
-            </li>
-            <li>
-              <Link href="/contribute" className="hover:text-foreground">
-                Report new data
-              </Link>
-            </li>
+            {tools?.links.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-foreground">
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+            {more.flatMap((topic) =>
+              topic.links.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-foreground">
+                    {item.title}
+                  </Link>
+                </li>
+              )),
+            )}
           </ul>
         </div>
 

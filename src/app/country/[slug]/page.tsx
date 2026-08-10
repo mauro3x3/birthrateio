@@ -49,6 +49,8 @@ import { safe } from "@/lib/safe";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { StackedBarChart } from "@/components/charts/stacked-bar-chart";
+import { CountryTradeSection } from "@/components/country-trade";
+import { getCountryTradePair } from "@/lib/oec";
 
 export const revalidate = 86400;
 
@@ -60,8 +62,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const country = await safe(getCountryBySlug(slug), null);
   if (!country) return { title: "Country not found" };
-  const title = `${country.name} — Demographics, Fertility & Population`;
-  const description = `Population, fertility rate, GDP, migration and projections for ${country.name}. Interactive charts and demographic data from World Bank, UN and OECD.`;
+  const title = `${country.name} — Demographics, Fertility, Trade & Population`;
+  const description = `Population, fertility rate, GDP, exports, imports, migration and projections for ${country.name}. Interactive charts from World Bank, UN, OECD and OEC trade data.`;
   return {
     title,
     description,
@@ -192,6 +194,11 @@ export default async function CountryPage({
     safe(getCountryTimeSeries(country.id, SLUG.foreignPrisonerShare), []),
     safe(getAdmin1FertilityRanking(country.id), []),
   ]);
+
+  const trade = await safe(getCountryTradePair(country.iso3), {
+    exports: null,
+    imports: null,
+  });
 
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
@@ -637,6 +644,14 @@ export default async function CountryPage({
               color="hsl(155 55% 38%)"
             />
           </ChartCard>
+
+          {(trade.exports || trade.imports) && (
+            <CountryTradeSection
+              countryName={country.name}
+              exports={trade.exports}
+              imports={trade.imports}
+            />
+          )}
 
           <ChartCard
             title="Net migration over time"

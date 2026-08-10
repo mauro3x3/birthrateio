@@ -23,7 +23,7 @@ const RegionChoroplethMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[560px] items-center justify-center rounded-sm border text-sm text-muted-foreground">
+      <div className="flex h-[520px] items-center justify-center rounded-md border bg-muted/30 text-sm text-muted-foreground">
         Loading map…
       </div>
     ),
@@ -58,145 +58,166 @@ export function UsDemographicsExplorer({
     [groupId],
   );
 
-  return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(260px,320px)_1fr]">
-      <aside className="space-y-5 rounded-sm border bg-card p-4">
-        <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
-            Population
-          </p>
-          <h2 className="mt-1 font-serif text-lg font-semibold tracking-tight">
-            Race alone, not Hispanic or Latino
-          </h2>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Plus Hispanic or Latino of any race · ACS {US_DEMOGRAPHICS_META.year}
-          </p>
-        </div>
+  const highest = ranked[0];
+  const lowest = ranked[ranked.length - 1];
 
-        <div className="space-y-1">
-          {US_RACE_GROUPS.map((g) => (
-            <button
-              key={g.id}
-              type="button"
-              onClick={() => setGroupId(g.id)}
+  const legend = React.useMemo(
+    () => US_PCT_LEGEND.map((b) => ({ label: b.label, color: b.color })),
+    [],
+  );
+
+  return (
+    <div className="space-y-6">
+      {/* Metric switcher */}
+      <div className="flex flex-wrap gap-1.5">
+        {US_RACE_GROUPS.map((g) => (
+          <button
+            key={g.id}
+            type="button"
+            onClick={() => setGroupId(g.id)}
+            className={cn(
+              "rounded-full px-3 py-1.5 text-sm transition-colors",
+              g.id === groupId
+                ? "bg-foreground text-background"
+                : "border bg-card text-muted-foreground hover:border-foreground/25 hover:text-foreground",
+            )}
+          >
+            {g.shortLabel}
+            <span
               className={cn(
-                "flex w-full items-center justify-between rounded-sm px-2.5 py-2 text-left text-sm transition-colors",
-                g.id === groupId
-                  ? "bg-foreground text-background"
-                  : "hover:bg-muted",
+                "ml-1.5 tabular-nums text-xs",
+                g.id === groupId ? "text-background/65" : "text-muted-foreground/80",
               )}
             >
-              <span>{g.shortLabel}</span>
-              <span
-                className={cn(
-                  "tabular-nums text-xs",
-                  g.id === groupId
-                    ? "text-background/70"
-                    : "text-muted-foreground",
-                )}
-              >
-                {formatNumber(
-                  US_DEMOGRAPHICS_META.unitedStates.shares[g.id],
-                  1,
-                )}
-                %
-              </span>
-            </button>
-          ))}
-        </div>
-
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          {group.description} Figures are from the{" "}
-          <a
-            href={US_DEMOGRAPHICS_META.sourceUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="underline underline-offset-2"
-          >
-            {US_DEMOGRAPHICS_META.release.name}
-          </a>{" "}
-          (table B03002). Click a state to open its profile.
-        </p>
-
-        <div className="space-y-2 border-t pt-4">
-          <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">
-            Percent of population
-          </p>
-          <ul className="space-y-1.5">
-            {US_PCT_LEGEND.map((bin) => (
-              <li key={bin.label} className="flex items-center gap-2 text-xs">
-                <span
-                  className="h-3.5 w-3.5 shrink-0 rounded-sm border border-black/10"
-                  style={{ background: bin.color }}
-                />
-                {bin.label}
-              </li>
-            ))}
-          </ul>
-          <p className="pt-1 text-xs text-muted-foreground">
-            U.S. percent ={" "}
-            <span className="font-medium tabular-nums text-foreground">
-              {formatNumber(usShare, 1)}
+              {formatNumber(US_DEMOGRAPHICS_META.unitedStates.shares[g.id], 1)}%
             </span>
+          </button>
+        ))}
+      </div>
+
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="min-w-0 space-y-3">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <h2 className="font-serif text-xl font-semibold tracking-tight">
+                {group.label}
+              </h2>
+              <p className="mt-0.5 text-sm text-muted-foreground">
+                Share of state population · ACS {US_DEMOGRAPHICS_META.year}
+              </p>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              U.S. overall{" "}
+              <span className="font-semibold tabular-nums text-foreground">
+                {formatNumber(usShare, 1)}%
+              </span>
+            </p>
+          </div>
+
+          <RegionChoroplethMap
+            geoUrl="/geo/us-states.json"
+            data={mapData}
+            colorFor={usPctColor}
+            unit="%"
+            decimals={1}
+            height={520}
+            revision={groupId}
+            variant="light"
+            legend={legend}
+            fit="usa"
+          />
+
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            {group.description} Click a state for its profile. Source:{" "}
+            <a
+              href={US_DEMOGRAPHICS_META.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="underline underline-offset-2"
+            >
+              {US_DEMOGRAPHICS_META.release.name}
+            </a>
+            .
           </p>
         </div>
-      </aside>
 
-      <div className="space-y-4">
-        <RegionChoroplethMap
-          geoUrl="/geo/us-states.json"
-          data={mapData}
-          colorFor={usPctColor}
-          unit="%"
-          decimals={1}
-          height={560}
-          revision={groupId}
-        />
-
-        <div className="rounded-sm border">
-          <div className="border-b px-4 py-3">
-            <h3 className="text-sm font-medium">
-              States ranked by {group.shortLabel.toLowerCase()} share
-            </h3>
+        <aside className="space-y-4">
+          <div className="rounded-md border bg-card p-4">
+            <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+              Range
+            </p>
+            <dl className="mt-3 space-y-3 text-sm">
+              <div className="flex items-baseline justify-between gap-3">
+                <dt className="text-muted-foreground">Highest</dt>
+                <dd className="text-right">
+                  <Link
+                    href={`/state/${highest.slug}`}
+                    className="font-medium underline-offset-2 hover:underline"
+                  >
+                    {highest.name}
+                  </Link>
+                  <span className="ml-2 tabular-nums text-muted-foreground">
+                    {formatNumber(highest.shares[groupId], 1)}%
+                  </span>
+                </dd>
+              </div>
+              <div className="flex items-baseline justify-between gap-3 border-t pt-3">
+                <dt className="text-muted-foreground">Lowest</dt>
+                <dd className="text-right">
+                  <Link
+                    href={`/state/${lowest.slug}`}
+                    className="font-medium underline-offset-2 hover:underline"
+                  >
+                    {lowest.name}
+                  </Link>
+                  <span className="ml-2 tabular-nums text-muted-foreground">
+                    {formatNumber(lowest.shares[groupId], 1)}%
+                  </span>
+                </dd>
+              </div>
+            </dl>
           </div>
-          <div className="max-h-80 overflow-auto">
-            <table className="w-full text-sm">
-              <thead className="sticky top-0 bg-card text-left text-xs text-muted-foreground">
-                <tr>
-                  <th className="px-4 py-2 font-medium">#</th>
-                  <th className="px-4 py-2 font-medium">State</th>
-                  <th className="px-4 py-2 text-right font-medium">Share</th>
-                  <th className="hidden px-4 py-2 text-right font-medium sm:table-cell">
-                    Population
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {ranked.map((s, i) => (
-                  <tr key={s.fips} className="border-t">
-                    <td className="px-4 py-1.5 tabular-nums text-muted-foreground">
-                      {i + 1}
-                    </td>
-                    <td className="px-4 py-1.5">
-                      <Link
-                        href={`/state/${s.slug}`}
-                        className="underline-offset-2 hover:underline"
-                      >
-                        {s.name}
-                      </Link>
-                    </td>
-                    <td className="px-4 py-1.5 text-right tabular-nums">
-                      {formatNumber(s.shares[groupId], 1)}%
-                    </td>
-                    <td className="hidden px-4 py-1.5 text-right tabular-nums text-muted-foreground sm:table-cell">
-                      {formatCompact(s.population)}
-                    </td>
+
+          <div className="overflow-hidden rounded-md border bg-card">
+            <div className="border-b px-4 py-3">
+              <h3 className="text-sm font-medium">States ranked</h3>
+            </div>
+            <div className="max-h-[420px] overflow-auto">
+              <table className="w-full text-sm">
+                <thead className="sticky top-0 bg-card text-left text-xs text-muted-foreground">
+                  <tr>
+                    <th className="px-3 py-2 font-medium">#</th>
+                    <th className="px-3 py-2 font-medium">State</th>
+                    <th className="px-3 py-2 text-right font-medium">Share</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {ranked.map((s, i) => (
+                    <tr key={s.fips} className="border-t">
+                      <td className="px-3 py-1.5 tabular-nums text-muted-foreground">
+                        {i + 1}
+                      </td>
+                      <td className="px-3 py-1.5">
+                        <Link
+                          href={`/state/${s.slug}`}
+                          className="underline-offset-2 hover:underline"
+                        >
+                          {s.name}
+                        </Link>
+                      </td>
+                      <td className="px-3 py-1.5 text-right tabular-nums">
+                        {formatNumber(s.shares[groupId], 1)}%
+                        <span className="ml-1.5 hidden text-[10px] text-muted-foreground sm:inline">
+                          {formatCompact(s.population)}
+                        </span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
+        </aside>
       </div>
     </div>
   );

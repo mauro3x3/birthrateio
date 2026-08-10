@@ -5,30 +5,50 @@ export interface ScaleStop {
   color: [number, number, number]; // RGB
 }
 
-// Sequential — ColorBrewer "Blues" (light -> deep), crisp single-hue ramp.
+// Sequential — soft slate→ink (editorial, not default Blues).
 const SEQUENTIAL: ScaleStop[] = [
-  { t: 0, color: [247, 251, 255] },
-  { t: 0.15, color: [222, 235, 247] },
-  { t: 0.3, color: [198, 219, 239] },
-  { t: 0.45, color: [158, 202, 225] },
-  { t: 0.6, color: [66, 146, 198] },
-  { t: 0.75, color: [33, 113, 181] },
-  { t: 0.88, color: [8, 81, 156] },
-  { t: 1, color: [8, 48, 107] },
+  { t: 0, color: [236, 232, 224] },
+  { t: 0.18, color: [210, 208, 198] },
+  { t: 0.35, color: [160, 172, 178] },
+  { t: 0.52, color: [100, 130, 148] },
+  { t: 0.7, color: [55, 95, 120] },
+  { t: 0.86, color: [28, 62, 88] },
+  { t: 1, color: [14, 36, 56] },
 ];
 
-// Diverging — ColorBrewer "RdBu" reversed (red low -> clean neutral -> blue).
-// Replaces the old muddy tan midpoint with a crisp light neutral.
+// Diverging — muted copper (low) → parchment (mid) → deep teal (high).
+// Reads cleaner than harsh RdBu and fits an editorial demographic site.
 const DIVERGING: ScaleStop[] = [
-  { t: 0, color: [153, 18, 43] }, // strong red (kept off near-black)
-  { t: 0.12, color: [198, 60, 58] },
-  { t: 0.28, color: [228, 120, 100] },
-  { t: 0.42, color: [246, 178, 147] },
-  { t: 0.5, color: [247, 247, 247] }, // neutral mid
-  { t: 0.58, color: [150, 200, 224] },
-  { t: 0.72, color: [82, 158, 200] },
-  { t: 0.88, color: [40, 110, 178] },
-  { t: 1, color: [21, 78, 150] }, // strong blue (kept off near-black)
+  { t: 0, color: [120, 48, 36] },
+  { t: 0.14, color: [168, 78, 52] },
+  { t: 0.28, color: [196, 128, 88] },
+  { t: 0.4, color: [220, 188, 158] },
+  { t: 0.5, color: [236, 230, 220] },
+  { t: 0.6, color: [176, 198, 196] },
+  { t: 0.72, color: [96, 148, 152] },
+  { t: 0.86, color: [40, 100, 112] },
+  { t: 1, color: [18, 64, 78] },
+];
+
+// Dark-stage diverging: bone (low) → charcoal mid → muted copper (high).
+// Desaturated on purpose — busy world maps need calm fills.
+const DIVERGING_DARK: ScaleStop[] = [
+  { t: 0, color: [186, 176, 162] },
+  { t: 0.22, color: [140, 128, 112] },
+  { t: 0.42, color: [88, 82, 76] },
+  { t: 0.5, color: [58, 54, 50] },
+  { t: 0.62, color: [96, 72, 52] },
+  { t: 0.8, color: [138, 96, 58] },
+  { t: 1, color: [168, 118, 68] },
+];
+
+// Single-hue copper wash for dark maps (sequential).
+const SEQUENTIAL_DARK: ScaleStop[] = [
+  { t: 0, color: [42, 40, 38] },
+  { t: 0.25, color: [78, 64, 52] },
+  { t: 0.5, color: [128, 92, 58] },
+  { t: 0.75, color: [176, 120, 64] },
+  { t: 1, color: [220, 168, 100] },
 ];
 
 function interp(stops: ScaleStop[], t: number): string {
@@ -48,7 +68,12 @@ function interp(stops: ScaleStop[], t: number): string {
   return `rgb(${last[0]}, ${last[1]}, ${last[2]})`;
 }
 
-export type ScaleType = "sequential" | "sequential-log" | "diverging";
+export type ScaleType =
+  | "sequential"
+  | "sequential-log"
+  | "diverging"
+  | "diverging-dark"
+  | "sequential-dark";
 
 export interface ColorScale {
   color: (value: number) => string;
@@ -89,7 +114,14 @@ export function buildColorScale(
     max = q(0.98);
   }
   const isLog = type === "sequential-log";
-  const stops = type === "diverging" ? DIVERGING : SEQUENTIAL;
+  const stops =
+    type === "diverging-dark"
+      ? DIVERGING_DARK
+      : type === "sequential-dark"
+        ? SEQUENTIAL_DARK
+        : type === "diverging"
+          ? DIVERGING
+          : SEQUENTIAL;
 
   // Log mapping spreads colour across a long-tailed distribution (e.g. GDP per
   // capita) instead of crushing most countries into the palest shades.
@@ -101,7 +133,10 @@ export function buildColorScale(
     if (isLog) {
       return (Math.log(safe(v)) - logMin) / (logMax - logMin || 1);
     }
-    if (type === "diverging" && mid !== undefined) {
+    if (
+      (type === "diverging" || type === "diverging-dark") &&
+      mid !== undefined
+    ) {
       if (v <= mid) return 0.5 * ((v - min) / (mid - min || 1));
       return 0.5 + 0.5 * ((v - mid) / (max - mid || 1));
     }
@@ -116,7 +151,10 @@ export function buildColorScale(
     legendValues = [0, 0.25, 0.5, 0.75, 1].map((p) =>
       Math.exp(logMin + (logMax - logMin) * p),
     );
-  } else if (type === "diverging" && mid !== undefined) {
+  } else if (
+    (type === "diverging" || type === "diverging-dark") &&
+    mid !== undefined
+  ) {
     legendValues = [min, (min + mid) / 2, mid, (mid + max) / 2, max];
   } else {
     legendValues = [

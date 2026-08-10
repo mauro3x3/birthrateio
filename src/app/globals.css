@@ -4,49 +4,49 @@
 
 @layer base {
   :root {
-    /* Institutional palette — warm paper, deep navy, gold headlines */
+    /* Statistical-office palette — cool paper, deep teal-navy, restrained gold */
     --brand-navy: 213 74% 15%;
-    --brand-gold: 43 88% 60%;
+    --brand-gold: 43 70% 48%;
     --brand-donate: 4 74% 51%;
 
-    --background: 40 33% 99%;
-    --foreground: 213 40% 11%;
+    --background: 210 20% 99%;
+    --foreground: 210 28% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 213 40% 11%;
+    --card-foreground: 210 28% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 213 40% 11%;
+    --popover-foreground: 210 28% 12%;
 
-    --primary: 213 74% 24%;
+    --primary: 200 55% 24%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 20% 95%;
-    --secondary-foreground: 213 40% 11%;
+    --secondary: 210 16% 95%;
+    --secondary-foreground: 210 28% 12%;
 
-    --muted: 40 16% 94%;
-    --muted-foreground: 213 12% 40%;
+    --muted: 210 14% 95%;
+    --muted-foreground: 210 10% 38%;
 
-    --accent: 40 24% 93%;
-    --accent-foreground: 213 40% 11%;
+    --accent: 210 16% 94%;
+    --accent-foreground: 210 28% 12%;
 
     --destructive: 4 74% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 213 74% 24%;
+    --border: 210 14% 86%;
+    --input: 210 14% 86%;
+    --ring: 200 55% 24%;
 
-    --map-ocean: 205 32% 91%;
+    --map-ocean: 210 14% 93%;
 
-    --chart-1: 213 70% 40%;
-    --chart-2: 155 50% 34%;
-    --chart-3: 28 78% 46%;
-    --chart-4: 268 46% 52%;
-    --chart-5: 340 62% 48%;
-    --chart-6: 190 68% 34%;
+    --chart-1: 200 60% 36%;
+    --chart-2: 155 45% 32%;
+    --chart-3: 28 70% 42%;
+    --chart-4: 250 35% 46%;
+    --chart-5: 340 50% 44%;
+    --chart-6: 190 55% 34%;
 
-    --radius: 0.25rem;
+    --radius: 0.125rem;
   }
 }
 
@@ -91,12 +91,49 @@
 
 /* Reusable editorial section heading with a hairline rule. */
 .section-rule {
-  @apply mb-5 flex items-baseline justify-between gap-4 border-b pb-2;
+  @apply mb-5 flex items-start justify-between gap-4 border-b border-border pb-3;
 }
 
 /* Inline text links read like reference links. */
 .link-editorial {
   @apply text-primary underline-offset-2 hover:underline;
+}
+
+/* Statistical data panel — full-bleed white block with top/bottom rules, not a SaaS card. */
+.data-panel {
+  @apply border-y border-border bg-card;
+}
+
+.data-panel-pad {
+  @apply px-0 py-5 sm:px-1;
+}
+
+/* Dense reference tables */
+.table-stat thead th {
+  @apply h-9 border-b border-border bg-muted/40 px-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground;
+}
+.table-stat tbody td {
+  @apply px-2 py-2.5;
+}
+.table-stat tbody tr:hover {
+  @apply bg-muted/30;
+}
+
+/* Key figures strip (country / city profiles) */
+.key-figures {
+  @apply grid gap-0 border-y border-border sm:grid-cols-2 lg:grid-cols-4;
+}
+.key-figure {
+  @apply border-b border-border px-0 py-4 sm:border-b-0 sm:border-r sm:px-5 sm:first:pl-0 sm:last:border-r-0 sm:last:pr-0;
+}
+.key-figure-label {
+  @apply text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground;
+}
+.key-figure-value {
+  @apply mt-1.5 font-serif text-2xl font-semibold tracking-tight text-primary tabular-nums;
+}
+.key-figure-sub {
+  @apply mt-1 text-xs text-muted-foreground;
 }
 
 /* Recharts SVG text — inherit site sans */
@@ -126,11 +163,23 @@
   border-radius: 6px !important;
   margin-bottom: 4px;
 }
-/* Crisper vector edges + subtle depth so filled countries read clearly */
+.leaflet-container.br-cinema-map .leaflet-control-zoom a {
+  background: rgba(20, 20, 20, 0.9) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+/* Crisper vector edges — dark hairline seams (never fill-matched strokes). */
 .leaflet-container svg path {
   stroke-linejoin: round;
   stroke-linecap: round;
   shape-rendering: geometricPrecision;
+}
+.leaflet-container.br-cinema-map {
+  background: #0a0a0a !important;
+}
+.leaflet-container.br-cinema-map svg path {
+  /* Stroke under fill so coasts melt into the ocean; seams stay between fills. */
+  paint-order: stroke fill;
 }
 .leaflet-tooltip {
   border: 1px solid hsl(var(--border));
@@ -139,6 +188,30 @@
   border-radius: var(--radius);
   box-shadow: 0 4px 16px rgb(0 0 0 / 0.15);
   font-size: 12px;
+}
+.leaflet-tooltip.br-map-tooltip {
+  border: none;
+  background: hsl(213 40% 11% / 0.92);
+  color: #fff;
+  border-radius: 2px;
+  padding: 8px 10px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
+}
+.br-map-tip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  line-height: 1.25;
+}
+.br-map-tip-name {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.br-map-tip-val {
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.78;
 }
 .leaflet-tooltip-top:before,
 .leaflet-tooltip-bottom:before,

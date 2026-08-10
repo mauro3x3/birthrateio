@@ -17,15 +17,14 @@ export default function DemographicsPage() {
     <div>
       <PageHeader
         title="US Demographics Map"
-        description={`Race and Hispanic origin by state · ${US_DEMOGRAPHICS_META.release.name}. More countries and finer geographies (counties) can follow where official data exists.`}
+        description={`Race and Hispanic origin by state · ACS ${US_DEMOGRAPHICS_META.year}. Click a state for its profile.`}
       />
       <div className="container space-y-6 py-8">
         <UsDemographicsExplorer />
         <p className="text-xs leading-relaxed text-muted-foreground">
           Source: {US_DEMOGRAPHICS_META.source}. Hispanic origin is asked
-          separately from race; people who are Hispanic may be of any race. Shares
-          are of total resident population. Map geometries are simplified state
-          boundaries for visualization.
+          separately from race; people who are Hispanic may be of any race.
+          Shares are of total resident population.
         </p>
       </div>
     </div>

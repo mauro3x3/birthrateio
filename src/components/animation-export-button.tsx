@@ -32,6 +32,7 @@ export interface AnimationExportButtonProps {
   onDone?: () => void;
   disabled?: boolean;
   maxGifWidth?: number;
+  className?: string;
 }
 
 export function AnimationExportButton({
@@ -44,6 +45,7 @@ export function AnimationExportButton({
   onDone,
   disabled,
   maxGifWidth = 900,
+  className,
 }: AnimationExportButtonProps) {
   const [busy, setBusy] = React.useState(false);
   const [pct, setPct] = React.useState(0);
@@ -81,7 +83,7 @@ export function AnimationExportButton({
 
   if (busy) {
     return (
-      <Button variant="outline" size="sm" disabled>
+      <Button variant="outline" size="sm" disabled className={className}>
         <Loader2 className="h-4 w-4 animate-spin" />
         Exporting {pct}%
       </Button>
@@ -91,7 +93,7 @@ export function AnimationExportButton({
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="sm" disabled={disabled}>
+        <Button variant="outline" size="sm" disabled={disabled} className={className}>
           <Download className="h-4 w-4" />
           Export
         </Button>

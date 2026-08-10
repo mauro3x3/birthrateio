@@ -1,3 +1,4 @@
+import { TopicCrumb } from "@/components/topic-crumb";
 import { cn } from "@/lib/utils";
 
 export function PageHeader({
@@ -12,19 +13,22 @@ export function PageHeader({
   className?: string;
 }) {
   return (
-    <div className={cn("border-b bg-background", className)}>
-      <div className="container flex flex-col gap-3 py-7 md:flex-row md:items-end md:justify-between">
-        <div className="space-y-1.5">
-          <h1 className="font-serif text-2xl font-semibold tracking-tight md:text-3xl">
+    <div className={cn("border-b border-border bg-card", className)}>
+      <div className="container flex flex-col gap-3 py-6 md:flex-row md:items-end md:justify-between md:py-8">
+        <div className="space-y-2">
+          <TopicCrumb />
+          <h1 className="font-serif text-3xl font-bold tracking-tight text-primary md:text-4xl">
             {title}
           </h1>
           {description && (
-            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-[0.95rem]">
               {description}
             </p>
           )}
         </div>
-        {children && <div className="flex items-center gap-2">{children}</div>}
+        {children && (
+          <div className="flex shrink-0 items-center gap-2">{children}</div>
+        )}
       </div>
     </div>
   );

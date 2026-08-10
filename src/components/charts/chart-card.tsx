@@ -2,15 +2,7 @@
 
 import * as React from "react";
 import { toPng } from "html-to-image";
-import { Download, ImageDown } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { SectionHeading } from "@/components/section-heading";
 import { downloadFile, toCSV } from "@/lib/utils";
 
 export interface ChartCardProps {
@@ -54,44 +46,38 @@ export function ChartCard({
   }, [csvRows, csvName]);
 
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0">
-        <div className="space-y-1">
-          <CardTitle className="text-base">{title}</CardTitle>
-          {description && <CardDescription>{description}</CardDescription>}
-        </div>
-        <div className="flex items-center gap-1">
-          {action}
-          {csvRows && csvRows.length > 0 && (
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleCsv}
-              aria-label="Download CSV"
-              title="Download CSV"
+    <section className="border-t border-border pt-5">
+      <SectionHeading
+        title={title}
+        description={description}
+        actions={
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
+            {action}
+            {csvRows && csvRows.length > 0 && (
+              <button
+                type="button"
+                onClick={handleCsv}
+                className="link-editorial font-medium"
+              >
+                Download CSV
+              </button>
+            )}
+            <button
+              type="button"
+              onClick={handlePng}
+              className="link-editorial font-medium"
             >
-              <Download className="h-4 w-4" />
-            </Button>
-          )}
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={handlePng}
-            aria-label="Download PNG"
-            title="Download PNG"
-          >
-            <ImageDown className="h-4 w-4" />
-          </Button>
-        </div>
-      </CardHeader>
-      <CardContent>
-        <div ref={ref} className="bg-card">
-          {children}
-        </div>
-        {source && (
-          <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
-        )}
-      </CardContent>
-    </Card>
+              Download PNG
+            </button>
+          </div>
+        }
+      />
+      <div ref={ref} className="bg-transparent">
+        {children}
+      </div>
+      {source && (
+        <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
+      )}
+    </section>
   );
 }

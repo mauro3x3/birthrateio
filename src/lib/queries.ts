@@ -591,7 +591,17 @@ export async function getCities(limit = 200) {
   return prisma.city.findMany({
     orderBy: { population: "desc" },
     take: limit,
-    include: { country: { select: { name: true, slug: true, flagEmoji: true } } },
+    include: {
+      country: {
+        select: {
+          name: true,
+          slug: true,
+          flagEmoji: true,
+          continent: true,
+          iso3: true,
+        },
+      },
+    },
   });
 }
 

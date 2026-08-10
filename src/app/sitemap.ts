@@ -8,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url;
   const staticRoutes = [
     "",
+    "/topics",
     "/fertility",
     "/population",
     "/migration",
