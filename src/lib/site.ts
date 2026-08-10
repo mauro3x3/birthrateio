@@ -10,9 +10,12 @@ export const siteConfig = {
   },
 };
 
-/** Ko-fi, Stripe Payment Link, PayPal, etc. Amount/frequency query params are appended. */
+/** Buy Me a Coffee, Ko-fi, Stripe Payment Link, PayPal, etc. */
 export const supportConfig = {
-  donationUrl: process.env.NEXT_PUBLIC_DONATION_URL ?? "",
+  donationUrl:
+    process.env.NEXT_PUBLIC_DONATION_URL ??
+    "https://buymeacoffee.com/kinderheimrune",
+  providerName: "Buy Me a Coffee",
   suggestedAmounts: [5, 10, 25, 50, 100],
   currency: "USD",
 };
