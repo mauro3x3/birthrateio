@@ -7,8 +7,13 @@ import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
-import { PointMap } from "@/components/maps/point-map";
 import { CitySubdivisionsTable } from "@/components/city-subdivisions";
+import { CityDistrictsExplorer } from "@/components/city-districts-explorer";
+import {
+  CITY_DISTRICT_MAPS,
+  enrichNewYorkDistrictRows,
+  type CityDistrictRow,
+} from "@/lib/city-district-maps";
 import {
   getCityBySlug,
   getCityPopulationSeries,
@@ -610,39 +615,50 @@ export default async function CityPage({
           />
         )}
 
-        {/* Neighborhoods / wards / boroughs */}
-        {subdivisions.length > 0 && (
-          <CitySubdivisionsTable
-            cityName={city.name}
-            rows={subdivisions.map((s) => ({
+        {/* Districts / wards / boroughs — choropleth when geo exists */}
+        {(() => {
+          const mapCfg = CITY_DISTRICT_MAPS[slug];
+          if (mapCfg && subdivisions.length > 0) {
+            let districtRows: CityDistrictRow[] = subdivisions.map((s) => ({
               slug: s.slug,
               name: s.name,
-              kind: s.kind,
               population: s.population,
-              year: s.year,
               areaKm2: s.areaKm2,
-              sourceNote: s.sourceNote,
-              sourceUrl: s.sourceUrl,
-            }))}
-          />
-        )}
-
-        {/* Map — secondary visual, not the hero */}
-        {city.latitude && city.longitude && (
-          <section className="space-y-2">
-            <h2 className="text-xl font-semibold tracking-tight">Location</h2>
-            <PointMap
-              lat={city.latitude}
-              lng={city.longitude}
-              label={`${city.name}, ${city.country.name}`}
-              height={280}
-            />
-            <p className="text-xs text-muted-foreground">
-              Coordinates {city.latitude.toFixed(2)}, {city.longitude.toFixed(2)}{" "}
-              · map tiles © OpenStreetMap / CARTO
-            </p>
-          </section>
-        )}
+              year: s.year,
+            }));
+            if (slug === "new-york") {
+              districtRows = enrichNewYorkDistrictRows(districtRows);
+            }
+            return (
+              <CityDistrictsExplorer
+                cityName={city.name}
+                citySlug={slug}
+                kindLabel={mapCfg.kindLabel}
+                geoUrl={mapCfg.geoUrl}
+                source={mapCfg.source}
+                rows={districtRows}
+              />
+            );
+          }
+          if (subdivisions.length > 0) {
+            return (
+              <CitySubdivisionsTable
+                cityName={city.name}
+                rows={subdivisions.map((s) => ({
+                  slug: s.slug,
+                  name: s.name,
+                  kind: s.kind,
+                  population: s.population,
+                  year: s.year,
+                  areaKm2: s.areaKm2,
+                  sourceNote: s.sourceNote,
+                  sourceUrl: s.sourceUrl,
+                }))}
+              />
+            );
+          }
+          return null;
+        })()}
 
         {/* National context */}
         <section>

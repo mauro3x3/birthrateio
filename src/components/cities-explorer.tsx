@@ -90,9 +90,9 @@ export function CitiesExplorer({ cities }: { cities: CityRow[] }) {
           <p className="text-[0.65rem] font-semibold uppercase tracking-[0.16em] text-white/40">
             Cities
           </p>
-          <h1 className="truncate font-serif text-xl font-semibold tracking-tight sm:text-2xl">
+          <h1 className="truncate font-serif text-xl font-semibold tracking-tight text-white sm:text-2xl">
             {region === "All" ? "World metros" : regionLabel(region)}
-            <span className="ml-2 font-sans text-sm font-normal text-white/45">
+            <span className="ml-2 font-sans text-sm font-normal text-white/60">
               {filtered.length} cities · {formatCompact(totalPop)} people
             </span>
           </h1>

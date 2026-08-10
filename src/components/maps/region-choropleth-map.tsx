@@ -106,7 +106,13 @@ function normalizeAntimeridianGeo(geo: GeoJsonObject): GeoJsonObject {
  * Chukotka), Leaflet's native getBounds() spans ~360° of longitude and the
  * map looks empty — shift western longitudes by +360° for framing only.
  */
-function FitGeo({ geo }: { geo: GeoJsonObject }) {
+function FitGeo({
+  geo,
+  maxZoom = 5.5,
+}: {
+  geo: GeoJsonObject;
+  maxZoom?: number;
+}) {
   const map = useMap();
   React.useEffect(() => {
     try {
@@ -129,13 +135,13 @@ function FitGeo({ geo }: { geo: GeoJsonObject }) {
         L.latLng(maxLat, maxLng),
       );
       if (b.isValid()) {
-        map.fitBounds(b, { padding: [28, 28], maxZoom: 5.5 });
+        map.fitBounds(b, { padding: [28, 28], maxZoom });
       }
     } catch {
       /* ignore */
     }
     setTimeout(() => map.invalidateSize(), 60);
-  }, [map, geo]);
+  }, [map, geo, maxZoom]);
   return null;
 }
 
@@ -152,6 +158,10 @@ export function RegionChoroplethMap({
   legend,
   /** "bounds" fits the geo layer; "usa" frames the contiguous US. */
   fit = "bounds",
+  /** Max zoom when fitting to geo bounds (city layers need higher). */
+  fitMaxZoom = 5.5,
+  /** When false, polygons are not clickable for navigation. */
+  navigate = true,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
@@ -164,6 +174,8 @@ export function RegionChoroplethMap({
   variant?: "light" | "cinema";
   legend?: { label: string; color: string }[];
   fit?: "bounds" | "usa";
+  fitMaxZoom?: number;
+  navigate?: boolean;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
@@ -260,11 +272,12 @@ export function RegionChoroplethMap({
           );
         },
         click: () => {
-          if (datum?.slug) router.push(`${hrefPrefix}/${datum.slug}`);
+          if (!navigate || !datum?.slug) return;
+          router.push(`${hrefPrefix}/${datum.slug}`);
         },
       });
     },
-    [byId, cinema, decimals, featureId, hrefPrefix, router, style, unit],
+    [byId, cinema, decimals, featureId, hrefPrefix, navigate, router, style, unit],
   );
 
   const center: [number, number] = fit === "usa" ? [39.8, -98.5] : [20, 0];
@@ -287,13 +300,17 @@ export function RegionChoroplethMap({
           zoom={zoom}
           zoomSnap={0.25}
           minZoom={1}
-          maxZoom={8}
+          maxZoom={Math.max(8, Math.ceil(fitMaxZoom + 2))}
           scrollWheelZoom
           zoomControl={false}
           className={cinema ? "br-cinema-map" : undefined}
           style={{ height: "100%", width: "100%", background: ocean }}
         >
-          {fit === "usa" ? <FitUsaContiguous /> : <FitGeo geo={geo} />}
+          {fit === "usa" ? (
+            <FitUsaContiguous />
+          ) : (
+            <FitGeo geo={geo} maxZoom={fitMaxZoom} />
+          )}
           <ZoomControl position="bottomright" />
           <GeoJSON
             key={revision ?? "regions"}

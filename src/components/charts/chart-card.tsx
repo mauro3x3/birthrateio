@@ -16,6 +16,14 @@ export interface ChartCardProps {
   action?: React.ReactNode;
 }
 
+function csvPreamble(title: string, description?: string, source?: string) {
+  const lines = [`# ${title}`];
+  if (description) lines.push(`# ${description.replace(/\s+/g, " ").trim()}`);
+  if (source) lines.push(`# Source: ${source}`);
+  lines.push(`# Downloaded from birthrate.io`);
+  return `${lines.join("\n")}\n`;
+}
+
 export function ChartCard({
   title,
   description,
@@ -29,10 +37,14 @@ export function ChartCard({
 
   const handlePng = React.useCallback(async () => {
     if (!ref.current) return;
-    const bg = getComputedStyle(document.body).backgroundColor;
+    const bg = getComputedStyle(document.body).backgroundColor || "#ffffff";
     const dataUrl = await toPng(ref.current, {
       backgroundColor: bg,
       pixelRatio: 2,
+      filter: (node) => {
+        if (!(node instanceof HTMLElement)) return true;
+        return node.dataset.exportIgnore == null;
+      },
     });
     const a = document.createElement("a");
     a.href = dataUrl;
@@ -42,42 +54,49 @@ export function ChartCard({
 
   const handleCsv = React.useCallback(() => {
     if (!csvRows || csvRows.length === 0) return;
-    downloadFile(`${csvName}.csv`, toCSV(csvRows));
-  }, [csvRows, csvName]);
+    const body = toCSV(csvRows);
+    downloadFile(
+      `${csvName}.csv`,
+      `${csvPreamble(title, description, source)}${body}`,
+    );
+  }, [csvRows, csvName, title, description, source]);
 
   return (
     <section className="border-t border-border pt-5">
-      <SectionHeading
-        title={title}
-        description={description}
-        actions={
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs">
-            {action}
-            {csvRows && csvRows.length > 0 && (
+      <div ref={ref} className="bg-background">
+        <SectionHeading
+          title={title}
+          description={description}
+          actions={
+            <div
+              data-export-ignore
+              className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
+            >
+              {action}
+              {csvRows && csvRows.length > 0 && (
+                <button
+                  type="button"
+                  onClick={handleCsv}
+                  className="link-editorial font-medium"
+                >
+                  Download CSV
+                </button>
+              )}
               <button
                 type="button"
-                onClick={handleCsv}
+                onClick={handlePng}
                 className="link-editorial font-medium"
               >
-                Download CSV
+                Download PNG
               </button>
-            )}
-            <button
-              type="button"
-              onClick={handlePng}
-              className="link-editorial font-medium"
-            >
-              Download PNG
-            </button>
-          </div>
-        }
-      />
-      <div ref={ref} className="bg-transparent">
+            </div>
+          }
+        />
         {children}
+        {source && (
+          <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
+        )}
       </div>
-      {source && (
-        <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
-      )}
     </section>
   );
 }
