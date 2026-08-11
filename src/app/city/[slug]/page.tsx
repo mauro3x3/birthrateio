@@ -5,6 +5,7 @@ import { Building2, MapPin, TrendingUp, TrendingDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
+import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { CitySubdivisionsTable } from "@/components/city-subdivisions";
@@ -160,6 +161,7 @@ export default async function CityPage({
   };
 
   return (
+    <ChartBrandProvider subject={city.name} path={`/city/${slug}`}>
     <div>
       <script
         type="application/ld+json"
@@ -722,5 +724,6 @@ export default async function CityPage({
         </section>
       </div>
     </div>
+    </ChartBrandProvider>
   );
 }

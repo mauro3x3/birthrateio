@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
+import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { PopulationPyramid } from "@/components/charts/population-pyramid";
@@ -341,6 +342,7 @@ export default async function CountryPage({
   };
 
   return (
+    <ChartBrandProvider subject={country.name} path={`/country/${slug}`}>
     <div>
       <script
         type="application/ld+json"
@@ -1463,5 +1465,6 @@ export default async function CountryPage({
         )}
       </div>
     </div>
+    </ChartBrandProvider>
   );
 }

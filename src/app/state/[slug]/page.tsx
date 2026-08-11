@@ -5,6 +5,7 @@ import { MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
+import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import {
   getAdmin1BySlug,
@@ -97,6 +98,7 @@ export default async function StatePage({
   const kindLabel = KIND_LABEL[admin1.kind] ?? admin1.kind;
 
   return (
+    <ChartBrandProvider subject={admin1.name} path={`/state/${slug}`}>
     <div>
       <div className="border-b bg-muted/30">
         <div className="container space-y-4 py-8">
@@ -259,5 +261,6 @@ export default async function StatePage({
         </p>
       </div>
     </div>
+    </ChartBrandProvider>
   );
 }

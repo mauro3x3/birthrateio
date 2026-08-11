@@ -35,7 +35,7 @@ export function SiteFooter() {
               Donate
             </Link>
             <Link href="/contribute" className="text-primary hover:underline">
-              Contribute
+              Help improve the data
             </Link>
           </div>
         </div>

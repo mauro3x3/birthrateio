@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useSearchParams } from "next/navigation";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -25,16 +26,27 @@ const CATEGORIES = [
 type Category = (typeof CATEGORIES)[number]["value"];
 
 export function TipForm() {
+  const searchParams = useSearchParams();
+  const about = searchParams.get("about")?.trim() ?? "";
+
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [url, setUrl] = React.useState("");
-  const [subject, setSubject] = React.useState("");
+  const [subject, setSubject] = React.useState(about);
   const [category, setCategory] = React.useState<Category>("tfr");
-  const [message, setMessage] = React.useState("");
+  const [message, setMessage] = React.useState(
+    about ? `Re: ${about}\n\n` : "",
+  );
   const [status, setStatus] = React.useState<"idle" | "loading" | "ok" | "err">(
     "idle",
   );
   const [error, setError] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    if (!about) return;
+    setSubject((s) => s || about);
+    setMessage((m) => (m.trim() ? m : `Re: ${about}\n\n`));
+  }, [about]);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();

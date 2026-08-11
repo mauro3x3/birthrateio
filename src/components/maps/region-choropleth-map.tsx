@@ -149,7 +149,7 @@ export function RegionChoroplethMap({
   geoUrl,
   data,
   colorFor,
-  unit = "%",
+  unit = "",
   decimals = 1,
   height = 560,
   hrefPrefix = "/state",
@@ -162,6 +162,10 @@ export function RegionChoroplethMap({
   fitMaxZoom = 5.5,
   /** When false, polygons are not clickable for navigation. */
   navigate = true,
+  /** Override legend header (defaults from unit). */
+  legendTitle,
+  /** Custom value formatter for tooltips (defaults to locale + unit). */
+  formatValue,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
@@ -176,6 +180,8 @@ export function RegionChoroplethMap({
   fit?: "bounds" | "usa";
   fitMaxZoom?: number;
   navigate?: boolean;
+  legendTitle?: string;
+  formatValue?: (value: number) => string;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
@@ -248,10 +254,12 @@ export function RegionChoroplethMap({
         ((feature.properties as { name?: string } | null)?.name ?? "Unknown");
       const valueText =
         datum !== undefined
-          ? `${datum.value.toLocaleString("en-US", {
-              maximumFractionDigits: decimals,
-              minimumFractionDigits: Math.min(decimals, 1),
-            })}${unit ? ` ${unit}` : ""}`
+          ? formatValue
+            ? formatValue(datum.value)
+            : `${datum.value.toLocaleString("en-US", {
+                maximumFractionDigits: decimals,
+                minimumFractionDigits: Math.min(decimals, 1),
+              })}${unit ? ` ${unit}` : ""}`
           : "No data";
       layer.bindTooltip(
         `<div class="br-map-tip"><span class="br-map-tip-name">${name}</span><span class="br-map-tip-val">${valueText}</span></div>`,
@@ -277,7 +285,18 @@ export function RegionChoroplethMap({
         },
       });
     },
-    [byId, cinema, decimals, featureId, hrefPrefix, navigate, router, style, unit],
+    [
+      byId,
+      cinema,
+      decimals,
+      featureId,
+      formatValue,
+      hrefPrefix,
+      navigate,
+      router,
+      style,
+      unit,
+    ],
   );
 
   const center: [number, number] = fit === "usa" ? [39.8, -98.5] : [20, 0];
@@ -345,7 +364,8 @@ export function RegionChoroplethMap({
               cinema ? "text-white/45" : "text-muted-foreground",
             )}
           >
-            {unit === "%" ? "Percent of population" : unit || "Value"}
+            {legendTitle ??
+              (unit === "%" ? "Percent of population" : unit || "Value")}
           </p>
           <ul className="space-y-1">
             {legend.map((bin) => (

@@ -6,6 +6,7 @@ import { Pause, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { AnimationExportButton } from "@/components/animation-export-button";
+import { HelpImproveData } from "@/components/help-improve-data";
 import { buildColorScale, type ScaleType } from "@/lib/color-scale";
 import { formatByUnit, slugify } from "@/lib/utils";
 import type { ChoroplethDatum } from "./choropleth-map";
@@ -297,11 +298,14 @@ export function MapCard({
       </div>
 
       {source && (
-        <p className="border-t border-border px-4 py-2 text-[0.7rem] text-muted-foreground sm:px-5">
-          Source: {source}
-          {current ? ` · ${current.year}` : ""}
-          {unit ? ` · ${unit}` : ""}
-        </p>
+        <div className="space-y-1.5 border-t border-border px-4 py-2 sm:px-5">
+          <p className="text-[0.7rem] text-muted-foreground">
+            Source: {source}
+            {current ? ` · ${current.year}` : ""}
+            {unit ? ` · ${unit}` : ""}
+          </p>
+          <HelpImproveData context={title} />
+        </div>
       )}
     </section>
   );

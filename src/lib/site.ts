@@ -141,7 +141,7 @@ export const navTopics: NavTopic[] = [
         description: "Upcoming data releases",
       },
       {
-        title: "Report data",
+        title: "Help improve the data",
         href: "/contribute",
         description: "Suggest a correction or new series",
       },
@@ -155,6 +155,7 @@ export const primaryNav: NavLink[] = [
   { title: "Tools", href: "/topics#tools" },
   { title: "Cities", href: "/cities" },
   { title: "Clock", href: "/clock" },
+  { title: "Contribute", href: "/contribute" },
 ];
 
 /** Flat list of every content page (sitemap, assistants, legacy). */

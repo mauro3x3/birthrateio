@@ -4,6 +4,7 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import { buildColorScale } from "@/lib/color-scale";
 import { cn, formatCompact, formatNumber } from "@/lib/utils";
+import { HelpImproveData } from "@/components/help-improve-data";
 import {
   availableDistrictMetrics,
   districtMetricDef,
@@ -151,13 +152,15 @@ export function CityDistrictsExplorer({
           geoUrl={geoUrl}
           data={mapData}
           colorFor={scale.color}
-          unit={def.unit || undefined}
+          unit={def.unit}
           decimals={def.decimals}
           height={420}
           fitMaxZoom={11}
           navigate={false}
           revision={`${metric}-${mapData.length}`}
           legend={legend}
+          legendTitle={def.label}
+          formatValue={(v) => formatMetric(v, metric)}
         />
 
         <ol className="max-h-[420px] overflow-y-auto border-t border-border lg:border-l lg:border-t-0">
@@ -190,7 +193,10 @@ export function CityDistrictsExplorer({
         </ol>
       </div>
 
-      <p className="text-xs text-muted-foreground">Source: {source}</p>
+      <div className="space-y-1.5">
+        <p className="text-xs text-muted-foreground">Source: {source}</p>
+        <HelpImproveData context={`${kindLabel} of ${cityName}`} />
+      </div>
     </section>
   );
 }

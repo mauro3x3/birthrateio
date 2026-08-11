@@ -3,12 +3,17 @@
 import * as React from "react";
 import { toPng } from "html-to-image";
 import { SectionHeading } from "@/components/section-heading";
+import { HelpImproveData } from "@/components/help-improve-data";
+import { useChartBrand } from "@/components/charts/chart-brand";
+import { siteConfig } from "@/lib/site";
 import { downloadFile, toCSV } from "@/lib/utils";
 
 export interface ChartCardProps {
   title: string;
   description?: string;
   source?: string;
+  /** Override context subject for this chart only. */
+  subject?: string;
   /** Rows used for the CSV export. */
   csvRows?: Record<string, unknown>[];
   csvName?: string;
@@ -16,11 +21,22 @@ export interface ChartCardProps {
   action?: React.ReactNode;
 }
 
-function csvPreamble(title: string, description?: string, source?: string) {
-  const lines = [`# ${title}`];
-  if (description) lines.push(`# ${description.replace(/\s+/g, " ").trim()}`);
-  if (source) lines.push(`# Source: ${source}`);
-  lines.push(`# Downloaded from birthrate.io`);
+function csvPreamble(opts: {
+  title: string;
+  description?: string;
+  source?: string;
+  subject?: string;
+  path?: string;
+}) {
+  const lines: string[] = [];
+  if (opts.subject) lines.push(`# ${opts.subject}`);
+  lines.push(`# ${opts.title}`);
+  if (opts.description) {
+    lines.push(`# ${opts.description.replace(/\s+/g, " ").trim()}`);
+  }
+  if (opts.source) lines.push(`# Source: ${opts.source}`);
+  const site = opts.path ? `birthrate.io${opts.path}` : siteConfig.name;
+  lines.push(`# ${site}`);
   return `${lines.join("\n")}\n`;
 }
 
@@ -28,11 +44,15 @@ export function ChartCard({
   title,
   description,
   source,
+  subject: subjectProp,
   csvRows,
   csvName = "chart-data",
   children,
   action,
 }: ChartCardProps) {
+  const brand = useChartBrand();
+  const subject = subjectProp ?? brand.subject;
+  const path = brand.path;
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handlePng = React.useCallback(async () => {
@@ -57,13 +77,33 @@ export function ChartCard({
     const body = toCSV(csvRows);
     downloadFile(
       `${csvName}.csv`,
-      `${csvPreamble(title, description, source)}${body}`,
+      `${csvPreamble({ title, description, source, subject, path })}${body}`,
     );
-  }, [csvRows, csvName, title, description, source]);
+  }, [csvRows, csvName, title, description, source, subject, path]);
+
+  const shareUrl = path
+    ? `birthrate.io${path}`
+    : siteConfig.name;
 
   return (
     <section className="border-t border-border pt-5">
-      <div ref={ref} className="bg-background">
+      <div ref={ref} className="bg-background px-0.5">
+        <div className="mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
+          {subject ? (
+            <p className="min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
+              {subject}
+            </p>
+          ) : (
+            <p className="min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
+              {siteConfig.name}
+            </p>
+          )}
+          {subject ? (
+            <p className="shrink-0 text-[0.7rem] font-medium text-muted-foreground">
+              {siteConfig.name}
+            </p>
+          ) : null}
+        </div>
         <SectionHeading
           title={title}
           description={description}
@@ -93,9 +133,15 @@ export function ChartCard({
           }
         />
         {children}
-        {source && (
-          <p className="mt-3 text-xs text-muted-foreground">Source: {source}</p>
-        )}
+        <div className="mt-3 space-y-1">
+          {source && (
+            <p className="text-xs text-muted-foreground">Source: {source}</p>
+          )}
+          <p className="text-[0.7rem] text-muted-foreground/80">{shareUrl}</p>
+        </div>
+      </div>
+      <div data-export-ignore className="mt-1.5">
+        <HelpImproveData context={subject ? `${subject} — ${title}` : title} />
       </div>
     </section>
   );

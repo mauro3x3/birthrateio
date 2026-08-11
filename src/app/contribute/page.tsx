@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { PageHeader } from "@/components/page-header";
 import { TipForm } from "@/components/tip-form";
 
 export const metadata: Metadata = {
-  title: "Contribute — Report New Demographic Data",
+  title: "Help Improve the Data — Contribute to birthrate.io",
   description:
-    "Tip us when a national statistical office, UN agency, or other official source releases new fertility, population, migration, or city data.",
+    "Suggest a correction, better estimate, or newly released fertility, population, migration, or city figure from an official source.",
   alternates: { canonical: "/contribute" },
 };
 
@@ -14,8 +15,8 @@ export default function ContributePage() {
   return (
     <div>
       <PageHeader
-        title="Report new data"
-        description="Help us keep birthrate.io current. When an official source publishes a new figure, send us a tip."
+        title="Help improve the data"
+        description="Have a correction, a better estimate, or additional data—at the global, national, regional, or city level? Send a tip and we'll review it."
       />
 
       <div className="container max-w-2xl space-y-8 py-8 md:py-12">
@@ -24,7 +25,8 @@ export default function ContributePage() {
             We ingest World Bank, UN, and OECD series on a schedule, but
             national offices often publish country or city updates first. If you
             spot a new TFR release, census count, migration bulletin, or city
-            fertility figure, tell us — with a link if you have one.
+            figure — or something wrong on a page — tell us, with a link when
+            you have one.
           </p>
           <p>
             Tips are reviewed by hand. We only add numbers we can verify against
@@ -39,7 +41,11 @@ export default function ContributePage() {
           </p>
         </section>
 
-        <TipForm />
+        <Suspense
+          fallback={<div className="h-64 animate-pulse border bg-muted/30" />}
+        >
+          <TipForm />
+        </Suspense>
       </div>
     </div>
   );
