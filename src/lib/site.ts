@@ -77,6 +77,11 @@ export const navTopics: NavTopic[] = [
         description: "Race and Hispanic-origin map for U.S. states",
       },
       {
+        title: "UK census",
+        href: "/demographics/uk",
+        description: "ONS Census 2021 ethnic group by LAD and MSOA",
+      },
+      {
         title: "Cities",
         href: "/cities",
         description: "World metropolitan areas database",

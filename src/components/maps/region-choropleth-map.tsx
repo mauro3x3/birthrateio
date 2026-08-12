@@ -166,6 +166,8 @@ export function RegionChoroplethMap({
   legendTitle,
   /** Custom value formatter for tooltips (defaults to locale + unit). */
   formatValue,
+  /** Only render / fit these feature ids (e.g. MSOAs inside one LAD). */
+  filterIds,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
@@ -182,6 +184,7 @@ export function RegionChoroplethMap({
   navigate?: boolean;
   legendTitle?: string;
   formatValue?: (value: number) => string;
+  filterIds?: string[] | null;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
@@ -204,6 +207,30 @@ export function RegionChoroplethMap({
     };
   }, [geoUrl]);
 
+  const filterSet = React.useMemo(() => {
+    if (!filterIds?.length) return null;
+    return new Set(filterIds);
+  }, [filterIds]);
+
+  const displayGeo = React.useMemo(() => {
+    if (!geo || !filterSet) return geo;
+    const fc = geo as FeatureCollection;
+    if (!Array.isArray(fc.features)) return geo;
+    return {
+      type: "FeatureCollection",
+      features: fc.features.filter((f) => {
+        const p = (f.properties ?? {}) as Record<string, unknown>;
+        const id =
+          (typeof p.code === "string" && p.code) ||
+          (typeof p.id === "string" && p.id) ||
+          (typeof p.MSOA21CD === "string" && p.MSOA21CD) ||
+          (typeof p.LAD22CD === "string" && p.LAD22CD) ||
+          (f.id != null ? String(f.id) : "");
+        return id ? filterSet.has(id) : false;
+      }),
+    } as FeatureCollection;
+  }, [geo, filterSet]);
+
   const byId = React.useMemo(() => {
     const m = new Map<string, RegionChoroplethDatum>();
     for (const d of data) {
@@ -217,13 +244,23 @@ export function RegionChoroplethMap({
     if (!feature) return undefined;
     const p = (feature.properties ?? {}) as Record<string, unknown>;
     if (typeof p.slug === "string" && p.slug) return p.slug;
+    const code =
+      p.code ??
+      p.MSOA21CD ??
+      p.msoa21cd ??
+      p.LAD22CD ??
+      p.lad22cd ??
+      p.GEOID ??
+      p.geoid ??
+      p.id;
+    if (typeof code === "string" && code.length > 2) return code;
+    if (typeof code === "number") return String(code);
     if (feature.id != null && String(feature.id).length > 2) {
-      // Prefer slug-like ids over zero-padded FIPS
       const id = String(feature.id);
-      if (id.includes("-")) return id;
+      if (id.includes("-") || /^[A-Z]\d/.test(id)) return id;
     }
     if (feature.id != null) return String(feature.id).padStart(2, "0");
-    const fp = p.STATEFP ?? p.statefp ?? p.fips ?? p.GEOID;
+    const fp = p.STATEFP ?? p.statefp ?? p.fips;
     if (fp != null) return String(fp).padStart(2, "0");
     return undefined;
   }, []);
@@ -301,6 +338,7 @@ export function RegionChoroplethMap({
 
   const center: [number, number] = fit === "usa" ? [39.8, -98.5] : [20, 0];
   const zoom = fit === "usa" ? 4.15 : 2;
+  const filterKey = filterSet ? [...filterSet].sort().join(",") : "all";
 
   return (
     <div
@@ -312,14 +350,14 @@ export function RegionChoroplethMap({
       )}
       style={{ height }}
     >
-      {geo ? (
+      {displayGeo ? (
         <MapContainer
-          key={`${geoUrl}-${revision ?? "x"}`}
+          key={`${geoUrl}-${revision ?? "x"}-${filterKey}`}
           center={center}
           zoom={zoom}
           zoomSnap={0.25}
           minZoom={1}
-          maxZoom={Math.max(8, Math.ceil(fitMaxZoom + 2))}
+          maxZoom={Math.max(12, Math.ceil(fitMaxZoom + 2))}
           scrollWheelZoom
           zoomControl={false}
           className={cinema ? "br-cinema-map" : undefined}
@@ -328,12 +366,12 @@ export function RegionChoroplethMap({
           {fit === "usa" ? (
             <FitUsaContiguous />
           ) : (
-            <FitGeo geo={geo} maxZoom={fitMaxZoom} />
+            <FitGeo geo={displayGeo} maxZoom={fitMaxZoom} />
           )}
           <ZoomControl position="bottomright" />
           <GeoJSON
-            key={revision ?? "regions"}
-            data={geo as FeatureCollection}
+            key={`${revision ?? "regions"}-${filterKey}`}
+            data={displayGeo as FeatureCollection}
             style={style}
             onEachFeature={onEach}
           />

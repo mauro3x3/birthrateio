@@ -4,7 +4,7 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import { Pause, Play, RotateCcw } from "lucide-react";
 import { Slider } from "@/components/ui/slider";
-import { formatNumber, cn } from "@/lib/utils";
+import { formatByUnit, cn } from "@/lib/utils";
 import type { ScaleType } from "@/lib/color-scale";
 import {
   MAP_REGIONS,
@@ -214,6 +214,11 @@ export function TimelineExplorer({
     [frames, globalByYear],
   );
 
+  const fmt = React.useCallback(
+    (v: number) => formatByUnit(v, unit, decimals),
+    [unit, decimals],
+  );
+
 
   const yearTicks = React.useMemo(() => {
     if (frames.length < 2) return [];
@@ -271,10 +276,10 @@ export function TimelineExplorer({
               >
                 {region === "all"
                   ? world != null
-                    ? formatNumber(world, decimals)
+                    ? fmt(world)
                     : "—"
                   : mean != null
-                    ? formatNumber(mean, decimals)
+                    ? fmt(mean)
                     : "—"}
               </p>
               <p className="mt-1.5 text-[11px] uppercase tracking-[0.16em] text-white/35">
@@ -305,7 +310,7 @@ export function TimelineExplorer({
                     <span className="text-white/90">{row?.name ?? "—"}</span>
                     {row && (
                       <span className="ml-2 tabular-nums text-[#c49660]">
-                        {formatNumber(row.value, decimals)}
+                        {fmt(row.value)}
                       </span>
                     )}
                   </dd>
@@ -317,7 +322,7 @@ export function TimelineExplorer({
                     Mean
                   </dt>
                   <dd className="tabular-nums text-white/80">
-                    {formatNumber(mean, decimals)}
+                    {fmt(mean)}
                   </dd>
                 </div>
               )}

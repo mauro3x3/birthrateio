@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageHeader } from "@/components/page-header";
-import { MapCard } from "@/components/maps/map-card";
 import { ExplorerTable } from "@/components/explorer-table";
+import { TimelineExplorer } from "@/components/maps/timeline-explorer";
 import {
   getMapFrames,
   getRanking,
@@ -11,7 +10,6 @@ import {
 } from "@/lib/queries";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
-import { formatCompact } from "@/lib/utils";
 
 export const revalidate = 3600;
 
@@ -41,29 +39,32 @@ export default async function GdpPage() {
         getWeightedGlobalByYear(SLUG.gdpPerCapita, SLUG.population, years),
         {} as Record<number, number>,
       );
-  const gdpStats = years
-    .filter((y) => globalGdpPc[y] != null)
-    .map((y) => ({ year: y, label: `World $${formatCompact(globalGdpPc[y])}` }));
+
+  const timelineFrames = frames.map((f) => ({
+    year: f.year,
+    data: f.data.map((d) => ({
+      iso3: d.iso3,
+      slug: d.slug,
+      name: d.name,
+      value: d.value,
+      continent: d.continent,
+    })),
+  }));
 
   return (
     <div>
-      <PageHeader
-        title="GDP Explorer"
-        description="Gross domestic product, GDP per capita and growth rates across the world economy."
+      <TimelineExplorer
+        frames={timelineFrames}
+        globalByYear={globalGdpPc}
+        unit="US$"
+        decimals={0}
+        scaleType="sequential-log"
+        source="World Bank"
+        headline="Global"
+        metricLabel="GDP / capita"
       />
-      <div className="container space-y-8 py-8">
-        <MapCard
-          title="GDP per capita"
-          description="Gross domestic product divided by population (current US$). Scrub the year timeline to see how incomes changed — darker countries are richer on a per-person basis."
-          source="World Bank"
-          frames={frames}
-          unit="US$"
-          decimals={0}
-          scaleType="sequential-log"
-          frameStats={gdpStats}
-          height={400}
-        />
 
+      <div className="container space-y-8 py-10">
         <Card>
           <CardHeader>
             <CardTitle className="text-base">GDP Rankings (total)</CardTitle>
