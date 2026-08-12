@@ -25,11 +25,12 @@ function pathActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
-/** Prefer the current country page when linking to in-page anchors like #trade. */
+/** Prefer the current country page when linking to country anchors like #economy. */
 function resolveTopicHref(href: string, pathname: string) {
-  if (!href.includes("#trade")) return href;
+  if (!href.startsWith("/country/")) return href;
+  if (!href.includes("#economy") && !href.includes("#trade")) return href;
   const match = pathname.match(/^\/country\/([^/]+)/);
-  if (match) return `/country/${match[1]}#trade`;
+  if (match) return `/country/${match[1]}#economy`;
   return href;
 }
 
@@ -38,6 +39,16 @@ function scrollToHash(href: string) {
   if (!hash) return false;
   const el = document.getElementById(hash);
   if (!el) return false;
+  // Country profiles show one panel at a time; the panel switcher listens for
+  // hash changes, so scrolling a hidden panel would be a no-op.
+  if (el.hasAttribute("data-country-panel")) {
+    if (window.location.hash === `#${hash}`) {
+      window.dispatchEvent(new HashChangeEvent("hashchange"));
+    } else {
+      window.location.hash = hash;
+    }
+    return true;
+  }
   el.scrollIntoView({ behavior: "smooth", block: "start" });
   return true;
 }

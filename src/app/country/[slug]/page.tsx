@@ -26,6 +26,7 @@ import { EthnicityPyramid } from "@/components/charts/ethnicity-pyramid";
 import { buildEthnicityPyramid } from "@/lib/ethnicity-pyramid";
 import { RELIGION_COLORS, RELIGION_COLOR_FALLBACK } from "@/lib/sources/religion-data";
 import {
+  getAllCountries,
   getComposition,
   getCompositionLatest,
   getCountryBySlug,
@@ -57,7 +58,10 @@ import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { StackedBarChart } from "@/components/charts/stacked-bar-chart";
 import { CountryTradeSection } from "@/components/country-trade";
-import { HashScroll } from "@/components/hash-scroll";
+import {
+  CountryPanel,
+  CountrySectionNav,
+} from "@/components/country-section-nav";
 import { oecIdForIso3 } from "@/lib/oec-fetch";
 
 export const revalidate = 86400;
@@ -208,6 +212,16 @@ export default async function CountryPage({
     ),
   ]);
 
+  const allCountries = await safe(getAllCountries(), []);
+  const tradeCompareOptions = allCountries
+    .filter((c) => oecIdForIso3(c.iso3))
+    .map((c) => ({
+      slug: c.slug,
+      name: c.name,
+      flagEmoji: c.flagEmoji,
+      iso3: c.iso3,
+    }));
+
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
   const hasCrimeBreakdown =
@@ -337,6 +351,39 @@ export default async function CountryPage({
 
   const s = stats as Record<string, { value: number; year: number } | null>;
 
+  const hasSociety = !!(
+    divorce ||
+    nonmarital ||
+    homeownership ||
+    homicide.length > 0 ||
+    religion.items.length > 0 ||
+    abortion.length > 0
+  );
+  const hasMigrationSection = !!(
+    migration.length > 0 ||
+    workPermitGroupNames.length > 0 ||
+    foreignBorn.length > 0 ||
+    foreignBornShare.length > 0 ||
+    (unemploymentNativeBorn.length > 0 && unemploymentForeignBorn.length > 0) ||
+    immigrationOrigins?.rows.length ||
+    emigrationDestinations?.rows.length
+  );
+  const hasCrimeSection = !!(
+    hasCrimeBreakdown ||
+    foreignPrisonerShare.length > 0 ||
+    crimeAvailability
+  );
+  const navItems = [
+    { id: "overview", label: "Overview" },
+    { id: "economy", label: "Economy" },
+    ...(hasMigrationSection ? [{ id: "migration", label: "Migration" }] : []),
+    { id: "demography", label: "Demography" },
+    ...(hasHistoricMortality ? [{ id: "mortality", label: "Mortality" }] : []),
+    ...(hasSociety ? [{ id: "society", label: "Society" }] : []),
+    ...(admin1Ranking.length > 0 ? [{ id: "states", label: "States" }] : []),
+    ...(hasCrimeSection ? [{ id: "crime", label: "Crime" }] : []),
+  ];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -400,22 +447,18 @@ export default async function CountryPage({
               </Link>
             </Button>
           </div>
-          {oecIdForIso3(country.iso3) ? (
-            <p className="mt-3 text-sm text-muted-foreground">
-              <a
-                href="#trade"
-                className="font-medium text-primary underline-offset-2 hover:underline"
-              >
-                Jump to exports &amp; imports →
-              </a>
-            </p>
-          ) : null}
         </div>
       </div>
 
-      <HashScroll />
-
       <div className="container space-y-8 py-8">
+        <CountrySectionNav items={navItems} />
+
+        <CountryPanel
+          id="overview"
+          title="Overview"
+          description={`Key figures and core demographic trends for ${country.name}.`}
+          defaultVisible
+        >
         {/* Key stats */}
         <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 xl:grid-cols-6">
           <StatCard
@@ -656,7 +699,15 @@ export default async function CountryPage({
               </p>
             </ChartCard>
           )}
+        </div>
+        </CountryPanel>
 
+        <CountryPanel
+          id="economy"
+          title="Economy"
+          description="National accounts and international trade."
+        >
+        <div className="grid gap-6 lg:grid-cols-2">
           <ChartCard
             title="GDP over time"
             description="Current US$"
@@ -672,15 +723,38 @@ export default async function CountryPage({
             />
           </ChartCard>
 
-          {oecIdForIso3(country.iso3) ? (
-            <div className="lg:col-span-2">
-              <CountryTradeSection
-                countryName={country.name}
-                iso3={country.iso3}
-              />
-            </div>
-          ) : null}
+          <ChartCard
+            title="GDP per capita over time"
+            description="Current US$"
+            source="World Bank"
+            csvRows={gdpPerCapita}
+            csvName={`${slug}-gdp-per-capita`}
+          >
+            <TimeSeriesChart
+              data={gdpPerCapita}
+              decimals={0}
+              unit="US$"
+              color="hsl(190 90% 42%)"
+            />
+          </ChartCard>
+        </div>
 
+        {oecIdForIso3(country.iso3) ? (
+          <CountryTradeSection
+            countryName={country.name}
+            iso3={country.iso3}
+            compareOptions={tradeCompareOptions}
+          />
+        ) : null}
+        </CountryPanel>
+
+        {hasMigrationSection && (
+        <CountryPanel
+          id="migration"
+          title="Migration"
+          description={`Net migration, permits, and the foreign-born population of ${country.name}, plus where migrants come from and where the diaspora lives.`}
+        >
+        <div className="grid gap-6 lg:grid-cols-2">
           <ChartCard
             title="Net migration over time"
             description="Net migrants per year (immigrants − emigrants)"
@@ -907,7 +981,14 @@ export default async function CountryPage({
             ) : null}
           </div>
         ) : null}
+        </CountryPanel>
+        )}
 
+        <CountryPanel
+          id="demography"
+          title="Demography"
+          description="Age structure, projections, and population composition."
+        >
         {/* Projections + pyramid */}
         <div className="grid gap-6 lg:grid-cols-2">
           <ChartCard
@@ -1033,60 +1114,16 @@ export default async function CountryPage({
           </ChartCard>
         )}
 
-        {/* Fertility & GDP per capita extra row */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          <ChartCard
-            title="GDP per capita over time"
-            description="Current US$"
-            source="World Bank"
-            csvRows={gdpPerCapita}
-            csvName={`${slug}-gdp-per-capita`}
-          >
-            <TimeSeriesChart
-              data={gdpPerCapita}
-              decimals={0}
-              unit="US$"
-              color="hsl(190 90% 42%)"
-            />
-          </ChartCard>
-
-          {abortion.length > 0 && (
-            <ChartCard
-              title={
-                abortion.length > 1
-                  ? "Abortion rate over time"
-                  : `Abortion rate${
-                      abortion[0]?.year != null ? ` (${abortion[0].year})` : ""
-                    }`
-              }
-              description="Induced abortions per 1,000 women aged 15–49"
-              source="WHO / Guttmacher (compiled)"
-              csvRows={abortion}
-              csvName={`${slug}-abortion-rate`}
-            >
-              <TimeSeriesChart
-                data={abortion}
-                decimals={1}
-                unit="per 1,000"
-                color="hsl(340 82% 52%)"
-              />
-            </ChartCard>
-          )}
-        </div>
+        </CountryPanel>
 
         {hasHistoricMortality && (
-          <section className="space-y-6">
-            <div className="border-b pb-2">
-              <h2 className="text-xl font-semibold tracking-tight">
-                Historic mortality
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Life expectancy, death rates and child mortality as far back as
-                vital registration and historical reconstructions allow
-                {lifeExpStart != null ? ` (from ${lifeExpStart})` : ""}.
-              </p>
-            </div>
-
+          <CountryPanel
+            id="mortality"
+            title="Historic mortality"
+            description={`Life expectancy, death rates and child mortality as far back as vital registration and historical reconstructions allow${
+              lifeExpStart != null ? ` (from ${lifeExpStart})` : ""
+            }.`}
+          >
             <div className="grid gap-6 lg:grid-cols-2">
               {lifeExp.length > 0 && (
                 <ChartCard
@@ -1167,25 +1204,15 @@ export default async function CountryPage({
               </Link>
               .
             </p>
-          </section>
+          </CountryPanel>
         )}
 
-        {/* Society, housing & beliefs */}
-        {(divorce ||
-          nonmarital ||
-          homeownership ||
-          homicide.length > 0 ||
-          religion.items.length > 0) && (
-          <section className="space-y-6">
-            <div className="border-b pb-2">
-              <h2 className="text-xl font-semibold tracking-tight">
-                Society, housing &amp; beliefs
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Family, crime, housing and religion indicators
-              </p>
-            </div>
-
+        {hasSociety && (
+          <CountryPanel
+            id="society"
+            title="Society, housing & beliefs"
+            description="Family, crime, housing and religion indicators."
+          >
             <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
               <StatCard
                 label="Homicide rate"
@@ -1258,24 +1285,46 @@ export default async function CountryPage({
                   />
                 </ChartCard>
               )}
+
+              {abortion.length > 0 && (
+                <ChartCard
+                  title={
+                    abortion.length > 1
+                      ? "Abortion rate over time"
+                      : `Abortion rate${
+                          abortion[0]?.year != null
+                            ? ` (${abortion[0].year})`
+                            : ""
+                        }`
+                  }
+                  description="Induced abortions per 1,000 women aged 15–49"
+                  source="WHO / Guttmacher (compiled)"
+                  csvRows={abortion}
+                  csvName={`${slug}-abortion-rate`}
+                >
+                  <TimeSeriesChart
+                    data={abortion}
+                    decimals={1}
+                    unit="per 1,000"
+                    color="hsl(340 82% 52%)"
+                  />
+                </ChartCard>
+              )}
             </div>
-          </section>
+          </CountryPanel>
         )}
 
-        {/* Subnational states / provinces */}
         {admin1Ranking.length > 0 && (
-          <section className="space-y-4">
-            <div className="border-b pb-2">
-              <h2 className="text-xl font-semibold tracking-tight">
-                States &amp; provinces
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Total fertility rate by first-level administrative division ·{" "}
-                <Link href="/states" className="underline underline-offset-2">
-                  browse all countries
-                </Link>
-              </p>
-            </div>
+          <CountryPanel
+            id="states"
+            title="States & provinces"
+            description="Total fertility rate by first-level administrative division."
+          >
+            <p className="text-sm text-muted-foreground">
+              <Link href="/states" className="underline underline-offset-2">
+                Browse subnational fertility for all countries →
+              </Link>
+            </p>
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <thead className="border-b bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
@@ -1325,26 +1374,21 @@ export default async function CountryPage({
                 </tbody>
               </table>
             </div>
-          </section>
+          </CountryPanel>
         )}
 
         {/* Crime by ancestry / origin — only when published, else availability note */}
-        {(hasCrimeBreakdown ||
-          foreignPrisonerShare.length > 0 ||
-          crimeAvailability) && (
-          <section className="space-y-6">
-            <div className="border-b pb-2">
-              <h2 className="text-xl font-semibold tracking-tight">
-                Crime by ancestry, origin &amp; race
-              </h2>
-              <p className="text-sm text-muted-foreground">
-                Official statistics where published · definitions differ by
-                country ·{" "}
-                <Link href="/crime" className="underline underline-offset-2">
-                  see full availability guide
-                </Link>
-              </p>
-            </div>
+        {hasCrimeSection && (
+          <CountryPanel
+            id="crime"
+            title="Crime by ancestry, origin & race"
+            description="Official statistics where published · definitions differ by country."
+          >
+            <p className="text-sm text-muted-foreground">
+              <Link href="/crime" className="underline underline-offset-2">
+                See the full availability guide →
+              </Link>
+            </p>
 
             {crimeAvailability && !hasCrimeBreakdown && (
               <Card>
@@ -1515,7 +1559,7 @@ export default async function CountryPage({
                 </ChartCard>
               )}
             </div>
-          </section>
+          </CountryPanel>
         )}
       </div>
     </div>

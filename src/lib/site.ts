@@ -109,7 +109,7 @@ export const navTopics: NavTopic[] = [
       },
       {
         title: "Trade / exports & imports",
-        href: "/country/japan#trade",
+        href: "/country/japan#economy",
         description: "Product export & import treemaps on each country page",
       },
     ],

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Treemap, ResponsiveContainer, Tooltip } from "recharts";
+import { Treemap, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import { CountrySelect } from "@/components/country-select";
 import { cn, formatCompact } from "@/lib/utils";
 import type { CountryTrade, TradeProduct } from "@/lib/oec-types";
 
@@ -31,6 +32,8 @@ const SECTION_COLORS: Record<string, string> = {
   "Wood Products": "#6b8f5a",
 };
 
+const COMPARE_COLORS = ["hsl(211 62% 45%)", "hsl(24 85% 48%)", "hsl(155 45% 36%)"];
+
 function colorForSection(section: string): string {
   if (SECTION_COLORS[section]) return SECTION_COLORS[section];
   let h = 0;
@@ -38,6 +41,13 @@ function colorForSection(section: string): string {
   const hue = h % 360;
   return `hsl(${hue} 42% 42%)`;
 }
+
+export type TradeCompareOption = {
+  slug: string;
+  name: string;
+  flagEmoji: string | null;
+  iso3: string;
+};
 
 type CellProps = {
   x?: number;
@@ -113,7 +123,13 @@ function TradeTooltip({
   );
 }
 
-function TradeTreemap({ products }: { products: TradeProduct[] }) {
+function TradeTreemap({
+  products,
+  heightClass = "h-[360px] sm:h-[420px]",
+}: {
+  products: TradeProduct[];
+  heightClass?: string;
+}) {
   const data = products.map((p) => ({
     ...p,
     fill: colorForSection(p.section),
@@ -130,7 +146,7 @@ function TradeTreemap({ products }: { products: TradeProduct[] }) {
 
   return (
     <div>
-      <div className="h-[360px] w-full sm:h-[420px]">
+      <div className={cn("w-full", heightClass)}>
         <ResponsiveContainer width="100%" height="100%">
           <Treemap
             data={data}
@@ -206,12 +222,89 @@ function TradeTable({ products }: { products: TradeProduct[] }) {
   );
 }
 
+function sectionShares(trade: CountryTrade): Map<string, number> {
+  const m = new Map<string, number>();
+  for (const p of trade.products) {
+    m.set(p.section, (m.get(p.section) ?? 0) + p.share);
+  }
+  return m;
+}
+
+function CompareSectionChart({
+  series,
+}: {
+  series: { key: string; label: string; trade: CountryTrade }[];
+}) {
+  const sections = React.useMemo(() => {
+    const totals = new Map<string, number>();
+    for (const s of series) {
+      for (const [sec, share] of sectionShares(s.trade)) {
+        totals.set(sec, (totals.get(sec) ?? 0) + share);
+      }
+    }
+    return [...totals.entries()]
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 8)
+      .map(([name]) => name);
+  }, [series]);
+
+  const data = sections.map((section) => {
+    const row: Record<string, string | number> = { section };
+    for (const s of series) {
+      row[s.key] = Number((sectionShares(s.trade).get(section) ?? 0).toFixed(2));
+    }
+    return row;
+  });
+
+  return (
+    <div className="h-[320px] w-full">
+      <ResponsiveContainer width="100%" height="100%">
+        <BarChart data={data} layout="vertical" margin={{ left: 8, right: 12, top: 8, bottom: 8 }}>
+          <CartesianGrid strokeDasharray="3 3" horizontal={false} stroke="hsl(var(--border))" />
+          <XAxis
+            type="number"
+            unit="%"
+            tick={{ fontSize: 11 }}
+            stroke="hsl(var(--muted-foreground))"
+          />
+          <YAxis
+            type="category"
+            dataKey="section"
+            width={118}
+            tick={{ fontSize: 11 }}
+            stroke="hsl(var(--muted-foreground))"
+          />
+          <Tooltip
+            formatter={(value) => [`${Number(value).toFixed(1)}%`, ""]}
+            contentStyle={{
+              borderRadius: 2,
+              border: "1px solid hsl(var(--border))",
+              fontSize: 12,
+            }}
+          />
+          {series.map((s, i) => (
+            <Bar
+              key={s.key}
+              dataKey={s.key}
+              name={s.label}
+              fill={COMPARE_COLORS[i % COMPARE_COLORS.length]}
+              maxBarSize={18}
+            />
+          ))}
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+}
+
 export function CountryTradeSection({
   countryName,
   iso3,
+  compareOptions = [],
 }: {
   countryName: string;
   iso3: string;
+  compareOptions?: TradeCompareOption[];
 }) {
   const [exports, setExports] = React.useState<CountryTrade | null>(null);
   const [imports, setImports] = React.useState<CountryTrade | null>(null);
@@ -219,6 +312,27 @@ export function CountryTradeSection({
     "loading",
   );
   const [flow, setFlow] = React.useState<"export" | "import">("export");
+  const [compareSlug, setCompareSlug] = React.useState<string | null>(null);
+  const [compareTrade, setCompareTrade] = React.useState<{
+    exports: CountryTrade | null;
+    imports: CountryTrade | null;
+  } | null>(null);
+  const [compareStatus, setCompareStatus] = React.useState<
+    "idle" | "loading" | "ready" | "error"
+  >("idle");
+
+  const compareCountry = compareOptions.find((c) => c.slug === compareSlug) ?? null;
+  const selectOptions = React.useMemo(
+    () =>
+      compareOptions
+        .filter((c) => c.iso3.toUpperCase() !== iso3.toUpperCase())
+        .map((c) => ({
+          slug: c.slug,
+          name: c.name,
+          flagEmoji: c.flagEmoji,
+        })),
+    [compareOptions, iso3],
+  );
 
   React.useEffect(() => {
     let cancelled = false;
@@ -247,27 +361,52 @@ export function CountryTradeSection({
     };
   }, [iso3]);
 
+  React.useEffect(() => {
+    if (!compareCountry) {
+      setCompareTrade(null);
+      setCompareStatus("idle");
+      return;
+    }
+    let cancelled = false;
+    setCompareStatus("loading");
+    void (async () => {
+      const { fetchCountryTradePair } = await import("@/lib/oec-fetch");
+      const pair = await fetchCountryTradePair(compareCountry.iso3);
+      if (cancelled) return;
+      setCompareTrade(pair);
+      setCompareStatus(pair.exports || pair.imports ? "ready" : "error");
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [compareCountry]);
+
   const available = [
     exports ? ("export" as const) : null,
     imports ? ("import" as const) : null,
   ].filter(Boolean) as Array<"export" | "import">;
 
   const active = flow === "export" ? exports : imports;
+  const compareActive =
+    flow === "export" ? compareTrade?.exports : compareTrade?.imports;
   const oecId = active?.oecId ?? null;
   const oecProfile = oecId
     ? `https://oec.world/en/profile/country/${oecId}`
     : `https://oec.world/en/search/${encodeURIComponent(countryName)}`;
 
+  const comparing =
+    compareCountry != null &&
+    compareStatus === "ready" &&
+    active != null &&
+    compareActive != null;
+
   return (
-    <section
-      id="trade"
-      className="scroll-mt-24 space-y-4 border-t border-border pt-8"
-    >
+    <div id="trade" className="scroll-mt-28 space-y-4 border-t border-border pt-8">
       <div className="section-rule">
         <div className="min-w-0 space-y-1">
-          <h2 className="font-serif text-xl font-semibold tracking-tight text-primary md:text-[1.35rem]">
+          <h3 className="font-serif text-lg font-semibold tracking-tight text-primary md:text-xl">
             Exports &amp; imports
-          </h2>
+          </h3>
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
             {status === "ready" && active
               ? `What ${countryName} ${flow === "export" ? "exports" : "imports"} — top products by value (${active.year}), from the Observatory of Economic Complexity (BACI / CEPII).`
@@ -285,6 +424,20 @@ export function CountryTradeSection({
           </a>
         </div>
       </div>
+
+      {selectOptions.length > 0 ? (
+        <div className="max-w-md space-y-1.5">
+          <p className="text-xs font-medium text-muted-foreground">
+            Compare with another country
+          </p>
+          <CountrySelect
+            options={selectOptions}
+            value={compareSlug}
+            onChange={setCompareSlug}
+            placeholder="Select a country…"
+          />
+        </div>
+      ) : null}
 
       {status === "loading" ? (
         <p className="py-10 text-sm text-muted-foreground">
@@ -331,8 +484,62 @@ export function CountryTradeSection({
             </p>
           </div>
 
-          <TradeTreemap products={active.products} />
-          <TradeTable products={active.products} />
+          {compareSlug && compareStatus === "loading" ? (
+            <p className="text-sm text-muted-foreground">
+              Loading comparison…
+            </p>
+          ) : null}
+
+          {comparing && compareCountry && compareActive ? (
+            <div className="space-y-6">
+              <div>
+                <p className="mb-2 text-sm font-medium text-foreground">
+                  Product-section mix (% of shown trade)
+                </p>
+                <CompareSectionChart
+                  series={[
+                    { key: "a", label: countryName, trade: active },
+                    {
+                      key: "b",
+                      label: compareCountry.name,
+                      trade: compareActive,
+                    },
+                  ]}
+                />
+              </div>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <div>
+                  <p className="mb-2 text-sm font-medium">
+                    {countryName}{" "}
+                    <span className="font-normal text-muted-foreground">
+                      · ${formatCompact(active.total)}
+                    </span>
+                  </p>
+                  <TradeTreemap
+                    products={active.products}
+                    heightClass="h-[280px] sm:h-[320px]"
+                  />
+                </div>
+                <div>
+                  <p className="mb-2 text-sm font-medium">
+                    {compareCountry.name}{" "}
+                    <span className="font-normal text-muted-foreground">
+                      · ${formatCompact(compareActive.total)}
+                    </span>
+                  </p>
+                  <TradeTreemap
+                    products={compareActive.products}
+                    heightClass="h-[280px] sm:h-[320px]"
+                  />
+                </div>
+              </div>
+            </div>
+          ) : (
+            <>
+              <TradeTreemap products={active.products} />
+              <TradeTable products={active.products} />
+            </>
+          )}
 
           <p className="text-xs text-muted-foreground">
             Source:{" "}
@@ -350,6 +557,6 @@ export function CountryTradeSection({
           </p>
         </>
       )}
-    </section>
+    </div>
   );
 }
