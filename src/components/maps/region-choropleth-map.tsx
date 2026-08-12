@@ -29,6 +29,94 @@ function FitUsaContiguous() {
   return null;
 }
 
+/**
+ * Thin / hide contrasting polygon seams when zoomed out so dense areas
+ * (London MSOAs) don’t wash out. Always keep a fill-matched stroke so
+ * anti-aliased gaps don’t show the ocean as a black/white spiderweb.
+ */
+function AdaptiveStrokeSync({
+  layerRef,
+  cinema,
+  enabled,
+}: {
+  layerRef: React.MutableRefObject<L.GeoJSON | null>;
+  cinema: boolean;
+  enabled: boolean;
+}) {
+  const map = useMap();
+
+  const apply = React.useCallback(() => {
+    const layer = layerRef.current;
+    if (!layer || !enabled) return;
+    const z = map.getZoom();
+    layer.eachLayer((l) => {
+      const path = l as L.Path & {
+        feature?: Feature;
+        options: PathOptions;
+      };
+      if (!path.setStyle) return;
+      const fill =
+        typeof path.options.fillColor === "string" && path.options.fillColor
+          ? path.options.fillColor
+          : cinema
+            ? "#161616"
+            : "#cfd6de";
+
+      // National / regional: fill-matched stroke seals anti-alias gaps
+      // (ocean peeking through as a white/black spiderweb).
+      if (z < 10.25) {
+        path.setStyle({
+          stroke: true,
+          weight: 2.75,
+          opacity: 1,
+          color: fill,
+          lineJoin: "round",
+          lineCap: "round",
+        });
+        return;
+      }
+      // Borough / city: light seams on top of a thin seal.
+      if (z < 11.5) {
+        path.setStyle({
+          stroke: true,
+          weight: 0.55,
+          opacity: 1,
+          color: cinema ? "rgba(0,0,0,0.25)" : "rgba(255,255,255,0.65)",
+          lineJoin: "round",
+          lineCap: "round",
+        });
+        return;
+      }
+      path.setStyle({
+        stroke: true,
+        weight: 0.75,
+        opacity: 1,
+        color: cinema ? "rgba(0,0,0,0.4)" : "rgba(255,255,255,0.85)",
+        lineJoin: "round",
+        lineCap: "round",
+      });
+    });
+  }, [cinema, enabled, layerRef, map]);
+
+  React.useEffect(() => {
+    if (!enabled) return;
+    apply();
+    map.on("zoomend", apply);
+    map.on("br:restyle-borders", apply);
+    // Dense GeoJSON (7k MSOAs) mounts async — retry a few times.
+    const timers = [60, 200, 500, 1200].map((ms) =>
+      window.setTimeout(apply, ms),
+    );
+    return () => {
+      map.off("zoomend", apply);
+      map.off("br:restyle-borders", apply);
+      for (const t of timers) window.clearTimeout(t);
+    };
+  }, [apply, enabled, map]);
+
+  return null;
+}
+
 /** Walk ring/polygon/multi coordinates → [lng, lat] pairs. */
 function collectLngLats(geo: GeoJsonObject): [number, number][] {
   const out: [number, number][] = [];
@@ -106,14 +194,27 @@ function normalizeAntimeridianGeo(geo: GeoJsonObject): GeoJsonObject {
  * Chukotka), Leaflet's native getBounds() spans ~360° of longitude and the
  * map looks empty — shift western longitudes by +360° for framing only.
  */
+const DEFAULT_FIT_PADDING: [number, number] = [28, 28];
+
 function FitGeo({
   geo,
   maxZoom = 5.5,
+  padding = DEFAULT_FIT_PADDING,
+  paddingTopLeft,
+  paddingBottomRight,
 }: {
   geo: GeoJsonObject;
   maxZoom?: number;
+  padding?: [number, number];
+  paddingTopLeft?: [number, number];
+  paddingBottomRight?: [number, number];
 }) {
   const map = useMap();
+  const padY = paddingTopLeft?.[0] ?? paddingBottomRight?.[0] ?? padding[0];
+  const padXLeft = paddingTopLeft?.[1] ?? padding[1];
+  const padXRight = paddingBottomRight?.[1] ?? padding[1];
+  const padBottom = paddingBottomRight?.[0] ?? padding[0];
+
   React.useEffect(() => {
     try {
       const coords = collectLngLats(geo);
@@ -135,13 +236,17 @@ function FitGeo({
         L.latLng(maxLat, maxLng),
       );
       if (b.isValid()) {
-        map.fitBounds(b, { padding: [28, 28], maxZoom });
+        map.fitBounds(b, {
+          maxZoom,
+          paddingTopLeft: [padY, padXLeft],
+          paddingBottomRight: [padBottom, padXRight],
+        });
       }
     } catch {
       /* ignore */
     }
     setTimeout(() => map.invalidateSize(), 60);
-  }, [map, geo, maxZoom]);
+  }, [map, geo, maxZoom, padY, padXLeft, padXRight, padBottom]);
   return null;
 }
 
@@ -168,13 +273,25 @@ export function RegionChoroplethMap({
   formatValue,
   /** Only render / fit these feature ids (e.g. MSOAs inside one LAD). */
   filterIds,
+  /**
+   * Hide/thin borders at low zoom so dense neighbourhood layers don’t
+   * wash out as white city blobs (UK MSOA national view).
+   */
+  adaptiveStroke = false,
+  fitPadding,
+  fitPaddingTopLeft,
+  fitPaddingBottomRight,
+  legendPlacement = "bottom-left",
+  preferCanvas = false,
+  oceanColor,
+  className,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
   colorFor: (value: number) => string;
   unit?: string;
   decimals?: number;
-  height?: number;
+  height?: number | string;
   hrefPrefix?: string;
   revision?: string;
   variant?: "light" | "cinema";
@@ -185,12 +302,26 @@ export function RegionChoroplethMap({
   legendTitle?: string;
   formatValue?: (value: number) => string;
   filterIds?: string[] | null;
+  adaptiveStroke?: boolean;
+  /** Uniform fitBounds padding [y, x] in px. */
+  fitPadding?: [number, number];
+  /** Asymmetric fitBounds padding when a floating panel covers part of the map. */
+  fitPaddingTopLeft?: [number, number];
+  fitPaddingBottomRight?: [number, number];
+  legendPlacement?: "bottom-left" | "bottom-right";
+  /** Canvas renderer — cleaner dense choropleths (UK MSOA). */
+  preferCanvas?: boolean;
+  /** Override stage / ocean background. */
+  oceanColor?: string;
+  className?: string;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
+  const geoJsonRef = React.useRef<L.GeoJSON | null>(null);
   const cinema = variant === "cinema";
   const border = countryBorderStyle(cinema ? "cinema" : "light");
-  const ocean = cinema ? MAP_OCEAN.cinema : MAP_OCEAN.light;
+  const ocean =
+    oceanColor ?? (cinema ? MAP_OCEAN.cinema : MAP_OCEAN.light);
 
   React.useEffect(() => {
     let active = true;
@@ -269,17 +400,30 @@ export function RegionChoroplethMap({
     (feature?: Feature): PathOptions => {
       const id = featureId(feature);
       const datum = id ? byId.get(id) : undefined;
+      const fillColor = datum
+        ? colorFor(datum.value)
+        : cinema
+          ? "#161616"
+          : "rgba(120, 130, 145, 0.22)";
       return {
-        fillColor: datum
-          ? colorFor(datum.value)
-          : cinema
-            ? "#161616"
-            : "rgba(120, 130, 145, 0.2)",
+        fillColor,
         fillOpacity: 1,
         ...border,
+        // Dense layers: start with fill-matched stroke to seal SVG gaps;
+        // AdaptiveStrokeSync then tunes seams by zoom.
+        ...(adaptiveStroke
+          ? {
+              stroke: true,
+              weight: 2.75,
+              opacity: 1,
+              color: fillColor,
+              lineJoin: "round" as const,
+              lineCap: "round" as const,
+            }
+          : null),
       };
     },
-    [byId, border, cinema, colorFor, featureId],
+    [adaptiveStroke, byId, border, cinema, colorFor, featureId],
   );
 
   const onEach = React.useCallback(
@@ -312,9 +456,13 @@ export function RegionChoroplethMap({
           t.bringToFront?.();
         },
         mouseout: (e) => {
-          (e.target as { setStyle: (s: PathOptions) => void }).setStyle(
-            style(feature),
-          );
+          const t = e.target as {
+            setStyle: (s: PathOptions) => void;
+            _map?: L.Map;
+          };
+          t.setStyle(style(feature));
+          // Re-apply zoom-based seam weight after hover resets style.
+          t._map?.fire("br:restyle-borders");
         },
         click: () => {
           if (!navigate || !datum?.slug) return;
@@ -345,14 +493,15 @@ export function RegionChoroplethMap({
       className={cn(
         "relative overflow-hidden",
         cinema
-          ? "rounded-none border border-white/10 bg-black"
+          ? "rounded-none border-0 bg-black"
           : "rounded-none border border-border bg-card",
+        className,
       )}
       style={{ height }}
     >
       {displayGeo ? (
         <MapContainer
-          key={`${geoUrl}-${revision ?? "x"}-${filterKey}`}
+          key={`${geoUrl}-${revision ?? "x"}-${filterKey}-${preferCanvas ? "c" : "s"}`}
           center={center}
           zoom={zoom}
           zoomSnap={0.25}
@@ -360,17 +509,32 @@ export function RegionChoroplethMap({
           maxZoom={Math.max(12, Math.ceil(fitMaxZoom + 2))}
           scrollWheelZoom
           zoomControl={false}
-          className={cinema ? "br-cinema-map" : undefined}
+          preferCanvas={false}
+          className={cinema ? "br-cinema-map" : adaptiveStroke ? "br-dense-choropleth" : undefined}
           style={{ height: "100%", width: "100%", background: ocean }}
         >
           {fit === "usa" ? (
             <FitUsaContiguous />
           ) : (
-            <FitGeo geo={displayGeo} maxZoom={fitMaxZoom} />
+            <FitGeo
+              geo={displayGeo}
+              maxZoom={fitMaxZoom}
+              padding={fitPadding}
+              paddingTopLeft={fitPaddingTopLeft}
+              paddingBottomRight={fitPaddingBottomRight}
+            />
           )}
+          <AdaptiveStrokeSync
+            layerRef={geoJsonRef}
+            cinema={cinema}
+            enabled={adaptiveStroke}
+          />
           <ZoomControl position="bottomright" />
           <GeoJSON
             key={`${revision ?? "regions"}-${filterKey}`}
+            ref={(instance) => {
+              geoJsonRef.current = instance;
+            }}
             data={displayGeo as FeatureCollection}
             style={style}
             onEachFeature={onEach}
@@ -390,7 +554,8 @@ export function RegionChoroplethMap({
       {legend && legend.length > 0 && (
         <div
           className={cn(
-            "pointer-events-none absolute bottom-3 left-3 z-[1000] rounded-md px-3 py-2.5 shadow-sm backdrop-blur-md",
+            "pointer-events-none absolute bottom-3 z-[1000] rounded-md px-3 py-2.5 shadow-sm backdrop-blur-md",
+            legendPlacement === "bottom-right" ? "right-3" : "left-3",
             cinema
               ? "bg-black/55 text-white/70"
               : "border bg-white/95 text-muted-foreground",

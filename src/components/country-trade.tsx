@@ -1,10 +1,56 @@
 "use client";
 
 import * as React from "react";
-import { Treemap, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
+import { toPng } from "html-to-image";
+import {
+  Treemap,
+  ResponsiveContainer,
+  Tooltip,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+} from "recharts";
 import { CountrySelect } from "@/components/country-select";
-import { cn, formatCompact } from "@/lib/utils";
+import { useChartBrand } from "@/components/charts/chart-brand";
+import { siteConfig } from "@/lib/site";
+import { cn, downloadFile, formatCompact, toCSV } from "@/lib/utils";
 import type { CountryTrade, TradeProduct } from "@/lib/oec-types";
+
+function tradeCsvPreamble(opts: {
+  subject?: string;
+  title: string;
+  description?: string;
+  source?: string;
+  path?: string;
+}) {
+  const lines: string[] = [];
+  if (opts.subject) lines.push(`# ${opts.subject}`);
+  lines.push(`# ${opts.title}`);
+  if (opts.description) {
+    lines.push(`# ${opts.description.replace(/\s+/g, " ").trim()}`);
+  }
+  if (opts.source) lines.push(`# Source: ${opts.source}`);
+  lines.push(`# ${opts.path ? `birthrate.io${opts.path}` : siteConfig.name}`);
+  return `${lines.join("\n")}\n`;
+}
+
+function productsToCsvRows(
+  products: TradeProduct[],
+  meta: { country: string; flow: string; year: number },
+) {
+  return products.map((p, i) => ({
+    country: meta.country,
+    flow: meta.flow,
+    year: meta.year,
+    rank: i + 1,
+    product: p.name,
+    section: p.section,
+    value_usd: Math.round(p.value),
+    share_pct: Number(p.share.toFixed(4)),
+  }));
+}
 
 /** OEC-inspired section palette (stable by name). */
 const SECTION_COLORS: Record<string, string> = {
@@ -306,6 +352,8 @@ export function CountryTradeSection({
   iso3: string;
   compareOptions?: TradeCompareOption[];
 }) {
+  const brand = useChartBrand();
+  const exportRef = React.useRef<HTMLDivElement>(null);
   const [exports, setExports] = React.useState<CountryTrade | null>(null);
   const [imports, setImports] = React.useState<CountryTrade | null>(null);
   const [status, setStatus] = React.useState<"loading" | "ready" | "error">(
@@ -400,6 +448,96 @@ export function CountryTradeSection({
     active != null &&
     compareActive != null;
 
+  const flowLabel = flow === "export" ? "exports" : "imports";
+  const chartTitle =
+    active != null
+      ? comparing && compareCountry
+        ? `${countryName} vs ${compareCountry.name} — ${flowLabel} (${active.year})`
+        : `${countryName} ${flowLabel} (${active.year})`
+      : `Exports & imports`;
+  const chartDescription =
+    status === "ready" && active
+      ? comparing && compareCountry
+        ? `Product mix comparison for ${flowLabel}, top products by value (${active.year}), from the Observatory of Economic Complexity (BACI / CEPII).`
+        : `What ${countryName} ${flowLabel} — top products by value (${active.year}), from the Observatory of Economic Complexity (BACI / CEPII).`
+      : `International trade for ${countryName} — product exports and imports from OEC / BACI.`;
+
+  const fileSlug =
+    brand.path?.split("/").filter(Boolean).pop() ?? iso3.toLowerCase();
+  const csvName = comparing
+    ? `${fileSlug}-${flowLabel}-vs-${compareSlug}`
+    : `${fileSlug}-${flowLabel}`;
+
+  const csvRows = React.useMemo(() => {
+    if (!active) return [];
+    const rows = productsToCsvRows(active.products, {
+      country: countryName,
+      flow: flowLabel,
+      year: active.year,
+    });
+    if (comparing && compareCountry && compareActive) {
+      rows.push(
+        ...productsToCsvRows(compareActive.products, {
+          country: compareCountry.name,
+          flow: flowLabel,
+          year: compareActive.year,
+        }),
+      );
+    }
+    return rows;
+  }, [
+    active,
+    compareActive,
+    compareCountry,
+    comparing,
+    countryName,
+    flowLabel,
+  ]);
+
+  const handleCsv = React.useCallback(() => {
+    if (csvRows.length === 0 || !active) return;
+    downloadFile(
+      `${csvName}.csv`,
+      `${tradeCsvPreamble({
+        subject: brand.subject ?? countryName,
+        title: chartTitle,
+        description: chartDescription,
+        source: active.source,
+        path: brand.path,
+      })}${toCSV(csvRows)}`,
+    );
+  }, [
+    active,
+    brand.path,
+    brand.subject,
+    chartDescription,
+    chartTitle,
+    countryName,
+    csvName,
+    csvRows,
+  ]);
+
+  const handlePng = React.useCallback(async () => {
+    if (!exportRef.current) return;
+    const bg = getComputedStyle(document.body).backgroundColor || "#ffffff";
+    const dataUrl = await toPng(exportRef.current, {
+      backgroundColor: bg,
+      pixelRatio: 2,
+      filter: (node) => {
+        if (!(node instanceof HTMLElement)) return true;
+        return node.dataset.exportIgnore == null;
+      },
+    });
+    const a = document.createElement("a");
+    a.href = dataUrl;
+    a.download = `${csvName}.png`;
+    a.click();
+  }, [csvName]);
+
+  const shareUrl = brand.path
+    ? `birthrate.io${brand.path}`
+    : siteConfig.name;
+
   return (
     <div id="trade" className="scroll-mt-28 space-y-4 border-t border-border pt-8">
       <div className="section-rule">
@@ -408,12 +546,31 @@ export function CountryTradeSection({
             Exports &amp; imports
           </h3>
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {status === "ready" && active
-              ? `What ${countryName} ${flow === "export" ? "exports" : "imports"} — top products by value (${active.year}), from the Observatory of Economic Complexity (BACI / CEPII).`
-              : `International trade for ${countryName} — product exports and imports from OEC / BACI.`}
+            {chartDescription}
           </p>
         </div>
-        <div className="flex shrink-0 items-center gap-3 text-xs">
+        <div
+          data-export-ignore
+          className="flex shrink-0 flex-wrap items-center gap-x-3 gap-y-1 text-xs"
+        >
+          {status === "ready" && csvRows.length > 0 ? (
+            <>
+              <button
+                type="button"
+                onClick={handleCsv}
+                className="link-editorial font-medium"
+              >
+                Download CSV
+              </button>
+              <button
+                type="button"
+                onClick={handlePng}
+                className="link-editorial font-medium"
+              >
+                Download PNG
+              </button>
+            </>
+          ) : null}
           <a
             href={oecProfile}
             target="_blank"
@@ -426,7 +583,7 @@ export function CountryTradeSection({
       </div>
 
       {selectOptions.length > 0 ? (
-        <div className="max-w-md space-y-1.5">
+        <div data-export-ignore className="max-w-md space-y-1.5">
           <p className="text-xs font-medium text-muted-foreground">
             Compare with another country
           </p>
@@ -457,9 +614,21 @@ export function CountryTradeSection({
           .
         </p>
       ) : (
-        <>
+        <div ref={exportRef} className="space-y-4 bg-background px-0.5">
+          <div className="flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
+            <p className="min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
+              {brand.subject ?? countryName}
+            </p>
+            <p className="shrink-0 text-[0.7rem] font-medium text-muted-foreground">
+              {siteConfig.name}
+            </p>
+          </div>
+
           <div className="flex flex-wrap items-end justify-between gap-3">
-            <div className="flex gap-1 border-b border-border">
+            <div
+              data-export-ignore
+              className="flex gap-1 border-b border-border"
+            >
               {available.map((f) => (
                 <button
                   key={f}
@@ -476,16 +645,22 @@ export function CountryTradeSection({
                 </button>
               ))}
             </div>
-            <p className="font-serif text-lg font-semibold tabular-nums text-primary">
-              ${formatCompact(active.total)}
+            <p className="font-serif text-base font-semibold tracking-tight text-primary md:text-lg">
+              {flow === "export" ? "Exports" : "Imports"}
+              <span className="ml-2 font-serif text-lg font-semibold tabular-nums">
+                ${formatCompact(active.total)}
+              </span>
               <span className="ml-2 text-sm font-sans font-normal text-muted-foreground">
-                total {flow === "export" ? "exports" : "imports"} · {active.year}
+                · {active.year}
+                {comparing && compareCountry
+                  ? ` · vs ${compareCountry.name}`
+                  : ""}
               </span>
             </p>
           </div>
 
           {compareSlug && compareStatus === "loading" ? (
-            <p className="text-sm text-muted-foreground">
+            <p data-export-ignore className="text-sm text-muted-foreground">
               Loading comparison…
             </p>
           ) : null}
@@ -541,21 +716,24 @@ export function CountryTradeSection({
             </>
           )}
 
-          <p className="text-xs text-muted-foreground">
-            Source:{" "}
-            <a
-              href={active.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link-editorial"
-            >
-              {active.source}
-            </a>
-            . Product classification: HS 2022 (4-digit). Shares are of the
-            products shown (top {active.products.length} by value), not
-            necessarily of all trade.
-          </p>
-        </>
+          <div className="space-y-1">
+            <p className="text-xs text-muted-foreground">
+              Source:{" "}
+              <a
+                href={active.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-editorial"
+              >
+                {active.source}
+              </a>
+              . Product classification: HS 2022 (4-digit). Shares are of the
+              products shown (top {active.products.length} by value), not
+              necessarily of all trade.
+            </p>
+            <p className="text-[0.7rem] text-muted-foreground/80">{shareUrl}</p>
+          </div>
+        </div>
       )}
     </div>
   );

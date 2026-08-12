@@ -181,6 +181,12 @@
   /* Stroke under fill so coasts melt into the ocean; seams stay between fills. */
   paint-order: stroke fill;
 }
+/* Dense neighbourhood choropleths: stroke sits under fill and seals
+   anti-alias gaps without drawing visible fence lines. */
+.leaflet-container.br-dense-choropleth svg path {
+  paint-order: stroke fill;
+  shape-rendering: geometricPrecision;
+}
 .leaflet-tooltip {
   border: 1px solid hsl(var(--border));
   background: hsl(var(--popover));

@@ -102,33 +102,76 @@ export function getUkEthnicGroup(id: string): UkEthnicGroup {
 }
 
 /**
- * ONS-style continuous yellow→teal→blue scale for percent shares.
- * Domain is passed in so each ethnic group can use its own range.
+ * ONS-style yellow→teal→navy stops (class midpoints / continuous).
+ * Tuned for a light paper map stage.
  */
+const UK_PCT_STOPS: [number, [number, number, number]][] = [
+  // Warm sand — reads as land against cool grey-blue ocean
+  [0, [242, 220, 140]],
+  [0.2, [176, 206, 138]],
+  [0.4, [88, 168, 152]],
+  [0.65, [48, 128, 168]],
+  [0.85, [30, 90, 142]],
+  [1, [20, 55, 108]],
+];
+
+function lerpStop(t: number): string {
+  const x = Math.max(0, Math.min(1, t));
+  for (let i = 1; i < UK_PCT_STOPS.length; i++) {
+    if (x <= UK_PCT_STOPS[i][0]) {
+      const [t0, c0] = UK_PCT_STOPS[i - 1];
+      const [t1, c1] = UK_PCT_STOPS[i];
+      const u = (x - t0) / (t1 - t0 || 1);
+      const rgb = c0.map((a, j) => Math.round(a + (c1[j] - a) * u));
+      return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
+    }
+  }
+  const last = UK_PCT_STOPS[UK_PCT_STOPS.length - 1][1];
+  return `rgb(${last[0]}, ${last[1]}, ${last[2]})`;
+}
+
+/** Continuous yellow→navy for a given domain (legacy / fine gradients). */
 export function ukPctColor(
   value: number,
   domain: { min: number; max: number },
 ): string {
   const span = domain.max - domain.min || 1;
-  const t = Math.max(0, Math.min(1, (value - domain.min) / span));
-  const stops: [number, [number, number, number]][] = [
-    [0, [253, 231, 117]],
-    [0.25, [145, 213, 129]],
-    [0.5, [55, 174, 160]],
-    [0.75, [40, 120, 180]],
-    [1, [20, 70, 140]],
-  ];
-  for (let i = 1; i < stops.length; i++) {
-    if (t <= stops[i][0]) {
-      const [t0, c0] = stops[i - 1];
-      const [t1, c1] = stops[i];
-      const u = (t - t0) / (t1 - t0 || 1);
-      const rgb = c0.map((a, j) => Math.round(a + (c1[j] - a) * u));
-      return `rgb(${rgb[0]}, ${rgb[1]}, ${rgb[2]})`;
-    }
+  return lerpStop((value - domain.min) / span);
+}
+
+/**
+ * Quantile class breaks — census maps read cleaner as discrete classes
+ * so neighbouring same-bin areas merge instead of shimmering.
+ */
+export function ukPctBreaks(values: number[], classes = 5): number[] {
+  const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
+  if (!sorted.length) return [0, 20, 40, 60, 80, 100];
+  const breaks: number[] = [sorted[0]];
+  for (let i = 1; i < classes; i++) {
+    const idx = Math.min(
+      sorted.length - 1,
+      Math.floor((i / classes) * sorted.length),
+    );
+    breaks.push(sorted[idx]);
   }
-  const last = stops[stops.length - 1][1];
-  return `rgb(${last[0]}, ${last[1]}, ${last[2]})`;
+  breaks.push(sorted[sorted.length - 1]);
+  // Ensure strictly increasing breaks
+  for (let i = 1; i < breaks.length; i++) {
+    if (breaks[i] <= breaks[i - 1]) breaks[i] = breaks[i - 1] + 0.01;
+  }
+  return breaks;
+}
+
+export function ukPctClassColor(value: number, breaks: number[]): string {
+  if (breaks.length < 2) return lerpStop(0.5);
+  const n = breaks.length - 1;
+  let cls = 0;
+  for (let i = 0; i < n; i++) {
+    if (value >= breaks[i]) cls = i;
+  }
+  // Upper edge inclusive
+  if (value >= breaks[n]) cls = n - 1;
+  return lerpStop(n <= 1 ? 0.5 : cls / (n - 1));
 }
 
 export function ukPctDomain(values: number[]): { min: number; max: number } {
@@ -139,6 +182,25 @@ export function ukPctDomain(values: number[]): { min: number; max: number } {
   const min = Math.max(0, q(0.02));
   const max = Math.min(100, q(0.98));
   return { min, max: max > min ? max : min + 1 };
+}
+
+export function ukPctLegendFromBreaks(
+  breaks: number[],
+): { label: string; color: string }[] {
+  const n = breaks.length - 1;
+  if (n < 1) return [];
+  return Array.from({ length: n }, (_, i) => {
+    const lo = breaks[i];
+    const hi = breaks[i + 1];
+    const mid = (lo + hi) / 2;
+    return {
+      label:
+        i === n - 1
+          ? `${lo.toFixed(1)}–${hi.toFixed(1)}%`
+          : `${lo.toFixed(1)}–${hi.toFixed(1)}%`,
+      color: ukPctClassColor(mid, breaks),
+    };
+  });
 }
 
 export function ukPctLegend(
