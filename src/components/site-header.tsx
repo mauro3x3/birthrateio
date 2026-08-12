@@ -25,6 +25,23 @@ function pathActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+/** Prefer the current country page when linking to in-page anchors like #trade. */
+function resolveTopicHref(href: string, pathname: string) {
+  if (!href.includes("#trade")) return href;
+  const match = pathname.match(/^\/country\/([^/]+)/);
+  if (match) return `/country/${match[1]}#trade`;
+  return href;
+}
+
+function scrollToHash(href: string) {
+  const hash = href.includes("#") ? href.split("#")[1] : null;
+  if (!hash) return false;
+  const el = document.getElementById(hash);
+  if (!el) return false;
+  el.scrollIntoView({ behavior: "smooth", block: "start" });
+  return true;
+}
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -94,13 +111,33 @@ export function SiteHeader() {
                       {topic.title}
                     </p>
                     <ul className="space-y-0.5">
-                      {topic.links.map((link) => (
-                        <li key={link.href}>
-                          <DropdownMenuItem asChild className="cursor-pointer px-2 py-1.5">
-                            <Link href={link.href}>{link.title}</Link>
-                          </DropdownMenuItem>
-                        </li>
-                      ))}
+                      {topic.links.map((link) => {
+                        const href = resolveTopicHref(link.href, pathname);
+                        return (
+                          <li key={link.href}>
+                            <DropdownMenuItem
+                              asChild
+                              className="cursor-pointer px-2 py-1.5"
+                            >
+                              <Link
+                                href={href}
+                                onClick={(e) => {
+                                  const base = href.split("#")[0];
+                                  if (
+                                    href.includes("#") &&
+                                    pathname === base &&
+                                    scrollToHash(href)
+                                  ) {
+                                    e.preventDefault();
+                                  }
+                                }}
+                              >
+                                {link.title}
+                              </Link>
+                            </DropdownMenuItem>
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ))}
@@ -177,21 +214,34 @@ export function SiteHeader() {
                   </button>
                   {open && (
                     <ul className="mb-1 space-y-0.5 pb-1 pl-2">
-                      {topic.links.map((link) => (
-                        <li key={link.href}>
-                          <Link
-                            href={link.href}
-                            className={cn(
-                              "block rounded-sm px-3 py-1.5 text-sm transition-colors hover:bg-white/10",
-                              pathActive(pathname, link.href)
-                                ? "text-white"
-                                : "text-white/70",
-                            )}
-                          >
-                            {link.title}
-                          </Link>
-                        </li>
-                      ))}
+                      {topic.links.map((link) => {
+                        const href = resolveTopicHref(link.href, pathname);
+                        return (
+                          <li key={link.href}>
+                            <Link
+                              href={href}
+                              className={cn(
+                                "block rounded-sm px-3 py-1.5 text-sm transition-colors hover:bg-white/10",
+                                pathActive(pathname, href)
+                                  ? "text-white"
+                                  : "text-white/70",
+                              )}
+                              onClick={(e) => {
+                                const base = href.split("#")[0];
+                                if (
+                                  href.includes("#") &&
+                                  pathname === base &&
+                                  scrollToHash(href)
+                                ) {
+                                  e.preventDefault();
+                                }
+                              }}
+                            >
+                              {link.title}
+                            </Link>
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </div>

@@ -42,6 +42,28 @@ const DIVERGING_DARK: ScaleStop[] = [
   { t: 1, color: [168, 118, 68] },
 ];
 
+// Growth maps (light): red = shrinking → parchment mid → blue = growing.
+const DIVERGING_GROWTH: ScaleStop[] = [
+  { t: 0, color: [156, 42, 48] },
+  { t: 0.18, color: [196, 88, 78] },
+  { t: 0.34, color: [220, 150, 130] },
+  { t: 0.5, color: [236, 230, 220] },
+  { t: 0.66, color: [140, 176, 200] },
+  { t: 0.82, color: [64, 128, 176] },
+  { t: 1, color: [28, 84, 140] },
+];
+
+// Growth maps (cinema): red decline → charcoal zero → blue growth.
+const DIVERGING_GROWTH_DARK: ScaleStop[] = [
+  { t: 0, color: [190, 72, 68] },
+  { t: 0.2, color: [148, 78, 74] },
+  { t: 0.4, color: [82, 68, 70] },
+  { t: 0.5, color: [52, 50, 54] },
+  { t: 0.6, color: [58, 78, 100] },
+  { t: 0.8, color: [72, 124, 168] },
+  { t: 1, color: [90, 160, 210] },
+];
+
 // Single-hue copper wash for dark maps (sequential).
 const SEQUENTIAL_DARK: ScaleStop[] = [
   { t: 0, color: [42, 40, 38] },
@@ -73,7 +95,35 @@ export type ScaleType =
   | "sequential-log"
   | "diverging"
   | "diverging-dark"
+  | "diverging-growth"
+  | "diverging-growth-dark"
   | "sequential-dark";
+
+function isDivergingScale(type: ScaleType): boolean {
+  return (
+    type === "diverging" ||
+    type === "diverging-dark" ||
+    type === "diverging-growth" ||
+    type === "diverging-growth-dark"
+  );
+}
+
+function stopsFor(type: ScaleType): ScaleStop[] {
+  switch (type) {
+    case "diverging-dark":
+      return DIVERGING_DARK;
+    case "diverging-growth":
+      return DIVERGING_GROWTH;
+    case "diverging-growth-dark":
+      return DIVERGING_GROWTH_DARK;
+    case "diverging":
+      return DIVERGING;
+    case "sequential-dark":
+      return SEQUENTIAL_DARK;
+    default:
+      return SEQUENTIAL;
+  }
+}
 
 export interface ColorScale {
   color: (value: number) => string;
@@ -114,14 +164,8 @@ export function buildColorScale(
     max = q(0.98);
   }
   const isLog = type === "sequential-log";
-  const stops =
-    type === "diverging-dark"
-      ? DIVERGING_DARK
-      : type === "sequential-dark"
-        ? SEQUENTIAL_DARK
-        : type === "diverging"
-          ? DIVERGING
-          : SEQUENTIAL;
+  const stops = stopsFor(type);
+  const diverging = isDivergingScale(type);
 
   // Log mapping spreads colour across a long-tailed distribution (e.g. GDP per
   // capita) instead of crushing most countries into the palest shades.
@@ -133,10 +177,7 @@ export function buildColorScale(
     if (isLog) {
       return (Math.log(safe(v)) - logMin) / (logMax - logMin || 1);
     }
-    if (
-      (type === "diverging" || type === "diverging-dark") &&
-      mid !== undefined
-    ) {
+    if (diverging && mid !== undefined) {
       if (v <= mid) return 0.5 * ((v - min) / (mid - min || 1));
       return 0.5 + 0.5 * ((v - mid) / (max - mid || 1));
     }
@@ -151,10 +192,7 @@ export function buildColorScale(
     legendValues = [0, 0.25, 0.5, 0.75, 1].map((p) =>
       Math.exp(logMin + (logMax - logMin) * p),
     );
-  } else if (
-    (type === "diverging" || type === "diverging-dark") &&
-    mid !== undefined
-  ) {
+  } else if (diverging && mid !== undefined) {
     legendValues = [min, (min + mid) / 2, mid, (mid + max) / 2, max];
   } else {
     legendValues = [

@@ -57,7 +57,8 @@ import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
 import { StackedBarChart } from "@/components/charts/stacked-bar-chart";
 import { CountryTradeSection } from "@/components/country-trade";
-import { getCountryTradePair } from "@/lib/oec";
+import { HashScroll } from "@/components/hash-scroll";
+import { oecIdForIso3 } from "@/lib/oec-fetch";
 
 export const revalidate = 86400;
 
@@ -206,11 +207,6 @@ export default async function CountryPage({
       { groups: [], data: [], note: null, useCounts: false },
     ),
   ]);
-
-  const trade = await safe(getCountryTradePair(country.iso3), {
-    exports: null,
-    imports: null,
-  });
 
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
@@ -404,8 +400,20 @@ export default async function CountryPage({
               </Link>
             </Button>
           </div>
+          {oecIdForIso3(country.iso3) ? (
+            <p className="mt-3 text-sm text-muted-foreground">
+              <a
+                href="#trade"
+                className="font-medium text-primary underline-offset-2 hover:underline"
+              >
+                Jump to exports &amp; imports →
+              </a>
+            </p>
+          ) : null}
         </div>
       </div>
+
+      <HashScroll />
 
       <div className="container space-y-8 py-8">
         {/* Key stats */}
@@ -664,13 +672,14 @@ export default async function CountryPage({
             />
           </ChartCard>
 
-          {(trade.exports || trade.imports) && (
-            <CountryTradeSection
-              countryName={country.name}
-              exports={trade.exports}
-              imports={trade.imports}
-            />
-          )}
+          {oecIdForIso3(country.iso3) ? (
+            <div className="lg:col-span-2">
+              <CountryTradeSection
+                countryName={country.name}
+                iso3={country.iso3}
+              />
+            </div>
+          ) : null}
 
           <ChartCard
             title="Net migration over time"

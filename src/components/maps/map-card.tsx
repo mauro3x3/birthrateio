@@ -29,6 +29,9 @@ export interface MapFrame {
 }
 
 function scaleHint(unit?: string, scaleType?: ScaleType): string {
+  if (scaleType?.includes("growth")) {
+    return "Blue = growing, red = shrinking.";
+  }
   if (scaleType?.includes("diverging")) {
     return "Stronger colours = farther from the midpoint.";
   }
@@ -94,6 +97,8 @@ export function MapCard({
   const lastYear = frames[lastIdx]?.year;
 
   const cinemaScale = React.useMemo((): ScaleType => {
+    if (scaleType === "diverging-growth" || scaleType === "diverging-growth-dark")
+      return "diverging-growth-dark";
     if (scaleType === "diverging" || scaleType === "diverging-dark")
       return "diverging-dark";
     if (scaleType === "sequential" || scaleType === "sequential-dark")

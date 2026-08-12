@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageHeader } from "@/components/page-header";
-import { MapCard } from "@/components/maps/map-card";
 import { ExplorerTable } from "@/components/explorer-table";
 import { PopulationCalculator } from "@/components/population-calculator";
+import { TimelineExplorer } from "@/components/maps/timeline-explorer";
 import {
   getMapFrames,
   getRanking,
   getWeightedGlobalByYear,
   getWorldByYear,
+  getWorldLatestValue,
 } from "@/lib/queries";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
@@ -40,36 +40,69 @@ export default async function PopulationPage() {
         getWeightedGlobalByYear(SLUG.populationGrowth, SLUG.population, years),
         {} as Record<number, number>,
       );
-  const growthStats = years
-    .filter((y) => globalGrowth[y] != null)
-    .map((y) => ({ year: y, label: `World ${globalGrowth[y].toFixed(2)}%` }));
+
+  const timelineFrames = growthFrames.map((f) => ({
+    year: f.year,
+    data: f.data.map((d) => ({
+      iso3: d.iso3,
+      slug: d.slug,
+      name: d.name,
+      value: d.value,
+      continent: d.continent,
+    })),
+  }));
+
+  const growthBySlug = new Map(growthRanking.map((r) => [r.slug, r]));
+  const calcCountries = popRanking
+    .map((p) => {
+      const g = growthBySlug.get(p.slug);
+      if (!g) return null;
+      return {
+        slug: p.slug,
+        name: p.name,
+        flagEmoji: p.flagEmoji,
+        population: p.value,
+        growth: g.value,
+        year: Math.max(p.year, g.year),
+      };
+    })
+    .filter((c): c is NonNullable<typeof c> => c != null);
+
+  const worldPopLatest = await safe(getWorldLatestValue(SLUG.population), null);
+  const worldPop = worldPopLatest?.value ?? 8_000_000_000;
+  const latestGrowthYear = years[years.length - 1];
+  const worldGrowth =
+    (latestGrowthYear != null ? globalGrowth[latestGrowthYear] : undefined) ??
+    0.9;
 
   return (
     <div>
-      <PageHeader
-        title="Population Explorer"
-        description="Population size, growth and projections for every country. Most populous nations, fastest-growing and fastest-shrinking populations."
+      <TimelineExplorer
+        frames={timelineFrames}
+        globalByYear={globalGrowth}
+        unit="% annual"
+        decimals={2}
+        scaleType="diverging-growth-dark"
+        mid={0}
+        source="World Bank"
+        headline="Global"
+        metricLabel="% annual growth"
       />
-      <div className="container space-y-8 py-8">
-        <MapCard
-          title="Population Growth Map"
-          description="Annual population growth rate (%). Blue = growing, red = shrinking."
-          source="World Bank"
-          frames={growthFrames}
-          unit="% annual"
-          decimals={2}
-          scaleType="diverging"
-          mid={0}
-          frameStats={growthStats}
-          height={400}
-        />
 
+      <div className="container space-y-10 py-10">
         <div className="space-y-2">
-          <PopulationCalculator defaultPopulation={8_000_000_000} defaultGrowth={0.9} />
+          <PopulationCalculator
+            countries={calcCountries}
+            defaultPopulation={Math.round(worldPop)}
+            defaultGrowth={Number(worldGrowth.toFixed(2))}
+          />
           <p className="text-xs text-muted-foreground">
-            Illustrative compound-growth calculator — not a demographic projection.
-            For country forecasts see the{" "}
-            <a href="/simulator" className="underline underline-offset-2 hover:text-foreground">
+            Illustrative compound-growth calculator — not a demographic
+            projection. For country forecasts see the{" "}
+            <a
+              href="/simulator"
+              className="underline underline-offset-2 hover:text-foreground"
+            >
               demographic simulator
             </a>
             .

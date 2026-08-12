@@ -208,41 +208,70 @@ function TradeTable({ products }: { products: TradeProduct[] }) {
 
 export function CountryTradeSection({
   countryName,
-  exports,
-  imports,
+  iso3,
 }: {
   countryName: string;
-  exports: CountryTrade | null;
-  imports: CountryTrade | null;
+  iso3: string;
 }) {
+  const [exports, setExports] = React.useState<CountryTrade | null>(null);
+  const [imports, setImports] = React.useState<CountryTrade | null>(null);
+  const [status, setStatus] = React.useState<"loading" | "ready" | "error">(
+    "loading",
+  );
+  const [flow, setFlow] = React.useState<"export" | "import">("export");
+
+  React.useEffect(() => {
+    let cancelled = false;
+    setStatus("loading");
+    void (async () => {
+      const { fetchCountryTradePair, oecIdForIso3 } = await import(
+        "@/lib/oec-fetch"
+      );
+      if (!oecIdForIso3(iso3)) {
+        if (!cancelled) setStatus("error");
+        return;
+      }
+      const pair = await fetchCountryTradePair(iso3);
+      if (cancelled) return;
+      setExports(pair.exports);
+      setImports(pair.imports);
+      if (pair.exports || pair.imports) {
+        setFlow(pair.exports ? "export" : "import");
+        setStatus("ready");
+      } else {
+        setStatus("error");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [iso3]);
+
   const available = [
     exports ? ("export" as const) : null,
     imports ? ("import" as const) : null,
   ].filter(Boolean) as Array<"export" | "import">;
 
-  const [flow, setFlow] = React.useState<"export" | "import">(
-    available[0] ?? "export",
-  );
-
-  if (available.length === 0) return null;
-
   const active = flow === "export" ? exports : imports;
-  if (!active) return null;
-
-  const year = active.year;
-  const oecProfile = `https://oec.world/en/profile/country/${active.oecId}`;
+  const oecId = active?.oecId ?? null;
+  const oecProfile = oecId
+    ? `https://oec.world/en/profile/country/${oecId}`
+    : `https://oec.world/en/search/${encodeURIComponent(countryName)}`;
 
   return (
-    <section className="space-y-4 border-t border-border pt-8">
+    <section
+      id="trade"
+      className="scroll-mt-24 space-y-4 border-t border-border pt-8"
+    >
       <div className="section-rule">
         <div className="min-w-0 space-y-1">
           <h2 className="font-serif text-xl font-semibold tracking-tight text-primary md:text-[1.35rem]">
-            International trade
+            Exports &amp; imports
           </h2>
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            What {countryName} {flow === "export" ? "exports" : "imports"} — top
-            products by value ({year}), from the Observatory of Economic
-            Complexity (BACI / CEPII).
+            {status === "ready" && active
+              ? `What ${countryName} ${flow === "export" ? "exports" : "imports"} — top products by value (${active.year}), from the Observatory of Economic Complexity (BACI / CEPII).`
+              : `International trade for ${countryName} — product exports and imports from OEC / BACI.`}
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-3 text-xs">
@@ -257,49 +286,70 @@ export function CountryTradeSection({
         </div>
       </div>
 
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div className="flex gap-1 border-b border-border">
-          {available.map((f) => (
-            <button
-              key={f}
-              type="button"
-              onClick={() => setFlow(f)}
-              className={cn(
-                "px-3 py-2 text-sm font-medium transition-colors",
-                flow === f
-                  ? "border-b-2 border-primary text-primary"
-                  : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {f === "export" ? "Exports" : "Imports"}
-            </button>
-          ))}
-        </div>
-        <p className="font-serif text-lg font-semibold tabular-nums text-primary">
-          ${formatCompact(active.total)}
-          <span className="ml-2 text-sm font-sans font-normal text-muted-foreground">
-            total {flow === "export" ? "exports" : "imports"} · {year}
-          </span>
+      {status === "loading" ? (
+        <p className="py-10 text-sm text-muted-foreground">
+          Loading export and import product mix…
         </p>
-      </div>
+      ) : status === "error" || !active ? (
+        <p className="py-6 text-sm text-muted-foreground">
+          Trade product data could not be loaded right now.{" "}
+          <a
+            href={oecProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="link-editorial"
+          >
+            View {countryName} on OEC
+          </a>
+          .
+        </p>
+      ) : (
+        <>
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div className="flex gap-1 border-b border-border">
+              {available.map((f) => (
+                <button
+                  key={f}
+                  type="button"
+                  onClick={() => setFlow(f)}
+                  className={cn(
+                    "px-3 py-2 text-sm font-medium transition-colors",
+                    flow === f
+                      ? "border-b-2 border-primary text-primary"
+                      : "text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {f === "export" ? "Exports" : "Imports"}
+                </button>
+              ))}
+            </div>
+            <p className="font-serif text-lg font-semibold tabular-nums text-primary">
+              ${formatCompact(active.total)}
+              <span className="ml-2 text-sm font-sans font-normal text-muted-foreground">
+                total {flow === "export" ? "exports" : "imports"} · {active.year}
+              </span>
+            </p>
+          </div>
 
-      <TradeTreemap products={active.products} />
-      <TradeTable products={active.products} />
+          <TradeTreemap products={active.products} />
+          <TradeTable products={active.products} />
 
-      <p className="text-xs text-muted-foreground">
-        Source:{" "}
-        <a
-          href={active.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="link-editorial"
-        >
-          {active.source}
-        </a>
-        . Product classification: HS 2022 (4-digit). Shares are of the products
-        shown (top {active.products.length} by value), not necessarily of all
-        trade.
-      </p>
+          <p className="text-xs text-muted-foreground">
+            Source:{" "}
+            <a
+              href={active.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link-editorial"
+            >
+              {active.source}
+            </a>
+            . Product classification: HS 2022 (4-digit). Shares are of the
+            products shown (top {active.products.length} by value), not
+            necessarily of all trade.
+          </p>
+        </>
+      )}
     </section>
   );
 }

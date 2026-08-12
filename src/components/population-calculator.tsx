@@ -1,22 +1,74 @@
 "use client";
 
 import * as React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
-import { formatCompact } from "@/lib/utils";
+import { CountrySelect } from "@/components/country-select";
+import { formatCompact, formatNumber } from "@/lib/utils";
+
+export type PopulationCalcCountry = {
+  slug: string;
+  name: string;
+  flagEmoji: string | null;
+  population: number;
+  growth: number;
+  year: number;
+};
+
+const WORLD_SLUG = "__world__";
 
 export function PopulationCalculator({
+  countries = [],
   defaultPopulation = 10_000_000,
   defaultGrowth = 1.0,
+  worldLabel = "World",
 }: {
+  countries?: PopulationCalcCountry[];
   defaultPopulation?: number;
   defaultGrowth?: number;
+  worldLabel?: string;
 }) {
+  const [selected, setSelected] = React.useState<string | null>(WORLD_SLUG);
   const [pop, setPop] = React.useState(defaultPopulation);
   const [growth, setGrowth] = React.useState(defaultGrowth);
   const [years, setYears] = React.useState(50);
+
+  const options = React.useMemo(
+    () => [
+      { slug: WORLD_SLUG, name: worldLabel, flagEmoji: "🌍" },
+      ...countries.map((c) => ({
+        slug: c.slug,
+        name: c.name,
+        flagEmoji: c.flagEmoji,
+      })),
+    ],
+    [countries, worldLabel],
+  );
+
+  const bySlug = React.useMemo(
+    () => new Map(countries.map((c) => [c.slug, c])),
+    [countries],
+  );
+
+  const active = selected && selected !== WORLD_SLUG ? bySlug.get(selected) : null;
+
+  const applyCountry = React.useCallback(
+    (slug: string | null) => {
+      const next = slug ?? WORLD_SLUG;
+      setSelected(next);
+      if (next === WORLD_SLUG) {
+        setPop(defaultPopulation);
+        setGrowth(defaultGrowth);
+        return;
+      }
+      const c = bySlug.get(next);
+      if (!c) return;
+      setPop(Math.round(c.population));
+      setGrowth(Number(c.growth.toFixed(2)));
+    },
+    [bySlug, defaultGrowth, defaultPopulation],
+  );
 
   const data = React.useMemo(() => {
     const out: { year: number; value: number }[] = [];
@@ -35,11 +87,41 @@ export function PopulationCalculator({
     growth > 0 ? Math.log(2) / Math.log(1 + growth / 100) : Infinity;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base">Population Growth Calculator</CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-5">
+    <section className="border-t border-border pt-5">
+      <div className="mb-4 space-y-1">
+        <h2 className="font-serif text-xl font-semibold tracking-tight text-primary md:text-[1.35rem]">
+          Population growth calculator
+        </h2>
+        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+          Pick a country to load its latest population and growth rate, or keep
+          World and edit the numbers yourself. Compound growth only — not a full
+          demographic projection.
+        </p>
+      </div>
+
+      <div className="space-y-5">
+        {options.length > 1 ? (
+          <div className="max-w-md space-y-1.5">
+            <Label>Country</Label>
+            <CountrySelect
+              options={options}
+              value={selected}
+              onChange={applyCountry}
+              placeholder="Select country…"
+            />
+            {active ? (
+              <p className="text-xs text-muted-foreground">
+                Loaded {active.name} · {formatCompact(active.population)} people ·{" "}
+                {formatNumber(active.growth, 2)}% annual ({active.year})
+              </p>
+            ) : (
+              <p className="text-xs text-muted-foreground">
+                Starting from world totals — adjust freely below.
+              </p>
+            )}
+          </div>
+        ) : null}
+
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="space-y-1.5">
             <Label htmlFor="calc-pop">Starting population</Label>
@@ -74,21 +156,23 @@ export function PopulationCalculator({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
-          <div className="rounded-lg border p-3">
+        <div className="grid grid-cols-2 gap-6 border-y border-border py-4 sm:grid-cols-3">
+          <div>
             <p className="text-xs text-muted-foreground">In {years} years</p>
-            <p className="text-xl font-bold">{formatCompact(final)}</p>
+            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
+              {formatCompact(final)}
+            </p>
           </div>
-          <div className="rounded-lg border p-3">
+          <div>
             <p className="text-xs text-muted-foreground">Net change</p>
-            <p className="text-xl font-bold">
+            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
               {final >= pop ? "+" : ""}
               {formatCompact(final - pop)}
             </p>
           </div>
-          <div className="rounded-lg border p-3">
+          <div>
             <p className="text-xs text-muted-foreground">Doubling time</p>
-            <p className="text-xl font-bold">
+            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
               {Number.isFinite(doublingTime)
                 ? `${doublingTime.toFixed(0)} yrs`
                 : "—"}
@@ -99,10 +183,10 @@ export function PopulationCalculator({
         <TimeSeriesChart
           data={data}
           decimals={0}
-          height={240}
+          height={280}
           color="hsl(211 62% 45%)"
         />
-      </CardContent>
-    </Card>
+      </div>
+    </section>
   );
 }

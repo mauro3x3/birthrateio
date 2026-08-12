@@ -108,9 +108,9 @@ export const navTopics: NavTopic[] = [
         description: "GDP and economic output explorers",
       },
       {
-        title: "Trade (on country pages)",
-        href: "/country/japan",
-        description: "Exports & imports treemaps from OEC / BACI",
+        title: "Trade / exports & imports",
+        href: "/country/japan#trade",
+        description: "Product export & import treemaps on each country page",
       },
     ],
   },
