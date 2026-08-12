@@ -14,6 +14,7 @@ import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
+import { WhyTfrDeclining } from "@/components/why-tfr-declining";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { PopulationPyramid } from "@/components/charts/population-pyramid";
 import {
@@ -45,6 +46,11 @@ import {
   getCrimeMeta,
   USA_CRIME_NOTES,
 } from "@/lib/sources/crime-by-origin-data";
+import {
+  WORK_PERMITS_KIND,
+  WORK_PERMITS_NOTE,
+  WORK_PERMITS_SOURCE_URL,
+} from "@/lib/sources/work-permits-data";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
@@ -128,6 +134,7 @@ export default async function CountryPage({
     crimeRaceMurder,
     foreignPrisonerShare,
     admin1Ranking,
+    workPermits,
   ] = await Promise.all([
     safe(getCountryTimeSeries(country.id, SLUG.population), []),
     safe(getCountryTimeSeries(country.id, SLUG.fertility), []),
@@ -194,6 +201,10 @@ export default async function CountryPage({
     ),
     safe(getCountryTimeSeries(country.id, SLUG.foreignPrisonerShare), []),
     safe(getAdmin1FertilityRanking(country.id), []),
+    safe(
+      getComposition(country.id, WORK_PERMITS_KIND, { useCounts: true }),
+      { groups: [], data: [], note: null, useCounts: false },
+    ),
   ]);
 
   const trade = await safe(getCountryTradePair(country.iso3), {
@@ -210,6 +221,11 @@ export default async function CountryPage({
     crimeRacePrison.groups.length > 0 ||
     crimeRaceArrest.groups.length > 0 ||
     crimeRaceMurder.groups.length > 0;
+
+  const workPermitGroupNames: string[] = [
+    ...(workPermits.groups as string[]).filter((g) => g !== "Other"),
+    ...(workPermits.groups as string[]).includes("Other") ? ["Other"] : [],
+  ];
 
   const lifeExpStart = lifeExp.length ? lifeExp[0].year : null;
   const hasHistoricMortality =
@@ -493,6 +509,7 @@ export default async function CountryPage({
             source="World Bank"
             csvRows={fertility}
             csvName={`${slug}-fertility`}
+            titleExtra={<WhyTfrDeclining />}
           >
             <TimeSeriesChart
               data={fertility}
@@ -670,6 +687,34 @@ export default async function CountryPage({
               referenceLabel="Net zero"
             />
           </ChartCard>
+
+          {workPermitGroupNames.length > 0 && (
+            <ChartCard
+              title="First work residence permits by nationality"
+              description="First permits issued for employment reasons to non-EU citizens, by citizenship (top nationalities + Other)"
+              source="Eurostat (migr_resfirst)"
+              csvRows={workPermits.data}
+              csvName={`${slug}-work-permits-citizenship`}
+            >
+              <CompositionLegend groups={workPermitGroupNames} />
+              <StackedBarChart
+                data={workPermits.data}
+                groups={workPermitGroupNames}
+              />
+              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+                {WORK_PERMITS_NOTE}{" "}
+                <a
+                  href={WORK_PERMITS_SOURCE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Eurostat table
+                </a>
+                .
+              </p>
+            </ChartCard>
+          )}
 
           {foreignBorn.length > 0 && (
             <ChartCard

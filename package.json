@@ -20,6 +20,7 @@
     "build:migration-flows": "node scripts/build-migration-flows.js",
     "build:wpp-projections": "node scripts/build-wpp-projections.js",
     "build:wup-cities": "node scripts/build-wup-cities.js",
+    "build:work-permits": "node scripts/build-work-permits.js",
     "ingest": "tsx scripts/ingest.ts",
     "ingest:worldbank": "tsx scripts/ingest.ts --source=worldbank",
     "postinstall": "prisma generate"

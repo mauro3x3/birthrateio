@@ -14,6 +14,7 @@ import {
   mapRegionMaskIso3s,
   type MapRegionId,
 } from "@/lib/map-regions";
+import { WhyTfrDeclining } from "@/components/why-tfr-declining";
 
 const ChoroplethMap = dynamic(
   () => import("@/components/maps/choropleth-map").then((m) => m.ChoroplethMap),
@@ -111,6 +112,7 @@ export function TimelineExplorer({
   headline = "Global",
   metricLabel = "Fertility",
   playMs = 320,
+  explainTfrDecline = false,
 }: {
   frames: TimelineFrame[];
   globalByYear: Record<number, number>;
@@ -122,6 +124,8 @@ export function TimelineExplorer({
   headline?: string;
   metricLabel?: string;
   playMs?: number;
+  /** Show “Why is TFR declining?” explainer under the headline metric. */
+  explainTfrDecline?: boolean;
 }) {
   const [idx, setIdx] = React.useState(() =>
     frames.length ? frames.length - 1 : 0,
@@ -276,6 +280,11 @@ export function TimelineExplorer({
               <p className="mt-1.5 text-[11px] uppercase tracking-[0.16em] text-white/35">
                 {metricLabel}
               </p>
+              {explainTfrDecline ? (
+                <div className="mt-3">
+                  <WhyTfrDeclining className="text-white/45 hover:text-[#c49660]" />
+                </div>
+              ) : null}
             </div>
 
             <dl className="space-y-0 text-[13px]">

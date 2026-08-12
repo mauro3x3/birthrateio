@@ -7,6 +7,7 @@ import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
+import { WhyTfrDeclining } from "@/components/why-tfr-declining";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { CitySubdivisionsTable } from "@/components/city-subdivisions";
 import { CityDistrictsExplorer } from "@/components/city-districts-explorer";
@@ -461,6 +462,7 @@ export default async function CityPage({
             source={fertilityMeta?.source ?? "National statistical office"}
             csvRows={cityFertility}
             csvName={`${slug}-city-fertility`}
+            titleExtra={<WhyTfrDeclining />}
           >
             <TimeSeriesChart
               data={cityFertility}
@@ -697,6 +699,7 @@ export default async function CityPage({
               source="World Bank"
               csvRows={countryFertility}
               csvName={`${slug}-country-fertility`}
+              titleExtra={<WhyTfrDeclining />}
             >
               <TimeSeriesChart
                 data={countryFertility}

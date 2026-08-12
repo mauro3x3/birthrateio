@@ -7,6 +7,7 @@ import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
+import { WhyTfrDeclining } from "@/components/why-tfr-declining";
 import {
   getAdmin1BySlug,
   getAdmin1TimeSeries,
@@ -209,6 +210,7 @@ export default async function StatePage({
               source={fertSource.text}
               csvRows={fertility}
               csvName={`${slug}-fertility`}
+              titleExtra={<WhyTfrDeclining />}
             >
               <TimeSeriesChart
                 data={fertility}

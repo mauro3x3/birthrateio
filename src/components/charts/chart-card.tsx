@@ -14,6 +14,8 @@ export interface ChartCardProps {
   source?: string;
   /** Override context subject for this chart only. */
   subject?: string;
+  /** Extra control beside the title (e.g. explainer). Omitted from PNG export. */
+  titleExtra?: React.ReactNode;
   /** Rows used for the CSV export. */
   csvRows?: Record<string, unknown>[];
   csvName?: string;
@@ -45,6 +47,7 @@ export function ChartCard({
   description,
   source,
   subject: subjectProp,
+  titleExtra,
   csvRows,
   csvName = "chart-data",
   children,
@@ -105,7 +108,21 @@ export function ChartCard({
           ) : null}
         </div>
         <SectionHeading
-          title={title}
+          title={
+            titleExtra ? (
+              <span className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <span>{title}</span>
+                <span
+                  data-export-ignore
+                  className="inline-flex font-sans text-xs font-medium normal-case tracking-normal"
+                >
+                  {titleExtra}
+                </span>
+              </span>
+            ) : (
+              title
+            )
+          }
           description={description}
           actions={
             <div

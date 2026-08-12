@@ -67,6 +67,7 @@ export default async function FertilityPage() {
         source="World Bank"
         headline="Global"
         metricLabel="Births / woman"
+        explainTfrDecline
       />
 
       <div className="container space-y-10 py-10">

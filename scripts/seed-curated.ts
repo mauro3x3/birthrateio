@@ -23,6 +23,7 @@ import { seedUnemploymentByBirthplace } from "../src/lib/sources/unemployment-bi
 import { seedCrimeByOrigin } from "../src/lib/sources/crime-by-origin-data";
 import { seedAdmin1 } from "../src/lib/sources/admin1-data";
 import { seedHistoricMortality } from "../src/lib/sources/historic-mortality-data";
+import { seedWorkPermits } from "../src/lib/sources/work-permits-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -46,6 +47,7 @@ async function main() {
   await seedCrimeByOrigin(prisma);
   await seedAdmin1(prisma);
   await seedHistoricMortality(prisma);
+  await seedWorkPermits(prisma);
 }
 
 main()
