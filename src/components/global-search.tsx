@@ -20,6 +20,8 @@ type SearchResults = {
     name: string;
     flagEmoji: string | null;
     continent: string | null;
+    href?: string;
+    hint?: string | null;
   }[];
   cities: {
     slug: string;
@@ -31,6 +33,12 @@ type SearchResults = {
     name: string;
     kind: string;
     country: { name: string; flagEmoji: string | null };
+  }[];
+  topics: {
+    id: string;
+    title: string;
+    href: string;
+    description?: string;
   }[];
 };
 
@@ -48,6 +56,7 @@ export function GlobalSearch({
     countries: [],
     cities: [],
     regions: [],
+    topics: [],
   });
   const [loading, setLoading] = React.useState(false);
 
@@ -64,7 +73,7 @@ export function GlobalSearch({
 
   React.useEffect(() => {
     if (!query.trim()) {
-      setResults({ countries: [], cities: [], regions: [] });
+      setResults({ countries: [], cities: [], regions: [], topics: [] });
       return;
     }
     const controller = new AbortController();
@@ -79,6 +88,7 @@ export function GlobalSearch({
           countries: data.countries ?? [],
           cities: data.cities ?? [],
           regions: data.regions ?? [],
+          topics: data.topics ?? [],
         });
       } catch {
         /* aborted */
@@ -101,7 +111,8 @@ export function GlobalSearch({
   const hasResults =
     results.countries.length > 0 ||
     results.cities.length > 0 ||
-    results.regions.length > 0;
+    results.regions.length > 0 ||
+    results.topics.length > 0;
 
   return (
     <>
@@ -151,7 +162,7 @@ export function GlobalSearch({
         <DialogContent className="overflow-hidden p-0" hideClose>
           <Command shouldFilter={false}>
             <CommandInput
-              placeholder="Search countries, regions, cities…"
+              placeholder="Try Japan fertility, Germany migration…"
               value={query}
               onValueChange={setQuery}
             />
@@ -162,21 +173,37 @@ export function GlobalSearch({
               {!query.trim() && (
                 <CommandEmpty>Start typing to search…</CommandEmpty>
               )}
+              {results.topics.length > 0 && (
+                <CommandGroup heading="Topics">
+                  {results.topics.map((t) => (
+                    <CommandItem
+                      key={t.id}
+                      value={`topic-${t.id}`}
+                      onSelect={() => go(t.href)}
+                    >
+                      <span>{t.title}</span>
+                      {t.description && (
+                        <span className="ml-auto text-xs text-muted-foreground">
+                          {t.description}
+                        </span>
+                      )}
+                    </CommandItem>
+                  ))}
+                </CommandGroup>
+              )}
               {results.countries.length > 0 && (
                 <CommandGroup heading="Countries">
                   {results.countries.map((c) => (
                     <CommandItem
                       key={c.slug}
                       value={`country-${c.slug}`}
-                      onSelect={() => go(`/country/${c.slug}`)}
+                      onSelect={() => go(c.href ?? `/country/${c.slug}`)}
                     >
                       <span className="text-lg">{c.flagEmoji ?? "🏳️"}</span>
                       <span>{c.name}</span>
-                      {c.continent && (
-                        <span className="ml-auto text-xs text-muted-foreground">
-                          {c.continent}
-                        </span>
-                      )}
+                      <span className="ml-auto text-xs text-muted-foreground">
+                        {c.hint ?? c.continent}
+                      </span>
                     </CommandItem>
                   ))}
                 </CommandGroup>

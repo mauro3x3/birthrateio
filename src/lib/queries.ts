@@ -1,6 +1,7 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
 import { INDICATOR_BY_SLUG, SLUG } from "@/lib/indicators";
+import { parseSearchQuery } from "@/lib/search-query";
 import { unstable_cache } from "next/cache";
 
 // ---------------------------------------------------------------------------
@@ -1061,12 +1062,30 @@ const CITY_SEARCH_ALIASES: Record<string, string[]> = {
 /** Search countries, cities and states/provinces for the global search box. */
 export async function search(query: string) {
   if (!query.trim())
-    return { countries: [], cities: [], regions: [] };
-  const q = query.trim();
+    return { countries: [], cities: [], regions: [], topics: [] };
+  const { placeQuery, topic } = parseSearchQuery(query);
+  const q = (placeQuery || query).trim();
   const qLower = q.toLowerCase();
   // Slug form: "new york" → "new-york" so spaced queries hit hyphenated slugs.
   const qSlug = qLower.replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const aliasSlugs = CITY_SEARCH_ALIASES[qLower] ?? CITY_SEARCH_ALIASES[qSlug] ?? [];
+  const topicHits = topic
+    ? [
+        {
+          id: topic.id,
+          title: topic.label,
+          href: topic.href,
+          description:
+            placeQuery && topic.hash
+              ? `${topic.label} for matching places`
+              : `Browse ${topic.label.toLowerCase()} data`,
+        },
+      ]
+    : [];
+
+  if (!placeQuery) {
+    return { countries: [], cities: [], regions: [], topics: topicHits };
+  }
 
   const cityOr: Array<Record<string, unknown>> = [
     { name: { contains: q, mode: "insensitive" } },
@@ -1126,7 +1145,18 @@ export async function search(query: string) {
       take: 6,
     }),
   ]);
-  return { countries, cities, regions };
+  return {
+    countries: countries.map((c) => ({
+      ...c,
+      href: topic
+        ? `/country/${c.slug}#${topic.hash}`
+        : `/country/${c.slug}`,
+      hint: topic?.label ?? null,
+    })),
+    cities,
+    regions,
+    topics: topicHits,
+  };
 }
 
 export async function getDataStats() {
