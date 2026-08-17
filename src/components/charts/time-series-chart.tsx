@@ -107,27 +107,25 @@ export function TimeSeriesChart({
           </linearGradient>
         </defs>
         <CartesianGrid
-          strokeDasharray="2 4"
-          className="stroke-border/60"
           vertical={false}
+          stroke="hsl(var(--border))"
+          strokeOpacity={0.85}
         />
         <XAxis
           dataKey="year"
-          tick={{ fontSize: 12 }}
+          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
           tickLine={false}
-          axisLine={false}
-          minTickGap={24}
-          className="fill-muted-foreground"
+          axisLine={{ stroke: "hsl(var(--foreground) / 0.28)", strokeWidth: 1 }}
+          minTickGap={28}
         />
         <YAxis
           tickFormatter={fmt}
           domain={domain ?? ["auto", "auto"]}
           allowDataOverflow={false}
-          tick={{ fontSize: 12 }}
+          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
           tickLine={false}
           axisLine={false}
-          width={52}
-          className="fill-muted-foreground"
+          width={44}
         />
         <Tooltip
           {...chartTooltipProps}
@@ -155,7 +153,7 @@ export function TimeSeriesChart({
             type="monotone"
             dataKey="value"
             stroke={color}
-            strokeWidth={2}
+            strokeWidth={2.4}
             fill={`url(#grad-${color})`}
             baseValue={domain ? domain[0] : "dataMin"}
             dot={false}
@@ -167,7 +165,7 @@ export function TimeSeriesChart({
             type="monotone"
             dataKey="value"
             stroke={color}
-            strokeWidth={2}
+            strokeWidth={2.4}
             dot={false}
             activeDot={{ r: 5, strokeWidth: 0 }}
             isAnimationActive={false}

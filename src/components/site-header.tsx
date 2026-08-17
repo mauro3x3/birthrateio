@@ -178,13 +178,6 @@ export function SiteHeader() {
         <div className="ml-auto flex items-center gap-1.5 sm:gap-2">
           <GlobalSearch variant="header" />
           <Button
-            asChild
-            size="sm"
-            className="hidden bg-brand-donate text-white hover:bg-brand-donate/90 sm:inline-flex"
-          >
-            <Link href="/support">Donate</Link>
-          </Button>
-          <Button
             variant="ghost"
             size="icon"
             className="text-white hover:bg-white/10 md:hidden"
@@ -258,15 +251,6 @@ export function SiteHeader() {
                 </div>
               );
             })}
-            <div className="mt-2 border-t border-white/10 pt-3">
-              <Button
-                asChild
-                size="sm"
-                className="w-full bg-brand-donate text-white hover:bg-brand-donate/90"
-              >
-                <Link href="/support">Donate</Link>
-              </Button>
-            </div>
           </nav>
         </div>
       )}

@@ -670,7 +670,7 @@ export default async function CountryPage({
           {birthsVsDeaths.length > 0 && (
             <ChartCard
               title="Births vs deaths"
-              description="Crude birth rate and crude death rate · per 1,000 population (not absolute counts)"
+              description="Crude birth and death rates · per 1,000 people"
               source="World Bank"
               csvRows={birthsVsDeaths}
               csvName={`${slug}-births-vs-deaths`}
@@ -691,8 +691,12 @@ export default async function CountryPage({
                     color: "hsl(0 65% 48%)",
                   },
                 ]}
+                markCrossing={{ from: "birthRate", to: "deathRate" }}
               />
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              <p
+                data-export-ignore
+                className="mt-3 text-xs leading-relaxed text-muted-foreground"
+              >
                 Rates per 1,000 people per year — not absolute birth or death
                 counts. When the birth rate exceeds the death rate, natural
                 increase is positive (before migration).
@@ -784,7 +788,10 @@ export default async function CountryPage({
                 data={workPermits.data}
                 groups={workPermitGroupNames}
               />
-              <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+              <p
+                data-export-ignore
+                className="mt-3 text-xs leading-relaxed text-muted-foreground"
+              >
                 {WORK_PERMITS_NOTE}{" "}
                 <a
                   href={WORK_PERMITS_SOURCE_URL}

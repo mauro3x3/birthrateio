@@ -59,20 +59,28 @@ export function ChartCard({
   const ref = React.useRef<HTMLDivElement>(null);
 
   const handlePng = React.useCallback(async () => {
-    if (!ref.current) return;
-    const bg = getComputedStyle(document.body).backgroundColor || "#ffffff";
-    const dataUrl = await toPng(ref.current, {
-      backgroundColor: bg,
-      pixelRatio: 2,
-      filter: (node) => {
-        if (!(node instanceof HTMLElement)) return true;
-        return node.dataset.exportIgnore == null;
-      },
-    });
-    const a = document.createElement("a");
-    a.href = dataUrl;
-    a.download = `${csvName}.png`;
-    a.click();
+    const node = ref.current;
+    if (!node) return;
+    node.classList.add("br-exporting");
+    await new Promise<void>((resolve) =>
+      requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
+    );
+    try {
+      const dataUrl = await toPng(node, {
+        backgroundColor: "#ffffff",
+        pixelRatio: 2,
+        filter: (el) => {
+          if (!(el instanceof HTMLElement)) return true;
+          return el.dataset.exportIgnore == null;
+        },
+      });
+      const a = document.createElement("a");
+      a.href = dataUrl;
+      a.download = `${csvName}.png`;
+      a.click();
+    } finally {
+      node.classList.remove("br-exporting");
+    }
   }, [csvName]);
 
   const handleCsv = React.useCallback(() => {
@@ -90,24 +98,22 @@ export function ChartCard({
 
   return (
     <section className="border-t border-border pt-5">
-      <div ref={ref} className="bg-background px-0.5">
-        <div className="mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
+      <div ref={ref} className="br-chart-share bg-background px-0.5">
+        <div className="br-share-masthead mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
+          <p className="br-share-subject min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
+            {subject ?? siteConfig.name}
+          </p>
           {subject ? (
-            <p className="min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
-              {subject}
-            </p>
-          ) : (
-            <p className="min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
-              {siteConfig.name}
-            </p>
-          )}
-          {subject ? (
-            <p className="shrink-0 text-[0.7rem] font-medium text-muted-foreground">
+            <p
+              data-export-ignore
+              className="br-share-site shrink-0 text-[0.7rem] font-medium text-muted-foreground"
+            >
               {siteConfig.name}
             </p>
           ) : null}
         </div>
         <SectionHeading
+          className="br-share-heading"
           title={
             titleExtra ? (
               <span className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1">
@@ -150,11 +156,15 @@ export function ChartCard({
           }
         />
         {children}
-        <div className="mt-3 space-y-1">
+        <div className="br-share-footer mt-3 space-y-1">
           {source && (
-            <p className="text-xs text-muted-foreground">Source: {source}</p>
+            <p className="br-share-source text-xs text-muted-foreground">
+              Source: {source}
+            </p>
           )}
-          <p className="text-[0.7rem] text-muted-foreground/80">{shareUrl}</p>
+          <p className="br-share-url text-[0.7rem] text-muted-foreground/80">
+            {shareUrl}
+          </p>
         </div>
       </div>
       <div data-export-ignore className="mt-1.5">

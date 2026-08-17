@@ -2,7 +2,7 @@
 
 import {
   CartesianGrid,
-  Legend,
+  LabelList,
   Line,
   LineChart,
   ReferenceLine,
@@ -26,6 +26,52 @@ export interface MultiSeries {
   dashed?: boolean;
 }
 
+function lastNumericIndex(
+  data: Record<string, number | null>[],
+  key: string,
+): number {
+  for (let i = data.length - 1; i >= 0; i--) {
+    if (typeof data[i][key] === "number") return i;
+  }
+  return -1;
+}
+
+function lastNumericValue(
+  data: Record<string, number | null>[],
+  key: string,
+): number | null {
+  const i = lastNumericIndex(data, key);
+  if (i < 0) return null;
+  const v = data[i][key];
+  return typeof v === "number" ? v : null;
+}
+
+/** First year where `to` rises above `from` (e.g. deaths overtaking births). */
+function firstCrossYear(
+  data: Record<string, number | null>[],
+  fromKey: string,
+  toKey: string,
+): number | null {
+  for (let i = 1; i < data.length; i++) {
+    const a0 = data[i - 1][fromKey];
+    const b0 = data[i - 1][toKey];
+    const a1 = data[i][fromKey];
+    const b1 = data[i][toKey];
+    if (
+      typeof a0 === "number" &&
+      typeof b0 === "number" &&
+      typeof a1 === "number" &&
+      typeof b1 === "number" &&
+      a0 >= b0 &&
+      a1 < b1
+    ) {
+      const y = data[i].year;
+      return typeof y === "number" ? y : null;
+    }
+  }
+  return null;
+}
+
 /**
  * Generic overlay line chart. `data` is an array of objects keyed by `year`
  * plus one numeric field per series key. Powers compare overlays and
@@ -39,6 +85,7 @@ export function MultiSeriesChart({
   decimals = 2,
   referenceY,
   referenceLabel,
+  markCrossing,
 }: {
   data: Record<string, number | null>[];
   series: MultiSeries[];
@@ -47,6 +94,8 @@ export function MultiSeriesChart({
   decimals?: number;
   referenceY?: number;
   referenceLabel?: string;
+  /** Draw a year marker where one series overtakes another. */
+  markCrossing?: { from: string; to: string };
 }) {
   if (!data || data.length === 0) {
     return (
@@ -73,35 +122,57 @@ export function MultiSeriesChart({
     referenceY,
   );
 
+  const lastIdx = Object.fromEntries(
+    series.map((s) => [s.key, lastNumericIndex(data, s.key)]),
+  );
+
+  const rankedEnds = series
+    .map((s) => ({ key: s.key, value: lastNumericValue(data, s.key) ?? 0 }))
+    .sort((a, b) => b.value - a.value);
+  const endDy: Record<string, number> = {};
+  const span = domain ? domain[1] - domain[0] : 1;
+  for (let i = 1; i < rankedEnds.length; i++) {
+    const gap = rankedEnds[i - 1].value - rankedEnds[i].value;
+    if (span > 0 && gap / span < 0.08) {
+      endDy[rankedEnds[i - 1].key] = (endDy[rankedEnds[i - 1].key] ?? 0) - 8;
+      endDy[rankedEnds[i].key] = (endDy[rankedEnds[i].key] ?? 0) + 8;
+    }
+  }
+
+  const longestLabel = Math.max(...series.map((s) => s.label.length), 8);
+  const rightPad = Math.min(148, 28 + longestLabel * 7.2);
+
+  const crossYear = markCrossing
+    ? firstCrossYear(data, markCrossing.from, markCrossing.to)
+    : null;
+
   return (
     <ResponsiveContainer width="100%" height={height}>
       <LineChart
         data={data}
-        margin={{ top: 8, right: 12, left: 4, bottom: 0 }}
+        margin={{ top: 10, right: rightPad, left: 0, bottom: 4 }}
         style={{ cursor: "crosshair" }}
       >
         <CartesianGrid
-          strokeDasharray="2 4"
-          className="stroke-border/60"
           vertical={false}
+          stroke="hsl(var(--border))"
+          strokeOpacity={0.85}
         />
         <XAxis
           dataKey="year"
-          tick={{ fontSize: 12 }}
+          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
           tickLine={false}
-          axisLine={false}
-          minTickGap={24}
-          className="fill-muted-foreground"
+          axisLine={{ stroke: "hsl(var(--foreground) / 0.28)", strokeWidth: 1 }}
+          minTickGap={28}
         />
         <YAxis
           tickFormatter={fmt}
           domain={domain ?? ["auto", "auto"]}
           allowDataOverflow={false}
-          tick={{ fontSize: 12 }}
+          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
           tickLine={false}
           axisLine={false}
-          width={52}
-          className="fill-muted-foreground"
+          width={44}
         />
         <Tooltip
           {...chartTooltipProps}
@@ -126,22 +197,58 @@ export function MultiSeriesChart({
             }}
           />
         )}
-        <Legend wrapperStyle={{ fontSize: 12 }} />
-        {series.map((s, i) => (
-          <Line
-            key={s.key}
-            type="monotone"
-            dataKey={s.key}
-            name={s.label}
-            stroke={s.color ?? colorAt(i)}
-            strokeWidth={2}
-            strokeDasharray={s.dashed ? "5 4" : undefined}
-            dot={false}
-            connectNulls
-            activeDot={{ r: 5, strokeWidth: 0 }}
-            isAnimationActive={false}
+        {crossYear != null && (
+          <ReferenceLine
+            x={crossYear}
+            stroke="hsl(var(--foreground) / 0.28)"
+            strokeDasharray="3 3"
+            label={{
+              value: String(crossYear),
+              position: "insideTop",
+              fontSize: 11,
+              fontWeight: 600,
+              fill: "hsl(var(--foreground))",
+            }}
           />
-        ))}
+        )}
+        {series.map((s, i) => {
+          const stroke = s.color ?? colorAt(i);
+          const end = lastIdx[s.key];
+          const dy = endDy[s.key] ?? 0;
+          return (
+            <Line
+              key={s.key}
+              type="monotone"
+              dataKey={s.key}
+              name={s.label}
+              stroke={stroke}
+              strokeWidth={2.4}
+              strokeDasharray={s.dashed ? "5 4" : undefined}
+              dot={false}
+              connectNulls
+              activeDot={{ r: 4, strokeWidth: 0 }}
+              isAnimationActive={false}
+            >
+              <LabelList
+                dataKey={s.key}
+                content={(p) => {
+                  if (p.index !== end || p.x == null || p.y == null) return null;
+                  return (
+                    <text
+                      x={Number(p.x) + 8}
+                      y={Number(p.y) + 4 + dy}
+                      fontSize={11}
+                      fontWeight={500}
+                      fill={stroke}
+                    >
+                      {s.label}
+                    </text>
+                  );
+                }}
+              />
+            </Line>
+          );
+        })}
       </LineChart>
     </ResponsiveContainer>
   );
