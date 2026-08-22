@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Suspense } from "react";
 import { Arimo, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
@@ -6,6 +7,8 @@ import "leaflet/dist/leaflet.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooterGate } from "@/components/site-footer-gate";
 import { AssistantWidget } from "@/components/assistant-widget";
+import { PostHogProvider } from "@/components/posthog-provider";
+import { PostHogPageView } from "@/components/posthog-pageview";
 import { siteConfig } from "@/lib/site";
 
 const sans = Arimo({
@@ -71,13 +74,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <body className={`${sans.className} font-sans antialiased`}>
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooterGate />
-        </div>
-        <AssistantWidget />
-        <Analytics />
+        <PostHogProvider>
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
+          <div className="flex min-h-screen flex-col">
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooterGate />
+          </div>
+          <AssistantWidget />
+          <Analytics />
+        </PostHogProvider>
       </body>
     </html>
   );
