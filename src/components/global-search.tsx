@@ -42,6 +42,24 @@ type SearchResults = {
   }[];
 };
 
+const POPULAR_TOPICS = [
+  { id: "fertility", title: "Fertility", href: "/fertility", description: "Rates, maps & rankings" },
+  { id: "population", title: "Population", href: "/population", description: "Levels & projections" },
+  { id: "migration", title: "Migration", href: "/migration", description: "Net flows & corridors" },
+  { id: "gdp", title: "GDP", href: "/gdp", description: "Output & living standards" },
+  { id: "cities", title: "Cities", href: "/cities", description: "World metro areas" },
+  { id: "compare", title: "Compare", href: "/compare", description: "Side-by-side countries" },
+];
+
+const POPULAR_PLACES = [
+  { slug: "japan", name: "Japan", flagEmoji: "🇯🇵", href: "/country/japan#demography", hint: "Demography" },
+  { slug: "united-states", name: "United States", flagEmoji: "🇺🇸", href: "/country/united-states", hint: "Overview" },
+  { slug: "germany", name: "Germany", flagEmoji: "🇩🇪", href: "/country/germany#migration", hint: "Migration" },
+  { slug: "south-korea", name: "South Korea", flagEmoji: "🇰🇷", href: "/country/south-korea#demography", hint: "Demography" },
+  { slug: "nigeria", name: "Nigeria", flagEmoji: "🇳🇬", href: "/country/nigeria#demography", hint: "Demography" },
+  { slug: "china", name: "China", flagEmoji: "🇨🇳", href: "/country/china", hint: "Overview" },
+];
+
 export function GlobalSearch({
   className,
   variant = "compact",
@@ -126,8 +144,7 @@ export function GlobalSearch({
         >
           <Search className="h-5 w-5 shrink-0 text-muted-foreground" />
           <span className="text-muted-foreground">
-            Try &ldquo;Japan fertility&rdquo;, &ldquo;Germany migration&rdquo;,
-            &ldquo;Nigeria population&rdquo;&hellip;
+            Search a country or topic…
           </span>
         </button>
       ) : variant === "header" ? (
@@ -171,7 +188,37 @@ export function GlobalSearch({
                 <CommandEmpty>No results found.</CommandEmpty>
               )}
               {!query.trim() && (
-                <CommandEmpty>Start typing to search…</CommandEmpty>
+                <>
+                  <CommandGroup heading="Popular topics">
+                    {POPULAR_TOPICS.map((t) => (
+                      <CommandItem
+                        key={t.id}
+                        value={`popular-topic-${t.id}`}
+                        onSelect={() => go(t.href)}
+                      >
+                        <span>{t.title}</span>
+                        <span className="ml-auto text-xs text-muted-foreground">
+                          {t.description}
+                        </span>
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                  <CommandGroup heading="Popular places">
+                    {POPULAR_PLACES.map((c) => (
+                      <CommandItem
+                        key={c.slug}
+                        value={`popular-place-${c.slug}`}
+                        onSelect={() => go(c.href)}
+                      >
+                        <span className="text-lg">{c.flagEmoji}</span>
+                        <span>{c.name}</span>
+                        <span className="ml-auto text-xs text-muted-foreground">
+                          {c.hint}
+                        </span>
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                </>
               )}
               {results.topics.length > 0 && (
                 <CommandGroup heading="Topics">

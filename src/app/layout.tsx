@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Arimo, Source_Serif_4 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
 import { SiteHeader } from "@/components/site-header";
@@ -76,6 +77,7 @@ export default function RootLayout({
           <SiteFooterGate />
         </div>
         <AssistantWidget />
+        <Analytics />
       </body>
     </html>
   );
