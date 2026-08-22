@@ -12,11 +12,17 @@ const nextConfig = {
     // Don't fail production builds on lint; CI runs `next lint` separately.
     ignoreDuringBuilds: true,
   },
+  // Required for PostHog — their API uses trailing slashes (/e/, /s/).
+  skipTrailingSlashRedirect: true,
   async rewrites() {
     return [
       {
         source: "/ingest/static/:path*",
         destination: "https://us-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/ingest/array/:path*",
+        destination: "https://us-assets.i.posthog.com/array/:path*",
       },
       {
         source: "/ingest/:path*",
