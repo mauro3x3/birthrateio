@@ -10,9 +10,14 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     if (!key) return;
 
     posthog.init(key, {
+      // Proxied through /ingest (see next.config.mjs) so ad blockers don't
+      // drop events. api_host stays relative; ui_host is only for replay links.
       api_host: "/ingest",
       ui_host: "https://us.posthog.com",
+      defaults: "2026-05-30",
       person_profiles: "identified_only",
+      // Pageviews are captured manually in PostHogPageView so App Router
+      // navigations are attributed to the right URL.
       capture_pageview: false,
       capture_pageleave: true,
       // Session replay — recorder.js loads via /ingest/static

@@ -154,6 +154,33 @@ export const navTopics: NavTopic[] = [
   },
 ];
 
+/**
+ * Reference pages documenting the data itself. Kept out of `navTopics` so the
+ * subject taxonomy stays statistics-only and breadcrumbs read correctly.
+ */
+export const referenceNav: NavLink[] = [
+  {
+    title: "About",
+    href: "/about",
+    description: "What this site is and who it is for",
+  },
+  {
+    title: "Methodology",
+    href: "/methodology",
+    description: "How the data is collected, labelled and revised",
+  },
+  {
+    title: "Glossary",
+    href: "/glossary",
+    description: "Definitions and units for every indicator",
+  },
+  {
+    title: "Data sources",
+    href: "/sources",
+    description: "Providers behind the figures, with licence terms",
+  },
+];
+
 /** Slim primary header links — hubs and high-traffic destinations. */
 export const primaryNav: NavLink[] = [
   { title: "Topics", href: "/topics" },

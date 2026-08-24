@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { PageHeader } from "@/components/page-header";
+import { TopicShell } from "@/components/topic-shell";
+import { SectionHeading } from "@/components/section-heading";
 import { MapCard } from "@/components/maps/map-card";
 import { ExplorerTable } from "@/components/explorer-table";
 import { RankingTable } from "@/components/ranking-table";
-import { getMapFrames, getRanking } from "@/lib/queries";
+import {
+  getIndicatorsUpdatedAt,
+  getMapFrames,
+  getRanking,
+} from "@/lib/queries";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
 
@@ -25,6 +29,7 @@ export default async function MigrationPage() {
     topEmigration,
     foreignBornFrames,
     foreignBornTop,
+    updatedAt,
   ] = await Promise.all([
     safe(getMapFrames(SLUG.netMigration, { step: 1, maxFrames: 66 }), []),
     safe(getRanking(SLUG.netMigration, { order: "desc" }), []),
@@ -32,17 +37,27 @@ export default async function MigrationPage() {
     safe(getRanking(SLUG.netMigration, { order: "asc", limit: 10 }), []),
     safe(getMapFrames(SLUG.migrantStockShare, { step: 5, maxFrames: 12 }), []),
     safe(getRanking(SLUG.migrantStock, { order: "desc", limit: 10 }), []),
+    safe(
+      getIndicatorsUpdatedAt([
+        SLUG.netMigration,
+        SLUG.migrantStock,
+        SLUG.migrantStockShare,
+      ]),
+      null,
+    ),
   ]);
 
   return (
-    <div>
-      <PageHeader
-        title="Migration Explorer"
-        description="Net migration (immigrants minus emigrants) by country. Positive values indicate net immigration; negative values net emigration."
-      />
-      <div className="container space-y-8 py-8">
+    <TopicShell
+      title="Migration"
+      description="Net migration by country — how many more people arrive than leave each year — together with the size of the foreign-born population."
+      path="/migration"
+      updatedAt={updatedAt}
+    >
+      <section>
         <MapCard
-          title="Net Migration Map"
+          id="net-migration-map"
+          title="Net migration map"
           description="Net migrants per year. Blue = net immigration, red = net emigration."
           source="World Bank"
           frames={frames}
@@ -52,66 +67,71 @@ export default async function MigrationPage() {
           mid={0}
           height={400}
         />
+      </section>
 
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">
-                Top Immigration Destinations
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <RankingTable
-                rows={topImmigration}
-                unit="people"
-                decimals={0}
-                valueLabel="Net migration"
-              />
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Top Emigration Countries</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <RankingTable
-                rows={topEmigration}
-                unit="people"
-                decimals={0}
-                valueLabel="Net migration"
-              />
-            </CardContent>
-          </Card>
-        </div>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Net Migration Rankings</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ExplorerTable
-              rows={ranking}
+      <section>
+        <SectionHeading
+          id="destinations-and-origins"
+          title="Largest destinations and origins"
+          tocLabel="Destinations & origins"
+          description="Countries with the largest net inflows and outflows in the latest year available."
+        />
+        <div className="mt-5 grid gap-8 lg:grid-cols-2">
+          <div>
+            <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+              Top immigration destinations
+            </h3>
+            <RankingTable
+              rows={topImmigration}
               unit="people"
               decimals={0}
               valueLabel="Net migration"
-              csvName="migration-rankings"
             />
-          </CardContent>
-        </Card>
+          </div>
+          <div>
+            <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+              Top emigration countries
+            </h3>
+            <RankingTable
+              rows={topEmigration}
+              unit="people"
+              decimals={0}
+              valueLabel="Net migration"
+            />
+          </div>
+        </div>
+      </section>
 
-        {foreignBornFrames.length > 0 && (
-          <div className="space-y-8 border-t pt-8">
-            <div className="space-y-1">
-              <h2 className="text-xl">Foreign-born population &amp; diasporas</h2>
-              <p className="text-sm text-muted-foreground">
-                How large the immigrant (foreign-born) population is in each
-                country — its size and how fast it has grown over time.
-              </p>
-            </div>
+      <section>
+        <SectionHeading
+          id="net-migration-rankings"
+          title="Net migration rankings"
+          tocLabel="All countries ranked"
+          description="Every country ranked by net migration. Filter by region or download the table as CSV."
+        />
+        <div className="mt-5">
+          <ExplorerTable
+            rows={ranking}
+            unit="people"
+            decimals={0}
+            valueLabel="Net migration"
+            csvName="migration-rankings"
+          />
+        </div>
+      </section>
 
+      {foreignBornFrames.length > 0 && (
+        <section>
+          <SectionHeading
+            id="foreign-born"
+            title="Foreign-born population"
+            tocLabel="Foreign-born population"
+            description="How large the immigrant population is in each country, measured by country of birth rather than citizenship."
+          />
+          <div className="mt-5 space-y-8">
             <MapCard
-              title="Foreign-born Share Map"
-              description="Foreign-born residents as a share of the total population. Darker = a larger immigrant / diaspora share."
+              title="Foreign-born share of population"
+              description="Foreign-born residents as a share of the total population. Darker = a larger foreign-born share."
               source="World Bank / UN DESA"
               frames={foreignBornFrames}
               unit="%"
@@ -121,25 +141,21 @@ export default async function MigrationPage() {
             />
 
             {foreignBornTop.length > 0 && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">
-                    Largest Foreign-born Populations
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <RankingTable
-                    rows={foreignBornTop}
-                    unit="people"
-                    decimals={0}
-                    valueLabel="Foreign-born"
-                  />
-                </CardContent>
-              </Card>
+              <div>
+                <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+                  Largest foreign-born populations
+                </h3>
+                <RankingTable
+                  rows={foreignBornTop}
+                  unit="people"
+                  decimals={0}
+                  valueLabel="Foreign-born"
+                />
+              </div>
             )}
           </div>
-        )}
-      </div>
-    </div>
+        </section>
+      )}
+    </TopicShell>
   );
 }

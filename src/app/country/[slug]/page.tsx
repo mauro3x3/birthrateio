@@ -30,6 +30,7 @@ import {
   getComposition,
   getCompositionLatest,
   getCountryBySlug,
+  getCountrySeriesBatch,
   getCountryStats,
   getCountryTimeSeries,
   getEmigrationDestinations,
@@ -53,6 +54,19 @@ import {
   WORK_PERMITS_SOURCE_URL,
 } from "@/lib/sources/work-permits-data";
 import { SLUG } from "@/lib/indicators";
+import {
+  CountryIndicatorGrid,
+  hasAnySeries,
+} from "@/components/country-indicator-grid";
+import {
+  COUNTRY_EXTRA_SLUGS,
+  DEMOGRAPHY_CHARTS,
+  DEVELOPMENT_CHARTS,
+  ECONOMY_CHARTS,
+  EDUCATION_CHARTS,
+  HEALTH_CHARTS,
+  MORTALITY_CHARTS,
+} from "@/lib/country-charts";
 import { safe } from "@/lib/safe";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
@@ -140,6 +154,7 @@ export default async function CountryPage({
     foreignPrisonerShare,
     admin1Ranking,
     workPermits,
+    extraSeries,
   ] = await Promise.all([
     safe(getCountryTimeSeries(country.id, SLUG.population), []),
     safe(getCountryTimeSeries(country.id, SLUG.fertility), []),
@@ -210,6 +225,7 @@ export default async function CountryPage({
       getComposition(country.id, WORK_PERMITS_KIND, { useCounts: true }),
       { groups: [], data: [], note: null, useCounts: false },
     ),
+    safe(getCountrySeriesBatch(country.id, COUNTRY_EXTRA_SLUGS), {}),
   ]);
 
   const allCountries = await safe(getAllCountries(), []);
@@ -241,7 +257,8 @@ export default async function CountryPage({
   const hasHistoricMortality =
     lifeExp.length > 0 ||
     historicDeathRate.length > 0 ||
-    childMortality.length > 0;
+    childMortality.length > 0 ||
+    hasAnySeries(extraSeries, MORTALITY_CHARTS);
   const lifeExpSource =
     lifeExpStart != null && lifeExpStart < 1960
       ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
@@ -373,12 +390,19 @@ export default async function CountryPage({
     foreignPrisonerShare.length > 0 ||
     crimeAvailability
   );
+  const hasWellbeingSection =
+    hasAnySeries(extraSeries, HEALTH_CHARTS) ||
+    hasAnySeries(extraSeries, EDUCATION_CHARTS) ||
+    hasAnySeries(extraSeries, DEVELOPMENT_CHARTS);
   const navItems = [
     { id: "overview", label: "Overview" },
     { id: "economy", label: "Economy" },
     ...(hasMigrationSection ? [{ id: "migration", label: "Migration" }] : []),
     { id: "demography", label: "Demography" },
     ...(hasHistoricMortality ? [{ id: "mortality", label: "Mortality" }] : []),
+    ...(hasWellbeingSection
+      ? [{ id: "wellbeing", label: "Health & education" }]
+      : []),
     ...(hasSociety ? [{ id: "society", label: "Society" }] : []),
     ...(admin1Ranking.length > 0 ? [{ id: "states", label: "States" }] : []),
     ...(hasCrimeSection ? [{ id: "crime", label: "Crime" }] : []),
@@ -742,6 +766,12 @@ export default async function CountryPage({
             />
           </ChartCard>
         </div>
+
+        <CountryIndicatorGrid
+          specs={ECONOMY_CHARTS}
+          series={extraSeries}
+          countrySlug={slug}
+        />
 
         {oecIdForIso3(country.iso3) ? (
           <CountryTradeSection
@@ -1121,15 +1151,20 @@ export default async function CountryPage({
           </ChartCard>
         )}
 
+        <CountryIndicatorGrid
+          specs={DEMOGRAPHY_CHARTS}
+          series={extraSeries}
+          countrySlug={slug}
+        />
         </CountryPanel>
 
         {hasHistoricMortality && (
           <CountryPanel
             id="mortality"
-            title="Historic mortality"
+            title="Mortality & longevity"
             description={`Life expectancy, death rates and child mortality as far back as vital registration and historical reconstructions allow${
               lifeExpStart != null ? ` (from ${lifeExpStart})` : ""
-            }.`}
+            }, plus infant and maternal mortality.`}
           >
             <div className="grid gap-6 lg:grid-cols-2">
               {lifeExp.length > 0 && (
@@ -1184,6 +1219,12 @@ export default async function CountryPage({
               )}
             </div>
 
+            <CountryIndicatorGrid
+              specs={MORTALITY_CHARTS}
+              series={extraSeries}
+              countrySlug={slug}
+            />
+
             <p className="text-xs leading-relaxed text-muted-foreground">
               Pre-1960 life expectancy and long child-mortality series are from{" "}
               <Link
@@ -1211,6 +1252,30 @@ export default async function CountryPage({
               </Link>
               .
             </p>
+          </CountryPanel>
+        )}
+
+        {hasWellbeingSection && (
+          <CountryPanel
+            id="wellbeing"
+            title="Health, education & infrastructure"
+            description="Spending, capacity and attainment. Coverage is thinner than for demographic series — most figures come from periodic surveys rather than continuous registration."
+          >
+            <CountryIndicatorGrid
+              specs={HEALTH_CHARTS}
+              series={extraSeries}
+              countrySlug={slug}
+            />
+            <CountryIndicatorGrid
+              specs={EDUCATION_CHARTS}
+              series={extraSeries}
+              countrySlug={slug}
+            />
+            <CountryIndicatorGrid
+              specs={DEVELOPMENT_CHARTS}
+              series={extraSeries}
+              countrySlug={slug}
+            />
           </CountryPanel>
         )}
 

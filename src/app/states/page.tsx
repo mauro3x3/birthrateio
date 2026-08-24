@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/page-header";
+import { TopicShell } from "@/components/topic-shell";
 import { StatesExplorer } from "@/components/states-explorer";
 import { prisma } from "@/lib/prisma";
 import { safe } from "@/lib/safe";
@@ -77,24 +77,23 @@ export default async function StatesIndexPage() {
   }));
 
   return (
-    <div>
-      <PageHeader
-        title="States & provinces"
-        description="Subnational fertility maps and tables — US states (NCHS), German Länder (Eurostat), Indian states (NFHS), Chinese provinces (NBS), Russian regions (Rosstat)."
-      />
-      <div className="container space-y-8 py-8">
+    <TopicShell
+      title="States & provinces"
+      description="Subnational fertility for countries whose statistical offices publish it — US states (NCHS), German Länder (Eurostat), Indian states (NFHS), Chinese provinces (NBS), and Russian regions (Rosstat)."
+      path="/states"
+    >
+      <section>
         <p className="text-sm text-muted-foreground">
           Looking for a U.S. race and Hispanic-origin map? See the{" "}
-          <Link
-            href="/demographics"
-            className="font-medium text-foreground underline underline-offset-2"
-          >
+          <Link href="/demographics" className="link-editorial font-medium">
             US demographics map
           </Link>
           .
         </p>
-        <StatesExplorer countries={blocks} />
-      </div>
-    </div>
+        <div className="mt-5">
+          <StatesExplorer countries={blocks} />
+        </div>
+      </section>
+    </TopicShell>
   );
 }

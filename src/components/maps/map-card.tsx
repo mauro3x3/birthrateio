@@ -42,6 +42,7 @@ function scaleHint(unit?: string, scaleType?: ScaleType): string {
 }
 
 export function MapCard({
+  id,
   title,
   description,
   source,
@@ -53,6 +54,8 @@ export function MapCard({
   frameStats,
   height = 400,
 }: {
+  /** Anchor target; also picked up by the in-page table of contents. */
+  id?: string;
   title: string;
   description?: string;
   source?: string;
@@ -154,7 +157,10 @@ export function MapCard({
       {/* Title + key figures — one compact band */}
       <header className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b border-border px-4 py-3 sm:px-5">
         <div className="min-w-0 max-w-xl">
-          <h2 className="font-serif text-lg font-semibold tracking-tight text-primary sm:text-xl">
+          <h2
+            id={id}
+            className="scroll-mt-24 font-serif text-lg font-semibold tracking-tight text-primary sm:text-xl"
+          >
             {title}
           </h2>
           {description && (

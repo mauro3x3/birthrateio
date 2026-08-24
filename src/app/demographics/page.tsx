@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/page-header";
+import { TopicShell } from "@/components/topic-shell";
 import { UsDemographicsExplorer } from "@/components/us-demographics-explorer";
 import { US_DEMOGRAPHICS_META } from "@/lib/sources/us-demographics-data";
 
@@ -15,29 +15,28 @@ export const metadata: Metadata = {
 
 export default function DemographicsPage() {
   return (
-    <div>
-      <PageHeader
-        title="US Demographics Map"
-        description={`Race and Hispanic origin by state · ACS ${US_DEMOGRAPHICS_META.year}. Click a state for its profile.`}
-      />
-      <div className="container space-y-6 py-8">
+    <TopicShell
+      title="US demographics"
+      description={`Race and Hispanic origin by state, from the Census Bureau's American Community Survey (${US_DEMOGRAPHICS_META.year}). Click a state for its profile.`}
+      path="/demographics"
+    >
+      <section>
         <p className="text-sm text-muted-foreground">
           Also see{" "}
-          <Link
-            href="/demographics/uk"
-            className="font-medium text-primary underline-offset-2 hover:underline"
-          >
+          <Link href="/demographics/uk" className="link-editorial font-medium">
             UK Census 2021 ethnic group by local authority
           </Link>
           .
         </p>
-        <UsDemographicsExplorer />
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          Source: {US_DEMOGRAPHICS_META.source}. Hispanic origin is asked
-          separately from race; people who are Hispanic may be of any race.
-          Shares are of total resident population.
-        </p>
-      </div>
-    </div>
+        <div className="mt-5 space-y-4">
+          <UsDemographicsExplorer />
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            Source: {US_DEMOGRAPHICS_META.source}. Hispanic origin is asked
+            separately from race; people who are Hispanic may be of any race.
+            Shares are of total resident population.
+          </p>
+        </div>
+      </section>
+    </TopicShell>
   );
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PageHeader } from "@/components/page-header";
+import { TopicShell } from "@/components/topic-shell";
 import { ChartCard } from "@/components/charts/chart-card";
 import {
   CompositionChart,
@@ -149,20 +149,18 @@ export default async function CrimePage() {
   });
 
   return (
-    <div>
-      <PageHeader
-        title="Crime by ancestry, origin & race"
-        description="Official convictions, offences, arrests and prisoners broken down by ancestry, immigrant background, citizenship, or race — only where statistical offices publish them. Clear notes when they don’t."
-      />
-
-      <div className="container space-y-10 py-8">
-        <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
-          {CRIME_DATA_AVAILABILITY.note} Definitions are not internationally
-          harmonised: Denmark’s “ancestry” is not the same as U.S. race
-          categories, Norway’s citizenship of charged persons, Sweden’s Brå
-          background groups, or Eurostat’s foreign-citizen prisoners. Always
-          read the source note on each chart.
-        </p>
+    <TopicShell
+      title="Crime"
+      description="Convictions, offences, arrests and prisoners broken down by ancestry, immigrant background, citizenship, or race — only where statistical offices publish them, with clear notes where they do not."
+      path="/crime"
+    >
+      <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+        {CRIME_DATA_AVAILABILITY.note} Definitions are not internationally
+        harmonised: Denmark’s “ancestry” is not the same as U.S. race
+        categories, Norway’s citizenship of charged persons, Sweden’s Brå
+        background groups, or Eurostat’s foreign-citizen prisoners. Always read
+        the source note on each chart.
+      </p>
 
         <div className="grid gap-6 lg:grid-cols-2">
           {denmark && denmark.series.groups.length > 0 && (
@@ -431,7 +429,6 @@ export default async function CrimePage() {
             </table>
           </div>
         </section>
-      </div>
-    </div>
+    </TopicShell>
   );
 }

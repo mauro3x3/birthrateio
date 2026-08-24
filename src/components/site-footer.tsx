@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { navTopics, siteConfig } from "@/lib/site";
+import { navTopics, referenceNav, siteConfig } from "@/lib/site";
 
 const dataLinks = [
   { title: "World Bank", href: "https://data.worldbank.org" },
@@ -30,6 +30,9 @@ export function SiteFooter() {
           <div className="flex flex-wrap gap-3 text-sm">
             <Link href="/topics" className="text-primary hover:underline">
               Topics
+            </Link>
+            <Link href="/about" className="text-primary hover:underline">
+              About
             </Link>
             <Link href="/support" className="text-primary hover:underline">
               Donate
@@ -79,24 +82,40 @@ export function SiteFooter() {
           </ul>
         </div>
 
-        <div>
-          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-            Data sources
-          </h3>
-          <ul className="space-y-2 text-sm text-muted-foreground">
-            {dataLinks.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-foreground"
-                >
-                  {item.title}
-                </a>
-              </li>
-            ))}
-          </ul>
+        <div className="space-y-6">
+          <div>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              About the data
+            </h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {referenceNav.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="hover:text-foreground">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              Providers
+            </h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              {dataLinks.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-foreground"
+                  >
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="border-t py-5">
@@ -107,6 +126,11 @@ export function SiteFooter() {
           </p>
           <p>
             Projections labeled “modeled” are estimates, not official forecasts.
+            See{" "}
+            <Link href="/methodology" className="underline hover:text-foreground">
+              methodology
+            </Link>
+            .
           </p>
         </div>
       </div>

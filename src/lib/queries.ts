@@ -32,6 +32,25 @@ async function indicatorId(slug: string): Promise<number | null> {
   return ind?.id ?? null;
 }
 
+/**
+ * Most recent ingestion timestamp across a set of indicators — drives the
+ * "data updated" stamp in topic page headers.
+ */
+export const getIndicatorsUpdatedAt = unstable_cache(
+  async (slugs: string[]): Promise<Date | null> => {
+    if (slugs.length === 0) return null;
+    const rows = await prisma.indicator.findMany({
+      where: { slug: { in: slugs } },
+      select: { updatedAt: true },
+      orderBy: { updatedAt: "desc" },
+      take: 1,
+    });
+    return rows[0]?.updatedAt ?? null;
+  },
+  ["indicators-updated-at"],
+  { revalidate: 3600, tags: ["indicators"] },
+);
+
 export const getAllCountries = unstable_cache(
   async () => {
     return prisma.country.findMany({
@@ -77,6 +96,46 @@ export async function getCountryTimeSeries(
     orderBy: { year: "asc" },
   });
   return rows.map((r) => ({ year: r.year, value: r.value, kind: r.kind }));
+}
+
+export type CountrySeriesMap = Record<string, TimeSeriesPoint[]>;
+
+/**
+ * Time series for many indicators at once, keyed by slug. Country pages read
+ * dozens of series; fetching them one indicator at a time turned the page into
+ * a pile of sequential round trips.
+ */
+export async function getCountrySeriesBatch(
+  countryId: number,
+  slugs: readonly string[],
+): Promise<CountrySeriesMap> {
+  const known = slugs.filter((slug) => INDICATOR_BY_SLUG.has(slug));
+  if (known.length === 0) return {};
+
+  const indicators = await prisma.indicator.findMany({
+    where: { slug: { in: known } },
+    select: { id: true, slug: true },
+  });
+  if (indicators.length === 0) return {};
+
+  const slugById = new Map(indicators.map((i) => [i.id, i.slug]));
+  const rows = await prisma.indicatorValue.findMany({
+    where: {
+      countryId,
+      indicatorId: { in: indicators.map((i) => i.id) },
+      dimension: null,
+    },
+    select: { indicatorId: true, year: true, value: true, kind: true },
+    orderBy: { year: "asc" },
+  });
+
+  const out: CountrySeriesMap = {};
+  for (const r of rows) {
+    const slug = slugById.get(r.indicatorId);
+    if (!slug) continue;
+    (out[slug] ??= []).push({ year: r.year, value: r.value, kind: r.kind });
+  }
+  return out;
 }
 
 /** Latest non-null value for a country + indicator. */

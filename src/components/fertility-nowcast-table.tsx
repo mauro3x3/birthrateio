@@ -130,7 +130,10 @@ export function FertilityNowcastTable({
     <section className="space-y-3">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h2 className="text-xl font-semibold tracking-tight">
+          <h2
+            id="fertility-nowcast"
+            className="scroll-mt-24 text-xl font-semibold tracking-tight"
+          >
             2026 fertility nowcast
           </h2>
           <p className="max-w-3xl text-sm text-muted-foreground">

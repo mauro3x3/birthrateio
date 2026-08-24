@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { navTopics, primaryNav } from "@/lib/site";
+import { navTopics, primaryNav, referenceNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { GlobalSearch } from "@/components/global-search";
 import { Button } from "@/components/ui/button";
@@ -153,6 +153,20 @@ export function SiteHeader() {
                   </div>
                 ))}
               </div>
+              <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-border px-1 pt-2.5">
+                <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                  About the data
+                </span>
+                {referenceNav.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-xs font-medium text-primary hover:underline"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
             </DropdownMenuContent>
           </DropdownMenu>
 
@@ -251,6 +265,25 @@ export function SiteHeader() {
                 </div>
               );
             })}
+            <div className="mt-2 border-t border-white/10 pt-2">
+              <p className="px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wide text-white/50">
+                About the data
+              </p>
+              {referenceNav.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "block rounded-sm px-3 py-1.5 text-sm transition-colors hover:bg-white/10",
+                    pathActive(pathname, item.href)
+                      ? "text-white"
+                      : "text-white/70",
+                  )}
+                >
+                  {item.title}
+                </Link>
+              ))}
+            </div>
           </nav>
         </div>
       )}
