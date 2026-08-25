@@ -1,9 +1,22 @@
+function resolveSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
+  if (fromEnv && !fromEnv.includes("localhost")) return fromEnv;
+  // Production on Vercel without the env var still must emit absolute public URLs
+  // (sitemap, canonicals, JSON-LD). Never fall back to localhost there.
+  if (process.env.VERCEL_ENV === "production") return "https://birthrate.io";
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}`;
+  }
+  if (fromEnv) return fromEnv;
+  return "http://localhost:3000";
+}
+
 export const siteConfig = {
   name: "birthrate.io",
   tagline: "The world's demographic data platform",
   description:
     "Explore fertility, population, migration and economic trends for every country on Earth. Interactive charts, maps, projections and a demographic simulator — powered by UN, World Bank and OECD data.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: resolveSiteUrl(),
   ogImage: "/og",
   links: {
     github: "https://github.com",
