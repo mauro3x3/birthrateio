@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import {
   CountryTopicPage,
-  countryTopicRevalidate,
   generateCountryTopicMetadata,
 } from "@/components/country-topic-page";
 
-export const revalidate = countryTopicRevalidate;
+export const revalidate = 86400;
 
 export async function generateMetadata({
   params,

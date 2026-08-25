@@ -32,9 +32,6 @@ import { safe } from "@/lib/safe";
 import { siteConfig } from "@/lib/site";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 
-
-export const countryTopicRevalidate = 86400;
-
 function formatLeadValue(
   value: number,
   unit: string,
