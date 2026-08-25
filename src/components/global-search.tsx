@@ -55,7 +55,7 @@ const POPULAR_PLACES = [
   { slug: "japan", name: "Japan", flagEmoji: "🇯🇵", href: "/country/japan#demography", hint: "Demography" },
   { slug: "united-states", name: "United States", flagEmoji: "🇺🇸", href: "/country/united-states", hint: "Overview" },
   { slug: "germany", name: "Germany", flagEmoji: "🇩🇪", href: "/country/germany#migration", hint: "Migration" },
-  { slug: "south-korea", name: "South Korea", flagEmoji: "🇰🇷", href: "/country/south-korea#demography", hint: "Demography" },
+  { slug: "korea-rep", name: "South Korea", flagEmoji: "🇰🇷", href: "/fertility/korea-rep", hint: "Fertility" },
   { slug: "nigeria", name: "Nigeria", flagEmoji: "🇳🇬", href: "/country/nigeria#demography", hint: "Demography" },
   { slug: "china", name: "China", flagEmoji: "🇨🇳", href: "/country/china", hint: "Overview" },
 ];

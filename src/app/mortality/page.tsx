@@ -112,6 +112,8 @@ export default async function MortalityPage() {
               unit="years"
               decimals={1}
               valueLabel="Life expectancy"
+            
+              linkTopic="mortality"
             />
           </div>
           <div>
@@ -124,7 +126,9 @@ export default async function MortalityPage() {
                 unit="per 1,000"
                 decimals={1}
                 valueLabel="Death rate"
-              />
+              
+              linkTopic="mortality"
+            />
             ) : (
               <p className="text-sm text-muted-foreground">
                 Historic death-rate rankings appear after the HMD series is
@@ -153,7 +157,9 @@ export default async function MortalityPage() {
                 unit="years"
                 decimals={1}
                 valueLabel="Gap"
-              />
+              
+              linkTopic="mortality"
+            />
             </div>
             <div>
               <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -164,7 +170,9 @@ export default async function MortalityPage() {
                 unit="years"
                 decimals={1}
                 valueLabel="Gap"
-              />
+              
+              linkTopic="mortality"
+            />
             </div>
           </div>
           <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
@@ -197,7 +205,9 @@ export default async function MortalityPage() {
                   unit="per 1,000 births"
                   decimals={1}
                   valueLabel="Infant deaths"
-                />
+                
+              linkTopic="mortality"
+            />
               </div>
             )}
             {maternalRanking.length > 0 && (
@@ -210,7 +220,9 @@ export default async function MortalityPage() {
                   unit="per 100,000 births"
                   decimals={0}
                   valueLabel="Maternal deaths"
-                />
+                
+              linkTopic="mortality"
+            />
               </div>
             )}
           </div>
@@ -225,7 +237,9 @@ export default async function MortalityPage() {
                 decimals={1}
                 valueLabel="Infant mortality"
                 csvName="infant-mortality-rankings"
-              />
+              
+              linkTopic="mortality"
+            />
             </div>
           )}
           <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
@@ -251,6 +265,8 @@ export default async function MortalityPage() {
               unit="per 100,000"
               decimals={1}
               valueLabel="Suicide rate"
+            
+              linkTopic="mortality"
             />
           </div>
         </section>
@@ -290,7 +306,9 @@ export default async function MortalityPage() {
                 unit="per 1,000"
                 decimals={1}
                 valueLabel="U5MR"
-              />
+              
+              linkTopic="mortality"
+            />
             </div>
             <div>
               <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -301,7 +319,9 @@ export default async function MortalityPage() {
                 unit="per 1,000"
                 decimals={1}
                 valueLabel="U5MR"
-              />
+              
+              linkTopic="mortality"
+            />
             </div>
           </div>
         </section>
@@ -321,7 +341,9 @@ export default async function MortalityPage() {
             decimals={1}
             valueLabel="Life expectancy"
             csvName="life-expectancy-rankings"
-          />
+          
+              linkTopic="mortality"
+            />
         </div>
       </section>
 

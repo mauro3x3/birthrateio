@@ -8,8 +8,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import type { RankingRow } from "@/lib/queries";
-import { formatByUnit } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { formatByUnit, cn } from "@/lib/utils";
+import {
+  countryTopicHref,
+  type CountryTopicId,
+} from "@/lib/country-topics";
 
 export function RankingTable({
   rows,
@@ -17,12 +20,15 @@ export function RankingTable({
   decimals = 2,
   valueLabel = "Value",
   startRank = 1,
+  /** When set, country names link to `/topic/slug` instead of `/country/slug`. */
+  linkTopic,
 }: {
   rows: RankingRow[];
   unit?: string;
   decimals?: number;
   valueLabel?: string;
   startRank?: number;
+  linkTopic?: CountryTopicId;
 }) {
   return (
     <Table>
@@ -43,7 +49,11 @@ export function RankingTable({
             </TableCell>
             <TableCell>
               <Link
-                href={`/country/${row.slug}`}
+                href={
+                  linkTopic
+                    ? countryTopicHref(linkTopic, row.slug)
+                    : `/country/${row.slug}`
+                }
                 className="flex items-center gap-2 font-medium hover:text-primary"
               >
                 <span className="text-lg">{row.flagEmoji ?? "🏳️"}</span>
@@ -65,7 +75,10 @@ export function RankingTable({
         ))}
         {rows.length === 0 && (
           <TableRow>
-            <TableCell colSpan={5} className="py-8 text-center text-muted-foreground">
+            <TableCell
+              colSpan={5}
+              className="py-8 text-center text-muted-foreground"
+            >
               No data available. Run <code>npm run ingest</code> to load data.
             </TableCell>
           </TableRow>

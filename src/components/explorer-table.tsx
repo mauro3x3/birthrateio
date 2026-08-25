@@ -13,8 +13,11 @@ import {
 } from "@/components/ui/table";
 import { Input } from "@/components/ui/input";
 import type { RankingRow } from "@/lib/queries";
-import { downloadFile, formatByUnit, toCSV } from "@/lib/utils";
-import { cn } from "@/lib/utils";
+import { downloadFile, formatByUnit, toCSV, cn } from "@/lib/utils";
+import {
+  countryTopicHref,
+  type CountryTopicId,
+} from "@/lib/country-topics";
 
 export function ExplorerTable({
   rows,
@@ -22,12 +25,15 @@ export function ExplorerTable({
   decimals = 2,
   valueLabel = "Value",
   csvName = "rankings",
+  linkTopic,
 }: {
   rows: RankingRow[];
   unit?: string;
   decimals?: number;
   valueLabel?: string;
   csvName?: string;
+  /** Link rows to `/topic/slug` for programmatic SEO. */
+  linkTopic?: CountryTopicId;
 }) {
   const continents = React.useMemo(
     () =>
@@ -138,7 +144,11 @@ export function ExplorerTable({
               </TableCell>
               <TableCell>
                 <Link
-                  href={`/country/${row.slug}`}
+                  href={
+                    linkTopic
+                      ? countryTopicHref(linkTopic, row.slug)
+                      : `/country/${row.slug}`
+                  }
                   className="flex items-center gap-2 font-medium hover:text-primary"
                 >
                   <span className="text-base">{row.flagEmoji ?? "🏳️"}</span>

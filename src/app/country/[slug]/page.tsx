@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeftRight, MapPin } from "lucide-react";
@@ -67,6 +67,8 @@ import {
   HEALTH_CHARTS,
   MORTALITY_CHARTS,
 } from "@/lib/country-charts";
+import { COUNTRY_TOPICS, countryTopicHref } from "@/lib/country-topics";
+import { resolveCountrySlug } from "@/lib/country-aliases";
 import { safe } from "@/lib/safe";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 import { siteConfig } from "@/lib/site";
@@ -111,7 +113,11 @@ export default async function CountryPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const { slug: rawSlug } = await params;
+  const slug = resolveCountrySlug(rawSlug);
+  if (slug !== rawSlug) {
+    permanentRedirect(`/country/${slug}`);
+  }
   const country = await safe(getCountryBySlug(slug), null);
   if (!country) notFound();
 
@@ -464,6 +470,20 @@ export default async function CountryPage({
                 )}
                 <Badge variant="outline">{country.iso3}</Badge>
               </div>
+              <nav
+                aria-label={`${country.name} topics`}
+                className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm"
+              >
+                {COUNTRY_TOPICS.map((t) => (
+                  <Link
+                    key={t.id}
+                    href={countryTopicHref(t.id, country.slug)}
+                    className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+                  >
+                    {t.name}
+                  </Link>
+                ))}
+              </nav>
             </div>
             <Button asChild variant="outline">
               <Link href={`/compare?countries=${country.slug}`}>

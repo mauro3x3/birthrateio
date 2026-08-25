@@ -110,6 +110,35 @@ export default function AboutPage() {
 
         <section className="space-y-3">
           <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
+            How pages are organised
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            Every country has a full profile at{" "}
+            <code className="text-xs">/country/[name]</code>, and each major
+            topic also has its own permanent URL — for example{" "}
+            <Link href="/fertility/japan" className="link-editorial">
+              /fertility/japan
+            </Link>
+            ,{" "}
+            <Link href="/population/nigeria" className="link-editorial">
+              /population/nigeria
+            </Link>
+            , or{" "}
+            <Link href="/compare/japan/korea-rep" className="link-editorial">
+              /compare/japan/korea-rep
+            </Link>
+            . Those pages lead with written figures and definitions, not only
+            charts, so the content is readable without JavaScript and indexable
+            by search engines. The full list is in{" "}
+            <Link href="/sitemap.xml" className="link-editorial">
+              sitemap.xml
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
             Reuse and funding
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground">

@@ -163,6 +163,8 @@ export default async function PopulationPage() {
               decimals={0}
               valueLabel="Population"
               csvName="population-rankings"
+            
+              linkTopic="population"
             />
           </div>
           <div>
@@ -175,6 +177,8 @@ export default async function PopulationPage() {
               decimals={2}
               valueLabel="Growth"
               csvName="population-growth-rankings"
+            
+              linkTopic="population"
             />
           </div>
         </div>
@@ -199,7 +203,9 @@ export default async function PopulationPage() {
                   decimals={1}
                   valueLabel="Density"
                   csvName="population-density-rankings"
-                />
+                
+              linkTopic="population"
+            />
               </div>
             )}
             {dependencyRanking.length > 0 && (
@@ -213,7 +219,9 @@ export default async function PopulationPage() {
                   decimals={1}
                   valueLabel="Dependency"
                   csvName="age-dependency-rankings"
-                />
+                
+              linkTopic="population"
+            />
               </div>
             )}
           </div>
@@ -245,7 +253,9 @@ export default async function PopulationPage() {
                   decimals={1}
                   valueLabel="Rural"
                   csvName="rural-population-rankings"
-                />
+                
+              linkTopic="population"
+            />
               </div>
             )}
             {urbanGrowthRanking.length > 0 && (
@@ -259,7 +269,9 @@ export default async function PopulationPage() {
                   decimals={2}
                   valueLabel="Urban growth"
                   csvName="urban-population-growth-rankings"
-                />
+                
+              linkTopic="population"
+            />
               </div>
             )}
           </div>

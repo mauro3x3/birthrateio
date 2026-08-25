@@ -161,7 +161,9 @@ export default async function GdpPage() {
             decimals={0}
             valueLabel="GDP"
             csvName="gdp-rankings"
-          />
+          
+              linkTopic="gdp"
+            />
         </div>
       </section>
 
@@ -183,6 +185,8 @@ export default async function GdpPage() {
               decimals={0}
               valueLabel="GDP/capita"
               csvName="gdp-per-capita-rankings"
+            
+              linkTopic="gdp"
             />
           </div>
           <div>
@@ -195,6 +199,8 @@ export default async function GdpPage() {
               decimals={2}
               valueLabel="Growth"
               csvName="gdp-growth-rankings"
+            
+              linkTopic="gdp"
             />
           </div>
         </div>
@@ -220,7 +226,9 @@ export default async function GdpPage() {
                   decimals={0}
                   valueLabel="GDP/capita PPP"
                   csvName="gdp-per-capita-ppp-rankings"
-                />
+                
+              linkTopic="gdp"
+            />
               </div>
             )}
             {realGdp.length > 0 && (
@@ -234,7 +242,9 @@ export default async function GdpPage() {
                   decimals={0}
                   valueLabel="Real GDP"
                   csvName="gdp-real-rankings"
-                />
+                
+              linkTopic="gdp"
+            />
               </div>
             )}
           </div>
@@ -269,7 +279,9 @@ export default async function GdpPage() {
                   decimals={0}
                   valueLabel="GNI/capita"
                   csvName="gni-per-capita-rankings"
-                />
+                
+              linkTopic="gdp"
+            />
               </div>
             )}
             {inflation.length > 0 && (
@@ -283,7 +295,9 @@ export default async function GdpPage() {
                   decimals={1}
                   valueLabel="Inflation"
                   csvName="inflation-rankings"
-                />
+                
+              linkTopic="gdp"
+            />
               </div>
             )}
             {unemployment.length > 0 && (
@@ -297,7 +311,9 @@ export default async function GdpPage() {
                   decimals={1}
                   valueLabel="Unemployment"
                   csvName="unemployment-rankings"
-                />
+                
+              linkTopic="gdp"
+            />
               </div>
             )}
           </div>

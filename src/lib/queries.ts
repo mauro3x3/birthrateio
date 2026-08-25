@@ -2,6 +2,7 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 import { INDICATOR_BY_SLUG, SLUG } from "@/lib/indicators";
 import { parseSearchQuery } from "@/lib/search-query";
+import { resolveCountrySlug } from "@/lib/country-aliases";
 import { unstable_cache } from "next/cache";
 
 // ---------------------------------------------------------------------------
@@ -74,8 +75,9 @@ export const getAllCountries = unstable_cache(
 );
 
 export async function getCountryBySlug(slug: string) {
+  const resolved = resolveCountrySlug(slug);
   return prisma.country.findUnique({
-    where: { slug },
+    where: { slug: resolved },
     include: { region: true },
   });
 }
@@ -262,6 +264,85 @@ export async function getLatestRanking(
     }));
   mapped.sort((a, b) => (opts.order === "asc" ? a.value - b.value : b.value - a.value));
   return opts.limit ? mapped.slice(0, opts.limit) : mapped;
+}
+
+/**
+ * Where a country sits in the latest ranking for an indicator.
+ * Returns null when the country has no recent value.
+ */
+export async function getCountryRankBySlug(
+  countrySlug: string,
+  indicatorSlug: string,
+  opts: { order?: "asc" | "desc" } = {},
+): Promise<{
+  rank: number;
+  total: number;
+  value: number;
+  year: number;
+} | null> {
+  const ranking = await getLatestRanking(indicatorSlug, {
+    order: opts.order ?? "desc",
+  });
+  const idx = ranking.findIndex((r) => r.slug === countrySlug);
+  if (idx < 0) return null;
+  const row = ranking[idx];
+  return {
+    rank: idx + 1,
+    total: ranking.length,
+    value: row.value,
+    year: row.year,
+  };
+}
+
+/** Peer countries in the same continent, for internal linking. */
+export async function getRelatedCountries(
+  countryId: number,
+  opts: { continent?: string | null; limit?: number } = {},
+): Promise<
+  Array<{
+    slug: string;
+    name: string;
+    flagEmoji: string | null;
+    continent: string | null;
+  }>
+> {
+  const limit = opts.limit ?? 8;
+  let continent = opts.continent;
+  if (!continent) {
+    const self = await prisma.country.findUnique({
+      where: { id: countryId },
+      select: { continent: true },
+    });
+    continent = self?.continent ?? null;
+  }
+  if (!continent) {
+    return prisma.country.findMany({
+      where: { isAggregate: false, id: { not: countryId } },
+      select: {
+        slug: true,
+        name: true,
+        flagEmoji: true,
+        continent: true,
+      },
+      orderBy: { name: "asc" },
+      take: limit,
+    });
+  }
+  return prisma.country.findMany({
+    where: {
+      isAggregate: false,
+      id: { not: countryId },
+      continent,
+    },
+    select: {
+      slug: true,
+      name: true,
+      flagEmoji: true,
+      continent: true,
+    },
+    orderBy: { name: "asc" },
+    take: limit,
+  });
 }
 
 /** Country ranking for an indicator. Defaults to each country's latest value;

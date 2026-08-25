@@ -86,6 +86,8 @@ export default async function MigrationPage() {
               unit="people"
               decimals={0}
               valueLabel="Net migration"
+            
+              linkTopic="migration"
             />
           </div>
           <div>
@@ -97,6 +99,8 @@ export default async function MigrationPage() {
               unit="people"
               decimals={0}
               valueLabel="Net migration"
+            
+              linkTopic="migration"
             />
           </div>
         </div>
@@ -116,7 +120,9 @@ export default async function MigrationPage() {
             decimals={0}
             valueLabel="Net migration"
             csvName="migration-rankings"
-          />
+          
+              linkTopic="migration"
+            />
         </div>
       </section>
 
@@ -150,7 +156,9 @@ export default async function MigrationPage() {
                   unit="people"
                   decimals={0}
                   valueLabel="Foreign-born"
-                />
+                
+              linkTopic="migration"
+            />
               </div>
             )}
           </div>

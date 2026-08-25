@@ -154,7 +154,9 @@ export default async function FertilityPage() {
             decimals={2}
             valueLabel="Fertility"
             csvName="fertility-rankings"
-          />
+          
+              linkTopic="fertility"
+            />
         </div>
       </section>
 
@@ -178,7 +180,9 @@ export default async function FertilityPage() {
                   decimals={1}
                   valueLabel="Teen births"
                   csvName="adolescent-fertility-rankings"
-                />
+                
+              linkTopic="fertility"
+            />
               </div>
             )}
             {contraceptive.length > 0 && (
@@ -192,7 +196,9 @@ export default async function FertilityPage() {
                   decimals={1}
                   valueLabel="Contraceptive use"
                   csvName="contraceptive-prevalence-rankings"
-                />
+                
+              linkTopic="fertility"
+            />
               </div>
             )}
           </div>
