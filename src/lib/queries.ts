@@ -412,25 +412,62 @@ export const getMapData = unstable_cache(
 /** Build choropleth frames for several years (for the animated time slider). */
 export const getMapFrames = unstable_cache(
   async (slug: string, opts: { step?: number; maxFrames?: number } = {}) => {
+    const id = await indicatorId(slug);
+    if (!id) return [] as { year: number; data: RankingRow[] }[];
     const years = await getYearsForIndicator(slug);
     if (years.length === 0) return [] as { year: number; data: RankingRow[] }[];
     const step = opts.step ?? 5;
     const maxFrames = opts.maxFrames ?? 12;
     const latest = years[years.length - 1];
+    const yearSet = new Set(years);
     // Pick evenly spaced years ending on the latest available year.
     const picked: number[] = [];
     for (let y = latest; y >= years[0]; y -= step) {
-      if (years.includes(y)) picked.unshift(y);
+      if (yearSet.has(y)) picked.unshift(y);
       if (picked.length >= maxFrames) break;
     }
     if (!picked.includes(latest)) picked.push(latest);
-    const frames = await Promise.all(
-      picked.map(async (year) => ({
-        year,
-        data: await getRanking(slug, { year, order: "desc" }),
-      })),
-    );
-    return frames.filter((f) => f.data.length > 0);
+
+    // One round-trip for every frame. The old per-year Promise.all could fire
+    // 60+ queries at once, which times out on Vercel Hobby / a cold Neon
+    // compute and then ISR caches the empty fallback page.
+    const rows = await prisma.indicatorValue.findMany({
+      where: {
+        indicatorId: id,
+        subjectType: "COUNTRY",
+        year: { in: picked },
+        dimension: null,
+        country: { isAggregate: false },
+      },
+      select: {
+        value: true,
+        year: true,
+        country: { select: RANKING_COUNTRY_SELECT },
+      },
+    });
+
+    const byYear = new Map<number, RankingRow[]>();
+    for (const y of picked) byYear.set(y, []);
+    for (const r of rows) {
+      if (!r.country) continue;
+      const list = byYear.get(r.year);
+      if (!list) continue;
+      list.push({
+        iso3: r.country.iso3,
+        slug: r.country.slug,
+        name: r.country.name,
+        flagEmoji: r.country.flagEmoji,
+        continent: r.country.continent,
+        value: r.value,
+        year: r.year,
+      });
+    }
+    for (const list of byYear.values()) {
+      list.sort((a, b) => b.value - a.value);
+    }
+    return picked
+      .map((year) => ({ year, data: byYear.get(year) ?? [] }))
+      .filter((f) => f.data.length > 0);
   },
   ["map-frames"],
   { revalidate: 3600, tags: ["indicators"] },
