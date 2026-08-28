@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { TopicShell } from "@/components/topic-shell";
 import { SectionHeading } from "@/components/section-heading";
 import { ExplorerTable } from "@/components/explorer-table";
@@ -105,7 +104,6 @@ export default async function PopulationPage() {
   return (
     <TopicShell
       title="Population"
-      description="How many people live in each country, how fast that number is changing, and the age structure underneath it."
       path="/population"
       updatedAt={updatedAt}
       hero={
@@ -123,25 +121,13 @@ export default async function PopulationPage() {
       }
     >
       <section>
-        <SectionHeading
-          id="growth-calculator"
-          title="Growth calculator"
-          description="Compound a starting population forward at a constant growth rate. Illustrative only — it holds the rate fixed, which no real population does."
-        />
-        <div className="mt-5 space-y-2">
+        <SectionHeading id="growth-calculator" title="Growth calculator" />
+        <div className="mt-5">
           <PopulationCalculator
             countries={calcCountries}
             defaultPopulation={Math.round(worldPop)}
             defaultGrowth={Number(worldGrowth.toFixed(2))}
           />
-          <p className="text-xs text-muted-foreground">
-            For projections that account for age structure, fertility and
-            migration, use the{" "}
-            <Link href="/simulator" className="link-editorial">
-              demographic simulator
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
@@ -150,7 +136,6 @@ export default async function PopulationPage() {
           id="population-rankings"
           title="Population rankings"
           tocLabel="All countries ranked"
-          description="Every country by total population and by annual growth rate. Filter by region or download as CSV."
         />
         <div className="mt-5 grid gap-8 xl:grid-cols-2">
           <div>
@@ -189,7 +174,6 @@ export default async function PopulationPage() {
           <SectionHeading
             id="density-dependency"
             title="Density and dependency"
-            description="How tightly packed a population is, and how many children and pensioners each working-age person supports."
           />
           <div className="mt-5 grid gap-8 xl:grid-cols-2">
             {densityRanking.length > 0 && (
@@ -225,22 +209,12 @@ export default async function PopulationPage() {
               </div>
             )}
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            A high dependency ratio can mean many children or many pensioners —
-            fiscally opposite situations. Niger and Japan sit near each other on
-            this measure for entirely different reasons, so read it alongside the
-            age-structure shares on each country page.
-          </p>
         </section>
       )}
 
       {(ruralRanking.length > 0 || urbanGrowthRanking.length > 0) && (
         <section>
-          <SectionHeading
-            id="urban-rural"
-            title="Urban and rural"
-            description="Where people live, and how fast cities are absorbing them."
-          />
+          <SectionHeading id="urban-rural" title="Urban and rural" />
           <div className="mt-5 grid gap-8 xl:grid-cols-2">
             {ruralRanking.length > 0 && (
               <div>
@@ -275,12 +249,6 @@ export default async function PopulationPage() {
               </div>
             )}
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            Each country sets its own definition of &ldquo;urban&rdquo;, so the
-            rural share is best read within a country over time. Urban growth
-            also rises when the authorities reclassify a village as a town, with
-            nobody moving house.
-          </p>
         </section>
       )}
     </TopicShell>

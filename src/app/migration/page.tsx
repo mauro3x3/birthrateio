@@ -48,17 +48,11 @@ export default async function MigrationPage() {
   ]);
 
   return (
-    <TopicShell
-      title="Migration"
-      description="Net migration by country — how many more people arrive than leave each year — together with the size of the foreign-born population."
-      path="/migration"
-      updatedAt={updatedAt}
-    >
+    <TopicShell title="Migration" path="/migration" updatedAt={updatedAt}>
       <section>
         <MapCard
           id="net-migration-map"
           title="Net migration map"
-          description="Net migrants per year. Blue = net immigration, red = net emigration."
           source="World Bank"
           frames={frames}
           unit="people"
@@ -74,7 +68,6 @@ export default async function MigrationPage() {
           id="destinations-and-origins"
           title="Largest destinations and origins"
           tocLabel="Destinations & origins"
-          description="Countries with the largest net inflows and outflows in the latest year available."
         />
         <div className="mt-5 grid gap-8 lg:grid-cols-2">
           <div>
@@ -111,7 +104,6 @@ export default async function MigrationPage() {
           id="net-migration-rankings"
           title="Net migration rankings"
           tocLabel="All countries ranked"
-          description="Every country ranked by net migration. Filter by region or download the table as CSV."
         />
         <div className="mt-5">
           <ExplorerTable
@@ -132,12 +124,10 @@ export default async function MigrationPage() {
             id="foreign-born"
             title="Foreign-born population"
             tocLabel="Foreign-born population"
-            description="How large the immigrant population is in each country, measured by country of birth rather than citizenship."
           />
           <div className="mt-5 space-y-8">
             <MapCard
               title="Foreign-born share of population"
-              description="Foreign-born residents as a share of the total population. Darker = a larger foreign-born share."
               source="World Bank / UN DESA"
               frames={foreignBornFrames}
               unit="%"

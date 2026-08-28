@@ -1,21 +1,30 @@
 import type { SourceRef } from "@/lib/glossary";
+import { cn } from "@/lib/utils";
 
 /** Sources behind a page, with licence terms. Rendered near the page footer. */
-export function SourceList({ sources }: { sources: readonly SourceRef[] }) {
+export function SourceList({
+  sources,
+  plain = false,
+}: {
+  sources: readonly SourceRef[];
+  plain?: boolean;
+}) {
   if (sources.length === 0) return null;
 
   return (
     <section
-      aria-labelledby="sources-heading"
-      className="border-t border-border pt-6"
+      aria-labelledby={plain ? undefined : "sources-heading"}
+      className={plain ? undefined : "border-t border-border pt-6"}
     >
-      <h2
-        id="sources-heading"
-        className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
-      >
-        Sources
-      </h2>
-      <ul className="mt-3 space-y-2.5">
+      {!plain && (
+        <h2
+          id="sources-heading"
+          className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+        >
+          Sources
+        </h2>
+      )}
+      <ul className={cn("space-y-2.5", !plain && "mt-3")}>
         {sources.map((source) => (
           <li key={source.code} className="text-sm leading-relaxed">
             {source.url ? (

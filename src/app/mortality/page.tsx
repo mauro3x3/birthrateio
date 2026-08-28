@@ -75,17 +75,11 @@ export default async function MortalityPage() {
   const narrowestGap = sexGap.slice(-12).reverse();
 
   return (
-    <TopicShell
-      title="Mortality"
-      description="Life expectancy, child mortality, and long-run death rates. Deep historical series come from the Human Mortality Database and Our World in Data reconstructions."
-      path="/mortality"
-      updatedAt={updatedAt}
-    >
+    <TopicShell title="Mortality" path="/mortality" updatedAt={updatedAt}>
       <section>
         <MapCard
           id="life-expectancy-map"
           title="Life expectancy map"
-          description="Years at birth. Darker = longer lives. Animate to see the modern mortality transition."
           source="World Bank · OWID (pre-1960)"
           frames={lifeFrames}
           unit="years"
@@ -100,7 +94,6 @@ export default async function MortalityPage() {
           id="longevity-leaders"
           title="Longevity and historic death rates"
           tocLabel="Longevity leaders"
-          description="Where people live longest today, alongside the highest death rates recorded in countries with long vital-registration series."
         />
         <div className="mt-5 grid gap-8 lg:grid-cols-2">
           <div>
@@ -145,7 +138,6 @@ export default async function MortalityPage() {
             id="sex-gap"
             title="The longevity gap between women and men"
             tocLabel="Female–male gap"
-            description="Female life expectancy minus male, in years. Women outlive men in every country with data; only the size of the gap varies."
           />
           <div className="mt-5 grid gap-8 lg:grid-cols-2">
             <div>
@@ -175,14 +167,6 @@ export default async function MortalityPage() {
             />
             </div>
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            The widest gaps cluster in the former Soviet Union, where male
-            mortality from injury, alcohol and cardiovascular disease is high at
-            working ages. The narrowest appear in West Africa, where maternal
-            mortality still cuts into the advantage women hold elsewhere, and in
-            the Gulf states, where a resident population dominated by young male
-            labour migrants pulls measured male mortality down.
-          </p>
         </section>
       )}
 
@@ -192,7 +176,6 @@ export default async function MortalityPage() {
             id="infant-maternal"
             title="Infant and maternal mortality"
             tocLabel="Infant & maternal"
-            description="Deaths in the first year of life, and deaths from causes related to pregnancy and childbirth."
           />
           <div className="mt-5 grid gap-8 lg:grid-cols-2">
             {infantRanking.length > 0 && (
@@ -242,23 +225,12 @@ export default async function MortalityPage() {
             />
             </div>
           )}
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            Infant mortality is unusually sensitive to registration practice.
-            Countries that record extremely premature births as live births
-            rather than stillbirths report higher rates for identical medical
-            outcomes, which accounts for part of the gap between the United
-            States and Western Europe.
-          </p>
         </section>
       )}
 
       {suicideRanking.length > 0 && (
         <section>
-          <SectionHeading
-            id="suicide"
-            title="Suicide mortality"
-            description="Age-standardised suicide deaths per 100,000 people, WHO estimates. Classification depends on legal and religious context as well as medicine, and undercounting is thought to be substantial in some countries."
-          />
+          <SectionHeading id="suicide" title="Suicide mortality" />
           <div className="mt-5">
             <RankingTable
               rows={suicideRanking}
@@ -277,7 +249,6 @@ export default async function MortalityPage() {
           <MapCard
             id="child-mortality-map"
             title="Under-five mortality map"
-            description="Deaths before age 5 per 1,000 live births. Historical reconstructions reach the 18th century for some countries."
             source="Our World in Data (Gapminder · UN IGME)"
             frames={childFrames}
             unit="per 1,000 births"
@@ -294,7 +265,6 @@ export default async function MortalityPage() {
             id="child-mortality-rankings"
             title="Under-five mortality extremes"
             tocLabel="Child mortality"
-            description="The countries where a child is most and least likely to die before their fifth birthday."
           />
           <div className="mt-5 grid gap-8 lg:grid-cols-2">
             <div>
@@ -332,7 +302,6 @@ export default async function MortalityPage() {
           id="life-expectancy-rankings"
           title="Life expectancy rankings"
           tocLabel="All countries ranked"
-          description="Every country ranked by life expectancy at birth. Filter by region or download the table as CSV."
         />
         <div className="mt-5">
           <ExplorerTable
@@ -346,13 +315,6 @@ export default async function MortalityPage() {
             />
         </div>
       </section>
-
-      <p className="text-xs leading-relaxed text-muted-foreground">
-        Early life-expectancy and child-mortality figures are historical
-        reconstructions and may use national borders that differ from today
-        (England, for example, is mapped to the United Kingdom). Country pages
-        show the longest available series for each indicator.
-      </p>
     </TopicShell>
   );
 }

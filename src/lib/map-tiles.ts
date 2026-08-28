@@ -11,9 +11,11 @@ export function cartoDarkTileUrl(): string {
 
 export const CARTO_ATTRIBUTION = "&copy; OpenStreetMap &copy; CARTO";
 
-/** OpenFreeMap vector style — free, no registration or API key. */
-export const OPENFREEMAP_DARK_STYLE =
-  "https://tiles.openfreemap.org/styles/dark";
+/** Esri dark canvas — free raster tiles, no API key. */
+export const ESRI_DARK_GRAY_BASE =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}";
 
-export const OPENFREEMAP_ATTRIBUTION =
-  "&copy; OpenStreetMap &copy; OpenFreeMap";
+export const ESRI_DARK_GRAY_REFERENCE =
+  "https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}";
+
+export const ESRI_ATTRIBUTION = "Tiles &copy; Esri";

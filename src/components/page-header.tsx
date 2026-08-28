@@ -6,18 +6,32 @@ export function PageHeader({
   description,
   children,
   className,
+  compact = false,
 }: {
   title: React.ReactNode;
   description?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
+  compact?: boolean;
 }) {
   return (
     <div className={cn("border-b border-border bg-card", className)}>
-      <div className="container flex flex-col gap-3 py-6 md:flex-row md:items-end md:justify-between md:py-8">
-        <div className="space-y-2">
-          <TopicCrumb />
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-primary md:text-4xl">
+      <div
+        className={cn(
+          "container flex flex-col gap-3 md:flex-row md:items-end md:justify-between",
+          compact ? "py-4 md:py-5" : "py-6 md:py-8",
+        )}
+      >
+        <div className={cn("space-y-2", compact && "space-y-1")}>
+          {!compact && <TopicCrumb />}
+          <h1
+            className={cn(
+              "font-serif font-bold tracking-tight text-primary",
+              compact
+                ? "text-2xl md:text-3xl"
+                : "text-3xl md:text-4xl",
+            )}
+          >
             {title}
           </h1>
           {description && (

@@ -79,7 +79,6 @@ export default async function FertilityPage() {
   return (
     <TopicShell
       title="Fertility"
-      description="The total fertility rate for every country — how many children a woman would have over her lifetime at current age-specific rates — with provisional figures for the most recent year."
       path="/fertility"
       updatedAt={updatedAt}
       hero={
@@ -93,16 +92,11 @@ export default async function FertilityPage() {
           source="World Bank"
           headline="Global"
           metricLabel="Births / woman"
-          explainTfrDecline
         />
       }
     >
       <section>
-        <SectionHeading
-          id="biggest-movers"
-          title="Biggest movers"
-          description="Countries where the fertility rate has changed most over the last decade."
-        />
+        <SectionHeading id="biggest-movers" title="Biggest movers" />
         <div className="mt-5">
           <FertilityMovers
             declines={changes.declines}
@@ -145,7 +139,6 @@ export default async function FertilityPage() {
           id="fertility-rankings"
           title="Fertility rankings"
           tocLabel="All countries ranked"
-          description="Every country ranked by total fertility rate. Filter by region or download the table as CSV."
         />
         <div className="mt-5">
           <ExplorerTable
@@ -166,7 +159,6 @@ export default async function FertilityPage() {
             id="teen-fertility-contraception"
             title="Adolescent fertility and contraception"
             tocLabel="Teen births & contraception"
-            description="Births to women aged 15–19, and the share of women in a union using any method of contraception."
           />
           <div className="mt-5 grid gap-8 xl:grid-cols-2">
             {adolescent.length > 0 && (
@@ -202,13 +194,6 @@ export default async function FertilityPage() {
               </div>
             )}
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            Adolescent fertility usually falls earlier and faster than overall
-            fertility as schooling and contraception spread, which makes it a
-            useful marker of how far a country has moved through the fertility
-            transition. Contraceptive prevalence is survey-based, so a country
-            appears only in the years it ran a demographic or health survey.
-          </p>
         </section>
       )}
     </TopicShell>

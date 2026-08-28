@@ -9,26 +9,31 @@ import { indicatorsBySlugs, sourceByCode } from "@/lib/glossary";
 export function IndicatorDefinitions({
   slugs,
   caveats,
+  plain = false,
 }: {
   slugs: readonly string[];
   caveats?: readonly string[];
+  /** Strip outer chrome when nested in a collapsible section. */
+  plain?: boolean;
 }) {
   const indicators = indicatorsBySlugs(slugs);
   if (indicators.length === 0 && !caveats?.length) return null;
 
   return (
     <section
-      aria-labelledby="definitions-heading"
-      className="border-y border-border bg-muted/30"
+      aria-labelledby={plain ? undefined : "definitions-heading"}
+      className={plain ? undefined : "border-y border-border bg-muted/30"}
     >
-      <div className="space-y-4 px-4 py-5 sm:px-5">
-        <h2
-          id="definitions-heading"
-          data-toc-skip
-          className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
-        >
-          What this page measures
-        </h2>
+      <div className={plain ? "space-y-4" : "space-y-4 px-4 py-5 sm:px-5"}>
+        {!plain && (
+          <h2
+            id="definitions-heading"
+            data-toc-skip
+            className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+          >
+            What this page measures
+          </h2>
+        )}
 
         {indicators.length > 0 && (
           <dl className="grid gap-x-8 gap-y-4 sm:grid-cols-2">

@@ -85,7 +85,6 @@ export default async function GdpPage() {
   return (
     <TopicShell
       title="GDP"
-      description="Economic output by country — the total, the amount per person, and how fast it is growing — measured three ways: at market exchange rates, adjusted for inflation, and adjusted for local price levels."
       path="/gdp"
       updatedAt={updatedAt}
       hero={
@@ -101,59 +100,8 @@ export default async function GdpPage() {
         />
       }
     >
-      <section aria-labelledby="reading-gdp">
-        <SectionHeading
-          id="reading-gdp"
-          title="Three ways to measure the same economy"
-          tocLabel="How to read GDP"
-          description="Which series answers your question depends on what you are comparing."
-        />
-        <div className="mt-5 max-w-3xl space-y-4 text-sm leading-relaxed text-muted-foreground">
-          <p>
-            Gross domestic product is the market value of everything a country
-            produces in a year. Turning that into a number that can be compared
-            across countries and across decades requires three separate
-            adjustments, and each one answers a different question.
-          </p>
-          <p>
-            <strong className="font-medium text-foreground">
-              Current prices, market exchange rates.
-            </strong>{" "}
-            The headline figure, and the one used for the tables below and the
-            map above. It shows what an economy is worth today in dollars, which
-            is what matters for trade, debt and the size of a country&rsquo;s
-            weight in the world economy. It is not comparable over time: part of
-            every increase is inflation, and part is currency movement.
-          </p>
-          <p>
-            <strong className="font-medium text-foreground">
-              Constant prices.
-            </strong>{" "}
-            The same output held at 2015 prices, so inflation is removed and a
-            rise means more was actually produced. This is the series to use when
-            asking whether a country has grown, and it is what the annual growth
-            rate is calculated from.
-          </p>
-          <p>
-            <strong className="font-medium text-foreground">
-              Purchasing power parity.
-            </strong>{" "}
-            Output converted at rates that equalise what a dollar buys, rather
-            than at market exchange rates. Because haircuts, rent and bus fares
-            are cheaper in poorer countries, market rates understate real
-            consumption there — often by a factor of two or three. PPP figures
-            are the standard basis for comparing living standards, at the cost of
-            resting on price surveys that are themselves estimates.
-          </p>
-        </div>
-      </section>
-
       <section>
-        <SectionHeading
-          id="gdp-total"
-          title="Largest economies"
-          description="Every country ranked by total gross domestic product at current prices."
-        />
+        <SectionHeading id="gdp-total" title="Largest economies" />
         <div className="mt-5">
           <ExplorerTable
             rows={gdpRanking}
@@ -172,7 +120,6 @@ export default async function GdpPage() {
           id="gdp-per-capita"
           title="Output per person and growth"
           tocLabel="Per capita & growth"
-          description="GDP divided by population, and the annual real growth rate. Per-capita figures are not adjusted for purchasing power."
         />
         <div className="mt-5 grid gap-8 xl:grid-cols-2">
           <div>
@@ -212,7 +159,6 @@ export default async function GdpPage() {
             id="gdp-adjusted"
             title="Adjusted for inflation and price levels"
             tocLabel="Inflation & PPP adjusted"
-            description="Purchasing-power-parity output per person at constant 2021 prices — the most comparable living-standards measure — alongside total output at constant 2015 prices."
           />
           <div className="mt-5 grid gap-8 xl:grid-cols-2">
             {pppReal.length > 0 && (
@@ -248,12 +194,6 @@ export default async function GdpPage() {
               </div>
             )}
           </div>
-          <p className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
-            PPP series begin in 1990, when internationally comparable price
-            surveys start; the current-price series run from 1960. Ranks based on
-            PPP differ substantially from those at market exchange rates,
-            particularly for large middle-income economies.
-          </p>
         </section>
       )}
 
@@ -265,7 +205,6 @@ export default async function GdpPage() {
             id="income-prices"
             title="Income, prices and jobs"
             tocLabel="Income & prices"
-            description="National income per person, consumer price inflation, and the share of the labour force out of work."
           />
           <div className="mt-5 grid gap-8 xl:grid-cols-3">
             {gniPerCapita.length > 0 && (
