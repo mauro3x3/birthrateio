@@ -4,12 +4,12 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import {
   MapContainer,
-  TileLayer,
   CircleMarker,
   Tooltip,
   useMap,
 } from "react-leaflet";
 import { formatCompact } from "@/lib/utils";
+import { DarkBasemapLayer } from "@/components/maps/dark-basemap-layer";
 
 export type CityMapPoint = {
   slug: string;
@@ -83,10 +83,7 @@ export function CitiesWorldMapInner({
         className="br-cinema-map"
         style={{ height: "100%", width: "100%", background: "hsl(213 55% 8%)" }}
       >
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          attribution="&copy; OpenStreetMap &copy; CARTO"
-        />
+        <DarkBasemapLayer />
         <FitPoints points={points} />
         {points.map((p) => {
           const active = highlightedSlug === p.slug;

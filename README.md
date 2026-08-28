@@ -212,5 +212,6 @@ npm run dev                # http://localhost:3000
   API contact. This keeps pages fast and resilient.
 - All aggregate reads are cached (`unstable_cache`) and revalidated hourly, or on
   demand after ingestion via cache tags.
-- Maps use free OpenStreetMap/CARTO tiles and a public world-borders GeoJSON, so
-  **no Mapbox token is required** (one is supported via `NEXT_PUBLIC_MAPBOX_TOKEN`).
+- Point maps (cities, city location) use **OpenFreeMap** dark tiles by default —
+  no API key required. Optional `NEXT_PUBLIC_CARTO_API_KEY` switches them to CARTO.
+  Choropleth maps use free GeoJSON coastlines only (no tile server).

@@ -1,6 +1,7 @@
 "use client";
 
-import { MapContainer, TileLayer, CircleMarker, Tooltip } from "react-leaflet";
+import { MapContainer, CircleMarker, Tooltip } from "react-leaflet";
+import { DarkBasemapLayer } from "@/components/maps/dark-basemap-layer";
 
 export function PointMapInner({
   lat,
@@ -25,10 +26,7 @@ export function PointMapInner({
         className="br-cinema-map"
         style={{ height: "100%", width: "100%", background: "#0a0a0a" }}
       >
-        <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
-          attribution="&copy; OpenStreetMap &copy; CARTO"
-        />
+        <DarkBasemapLayer />
         <CircleMarker
           center={[lat, lng]}
           radius={10}
