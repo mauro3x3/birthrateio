@@ -19,6 +19,7 @@ const SITE_MAP = `
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
+- /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
 - /demographics : US demographics map — race & Hispanic origin by state (ACS), Census-style choropleth
 - /state/<slug> : Subnational profile — population & fertility for a state/province/Land
 - /gdp : GDP explorer (rankings, GDP per capita, growth)
@@ -60,7 +61,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /topics /fertility /population /migration /mortality /crime /demographics /gdp /states /cities /calendar /clock /contribute.
+- Explorers: /topics /fertility /population /migration /mortality /crime /demographics /gdp /states /maps /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {

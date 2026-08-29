@@ -45,6 +45,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Subnational fertility within countries",
       },
       {
+        title: "Regional maps",
+        href: "/maps",
+        note: "Labeled choropleths from statistical offices",
+      },
+      {
         title: "Simulator",
         href: "/simulator",
         note: "Project a population under different fertility paths",
@@ -269,6 +274,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "National fertility rates",
       },
       {
+        title: "Regional maps",
+        href: "/maps",
+        note: "Labeled choropleths for more countries",
+      },
+      {
         title: "Cities",
         href: "/cities",
         note: "Metro-level detail",
@@ -281,6 +291,31 @@ export const TOPIC_META: TopicMeta[] = [
     ],
     caveats: [
       "Subnational definitions and reference years differ by country, so cross-country comparison of regions is unreliable.",
+    ],
+  },
+  {
+    href: "/maps",
+    title: "Regional maps",
+    indicators: [SLUG.fertility],
+    related: [
+      {
+        title: "Fertility",
+        href: "/fertility",
+        note: "National rates and nowcasts",
+      },
+      {
+        title: "States & provinces",
+        href: "/states",
+        note: "Tables and interactive explorers for the same geographies",
+      },
+      {
+        title: "Population",
+        href: "/population",
+        note: "National population change",
+      },
+    ],
+    caveats: [
+      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Iran has no redistributable provincial table yet.",
     ],
   },
   {

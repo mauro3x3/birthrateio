@@ -1,10 +1,10 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X } from "lucide-react";
+import { BrandMark } from "@/components/brand-mark";
 import { navTopics, primaryNav, referenceNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { GlobalSearch } from "@/components/global-search";
@@ -74,14 +74,7 @@ export function SiteHeader() {
     <header className="site-header sticky top-0 z-40 w-full">
       <div className="container flex h-[3.75rem] items-center gap-3">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <Image
-            src="/logo.png"
-            alt="birthrate.io logo"
-            width={32}
-            height={32}
-            priority
-            className="h-8 w-8 object-contain"
-          />
+          <BrandMark />
           <span className="hidden font-serif text-[1.05rem] font-semibold leading-tight text-white sm:block">
             birthrate<span className="font-normal opacity-90">.io</span>
           </span>

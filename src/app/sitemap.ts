@@ -5,6 +5,7 @@ import {
   COUNTRY_TOPICS,
   SEO_COMPARE_PAIRS,
 } from "@/lib/country-topics";
+import { getCountryMapAtlas } from "@/lib/country-map-atlas";
 
 export const revalidate = 86400;
 
@@ -19,6 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/mortality",
     "/crime",
     "/states",
+    "/maps",
     "/demographics",
     "/gdp",
     "/compare",
@@ -38,6 +40,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
     changeFrequency: "daily" as const,
     priority: path === "" ? 1 : 0.8,
+  }));
+
+  const mapCountryRoutes = getCountryMapAtlas().map((c) => ({
+    url: `${base}/maps/${c.iso3.toLowerCase()}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.7,
   }));
 
   let countryRoutes: MetadataRoute.Sitemap = [];
@@ -129,6 +138,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticRoutes,
+    ...mapCountryRoutes,
     ...countryRoutes,
     ...topicCountryRoutes,
     ...compareRoutes,

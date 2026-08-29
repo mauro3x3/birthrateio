@@ -75,12 +75,12 @@ export function TopicShell({
       <div className="container">
         {chartFirst ? (
           <article id={CONTENT_ID} className="min-w-0 space-y-8 py-6 md:py-8">
+            {children}
             {definitions ? (
               <CollapsibleSection title="What this page measures">
                 {definitions}
               </CollapsibleSection>
             ) : null}
-            {children}
             <CollapsibleSection title="Sources & citation">{footer}</CollapsibleSection>
           </article>
         ) : (

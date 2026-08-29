@@ -32,6 +32,7 @@ export function TimeSeriesChart({
   decimals = 2,
   referenceY,
   referenceLabel,
+  highlightYear,
 }: {
   data: SeriesPoint[];
   type?: "line" | "area";
@@ -41,6 +42,8 @@ export function TimeSeriesChart({
   decimals?: number;
   referenceY?: number;
   referenceLabel?: string;
+  /** Vertical marker for the selected year (homepage scrubber). */
+  highlightYear?: number;
 }) {
   if (!data || data.length === 0) {
     return (
@@ -146,6 +149,13 @@ export function TimeSeriesChart({
               fontSize: 11,
               fill: "hsl(var(--muted-foreground))",
             }}
+          />
+        )}
+        {highlightYear !== undefined && (
+          <ReferenceLine
+            x={highlightYear}
+            stroke="hsl(var(--foreground) / 0.35)"
+            strokeDasharray="3 3"
           />
         )}
         {type === "area" ? (

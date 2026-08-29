@@ -325,6 +325,7 @@ export function RegionChoroplethMap({
 
   React.useEffect(() => {
     let active = true;
+    setGeo(null);
     fetch(geoUrl)
       .then((r) => r.json())
       .then((json) => {

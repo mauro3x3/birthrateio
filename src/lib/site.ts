@@ -80,6 +80,11 @@ export const navTopics: NavTopic[] = [
         description: "Death rates and longevity indicators",
       },
       {
+        title: "Regional maps",
+        href: "/maps",
+        description: "Choropleth maps of TFR, population and growth by region",
+      },
+      {
         title: "States & provinces",
         href: "/states",
         description: "Subnational fertility maps and tables",

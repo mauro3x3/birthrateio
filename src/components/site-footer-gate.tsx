@@ -11,6 +11,7 @@ const FULLSCREEN_PATHS = [
   "/fertility",
   "/gdp",
   "/demographics/uk",
+  "/maps",
 ];
 
 export function SiteFooterGate() {

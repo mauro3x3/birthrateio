@@ -73,6 +73,30 @@ const SEQUENTIAL_DARK: ScaleStop[] = [
   { t: 1, color: [220, 168, 100] },
 ];
 
+// Datawrapper-style TFR poster: dark blue (low) → white (mid) → dark red (high).
+const DIVERGING_TFR: ScaleStop[] = [
+  { t: 0, color: [5, 48, 97] },
+  { t: 0.16, color: [33, 102, 172] },
+  { t: 0.32, color: [67, 147, 195] },
+  { t: 0.42, color: [146, 197, 222] },
+  { t: 0.5, color: [247, 247, 247] },
+  { t: 0.58, color: [253, 219, 199] },
+  { t: 0.7, color: [244, 165, 130] },
+  { t: 0.84, color: [178, 24, 43] },
+  { t: 1, color: [103, 0, 31] },
+];
+
+// Poster TFR maps — yellow (low) → magenta → navy (high), in the BirthGauge style.
+const PLASMA: ScaleStop[] = [
+  { t: 0, color: [254, 234, 101] },
+  { t: 0.18, color: [253, 180, 72] },
+  { t: 0.36, color: [244, 109, 67] },
+  { t: 0.52, color: [221, 61, 104] },
+  { t: 0.68, color: [176, 42, 136] },
+  { t: 0.84, color: [94, 37, 140] },
+  { t: 1, color: [26, 24, 92] },
+];
+
 function interp(stops: ScaleStop[], t: number): string {
   const x = Math.max(0, Math.min(1, t));
   for (let i = 1; i < stops.length; i++) {
@@ -97,14 +121,17 @@ export type ScaleType =
   | "diverging-dark"
   | "diverging-growth"
   | "diverging-growth-dark"
-  | "sequential-dark";
+  | "sequential-dark"
+  | "plasma"
+  | "diverging-tfr";
 
 function isDivergingScale(type: ScaleType): boolean {
   return (
     type === "diverging" ||
     type === "diverging-dark" ||
     type === "diverging-growth" ||
-    type === "diverging-growth-dark"
+    type === "diverging-growth-dark" ||
+    type === "diverging-tfr"
   );
 }
 
@@ -120,6 +147,10 @@ function stopsFor(type: ScaleType): ScaleStop[] {
       return DIVERGING;
     case "sequential-dark":
       return SEQUENTIAL_DARK;
+    case "plasma":
+      return PLASMA;
+    case "diverging-tfr":
+      return DIVERGING_TFR;
     default:
       return SEQUENTIAL;
   }

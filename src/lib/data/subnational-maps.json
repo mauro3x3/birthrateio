@@ -1,0 +1,4041 @@
+{
+  "maps": [
+    {
+      "id": "chn-tfr-2023",
+      "iso3": "CHN",
+      "country": "China",
+      "title": "China TFR in 2023",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2023,
+      "national": 1.02,
+      "source": "BirthGauge 2023 provincial TFR estimates. NBS does not publish annual provincial TFR; the 2020 census layer is the official NBS series.",
+      "sourceUrl": "https://www.geocurrents.info/blog/2025/01/13/mapping-chinas-debated-fertility-figures/",
+      "credit": "Provincial estimates compiled by BirthGauge (@BirthGauge).",
+      "geoUrl": "/geo/maps/chn-tfr.json",
+      "scale": "diverging-tfr",
+      "mid": 1.2,
+      "labelValues": true,
+      "tab": "2023",
+      "highlights": [
+        {
+          "name": "Taiwan",
+          "value": 0.86
+        },
+        {
+          "name": "Hong Kong",
+          "value": 0.75
+        },
+        {
+          "name": "Macao",
+          "value": 0.59
+        }
+      ],
+      "regions": [
+        {
+          "id": "china-beijing",
+          "slug": "china-beijing",
+          "name": "Beijing",
+          "value": 0.72
+        },
+        {
+          "id": "china-tianjin",
+          "slug": "china-tianjin",
+          "name": "Tianjin",
+          "value": 0.73
+        },
+        {
+          "id": "china-hebei",
+          "slug": "china-hebei",
+          "name": "Hebei",
+          "value": 0.92
+        },
+        {
+          "id": "china-shanxi",
+          "slug": "china-shanxi",
+          "name": "Shanxi",
+          "value": 0.95
+        },
+        {
+          "id": "china-inner-mongolia",
+          "slug": "china-inner-mongolia",
+          "name": "Inner Mongolia",
+          "value": 0.74
+        },
+        {
+          "id": "china-liaoning",
+          "slug": "china-liaoning",
+          "name": "Liaoning",
+          "value": 0.75
+        },
+        {
+          "id": "china-jilin",
+          "slug": "china-jilin",
+          "name": "Jilin",
+          "value": 0.71
+        },
+        {
+          "id": "china-heilongjiang",
+          "slug": "china-heilongjiang",
+          "name": "Heilongjiang",
+          "value": 0.62
+        },
+        {
+          "id": "china-shanghai",
+          "slug": "china-shanghai",
+          "name": "Shanghai",
+          "value": 0.61
+        },
+        {
+          "id": "china-jiangsu",
+          "slug": "china-jiangsu",
+          "name": "Jiangsu",
+          "value": 0.78
+        },
+        {
+          "id": "china-zhejiang",
+          "slug": "china-zhejiang",
+          "name": "Zhejiang",
+          "value": 0.99
+        },
+        {
+          "id": "china-anhui",
+          "slug": "china-anhui",
+          "name": "Anhui",
+          "value": 0.98
+        },
+        {
+          "id": "china-fujian",
+          "slug": "china-fujian",
+          "name": "Fujian",
+          "value": 0.89
+        },
+        {
+          "id": "china-jiangxi",
+          "slug": "china-jiangxi",
+          "name": "Jiangxi",
+          "value": 1.06
+        },
+        {
+          "id": "china-shandong",
+          "slug": "china-shandong",
+          "name": "Shandong",
+          "value": 1.05
+        },
+        {
+          "id": "china-henan",
+          "slug": "china-henan",
+          "name": "Henan",
+          "value": 1.12
+        },
+        {
+          "id": "china-hubei",
+          "slug": "china-hubei",
+          "name": "Hubei",
+          "value": 0.87
+        },
+        {
+          "id": "china-hunan",
+          "slug": "china-hunan",
+          "name": "Hunan",
+          "value": 1.01
+        },
+        {
+          "id": "china-guangdong",
+          "slug": "china-guangdong",
+          "name": "Guangdong",
+          "value": 1.12
+        },
+        {
+          "id": "china-guangxi",
+          "slug": "china-guangxi",
+          "name": "Guangxi",
+          "value": 1.43
+        },
+        {
+          "id": "china-hainan",
+          "slug": "china-hainan",
+          "name": "Hainan",
+          "value": 1.45
+        },
+        {
+          "id": "china-chongqing",
+          "slug": "china-chongqing",
+          "name": "Chongqing",
+          "value": 0.93
+        },
+        {
+          "id": "china-sichuan",
+          "slug": "china-sichuan",
+          "name": "Sichuan",
+          "value": 1.07
+        },
+        {
+          "id": "china-guizhou",
+          "slug": "china-guizhou",
+          "name": "Guizhou",
+          "value": 1.72
+        },
+        {
+          "id": "china-yunnan",
+          "slug": "china-yunnan",
+          "name": "Yunnan",
+          "value": 1.31
+        },
+        {
+          "id": "china-tibet",
+          "slug": "china-tibet",
+          "name": "Tibet",
+          "value": 1.97
+        },
+        {
+          "id": "china-shaanxi",
+          "slug": "china-shaanxi",
+          "name": "Shaanxi",
+          "value": 0.95
+        },
+        {
+          "id": "china-gansu",
+          "slug": "china-gansu",
+          "name": "Gansu",
+          "value": 1.28
+        },
+        {
+          "id": "china-qinghai",
+          "slug": "china-qinghai",
+          "name": "Qinghai",
+          "value": 1.34
+        },
+        {
+          "id": "china-ningxia",
+          "slug": "china-ningxia",
+          "name": "Ningxia",
+          "value": 1.51
+        },
+        {
+          "id": "china-xinjiang",
+          "slug": "china-xinjiang",
+          "name": "Xinjiang",
+          "value": 1.13
+        }
+      ],
+      "min": 0.6,
+      "max": 2.0
+    },
+    {
+      "id": "jpn-tfr",
+      "iso3": "JPN",
+      "country": "Japan",
+      "title": "Total fertility rate, Japan 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "prefecture",
+      "year": 2024,
+      "national": 1.15,
+      "source": "Ministry of Health, Labour and Welfare, Vital Statistics of Japan 2024 (final) \u2014 total fertility rate by prefecture.",
+      "sourceUrl": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei24/index.html",
+      "credit": null,
+      "geoUrl": "/geo/maps/jpn-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "japan-osaka-prefecture",
+          "slug": "japan-osaka-prefecture",
+          "name": "Osaka Prefecture",
+          "value": 1.14
+        },
+        {
+          "id": "japan-oita",
+          "slug": "japan-oita",
+          "name": "Oita",
+          "value": 1.37
+        },
+        {
+          "id": "japan-hyogo-prefecture",
+          "slug": "japan-hyogo-prefecture",
+          "name": "Hyogo Prefecture",
+          "value": 1.23
+        },
+        {
+          "id": "japan-fukui-prefecture",
+          "slug": "japan-fukui-prefecture",
+          "name": "Fukui Prefecture",
+          "value": 1.46
+        },
+        {
+          "id": "japan-shiga",
+          "slug": "japan-shiga",
+          "name": "Shiga",
+          "value": 1.32
+        },
+        {
+          "id": "japan-nara-prefecture",
+          "slug": "japan-nara-prefecture",
+          "name": "Nara Prefecture",
+          "value": 1.19
+        },
+        {
+          "id": "japan-gifu-prefecture",
+          "slug": "japan-gifu-prefecture",
+          "name": "Gifu Prefecture",
+          "value": 1.27
+        },
+        {
+          "id": "japan-mie-prefecture",
+          "slug": "japan-mie-prefecture",
+          "name": "Mie Prefecture",
+          "value": 1.24
+        },
+        {
+          "id": "japan-wakayama-prefecture",
+          "slug": "japan-wakayama-prefecture",
+          "name": "Wakayama Prefecture",
+          "value": 1.24
+        },
+        {
+          "id": "japan-tokyo",
+          "slug": "japan-tokyo",
+          "name": "Tokyo",
+          "value": 0.96
+        },
+        {
+          "id": "japan-fukuoka-prefecture",
+          "slug": "japan-fukuoka-prefecture",
+          "name": "Fukuoka Prefecture",
+          "value": 1.22
+        },
+        {
+          "id": "japan-saitama",
+          "slug": "japan-saitama",
+          "name": "Saitama",
+          "value": 1.09
+        },
+        {
+          "id": "japan-fukushima",
+          "slug": "japan-fukushima",
+          "name": "Fukushima",
+          "value": 1.15
+        },
+        {
+          "id": "japan-tochigi",
+          "slug": "japan-tochigi",
+          "name": "Tochigi",
+          "value": 1.15
+        },
+        {
+          "id": "japan-aomori",
+          "slug": "japan-aomori",
+          "name": "Aomori",
+          "value": 1.14
+        },
+        {
+          "id": "japan-saga-prefecture",
+          "slug": "japan-saga-prefecture",
+          "name": "Saga Prefecture",
+          "value": 1.41
+        },
+        {
+          "id": "japan-nagasaki-prefecture",
+          "slug": "japan-nagasaki-prefecture",
+          "name": "Nagasaki Prefecture",
+          "value": 1.39
+        },
+        {
+          "id": "japan-miyazaki-prefecture",
+          "slug": "japan-miyazaki-prefecture",
+          "name": "Miyazaki Prefecture",
+          "value": 1.43
+        },
+        {
+          "id": "japan-kumamoto",
+          "slug": "japan-kumamoto",
+          "name": "Kumamoto",
+          "value": 1.39
+        },
+        {
+          "id": "japan-kagoshima-prefecture",
+          "slug": "japan-kagoshima-prefecture",
+          "name": "Kagoshima Prefecture",
+          "value": 1.38
+        },
+        {
+          "id": "japan-gunma",
+          "slug": "japan-gunma",
+          "name": "Gunma",
+          "value": 1.2
+        },
+        {
+          "id": "japan-kyoto-prefecture",
+          "slug": "japan-kyoto-prefecture",
+          "name": "Kyoto Prefecture",
+          "value": 1.05
+        },
+        {
+          "id": "japan-chiba",
+          "slug": "japan-chiba",
+          "name": "Chiba",
+          "value": 1.09
+        },
+        {
+          "id": "japan-ibaraki",
+          "slug": "japan-ibaraki",
+          "name": "Ibaraki",
+          "value": 1.16
+        },
+        {
+          "id": "japan-kanagawa",
+          "slug": "japan-kanagawa",
+          "name": "Kanagawa",
+          "value": 1.08
+        },
+        {
+          "id": "japan-hiroshima",
+          "slug": "japan-hiroshima",
+          "name": "Hiroshima",
+          "value": 1.29
+        },
+        {
+          "id": "japan-tottori-prefecture",
+          "slug": "japan-tottori-prefecture",
+          "name": "Tottori Prefecture",
+          "value": 1.43
+        },
+        {
+          "id": "japan-shimane",
+          "slug": "japan-shimane",
+          "name": "Shimane",
+          "value": 1.43
+        },
+        {
+          "id": "japan-niigata",
+          "slug": "japan-niigata",
+          "name": "Niigata",
+          "value": 1.14
+        },
+        {
+          "id": "japan-nagano",
+          "slug": "japan-nagano",
+          "name": "Nagano",
+          "value": 1.3
+        },
+        {
+          "id": "japan-aichi-prefecture",
+          "slug": "japan-aichi-prefecture",
+          "name": "Aichi Prefecture",
+          "value": 1.22
+        },
+        {
+          "id": "japan-yamanashi",
+          "slug": "japan-yamanashi",
+          "name": "Yamanashi",
+          "value": 1.26
+        },
+        {
+          "id": "japan-miyagi",
+          "slug": "japan-miyagi",
+          "name": "Miyagi",
+          "value": 1.0
+        },
+        {
+          "id": "japan-yamagata",
+          "slug": "japan-yamagata",
+          "name": "Yamagata",
+          "value": 1.17
+        },
+        {
+          "id": "japan-akita",
+          "slug": "japan-akita",
+          "name": "Akita",
+          "value": 1.04
+        },
+        {
+          "id": "japan-iwate",
+          "slug": "japan-iwate",
+          "name": "Iwate",
+          "value": 1.09
+        },
+        {
+          "id": "japan-toyama",
+          "slug": "japan-toyama",
+          "name": "Toyama",
+          "value": 1.29
+        },
+        {
+          "id": "japan-shizuoka",
+          "slug": "japan-shizuoka",
+          "name": "Shizuoka",
+          "value": 1.19
+        },
+        {
+          "id": "japan-ishikawa-prefecture",
+          "slug": "japan-ishikawa-prefecture",
+          "name": "Ishikawa Prefecture",
+          "value": 1.23
+        },
+        {
+          "id": "japan-okayama-prefecture",
+          "slug": "japan-okayama-prefecture",
+          "name": "Okayama Prefecture",
+          "value": 1.27
+        },
+        {
+          "id": "japan-tokushima-prefecture",
+          "slug": "japan-tokushima-prefecture",
+          "name": "Tokushima Prefecture",
+          "value": 1.32
+        },
+        {
+          "id": "japan-kochi-prefecture",
+          "slug": "japan-kochi-prefecture",
+          "name": "Kochi Prefecture",
+          "value": 1.25
+        },
+        {
+          "id": "japan-ehime-prefecture",
+          "slug": "japan-ehime-prefecture",
+          "name": "Ehime Prefecture",
+          "value": 1.28
+        },
+        {
+          "id": "japan-kagawa-prefecture",
+          "slug": "japan-kagawa-prefecture",
+          "name": "Kagawa Prefecture",
+          "value": 1.36
+        },
+        {
+          "id": "japan-okinawa-prefecture",
+          "slug": "japan-okinawa-prefecture",
+          "name": "Okinawa Prefecture",
+          "value": 1.54
+        },
+        {
+          "id": "japan-hokkaido",
+          "slug": "japan-hokkaido",
+          "name": "Hokkaido",
+          "value": 1.01
+        },
+        {
+          "id": "japan-yamaguchi",
+          "slug": "japan-yamaguchi",
+          "name": "Yamaguchi",
+          "value": 1.36
+        }
+      ],
+      "min": 0.96,
+      "max": 1.54
+    },
+    {
+      "id": "kor-tfr",
+      "iso3": "KOR",
+      "country": "South Korea",
+      "title": "Total fertility rate, South Korea 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2024,
+      "national": 0.75,
+      "source": "Statistics Korea (KOSTAT) / KOSIS population trends survey \u2014 2024 total fertility rate by province and metropolitan city.",
+      "sourceUrl": "https://kosis.kr",
+      "credit": null,
+      "geoUrl": "/geo/maps/kor-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "korea-gangwon",
+          "slug": "korea-gangwon",
+          "name": "Gangwon",
+          "value": 0.889
+        },
+        {
+          "id": "korea-gyeonggi",
+          "slug": "korea-gyeonggi",
+          "name": "Gyeonggi",
+          "value": 0.789
+        },
+        {
+          "id": "korea-south-chungcheong",
+          "slug": "korea-south-chungcheong",
+          "name": "South Chungcheong",
+          "value": 0.883
+        },
+        {
+          "id": "korea-incheon",
+          "slug": "korea-incheon",
+          "name": "Incheon",
+          "value": 0.762
+        },
+        {
+          "id": "korea-north-jeolla",
+          "slug": "korea-north-jeolla",
+          "name": "North Jeolla",
+          "value": 0.808
+        },
+        {
+          "id": "korea-south-jeolla",
+          "slug": "korea-south-jeolla",
+          "name": "South Jeolla",
+          "value": 1.028
+        },
+        {
+          "id": "korea-south-gyeongsang",
+          "slug": "korea-south-gyeongsang",
+          "name": "South Gyeongsang",
+          "value": 0.82
+        },
+        {
+          "id": "korea-busan",
+          "slug": "korea-busan",
+          "name": "Busan",
+          "value": 0.683
+        },
+        {
+          "id": "korea-ulsan",
+          "slug": "korea-ulsan",
+          "name": "Ulsan",
+          "value": 0.859
+        },
+        {
+          "id": "korea-north-gyeongsang",
+          "slug": "korea-north-gyeongsang",
+          "name": "North Gyeongsang",
+          "value": 0.897
+        },
+        {
+          "id": "korea-jeju",
+          "slug": "korea-jeju",
+          "name": "Jeju",
+          "value": 0.826
+        },
+        {
+          "id": "korea-seoul",
+          "slug": "korea-seoul",
+          "name": "Seoul",
+          "value": 0.581
+        },
+        {
+          "id": "korea-daejeon",
+          "slug": "korea-daejeon",
+          "name": "Daejeon",
+          "value": 0.792
+        },
+        {
+          "id": "korea-sejong",
+          "slug": "korea-sejong",
+          "name": "Sejong",
+          "value": 1.028
+        },
+        {
+          "id": "korea-north-chungcheong",
+          "slug": "korea-north-chungcheong",
+          "name": "North Chungcheong",
+          "value": 0.882
+        },
+        {
+          "id": "korea-gwangju",
+          "slug": "korea-gwangju",
+          "name": "Gwangju",
+          "value": 0.699
+        },
+        {
+          "id": "korea-daegu",
+          "slug": "korea-daegu",
+          "name": "Daegu",
+          "value": 0.754
+        }
+      ],
+      "min": 0.581,
+      "max": 1.028
+    },
+    {
+      "id": "usa-tfr",
+      "iso3": "USA",
+      "country": "United States",
+      "title": "Total fertility rate, United States 2023",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "state",
+      "year": 2023,
+      "national": 1.62,
+      "source": "NCHS National Vital Statistics Reports \u2014 Births: Final Data for 2023, Table 8 (TFR).",
+      "sourceUrl": "https://www.cdc.gov/nchs/data/nvsr/nvsr74/nvsr74-1.pdf",
+      "credit": null,
+      "geoUrl": "/geo/maps/usa-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "united-states-alabama",
+          "slug": "united-states-alabama",
+          "name": "Alabama",
+          "value": 1.734
+        },
+        {
+          "id": "united-states-alaska",
+          "slug": "united-states-alaska",
+          "name": "Alaska",
+          "value": 1.833
+        },
+        {
+          "id": "united-states-arizona",
+          "slug": "united-states-arizona",
+          "name": "Arizona",
+          "value": 1.602
+        },
+        {
+          "id": "united-states-arkansas",
+          "slug": "united-states-arkansas",
+          "name": "Arkansas",
+          "value": 1.775
+        },
+        {
+          "id": "united-states-california",
+          "slug": "united-states-california",
+          "name": "California",
+          "value": 1.48
+        },
+        {
+          "id": "united-states-colorado",
+          "slug": "united-states-colorado",
+          "name": "Colorado",
+          "value": 1.454
+        },
+        {
+          "id": "united-states-connecticut",
+          "slug": "united-states-connecticut",
+          "name": "Connecticut",
+          "value": 1.517
+        },
+        {
+          "id": "united-states-delaware",
+          "slug": "united-states-delaware",
+          "name": "Delaware",
+          "value": 1.633
+        },
+        {
+          "id": "united-states-district-of-columbia",
+          "slug": "united-states-district-of-columbia",
+          "name": "District of Columbia",
+          "value": 1.197
+        },
+        {
+          "id": "united-states-florida",
+          "slug": "united-states-florida",
+          "name": "Florida",
+          "value": 1.601
+        },
+        {
+          "id": "united-states-georgia",
+          "slug": "united-states-georgia",
+          "name": "Georgia",
+          "value": 1.645
+        },
+        {
+          "id": "united-states-hawaii",
+          "slug": "united-states-hawaii",
+          "name": "Hawaii",
+          "value": 1.681
+        },
+        {
+          "id": "united-states-idaho",
+          "slug": "united-states-idaho",
+          "name": "Idaho",
+          "value": 1.793
+        },
+        {
+          "id": "united-states-illinois",
+          "slug": "united-states-illinois",
+          "name": "Illinois",
+          "value": 1.502
+        },
+        {
+          "id": "united-states-indiana",
+          "slug": "united-states-indiana",
+          "name": "Indiana",
+          "value": 1.765
+        },
+        {
+          "id": "united-states-iowa",
+          "slug": "united-states-iowa",
+          "name": "Iowa",
+          "value": 1.813
+        },
+        {
+          "id": "united-states-kansas",
+          "slug": "united-states-kansas",
+          "name": "Kansas",
+          "value": 1.812
+        },
+        {
+          "id": "united-states-kentucky",
+          "slug": "united-states-kentucky",
+          "name": "Kentucky",
+          "value": 1.804
+        },
+        {
+          "id": "united-states-louisiana",
+          "slug": "united-states-louisiana",
+          "name": "Louisiana",
+          "value": 1.829
+        },
+        {
+          "id": "united-states-maine",
+          "slug": "united-states-maine",
+          "name": "Maine",
+          "value": 1.399
+        },
+        {
+          "id": "united-states-maryland",
+          "slug": "united-states-maryland",
+          "name": "Maryland",
+          "value": 1.614
+        },
+        {
+          "id": "united-states-massachusetts",
+          "slug": "united-states-massachusetts",
+          "name": "Massachusetts",
+          "value": 1.395
+        },
+        {
+          "id": "united-states-michigan",
+          "slug": "united-states-michigan",
+          "name": "Michigan",
+          "value": 1.548
+        },
+        {
+          "id": "united-states-minnesota",
+          "slug": "united-states-minnesota",
+          "name": "Minnesota",
+          "value": 1.687
+        },
+        {
+          "id": "united-states-mississippi",
+          "slug": "united-states-mississippi",
+          "name": "Mississippi",
+          "value": 1.792
+        },
+        {
+          "id": "united-states-missouri",
+          "slug": "united-states-missouri",
+          "name": "Missouri",
+          "value": 1.669
+        },
+        {
+          "id": "united-states-montana",
+          "slug": "united-states-montana",
+          "name": "Montana",
+          "value": 1.556
+        },
+        {
+          "id": "united-states-nebraska",
+          "slug": "united-states-nebraska",
+          "name": "Nebraska",
+          "value": 1.913
+        },
+        {
+          "id": "united-states-nevada",
+          "slug": "united-states-nevada",
+          "name": "Nevada",
+          "value": 1.499
+        },
+        {
+          "id": "united-states-new-hampshire",
+          "slug": "united-states-new-hampshire",
+          "name": "New Hampshire",
+          "value": 1.381
+        },
+        {
+          "id": "united-states-new-jersey",
+          "slug": "united-states-new-jersey",
+          "name": "New Jersey",
+          "value": 1.704
+        },
+        {
+          "id": "united-states-new-mexico",
+          "slug": "united-states-new-mexico",
+          "name": "New Mexico",
+          "value": 1.551
+        },
+        {
+          "id": "united-states-new-york",
+          "slug": "united-states-new-york",
+          "name": "New York",
+          "value": 1.532
+        },
+        {
+          "id": "united-states-north-carolina",
+          "slug": "united-states-north-carolina",
+          "name": "North Carolina",
+          "value": 1.663
+        },
+        {
+          "id": "united-states-north-dakota",
+          "slug": "united-states-north-dakota",
+          "name": "North Dakota",
+          "value": 1.849
+        },
+        {
+          "id": "united-states-ohio",
+          "slug": "united-states-ohio",
+          "name": "Ohio",
+          "value": 1.678
+        },
+        {
+          "id": "united-states-oklahoma",
+          "slug": "united-states-oklahoma",
+          "name": "Oklahoma",
+          "value": 1.776
+        },
+        {
+          "id": "united-states-oregon",
+          "slug": "united-states-oregon",
+          "name": "Oregon",
+          "value": 1.352
+        },
+        {
+          "id": "united-states-pennsylvania",
+          "slug": "united-states-pennsylvania",
+          "name": "Pennsylvania",
+          "value": 1.55
+        },
+        {
+          "id": "united-states-rhode-island",
+          "slug": "united-states-rhode-island",
+          "name": "Rhode Island",
+          "value": 1.336
+        },
+        {
+          "id": "united-states-south-carolina",
+          "slug": "united-states-south-carolina",
+          "name": "South Carolina",
+          "value": 1.672
+        },
+        {
+          "id": "united-states-south-dakota",
+          "slug": "united-states-south-dakota",
+          "name": "South Dakota",
+          "value": 2
+        },
+        {
+          "id": "united-states-tennessee",
+          "slug": "united-states-tennessee",
+          "name": "Tennessee",
+          "value": 1.733
+        },
+        {
+          "id": "united-states-texas",
+          "slug": "united-states-texas",
+          "name": "Texas",
+          "value": 1.813
+        },
+        {
+          "id": "united-states-utah",
+          "slug": "united-states-utah",
+          "name": "Utah",
+          "value": 1.8
+        },
+        {
+          "id": "united-states-vermont",
+          "slug": "united-states-vermont",
+          "name": "Vermont",
+          "value": 1.287
+        },
+        {
+          "id": "united-states-virginia",
+          "slug": "united-states-virginia",
+          "name": "Virginia",
+          "value": 1.6
+        },
+        {
+          "id": "united-states-washington",
+          "slug": "united-states-washington",
+          "name": "Washington",
+          "value": 1.486
+        },
+        {
+          "id": "united-states-west-virginia",
+          "slug": "united-states-west-virginia",
+          "name": "West Virginia",
+          "value": 1.603
+        },
+        {
+          "id": "united-states-wisconsin",
+          "slug": "united-states-wisconsin",
+          "name": "Wisconsin",
+          "value": 1.628
+        },
+        {
+          "id": "united-states-wyoming",
+          "slug": "united-states-wyoming",
+          "name": "Wyoming",
+          "value": 1.683
+        }
+      ],
+      "min": 1.197,
+      "max": 2
+    },
+    {
+      "id": "aus-tfr",
+      "iso3": "AUS",
+      "country": "Australia",
+      "title": "Total fertility rate, Australia 2023",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "state",
+      "year": 2023,
+      "national": 1.5,
+      "source": "Australian Bureau of Statistics, Births, Australia, 2023 \u2014 total fertility rate by state and territory.",
+      "sourceUrl": "https://www.abs.gov.au/statistics/people/population/births-australia/2023",
+      "credit": null,
+      "geoUrl": "/geo/maps/aus-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "australia-new-south-wales",
+          "slug": "australia-new-south-wales",
+          "name": "New South Wales",
+          "value": 1.55
+        },
+        {
+          "id": "australia-victoria",
+          "slug": "australia-victoria",
+          "name": "Victoria",
+          "value": 1.39
+        },
+        {
+          "id": "australia-queensland",
+          "slug": "australia-queensland",
+          "name": "Queensland",
+          "value": 1.54
+        },
+        {
+          "id": "australia-south-australia",
+          "slug": "australia-south-australia",
+          "name": "South Australia",
+          "value": 1.5
+        },
+        {
+          "id": "australia-western-australia",
+          "slug": "australia-western-australia",
+          "name": "Western Australia",
+          "value": 1.57
+        },
+        {
+          "id": "australia-tasmania",
+          "slug": "australia-tasmania",
+          "name": "Tasmania",
+          "value": 1.51
+        },
+        {
+          "id": "australia-northern-territory",
+          "slug": "australia-northern-territory",
+          "name": "Northern Territory",
+          "value": 1.55
+        },
+        {
+          "id": "australia-australian-capital-territory",
+          "slug": "australia-australian-capital-territory",
+          "name": "Australian Capital Territory",
+          "value": 1.31
+        }
+      ],
+      "min": 1.31,
+      "max": 1.57
+    },
+    {
+      "id": "aus-popchange",
+      "iso3": "AUS",
+      "country": "Australia",
+      "title": "Australia's population change since 2001",
+      "metric": "pop-change",
+      "unit": "% change",
+      "kind": "state",
+      "year": 2024,
+      "yearFrom": 2001,
+      "national": 40.0,
+      "source": "Australian Bureau of Statistics, estimated resident population by state and territory, June 2001 and June 2024.",
+      "sourceUrl": "https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population",
+      "credit": null,
+      "geoUrl": "/geo/maps/aus-tfr.json",
+      "scale": "diverging-growth",
+      "mid": 0,
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "australia-new-south-wales",
+          "slug": "australia-new-south-wales",
+          "name": "New South Wales",
+          "value": 30.0
+        },
+        {
+          "id": "australia-victoria",
+          "slug": "australia-victoria",
+          "name": "Victoria",
+          "value": 45.3
+        },
+        {
+          "id": "australia-queensland",
+          "slug": "australia-queensland",
+          "name": "Queensland",
+          "value": 53.2
+        },
+        {
+          "id": "australia-south-australia",
+          "slug": "australia-south-australia",
+          "name": "South Australia",
+          "value": 25.1
+        },
+        {
+          "id": "australia-western-australia",
+          "slug": "australia-western-australia",
+          "name": "Western Australia",
+          "value": 56.0
+        },
+        {
+          "id": "australia-tasmania",
+          "slug": "australia-tasmania",
+          "name": "Tasmania",
+          "value": 21.5
+        },
+        {
+          "id": "australia-northern-territory",
+          "slug": "australia-northern-territory",
+          "name": "Northern Territory",
+          "value": 27.7
+        },
+        {
+          "id": "australia-australian-capital-territory",
+          "slug": "australia-australian-capital-territory",
+          "name": "Australian Capital Territory",
+          "value": 46.9
+        }
+      ],
+      "min": 21.5,
+      "max": 56.0
+    },
+    {
+      "id": "can-tfr",
+      "iso3": "CAN",
+      "country": "Canada",
+      "title": "Total fertility rate, Canada 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2024,
+      "national": 1.25,
+      "source": "Statistics Canada, The Daily, 24 September 2025 \u2014 total fertility rate 2024 by province and territory. Newfoundland and Labrador, New Brunswick and Yukon use 2023 (table 13-10-0418) where 2024 was not itemised in the Daily.",
+      "sourceUrl": "https://www150.statcan.gc.ca/n1/daily-quotidien/250924/dq250924d-eng.htm",
+      "credit": null,
+      "geoUrl": "/geo/maps/can-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "canada-newfoundland-and-labrador",
+          "slug": "canada-newfoundland-and-labrador",
+          "name": "Newfoundland and Labrador",
+          "value": 1.18
+        },
+        {
+          "id": "canada-prince-edward-island",
+          "slug": "canada-prince-edward-island",
+          "name": "Prince Edward Island",
+          "value": 1.1
+        },
+        {
+          "id": "canada-nova-scotia",
+          "slug": "canada-nova-scotia",
+          "name": "Nova Scotia",
+          "value": 1.08
+        },
+        {
+          "id": "canada-new-brunswick",
+          "slug": "canada-new-brunswick",
+          "name": "New Brunswick",
+          "value": 1.26
+        },
+        {
+          "id": "canada-quebec",
+          "slug": "canada-quebec",
+          "name": "Quebec",
+          "value": 1.34
+        },
+        {
+          "id": "canada-ontario",
+          "slug": "canada-ontario",
+          "name": "Ontario",
+          "value": 1.21
+        },
+        {
+          "id": "canada-manitoba",
+          "slug": "canada-manitoba",
+          "name": "Manitoba",
+          "value": 1.5
+        },
+        {
+          "id": "canada-saskatchewan",
+          "slug": "canada-saskatchewan",
+          "name": "Saskatchewan",
+          "value": 1.58
+        },
+        {
+          "id": "canada-alberta",
+          "slug": "canada-alberta",
+          "name": "Alberta",
+          "value": 1.41
+        },
+        {
+          "id": "canada-british-columbia",
+          "slug": "canada-british-columbia",
+          "name": "British Columbia",
+          "value": 1.02
+        },
+        {
+          "id": "canada-yukon",
+          "slug": "canada-yukon",
+          "name": "Yukon",
+          "value": 1.28
+        },
+        {
+          "id": "canada-northwest-territories",
+          "slug": "canada-northwest-territories",
+          "name": "Northwest Territories",
+          "value": 1.39
+        },
+        {
+          "id": "canada-nunavut",
+          "slug": "canada-nunavut",
+          "name": "Nunavut",
+          "value": 2.34
+        }
+      ],
+      "min": 1.02,
+      "max": 2.34
+    },
+    {
+      "id": "ita-tfr",
+      "iso3": "ITA",
+      "country": "Italy",
+      "title": "Total fertility rate, Italy 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.18,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/ita-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "ita-ith3",
+          "slug": "ita-ith3",
+          "name": "Veneto",
+          "value": 1.2
+        },
+        {
+          "id": "ita-ith4",
+          "slug": "ita-ith4",
+          "name": "Friuli-Venezia Giulia",
+          "value": 1.19
+        },
+        {
+          "id": "ita-ith5",
+          "slug": "ita-ith5",
+          "name": "Emilia-Romagna",
+          "value": 1.19
+        },
+        {
+          "id": "ita-iti1",
+          "slug": "ita-iti1",
+          "name": "Toscana",
+          "value": 1.12
+        },
+        {
+          "id": "ita-iti2",
+          "slug": "ita-iti2",
+          "name": "Umbria",
+          "value": 1.11
+        },
+        {
+          "id": "ita-iti3",
+          "slug": "ita-iti3",
+          "name": "Marche",
+          "value": 1.11
+        },
+        {
+          "id": "ita-iti4",
+          "slug": "ita-iti4",
+          "name": "Lazio",
+          "value": 1.1
+        },
+        {
+          "id": "ita-itc1",
+          "slug": "ita-itc1",
+          "name": "Piemonte",
+          "value": 1.14
+        },
+        {
+          "id": "ita-itc2",
+          "slug": "ita-itc2",
+          "name": "Valle d\u2019Aosta/Vall\u00e9e d\u2019Aoste",
+          "value": 1.05
+        },
+        {
+          "id": "ita-itc3",
+          "slug": "ita-itc3",
+          "name": "Liguria",
+          "value": 1.17
+        },
+        {
+          "id": "ita-itc4",
+          "slug": "ita-itc4",
+          "name": "Lombardia",
+          "value": 1.19
+        },
+        {
+          "id": "ita-itf1",
+          "slug": "ita-itf1",
+          "name": "Abruzzo",
+          "value": 1.12
+        },
+        {
+          "id": "ita-itf2",
+          "slug": "ita-itf2",
+          "name": "Molise",
+          "value": 1.05
+        },
+        {
+          "id": "ita-itf3",
+          "slug": "ita-itf3",
+          "name": "Campania",
+          "value": 1.26
+        },
+        {
+          "id": "ita-itf4",
+          "slug": "ita-itf4",
+          "name": "Puglia",
+          "value": 1.16
+        },
+        {
+          "id": "ita-itf5",
+          "slug": "ita-itf5",
+          "name": "Basilicata",
+          "value": 1.09
+        },
+        {
+          "id": "ita-itf6",
+          "slug": "ita-itf6",
+          "name": "Calabria",
+          "value": 1.25
+        },
+        {
+          "id": "ita-itg1",
+          "slug": "ita-itg1",
+          "name": "Sicilia",
+          "value": 1.27
+        },
+        {
+          "id": "ita-itg2",
+          "slug": "ita-itg2",
+          "name": "Sardegna",
+          "value": 0.91
+        },
+        {
+          "id": "ita-ith1",
+          "slug": "ita-ith1",
+          "name": "Provincia Autonoma di Bolzano/Bozen",
+          "value": 1.51
+        },
+        {
+          "id": "ita-ith2",
+          "slug": "ita-ith2",
+          "name": "Provincia Autonoma di Trento",
+          "value": 1.27
+        }
+      ],
+      "min": 0.91,
+      "max": 1.51
+    },
+    {
+      "id": "esp-tfr",
+      "iso3": "ESP",
+      "country": "Spain",
+      "title": "Total fertility rate, Spain 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "autonomous community",
+      "year": 2024,
+      "national": 1.1,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/esp-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "esp-es11",
+          "slug": "esp-es11",
+          "name": "Galicia",
+          "value": 0.95
+        },
+        {
+          "id": "esp-es12",
+          "slug": "esp-es12",
+          "name": "Principado de Asturias",
+          "value": 0.94
+        },
+        {
+          "id": "esp-es13",
+          "slug": "esp-es13",
+          "name": "Cantabria",
+          "value": 0.99
+        },
+        {
+          "id": "esp-es21",
+          "slug": "esp-es21",
+          "name": "Pa\u00eds Vasco",
+          "value": 1.1
+        },
+        {
+          "id": "esp-es22",
+          "slug": "esp-es22",
+          "name": "Comunidad Foral de Navarra",
+          "value": 1.2
+        },
+        {
+          "id": "esp-es23",
+          "slug": "esp-es23",
+          "name": "La Rioja",
+          "value": 1.16
+        },
+        {
+          "id": "esp-es24",
+          "slug": "esp-es24",
+          "name": "Arag\u00f3n",
+          "value": 1.15
+        },
+        {
+          "id": "esp-es30",
+          "slug": "esp-es30",
+          "name": "Comunidad de Madrid",
+          "value": 1.09
+        },
+        {
+          "id": "esp-es41",
+          "slug": "esp-es41",
+          "name": "Castilla y Le\u00f3n",
+          "value": 1.06
+        },
+        {
+          "id": "esp-es42",
+          "slug": "esp-es42",
+          "name": "Castilla-La Mancha",
+          "value": 1.19
+        },
+        {
+          "id": "esp-es43",
+          "slug": "esp-es43",
+          "name": "Extremadura",
+          "value": 1.13
+        },
+        {
+          "id": "esp-es51",
+          "slug": "esp-es51",
+          "name": "Catalu\u00f1a",
+          "value": 1.08
+        },
+        {
+          "id": "esp-es52",
+          "slug": "esp-es52",
+          "name": "Comunitat Valenciana ",
+          "value": 1.13
+        },
+        {
+          "id": "esp-es53",
+          "slug": "esp-es53",
+          "name": "Illes Balears",
+          "value": 1.08
+        },
+        {
+          "id": "esp-es61",
+          "slug": "esp-es61",
+          "name": "Andaluc\u00eda",
+          "value": 1.17
+        },
+        {
+          "id": "esp-es62",
+          "slug": "esp-es62",
+          "name": "Regi\u00f3n de Murcia",
+          "value": 1.32
+        },
+        {
+          "id": "esp-es63",
+          "slug": "esp-es63",
+          "name": "Ciudad de Ceuta",
+          "value": 1.25
+        },
+        {
+          "id": "esp-es64",
+          "slug": "esp-es64",
+          "name": "Ciudad de Melilla",
+          "value": 1.36
+        },
+        {
+          "id": "esp-es70",
+          "slug": "esp-es70",
+          "name": "Canarias",
+          "value": 0.82
+        }
+      ],
+      "min": 0.82,
+      "max": 1.36
+    },
+    {
+      "id": "fra-tfr",
+      "iso3": "FRA",
+      "country": "France",
+      "title": "Total fertility rate, France 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.61,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/fra-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "fra-frf2",
+          "slug": "fra-frf2",
+          "name": "Champagne-Ardenne",
+          "value": 1.54
+        },
+        {
+          "id": "fra-frf3",
+          "slug": "fra-frf3",
+          "name": "Lorraine",
+          "value": 1.4
+        },
+        {
+          "id": "fra-frg0",
+          "slug": "fra-frg0",
+          "name": "Pays de la Loire",
+          "value": 1.6
+        },
+        {
+          "id": "fra-frh0",
+          "slug": "fra-frh0",
+          "name": "Bretagne",
+          "value": 1.52
+        },
+        {
+          "id": "fra-fri1",
+          "slug": "fra-fri1",
+          "name": "Aquitaine",
+          "value": 1.41
+        },
+        {
+          "id": "fra-fri2",
+          "slug": "fra-fri2",
+          "name": "Limousin",
+          "value": 1.46
+        },
+        {
+          "id": "fra-fr10",
+          "slug": "fra-fr10",
+          "name": "Ile-de-France",
+          "value": 1.69
+        },
+        {
+          "id": "fra-frl0",
+          "slug": "fra-frl0",
+          "name": "Provence-Alpes-C\u00f4te d\u2019Azur",
+          "value": 1.65
+        },
+        {
+          "id": "fra-frm0",
+          "slug": "fra-frm0",
+          "name": "Corse",
+          "value": 1.21
+        },
+        {
+          "id": "fra-frb0",
+          "slug": "fra-frb0",
+          "name": "Centre \u2014 Val de Loire",
+          "value": 1.66
+        },
+        {
+          "id": "fra-frc1",
+          "slug": "fra-frc1",
+          "name": "Bourgogne",
+          "value": 1.49
+        },
+        {
+          "id": "fra-frc2",
+          "slug": "fra-frc2",
+          "name": "Franche-Comt\u00e9",
+          "value": 1.55
+        },
+        {
+          "id": "fra-frd1",
+          "slug": "fra-frd1",
+          "name": "Basse-Normandie ",
+          "value": 1.54
+        },
+        {
+          "id": "fra-frd2",
+          "slug": "fra-frd2",
+          "name": "Haute-Normandie ",
+          "value": 1.65
+        },
+        {
+          "id": "fra-fre1",
+          "slug": "fra-fre1",
+          "name": "Nord-Pas de Calais",
+          "value": 1.62
+        },
+        {
+          "id": "fra-fre2",
+          "slug": "fra-fre2",
+          "name": "Picardie",
+          "value": 1.68
+        },
+        {
+          "id": "fra-frf1",
+          "slug": "fra-frf1",
+          "name": "Alsace",
+          "value": 1.44
+        },
+        {
+          "id": "fra-fri3",
+          "slug": "fra-fri3",
+          "name": "Poitou-Charentes",
+          "value": 1.5
+        },
+        {
+          "id": "fra-frj1",
+          "slug": "fra-frj1",
+          "name": "Languedoc-Roussillon",
+          "value": 1.5
+        },
+        {
+          "id": "fra-frj2",
+          "slug": "fra-frj2",
+          "name": "Midi-Pyr\u00e9n\u00e9es",
+          "value": 1.42
+        },
+        {
+          "id": "fra-frk1",
+          "slug": "fra-frk1",
+          "name": "Auvergne",
+          "value": 1.5
+        },
+        {
+          "id": "fra-frk2",
+          "slug": "fra-frk2",
+          "name": "Rh\u00f4ne-Alpes",
+          "value": 1.59
+        }
+      ],
+      "min": 1.21,
+      "max": 1.69
+    },
+    {
+      "id": "tur-tfr",
+      "iso3": "TUR",
+      "country": "T\u00fcrkiye",
+      "title": "Total fertility rate, T\u00fcrkiye 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.49,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/tur-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "tur-tr10",
+          "slug": "tur-tr10",
+          "name": "\u0130stanbul",
+          "value": 1.2
+        },
+        {
+          "id": "tur-tr21",
+          "slug": "tur-tr21",
+          "name": "Tekirda\u011f, Edirne, K\u0131rklareli",
+          "value": 1.34
+        },
+        {
+          "id": "tur-tr22",
+          "slug": "tur-tr22",
+          "name": "Bal\u0131kesir, \u00c7anakkale",
+          "value": 1.29
+        },
+        {
+          "id": "tur-tr31",
+          "slug": "tur-tr31",
+          "name": "\u0130zmir",
+          "value": 1.17
+        },
+        {
+          "id": "tur-tr32",
+          "slug": "tur-tr32",
+          "name": "Ayd\u0131n, Denizli, Mu\u011fla",
+          "value": 1.32
+        },
+        {
+          "id": "tur-tr33",
+          "slug": "tur-tr33",
+          "name": "Manisa, Afyonkarahisar, K\u00fctahya, U\u015fak",
+          "value": 1.4
+        },
+        {
+          "id": "tur-tr41",
+          "slug": "tur-tr41",
+          "name": "Bursa, Eski\u015fehir, Bilecik",
+          "value": 1.32
+        },
+        {
+          "id": "tur-tr42",
+          "slug": "tur-tr42",
+          "name": "Kocaeli, Sakarya, D\u00fczce, Bolu, Yalova",
+          "value": 1.41
+        },
+        {
+          "id": "tur-tr51",
+          "slug": "tur-tr51",
+          "name": "Ankara",
+          "value": 1.16
+        },
+        {
+          "id": "tur-tr52",
+          "slug": "tur-tr52",
+          "name": "Konya, Karaman",
+          "value": 1.58
+        },
+        {
+          "id": "tur-tr61",
+          "slug": "tur-tr61",
+          "name": "Antalya, Isparta, Burdur",
+          "value": 1.26
+        },
+        {
+          "id": "tur-tr62",
+          "slug": "tur-tr62",
+          "name": "Adana, Mersin",
+          "value": 1.59
+        },
+        {
+          "id": "tur-tr63",
+          "slug": "tur-tr63",
+          "name": "Hatay, Kahramanmara\u015f, Osmaniye",
+          "value": 1.81
+        },
+        {
+          "id": "tur-tr71",
+          "slug": "tur-tr71",
+          "name": "K\u0131r\u0131kkale, Aksaray, Ni\u011fde, Nev\u015fehir, K\u0131r\u015fehir",
+          "value": 1.38
+        },
+        {
+          "id": "tur-tr72",
+          "slug": "tur-tr72",
+          "name": "Kayseri, Sivas, Yozgat",
+          "value": 1.41
+        },
+        {
+          "id": "tur-tr81",
+          "slug": "tur-tr81",
+          "name": "Zonguldak, Karab\u00fck, Bart\u0131n",
+          "value": 1.12
+        },
+        {
+          "id": "tur-tr82",
+          "slug": "tur-tr82",
+          "name": "Kastamonu, \u00c7ank\u0131r\u0131, Sinop",
+          "value": 1.29
+        },
+        {
+          "id": "tur-tr83",
+          "slug": "tur-tr83",
+          "name": "Samsun, Tokat, \u00c7orum, Amasya",
+          "value": 1.3
+        },
+        {
+          "id": "tur-tr90",
+          "slug": "tur-tr90",
+          "name": "Trabzon, Ordu, Giresun, Rize, Artvin, G\u00fcm\u00fc\u015fhane",
+          "value": 1.28
+        },
+        {
+          "id": "tur-tra1",
+          "slug": "tur-tra1",
+          "name": "Erzurum, Erzincan, Bayburt",
+          "value": 1.45
+        },
+        {
+          "id": "tur-tra2",
+          "slug": "tur-tra2",
+          "name": "A\u011fr\u0131, Kars, I\u011fd\u0131r, Ardahan",
+          "value": 1.87
+        },
+        {
+          "id": "tur-trb1",
+          "slug": "tur-trb1",
+          "name": "Malatya, Elaz\u0131\u011f, Bing\u00f6l, Tunceli",
+          "value": 1.46
+        },
+        {
+          "id": "tur-trb2",
+          "slug": "tur-trb2",
+          "name": "Van, Mu\u015f, Bitlis, Hakkari",
+          "value": 2.03
+        },
+        {
+          "id": "tur-trc1",
+          "slug": "tur-trc1",
+          "name": "Gaziantep, Ad\u0131yaman, Kilis",
+          "value": 2.08
+        },
+        {
+          "id": "tur-trc2",
+          "slug": "tur-trc2",
+          "name": "\u015eanl\u0131urfa, Diyarbak\u0131r",
+          "value": 2.79
+        },
+        {
+          "id": "tur-trc3",
+          "slug": "tur-trc3",
+          "name": "Mardin, Batman, \u015e\u0131rnak, Siirt",
+          "value": 2.32
+        }
+      ],
+      "min": 1.12,
+      "max": 2.79
+    },
+    {
+      "id": "aut-tfr",
+      "iso3": "AUT",
+      "country": "Austria",
+      "title": "Total fertility rate, Austria 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "Land",
+      "year": 2024,
+      "national": 1.32,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/aut-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "aut-at11",
+          "slug": "aut-at11",
+          "name": "Burgenland",
+          "value": 1.21
+        },
+        {
+          "id": "aut-at12",
+          "slug": "aut-at12",
+          "name": "Nieder\u00f6sterreich",
+          "value": 1.37
+        },
+        {
+          "id": "aut-at13",
+          "slug": "aut-at13",
+          "name": "Wien",
+          "value": 1.23
+        },
+        {
+          "id": "aut-at21",
+          "slug": "aut-at21",
+          "name": "K\u00e4rnten",
+          "value": 1.3
+        },
+        {
+          "id": "aut-at22",
+          "slug": "aut-at22",
+          "name": "Steiermark",
+          "value": 1.29
+        },
+        {
+          "id": "aut-at31",
+          "slug": "aut-at31",
+          "name": "Ober\u00f6sterreich",
+          "value": 1.46
+        },
+        {
+          "id": "aut-at32",
+          "slug": "aut-at32",
+          "name": "Salzburg",
+          "value": 1.33
+        },
+        {
+          "id": "aut-at33",
+          "slug": "aut-at33",
+          "name": "Tirol",
+          "value": 1.31
+        },
+        {
+          "id": "aut-at34",
+          "slug": "aut-at34",
+          "name": "Vorarlberg",
+          "value": 1.45
+        }
+      ],
+      "min": 1.21,
+      "max": 1.46
+    },
+    {
+      "id": "bel-tfr",
+      "iso3": "BEL",
+      "country": "Belgium",
+      "title": "Total fertility rate, Belgium 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2024,
+      "national": 1.45,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/bel-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "bel-be10",
+          "slug": "bel-be10",
+          "name": "R\u00e9gion de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",
+          "value": 1.36
+        },
+        {
+          "id": "bel-be21",
+          "slug": "bel-be21",
+          "name": "Prov. Antwerpen",
+          "value": 1.55
+        },
+        {
+          "id": "bel-be22",
+          "slug": "bel-be22",
+          "name": "Prov. Limburg (BE)",
+          "value": 1.4
+        },
+        {
+          "id": "bel-be23",
+          "slug": "bel-be23",
+          "name": "Prov. Oost-Vlaanderen",
+          "value": 1.45
+        },
+        {
+          "id": "bel-be24",
+          "slug": "bel-be24",
+          "name": "Prov. Vlaams-Brabant",
+          "value": 1.46
+        },
+        {
+          "id": "bel-be25",
+          "slug": "bel-be25",
+          "name": "Prov. West-Vlaanderen",
+          "value": 1.5
+        },
+        {
+          "id": "bel-be31",
+          "slug": "bel-be31",
+          "name": "Prov. Brabant wallon",
+          "value": 1.33
+        },
+        {
+          "id": "bel-be32",
+          "slug": "bel-be32",
+          "name": "Prov. Hainaut",
+          "value": 1.48
+        },
+        {
+          "id": "bel-be33",
+          "slug": "bel-be33",
+          "name": "Prov. Li\u00e8ge",
+          "value": 1.42
+        },
+        {
+          "id": "bel-be34",
+          "slug": "bel-be34",
+          "name": "Prov. Luxembourg (BE)",
+          "value": 1.51
+        },
+        {
+          "id": "bel-be35",
+          "slug": "bel-be35",
+          "name": "Prov. Namur",
+          "value": 1.37
+        }
+      ],
+      "min": 1.33,
+      "max": 1.55
+    },
+    {
+      "id": "bgr-tfr",
+      "iso3": "BGR",
+      "country": "Bulgaria",
+      "title": "Total fertility rate, Bulgaria 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.71,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/bgr-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "bgr-bg31",
+          "slug": "bgr-bg31",
+          "name": "\u0421\u0435\u0432\u0435\u0440\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "value": 1.9
+        },
+        {
+          "id": "bgr-bg32",
+          "slug": "bgr-bg32",
+          "name": "\u0421\u0435\u0432\u0435\u0440\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "value": 1.61
+        },
+        {
+          "id": "bgr-bg33",
+          "slug": "bgr-bg33",
+          "name": "\u0421\u0435\u0432\u0435\u0440\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "value": 1.62
+        },
+        {
+          "id": "bgr-bg34",
+          "slug": "bgr-bg34",
+          "name": "\u042e\u0433\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "value": 2.02
+        },
+        {
+          "id": "bgr-bg41",
+          "slug": "bgr-bg41",
+          "name": "\u042e\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "value": 1.55
+        },
+        {
+          "id": "bgr-bg42",
+          "slug": "bgr-bg42",
+          "name": "\u042e\u0436\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "value": 1.74
+        }
+      ],
+      "min": 1.55,
+      "max": 2.02
+    },
+    {
+      "id": "chn-tfr",
+      "iso3": "CHN",
+      "country": "China",
+      "title": "Total fertility rate, China 2020",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2020,
+      "national": 1.3,
+      "source": "China 7th National Population Census (2020) \u2014 provincial total fertility rates, National Bureau of Statistics.",
+      "sourceUrl": "https://www.stats.gov.cn",
+      "credit": null,
+      "geoUrl": "/geo/maps/chn-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "tab": "2020 census",
+      "regions": [
+        {
+          "id": "china-beijing",
+          "slug": "china-beijing",
+          "name": "Beijing",
+          "value": 0.87
+        },
+        {
+          "id": "china-tianjin",
+          "slug": "china-tianjin",
+          "name": "Tianjin",
+          "value": 0.9
+        },
+        {
+          "id": "china-hebei",
+          "slug": "china-hebei",
+          "name": "Hebei",
+          "value": 1.13
+        },
+        {
+          "id": "china-shanxi",
+          "slug": "china-shanxi",
+          "name": "Shanxi",
+          "value": 1.1
+        },
+        {
+          "id": "china-inner-mongolia",
+          "slug": "china-inner-mongolia",
+          "name": "Inner Mongolia",
+          "value": 1.07
+        },
+        {
+          "id": "china-liaoning",
+          "slug": "china-liaoning",
+          "name": "Liaoning",
+          "value": 0.85
+        },
+        {
+          "id": "china-jilin",
+          "slug": "china-jilin",
+          "name": "Jilin",
+          "value": 0.84
+        },
+        {
+          "id": "china-heilongjiang",
+          "slug": "china-heilongjiang",
+          "name": "Heilongjiang",
+          "value": 0.76
+        },
+        {
+          "id": "china-shanghai",
+          "slug": "china-shanghai",
+          "name": "Shanghai",
+          "value": 0.74
+        },
+        {
+          "id": "china-jiangsu",
+          "slug": "china-jiangsu",
+          "name": "Jiangsu",
+          "value": 1.05
+        },
+        {
+          "id": "china-zhejiang",
+          "slug": "china-zhejiang",
+          "name": "Zhejiang",
+          "value": 1.07
+        },
+        {
+          "id": "china-anhui",
+          "slug": "china-anhui",
+          "name": "Anhui",
+          "value": 1.26
+        },
+        {
+          "id": "china-fujian",
+          "slug": "china-fujian",
+          "name": "Fujian",
+          "value": 1.12
+        },
+        {
+          "id": "china-jiangxi",
+          "slug": "china-jiangxi",
+          "name": "Jiangxi",
+          "value": 1.28
+        },
+        {
+          "id": "china-shandong",
+          "slug": "china-shandong",
+          "name": "Shandong",
+          "value": 1.24
+        },
+        {
+          "id": "china-henan",
+          "slug": "china-henan",
+          "name": "Henan",
+          "value": 1.38
+        },
+        {
+          "id": "china-hubei",
+          "slug": "china-hubei",
+          "name": "Hubei",
+          "value": 1.18
+        },
+        {
+          "id": "china-hunan",
+          "slug": "china-hunan",
+          "name": "Hunan",
+          "value": 1.24
+        },
+        {
+          "id": "china-guangdong",
+          "slug": "china-guangdong",
+          "name": "Guangdong",
+          "value": 1.22
+        },
+        {
+          "id": "china-guangxi",
+          "slug": "china-guangxi",
+          "name": "Guangxi",
+          "value": 1.49
+        },
+        {
+          "id": "china-hainan",
+          "slug": "china-hainan",
+          "name": "Hainan",
+          "value": 1.44
+        },
+        {
+          "id": "china-chongqing",
+          "slug": "china-chongqing",
+          "name": "Chongqing",
+          "value": 1.05
+        },
+        {
+          "id": "china-sichuan",
+          "slug": "china-sichuan",
+          "name": "Sichuan",
+          "value": 1.1
+        },
+        {
+          "id": "china-guizhou",
+          "slug": "china-guizhou",
+          "name": "Guizhou",
+          "value": 1.48
+        },
+        {
+          "id": "china-yunnan",
+          "slug": "china-yunnan",
+          "name": "Yunnan",
+          "value": 1.33
+        },
+        {
+          "id": "china-tibet",
+          "slug": "china-tibet",
+          "name": "Tibet",
+          "value": 1.74
+        },
+        {
+          "id": "china-shaanxi",
+          "slug": "china-shaanxi",
+          "name": "Shaanxi",
+          "value": 1.18
+        },
+        {
+          "id": "china-gansu",
+          "slug": "china-gansu",
+          "name": "Gansu",
+          "value": 1.21
+        },
+        {
+          "id": "china-qinghai",
+          "slug": "china-qinghai",
+          "name": "Qinghai",
+          "value": 1.3
+        },
+        {
+          "id": "china-ningxia",
+          "slug": "china-ningxia",
+          "name": "Ningxia",
+          "value": 1.36
+        },
+        {
+          "id": "china-xinjiang",
+          "slug": "china-xinjiang",
+          "name": "Xinjiang",
+          "value": 1.41
+        }
+      ],
+      "min": 0.74,
+      "max": 1.74,
+      "tab": "2020 census"
+    },
+    {
+      "id": "hrv-tfr",
+      "iso3": "HRV",
+      "country": "Croatia",
+      "title": "Total fertility rate, Croatia 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.46,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/hrv-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "hrv-hr03",
+          "slug": "hrv-hr03",
+          "name": "Jadranska Hrvatska",
+          "value": 1.43
+        },
+        {
+          "id": "hrv-hr05",
+          "slug": "hrv-hr05",
+          "name": "Grad Zagreb",
+          "value": 1.33
+        },
+        {
+          "id": "hrv-hr06",
+          "slug": "hrv-hr06",
+          "name": "Sjeverna Hrvatska",
+          "value": 1.49
+        },
+        {
+          "id": "hrv-hr02",
+          "slug": "hrv-hr02",
+          "name": "Panonska Hrvatska",
+          "value": 1.59
+        }
+      ],
+      "min": 1.33,
+      "max": 1.59
+    },
+    {
+      "id": "cze-tfr",
+      "iso3": "CZE",
+      "country": "Czechia",
+      "title": "Total fertility rate, Czechia 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.36,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/cze-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "cze-cz01",
+          "slug": "cze-cz01",
+          "name": "Praha",
+          "value": 1.26
+        },
+        {
+          "id": "cze-cz02",
+          "slug": "cze-cz02",
+          "name": "St\u0159edn\u00ed \u010cechy",
+          "value": 1.35
+        },
+        {
+          "id": "cze-cz03",
+          "slug": "cze-cz03",
+          "name": "Jihoz\u00e1pad",
+          "value": 1.37
+        },
+        {
+          "id": "cze-cz04",
+          "slug": "cze-cz04",
+          "name": "Severoz\u00e1pad",
+          "value": 1.33
+        },
+        {
+          "id": "cze-cz05",
+          "slug": "cze-cz05",
+          "name": "Severov\u00fdchod",
+          "value": 1.38
+        },
+        {
+          "id": "cze-cz06",
+          "slug": "cze-cz06",
+          "name": "Jihov\u00fdchod",
+          "value": 1.41
+        },
+        {
+          "id": "cze-cz07",
+          "slug": "cze-cz07",
+          "name": "St\u0159edn\u00ed Morava",
+          "value": 1.44
+        },
+        {
+          "id": "cze-cz08",
+          "slug": "cze-cz08",
+          "name": "Moravskoslezsko",
+          "value": 1.33
+        }
+      ],
+      "min": 1.26,
+      "max": 1.44
+    },
+    {
+      "id": "dnk-tfr",
+      "iso3": "DNK",
+      "country": "Denmark",
+      "title": "Total fertility rate, Denmark 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.47,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/dnk-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "dnk-dk01",
+          "slug": "dnk-dk01",
+          "name": "Hovedstaden",
+          "value": 1.41
+        },
+        {
+          "id": "dnk-dk02",
+          "slug": "dnk-dk02",
+          "name": "Sj\u00e6lland",
+          "value": 1.54
+        },
+        {
+          "id": "dnk-dk03",
+          "slug": "dnk-dk03",
+          "name": "Syddanmark",
+          "value": 1.53
+        },
+        {
+          "id": "dnk-dk04",
+          "slug": "dnk-dk04",
+          "name": "Midtjylland",
+          "value": 1.54
+        },
+        {
+          "id": "dnk-dk05",
+          "slug": "dnk-dk05",
+          "name": "Nordjylland",
+          "value": 1.48
+        }
+      ],
+      "min": 1.41,
+      "max": 1.54
+    },
+    {
+      "id": "fin-tfr",
+      "iso3": "FIN",
+      "country": "Finland",
+      "title": "Total fertility rate, Finland 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.26,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/fin-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "fin-fi19",
+          "slug": "fin-fi19",
+          "name": "L\u00e4nsi-Suomi",
+          "value": 1.28
+        },
+        {
+          "id": "fin-fi1b",
+          "slug": "fin-fi1b",
+          "name": "Helsinki-Uusimaa",
+          "value": 1.24
+        },
+        {
+          "id": "fin-fi1d",
+          "slug": "fin-fi1d",
+          "name": "Pohjois- ja It\u00e4-Suomi",
+          "value": 1.32
+        },
+        {
+          "id": "fin-fi20",
+          "slug": "fin-fi20",
+          "name": "\u00c5land",
+          "value": 1.29
+        },
+        {
+          "id": "fin-fi1c",
+          "slug": "fin-fi1c",
+          "name": "Etel\u00e4-Suomi",
+          "value": 1.18
+        }
+      ],
+      "min": 1.18,
+      "max": 1.32
+    },
+    {
+      "id": "deu-tfr",
+      "iso3": "DEU",
+      "country": "Germany",
+      "title": "Total fertility rate, Germany 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "Land",
+      "year": 2024,
+      "national": 1.35,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 1 region (L\u00e4nder).",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/deu-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "germany-baden-wurttemberg",
+          "slug": "germany-baden-wurttemberg",
+          "name": "Baden-W\u00fcrttemberg",
+          "value": 1.394
+        },
+        {
+          "id": "germany-bavaria",
+          "slug": "germany-bavaria",
+          "name": "Bavaria",
+          "value": 1.391
+        },
+        {
+          "id": "germany-berlin",
+          "slug": "germany-berlin",
+          "name": "Berlin",
+          "value": 1.214
+        },
+        {
+          "id": "germany-brandenburg",
+          "slug": "germany-brandenburg",
+          "name": "Brandenburg",
+          "value": 1.34
+        },
+        {
+          "id": "germany-bremen",
+          "slug": "germany-bremen",
+          "name": "Bremen",
+          "value": 1.339
+        },
+        {
+          "id": "germany-hamburg",
+          "slug": "germany-hamburg",
+          "name": "Hamburg",
+          "value": 1.236
+        },
+        {
+          "id": "germany-hesse",
+          "slug": "germany-hesse",
+          "name": "Hesse",
+          "value": 1.372
+        },
+        {
+          "id": "germany-mecklenburg-western-pomerania",
+          "slug": "germany-mecklenburg-western-pomerania",
+          "name": "Mecklenburg-Western Pomerania",
+          "value": 1.298
+        },
+        {
+          "id": "germany-lower-saxony",
+          "slug": "germany-lower-saxony",
+          "name": "Lower Saxony",
+          "value": 1.425
+        },
+        {
+          "id": "germany-north-rhine-westphalia",
+          "slug": "germany-north-rhine-westphalia",
+          "name": "North Rhine-Westphalia",
+          "value": 1.386
+        },
+        {
+          "id": "germany-rhineland-palatinate",
+          "slug": "germany-rhineland-palatinate",
+          "name": "Rhineland-Palatinate",
+          "value": 1.406
+        },
+        {
+          "id": "germany-saarland",
+          "slug": "germany-saarland",
+          "name": "Saarland",
+          "value": 1.32
+        },
+        {
+          "id": "germany-saxony",
+          "slug": "germany-saxony",
+          "name": "Saxony",
+          "value": 1.222
+        },
+        {
+          "id": "germany-saxony-anhalt",
+          "slug": "germany-saxony-anhalt",
+          "name": "Saxony-Anhalt",
+          "value": 1.311
+        },
+        {
+          "id": "germany-schleswig-holstein",
+          "slug": "germany-schleswig-holstein",
+          "name": "Schleswig-Holstein",
+          "value": 1.318
+        },
+        {
+          "id": "germany-thuringia",
+          "slug": "germany-thuringia",
+          "name": "Thuringia",
+          "value": 1.244
+        }
+      ],
+      "min": 1.214,
+      "max": 1.425
+    },
+    {
+      "id": "grc-tfr",
+      "iso3": "GRC",
+      "country": "Greece",
+      "title": "Total fertility rate, Greece 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.24,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/grc-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "grc-el51",
+          "slug": "grc-el51",
+          "name": "A\u03bd\u03b1\u03c4\u03bf\u03bb\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1, \u0398\u03c1\u03ac\u03ba\u03b7",
+          "value": 1.28
+        },
+        {
+          "id": "grc-el52",
+          "slug": "grc-el52",
+          "name": "\u039a\u03b5\u03bd\u03c4\u03c1\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "value": 1.18
+        },
+        {
+          "id": "grc-el53",
+          "slug": "grc-el53",
+          "name": "\u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "value": 1.16
+        },
+        {
+          "id": "grc-el54",
+          "slug": "grc-el54",
+          "name": "\u0389\u03c0\u03b5\u03b9\u03c1\u03bf\u03c2",
+          "value": 1.17
+        },
+        {
+          "id": "grc-el61",
+          "slug": "grc-el61",
+          "name": "\u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03af\u03b1",
+          "value": 1.28
+        },
+        {
+          "id": "grc-el62",
+          "slug": "grc-el62",
+          "name": "\u0399\u03cc\u03bd\u03b9\u03b1 \u039d\u03b7\u03c3\u03b9\u03ac",
+          "value": 1.49
+        },
+        {
+          "id": "grc-el63",
+          "slug": "grc-el63",
+          "name": "\u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "value": 1.31
+        },
+        {
+          "id": "grc-el64",
+          "slug": "grc-el64",
+          "name": "\u03a3\u03c4\u03b5\u03c1\u03b5\u03ac \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "value": 1.22
+        },
+        {
+          "id": "grc-el65",
+          "slug": "grc-el65",
+          "name": "\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2",
+          "value": 1.36
+        },
+        {
+          "id": "grc-el30",
+          "slug": "grc-el30",
+          "name": "A\u03c4\u03c4\u03b9\u03ba\u03ae",
+          "value": 1.13
+        },
+        {
+          "id": "grc-el41",
+          "slug": "grc-el41",
+          "name": "\u0392\u03cc\u03c1\u03b5\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "value": 1.42
+        },
+        {
+          "id": "grc-el42",
+          "slug": "grc-el42",
+          "name": "\u039d\u03cc\u03c4\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "value": 1.69
+        },
+        {
+          "id": "grc-el43",
+          "slug": "grc-el43",
+          "name": "\u039a\u03c1\u03ae\u03c4\u03b7",
+          "value": 1.5
+        }
+      ],
+      "min": 1.13,
+      "max": 1.69
+    },
+    {
+      "id": "hun-tfr",
+      "iso3": "HUN",
+      "country": "Hungary",
+      "title": "Total fertility rate, Hungary 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.41,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/hun-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "hun-hu11",
+          "slug": "hun-hu11",
+          "name": "Budapest",
+          "value": 1.07
+        },
+        {
+          "id": "hun-hu12",
+          "slug": "hun-hu12",
+          "name": "Pest",
+          "value": 1.44
+        },
+        {
+          "id": "hun-hu21",
+          "slug": "hun-hu21",
+          "name": "K\u00f6z\u00e9p-Dun\u00e1nt\u00fal",
+          "value": 1.42
+        },
+        {
+          "id": "hun-hu22",
+          "slug": "hun-hu22",
+          "name": "Nyugat-Dun\u00e1nt\u00fal",
+          "value": 1.37
+        },
+        {
+          "id": "hun-hu23",
+          "slug": "hun-hu23",
+          "name": "D\u00e9l-Dun\u00e1nt\u00fal",
+          "value": 1.38
+        },
+        {
+          "id": "hun-hu31",
+          "slug": "hun-hu31",
+          "name": "\u00c9szak-Magyarorsz\u00e1g",
+          "value": 1.67
+        },
+        {
+          "id": "hun-hu32",
+          "slug": "hun-hu32",
+          "name": "\u00c9szak-Alf\u00f6ld",
+          "value": 1.62
+        },
+        {
+          "id": "hun-hu33",
+          "slug": "hun-hu33",
+          "name": "D\u00e9l-Alf\u00f6ld",
+          "value": 1.42
+        }
+      ],
+      "min": 1.07,
+      "max": 1.67
+    },
+    {
+      "id": "ind-tfr",
+      "iso3": "IND",
+      "country": "India",
+      "title": "Total fertility rate, India 2021",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "state",
+      "year": 2021,
+      "national": 2.0,
+      "source": "NFHS-5 (2019\u201321) total fertility rate by State/Union Territory, Ministry of Health and Family Welfare.",
+      "sourceUrl": "https://www.mohfw.gov.in",
+      "credit": null,
+      "geoUrl": "/geo/maps/ind-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "india-andaman-and-nicobar-islands",
+          "slug": "india-andaman-and-nicobar-islands",
+          "name": "Andaman and Nicobar Islands",
+          "value": 1.3
+        },
+        {
+          "id": "india-andhra-pradesh",
+          "slug": "india-andhra-pradesh",
+          "name": "Andhra Pradesh",
+          "value": 1.7
+        },
+        {
+          "id": "india-arunachal-pradesh",
+          "slug": "india-arunachal-pradesh",
+          "name": "Arunachal Pradesh",
+          "value": 1.8
+        },
+        {
+          "id": "india-assam",
+          "slug": "india-assam",
+          "name": "Assam",
+          "value": 1.9
+        },
+        {
+          "id": "india-bihar",
+          "slug": "india-bihar",
+          "name": "Bihar",
+          "value": 3
+        },
+        {
+          "id": "india-chandigarh",
+          "slug": "india-chandigarh",
+          "name": "Chandigarh",
+          "value": 1.4
+        },
+        {
+          "id": "india-chhattisgarh",
+          "slug": "india-chhattisgarh",
+          "name": "Chhattisgarh",
+          "value": 1.8
+        },
+        {
+          "id": "india-dadra-and-nagar-haveli-and-daman-and-diu",
+          "slug": "india-dadra-and-nagar-haveli-and-daman-and-diu",
+          "name": "Dadra and Nagar Haveli and Daman and Diu",
+          "value": 1.8
+        },
+        {
+          "id": "india-delhi",
+          "slug": "india-delhi",
+          "name": "Delhi",
+          "value": 1.6
+        },
+        {
+          "id": "india-goa",
+          "slug": "india-goa",
+          "name": "Goa",
+          "value": 1.3
+        },
+        {
+          "id": "india-gujarat",
+          "slug": "india-gujarat",
+          "name": "Gujarat",
+          "value": 1.9
+        },
+        {
+          "id": "india-haryana",
+          "slug": "india-haryana",
+          "name": "Haryana",
+          "value": 1.9
+        },
+        {
+          "id": "india-himachal-pradesh",
+          "slug": "india-himachal-pradesh",
+          "name": "Himachal Pradesh",
+          "value": 1.7
+        },
+        {
+          "id": "india-jammu-and-kashmir",
+          "slug": "india-jammu-and-kashmir",
+          "name": "Jammu and Kashmir",
+          "value": 1.4
+        },
+        {
+          "id": "india-jharkhand",
+          "slug": "india-jharkhand",
+          "name": "Jharkhand",
+          "value": 2.3
+        },
+        {
+          "id": "india-karnataka",
+          "slug": "india-karnataka",
+          "name": "Karnataka",
+          "value": 1.7
+        },
+        {
+          "id": "india-kerala",
+          "slug": "india-kerala",
+          "name": "Kerala",
+          "value": 1.8
+        },
+        {
+          "id": "india-ladakh",
+          "slug": "india-ladakh",
+          "name": "Ladakh",
+          "value": 1.3
+        },
+        {
+          "id": "india-lakshadweep",
+          "slug": "india-lakshadweep",
+          "name": "Lakshadweep",
+          "value": 1.4
+        },
+        {
+          "id": "india-madhya-pradesh",
+          "slug": "india-madhya-pradesh",
+          "name": "Madhya Pradesh",
+          "value": 2
+        },
+        {
+          "id": "india-maharashtra",
+          "slug": "india-maharashtra",
+          "name": "Maharashtra",
+          "value": 1.7
+        },
+        {
+          "id": "india-manipur",
+          "slug": "india-manipur",
+          "name": "Manipur",
+          "value": 2.2
+        },
+        {
+          "id": "india-meghalaya",
+          "slug": "india-meghalaya",
+          "name": "Meghalaya",
+          "value": 2.9
+        },
+        {
+          "id": "india-mizoram",
+          "slug": "india-mizoram",
+          "name": "Mizoram",
+          "value": 1.9
+        },
+        {
+          "id": "india-nagaland",
+          "slug": "india-nagaland",
+          "name": "Nagaland",
+          "value": 1.7
+        },
+        {
+          "id": "india-odisha",
+          "slug": "india-odisha",
+          "name": "Odisha",
+          "value": 1.8
+        },
+        {
+          "id": "india-puducherry",
+          "slug": "india-puducherry",
+          "name": "Puducherry",
+          "value": 1.5
+        },
+        {
+          "id": "india-punjab",
+          "slug": "india-punjab",
+          "name": "Punjab",
+          "value": 1.6
+        },
+        {
+          "id": "india-rajasthan",
+          "slug": "india-rajasthan",
+          "name": "Rajasthan",
+          "value": 2
+        },
+        {
+          "id": "india-sikkim",
+          "slug": "india-sikkim",
+          "name": "Sikkim",
+          "value": 1.1
+        },
+        {
+          "id": "india-tamil-nadu",
+          "slug": "india-tamil-nadu",
+          "name": "Tamil Nadu",
+          "value": 1.8
+        },
+        {
+          "id": "india-telangana",
+          "slug": "india-telangana",
+          "name": "Telangana",
+          "value": 1.8
+        },
+        {
+          "id": "india-tripura",
+          "slug": "india-tripura",
+          "name": "Tripura",
+          "value": 1.7
+        },
+        {
+          "id": "india-uttar-pradesh",
+          "slug": "india-uttar-pradesh",
+          "name": "Uttar Pradesh",
+          "value": 2.4
+        },
+        {
+          "id": "india-uttarakhand",
+          "slug": "india-uttarakhand",
+          "name": "Uttarakhand",
+          "value": 1.9
+        },
+        {
+          "id": "india-west-bengal",
+          "slug": "india-west-bengal",
+          "name": "West Bengal",
+          "value": 1.6
+        }
+      ],
+      "min": 1.1,
+      "max": 3
+    },
+    {
+      "id": "irl-tfr",
+      "iso3": "IRL",
+      "country": "Ireland",
+      "title": "Total fertility rate, Ireland 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.47,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/irl-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "irl-ie04",
+          "slug": "irl-ie04",
+          "name": "Northern and Western",
+          "value": 1.62
+        },
+        {
+          "id": "irl-ie05",
+          "slug": "irl-ie05",
+          "name": "Southern",
+          "value": 1.5
+        },
+        {
+          "id": "irl-ie06",
+          "slug": "irl-ie06",
+          "name": "Eastern and Midland",
+          "value": 1.41
+        }
+      ],
+      "min": 1.41,
+      "max": 1.62
+    },
+    {
+      "id": "nld-tfr",
+      "iso3": "NLD",
+      "country": "Netherlands",
+      "title": "Total fertility rate, Netherlands 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2024,
+      "national": 1.43,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/nld-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "nld-nl11",
+          "slug": "nld-nl11",
+          "name": "Groningen",
+          "value": 1.24
+        },
+        {
+          "id": "nld-nl12",
+          "slug": "nld-nl12",
+          "name": "Friesland (NL)",
+          "value": 1.57
+        },
+        {
+          "id": "nld-nl13",
+          "slug": "nld-nl13",
+          "name": "Drenthe",
+          "value": 1.59
+        },
+        {
+          "id": "nld-nl21",
+          "slug": "nld-nl21",
+          "name": "Overijssel",
+          "value": 1.57
+        },
+        {
+          "id": "nld-nl22",
+          "slug": "nld-nl22",
+          "name": "Gelderland",
+          "value": 1.51
+        },
+        {
+          "id": "nld-nl23",
+          "slug": "nld-nl23",
+          "name": "Flevoland",
+          "value": 1.58
+        },
+        {
+          "id": "nld-nl32",
+          "slug": "nld-nl32",
+          "name": "Noord-Holland",
+          "value": 1.31
+        },
+        {
+          "id": "nld-nl34",
+          "slug": "nld-nl34",
+          "name": "Zeeland",
+          "value": 1.6
+        },
+        {
+          "id": "nld-nl35",
+          "slug": "nld-nl35",
+          "name": "Utrecht",
+          "value": 1.47
+        },
+        {
+          "id": "nld-nl36",
+          "slug": "nld-nl36",
+          "name": "Zuid-Holland",
+          "value": 1.42
+        },
+        {
+          "id": "nld-nl41",
+          "slug": "nld-nl41",
+          "name": "Noord-Brabant",
+          "value": 1.44
+        },
+        {
+          "id": "nld-nl42",
+          "slug": "nld-nl42",
+          "name": "Limburg (NL)",
+          "value": 1.35
+        }
+      ],
+      "min": 1.24,
+      "max": 1.6
+    },
+    {
+      "id": "pol-tfr",
+      "iso3": "POL",
+      "country": "Poland",
+      "title": "Total fertility rate, Poland 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "voivodeship",
+      "year": 2024,
+      "national": 1.14,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/pol-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "pol-pl21",
+          "slug": "pol-pl21",
+          "name": "Ma\u0142opolskie",
+          "value": 1.2
+        },
+        {
+          "id": "pol-pl22",
+          "slug": "pol-pl22",
+          "name": "\u015al\u0105skie",
+          "value": 1.07
+        },
+        {
+          "id": "pol-pl41",
+          "slug": "pol-pl41",
+          "name": "Wielkopolskie",
+          "value": 1.19
+        },
+        {
+          "id": "pol-pl42",
+          "slug": "pol-pl42",
+          "name": "Zachodniopomorskie",
+          "value": 1.07
+        },
+        {
+          "id": "pol-pl43",
+          "slug": "pol-pl43",
+          "name": "Lubuskie",
+          "value": 1.1
+        },
+        {
+          "id": "pol-pl51",
+          "slug": "pol-pl51",
+          "name": "Dolno\u015bl\u0105skie",
+          "value": 1.04
+        },
+        {
+          "id": "pol-pl52",
+          "slug": "pol-pl52",
+          "name": "Opolskie",
+          "value": 1.08
+        },
+        {
+          "id": "pol-pl61",
+          "slug": "pol-pl61",
+          "name": "Kujawsko-pomorskie",
+          "value": 1.09
+        },
+        {
+          "id": "pol-pl62",
+          "slug": "pol-pl62",
+          "name": "Warmi\u0144sko-mazurskie",
+          "value": 1.11
+        },
+        {
+          "id": "pol-pl63",
+          "slug": "pol-pl63",
+          "name": "Pomorskie",
+          "value": 1.19
+        },
+        {
+          "id": "pol-pl71",
+          "slug": "pol-pl71",
+          "name": "\u0141\u00f3dzkie",
+          "value": 1.12
+        },
+        {
+          "id": "pol-pl72",
+          "slug": "pol-pl72",
+          "name": "\u015awi\u0119tokrzyskie",
+          "value": 1.06
+        },
+        {
+          "id": "pol-pl81",
+          "slug": "pol-pl81",
+          "name": "Lubelskie",
+          "value": 1.13
+        },
+        {
+          "id": "pol-pl82",
+          "slug": "pol-pl82",
+          "name": "Podkarpackie",
+          "value": 1.19
+        },
+        {
+          "id": "pol-pl84",
+          "slug": "pol-pl84",
+          "name": "Podlaskie",
+          "value": 1.2
+        },
+        {
+          "id": "pol-pl91",
+          "slug": "pol-pl91",
+          "name": "Warszawski sto\u0142eczny",
+          "value": 1.09
+        },
+        {
+          "id": "pol-pl92",
+          "slug": "pol-pl92",
+          "name": "Mazowiecki regionalny",
+          "value": 1.31
+        }
+      ],
+      "min": 1.04,
+      "max": 1.31
+    },
+    {
+      "id": "prt-tfr",
+      "iso3": "PRT",
+      "country": "Portugal",
+      "title": "Total fertility rate, Portugal 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.4,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/prt-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "prt-pt11",
+          "slug": "prt-pt11",
+          "name": "Norte",
+          "value": 1.21
+        },
+        {
+          "id": "prt-pt15",
+          "slug": "prt-pt15",
+          "name": "Algarve",
+          "value": 1.64
+        },
+        {
+          "id": "prt-pt19",
+          "slug": "prt-pt19",
+          "name": "Centro (PT)",
+          "value": 1.31
+        },
+        {
+          "id": "prt-pt1a",
+          "slug": "prt-pt1a",
+          "name": "Grande Lisboa",
+          "value": 1.65
+        },
+        {
+          "id": "prt-pt1b",
+          "slug": "prt-pt1b",
+          "name": "Pen\u00ednsula de Set\u00fabal",
+          "value": 1.69
+        },
+        {
+          "id": "prt-pt1c",
+          "slug": "prt-pt1c",
+          "name": "Alentejo",
+          "value": 1.5
+        },
+        {
+          "id": "prt-pt1d",
+          "slug": "prt-pt1d",
+          "name": "Oeste e Vale do Tejo",
+          "value": 1.42
+        },
+        {
+          "id": "prt-pt20",
+          "slug": "prt-pt20",
+          "name": "Regi\u00e3o Aut\u00f3noma dos A\u00e7ores",
+          "value": 1.22
+        },
+        {
+          "id": "prt-pt30",
+          "slug": "prt-pt30",
+          "name": "Regi\u00e3o Aut\u00f3noma da Madeira",
+          "value": 1.25
+        }
+      ],
+      "min": 1.21,
+      "max": 1.69
+    },
+    {
+      "id": "rou-tfr",
+      "iso3": "ROU",
+      "country": "Romania",
+      "title": "Total fertility rate, Romania 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.38,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/rou-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "rou-ro11",
+          "slug": "rou-ro11",
+          "name": "Nord-Vest",
+          "value": 1.41
+        },
+        {
+          "id": "rou-ro12",
+          "slug": "rou-ro12",
+          "name": "Centru",
+          "value": 1.52
+        },
+        {
+          "id": "rou-ro21",
+          "slug": "rou-ro21",
+          "name": "Nord-Est",
+          "value": 1.49
+        },
+        {
+          "id": "rou-ro22",
+          "slug": "rou-ro22",
+          "name": "Sud-Est",
+          "value": 1.4
+        },
+        {
+          "id": "rou-ro31",
+          "slug": "rou-ro31",
+          "name": "Sud-Muntenia",
+          "value": 1.35
+        },
+        {
+          "id": "rou-ro32",
+          "slug": "rou-ro32",
+          "name": "Bucure\u015fti-Ilfov",
+          "value": 1.19
+        },
+        {
+          "id": "rou-ro41",
+          "slug": "rou-ro41",
+          "name": "Sud-Vest Oltenia",
+          "value": 1.26
+        },
+        {
+          "id": "rou-ro42",
+          "slug": "rou-ro42",
+          "name": "Vest",
+          "value": 1.32
+        }
+      ],
+      "min": 1.19,
+      "max": 1.52
+    },
+    {
+      "id": "rus-tfr",
+      "iso3": "RUS",
+      "country": "Russia",
+      "title": "Total fertility rate, Russia 2025",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2025,
+      "national": 1.4,
+      "source": "Rosstat total fertility rate by federal subject.",
+      "sourceUrl": "https://rosstat.gov.ru",
+      "credit": null,
+      "geoUrl": "/geo/maps/rus-tfr.json",
+      "scale": "plasma",
+      "labelValues": false,
+      "regions": [
+        {
+          "id": "russia-adygea",
+          "slug": "russia-adygea",
+          "name": "Republic of Adygea",
+          "value": 1.38
+        },
+        {
+          "id": "russia-altai-krai",
+          "slug": "russia-altai-krai",
+          "name": "Altai Krai",
+          "value": 1.2
+        },
+        {
+          "id": "russia-altai-republic",
+          "slug": "russia-altai-republic",
+          "name": "Altai Republic",
+          "value": 1.78
+        },
+        {
+          "id": "russia-amur-oblast",
+          "slug": "russia-amur-oblast",
+          "name": "Amur Oblast",
+          "value": 1.36
+        },
+        {
+          "id": "russia-arkhangelsk-oblast",
+          "slug": "russia-arkhangelsk-oblast",
+          "name": "Arkhangelsk Oblast",
+          "value": 1.35
+        },
+        {
+          "id": "russia-astrakhan-oblast",
+          "slug": "russia-astrakhan-oblast",
+          "name": "Astrakhan Oblast",
+          "value": 1.6
+        },
+        {
+          "id": "russia-bashkortostan",
+          "slug": "russia-bashkortostan",
+          "name": "Republic of Bashkortostan",
+          "value": 1.31
+        },
+        {
+          "id": "russia-belgorod-oblast",
+          "slug": "russia-belgorod-oblast",
+          "name": "Belgorod Oblast",
+          "value": 1.08
+        },
+        {
+          "id": "russia-bryansk-oblast",
+          "slug": "russia-bryansk-oblast",
+          "name": "Bryansk Oblast",
+          "value": 1.11
+        },
+        {
+          "id": "russia-buryatia",
+          "slug": "russia-buryatia",
+          "name": "Republic of Buryatia",
+          "value": 1.48
+        },
+        {
+          "id": "russia-chechnya",
+          "slug": "russia-chechnya",
+          "name": "Chechen Republic",
+          "value": 2.6
+        },
+        {
+          "id": "russia-chelyabinsk-oblast",
+          "slug": "russia-chelyabinsk-oblast",
+          "name": "Chelyabinsk Oblast",
+          "value": 1.39
+        },
+        {
+          "id": "russia-chukotka",
+          "slug": "russia-chukotka",
+          "name": "Chukotka Autonomous Okrug",
+          "value": 1.72
+        },
+        {
+          "id": "russia-chuvashia",
+          "slug": "russia-chuvashia",
+          "name": "Chuvash Republic",
+          "value": 1.33
+        },
+        {
+          "id": "russia-crimea",
+          "slug": "russia-crimea",
+          "name": "Republic of Crimea",
+          "value": 1.48
+        },
+        {
+          "id": "russia-dagestan",
+          "slug": "russia-dagestan",
+          "name": "Republic of Dagestan",
+          "value": 1.79
+        },
+        {
+          "id": "russia-ingushetia",
+          "slug": "russia-ingushetia",
+          "name": "Republic of Ingushetia",
+          "value": 1.75
+        },
+        {
+          "id": "russia-irkutsk-oblast",
+          "slug": "russia-irkutsk-oblast",
+          "name": "Irkutsk Oblast",
+          "value": 1.6
+        },
+        {
+          "id": "russia-ivanovo-oblast",
+          "slug": "russia-ivanovo-oblast",
+          "name": "Ivanovo Oblast",
+          "value": 1.26
+        },
+        {
+          "id": "russia-jewish-autonomous-oblast",
+          "slug": "russia-jewish-autonomous-oblast",
+          "name": "Jewish Autonomous Oblast",
+          "value": 1.39
+        },
+        {
+          "id": "russia-kabardino-balkaria",
+          "slug": "russia-kabardino-balkaria",
+          "name": "Kabardino-Balkaria",
+          "value": 1.58
+        },
+        {
+          "id": "russia-kaliningrad-oblast",
+          "slug": "russia-kaliningrad-oblast",
+          "name": "Kaliningrad Oblast",
+          "value": 1.22
+        },
+        {
+          "id": "russia-kalmykia",
+          "slug": "russia-kalmykia",
+          "name": "Republic of Kalmykia",
+          "value": 1.2
+        },
+        {
+          "id": "russia-kaluga-oblast",
+          "slug": "russia-kaluga-oblast",
+          "name": "Kaluga Oblast",
+          "value": 1.27
+        },
+        {
+          "id": "russia-kamchatka-krai",
+          "slug": "russia-kamchatka-krai",
+          "name": "Kamchatka Krai",
+          "value": 1.57
+        },
+        {
+          "id": "russia-karachay-cherkessia",
+          "slug": "russia-karachay-cherkessia",
+          "name": "Karachay-Cherkess Republic",
+          "value": 1.37
+        },
+        {
+          "id": "russia-karelia",
+          "slug": "russia-karelia",
+          "name": "Republic of Karelia",
+          "value": 1.51
+        },
+        {
+          "id": "russia-kemerovo-oblast",
+          "slug": "russia-kemerovo-oblast",
+          "name": "Kemerovo Oblast",
+          "value": 1.13
+        },
+        {
+          "id": "russia-khabarovsk-krai",
+          "slug": "russia-khabarovsk-krai",
+          "name": "Khabarovsk Krai",
+          "value": 1.4
+        },
+        {
+          "id": "russia-khakassia",
+          "slug": "russia-khakassia",
+          "name": "Republic of Khakassia",
+          "value": 1.44
+        },
+        {
+          "id": "russia-khanty-mansi",
+          "slug": "russia-khanty-mansi",
+          "name": "Khanty-Mansi Autonomous Okrug",
+          "value": 1.57
+        },
+        {
+          "id": "russia-kirov-oblast",
+          "slug": "russia-kirov-oblast",
+          "name": "Kirov Oblast",
+          "value": 1.43
+        },
+        {
+          "id": "russia-komi",
+          "slug": "russia-komi",
+          "name": "Komi Republic",
+          "value": 1.51
+        },
+        {
+          "id": "russia-kostroma-oblast",
+          "slug": "russia-kostroma-oblast",
+          "name": "Kostroma Oblast",
+          "value": 1.4
+        },
+        {
+          "id": "russia-krasnodar-krai",
+          "slug": "russia-krasnodar-krai",
+          "name": "Krasnodar Krai",
+          "value": 1.5
+        },
+        {
+          "id": "russia-krasnoyarsk-krai",
+          "slug": "russia-krasnoyarsk-krai",
+          "name": "Krasnoyarsk Krai",
+          "value": 1.38
+        },
+        {
+          "id": "russia-kurgan-oblast",
+          "slug": "russia-kurgan-oblast",
+          "name": "Kurgan Oblast",
+          "value": 1.52
+        },
+        {
+          "id": "russia-kursk-oblast",
+          "slug": "russia-kursk-oblast",
+          "name": "Kursk Oblast",
+          "value": 1.2
+        },
+        {
+          "id": "russia-leningrad-oblast",
+          "slug": "russia-leningrad-oblast",
+          "name": "Leningrad Oblast",
+          "value": 0.91
+        },
+        {
+          "id": "russia-lipetsk-oblast",
+          "slug": "russia-lipetsk-oblast",
+          "name": "Lipetsk Oblast",
+          "value": 1.16
+        },
+        {
+          "id": "russia-magadan-oblast",
+          "slug": "russia-magadan-oblast",
+          "name": "Magadan Oblast",
+          "value": 1.25
+        },
+        {
+          "id": "russia-mari-el",
+          "slug": "russia-mari-el",
+          "name": "Mari El Republic",
+          "value": 1.35
+        },
+        {
+          "id": "russia-mordovia",
+          "slug": "russia-mordovia",
+          "name": "Republic of Mordovia",
+          "value": 1.04
+        },
+        {
+          "id": "russia-moscow",
+          "slug": "russia-moscow",
+          "name": "Moscow",
+          "value": 1.43
+        },
+        {
+          "id": "russia-moscow-oblast",
+          "slug": "russia-moscow-oblast",
+          "name": "Moscow Oblast",
+          "value": 1.33
+        },
+        {
+          "id": "russia-murmansk-oblast",
+          "slug": "russia-murmansk-oblast",
+          "name": "Murmansk Oblast",
+          "value": 1.32
+        },
+        {
+          "id": "russia-nenets",
+          "slug": "russia-nenets",
+          "name": "Nenets Autonomous Okrug",
+          "value": 1.62
+        },
+        {
+          "id": "russia-nizhny-novgorod-oblast",
+          "slug": "russia-nizhny-novgorod-oblast",
+          "name": "Nizhny Novgorod Oblast",
+          "value": 1.31
+        },
+        {
+          "id": "russia-north-ossetia",
+          "slug": "russia-north-ossetia",
+          "name": "North Ossetia\u2013Alania",
+          "value": 1.55
+        },
+        {
+          "id": "russia-novgorod-oblast",
+          "slug": "russia-novgorod-oblast",
+          "name": "Novgorod Oblast",
+          "value": 1.2
+        },
+        {
+          "id": "russia-novosibirsk-oblast",
+          "slug": "russia-novosibirsk-oblast",
+          "name": "Novosibirsk Oblast",
+          "value": 1.43
+        },
+        {
+          "id": "russia-omsk-oblast",
+          "slug": "russia-omsk-oblast",
+          "name": "Omsk Oblast",
+          "value": 1.42
+        },
+        {
+          "id": "russia-orenburg-oblast",
+          "slug": "russia-orenburg-oblast",
+          "name": "Orenburg Oblast",
+          "value": 1.39
+        },
+        {
+          "id": "russia-oryol-oblast",
+          "slug": "russia-oryol-oblast",
+          "name": "Oryol Oblast",
+          "value": 1.12
+        },
+        {
+          "id": "russia-penza-oblast",
+          "slug": "russia-penza-oblast",
+          "name": "Penza Oblast",
+          "value": 1.13
+        },
+        {
+          "id": "russia-perm-krai",
+          "slug": "russia-perm-krai",
+          "name": "Perm Krai",
+          "value": 1.45
+        },
+        {
+          "id": "russia-primorsky-krai",
+          "slug": "russia-primorsky-krai",
+          "name": "Primorsky Krai",
+          "value": 1.39
+        },
+        {
+          "id": "russia-pskov-oblast",
+          "slug": "russia-pskov-oblast",
+          "name": "Pskov Oblast",
+          "value": 1.26
+        },
+        {
+          "id": "russia-rostov-oblast",
+          "slug": "russia-rostov-oblast",
+          "name": "Rostov Oblast",
+          "value": 1.27
+        },
+        {
+          "id": "russia-ryazan-oblast",
+          "slug": "russia-ryazan-oblast",
+          "name": "Ryazan Oblast",
+          "value": 1.13
+        },
+        {
+          "id": "russia-saint-petersburg",
+          "slug": "russia-saint-petersburg",
+          "name": "Saint Petersburg",
+          "value": 1.25
+        },
+        {
+          "id": "russia-sakha",
+          "slug": "russia-sakha",
+          "name": "Sakha (Yakutia)",
+          "value": 1.52
+        },
+        {
+          "id": "russia-sakhalin-oblast",
+          "slug": "russia-sakhalin-oblast",
+          "name": "Sakhalin Oblast",
+          "value": 1.69
+        },
+        {
+          "id": "russia-samara-oblast",
+          "slug": "russia-samara-oblast",
+          "name": "Samara Oblast",
+          "value": 1.3
+        },
+        {
+          "id": "russia-saratov-oblast",
+          "slug": "russia-saratov-oblast",
+          "name": "Saratov Oblast",
+          "value": 1.08
+        },
+        {
+          "id": "russia-sevastopol",
+          "slug": "russia-sevastopol",
+          "name": "Sevastopol",
+          "value": 1.08
+        },
+        {
+          "id": "russia-smolensk-oblast",
+          "slug": "russia-smolensk-oblast",
+          "name": "Smolensk Oblast",
+          "value": 1.01
+        },
+        {
+          "id": "russia-stavropol-krai",
+          "slug": "russia-stavropol-krai",
+          "name": "Stavropol Krai",
+          "value": 1.24
+        },
+        {
+          "id": "russia-sverdlovsk-oblast",
+          "slug": "russia-sverdlovsk-oblast",
+          "name": "Sverdlovsk Oblast",
+          "value": 1.48
+        },
+        {
+          "id": "russia-tambov-oblast",
+          "slug": "russia-tambov-oblast",
+          "name": "Tambov Oblast",
+          "value": 1.15
+        },
+        {
+          "id": "russia-tatarstan",
+          "slug": "russia-tatarstan",
+          "name": "Republic of Tatarstan",
+          "value": 1.44
+        },
+        {
+          "id": "russia-tomsk-oblast",
+          "slug": "russia-tomsk-oblast",
+          "name": "Tomsk Oblast",
+          "value": 1.15
+        },
+        {
+          "id": "russia-tula-oblast",
+          "slug": "russia-tula-oblast",
+          "name": "Tula Oblast",
+          "value": 1.13
+        },
+        {
+          "id": "russia-tuva",
+          "slug": "russia-tuva",
+          "name": "Tuva Republic",
+          "value": 2.21
+        },
+        {
+          "id": "russia-tver-oblast",
+          "slug": "russia-tver-oblast",
+          "name": "Tver Oblast",
+          "value": 1.24
+        },
+        {
+          "id": "russia-tyumen-oblast",
+          "slug": "russia-tyumen-oblast",
+          "name": "Tyumen Oblast",
+          "value": 1.73
+        },
+        {
+          "id": "russia-udmurtia",
+          "slug": "russia-udmurtia",
+          "name": "Udmurt Republic",
+          "value": 1.32
+        },
+        {
+          "id": "russia-ulyanovsk-oblast",
+          "slug": "russia-ulyanovsk-oblast",
+          "name": "Ulyanovsk Oblast",
+          "value": 1.23
+        },
+        {
+          "id": "russia-vladimir-oblast",
+          "slug": "russia-vladimir-oblast",
+          "name": "Vladimir Oblast",
+          "value": 1.06
+        },
+        {
+          "id": "russia-volgograd-oblast",
+          "slug": "russia-volgograd-oblast",
+          "name": "Volgograd Oblast",
+          "value": 1.1
+        },
+        {
+          "id": "russia-vologda-oblast",
+          "slug": "russia-vologda-oblast",
+          "name": "Vologda Oblast",
+          "value": 1.38
+        },
+        {
+          "id": "russia-voronezh-oblast",
+          "slug": "russia-voronezh-oblast",
+          "name": "Voronezh Oblast",
+          "value": 1.22
+        },
+        {
+          "id": "russia-yamalo-nenets",
+          "slug": "russia-yamalo-nenets",
+          "name": "Yamalo-Nenets Autonomous Okrug",
+          "value": 2.01
+        },
+        {
+          "id": "russia-yaroslavl-oblast",
+          "slug": "russia-yaroslavl-oblast",
+          "name": "Yaroslavl Oblast",
+          "value": 1.23
+        },
+        {
+          "id": "russia-zabaykalsky-krai",
+          "slug": "russia-zabaykalsky-krai",
+          "name": "Zabaykalsky Krai",
+          "value": 1.52
+        }
+      ],
+      "min": 0.91,
+      "max": 2.6
+    },
+    {
+      "id": "svk-tfr",
+      "iso3": "SVK",
+      "country": "Slovakia",
+      "title": "Total fertility rate, Slovakia 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.45,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/svk-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "svk-sk01",
+          "slug": "svk-sk01",
+          "name": "Bratislavsk\u00fd kraj",
+          "value": 1.3
+        },
+        {
+          "id": "svk-sk02",
+          "slug": "svk-sk02",
+          "name": "Z\u00e1padn\u00e9 Slovensko",
+          "value": 1.24
+        },
+        {
+          "id": "svk-sk03",
+          "slug": "svk-sk03",
+          "name": "Stredn\u00e9 Slovensko",
+          "value": 1.34
+        },
+        {
+          "id": "svk-sk04",
+          "slug": "svk-sk04",
+          "name": "V\u00fdchodn\u00e9 Slovensko",
+          "value": 1.76
+        }
+      ],
+      "min": 1.24,
+      "max": 1.76
+    },
+    {
+      "id": "swe-tfr",
+      "iso3": "SWE",
+      "country": "Sweden",
+      "title": "Total fertility rate, Sweden 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "region",
+      "year": 2024,
+      "national": 1.44,
+      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
+      "credit": null,
+      "geoUrl": "/geo/maps/swe-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "regions": [
+        {
+          "id": "swe-se32",
+          "slug": "swe-se32",
+          "name": "Mellersta Norrland",
+          "value": 1.42
+        },
+        {
+          "id": "swe-se33",
+          "slug": "swe-se33",
+          "name": "\u00d6vre Norrland",
+          "value": 1.36
+        },
+        {
+          "id": "swe-se11",
+          "slug": "swe-se11",
+          "name": "Stockholm",
+          "value": 1.41
+        },
+        {
+          "id": "swe-se12",
+          "slug": "swe-se12",
+          "name": "\u00d6stra Mellansverige",
+          "value": 1.42
+        },
+        {
+          "id": "swe-se21",
+          "slug": "swe-se21",
+          "name": "Sm\u00e5land med \u00f6arna",
+          "value": 1.54
+        },
+        {
+          "id": "swe-se22",
+          "slug": "swe-se22",
+          "name": "Sydsverige",
+          "value": 1.44
+        },
+        {
+          "id": "swe-se23",
+          "slug": "swe-se23",
+          "name": "V\u00e4stsverige",
+          "value": 1.47
+        },
+        {
+          "id": "swe-se31",
+          "slug": "swe-se31",
+          "name": "Norra Mellansverige",
+          "value": 1.46
+        }
+      ],
+      "min": 1.36,
+      "max": 1.54
+    }
+  ]
+}
