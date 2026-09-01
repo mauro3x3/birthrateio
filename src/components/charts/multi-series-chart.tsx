@@ -122,6 +122,11 @@ export function MultiSeriesChart({
     referenceY,
   );
 
+  // A handful of annual points shouldn't be smoothed into a fabricated
+  // continuous trend — draw straight segments between honest, visible
+  // data points instead (see time-series-chart.tsx for the same rule).
+  const sparse = data.length <= 5;
+
   const lastIdx = Object.fromEntries(
     series.map((s) => [s.key, lastNumericIndex(data, s.key)]),
   );
@@ -218,13 +223,13 @@ export function MultiSeriesChart({
           return (
             <Line
               key={s.key}
-              type="monotone"
+              type={sparse ? "linear" : "monotone"}
               dataKey={s.key}
               name={s.label}
               stroke={stroke}
               strokeWidth={2.4}
               strokeDasharray={s.dashed ? "5 4" : undefined}
-              dot={false}
+              dot={sparse ? { r: 3, strokeWidth: 0, fill: stroke } : false}
               connectNulls
               activeDot={{ r: 4, strokeWidth: 0 }}
               isAnimationActive={false}

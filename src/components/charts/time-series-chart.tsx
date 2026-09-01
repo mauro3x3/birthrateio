@@ -94,6 +94,13 @@ export function TimeSeriesChart({
     referenceY,
   );
 
+  // With only a handful of annual points, a smooth spline through them
+  // fabricates a continuous trend that never existed (e.g. implying a
+  // gradual dip mid-year between two yearly estimates). Render sparse
+  // series as straight segments between visible, honest data points
+  // instead.
+  const sparse = data.length <= 5;
+
   const Chart = type === "area" ? AreaChart : LineChart;
 
   return (
@@ -160,23 +167,23 @@ export function TimeSeriesChart({
         )}
         {type === "area" ? (
           <Area
-            type="monotone"
+            type={sparse ? "linear" : "monotone"}
             dataKey="value"
             stroke={color}
             strokeWidth={2.4}
             fill={`url(#grad-${color})`}
             baseValue={domain ? domain[0] : "dataMin"}
-            dot={false}
+            dot={sparse ? { r: 3, strokeWidth: 0, fill: color } : false}
             activeDot={{ r: 5, strokeWidth: 0 }}
             isAnimationActive={false}
           />
         ) : (
           <Line
-            type="monotone"
+            type={sparse ? "linear" : "monotone"}
             dataKey="value"
             stroke={color}
             strokeWidth={2.4}
-            dot={false}
+            dot={sparse ? { r: 3, strokeWidth: 0, fill: color } : false}
             activeDot={{ r: 5, strokeWidth: 0 }}
             isAnimationActive={false}
           />
