@@ -174,7 +174,7 @@ export function MapCard({
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
               Year
             </p>
-            <p className="font-serif text-2xl font-semibold tabular-nums leading-none text-primary">
+            <p className="font-sans text-2xl font-semibold tabular-nums leading-none text-primary">
               {current?.year ?? "—"}
             </p>
           </div>
@@ -182,7 +182,7 @@ export function MapCard({
             <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
               {frameStats?.length ? "World" : "Coverage"}
             </p>
-            <p className="font-serif text-lg font-semibold leading-tight tabular-nums">
+            <p className="font-sans text-lg font-semibold leading-tight tabular-nums">
               {currentStat ??
                 (current
                   ? `${current.data.length.toLocaleString()} countries`
@@ -286,7 +286,7 @@ export function MapCard({
       <div ref={captureRef} className="relative bg-black">
         {/* Year badge burned into export frames */}
         {current && (
-          <div className="pointer-events-none absolute left-3 top-3 z-[500] rounded-sm bg-black/55 px-2 py-1 font-serif text-sm font-semibold tabular-nums text-white backdrop-blur-sm">
+          <div className="pointer-events-none absolute left-3 top-3 z-[500] rounded-sm bg-black/55 px-2 py-1 font-sans text-sm font-semibold tabular-nums text-white backdrop-blur-sm">
             {current.year}
             {currentStat ? (
               <span className="ml-2 font-sans text-[0.7rem] font-normal text-white/70">

@@ -184,7 +184,7 @@ export function CitiesExplorer({ cities }: { cities: CityRow[] }) {
                           {c.country.flagEmoji} {c.country.name}
                         </p>
                       </div>
-                      <span className="shrink-0 font-serif text-base tabular-nums text-white/90">
+                      <span className="shrink-0 font-sans text-base tabular-nums text-white/90">
                         {formatCompact(pop)}
                       </span>
                     </div>

@@ -19,7 +19,15 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     label: "Fertility",
     hash: "overview",
     href: "/fertility",
-    keywords: ["fertility rate", "birth rate", "birthrate", "fertility", "tfr"],
+    keywords: [
+      "total fertility rate",
+      "fertility rate",
+      "births per woman",
+      "birth rate",
+      "birthrate",
+      "fertility",
+      "tfr",
+    ],
   },
   {
     id: "population",
@@ -80,6 +88,34 @@ function escapeRegExp(s: string) {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+/** Words that are not a country/city when left after stripping a topic keyword. */
+const PLACE_FILLER = new Set([
+  "the",
+  "a",
+  "an",
+  "of",
+  "in",
+  "by",
+  "for",
+  "and",
+  "highest",
+  "lowest",
+  "top",
+  "global",
+  "world",
+  "worldwide",
+  "total",
+  "average",
+]);
+
+function cleanPlaceQuery(raw: string) {
+  return raw
+    .split(/\s+/)
+    .filter((w) => w && !PLACE_FILLER.has(w.toLowerCase()))
+    .join(" ")
+    .trim();
+}
+
 export function parseSearchQuery(query: string): {
   placeQuery: string;
   topic: SearchTopic | null;
@@ -91,12 +127,14 @@ export function parseSearchQuery(query: string): {
   for (const { keyword, topic } of KEYWORD_INDEX) {
     const re = new RegExp(`(?:^|\\s)${escapeRegExp(keyword)}(?:\\s|$)`, "i");
     if (!re.test(lower) && lower !== keyword) continue;
-    const placeQuery = raw
-      .replace(new RegExp(escapeRegExp(keyword), "ig"), " ")
-      .replace(/[.,:;!?]+/g, " ")
-      .replace(/\s+/g, " ")
-      .trim();
+    const placeQuery = cleanPlaceQuery(
+      raw
+        .replace(new RegExp(escapeRegExp(keyword), "ig"), " ")
+        .replace(/[.,:;!?]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim(),
+    );
     return { placeQuery, topic };
   }
-  return { placeQuery: raw, topic: null };
+  return { placeQuery: cleanPlaceQuery(raw), topic: null };
 }

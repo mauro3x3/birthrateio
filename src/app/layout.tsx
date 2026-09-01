@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Suspense } from "react";
-import { Arimo, Source_Serif_4 } from "next/font/google";
+import { Open_Sans, Source_Serif_4 } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import "leaflet/dist/leaflet.css";
@@ -11,15 +11,15 @@ import { PostHogProvider } from "@/components/posthog-provider";
 import { PostHogPageView } from "@/components/posthog-pageview";
 import { siteConfig } from "@/lib/site";
 
-const sans = Arimo({
-  subsets: ["latin"],
+const sans = Open_Sans({
+  subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
   display: "swap",
   weight: ["400", "500", "600", "700"],
 });
 
 const serif = Source_Serif_4({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-serif",
   display: "swap",
   weight: ["400", "600", "700"],

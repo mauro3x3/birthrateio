@@ -158,7 +158,7 @@ export function ExplorerTable({
               <TableCell className="hidden text-muted-foreground sm:table-cell">
                 {row.continent ?? "—"}
               </TableCell>
-              <TableCell className="text-right font-serif text-base font-semibold tabular-nums text-primary">
+              <TableCell className="text-right font-sans text-base font-semibold tabular-nums text-primary">
                 {formatByUnit(row.value, unit, decimals)}
               </TableCell>
               <TableCell className="text-right text-muted-foreground tabular-nums">

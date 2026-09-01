@@ -159,20 +159,20 @@ export function PopulationCalculator({
         <div className="grid grid-cols-2 gap-6 border-y border-border py-4 sm:grid-cols-3">
           <div>
             <p className="text-xs text-muted-foreground">In {years} years</p>
-            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
+            <p className="mt-1 font-sans text-2xl font-semibold tracking-tight">
               {formatCompact(final)}
             </p>
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Net change</p>
-            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
+            <p className="mt-1 font-sans text-2xl font-semibold tracking-tight">
               {final >= pop ? "+" : ""}
               {formatCompact(final - pop)}
             </p>
           </div>
           <div>
             <p className="text-xs text-muted-foreground">Doubling time</p>
-            <p className="mt-1 font-serif text-2xl font-semibold tracking-tight">
+            <p className="mt-1 font-sans text-2xl font-semibold tracking-tight">
               {Number.isFinite(doublingTime)
                 ? `${doublingTime.toFixed(0)} yrs`
                 : "—"}

@@ -254,7 +254,7 @@ function TradeTable({ products }: { products: TradeProduct[] }) {
               </td>
               <td className="px-2 py-2 font-medium">{p.name}</td>
               <td className="px-2 py-2 text-muted-foreground">{p.section}</td>
-              <td className="px-2 py-2 text-right font-serif tabular-nums text-primary">
+              <td className="px-2 py-2 text-right font-sans tabular-nums text-primary">
                 ${formatCompact(p.value)}
               </td>
               <td className="px-2 py-2 text-right tabular-nums text-muted-foreground">
@@ -647,7 +647,7 @@ export function CountryTradeSection({
             </div>
             <p className="font-serif text-base font-semibold tracking-tight text-primary md:text-lg">
               {flow === "export" ? "Exports" : "Imports"}
-              <span className="ml-2 font-serif text-lg font-semibold tabular-nums">
+              <span className="ml-2 font-sans text-lg font-semibold tabular-nums">
                 ${formatCompact(active.total)}
               </span>
               <span className="ml-2 text-sm font-sans font-normal text-muted-foreground">

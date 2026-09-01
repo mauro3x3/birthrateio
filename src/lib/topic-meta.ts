@@ -58,6 +58,7 @@ export const TOPIC_META: TopicMeta[] = [
     caveats: [
       "The total fertility rate is a period measure: it describes one year's rates, not the completed families of real women.",
       "Provisional figures come from national statistical offices ahead of final annual data and are revised.",
+      "TFR by ancestry or origin is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories or U.S. race.",
     ],
   },
   {

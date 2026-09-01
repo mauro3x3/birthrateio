@@ -3,11 +3,13 @@ import { TopicsSidebar } from "@/components/topics-nav";
 import { TableOfContents } from "@/components/table-of-contents";
 import { IndicatorDefinitions } from "@/components/data/indicator-definitions";
 import { RelatedTopics } from "@/components/data/related-topics";
+import { RelatedInsights } from "@/components/data/related-insights";
 import { SourceList } from "@/components/data/source-list";
 import { CiteThis } from "@/components/data/cite-this";
 import { LastUpdated } from "@/components/data/last-updated";
 import { CollapsibleSection } from "@/components/collapsible-section";
 import { sourcesForIndicators } from "@/lib/glossary";
+import { relatedInsightsForHub } from "@/lib/search-insights";
 import { topicMeta } from "@/lib/topic-meta";
 
 const CONTENT_ID = "topic-content";
@@ -37,6 +39,7 @@ export function TopicShell({
   const indicators = meta?.indicators ?? [];
   const sources = sourcesForIndicators(indicators);
   const chartFirst = variant === "chart-first";
+  const insights = relatedInsightsForHub(path);
 
   const definitions =
     indicators.length > 0 || meta?.caveats?.length ? (
@@ -76,6 +79,7 @@ export function TopicShell({
         {chartFirst ? (
           <article id={CONTENT_ID} className="min-w-0 space-y-8 py-6 md:py-8">
             {children}
+            <RelatedInsights items={insights} />
             {definitions ? (
               <CollapsibleSection title="What this page measures">
                 {definitions}
@@ -94,6 +98,7 @@ export function TopicShell({
             <article id={CONTENT_ID} className="min-w-0 space-y-10">
               {definitions}
               {children}
+              <RelatedInsights items={insights} />
               <div className="space-y-6">{footer}</div>
             </article>
           </div>

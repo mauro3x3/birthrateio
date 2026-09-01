@@ -149,7 +149,7 @@ export function AssistantChart({ spec }: { spec: AssistantChartSpec }) {
       <div ref={ref} className="bg-white px-3.5 pb-2 pt-3.5 text-slate-900">
         <div className="mb-2 flex items-start justify-between gap-2">
           <div>
-            <p className="font-serif text-sm font-semibold leading-tight text-slate-900">
+            <p className="font-sans text-sm font-semibold leading-tight text-slate-900">
               {title}
             </p>
             {subtitle && <p className="text-xs text-slate-500">{subtitle}</p>}

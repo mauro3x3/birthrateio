@@ -606,7 +606,7 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
                   <p className="text-xs text-muted-foreground">
                     Total population
                   </p>
-                  <p className="font-serif text-2xl font-bold leading-tight tabular-nums">
+                  <p className="font-sans text-2xl font-bold leading-tight tabular-nums">
                     {formatCompact(current?.total ?? 0)}
                   </p>
                 </div>

@@ -111,7 +111,7 @@ export function AssistantWidget() {
                 <Sparkles className="h-4 w-4" />
               </span>
               <div>
-                <p className="font-serif text-sm font-semibold leading-none">
+                <p className="font-sans text-sm font-semibold leading-none">
                   Cohort
                 </p>
                 <p className="text-xs text-muted-foreground">Demographic guide</p>

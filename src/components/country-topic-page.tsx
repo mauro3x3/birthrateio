@@ -6,6 +6,7 @@ import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { CiteThis } from "@/components/data/cite-this";
+import { RelatedInsights } from "@/components/data/related-insights";
 import { RankingTable } from "@/components/ranking-table";
 import { Badge } from "@/components/ui/badge";
 import { resolveCountrySlug } from "@/lib/country-aliases";
@@ -29,6 +30,7 @@ import {
   getWorldLatestValue,
 } from "@/lib/queries";
 import { safe } from "@/lib/safe";
+import { relatedInsightsForCountryTopic } from "@/lib/search-insights";
 import { siteConfig } from "@/lib/site";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
 
@@ -345,7 +347,7 @@ export async function CountryTopicPage({
                 <dt className="text-xs text-muted-foreground">
                   {topic.metricLabel}
                 </dt>
-                <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums tracking-tight">
+                <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums tracking-tight">
                   {valueLabel ?? "—"}
                 </dd>
                 <dd className="text-xs text-muted-foreground">
@@ -354,7 +356,7 @@ export async function CountryTopicPage({
               </div>
               <div className="border-t border-border pt-3">
                 <dt className="text-xs text-muted-foreground">World</dt>
-                <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums tracking-tight">
+                <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums tracking-tight">
                   {worldLabel ?? "—"}
                 </dd>
                 <dd className="text-xs text-muted-foreground">
@@ -363,7 +365,7 @@ export async function CountryTopicPage({
               </div>
               <div className="border-t border-border pt-3">
                 <dt className="text-xs text-muted-foreground">Series start</dt>
-                <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums tracking-tight">
+                <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums tracking-tight">
                   {firstValueLabel ?? "—"}
                 </dd>
                 <dd className="text-xs text-muted-foreground">
@@ -372,7 +374,7 @@ export async function CountryTopicPage({
               </div>
               <div className="border-t border-border pt-3">
                 <dt className="text-xs text-muted-foreground">Global rank</dt>
-                <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums tracking-tight">
+                <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums tracking-tight">
                   {rank ? `#${rank.rank}` : "—"}
                 </dd>
                 <dd className="text-xs text-muted-foreground">
@@ -442,7 +444,7 @@ export async function CountryTopicPage({
                 ].map((g) => (
                   <div key={g.label} className="border-t border-border pt-3">
                     <dt className="text-xs text-muted-foreground">{g.label}</dt>
-                    <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums">
+                    <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums">
                       {g.point
                         ? `${formatNumber(g.point.value, 1)}%`
                         : "—"}
@@ -472,7 +474,7 @@ export async function CountryTopicPage({
                     <dt className="text-xs text-muted-foreground">
                       Latest estimate
                     </dt>
-                    <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums">
+                    <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums">
                       {formatCompact(latest.value)}
                     </dd>
                     <dd className="text-xs text-muted-foreground">
@@ -485,7 +487,7 @@ export async function CountryTopicPage({
                     <dt className="text-xs text-muted-foreground">
                       Projected 2050
                     </dt>
-                    <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums">
+                    <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums">
                       {formatCompact(proj2050.population)}
                     </dd>
                     <dd className="text-xs text-muted-foreground">
@@ -498,7 +500,7 @@ export async function CountryTopicPage({
                     <dt className="text-xs text-muted-foreground">
                       Projected 2100
                     </dt>
-                    <dd className="mt-1 font-serif text-2xl font-semibold tabular-nums">
+                    <dd className="mt-1 font-sans text-2xl font-semibold tabular-nums">
                       {formatCompact(proj2100.population)}
                     </dd>
                     <dd className="text-xs text-muted-foreground">
@@ -559,6 +561,16 @@ export async function CountryTopicPage({
               />
             </section>
           )}
+
+          <RelatedInsights
+            items={relatedInsightsForCountryTopic({
+              topicId,
+              slug,
+              name: country.name,
+              iso3: country.iso3,
+              continent: country.continent,
+            })}
+          />
 
           {/* Internal linking: peers + other topics + country hub */}
           <section aria-labelledby="related-countries">

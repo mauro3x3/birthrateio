@@ -183,7 +183,7 @@ export function CityDistrictsExplorer({
                   <span className="min-w-0 flex-1 truncate font-medium">
                     {row.name}
                   </span>
-                  <span className="shrink-0 font-serif tabular-nums">
+                  <span className="shrink-0 font-sans tabular-nums">
                     {formatMetric(value as number, metric)}
                   </span>
                 </button>

@@ -31,7 +31,7 @@ export function StatCard({
           <span className="text-muted-foreground opacity-60">{icon}</span>
         ) : null}
       </div>
-      <p className="mt-1.5 font-serif text-2xl font-semibold tracking-tight text-primary tabular-nums">
+      <p className="mt-1.5 font-sans text-2xl font-semibold tracking-tight text-primary tabular-nums">
         {value}
       </p>
       <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">

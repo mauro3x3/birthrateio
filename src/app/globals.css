@@ -60,7 +60,6 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
-  /* Editorial serif headings with a clean sans body (encyclopedic feel). */
   h1,
   h2,
   h3 {
@@ -183,7 +182,7 @@
   @apply text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground;
 }
 .key-figure-value {
-  @apply mt-1.5 font-serif text-2xl font-semibold tracking-tight text-primary tabular-nums;
+  @apply mt-1.5 font-sans text-2xl font-semibold tracking-tight text-primary tabular-nums;
 }
 .key-figure-sub {
   @apply mt-1 text-xs text-muted-foreground;
@@ -194,7 +193,7 @@
 .recharts-legend-item-text,
 .recharts-default-legend,
 .recharts-tooltip-wrapper {
-  font-family: var(--font-sans), "Arimo", "Arial", ui-sans-serif, system-ui, sans-serif !important;
+  font-family: var(--font-sans), "Open Sans", Arial, ui-sans-serif, system-ui, sans-serif !important;
 }
 
 /* Leaflet: ensure tiles/controls render correctly inside dark theme */

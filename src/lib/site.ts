@@ -62,7 +62,7 @@ export const navTopics: NavTopic[] = [
       {
         title: "Fertility",
         href: "/fertility",
-        description: "Total fertility rates, maps, rankings, and nowcasts",
+        description: "Total fertility rates, maps, rankings, nowcasts, and TFR by ancestry where published",
       },
       {
         title: "Population",

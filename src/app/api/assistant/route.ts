@@ -13,7 +13,7 @@ interface ChatMessage {
 const SITE_MAP = `
 - / : Homepage dashboard (latest fertility/population highlights, global maps, rankings)
 - /topics : Subject catalogue (People, Society, Economy, Tools) — DST-style topic hub
-- /fertility : Fertility explorer (global map, rankings, movers, history)
+- /fertility : Fertility explorer (global map, rankings, movers, TFR by ancestry/origin where NSOs publish it — Denmark FERT1, Norway 12482)
 - /population : Population explorer (rankings, projections, growth calculator)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
@@ -24,7 +24,7 @@ const SITE_MAP = `
 - /state/<slug> : Subnational profile — population & fertility for a state/province/Land
 - /gdp : GDP explorer (rankings, GDP per capita, growth)
 - /cities : Cities database
-- /compare?countries=slug1,slug2,slug3 : Overlay multiple countries on any indicator
+- /compare?countries=slug1,slug2,slug3 : Overlay multiple countries on any indicator. Optional from=&to= years zoom the chart (e.g. from=2000&to=2022).
 - /simulator : Build custom population projections from assumptions (TFR, life expectancy, migration), animate the age pyramid over time, export video/GIF, and project GDP per capita & total GDP. It accepts URL params to pre-fill a scenario: country=<slug>, tfr=<0.5–8>, life=<40–95 life expectancy>, migration=<net migrants per 5-yr step>, years=<20–150 horizon>, gdp=<starting GDP per capita US$>, growth=<-2–10 % annual real growth>, pop=<custom starting population, omit country to use it>. Example: /simulator?country=italy&tfr=1.2&years=80
 - /clock : Live fertility / world population clock (illustrative extrapolation from annual rates)
 - /calendar : Upcoming demographic data releases (TFR/fertility highlighted)
