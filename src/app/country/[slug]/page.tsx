@@ -15,6 +15,8 @@ import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { WhyTfrDeclining } from "@/components/why-tfr-declining";
+import { TfrAncestryChart } from "@/components/tfr-ancestry-chart";
+import { getTfrAncestryPack } from "@/lib/sources/tfr-by-ancestry-data";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { PopulationPyramid } from "@/components/charts/population-pyramid";
 import {
@@ -246,6 +248,7 @@ export default async function CountryPage({
 
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
+  const ancestryPack = getTfrAncestryPack(country.iso3);
   const hasCrimeBreakdown =
     crimeAncestry.groups.length > 0 ||
     crimeCitizenship.groups.length > 0 ||
@@ -614,6 +617,12 @@ export default async function CountryPage({
               color="hsl(340 82% 52%)"
             />
           </ChartCard>
+
+          {ancestryPack && (
+            <div className="lg:col-span-2">
+              <TfrAncestryChart pack={ancestryPack} />
+            </div>
+          )}
 
           {fertilityNowcast &&
             (fertilityNowcast.tfr2024 != null ||

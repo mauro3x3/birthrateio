@@ -16,6 +16,9 @@ import {
 import { FertilityNowcastTable } from "@/components/fertility-nowcast-table";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import { TFR_ANCESTRY_PACKS } from "@/lib/sources/tfr-by-ancestry-data";
 
 export const revalidate = 3600;
 
@@ -104,6 +107,35 @@ export default async function FertilityPage() {
           />
         </div>
       </section>
+
+      {TFR_ANCESTRY_PACKS.length > 0 && (
+        <section>
+          <SectionHeading
+            id="fertility-by-ancestry"
+            title="Fertility by ancestry"
+            description="A handful of statistical offices publish TFR disaggregated by ancestry, immigrant category, or mother's country of birth. Definitions are not comparable across countries."
+            tocLabel="By ancestry"
+          />
+          <ul className="mt-5 divide-y divide-border border-y border-border">
+            {TFR_ANCESTRY_PACKS.map((pack) => (
+              <li key={pack.iso3}>
+                <Link
+                  href={`/country/${pack.slug}`}
+                  className="group flex items-center justify-between gap-3 py-3 text-sm transition-colors hover:bg-muted/50"
+                >
+                  <span className="font-serif font-medium text-primary group-hover:underline">
+                    {pack.headline ?? pack.country}
+                  </span>
+                  <span className="flex shrink-0 items-center gap-1 text-xs text-muted-foreground">
+                    {pack.country}
+                    <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {nowcasts.length > 0 && (
         <FertilityNowcastTable

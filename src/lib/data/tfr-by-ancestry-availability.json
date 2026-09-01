@@ -1,0 +1,77 @@
+{
+  "metric": "tfr_by_ancestry_or_origin",
+  "updated": "2026-08-31",
+  "note": "A handful of statistical offices publish total fertility by ancestry, immigrant category, or mother's country of birth. Definitions are not comparable across countries. We chart official series only — never estimates pieced together from population shares.",
+  "countries": [
+    {
+      "iso3": "DNK",
+      "status": "AVAILABLE",
+      "level": "ancestry",
+      "detail": "Statistics Denmark FERT1 — TFR (ages 15–49) for Danish origin, western/non-western immigrants, and western/non-western descendants, 1986–2025.",
+      "sourceUrl": "https://www.statistikbanken.dk/FERT1"
+    },
+    {
+      "iso3": "NOR",
+      "status": "AVAILABLE",
+      "level": "immigrant category",
+      "detail": "Statistics Norway table 12482 — TFR by mother's immigrant category (immigrants, Norwegian-born to immigrant parents, other population), 2011–2025. Table 12481 further splits immigrant women by region of origin.",
+      "sourceUrl": "https://www.ssb.no/en/statbank/table/12482"
+    },
+    {
+      "iso3": "NLD",
+      "status": "HISTORICAL",
+      "level": "origin",
+      "detail": "CBS published TFR by migration background; the classification was retired in favour of a country-of-origin system, so there is no continuous public series in the old categories.",
+      "sourceUrl": "https://www.cbs.nl/en-gb"
+    },
+    {
+      "iso3": "SWE",
+      "status": "PARTIAL",
+      "level": "country of birth",
+      "detail": "Statistics Sweden publishes fertility by mother's country of birth in demographic reports; not a single FERT1-style ancestry time series in the same western/non-western split.",
+      "sourceUrl": "https://www.scb.se/en/"
+    },
+    {
+      "iso3": "GBR",
+      "status": "PARTIAL",
+      "level": "country of birth",
+      "detail": "ONS publishes TFR in England and Wales by mother's country of birth (UK-born vs non-UK-born, plus selected countries). That is nativity, not DST ancestry.",
+      "sourceUrl": "https://www.ons.gov.uk"
+    },
+    {
+      "iso3": "USA",
+      "status": "PARTIAL",
+      "level": "race / Hispanic origin",
+      "detail": "NCHS publishes TFR by race and Hispanic origin of the mother. That is not immigrant ancestry or country of birth.",
+      "sourceUrl": "https://www.cdc.gov/nchs/nvss/births.htm"
+    },
+    {
+      "iso3": "DEU",
+      "status": "LIMITED",
+      "level": "citizenship",
+      "detail": "Destatis publishes live births by mother's citizenship. A continuous TFR by migration background comparable to FERT1 is not on the open tables.",
+      "sourceUrl": "https://www.destatis.de"
+    },
+    {
+      "iso3": "FRA",
+      "status": "LIMITED",
+      "level": "origin (reports)",
+      "detail": "INED/INSEE analyse fertility by parents' place of birth in reports. France does not publish a DST-style annual ancestry TFR table.",
+      "sourceUrl": "https://www.ined.fr"
+    },
+    {
+      "iso3": "FIN",
+      "status": "LIMITED",
+      "level": "origin (reports)",
+      "detail": "Statistics Finland publishes some fertility figures by origin in demographic reviews, not a full open ancestry TFR series like FERT1.",
+      "sourceUrl": "https://www.stat.fi"
+    },
+    {
+      "iso3": "CAN",
+      "status": "LIMITED",
+      "level": "immigrant status",
+      "detail": "Statistics Canada has estimated TFR by immigrant status in analytical papers; not a continuous StatBank-style ancestry table.",
+      "sourceUrl": "https://www.statcan.gc.ca"
+    }
+  ]
+}

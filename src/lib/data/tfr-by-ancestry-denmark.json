@@ -1,0 +1,414 @@
+{
+  "iso3": "DNK",
+  "slug": "denmark",
+  "country": "Denmark",
+  "metric": "tfr_by_ancestry",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Total fertility rate (ages 15–49) by ancestry. Statistics Denmark publishes the series per 1,000 women; we divide by 1,000 so it matches the rest of birthrate.io (children per woman). Ancestry follows DST: Danish origin, immigrants, and descendants, split western / non-western.",
+  "source": "Statistics Denmark (DST) table FERT1",
+  "sourceUrl": "https://www.dst.dk/en/Statistik/emner/borgere/befolkning/fertilitet",
+  "statbank": "https://www.statistikbanken.dk/FERT1",
+  "groups": [
+    "Immigrants, western",
+    "Descendants, western",
+    "Danish origin",
+    "Immigrants, non-western",
+    "Descendants, non-western"
+  ],
+  "series": [
+    {
+      "year": 1986,
+      "groups": {
+        "Immigrants, western": 1.666,
+        "Immigrants, non-western": 3.051,
+        "Descendants, western": 1.323,
+        "Danish origin": 1.451
+      }
+    },
+    {
+      "year": 1987,
+      "groups": {
+        "Immigrants, western": 1.598,
+        "Immigrants, non-western": 3.336,
+        "Descendants, western": 1.222,
+        "Danish origin": 1.458
+      }
+    },
+    {
+      "year": 1988,
+      "groups": {
+        "Immigrants, western": 1.698,
+        "Immigrants, non-western": 3.277,
+        "Descendants, western": 1.41,
+        "Danish origin": 1.52
+      }
+    },
+    {
+      "year": 1989,
+      "groups": {
+        "Immigrants, western": 1.725,
+        "Immigrants, non-western": 3.37,
+        "Descendants, western": 1.544,
+        "Danish origin": 1.576
+      }
+    },
+    {
+      "year": 1990,
+      "groups": {
+        "Immigrants, western": 1.881,
+        "Immigrants, non-western": 3.291,
+        "Descendants, western": 1.327,
+        "Danish origin": 1.621
+      }
+    },
+    {
+      "year": 1991,
+      "groups": {
+        "Immigrants, western": 1.833,
+        "Immigrants, non-western": 3.494,
+        "Descendants, western": 1.43,
+        "Danish origin": 1.625
+      }
+    },
+    {
+      "year": 1992,
+      "groups": {
+        "Immigrants, western": 1.837,
+        "Immigrants, non-western": 3.583,
+        "Descendants, western": 1.422,
+        "Danish origin": 1.702
+      }
+    },
+    {
+      "year": 1993,
+      "groups": {
+        "Immigrants, western": 1.844,
+        "Immigrants, non-western": 3.447,
+        "Descendants, western": 1.72,
+        "Descendants, non-western": 1.938,
+        "Danish origin": 1.686
+      }
+    },
+    {
+      "year": 1994,
+      "groups": {
+        "Immigrants, western": 1.893,
+        "Immigrants, non-western": 3.346,
+        "Descendants, western": 1.591,
+        "Descendants, non-western": 2.334,
+        "Danish origin": 1.745
+      }
+    },
+    {
+      "year": 1995,
+      "groups": {
+        "Immigrants, western": 1.748,
+        "Immigrants, non-western": 3.185,
+        "Descendants, western": 1.395,
+        "Descendants, non-western": 2.35,
+        "Danish origin": 1.751
+      }
+    },
+    {
+      "year": 1996,
+      "groups": {
+        "Immigrants, western": 1.752,
+        "Immigrants, non-western": 3.143,
+        "Descendants, western": 1.542,
+        "Descendants, non-western": 1.302,
+        "Danish origin": 1.685
+      }
+    },
+    {
+      "year": 1997,
+      "groups": {
+        "Immigrants, western": 1.67,
+        "Immigrants, non-western": 3.154,
+        "Descendants, western": 1.394,
+        "Descendants, non-western": 2.265,
+        "Danish origin": 1.683
+      }
+    },
+    {
+      "year": 1998,
+      "groups": {
+        "Immigrants, western": 1.598,
+        "Immigrants, non-western": 3.014,
+        "Descendants, western": 1.614,
+        "Descendants, non-western": 1.933,
+        "Danish origin": 1.655
+      }
+    },
+    {
+      "year": 1999,
+      "groups": {
+        "Immigrants, western": 1.649,
+        "Immigrants, non-western": 3.014,
+        "Descendants, western": 1.344,
+        "Descendants, non-western": 1.576,
+        "Danish origin": 1.662
+      }
+    },
+    {
+      "year": 2000,
+      "groups": {
+        "Immigrants, western": 1.601,
+        "Immigrants, non-western": 3.101,
+        "Descendants, western": 1.618,
+        "Descendants, non-western": 2.18,
+        "Danish origin": 1.692
+      }
+    },
+    {
+      "year": 2001,
+      "groups": {
+        "Immigrants, western": 1.586,
+        "Immigrants, non-western": 2.941,
+        "Descendants, western": 1.304,
+        "Descendants, non-western": 1.752,
+        "Danish origin": 1.664
+      }
+    },
+    {
+      "year": 2002,
+      "groups": {
+        "Immigrants, western": 1.52,
+        "Immigrants, non-western": 2.736,
+        "Descendants, western": 1.556,
+        "Descendants, non-western": 1.813,
+        "Danish origin": 1.653
+      }
+    },
+    {
+      "year": 2003,
+      "groups": {
+        "Immigrants, western": 1.617,
+        "Immigrants, non-western": 2.572,
+        "Descendants, western": 1.377,
+        "Descendants, non-western": 2.571,
+        "Danish origin": 1.702
+      }
+    },
+    {
+      "year": 2004,
+      "groups": {
+        "Immigrants, western": 1.581,
+        "Immigrants, non-western": 2.374,
+        "Descendants, western": 1.317,
+        "Descendants, non-western": 1.742,
+        "Danish origin": 1.745
+      }
+    },
+    {
+      "year": 2005,
+      "groups": {
+        "Immigrants, western": 1.619,
+        "Immigrants, non-western": 2.193,
+        "Descendants, western": 1.703,
+        "Descendants, non-western": 1.776,
+        "Danish origin": 1.78
+      }
+    },
+    {
+      "year": 2006,
+      "groups": {
+        "Immigrants, western": 1.628,
+        "Immigrants, non-western": 2.087,
+        "Descendants, western": 1.58,
+        "Descendants, non-western": 1.931,
+        "Danish origin": 1.843
+      }
+    },
+    {
+      "year": 2007,
+      "groups": {
+        "Immigrants, western": 1.56,
+        "Immigrants, non-western": 2.007,
+        "Descendants, western": 1.685,
+        "Descendants, non-western": 1.878,
+        "Danish origin": 1.851
+      }
+    },
+    {
+      "year": 2008,
+      "groups": {
+        "Immigrants, western": 1.545,
+        "Immigrants, non-western": 1.976,
+        "Descendants, western": 1.565,
+        "Descendants, non-western": 2.027,
+        "Danish origin": 1.911
+      }
+    },
+    {
+      "year": 2009,
+      "groups": {
+        "Immigrants, western": 1.592,
+        "Immigrants, non-western": 1.885,
+        "Descendants, western": 1.662,
+        "Descendants, non-western": 1.815,
+        "Danish origin": 1.863
+      }
+    },
+    {
+      "year": 2010,
+      "groups": {
+        "Immigrants, western": 1.534,
+        "Immigrants, non-western": 1.936,
+        "Descendants, western": 1.837,
+        "Descendants, non-western": 1.889,
+        "Danish origin": 1.903
+      }
+    },
+    {
+      "year": 2011,
+      "groups": {
+        "Immigrants, western": 1.454,
+        "Immigrants, non-western": 1.812,
+        "Descendants, western": 1.454,
+        "Descendants, non-western": 1.722,
+        "Danish origin": 1.787
+      }
+    },
+    {
+      "year": 2012,
+      "groups": {
+        "Immigrants, western": 1.468,
+        "Immigrants, non-western": 1.802,
+        "Descendants, western": 1.666,
+        "Descendants, non-western": 1.881,
+        "Danish origin": 1.758
+      }
+    },
+    {
+      "year": 2013,
+      "groups": {
+        "Immigrants, western": 1.424,
+        "Immigrants, non-western": 1.814,
+        "Descendants, western": 1.825,
+        "Descendants, non-western": 1.729,
+        "Danish origin": 1.69
+      }
+    },
+    {
+      "year": 2014,
+      "groups": {
+        "Immigrants, western": 1.426,
+        "Immigrants, non-western": 1.918,
+        "Descendants, western": 1.756,
+        "Descendants, non-western": 1.832,
+        "Danish origin": 1.706
+      }
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Immigrants, western": 1.414,
+        "Immigrants, non-western": 1.947,
+        "Descendants, western": 1.858,
+        "Descendants, non-western": 1.903,
+        "Danish origin": 1.736
+      }
+    },
+    {
+      "year": 2016,
+      "groups": {
+        "Immigrants, western": 1.445,
+        "Immigrants, non-western": 2.11,
+        "Descendants, western": 1.657,
+        "Descendants, non-western": 1.97,
+        "Danish origin": 1.807
+      }
+    },
+    {
+      "year": 2017,
+      "groups": {
+        "Immigrants, western": 1.405,
+        "Immigrants, non-western": 2.077,
+        "Descendants, western": 1.825,
+        "Descendants, non-western": 1.844,
+        "Danish origin": 1.775
+      }
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Immigrants, western": 1.386,
+        "Immigrants, non-western": 1.958,
+        "Descendants, western": 1.616,
+        "Descendants, non-western": 1.855,
+        "Danish origin": 1.763
+      }
+    },
+    {
+      "year": 2019,
+      "groups": {
+        "Immigrants, western": 1.426,
+        "Immigrants, non-western": 1.796,
+        "Descendants, western": 1.604,
+        "Descendants, non-western": 1.71,
+        "Danish origin": 1.74
+      }
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Immigrants, western": 1.336,
+        "Immigrants, non-western": 1.747,
+        "Descendants, western": 1.603,
+        "Descendants, non-western": 1.81,
+        "Danish origin": 1.72
+      }
+    },
+    {
+      "year": 2021,
+      "groups": {
+        "Immigrants, western": 1.368,
+        "Immigrants, non-western": 1.759,
+        "Descendants, western": 1.638,
+        "Descendants, non-western": 1.748,
+        "Danish origin": 1.777
+      }
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Immigrants, western": 1.221,
+        "Immigrants, non-western": 1.518,
+        "Descendants, western": 1.424,
+        "Descendants, non-western": 1.575,
+        "Danish origin": 1.611
+      }
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Immigrants, western": 1.176,
+        "Immigrants, non-western": 1.393,
+        "Descendants, western": 1.42,
+        "Descendants, non-western": 1.599,
+        "Danish origin": 1.556
+      }
+    },
+    {
+      "year": 2024,
+      "groups": {
+        "Immigrants, western": 1.173,
+        "Immigrants, non-western": 1.377,
+        "Descendants, western": 1.552,
+        "Descendants, non-western": 1.55,
+        "Danish origin": 1.516
+      }
+    },
+    {
+      "year": 2025,
+      "groups": {
+        "Immigrants, western": 1.146,
+        "Immigrants, non-western": 1.381,
+        "Descendants, western": 1.386,
+        "Descendants, non-western": 1.598,
+        "Danish origin": 1.57
+      }
+    }
+  ]
+}

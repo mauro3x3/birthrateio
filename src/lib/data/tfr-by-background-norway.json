@@ -1,0 +1,139 @@
+{
+  "iso3": "NOR",
+  "slug": "norway",
+  "country": "Norway",
+  "metric": "tfr_by_immigrant_category",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Total fertility rate by mother's immigrant category. Immigrants, Norwegian-born to immigrant parents, and the rest of the population. Whole country.",
+  "source": "Statistics Norway (SSB) table 12482",
+  "sourceUrl": "https://www.ssb.no/en/statbank/table/12482",
+  "statbank": "https://www.ssb.no/en/statbank/table/12482",
+  "groups": [
+    "Immigrants",
+    "Norwegian-born to immigrant parents",
+    "Other population"
+  ],
+  "series": [
+    {
+      "year": 2011,
+      "groups": {
+        "Immigrants": 2.12,
+        "Norwegian-born to immigrant parents": 1.6,
+        "Other population": 1.85
+      }
+    },
+    {
+      "year": 2012,
+      "groups": {
+        "Immigrants": 2.05,
+        "Norwegian-born to immigrant parents": 1.66,
+        "Other population": 1.83
+      }
+    },
+    {
+      "year": 2013,
+      "groups": {
+        "Immigrants": 1.98,
+        "Norwegian-born to immigrant parents": 1.54,
+        "Other population": 1.76
+      }
+    },
+    {
+      "year": 2014,
+      "groups": {
+        "Immigrants": 1.95,
+        "Norwegian-born to immigrant parents": 1.61,
+        "Other population": 1.73
+      }
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Immigrants": 1.94,
+        "Norwegian-born to immigrant parents": 1.52,
+        "Other population": 1.7
+      }
+    },
+    {
+      "year": 2016,
+      "groups": {
+        "Immigrants": 1.92,
+        "Norwegian-born to immigrant parents": 1.62,
+        "Other population": 1.67
+      }
+    },
+    {
+      "year": 2017,
+      "groups": {
+        "Immigrants": 1.93,
+        "Norwegian-born to immigrant parents": 1.54,
+        "Other population": 1.56
+      }
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Immigrants": 1.87,
+        "Norwegian-born to immigrant parents": 1.48,
+        "Other population": 1.5
+      }
+    },
+    {
+      "year": 2019,
+      "groups": {
+        "Immigrants": 1.77,
+        "Norwegian-born to immigrant parents": 1.53,
+        "Other population": 1.48
+      }
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Immigrants": 1.68,
+        "Norwegian-born to immigrant parents": 1.42,
+        "Other population": 1.44
+      }
+    },
+    {
+      "year": 2021,
+      "groups": {
+        "Immigrants": 1.67,
+        "Norwegian-born to immigrant parents": 1.46,
+        "Other population": 1.54
+      }
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Immigrants": 1.5,
+        "Norwegian-born to immigrant parents": 1.31,
+        "Other population": 1.4
+      }
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Immigrants": 1.46,
+        "Norwegian-born to immigrant parents": 1.37,
+        "Other population": 1.4
+      }
+    },
+    {
+      "year": 2024,
+      "groups": {
+        "Immigrants": 1.47,
+        "Norwegian-born to immigrant parents": 1.4,
+        "Other population": 1.45
+      }
+    },
+    {
+      "year": 2025,
+      "groups": {
+        "Immigrants": 1.44,
+        "Norwegian-born to immigrant parents": 1.4,
+        "Other population": 1.51
+      }
+    }
+  ]
+}
