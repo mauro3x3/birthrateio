@@ -23,7 +23,7 @@ export const INDICATORS: IndicatorDef[] = [
     name: "Total Fertility Rate",
     shortName: "Fertility Rate",
     description:
-      "Average number of children that would be born to a woman over her lifetime given current age-specific fertility rates.",
+      "Average number of children that would be born to a woman over her lifetime given current age-specific fertility rates. Pre-1960 values are long-run historical reconstructions from Gapminder; from 1960 onward this is World Bank WDI.",
     unit: "births per woman",
     category: "FERTILITY",
     higherIsBetter: null,

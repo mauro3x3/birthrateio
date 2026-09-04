@@ -130,6 +130,14 @@ export const DATA_SOURCES = [
     description:
       "Detailed mortality and population data for countries with high-quality vital registration, via Our World in Data grapher extracts.",
   },
+  {
+    code: "GAPMINDER",
+    name: "Gapminder Foundation",
+    url: "https://www.gapminder.org/data/",
+    license: "CC BY 4.0",
+    description:
+      "Long-run demographic reconstructions (e.g. total fertility rate back to 1800) compiled by Gapminder from historical vital statistics, census records and UN sources.",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {

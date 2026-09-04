@@ -273,6 +273,12 @@ export default async function CountryPage({
       ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
       : "World Bank";
 
+  const fertilityStart = fertility.length ? fertility[0].year : null;
+  const fertilitySource =
+    fertilityStart != null && fertilityStart < 1960
+      ? "Gapminder (pre-1960) · World Bank (from 1960)"
+      : "World Bank";
+
   // Build projection overlay rows keyed by year.
   const projByYear = new Map<number, Record<string, number>>();
   for (const p of projections) {
@@ -604,7 +610,7 @@ export default async function CountryPage({
           <ChartCard
             title="Fertility rate over time"
             description="Births per woman · dashed line = replacement (2.1)"
-            source="World Bank"
+            source={fertilitySource}
             csvRows={fertility}
             csvName={`${slug}-fertility`}
             titleExtra={<WhyTfrDeclining />}
@@ -617,6 +623,25 @@ export default async function CountryPage({
               color="hsl(340 82% 52%)"
             />
           </ChartCard>
+
+          {fertilityStart != null && fertilityStart < 1960 && (
+            <p className="lg:col-span-2 text-xs leading-relaxed text-muted-foreground">
+              Pre-1960 fertility is a long-run reconstruction (historical
+              vital statistics and UN estimates) compiled by{" "}
+              <Link
+                href="https://www.gapminder.org/data/documentation/gd008/"
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Gapminder
+              </Link>
+              . It is a period rate — a snapshot of that year&apos;s
+              age-specific birth rates — not the number of children women
+              born in a given year went on to have. From 1960, birthrate.io
+              switches to World Bank WDI.
+            </p>
+          )}
 
           {ancestryPack && (
             <div className="lg:col-span-2">
