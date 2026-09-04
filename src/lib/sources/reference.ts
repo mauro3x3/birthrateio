@@ -131,6 +131,14 @@ export const DATA_SOURCES = [
       "Detailed mortality and population data for countries with high-quality vital registration, via Our World in Data grapher extracts.",
   },
   {
+    code: "HFD",
+    name: "Human Fertility Database",
+    url: "https://www.humanfertility.org",
+    license: "HFD terms (free for research/non-commercial use)",
+    description:
+      "Detailed period and cohort fertility data reconstructed from official birth registration statistics, for countries with long vital-registration series (coverage starts 1891-1950 depending on country). Via Our World in Data grapher extracts.",
+  },
+  {
     code: "GAPMINDER",
     name: "Gapminder Foundation",
     url: "https://www.gapminder.org/data/",

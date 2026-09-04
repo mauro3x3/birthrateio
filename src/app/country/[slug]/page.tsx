@@ -276,7 +276,7 @@ export default async function CountryPage({
   const fertilityStart = fertility.length ? fertility[0].year : null;
   const fertilitySource =
     fertilityStart != null && fertilityStart < 1960
-      ? "Gapminder (pre-1960) · World Bank (from 1960)"
+      ? "HFD / UN WPP / Gapminder (pre-1960) · World Bank (from 1960)"
       : "World Bank";
 
   // Build projection overlay rows keyed by year.
@@ -626,8 +626,19 @@ export default async function CountryPage({
 
           {fertilityStart != null && fertilityStart < 1960 && (
             <p className="lg:col-span-2 text-xs leading-relaxed text-muted-foreground">
-              Pre-1960 fertility is a long-run reconstruction (historical
-              vital statistics and UN estimates) compiled by{" "}
+              Pre-1960 fertility blends three sources, best available first:
+              the{" "}
+              <Link
+                href="https://www.humanfertility.org"
+                className="underline underline-offset-2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Human Fertility Database
+              </Link>{" "}
+              (official birth-registration reconstructions, coverage starting
+              anywhere from 1891 to 1950 depending on the country), UN World
+              Population Prospects for 1950–1959, and{" "}
               <Link
                 href="https://www.gapminder.org/data/documentation/gd008/"
                 className="underline underline-offset-2"
@@ -636,10 +647,10 @@ export default async function CountryPage({
               >
                 Gapminder
               </Link>
-              . It is a period rate — a snapshot of that year&apos;s
-              age-specific birth rates — not the number of children women
-              born in a given year went on to have. From 1960, birthrate.io
-              switches to World Bank WDI.
+              &apos;s historic estimate for earlier gaps. It is a period rate
+              — a snapshot of that year&apos;s age-specific birth rates — not
+              the number of children women born in a given year went on to
+              have. From 1960, birthrate.io switches to World Bank WDI.
             </p>
           )}
 
