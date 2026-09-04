@@ -180,6 +180,23 @@ const STATISTICS: StatisticDef[] = [
     keywords: ["ancestry", "origin", "background", "denmark fertility"],
   },
   {
+    id: "tfr-decomposition",
+    title: "Many mothers, or large families? (TFR decomposed)",
+    href: "/fertility/many-mothers-or-large-families",
+    region: "Worldwide",
+    topicIds: ["fertility"],
+    keywords: [
+      "decompose",
+      "decomposition",
+      "total maternal rate",
+      "children per mother",
+      "many mothers",
+      "large families",
+      "tmr",
+      "cpm",
+    ],
+  },
+  {
     id: "pop-rank",
     title: "Countries by population",
     href: "/population#population-rankings",
@@ -223,6 +240,7 @@ const STATISTICS: StatisticDef[] = [
 
 const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
   "/fertility": [
+    { title: "Many mothers, or large families? (TFR decomposed)", href: "/fertility/many-mothers-or-large-families", region: "Worldwide" },
     { title: "South Korea fertility rate", href: "/fertility/korea-rep", region: "Korea" },
     { title: "Japan fertility rate", href: "/fertility/japan", region: "Japan" },
     { title: "China fertility rate", href: "/fertility/china", region: "China" },
