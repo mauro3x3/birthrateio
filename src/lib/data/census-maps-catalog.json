@@ -1,0 +1,1600 @@
+{
+  "countries": [
+    {
+      "slug": "denmark",
+      "iso3": "DNK",
+      "iso2": "DK",
+      "name": "Denmark",
+      "kicker": "Statistics Denmark 2026",
+      "title": "Ancestry",
+      "year": 2026,
+      "source": "Statistics Denmark — FOLK1C population by ancestry, 1 July 2026 (2026K2)",
+      "sourceUrl": "https://www.statistikbanken.dk/FOLK1C",
+      "nationalLabel": "Denmark",
+      "topicLabel": "Ancestry",
+      "groups": [
+        {
+          "id": "danish",
+          "shortLabel": "Danish origin",
+          "label": "Persons of Danish origin"
+        },
+        {
+          "id": "immigrant",
+          "shortLabel": "Immigrants",
+          "label": "Immigrants (born abroad, both parents born abroad)"
+        },
+        {
+          "id": "descendant",
+          "shortLabel": "Descendants",
+          "label": "Descendants of immigrants (born in Denmark, both parents born abroad)"
+        }
+      ],
+      "levels": [
+        {
+          "id": "region",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/dnk-region.json"
+        },
+        {
+          "id": "kommune",
+          "label": "Kommune",
+          "kind": "Municipalities",
+          "geoUrl": "/geo/census/dnk-kommune.json"
+        }
+      ],
+      "dataUrl": "/data/census/dnk.json",
+      "fitMaxZoom": 8.2
+    },
+    {
+      "slug": "germany",
+      "iso3": "DEU",
+      "iso2": "DE",
+      "name": "Germany",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Germany",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts1",
+          "label": "Land",
+          "kind": "Länder",
+          "geoUrl": "/geo/census/deu-nuts1.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Kreis",
+          "kind": "Districts",
+          "geoUrl": "/geo/census/deu-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/deu.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "spain",
+      "iso3": "ESP",
+      "iso2": "ES",
+      "name": "Spain",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Spain",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Community",
+          "kind": "Autonomous communities",
+          "geoUrl": "/geo/census/esp-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/esp-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/esp.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "russia",
+      "iso3": "RUS",
+      "iso2": "RU",
+      "name": "Russia",
+      "kicker": "Census 2021",
+      "title": "Ethnic group",
+      "year": 2021,
+      "source": "Rosstat — 2020 All-Russian Population Census (VPN-2020), Volume 5 Table 1, national composition by federal subject",
+      "sourceUrl": "https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami",
+      "nationalLabel": "Russia",
+      "topicLabel": "Ethnic group",
+      "groups": [
+        {
+          "id": "russian",
+          "shortLabel": "Russians",
+          "label": "Ethnic Russians (including Cossacks and Pomors)"
+        },
+        {
+          "id": "tatar",
+          "shortLabel": "Tatars",
+          "label": "Tatars (excluding Crimean Tatars)"
+        },
+        {
+          "id": "chechen",
+          "shortLabel": "Chechens",
+          "label": "Chechens"
+        },
+        {
+          "id": "bashkir",
+          "shortLabel": "Bashkirs",
+          "label": "Bashkirs"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "label": "All other stated ethnic groups"
+        },
+        {
+          "id": "not_stated",
+          "shortLabel": "Not stated",
+          "label": "Ethnicity not stated on the census form"
+        }
+      ],
+      "levels": [
+        {
+          "id": "subject",
+          "label": "Subject",
+          "kind": "Federal subjects",
+          "geoUrl": "/geo/census/rus-subject.json"
+        }
+      ],
+      "dataUrl": "/data/census/rus.json",
+      "fitMaxZoom": 4.4
+    },
+    {
+      "slug": "france",
+      "iso3": "FRA",
+      "iso2": "FR",
+      "name": "France",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "France",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/fra-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Department",
+          "kind": "Departments",
+          "geoUrl": "/geo/census/fra-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/fra.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "italy",
+      "iso3": "ITA",
+      "iso2": "IT",
+      "name": "Italy",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Italy",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/ita-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/ita-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/ita.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "uk",
+      "iso3": "GBR",
+      "iso2": "UK",
+      "name": "United Kingdom",
+      "kicker": "UK Census 2021",
+      "title": "Ethnic group",
+      "year": 2021,
+      "source": "ONS Census 2021 (TS021)",
+      "sourceUrl": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/3",
+      "nationalLabel": "England & Wales",
+      "topicLabel": "Ethnic group",
+      "builtin": "uk",
+      "groups": [],
+      "levels": [],
+      "dataUrl": "",
+      "fitMaxZoom": 9.5
+    },
+    {
+      "slug": "austria",
+      "iso3": "AUT",
+      "iso2": "AT",
+      "name": "Austria",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Austria",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "State",
+          "kind": "Bundesländer",
+          "geoUrl": "/geo/census/aut-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Group of districts",
+          "kind": "Groups of districts",
+          "geoUrl": "/geo/census/aut-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/aut.json",
+      "fitMaxZoom": 6.2
+    },
+    {
+      "slug": "belgium",
+      "iso3": "BEL",
+      "iso2": "BE",
+      "name": "Belgium",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Belgium",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/bel-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Arrondissement",
+          "kind": "Arrondissements",
+          "geoUrl": "/geo/census/bel-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/bel.json",
+      "fitMaxZoom": 6.2
+    },
+    {
+      "slug": "bulgaria",
+      "iso3": "BGR",
+      "iso2": "BG",
+      "name": "Bulgaria",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Bulgaria",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/bgr-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "District",
+          "kind": "Districts",
+          "geoUrl": "/geo/census/bgr-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/bgr.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "croatia",
+      "iso3": "HRV",
+      "iso2": "HR",
+      "name": "Croatia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Croatia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/hrv-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/hrv.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "czechia",
+      "iso3": "CZE",
+      "iso2": "CZ",
+      "name": "Czechia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Czechia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Cohesion region",
+          "kind": "Cohesion regions",
+          "geoUrl": "/geo/census/cze-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/cze-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/cze.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "estonia",
+      "iso3": "EST",
+      "iso2": "EE",
+      "name": "Estonia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Estonia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "Group of counties",
+          "kind": "Groups of counties",
+          "geoUrl": "/geo/census/est-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/est.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "finland",
+      "iso3": "FIN",
+      "iso2": "FI",
+      "name": "Finland",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Finland",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/fin-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/fin.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "greece",
+      "iso3": "GRC",
+      "iso2": "EL",
+      "name": "Greece",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Greece",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/grc-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Regional unit",
+          "kind": "Regional units",
+          "geoUrl": "/geo/census/grc-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/grc.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "hungary",
+      "iso3": "HUN",
+      "iso2": "HU",
+      "name": "Hungary",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Hungary",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Planning region",
+          "kind": "Planning regions",
+          "geoUrl": "/geo/census/hun-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/hun-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/hun.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "ireland",
+      "iso3": "IRL",
+      "iso2": "IE",
+      "name": "Ireland",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Ireland",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/irl-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/irl.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "latvia",
+      "iso3": "LVA",
+      "iso2": "LV",
+      "name": "Latvia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Latvia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "Statistical region",
+          "kind": "Statistical regions",
+          "geoUrl": "/geo/census/lva-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/lva.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "lithuania",
+      "iso3": "LTU",
+      "iso2": "LT",
+      "name": "Lithuania",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Lithuania",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/ltu-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/ltu.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "netherlands",
+      "iso3": "NLD",
+      "iso2": "NL",
+      "name": "Netherlands",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Netherlands",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/nld-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "COROP",
+          "kind": "COROP regions",
+          "geoUrl": "/geo/census/nld-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/nld.json",
+      "fitMaxZoom": 6.2
+    },
+    {
+      "slug": "norway",
+      "iso3": "NOR",
+      "iso2": "NO",
+      "name": "Norway",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Norway",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/nor-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/nor.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "poland",
+      "iso3": "POL",
+      "iso2": "PL",
+      "name": "Poland",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Poland",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Voivodeship",
+          "kind": "Voivodeships",
+          "geoUrl": "/geo/census/pol-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Subregion",
+          "kind": "Subregions",
+          "geoUrl": "/geo/census/pol-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/pol.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "portugal",
+      "iso3": "PRT",
+      "iso2": "PT",
+      "name": "Portugal",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Portugal",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/prt-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Subregion",
+          "kind": "Subregions",
+          "geoUrl": "/geo/census/prt-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/prt.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "romania",
+      "iso3": "ROU",
+      "iso2": "RO",
+      "name": "Romania",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Romania",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/rou-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/rou-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/rou.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "slovakia",
+      "iso3": "SVK",
+      "iso2": "SK",
+      "name": "Slovakia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Slovakia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Area",
+          "kind": "Areas",
+          "geoUrl": "/geo/census/svk-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/svk-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/svk.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "slovenia",
+      "iso3": "SVN",
+      "iso2": "SI",
+      "name": "Slovenia",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Slovenia",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts3",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/svn-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/svn.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "sweden",
+      "iso3": "SWE",
+      "iso2": "SE",
+      "name": "Sweden",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Sweden",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "National area",
+          "kind": "National areas",
+          "geoUrl": "/geo/census/swe-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "County",
+          "kind": "Counties",
+          "geoUrl": "/geo/census/swe-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/swe.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "switzerland",
+      "iso3": "CHE",
+      "iso2": "CH",
+      "name": "Switzerland",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Switzerland",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/che-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Canton",
+          "kind": "Cantons",
+          "geoUrl": "/geo/census/che-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/che.json",
+      "fitMaxZoom": 6.2
+    }
+  ]
+}

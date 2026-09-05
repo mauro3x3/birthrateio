@@ -21,6 +21,8 @@
     "build:wpp-projections": "node scripts/build-wpp-projections.js",
     "build:wup-cities": "node scripts/build-wup-cities.js",
     "build:work-permits": "node scripts/build-work-permits.js",
+    "build:census-maps": "python3 scripts/build-census-maps.py",
+    "build:russia-census": "python3 scripts/build_russia_census_map.py",
     "ingest": "tsx scripts/ingest.ts",
     "ingest:worldbank": "tsx scripts/ingest.ts --source=worldbank",
     "postinstall": "prisma generate"

@@ -100,6 +100,21 @@ export const navTopics: NavTopic[] = [
         description: "ONS Census 2021 ethnic group by LAD and MSOA",
       },
       {
+        title: "Denmark census",
+        href: "/demographics/denmark",
+        description: "Ancestry by kommune from Statistics Denmark",
+      },
+      {
+        title: "Germany census",
+        href: "/demographics/germany",
+        description: "Country of birth by Kreis from Census 2021",
+      },
+      {
+        title: "Russia census",
+        href: "/demographics/russia",
+        description: "Ethnic group by federal subject from the 2021 census",
+      },
+      {
         title: "Cities",
         href: "/cities",
         description: "World metropolitan areas database",

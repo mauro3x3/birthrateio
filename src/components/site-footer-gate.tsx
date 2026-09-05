@@ -16,7 +16,12 @@ const FULLSCREEN_PATHS = [
 
 export function SiteFooterGate() {
   const pathname = usePathname();
-  if (FULLSCREEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))) {
+  const censusMap =
+    pathname.startsWith("/demographics/") && pathname !== "/demographics";
+  if (
+    censusMap ||
+    FULLSCREEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+  ) {
     return null;
   }
   return <SiteFooter />;

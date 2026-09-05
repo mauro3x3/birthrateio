@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { UkCensusExplorer } from "@/components/uk-census-explorer";
+import { CensusMapExplorer } from "@/components/census-map-explorer";
 
 export const revalidate = 86400;
 
@@ -11,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function UkDemographicsPage() {
-  return <UkCensusExplorer />;
+  return <CensusMapExplorer initialSlug="uk" />;
 }

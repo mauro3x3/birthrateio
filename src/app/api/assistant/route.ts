@@ -20,7 +20,13 @@ const SITE_MAP = `
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
 - /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
-- /demographics : US demographics map — race & Hispanic origin by state (ACS), Census-style choropleth
+- /demographics : US demographics map — race & Hispanic origin by state (ACS)
+- /demographics/uk : England & Wales Census 2021 ethnic group by LAD/MSOA
+- /demographics/denmark : Denmark ancestry (Danish origin / immigrant / descendant) by kommune
+- /demographics/germany : Germany Census 2021 country of birth by Kreis
+- /demographics/spain : Spain Census 2021 country of birth by province
+- /demographics/russia : Russia 2021 census ethnic group by federal subject (Rosstat VPN-2020)
+- /demographics/<country> : Same census-map explorer for other European countries (France, Italy, Netherlands, …)
 - /state/<slug> : Subnational profile — population & fertility for a state/province/Land
 - /gdp : GDP explorer (rankings, GDP per capita, growth)
 - /cities : Cities database

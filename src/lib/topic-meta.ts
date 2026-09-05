@@ -330,6 +330,21 @@ export const TOPIC_META: TopicMeta[] = [
         note: "The equivalent view for England & Wales",
       },
       {
+        title: "Denmark census",
+        href: "/demographics/denmark",
+        note: "Ancestry by kommune",
+      },
+      {
+        title: "Germany census",
+        href: "/demographics/germany",
+        note: "Country of birth by Kreis",
+      },
+      {
+        title: "Russia census",
+        href: "/demographics/russia",
+        note: "Ethnic group by federal subject",
+      },
+      {
         title: "States & provinces",
         href: "/states",
         note: "Fertility by U.S. state",
@@ -353,6 +368,26 @@ export const TOPIC_META: TopicMeta[] = [
         title: "US demographics",
         href: "/demographics",
         note: "The equivalent view for U.S. states",
+      },
+      {
+        title: "Denmark census",
+        href: "/demographics/denmark",
+        note: "Ancestry by kommune",
+      },
+      {
+        title: "Germany census",
+        href: "/demographics/germany",
+        note: "Country of birth by Kreis",
+      },
+      {
+        title: "Spain census",
+        href: "/demographics/spain",
+        note: "Country of birth by province",
+      },
+      {
+        title: "Russia census",
+        href: "/demographics/russia",
+        note: "Ethnic group by federal subject",
       },
       {
         title: "Migration",

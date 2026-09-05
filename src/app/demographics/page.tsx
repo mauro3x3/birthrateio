@@ -22,9 +22,29 @@ export default function DemographicsPage() {
     >
       <section>
         <p className="text-sm text-muted-foreground">
-          Also see{" "}
+          Census-style maps:{" "}
           <Link href="/demographics/uk" className="link-editorial font-medium">
-            UK Census 2021 ethnic group by local authority
+            United Kingdom
+          </Link>
+          {", "}
+          <Link href="/demographics/denmark" className="link-editorial font-medium">
+            Denmark
+          </Link>
+          {", "}
+          <Link href="/demographics/germany" className="link-editorial font-medium">
+            Germany
+          </Link>
+          {", "}
+          <Link href="/demographics/spain" className="link-editorial font-medium">
+            Spain
+          </Link>
+          {", "}
+          <Link href="/demographics/russia" className="link-editorial font-medium">
+            Russia
+          </Link>
+          {", and "}
+          <Link href="/demographics/france" className="link-editorial font-medium">
+            other European countries
           </Link>
           .
         </p>

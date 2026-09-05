@@ -154,9 +154,8 @@ export function MapCard({
 
   return (
     <section className="overflow-hidden border border-border bg-card">
-      {/* Title + key figures — one compact band */}
-      <header className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3 border-b border-border px-4 py-3 sm:px-5">
-        <div className="min-w-0 max-w-xl">
+      <header className="flex flex-col gap-2 border-b border-border px-4 py-2.5 sm:px-5 lg:flex-row lg:items-center lg:gap-4">
+        <div className="min-w-0 shrink-0">
           <h2
             id={id}
             className="scroll-mt-24 font-serif text-lg font-semibold tracking-tight text-primary sm:text-xl"
@@ -169,122 +168,81 @@ export function MapCard({
             </p>
           )}
         </div>
-        <div className="flex flex-wrap items-end gap-x-6 gap-y-2">
-          <div>
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-              Year
-            </p>
-            <p className="font-sans text-2xl font-semibold tabular-nums leading-none text-primary">
+
+        {animatable ? (
+          <div className="flex min-w-0 flex-1 items-center gap-2">
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={recording}
+              className="h-8 shrink-0 gap-1.5 rounded-none px-2.5"
+              onClick={() => {
+                if (safeIdx >= frames.length - 1) setIdx(0);
+                setPlaying((p) => !p);
+              }}
+              aria-label={playing ? "Pause" : "Play"}
+            >
+              {playing ? (
+                <Pause className="h-3.5 w-3.5" />
+              ) : (
+                <Play className="h-3.5 w-3.5" />
+              )}
+              {playing ? "Pause" : "Play"}
+            </Button>
+
+            <span className="w-11 shrink-0 text-sm font-semibold tabular-nums text-primary">
               {current?.year ?? "—"}
-            </p>
-          </div>
-          <div>
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-              {frameStats?.length ? "World" : "Coverage"}
-            </p>
-            <p className="font-sans text-lg font-semibold leading-tight tabular-nums">
-              {currentStat ??
-                (current
-                  ? `${current.data.length.toLocaleString()} countries`
-                  : "—")}
-            </p>
-            {unit && (
-              <p className="text-[0.7rem] text-muted-foreground">
-                {unit}
-                {decimals === 0 ? " · rounded" : ""}
-              </p>
-            )}
-          </div>
-          {gradientCss && (
-            <div className="min-w-[10rem]">
-              <p className="text-[0.65rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
-                Scale
-              </p>
-              <div
-                className="mt-1 h-2 w-full max-w-[12rem] rounded-sm"
-                style={{ background: gradientCss }}
-                aria-hidden
+            </span>
+
+            <div className="flex min-w-0 flex-1 items-center gap-2">
+              <span className="w-9 shrink-0 text-[0.7rem] tabular-nums text-muted-foreground">
+                {firstYear}
+              </span>
+              <Slider
+                value={[safeIdx]}
+                min={0}
+                max={lastIdx}
+                step={1}
+                disabled={recording}
+                onValueChange={([v]) => {
+                  setPlaying(false);
+                  setIdx(v);
+                }}
+                className="flex-1"
+                aria-label="Year"
               />
-              <div className="mt-1 flex max-w-[12rem] justify-between text-[0.7rem] tabular-nums text-muted-foreground">
-                <span>{fmt(scale.min)}</span>
-                {scale.mid !== undefined && <span>{fmt(scale.mid)}</span>}
-                <span>{fmt(scale.max)}</span>
-              </div>
-              <p className="mt-0.5 max-w-[14rem] text-[0.7rem] leading-snug text-muted-foreground">
-                {scaleHint(unit, cinemaScale)}
-              </p>
+              <span className="w-9 shrink-0 text-right text-[0.7rem] tabular-nums text-muted-foreground">
+                {lastYear}
+              </span>
             </div>
-          )}
-        </div>
+
+            <AnimationExportButton
+              getNode={() => captureRef.current}
+              frameCount={frames.length}
+              renderFrame={renderExportFrame}
+              holdMs={650}
+              fileBase={`${slugify(title)}-map`}
+              disabled={recording}
+              className="h-8 rounded-none"
+              onStart={() => {
+                startIdxRef.current = safeIdx;
+                setPlaying(false);
+                setRecording(true);
+              }}
+              onDone={() => {
+                setRecording(false);
+                setIdx(startIdxRef.current);
+              }}
+            />
+          </div>
+        ) : (
+          <p className="text-sm font-semibold tabular-nums text-primary lg:ml-auto">
+            {current?.year ?? "—"}
+          </p>
+        )}
       </header>
 
-      {/* Timeline ABOVE the map — always in view with the figures */}
-      {animatable && (
-        <div className="flex flex-col gap-2 border-b border-border bg-muted/30 px-4 py-2.5 sm:flex-row sm:items-center sm:gap-3 sm:px-5">
-          <Button
-            variant="outline"
-            size="sm"
-            disabled={recording}
-            className="h-8 shrink-0 gap-1.5 rounded-none px-2.5"
-            onClick={() => {
-              if (safeIdx >= frames.length - 1) setIdx(0);
-              setPlaying((p) => !p);
-            }}
-            aria-label={playing ? "Pause" : "Play"}
-          >
-            {playing ? (
-              <Pause className="h-3.5 w-3.5" />
-            ) : (
-              <Play className="h-3.5 w-3.5" />
-            )}
-            {playing ? "Pause" : "Play"}
-          </Button>
-
-          <div className="flex min-w-0 flex-1 items-center gap-2">
-            <span className="w-9 shrink-0 text-[0.7rem] tabular-nums text-muted-foreground">
-              {firstYear}
-            </span>
-            <Slider
-              value={[safeIdx]}
-              min={0}
-              max={lastIdx}
-              step={1}
-              disabled={recording}
-              onValueChange={([v]) => {
-                setPlaying(false);
-                setIdx(v);
-              }}
-              className="flex-1"
-              aria-label="Year"
-            />
-            <span className="w-9 shrink-0 text-right text-[0.7rem] tabular-nums text-muted-foreground">
-              {lastYear}
-            </span>
-          </div>
-
-          <AnimationExportButton
-            getNode={() => captureRef.current}
-            frameCount={frames.length}
-            renderFrame={renderExportFrame}
-            holdMs={650}
-            fileBase={`${slugify(title)}-map`}
-            disabled={recording}
-            className="h-8 rounded-none"
-            onStart={() => {
-              startIdxRef.current = safeIdx;
-              setPlaying(false);
-              setRecording(true);
-            }}
-            onDone={() => {
-              setRecording(false);
-              setIdx(startIdxRef.current);
-            }}
-          />
-        </div>
-      )}
-
       <div ref={captureRef} className="relative bg-black">
-        {/* Year badge burned into export frames */}
         {current && (
           <div className="pointer-events-none absolute left-3 top-3 z-[500] rounded-sm bg-black/55 px-2 py-1 font-sans text-sm font-semibold tabular-nums text-white backdrop-blur-sm">
             {current.year}
@@ -293,6 +251,25 @@ export function MapCard({
                 {currentStat}
               </span>
             ) : null}
+          </div>
+        )}
+        {gradientCss && (
+          <div
+            className="pointer-events-none absolute bottom-3 left-3 z-[500] rounded-sm bg-black/55 px-3 py-2 backdrop-blur-sm"
+            aria-label={scaleHint(unit, cinemaScale)}
+          >
+            <div
+              className="h-1.5 w-36 rounded-full"
+              style={{ background: gradientCss }}
+              aria-hidden
+            />
+            <div className="mt-1.5 flex w-36 justify-between text-[10px] tabular-nums text-white/50">
+              <span>{fmt(scale.min)}</span>
+              {scale.mid !== undefined && (
+                <span className="text-white/75">{fmt(scale.mid)}</span>
+              )}
+              <span>{fmt(scale.max)}</span>
+            </div>
           </div>
         )}
         <ChoroplethMap
@@ -313,6 +290,9 @@ export function MapCard({
           <p className="text-[0.7rem] text-muted-foreground">
             Source: {source}
             {current ? ` · ${current.year}` : ""}
+            {current
+              ? ` · ${current.data.length.toLocaleString()} countries`
+              : ""}
             {unit ? ` · ${unit}` : ""}
           </p>
           <HelpImproveData context={title} />

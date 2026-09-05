@@ -3,8 +3,15 @@
 import * as React from "react";
 import Link from "next/link";
 import { ChartCard } from "@/components/charts/chart-card";
-import { TfrDecompositionChart } from "@/components/charts/tfr-decomposition-chart";
+import {
+  DEFAULT_FEATURED_ISO3,
+  TfrDecompositionChart,
+} from "@/components/charts/tfr-decomposition-chart";
 import { CollapsibleSection } from "@/components/collapsible-section";
+import {
+  CountryMultiSelect,
+  type CountryOption,
+} from "@/components/country-multi-select";
 import { SectionHeading } from "@/components/section-heading";
 import {
   Table,
@@ -17,6 +24,8 @@ import {
 import type { TfrDecompositionRow } from "@/lib/sources/tfr-decomposition-data";
 
 type SortKey = "tfr" | "tmrPct" | "cpm" | "name";
+
+const MAX_LABELLED = 24;
 
 function countryFlag(iso2: string): string {
   if (!/^[A-Z]{2}$/i.test(iso2)) return "🏳️";
@@ -35,6 +44,38 @@ export function TfrDecompositionSection({
 }) {
   const [sortKey, setSortKey] = React.useState<SortKey>("tmrPct");
   const [asc, setAsc] = React.useState(false);
+  const [labelled, setLabelled] = React.useState<string[]>(() =>
+    rows
+      .filter((r) => DEFAULT_FEATURED_ISO3.includes(r.iso3))
+      .map((r) => r.slug),
+  );
+
+  const countryOptions = React.useMemo<CountryOption[]>(
+    () =>
+      [...rows]
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map((r) => ({
+          slug: r.slug,
+          name: r.name,
+          flagEmoji: countryFlag(r.iso2),
+        })),
+    [rows],
+  );
+
+  const featuredIso3 = React.useMemo(() => {
+    const slugs = new Set(labelled);
+    return new Set(rows.filter((r) => slugs.has(r.slug)).map((r) => r.iso3));
+  }, [rows, labelled]);
+
+  const toggleFeatured = (iso3: string) => {
+    const row = rows.find((r) => r.iso3 === iso3);
+    if (!row) return;
+    setLabelled((prev) => {
+      if (prev.includes(row.slug)) return prev.filter((s) => s !== row.slug);
+      if (prev.length >= MAX_LABELLED) return prev;
+      return [...prev, row.slug];
+    });
+  };
 
   const sorted = React.useMemo(() => {
     const copy = [...rows];
@@ -79,7 +120,20 @@ export function TfrDecompositionSection({
         }))}
         csvName="tfr-decomposition-by-country"
       >
-        <TfrDecompositionChart rows={rows} />
+        <div data-export-ignore className="mb-3">
+          <CountryMultiSelect
+            options={countryOptions}
+            selected={labelled}
+            onChange={setLabelled}
+            max={MAX_LABELLED}
+            colored={false}
+          />
+        </div>
+        <TfrDecompositionChart
+          rows={rows}
+          featuredIso3={featuredIso3}
+          onToggleFeatured={toggleFeatured}
+        />
       </ChartCard>
 
       <CollapsibleSection title="How “Total Maternal Rate” and “Children per Mother” are calculated">

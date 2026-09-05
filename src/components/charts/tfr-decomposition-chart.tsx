@@ -10,7 +10,7 @@ const VB_W = 900;
 const VB_H = 560;
 
 /** Countries labelled with a flag + name directly on the chart. */
-const FEATURED = new Set([
+export const DEFAULT_FEATURED_ISO3: readonly string[] = [
   "KOR",
   "JPN",
   "ITA",
@@ -27,7 +27,7 @@ const FEATURED = new Set([
   "BGR",
   "AZE",
   "ISR",
-]);
+];
 
 /** Small manual nudges (label text only, not the marker) to untangle
  * countries that sit almost on top of each other. */
@@ -88,9 +88,13 @@ function tfrColor(t: number): string {
 
 export function TfrDecompositionChart({
   rows,
+  featuredIso3,
+  onToggleFeatured,
   className,
 }: {
   rows: TfrDecompositionRow[];
+  featuredIso3: ReadonlySet<string>;
+  onToggleFeatured?: (iso3: string) => void;
   className?: string;
 }) {
   const [active, setActive] = React.useState<TfrDecompositionRow | null>(
@@ -192,8 +196,21 @@ export function TfrDecompositionChart({
   const xTicks = ticks(xDomain[0], xDomain[1], 6);
   const yTicks = ticks(yDomain[0], yDomain[1], 6);
 
-  const featured = rows.filter((r) => FEATURED.has(r.iso3));
-  const others = rows.filter((r) => !FEATURED.has(r.iso3));
+  const featured = rows.filter((r) => featuredIso3.has(r.iso3));
+  const others = rows.filter((r) => !featuredIso3.has(r.iso3));
+
+  const toggle = (r: TfrDecompositionRow) => {
+    onToggleFeatured?.(r.iso3);
+  };
+  const onMarkerKeyDown = (
+    e: React.KeyboardEvent,
+    r: TfrDecompositionRow,
+  ) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggle(r);
+    }
+  };
 
   return (
     <div className={cn("w-full", className)}>
@@ -389,11 +406,13 @@ export function TfrDecompositionChart({
               className="cursor-pointer transition-[r,fill-opacity]"
               tabIndex={0}
               role="button"
-              aria-label={`${r.name}: total fertility rate ${r.tfr.toFixed(2)}`}
+              aria-label={`${r.name}: total fertility rate ${r.tfr.toFixed(2)}. Click to pin label.`}
               onMouseEnter={() => setActive(r)}
               onMouseLeave={() => setActive(null)}
               onFocus={() => setActive(r)}
               onBlur={() => setActive(null)}
+              onClick={() => toggle(r)}
+              onKeyDown={(e) => onMarkerKeyDown(e, r)}
             >
               <title>{markerTitle(r)}</title>
             </circle>
@@ -412,11 +431,13 @@ export function TfrDecompositionChart({
               className="cursor-pointer"
               tabIndex={0}
               role="button"
-              aria-label={`${r.name}: total fertility rate ${r.tfr.toFixed(2)}`}
+              aria-label={`${r.name}: total fertility rate ${r.tfr.toFixed(2)}. Click to unpin label.`}
               onMouseEnter={() => setActive(r)}
               onMouseLeave={() => setActive(null)}
               onFocus={() => setActive(r)}
               onBlur={() => setActive(null)}
+              onClick={() => toggle(r)}
+              onKeyDown={(e) => onMarkerKeyDown(e, r)}
             >
               <title>{markerTitle(r)}</title>
               <circle
@@ -478,9 +499,8 @@ export function TfrDecompositionChart({
           </p>
         ) : (
           <p className="text-muted-foreground">
-            Hover or tap a point for the exact figures. Circles are every
-            other country in the dataset — flags mark the countries called
-            out below.
+            Hover for figures. Click a country — or use Add country — to pin
+            or unpin its flag.
           </p>
         )}
       </div>

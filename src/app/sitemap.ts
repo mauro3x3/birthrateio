@@ -6,6 +6,7 @@ import {
   SEO_COMPARE_PAIRS,
 } from "@/lib/country-topics";
 import { getCountryMapAtlas } from "@/lib/country-map-atlas";
+import { CENSUS_COUNTRIES } from "@/lib/sources/census-maps-data";
 
 export const revalidate = 86400;
 
@@ -48,6 +49,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
+
+  const censusRoutes = CENSUS_COUNTRIES.filter((c) => c.slug !== "uk").map(
+    (c) => ({
+      url: `${base}/demographics/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }),
+  );
 
   let countryRoutes: MetadataRoute.Sitemap = [];
   let topicCountryRoutes: MetadataRoute.Sitemap = [];
@@ -139,6 +149,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticRoutes,
     ...mapCountryRoutes,
+    ...censusRoutes,
     ...countryRoutes,
     ...topicCountryRoutes,
     ...compareRoutes,

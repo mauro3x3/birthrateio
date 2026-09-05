@@ -25,11 +25,14 @@ export function CountryMultiSelect({
   selected,
   onChange,
   max = 8,
+  colored = true,
 }: {
   options: CountryOption[];
   selected: string[];
   onChange: (slugs: string[]) => void;
   max?: number;
+  /** Series-coloured chips (compare tool). Off = plain removable pills. */
+  colored?: boolean;
 }) {
   const [open, setOpen] = React.useState(false);
   const bySlug = React.useMemo(
@@ -50,13 +53,19 @@ export function CountryMultiSelect({
         return (
           <span
             key={slug}
-            className="inline-flex items-center gap-1.5 rounded-full border py-1 pl-2 pr-1 text-sm"
-            style={{ borderColor: colorAt(i) }}
+            className={
+              colored
+                ? "inline-flex items-center gap-1.5 rounded-full border py-1 pl-2 pr-1 text-sm"
+                : "inline-flex items-center gap-1 rounded-full border border-border py-0.5 pl-1.5 pr-0.5 text-xs"
+            }
+            style={colored ? { borderColor: colorAt(i) } : undefined}
           >
-            <span
-              className="h-2 w-2 rounded-full"
-              style={{ background: colorAt(i) }}
-            />
+            {colored && (
+              <span
+                className="h-2 w-2 rounded-full"
+                style={{ background: colorAt(i) }}
+              />
+            )}
             <span>{c.flagEmoji}</span>
             {c.name}
             <button
@@ -73,7 +82,11 @@ export function CountryMultiSelect({
       {selected.length < max && (
         <Popover open={open} onOpenChange={setOpen}>
           <PopoverTrigger asChild>
-            <Button variant="outline" size="sm">
+            <Button
+              variant="outline"
+              size="sm"
+              className={colored ? undefined : "h-7 text-xs"}
+            >
               <Plus className="h-4 w-4" /> Add country
             </Button>
           </PopoverTrigger>

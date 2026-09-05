@@ -266,6 +266,10 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "Compare net migration", href: "/compare?metric=net-migration", region: "Worldwide" },
     { title: "World population", href: "/population", region: "Worldwide" },
     { title: "UK census ethnicity", href: "/demographics/uk", region: "UK" },
+    { title: "Denmark ancestry map", href: "/demographics/denmark", region: "Denmark" },
+    { title: "Germany country of birth", href: "/demographics/germany", region: "Germany" },
+    { title: "Spain country of birth", href: "/demographics/spain", region: "Spain" },
+    { title: "Russia ethnic groups", href: "/demographics/russia", region: "Russia" },
   ],
   "/mortality": [
     { title: "Japan life expectancy", href: "/mortality/japan", region: "Japan" },
