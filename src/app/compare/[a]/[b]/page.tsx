@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { PageHeader } from "@/components/page-header";
 import { CompareTool } from "@/components/compare-tool";
 import { CiteThis } from "@/components/data/cite-this";
+import { canonicalPathname } from "@/lib/canonical-path";
 import { resolveCountrySlug } from "@/lib/country-aliases";
 import {
   getAllCountries,
@@ -31,17 +32,20 @@ export async function generateMetadata({
     safe(getCountryBySlug(a), null),
     safe(getCountryBySlug(b), null),
   ]);
-  if (!ca || !cb) return { title: "Compare countries" };
+  if (!ca || !cb || ca.slug === cb.slug) {
+    return { title: "Compare countries", robots: { index: false, follow: true } };
+  }
   const title = `${ca.name} vs ${cb.name} — Demographics Compared`;
   const description = `Side-by-side comparison of fertility, population, GDP and migration for ${ca.name} and ${cb.name}. Charts and rankings from World Bank and UN data.`;
+  const path = canonicalPathname(`/compare/${ca.slug}/${cb.slug}`);
   return {
     title,
     description,
-    alternates: { canonical: `/compare/${ca.slug}/${cb.slug}` },
+    alternates: { canonical: path },
     openGraph: {
       title,
       description,
-      url: `/compare/${ca.slug}/${cb.slug}`,
+      url: path,
       type: "article",
     },
   };
@@ -53,12 +57,13 @@ export default async function ComparePairPage({
   params: Promise<{ a: string; b: string }>;
 }) {
   const { a: rawA, b: rawB } = await params;
+  const dest = canonicalPathname(`/compare/${rawA}/${rawB}`);
+  if (dest !== `/compare/${rawA}/${rawB}`) {
+    permanentRedirect(dest);
+  }
   const a = resolveCountrySlug(rawA);
   const b = resolveCountrySlug(rawB);
   if (a === b) notFound();
-  if (a !== rawA || b !== rawB) {
-    permanentRedirect(`/compare/${a}/${b}`);
-  }
 
   const [ca, cb, options] = await Promise.all([
     safe(getCountryBySlug(a), null),

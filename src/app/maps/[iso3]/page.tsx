@@ -17,7 +17,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { iso3 } = await params;
   const entry = getCountryMapEntry(iso3);
-  if (!entry) return { title: "Regional maps" };
+  if (!entry) {
+    return { title: "Regional maps", robots: { index: false, follow: true } };
+  }
   return {
     title: `${entry.country} regional map — Fertility and population`,
     description: `Interactive choropleth of ${entry.country} ${entry.kind}s: total fertility rate and, where official tables exist, population and population change.`,

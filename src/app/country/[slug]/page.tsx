@@ -91,14 +91,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const country = await safe(getCountryBySlug(slug), null);
-  if (!country) return { title: "Country not found" };
+  if (!country) {
+    return { title: "Country not found", robots: { index: false, follow: true } };
+  }
   const title = `${country.name} — Demographics, Fertility, Trade & Population`;
   const description = `Population, fertility rate, GDP, exports, imports, migration and projections for ${country.name}. Interactive charts from World Bank, UN, OECD and OEC trade data.`;
+  const path = `/country/${country.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/country/${slug}` },
-    openGraph: { title, description, url: `/country/${slug}`, type: "profile" },
+    alternates: { canonical: path },
+    openGraph: { title, description, url: path, type: "profile" },
   };
 }
 

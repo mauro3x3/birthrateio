@@ -63,14 +63,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const city = await safe(getCityBySlug(slug), null);
-  if (!city) return { title: "City not found" };
+  if (!city) {
+    return { title: "City not found", robots: { index: false, follow: true } };
+  }
   const title = `${city.name} — Population, Fertility & Demographics`;
   const description = `Historical urban population (1950–2035), growth, city fertility, neighbourhoods and demographics for ${city.name}, ${city.country.name}. Sourced from the UN and national statistical offices.`;
+  const path = `/city/${city.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/city/${slug}` },
-    openGraph: { title, description, url: `/city/${slug}` },
+    alternates: { canonical: path },
+    openGraph: { title, description, url: path },
   };
 }
 

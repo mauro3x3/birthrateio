@@ -21,7 +21,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { country: slug } = await params;
   const entry = getCensusCountry(slug);
-  if (!entry) return { title: "Census map" };
+  if (!entry) {
+    return { title: "Census map", robots: { index: false, follow: true } };
+  }
   return {
     title: `${entry.name} census map — ${entry.title}`,
     description: `Interactive choropleth of ${entry.title.toLowerCase()} in ${entry.name}, ${entry.year}. Same census-map layout as the England & Wales explorer.`,

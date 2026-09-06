@@ -1,11 +1,33 @@
+/** Live Vercel primary host — apex `birthrate.io` 308s here. */
+const PRODUCTION_ORIGIN = "https://www.birthrate.io";
+
+function normalizePublicOrigin(url: string): string {
+  try {
+    const parsed = new URL(url);
+    if (
+      parsed.hostname === "birthrate.io" ||
+      parsed.hostname === "www.birthrate.io"
+    ) {
+      return PRODUCTION_ORIGIN;
+    }
+    return parsed.origin;
+  } catch {
+    return url.replace(/\/$/, "");
+  }
+}
+
 function resolveSiteUrl(): string {
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/$/, "");
-  if (fromEnv && !fromEnv.includes("localhost")) return fromEnv;
+  if (fromEnv && !fromEnv.includes("localhost")) {
+    return normalizePublicOrigin(fromEnv);
+  }
   // Production on Vercel without the env var still must emit absolute public URLs
   // (sitemap, canonicals, JSON-LD). Never fall back to localhost there.
-  if (process.env.VERCEL_ENV === "production") return "https://birthrate.io";
+  if (process.env.VERCEL_ENV === "production") return PRODUCTION_ORIGIN;
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}`;
+    return normalizePublicOrigin(
+      `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL.replace(/\/$/, "")}`,
+    );
   }
   if (fromEnv) return fromEnv;
   return "http://localhost:3000";

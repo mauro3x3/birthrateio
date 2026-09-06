@@ -78,10 +78,14 @@ export async function generateCountryTopicMetadata(
   slug: string,
 ): Promise<Metadata> {
   const topic = COUNTRY_TOPIC_BY_ID.get(topicId);
-  if (!topic) return { title: "Not found" };
+  if (!topic) {
+    return { title: "Not found", robots: { index: false, follow: true } };
+  }
   const canonicalSlug = resolveCountrySlug(slug);
   const country = await safe(getCountryBySlug(canonicalSlug), null);
-  if (!country) return { title: "Country not found" };
+  if (!country) {
+    return { title: "Country not found", robots: { index: false, follow: true } };
+  }
 
   let primarySlug = topic.primarySlug;
   let rank = await safe(

@@ -56,14 +56,17 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const admin1 = await safe(getAdmin1BySlug(slug), null);
-  if (!admin1) return { title: "Region not found" };
+  if (!admin1) {
+    return { title: "Region not found", robots: { index: false, follow: true } };
+  }
   const title = `${admin1.name} — Population & Fertility`;
   const description = `Population and fertility statistics for ${admin1.name}, ${admin1.country.name}.`;
+  const path = `/state/${admin1.slug}`;
   return {
     title,
     description,
-    alternates: { canonical: `/state/${slug}` },
-    openGraph: { title, description, url: `/state/${slug}` },
+    alternates: { canonical: path },
+    openGraph: { title, description, url: path },
   };
 }
 
