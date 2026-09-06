@@ -18,6 +18,8 @@ export interface CountryOption {
   slug: string;
   name: string;
   flagEmoji: string | null;
+  /** Optional section heading inside the add menu. */
+  group?: string;
 }
 
 export function CountryMultiSelect({
@@ -26,6 +28,8 @@ export function CountryMultiSelect({
   onChange,
   max = 8,
   colored = true,
+  addLabel = "Add country",
+  searchPlaceholder = "Search countries…",
 }: {
   options: CountryOption[];
   selected: string[];
@@ -33,6 +37,8 @@ export function CountryMultiSelect({
   max?: number;
   /** Series-coloured chips (compare tool). Off = plain removable pills. */
   colored?: boolean;
+  addLabel?: string;
+  searchPlaceholder?: string;
 }) {
   const [open, setOpen] = React.useState(false);
   const bySlug = React.useMemo(
@@ -87,31 +93,33 @@ export function CountryMultiSelect({
               size="sm"
               className={colored ? undefined : "h-7 text-xs"}
             >
-              <Plus className="h-4 w-4" /> Add country
+              <Plus className="h-4 w-4" /> {addLabel}
             </Button>
           </PopoverTrigger>
           <PopoverContent className="w-64 p-0" align="start">
             <Command>
-              <CommandInput placeholder="Search countries…" />
+              <CommandInput placeholder={searchPlaceholder} />
               <CommandList>
-                <CommandEmpty>No country found.</CommandEmpty>
-                <CommandGroup>
-                  {options.map((o) => (
-                    <CommandItem
-                      key={o.slug}
-                      value={o.name}
-                      onSelect={() => {
-                        toggle(o.slug);
-                      }}
-                    >
-                      <span>{o.flagEmoji ?? "🏳️"}</span>
-                      <span className="flex-1">{o.name}</span>
-                      {selected.includes(o.slug) && (
-                        <Check className="h-4 w-4 text-primary" />
-                      )}
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
+                <CommandEmpty>No match.</CommandEmpty>
+                {optionGroups(options).map(([heading, items]) => (
+                  <CommandGroup key={heading} heading={heading}>
+                    {items.map((o) => (
+                      <CommandItem
+                        key={o.slug}
+                        value={`${heading} ${o.name}`}
+                        onSelect={() => {
+                          toggle(o.slug);
+                        }}
+                      >
+                        <span>{o.flagEmoji ?? "🏳️"}</span>
+                        <span className="flex-1">{o.name}</span>
+                        {selected.includes(o.slug) && (
+                          <Check className="h-4 w-4 text-primary" />
+                        )}
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                ))}
               </CommandList>
             </Command>
           </PopoverContent>
@@ -119,4 +127,15 @@ export function CountryMultiSelect({
       )}
     </div>
   );
+}
+
+function optionGroups(options: CountryOption[]): [string, CountryOption[]][] {
+  const map = new Map<string, CountryOption[]>();
+  for (const o of options) {
+    const key = o.group ?? "Countries";
+    const list = map.get(key);
+    if (list) list.push(o);
+    else map.set(key, [o]);
+  }
+  return [...map.entries()];
 }

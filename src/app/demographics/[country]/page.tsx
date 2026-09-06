@@ -11,9 +11,11 @@ export const revalidate = 86400;
 type Props = { params: Promise<{ country: string }> };
 
 export function generateStaticParams() {
-  return CENSUS_COUNTRIES.filter((c) => c.slug !== "uk").map((c) => ({
-    country: c.slug,
-  }));
+  return CENSUS_COUNTRIES.filter((c) => c.slug !== "uk" && c.slug !== "us").map(
+    (c) => ({
+      country: c.slug,
+    }),
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

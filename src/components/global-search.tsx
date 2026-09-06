@@ -59,12 +59,12 @@ const EMPTY: SearchResults = {
 };
 
 const POPULAR_TOPICS = [
-  { id: "fertility", title: "Fertility", href: "/fertility", description: "Rates, maps & rankings" },
+  { id: "maps", title: "Regional maps", href: "/maps", description: "Fertility by state & province" },
+  { id: "census", title: "Census maps", href: "/demographics", description: "Ethnicity, ancestry, race" },
+  { id: "fertility", title: "Fertility", href: "/fertility", description: "Rates, nowcasts & rankings" },
+  { id: "tfr-decomp", title: "Many mothers, or large families?", href: "/fertility/many-mothers-or-large-families", description: "TFR split in two" },
   { id: "population", title: "Population", href: "/population", description: "Levels & projections" },
-  { id: "migration", title: "Migration", href: "/migration", description: "Net flows & corridors" },
-  { id: "gdp", title: "GDP", href: "/gdp", description: "Output & living standards" },
   { id: "cities", title: "Cities", href: "/cities", description: "World metro areas" },
-  { id: "compare", title: "Compare", href: "/compare", description: "Side-by-side countries" },
 ];
 
 const POPULAR_PLACES = [

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { topicForPath } from "@/lib/site";
+import { bestNavLink, topicForPath } from "@/lib/site";
 
 /** DST-style subject trail above page titles. */
 export function TopicCrumb() {
@@ -12,9 +12,7 @@ export function TopicCrumb() {
   const topic = topicForPath(pathname);
   if (!topic) return null;
 
-  const current = topic.links.find(
-    (link) => pathname === link.href || pathname.startsWith(`${link.href}/`),
-  );
+  const current = bestNavLink(pathname, topic.links);
   if (!current) return null;
 
   return (

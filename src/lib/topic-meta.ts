@@ -45,6 +45,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Subnational fertility within countries",
       },
       {
+        title: "Census maps",
+        href: "/demographics",
+        note: "Ethnicity, ancestry, and country of birth",
+      },
+      {
         title: "Regional maps",
         href: "/maps",
         note: "Labeled choropleths from statistical offices",
@@ -123,13 +128,13 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Metro areas where migrants concentrate",
       },
       {
-        title: "UK census",
-        href: "/demographics/uk",
-        note: "Ethnic group detail for England & Wales",
+        title: "Census maps",
+        href: "/demographics",
+        note: "Ethnicity, ancestry, and country of birth",
       },
       {
         title: "US demographics",
-        href: "/demographics",
+        href: "/demographics/us",
         note: "Race and Hispanic origin by U.S. state",
       },
     ],
@@ -226,7 +231,7 @@ export const TOPIC_META: TopicMeta[] = [
       },
       {
         title: "US demographics",
-        href: "/demographics",
+        href: "/demographics/us",
         note: "Population composition by state",
       },
     ],
@@ -285,8 +290,13 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Metro-level detail",
       },
       {
-        title: "US demographics",
+        title: "Census maps",
         href: "/demographics",
+        note: "Ethnicity, ancestry, and country of birth",
+      },
+      {
+        title: "US demographics",
+        href: "/demographics/us",
         note: "Composition of U.S. states",
       },
     ],
@@ -310,9 +320,14 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Tables and interactive explorers for the same geographies",
       },
       {
-        title: "Population",
-        href: "/population",
-        note: "National population change",
+        title: "Census maps",
+        href: "/demographics",
+        note: "Ethnicity, ancestry, race, and country of birth",
+      },
+      {
+        title: "US demographics",
+        href: "/demographics/us",
+        note: "Race and Hispanic origin by U.S. state",
       },
     ],
     caveats: [
@@ -321,13 +336,18 @@ export const TOPIC_META: TopicMeta[] = [
   },
   {
     href: "/demographics",
-    title: "US demographics",
+    title: "Census maps",
     indicators: [],
     related: [
       {
+        title: "US demographics",
+        href: "/demographics/us",
+        note: "Race and Hispanic origin by U.S. state",
+      },
+      {
         title: "UK census",
         href: "/demographics/uk",
-        note: "The equivalent view for England & Wales",
+        note: "Ethnic group by local authority",
       },
       {
         title: "Denmark census",
@@ -335,14 +355,34 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Ancestry by kommune",
       },
       {
-        title: "Germany census",
-        href: "/demographics/germany",
-        note: "Country of birth by Kreis",
+        title: "Regional maps",
+        href: "/maps",
+        note: "Fertility and population by state and province",
       },
       {
-        title: "Russia census",
-        href: "/demographics/russia",
-        note: "Ethnic group by federal subject",
+        title: "Migration",
+        href: "/migration",
+        note: "Foreign-born population by country",
+      },
+    ],
+    caveats: [
+      "Each census uses its own categories — US race is not UK ethnic group, and neither is Denmark’s ancestry classification — so colours are not comparable across countries.",
+    ],
+  },
+  {
+    href: "/demographics/us",
+    title: "US demographics",
+    indicators: [],
+    related: [
+      {
+        title: "Census maps",
+        href: "/demographics",
+        note: "The same kind of map for Europe and the UK",
+      },
+      {
+        title: "UK census",
+        href: "/demographics/uk",
+        note: "Ethnic group for England & Wales",
       },
       {
         title: "States & provinces",
@@ -365,9 +405,14 @@ export const TOPIC_META: TopicMeta[] = [
     indicators: [],
     related: [
       {
-        title: "US demographics",
+        title: "Census maps",
         href: "/demographics",
-        note: "The equivalent view for U.S. states",
+        note: "All countries in this explorer",
+      },
+      {
+        title: "US demographics",
+        href: "/demographics/us",
+        note: "Race and Hispanic origin by U.S. state",
       },
       {
         title: "Denmark census",

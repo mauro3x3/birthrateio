@@ -62,13 +62,18 @@ export function SiteHeader() {
     setMobileOpen(false);
   }, [pathname]);
 
+  const mapsTopic = navTopics.find((t) => t.id === "maps");
+  const mapsOpen = Boolean(
+    mapsTopic?.links.some((l) => pathActive(pathname, l.href)),
+  );
   const topicsOpen =
     pathname.startsWith("/topics") ||
-    navTopics.some((t) =>
-      t.links.some(
-        (l) => pathname === l.href || pathname.startsWith(`${l.href}/`),
-      ),
-    );
+    (!mapsOpen &&
+      navTopics.some((t) =>
+        t.links.some(
+          (l) => pathname === l.href || pathname.startsWith(`${l.href}/`),
+        ),
+      ));
 
   return (
     <header className="site-header sticky top-0 z-40 w-full">
@@ -95,7 +100,7 @@ export function SiteHeader() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="w-[min(36rem,calc(100vw-2rem))] p-3"
+              className="w-[min(44rem,calc(100vw-2rem))] p-3"
             >
               <div className="mb-2 flex items-center justify-between gap-3 px-1">
                 <DropdownMenuLabel className="p-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -108,7 +113,7 @@ export function SiteHeader() {
                   All topics →
                 </Link>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {navTopics.map((topic) => (
                   <div key={topic.id} className="rounded-sm bg-muted/50 p-2.5">
                     <p className="mb-1.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
@@ -121,7 +126,7 @@ export function SiteHeader() {
                           <li key={link.href}>
                             <DropdownMenuItem
                               asChild
-                              className="cursor-pointer px-2 py-1.5"
+                              className="h-auto cursor-pointer items-start px-2 py-1.5"
                             >
                               <Link
                                 href={href}
@@ -136,7 +141,14 @@ export function SiteHeader() {
                                   }
                                 }}
                               >
-                                {link.title}
+                                <span>
+                                  <span className="block">{link.title}</span>
+                                  {link.description ? (
+                                    <span className="mt-0.5 line-clamp-2 block text-[11px] font-normal leading-snug text-muted-foreground">
+                                      {link.description}
+                                    </span>
+                                  ) : null}
+                                </span>
                               </Link>
                             </DropdownMenuItem>
                           </li>
@@ -163,8 +175,45 @@ export function SiteHeader() {
             </DropdownMenuContent>
           </DropdownMenu>
 
+          {mapsTopic ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={cn(
+                  "inline-flex items-center gap-1 rounded-sm px-2.5 py-2 text-[0.8125rem] font-medium outline-none transition-colors",
+                  mapsOpen ? "text-white" : "text-white/75 hover:text-white",
+                )}
+              >
+                Maps
+                <ChevronDown className="h-3.5 w-3.5 opacity-70" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-80 p-2">
+                <DropdownMenuLabel className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                  Maps &amp; census
+                </DropdownMenuLabel>
+                {mapsTopic.links.map((link) => (
+                  <DropdownMenuItem
+                    key={link.href}
+                    asChild
+                    className="h-auto cursor-pointer items-start px-2 py-2"
+                  >
+                    <Link href={link.href}>
+                      <span>
+                        <span className="block font-medium">{link.title}</span>
+                        {link.description ? (
+                          <span className="mt-0.5 block text-[11px] font-normal leading-snug text-muted-foreground">
+                            {link.description}
+                          </span>
+                        ) : null}
+                      </span>
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : null}
+
           {primaryNav
-            .filter((item) => item.title !== "Topics")
+            .filter((item) => item.title !== "Topics" && item.title !== "Maps")
             .map((item) => {
               const active = pathActive(pathname, item.href);
               return (
@@ -173,6 +222,7 @@ export function SiteHeader() {
                   href={item.href}
                   className={cn(
                     "px-2.5 py-2 text-[0.8125rem] font-medium transition-colors",
+                    item.title === "Clock" && "hidden xl:inline-flex",
                     active ? "text-white" : "text-white/75 hover:text-white",
                   )}
                 >
@@ -204,6 +254,12 @@ export function SiteHeader() {
               className="block rounded-sm px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
             >
               All topics
+            </Link>
+            <Link
+              href="/maps"
+              className="block rounded-sm px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+            >
+              Maps
             </Link>
             {navTopics.map((topic) => {
               const open = mobileTopic === topic.id;

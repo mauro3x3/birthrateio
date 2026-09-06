@@ -1,4 +1,5 @@
 import raw from "../data/tfr-decomposition.json";
+import groupsRaw from "../data/tfr-decomposition-groups.json";
 
 /**
  * Decomposes each country's total fertility rate into two multiplicative
@@ -25,13 +26,22 @@ import raw from "../data/tfr-decomposition.json";
  * Sources: Eurostat's "Fertility indicators" table (demo_find) for European
  * countries, and each country's own statistical office for the rest (US
  * CDC/NCHS, Japan MHLW, Statistics Korea, Australian Bureau of Statistics,
- * Rosstat via the HSE Institute of Demography, Israel CBS).
+ * Rosstat via the HSE Institute of Demography, Israel CBS). Within-country
+ * groups (US race and Hispanic origin) use the same identity on NCHS Tables
+ * 2–3 — published TFR × first-birth share of births of known order.
  */
 export type TfrDecompositionRow = {
+  /** Stable id for pinning on the scatter (iso3 for countries). */
+  id: string;
   iso3: string;
   iso2: string;
   slug: string;
   name: string;
+  /** Shorter chart label; defaults to name. */
+  shortLabel?: string;
+  kind: "country" | "group";
+  /** Picker section heading for within-country groups. */
+  group?: string;
   /** Year the underlying birth-order and TFR figures refer to. */
   year: number;
   /** Total fertility rate, births per woman. */
@@ -46,11 +56,35 @@ export type TfrDecompositionRow = {
   sourceUrl: string;
 };
 
-export const TFR_DECOMPOSITION: TfrDecompositionRow[] =
-  raw as TfrDecompositionRow[];
+type CountryRaw = Omit<TfrDecompositionRow, "id" | "kind" | "shortLabel" | "group">;
+
+export const TFR_DECOMPOSITION: TfrDecompositionRow[] = (
+  raw as CountryRaw[]
+).map((r) => ({
+  ...r,
+  id: r.iso3,
+  kind: "country",
+  shortLabel: r.name,
+}));
+
+export const TFR_DECOMPOSITION_GROUPS: TfrDecompositionRow[] =
+  groupsRaw as TfrDecompositionRow[];
+
+/** Countries plus within-country groups that have official TFR and birth order. */
+export const TFR_DECOMPOSITION_ALL: TfrDecompositionRow[] = [
+  ...TFR_DECOMPOSITION,
+  ...TFR_DECOMPOSITION_GROUPS,
+];
 
 export const TFR_DECOMPOSITION_BY_ISO3 = new Map(
   TFR_DECOMPOSITION.map((r) => [r.iso3, r]),
 );
 
 export const TFR_DECOMPOSITION_UPDATED = "2024–2025 (latest available per country)";
+
+export const DEFAULT_FEATURED_GROUPS: readonly string[] = [
+  "usa-hispanic",
+  "usa-nh-black",
+  "usa-nh-asian",
+  "usa-nh-nhpi",
+];

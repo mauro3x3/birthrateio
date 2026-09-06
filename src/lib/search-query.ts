@@ -78,6 +78,33 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     href: "/population",
     keywords: ["projections", "pyramid", "demography", "demographic"],
   },
+  {
+    id: "maps",
+    label: "Maps",
+    hash: "overview",
+    href: "/maps",
+    keywords: [
+      "choropleth",
+      "regional map",
+      "fertility map",
+      "census map",
+      "subnational",
+      "maps",
+    ],
+  },
+  {
+    id: "census",
+    label: "Census maps",
+    hash: "overview",
+    href: "/demographics",
+    keywords: [
+      "census",
+      "ethnicity",
+      "ethnic group",
+      "ancestry map",
+      "country of birth",
+    ],
+  },
 ];
 
 const KEYWORD_INDEX = SEARCH_TOPICS.flatMap((topic) =>

@@ -4,17 +4,17 @@ import Link from "next/link";
 import { GlobalSearch } from "@/components/global-search";
 
 const TOPICS = [
+  { title: "Maps", href: "/maps" },
+  { title: "Census maps", href: "/demographics" },
   { title: "Fertility", href: "/fertility" },
   { title: "Population", href: "/population" },
   { title: "Migration", href: "/migration" },
-  { title: "GDP", href: "/gdp" },
   { title: "Cities", href: "/cities" },
-  { title: "Compare", href: "/compare" },
 ];
 
 export function HomeHero() {
   return (
-    <section className="relative flex min-h-[calc(100dvh-3.75rem)] flex-col overflow-hidden bg-brand-navy text-white">
+    <section className="relative flex min-h-[min(36rem,calc(100dvh-3.75rem))] flex-col overflow-hidden bg-brand-navy text-white md:min-h-[min(40rem,calc(100dvh-3.75rem))]">
       <div
         className="pointer-events-none absolute inset-0 bg-[url('/hero-map.svg')] bg-[length:120%] bg-[center_40%] bg-no-repeat opacity-[0.18]"
         aria-hidden

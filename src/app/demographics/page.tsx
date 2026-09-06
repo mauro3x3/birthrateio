@@ -1,60 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TopicShell } from "@/components/topic-shell";
-import { UsDemographicsExplorer } from "@/components/us-demographics-explorer";
-import { US_DEMOGRAPHICS_META } from "@/lib/sources/us-demographics-data";
+import { CensusDirectory } from "@/components/census-directory";
 
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "US Demographics Map — Race & Hispanic Origin by State",
+  title: "Census maps — Ethnicity, ancestry, race, and country of birth",
   description:
-    "Interactive U.S. state choropleth of race and Hispanic origin shares from the Census Bureau ACS, in the style of the Census demographic data map viewer.",
+    "Interactive census choropleths: US race and Hispanic origin, UK ethnic group, Denmark ancestry, and country of birth across Europe. Same map layout for every country.",
   alternates: { canonical: "/demographics" },
 };
 
-export default function DemographicsPage() {
+export default function DemographicsHubPage() {
   return (
     <TopicShell
-      title="US demographics"
-      description={`Race and Hispanic origin by state, from the Census Bureau's American Community Survey (${US_DEMOGRAPHICS_META.year}). Click a state for its profile.`}
+      title="Census maps"
+      description="Ethnicity, ancestry, race, and country of birth from national statistical offices. Definitions are not comparable across countries — each map uses that census’s own categories."
       path="/demographics"
     >
       <section>
         <p className="text-sm text-muted-foreground">
-          Census-style maps:{" "}
-          <Link href="/demographics/uk" className="link-editorial font-medium">
-            United Kingdom
-          </Link>
-          {", "}
-          <Link href="/demographics/denmark" className="link-editorial font-medium">
-            Denmark
-          </Link>
-          {", "}
-          <Link href="/demographics/germany" className="link-editorial font-medium">
-            Germany
-          </Link>
-          {", "}
-          <Link href="/demographics/spain" className="link-editorial font-medium">
-            Spain
-          </Link>
-          {", "}
-          <Link href="/demographics/russia" className="link-editorial font-medium">
-            Russia
-          </Link>
-          {", and "}
-          <Link href="/demographics/france" className="link-editorial font-medium">
-            other European countries
+          Looking for fertility by state or province? See{" "}
+          <Link href="/maps" className="link-editorial font-medium">
+            regional maps
           </Link>
           .
         </p>
-        <div className="mt-5 space-y-4">
-          <UsDemographicsExplorer />
-          <p className="text-xs leading-relaxed text-muted-foreground">
-            Source: {US_DEMOGRAPHICS_META.source}. Hispanic origin is asked
-            separately from race; people who are Hispanic may be of any race.
-            Shares are of total resident population.
-          </p>
+        <div className="mt-5">
+          <CensusDirectory />
         </div>
       </section>
     </TopicShell>

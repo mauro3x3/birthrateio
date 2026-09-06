@@ -363,7 +363,7 @@ export function UkCensusExplorer({
               </a>
               .{" "}
               <Link
-                href="/demographics"
+                href="/demographics/us"
                 className="underline underline-offset-2 hover:text-foreground"
               >
                 US map

@@ -57,12 +57,13 @@ export const navTopics: NavTopic[] = [
     title: "People",
     href: "/topics#people",
     description:
-      "Fertility, population size, migration, mortality, and subnational demographics.",
+      "Fertility, population size, migration, mortality, and cities.",
     links: [
       {
         title: "Fertility",
         href: "/fertility",
-        description: "Total fertility rates, maps, rankings, nowcasts, and TFR by ancestry where published",
+        description:
+          "Total fertility rates, nowcasts, rankings, and TFR by ancestry where published",
       },
       {
         title: "Population",
@@ -80,44 +81,40 @@ export const navTopics: NavTopic[] = [
         description: "Death rates and longevity indicators",
       },
       {
+        title: "Cities",
+        href: "/cities",
+        description: "World metropolitan areas database",
+      },
+    ],
+  },
+  {
+    id: "maps",
+    title: "Maps",
+    href: "/topics#maps",
+    description:
+      "Regional fertility choropleths and census maps of ethnicity, ancestry, and country of birth.",
+    links: [
+      {
         title: "Regional maps",
         href: "/maps",
-        description: "Choropleth maps of TFR, population and growth by region",
+        description:
+          "TFR, population and growth by state, province and prefecture",
+      },
+      {
+        title: "Census maps",
+        href: "/demographics",
+        description:
+          "Ethnicity, ancestry, race and country of birth — UK, Denmark, Germany, Russia, the US, and Europe",
+      },
+      {
+        title: "US demographics",
+        href: "/demographics/us",
+        description: "Race and Hispanic-origin map for U.S. states",
       },
       {
         title: "States & provinces",
         href: "/states",
         description: "Subnational fertility maps and tables",
-      },
-      {
-        title: "US demographics",
-        href: "/demographics",
-        description: "Race and Hispanic-origin map for U.S. states",
-      },
-      {
-        title: "UK census",
-        href: "/demographics/uk",
-        description: "ONS Census 2021 ethnic group by LAD and MSOA",
-      },
-      {
-        title: "Denmark census",
-        href: "/demographics/denmark",
-        description: "Ancestry by kommune from Statistics Denmark",
-      },
-      {
-        title: "Germany census",
-        href: "/demographics/germany",
-        description: "Country of birth by Kreis from Census 2021",
-      },
-      {
-        title: "Russia census",
-        href: "/demographics/russia",
-        description: "Ethnic group by federal subject from the 2021 census",
-      },
-      {
-        title: "Cities",
-        href: "/cities",
-        description: "World metropolitan areas database",
       },
     ],
   },
@@ -217,6 +214,7 @@ export const referenceNav: NavLink[] = [
 /** Slim primary header links — hubs and high-traffic destinations. */
 export const primaryNav: NavLink[] = [
   { title: "Topics", href: "/topics" },
+  { title: "Maps", href: "/maps" },
   { title: "Tools", href: "/topics#tools" },
   { title: "Cities", href: "/cities" },
   { title: "Clock", href: "/clock" },
@@ -226,11 +224,28 @@ export const primaryNav: NavLink[] = [
 /** Flat list of every content page (sitemap, assistants, legacy). */
 export const mainNav: NavLink[] = navTopics.flatMap((topic) => topic.links);
 
+export function navLinkMatches(pathname: string, href: string) {
+  const base = href.includes("#") ? href.split("#")[0] : href;
+  return pathname === base || pathname.startsWith(`${base}/`);
+}
+
+export function bestNavLink(
+  pathname: string,
+  links: NavLink[],
+): NavLink | undefined {
+  return [...links]
+    .filter((link) => navLinkMatches(pathname, link.href))
+    .sort((a, b) => b.href.length - a.href.length)[0];
+}
+
 export function topicForPath(pathname: string): NavTopic | undefined {
-  return navTopics.find((topic) =>
-    topic.links.some(
-      (link) =>
-        pathname === link.href || pathname.startsWith(`${link.href}/`),
-    ),
+  const hits = navTopics.filter((topic) =>
+    topic.links.some((link) => navLinkMatches(pathname, link.href)),
   );
+  if (hits.length <= 1) return hits[0];
+  return [...hits].sort((a, b) => {
+    const aLen = bestNavLink(pathname, a.links)?.href.length ?? 0;
+    const bLen = bestNavLink(pathname, b.links)?.href.length ?? 0;
+    return bLen - aLen;
+  })[0];
 }

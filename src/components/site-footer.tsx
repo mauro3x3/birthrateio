@@ -10,12 +10,13 @@ const dataLinks = [
 
 export function SiteFooter() {
   const people = navTopics.find((t) => t.id === "people");
+  const maps = navTopics.find((t) => t.id === "maps");
   const tools = navTopics.find((t) => t.id === "tools");
   const more = navTopics.filter((t) => t.id === "society" || t.id === "economy");
 
   return (
     <footer className="border-t bg-muted/40">
-      <div className="container grid gap-8 py-10 md:grid-cols-4">
+      <div className="container grid gap-8 py-10 md:grid-cols-2 lg:grid-cols-5">
         <div className="space-y-3">
           <Link
             href="/"
@@ -49,6 +50,21 @@ export function SiteFooter() {
           </h3>
           <ul className="space-y-2 text-sm text-muted-foreground">
             {people?.links.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-foreground">
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            {maps?.title ?? "Maps"}
+          </h3>
+          <ul className="space-y-2 text-sm text-muted-foreground">
+            {maps?.links.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="hover:text-foreground">
                   {item.title}

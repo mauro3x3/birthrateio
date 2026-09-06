@@ -85,7 +85,7 @@ export default async function StatesIndexPage() {
       <section>
         <p className="text-sm text-muted-foreground">
           Looking for a U.S. race and Hispanic-origin map? See the{" "}
-          <Link href="/demographics" className="link-editorial font-medium">
+          <Link href="/demographics/us" className="link-editorial font-medium">
             US demographics map
           </Link>
           .

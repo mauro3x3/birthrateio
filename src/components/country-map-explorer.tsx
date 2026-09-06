@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { buildColorScale } from "@/lib/color-scale";
 import {
   getCountryMapAtlas,
@@ -418,6 +419,14 @@ export function CountryMapExplorer({
                 >
                   {metric.sourceByYear[activeYear]}
                 </a>
+                .{" "}
+                <Link
+                  href="/demographics"
+                  className="underline underline-offset-2 hover:text-foreground"
+                >
+                  Census maps
+                </Link>
+                .
               </p>
             )}
           </div>

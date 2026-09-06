@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { TopicsLinkGrid, TopicsSidebar } from "@/components/topics-nav";
+import { ExploreDestinationGrid } from "@/components/explore-destination-grid";
+import { FEATURED_DESTINATIONS } from "@/lib/featured-destinations";
 import { navTopics } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -29,6 +31,18 @@ export default function TopicsPage() {
                 organize their catalogues.
               </p>
             </header>
+
+            <section className="mb-12">
+              <h2 className="font-serif text-xl font-semibold text-primary">
+                Start here
+              </h2>
+              <p className="mt-1 max-w-prose text-sm text-muted-foreground">
+                The maps and charts people look for first.
+              </p>
+              <div className="mt-4">
+                <ExploreDestinationGrid items={FEATURED_DESTINATIONS} />
+              </div>
+            </section>
 
             <div className="grid gap-10 sm:grid-cols-2 xl:grid-cols-3 xl:gap-x-12 xl:gap-y-14">
               {navTopics.map((topic) => (

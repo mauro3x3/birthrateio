@@ -19,6 +19,8 @@ import { safe } from "@/lib/safe";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { TFR_ANCESTRY_PACKS } from "@/lib/sources/tfr-by-ancestry-data";
+import { ExploreDestinationGrid } from "@/components/explore-destination-grid";
+import { featuredById } from "@/lib/featured-destinations";
 
 export const revalidate = 3600;
 
@@ -99,6 +101,24 @@ export default async function FertilityPage() {
       }
     >
       <section>
+        <SectionHeading
+          id="featured-explorers"
+          title="Maps and special charts"
+          description="The fertility views that are easy to miss on this page — the TFR split, subnational maps, and census maps."
+          tocLabel="Maps & charts"
+        />
+        <div className="mt-5">
+          <ExploreDestinationGrid
+            items={[
+              featuredById("tfr-decomp")!,
+              featuredById("regional-maps")!,
+              featuredById("census-maps")!,
+            ]}
+          />
+        </div>
+      </section>
+
+      <section>
         <SectionHeading id="biggest-movers" title="Biggest movers" />
         <div className="mt-5">
           <FertilityMovers
@@ -106,28 +126,6 @@ export default async function FertilityPage() {
             increases={changes.increases}
           />
         </div>
-      </section>
-
-      <section>
-        <SectionHeading
-          id="many-mothers-or-large-families"
-          title="Many mothers, or large families?"
-          description="The same total fertility rate can mean very different things. This chart splits it into how many women become mothers, and how many children those mothers have."
-          tocLabel="TFR decomposed"
-        />
-        <Link
-          href="/fertility/many-mothers-or-large-families"
-          className="group mt-5 flex items-center justify-between gap-4 border-y border-border py-4 transition-colors hover:bg-muted/50"
-        >
-          <span className="font-serif text-base font-medium text-primary group-hover:underline">
-            Decompose the TFR: Total Maternal Rate × Children per Mother, 47
-            countries
-          </span>
-          <ArrowRight
-            className="h-4 w-4 shrink-0 text-muted-foreground"
-            aria-hidden
-          />
-        </Link>
       </section>
 
       {TFR_ANCESTRY_PACKS.length > 0 && (

@@ -41,6 +41,11 @@ const LABEL_DY: Record<string, number> = {
   JPN: 11,
   BGR: -5,
   AZE: 8,
+  "usa-hispanic": 10,
+  "usa-nh-black": -11,
+  "usa-nh-asian": 9,
+  "usa-nh-nhpi": -8,
+  "usa-nh-aian": 8,
 };
 
 function niceStep(range: number, target: number) {
@@ -88,13 +93,13 @@ function tfrColor(t: number): string {
 
 export function TfrDecompositionChart({
   rows,
-  featuredIso3,
+  featuredIds,
   onToggleFeatured,
   className,
 }: {
   rows: TfrDecompositionRow[];
-  featuredIso3: ReadonlySet<string>;
-  onToggleFeatured?: (iso3: string) => void;
+  featuredIds: ReadonlySet<string>;
+  onToggleFeatured?: (id: string) => void;
   className?: string;
 }) {
   const [active, setActive] = React.useState<TfrDecompositionRow | null>(
@@ -196,11 +201,11 @@ export function TfrDecompositionChart({
   const xTicks = ticks(xDomain[0], xDomain[1], 6);
   const yTicks = ticks(yDomain[0], yDomain[1], 6);
 
-  const featured = rows.filter((r) => featuredIso3.has(r.iso3));
-  const others = rows.filter((r) => !featuredIso3.has(r.iso3));
+  const featured = rows.filter((r) => featuredIds.has(r.id));
+  const others = rows.filter((r) => !featuredIds.has(r.id));
 
   const toggle = (r: TfrDecompositionRow) => {
-    onToggleFeatured?.(r.iso3);
+    onToggleFeatured?.(r.id);
   };
   const onMarkerKeyDown = (
     e: React.KeyboardEvent,
@@ -393,17 +398,13 @@ export function TfrDecompositionChart({
         {others.map((r) => {
           const x = px(r.cpm);
           const y = py(r.tmrPct);
+          const isActive = active?.id === r.id;
+          const isGroup = r.kind === "group";
+          const size = isActive ? 5.5 : isGroup ? 4.2 : 3.5;
           return (
-            <circle
-              key={r.iso3}
-              cx={x}
-              cy={y}
-              r={active?.iso3 === r.iso3 ? 5.5 : 3.5}
-              fill="hsl(var(--primary))"
-              fillOpacity={active?.iso3 === r.iso3 ? 0.95 : 0.55}
-              stroke="hsl(var(--background))"
-              strokeWidth={1}
-              className="cursor-pointer transition-[r,fill-opacity]"
+            <g
+              key={r.id}
+              className="cursor-pointer"
               tabIndex={0}
               role="button"
               aria-label={`${r.name}: total fertility rate ${r.tfr.toFixed(2)}. Click to pin label.`}
@@ -415,7 +416,26 @@ export function TfrDecompositionChart({
               onKeyDown={(e) => onMarkerKeyDown(e, r)}
             >
               <title>{markerTitle(r)}</title>
-            </circle>
+              {isGroup ? (
+                <polygon
+                  points={diamondPoints(x, y, size)}
+                  fill="hsl(var(--background))"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth={1.4}
+                  fillOpacity={isActive ? 1 : 0.92}
+                />
+              ) : (
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={size}
+                  fill="hsl(var(--primary))"
+                  fillOpacity={isActive ? 0.95 : 0.55}
+                  stroke="hsl(var(--background))"
+                  strokeWidth={1}
+                />
+              )}
+            </g>
           );
         })}
 
@@ -424,10 +444,11 @@ export function TfrDecompositionChart({
           const x = px(r.cpm);
           const y = py(r.tmrPct);
           const leftHalf = x < (plot.x0 + plot.x1) / 2;
-          const isActive = active?.iso3 === r.iso3;
+          const isActive = active?.id === r.id;
+          const label = r.shortLabel ?? r.name;
           return (
             <g
-              key={r.iso3}
+              key={r.id}
               className="cursor-pointer"
               tabIndex={0}
               role="button"
@@ -460,7 +481,7 @@ export function TfrDecompositionChart({
               </text>
               <text
                 x={leftHalf ? x + 14 : x - 14}
-                y={y + 3.5 + (LABEL_DY[r.iso3] ?? 0)}
+                y={y + 3.5 + (LABEL_DY[r.id] ?? 0)}
                 textAnchor={leftHalf ? "start" : "end"}
                 fontSize={11}
                 fontWeight={isActive ? 700 : 500}
@@ -469,7 +490,7 @@ export function TfrDecompositionChart({
                 stroke="hsl(var(--background))"
                 strokeWidth={3}
               >
-                {r.name}
+                {label}
               </text>
             </g>
           );
@@ -499,8 +520,8 @@ export function TfrDecompositionChart({
           </p>
         ) : (
           <p className="text-muted-foreground">
-            Hover for figures. Click a country — or use Add country — to pin
-            or unpin its flag.
+            Hover for figures. Click a point — or use Add country / Add group —
+            to pin or unpin its label. Diamonds are within-country groups.
           </p>
         )}
       </div>
@@ -510,6 +531,10 @@ export function TfrDecompositionChart({
 
 function markerTitle(r: TfrDecompositionRow): string {
   return `${r.name}: TFR ${r.tfr.toFixed(2)} = ${r.tmrPct.toFixed(1)}% mothers × ${r.cpm.toFixed(2)} children/mother (${r.year})`;
+}
+
+function diamondPoints(cx: number, cy: number, r: number): string {
+  return `${cx},${cy - r} ${cx + r},${cy} ${cx},${cy + r} ${cx - r},${cy}`;
 }
 
 function countryFlag(iso2: string): string {

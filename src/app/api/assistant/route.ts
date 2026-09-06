@@ -20,7 +20,8 @@ const SITE_MAP = `
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
 - /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
-- /demographics : US demographics map — race & Hispanic origin by state (ACS)
+- /demographics : Census maps hub — ethnicity, ancestry, race, and country of birth. Lists the US, UK, Denmark, Germany, Russia, and the rest of Europe.
+- /demographics/us : US demographics map — race & Hispanic origin by state (ACS)
 - /demographics/uk : England & Wales Census 2021 ethnic group by LAD/MSOA
 - /demographics/denmark : Denmark ancestry (Danish origin / immigrant / descendant) by kommune
 - /demographics/germany : Germany Census 2021 country of birth by Kreis
@@ -67,7 +68,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /topics /fertility /population /migration /mortality /crime /demographics /gdp /states /maps /cities /calendar /clock /contribute.
+- Explorers: /topics /fertility /population /migration /mortality /crime /demographics /demographics/us /gdp /states /maps /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {
