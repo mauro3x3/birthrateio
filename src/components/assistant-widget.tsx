@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Loader2, Send, Sparkles, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -27,12 +28,28 @@ const STARTERS = [
   "Project Italy if fertility falls to 1.2",
 ];
 
+/** Full-viewport choropleths: the launcher sits on the legend. */
+function hideOnFullscreenMap(pathname: string) {
+  if (pathname === "/maps" || pathname.startsWith("/maps/")) return true;
+  if (pathname === "/states") return true;
+  if (pathname.startsWith("/demographics/") && pathname !== "/demographics") {
+    return true;
+  }
+  return false;
+}
+
 export function AssistantWidget() {
+  const pathname = usePathname();
+  const hidden = hideOnFullscreenMap(pathname);
   const [open, setOpen] = React.useState(false);
   const [input, setInput] = React.useState("");
   const [loading, setLoading] = React.useState(false);
   const [messages, setMessages] = React.useState<Msg[]>([]);
   const scrollRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (hidden) setOpen(false);
+  }, [hidden]);
 
   React.useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight });
@@ -87,6 +104,8 @@ export function AssistantWidget() {
       setLoading(false);
     }
   }
+
+  if (hidden) return null;
 
   return (
     <>

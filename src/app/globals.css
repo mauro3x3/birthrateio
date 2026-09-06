@@ -255,6 +255,26 @@
   padding: 8px 10px;
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.22);
 }
+.leaflet-marker-icon.br-map-value {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.br-map-value-text {
+  display: block;
+  transform: translate(-50%, -50%);
+  color: #111111;
+  font-size: 11px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  -webkit-text-stroke: 3px #fff;
+  paint-order: stroke fill;
+  text-shadow: 0 0 2px #fff, 0 1px 0 #fff;
+}
 .br-map-tip {
   display: flex;
   flex-direction: column;

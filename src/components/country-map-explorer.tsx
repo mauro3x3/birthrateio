@@ -37,6 +37,7 @@ export function CountryMapExplorer({
   const [metricId, setMetricId] = React.useState<MapMetricId>("tfr");
   const [year, setYear] = React.useState<number | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
+  const [showValues, setShowValues] = React.useState(false);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
 
   React.useEffect(() => {
@@ -181,6 +182,8 @@ export function CountryMapExplorer({
               revision={`${country.iso3}-${metric?.id}-${activeYear}-${panelOpen ? "p" : "f"}`}
               oceanColor="#9aa8b5"
               variant="light"
+              adaptiveStroke
+              showLabels={showValues}
             />
           ) : (
             <div className="flex h-full items-center justify-center text-sm text-black/40">
@@ -337,6 +340,29 @@ export function CountryMapExplorer({
                 </select>
               </div>
             )}
+
+            <div>
+              <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                Labels
+              </p>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={showValues}
+                onClick={() => setShowValues((v) => !v)}
+                className={cn(
+                  "mt-1.5 flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                  showValues
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-input bg-background text-muted-foreground hover:text-foreground",
+                )}
+              >
+                <span>Values on map</span>
+                <span className="text-[10px] uppercase tracking-[0.14em]">
+                  {showValues ? "On" : "Off"}
+                </span>
+              </button>
+            </div>
 
             {country.note && (
               <p className="text-[13px] leading-relaxed text-muted-foreground">

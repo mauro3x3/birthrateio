@@ -43,7 +43,7 @@ const ADMIN1_GEO: Record<string, string> = {
   USA: "/geo/admin1-usa.json",
   DEU: "/geo/admin1-deu.json",
   IND: "/geo/admin1-ind.json",
-  CHN: "/geo/admin1-chn.json",
+  CHN: "/geo/admin1-chn.json?v=seal",
   RUS: "/geo/admin1-rus.json",
 };
 
@@ -341,7 +341,9 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
       iso3,
       country: first.country,
       kind: first.kind,
-      geoUrl: first.geoUrl || ADMIN1_GEO[iso3] || "",
+      // Prefer the full admin-1 layer when we have one. Catalog TFR geos are
+      // aggressively simplified and leave holes (Beijing/Tianjin inside Hebei).
+      geoUrl: ADMIN1_GEO[iso3] || first.geoUrl || "",
       hrefPrefix: ADMIN1_GEO[iso3] ? "/state" : null,
       metrics,
     });

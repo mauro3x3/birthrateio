@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { MapContainer, GeoJSON, ZoomControl, useMap } from "react-leaflet";
+import { MapContainer, GeoJSON, Marker, ZoomControl, useMap } from "react-leaflet";
 import L from "leaflet";
 import type { Layer, PathOptions } from "leaflet";
 import type { Feature, FeatureCollection, GeoJsonObject } from "geojson";
@@ -11,7 +11,7 @@ import {
   countryBorderStyle,
   countryHoverBorder,
 } from "@/lib/map-path-style";
-import { cn } from "@/lib/utils";
+import { cn, formatCompact } from "@/lib/utils";
 
 export type RegionChoroplethDatum = {
   id: string;
@@ -139,6 +139,196 @@ function collectLngLats(geo: GeoJsonObject): [number, number][] {
   const g = geo as { coordinates?: unknown };
   if (g.coordinates) walk(g.coordinates);
   return out;
+}
+
+function ringArea(ring: number[][]): number {
+  let a = 0;
+  for (let i = 0, n = ring.length; i < n; i++) {
+    const [x1, y1] = ring[i];
+    const [x2, y2] = ring[(i + 1) % n];
+    a += x1 * y2 - x2 * y1;
+  }
+  return Math.abs(a) / 2;
+}
+
+/** Approximate polygon area so small enclaves (Beijing, DC) draw on top. */
+function featureArea(feature: Feature): number {
+  const g = feature.geometry as { type?: string; coordinates?: unknown } | null;
+  if (!g?.coordinates) return 0;
+  const coords = g.coordinates as number[][][] | number[][][][];
+  if (g.type === "Polygon") {
+    const ring = coords[0] as number[][];
+    return ring ? ringArea(ring) : 0;
+  }
+  if (g.type === "MultiPolygon") {
+    return (coords as number[][][][]).reduce(
+      (sum, poly) => sum + (poly[0] ? ringArea(poly[0] as number[][]) : 0),
+      0,
+    );
+  }
+  return 0;
+}
+
+function sortSmallestLast(features: Feature[]): Feature[] {
+  return [...features].sort((a, b) => featureArea(b) - featureArea(a));
+}
+
+function largestRing(feature: Feature): number[][] | null {
+  const g = feature.geometry as { type?: string; coordinates?: unknown } | null;
+  if (!g?.coordinates) return null;
+  if (g.type === "Polygon") {
+    const ring = (g.coordinates as number[][][])[0];
+    return ring?.length ? ring : null;
+  }
+  if (g.type === "MultiPolygon") {
+    let best: number[][] | null = null;
+    let bestA = -1;
+    for (const poly of g.coordinates as number[][][][]) {
+      const ring = poly[0];
+      if (!ring) continue;
+      const a = ringArea(ring);
+      if (a > bestA) {
+        bestA = a;
+        best = ring;
+      }
+    }
+    return best;
+  }
+  return null;
+}
+
+function pointInRing(lng: number, lat: number, ring: number[][]): boolean {
+  let inside = false;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const xi = ring[i][0];
+    const yi = ring[i][1];
+    const xj = ring[j][0];
+    const yj = ring[j][1];
+    const intersect =
+      yi > lat !== yj > lat &&
+      lng < ((xj - xi) * (lat - yi)) / (yj - yi + 1e-12) + xi;
+    if (intersect) inside = !inside;
+  }
+  return inside;
+}
+
+function ringCentroidLngLat(ring: number[][]): [number, number] {
+  let x = 0;
+  let y = 0;
+  let a = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const cross = ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1];
+    a += cross;
+    x += (ring[j][0] + ring[i][0]) * cross;
+    y += (ring[j][1] + ring[i][1]) * cross;
+  }
+  if (Math.abs(a) < 1e-12) {
+    const n = ring.length || 1;
+    return [
+      ring.reduce((s, p) => s + p[0], 0) / n,
+      ring.reduce((s, p) => s + p[1], 0) / n,
+    ];
+  }
+  return [x / (3 * a), y / (3 * a)];
+}
+
+/** Point inside the largest polygon part — centroid, or a nearby interior sample. */
+function labelLngLat(feature: Feature): [number, number] | null {
+  const ring = largestRing(feature);
+  if (!ring || ring.length < 3) return null;
+  const [cx, cy] = ringCentroidLngLat(ring);
+  if (pointInRing(cx, cy, ring)) return [cx, cy];
+  let minx = Infinity;
+  let miny = Infinity;
+  let maxx = -Infinity;
+  let maxy = -Infinity;
+  for (const [x, y] of ring) {
+    minx = Math.min(minx, x);
+    maxx = Math.max(maxx, x);
+    miny = Math.min(miny, y);
+    maxy = Math.max(maxy, y);
+  }
+  let best: [number, number] | null = null;
+  let bestD = Infinity;
+  const n = 16;
+  for (let i = 1; i < n; i++) {
+    for (let j = 1; j < n; j++) {
+      const x = minx + ((maxx - minx) * i) / n;
+      const y = miny + ((maxy - miny) * j) / n;
+      if (!pointInRing(x, y, ring)) continue;
+      const d = (x - cx) ** 2 + (y - cy) ** 2;
+      if (d < bestD) {
+        bestD = d;
+        best = [x, y];
+      }
+    }
+  }
+  return best;
+}
+
+function mapLabelText(
+  value: number,
+  formatValue?: (value: number) => string,
+): string {
+  if (Math.abs(value) >= 10_000) return formatCompact(value);
+  return formatValue
+    ? formatValue(value)
+    : value.toLocaleString("en-US", { maximumFractionDigits: 2 });
+}
+
+function ValueLabels({
+  geo,
+  byId,
+  featureId,
+  formatValue,
+}: {
+  geo: FeatureCollection;
+  byId: Map<string, RegionChoroplethDatum>;
+  featureId: (feature?: Feature) => string | undefined;
+  formatValue?: (value: number) => string;
+}) {
+  const items = React.useMemo(() => {
+    const out: {
+      id: string;
+      lat: number;
+      lng: number;
+      html: string;
+    }[] = [];
+    for (const feature of geo.features) {
+      const id = featureId(feature);
+      const datum = id ? byId.get(id) : undefined;
+      if (!id || !datum) continue;
+      const pt = labelLngLat(feature);
+      if (!pt) continue;
+      const text = mapLabelText(datum.value, formatValue);
+      out.push({
+        id,
+        lng: pt[0],
+        lat: pt[1],
+        html: `<span class="br-map-value-text">${text}</span>`,
+      });
+    }
+    return out;
+  }, [byId, featureId, formatValue, geo.features]);
+
+  return (
+    <>
+      {items.map((item) => (
+        <Marker
+          key={item.id}
+          position={[item.lat, item.lng]}
+          interactive={false}
+          keyboard={false}
+          icon={L.divIcon({
+            className: "br-map-value",
+            html: item.html,
+            iconSize: [0, 0],
+            iconAnchor: [0, 0],
+          })}
+        />
+      ))}
+    </>
+  );
 }
 
 function shiftNegativeLngs(coords: unknown): unknown {
@@ -285,6 +475,7 @@ export function RegionChoroplethMap({
   preferCanvas = false,
   oceanColor,
   className,
+  showLabels = false,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
@@ -314,6 +505,8 @@ export function RegionChoroplethMap({
   /** Override stage / ocean background. */
   oceanColor?: string;
   className?: string;
+  /** Paint values on each region so they can be read without hovering. */
+  showLabels?: boolean;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
@@ -345,21 +538,24 @@ export function RegionChoroplethMap({
   }, [filterIds]);
 
   const displayGeo = React.useMemo(() => {
-    if (!geo || !filterSet) return geo;
+    if (!geo) return geo;
     const fc = geo as FeatureCollection;
     if (!Array.isArray(fc.features)) return geo;
+    const filtered = filterSet
+      ? fc.features.filter((f) => {
+          const p = (f.properties ?? {}) as Record<string, unknown>;
+          const id =
+            (typeof p.code === "string" && p.code) ||
+            (typeof p.id === "string" && p.id) ||
+            (typeof p.MSOA21CD === "string" && p.MSOA21CD) ||
+            (typeof p.LAD22CD === "string" && p.LAD22CD) ||
+            (f.id != null ? String(f.id) : "");
+          return id ? filterSet.has(id) : false;
+        })
+      : fc.features;
     return {
       type: "FeatureCollection",
-      features: fc.features.filter((f) => {
-        const p = (f.properties ?? {}) as Record<string, unknown>;
-        const id =
-          (typeof p.code === "string" && p.code) ||
-          (typeof p.id === "string" && p.id) ||
-          (typeof p.MSOA21CD === "string" && p.MSOA21CD) ||
-          (typeof p.LAD22CD === "string" && p.LAD22CD) ||
-          (f.id != null ? String(f.id) : "");
-        return id ? filterSet.has(id) : false;
-      }),
+      features: sortSmallestLast(filtered),
     } as FeatureCollection;
   }, [geo, filterSet]);
 
@@ -409,6 +605,7 @@ export function RegionChoroplethMap({
       return {
         fillColor,
         fillOpacity: 1,
+        fillRule: "nonzero",
         ...border,
         // Dense layers: start with fill-matched stroke to seal SVG gaps;
         // AdaptiveStrokeSync then tunes seams by zoom.
@@ -540,6 +737,14 @@ export function RegionChoroplethMap({
             style={style}
             onEachFeature={onEach}
           />
+          {showLabels ? (
+            <ValueLabels
+              geo={displayGeo as FeatureCollection}
+              byId={byId}
+              featureId={featureId}
+              formatValue={formatValue}
+            />
+          ) : null}
         </MapContainer>
       ) : (
         <div

@@ -218,15 +218,59 @@ def simplify_coords(coords, max_pts: int = 80):
     if isinstance(coords[0], (int, float)):
         return coords
     if isinstance(coords[0][0], (int, float)):
-        n = len(coords)
-        if n <= max_pts:
-            return coords
-        step = max(1, math.floor(n / max_pts))
-        out = coords[::step]
-        if out[-1] != coords[-1]:
-            out.append(coords[-1])
-        return out
+        return rdp_to_max(coords, max_pts)
     return [simplify_coords(c, max_pts) for c in coords]
+
+
+def _perp_dist(p, a, b) -> float:
+    ax, ay = a
+    bx, by = b
+    px, py = p
+    dx, dy = bx - ax, by - ay
+    if dx == 0 and dy == 0:
+        return ((px - ax) ** 2 + (py - ay) ** 2) ** 0.5
+    t = max(0.0, min(1.0, ((px - ax) * dx + (py - ay) * dy) / (dx * dx + dy * dy)))
+    qx, qy = ax + t * dx, ay + t * dy
+    return ((px - qx) ** 2 + (py - qy) ** 2) ** 0.5
+
+
+def rdp(points: list, eps: float) -> list:
+    if len(points) < 3:
+        return points
+    a, b = points[0], points[-1]
+    idx, dist = 0, 0.0
+    for i in range(1, len(points) - 1):
+        d = _perp_dist(points[i], a, b)
+        if d > dist:
+            idx, dist = i, d
+    if dist <= eps:
+        return [a, b]
+    left = rdp(points[: idx + 1], eps)
+    right = rdp(points[idx:], eps)
+    return left[:-1] + right
+
+
+def rdp_to_max(ring: list, max_pts: int) -> list:
+    if not ring:
+        return ring
+    closed = ring[0] == ring[-1]
+    pts = [list(p[:2]) for p in (ring[:-1] if closed and len(ring) > 1 else ring)]
+    if len(pts) <= max_pts:
+        return ring
+    lo, hi = 0.0, 5.0
+    best = pts
+    for _ in range(18):
+        mid = (lo + hi) / 2
+        out = rdp(pts + [pts[0]], mid)
+        body = out[:-1] if out[0] == out[-1] and len(out) > 1 else out
+        if len(body) > max_pts:
+            lo = mid
+        else:
+            best = body
+            hi = mid
+    if closed:
+        return best + [best[0]]
+    return best
 
 
 def polygon_area(rings) -> float:
@@ -259,9 +303,107 @@ def keep_mainlands(geom: dict, max_polys: int = 4) -> dict:
     return geom
 
 
+def scale_ring(ring: list, factor: float = 1.12) -> list:
+    """Expand a ring from its centroid so it covers slivers around enclaves."""
+    if not ring:
+        return ring
+    body = ring[:-1] if ring[0] == ring[-1] and len(ring) > 1 else list(ring)
+    cx = sum(p[0] for p in body) / len(body)
+    cy = sum(p[1] for p in body) / len(body)
+    out = [[cx + (p[0] - cx) * factor, cy + (p[1] - cy) * factor] for p in body]
+    out.append(out[0])
+    return out
+
+
+def outer_ring(geom: dict):
+    coords = geom.get("coordinates")
+    if not coords:
+        return None
+    if geom.get("type") == "Polygon":
+        return coords[0]
+    if geom.get("type") == "MultiPolygon":
+        ranked = sorted(coords, key=polygon_area, reverse=True)
+        return ranked[0][0] if ranked and ranked[0] else None
+    return None
+
+
+def close_enclave_gaps(features: list, pairs: list[tuple[str, str]]) -> None:
+    """Fill parent C-shape gaps by adding a slightly enlarged child ring."""
+    by_slug = {}
+    for feat in features:
+        slug = (feat.get("properties") or {}).get("slug")
+        if slug:
+            by_slug[slug] = feat
+    extras: dict[str, list] = {}
+    for parent_slug, child_slug in pairs:
+        parent = by_slug.get(parent_slug)
+        child = by_slug.get(child_slug)
+        if not parent or not child:
+            continue
+        ring = outer_ring(child.get("geometry") or {})
+        if not ring:
+            continue
+        extras.setdefault(parent_slug, []).append([scale_ring(ring, 1.16)])
+    for parent_slug, parts in extras.items():
+        geom = by_slug[parent_slug]["geometry"]
+        gtype = geom.get("type")
+        coords = geom.get("coordinates")
+        if gtype == "Polygon":
+            merged = [[coords[0]]] + parts
+        elif gtype == "MultiPolygon":
+            merged = list(coords) + parts
+        else:
+            continue
+        by_slug[parent_slug]["geometry"] = {
+            "type": "MultiPolygon",
+            "coordinates": merged,
+        }
+
+
+CHINA_ENCLAVES = [
+    ("china-hebei", "china-beijing"),
+    ("china-hebei", "china-tianjin"),
+]
+
+
+def seal_internal_gaps(features: list[dict], buffer_deg: float = 0.04) -> None:
+    """Overlap neighbours so SVG anti-alias cracks don't show the ocean.
+
+    Each polygon is expanded, then clipped to the hole-filled national outline
+    so the coastline doesn't grow. Requires shapely at rebuild time.
+    """
+    from shapely.geometry import Polygon, mapping, shape
+    from shapely.ops import unary_union
+    from shapely.validation import make_valid
+
+    geoms = [make_valid(shape(feat["geometry"])) for feat in features]
+
+    def fill_holes(geom):
+        if geom.geom_type == "Polygon":
+            return Polygon(geom.exterior)
+        if geom.geom_type == "MultiPolygon":
+            return unary_union([Polygon(p.exterior) for p in geom.geoms])
+        return geom
+
+    outline = fill_holes(make_valid(unary_union(geoms)))
+    for feat, geom in zip(features, geoms):
+        expanded = geom.buffer(
+            buffer_deg, join_style=1, mitre_limit=2.5, quad_segs=8
+        )
+        clipped = expanded.intersection(outline)
+        if clipped.is_empty or clipped.area < geom.area * 0.5:
+            continue
+        clipped = make_valid(clipped)
+        # Drop buffer jitter so the file stays downloadable.
+        simplified = clipped.simplify(min(buffer_deg / 12, 0.002), preserve_topology=True)
+        if simplified.is_empty or simplified.area < geom.area * 0.5:
+            simplified = clipped
+        feat["geometry"] = json.loads(json.dumps(mapping(make_valid(simplified))))
+
+
 def simplify_feature(feat: dict, max_pts: int = 60) -> dict:
     geom = feat.get("geometry") or {}
-    geom = keep_mainlands(geom)
+    geom = keep_mainlands(geom, max_polys=8 if max_pts >= 200 else 4)
     coords = geom.get("coordinates")
     if coords is None:
         return feat
@@ -280,7 +422,18 @@ def write_geo(map_id: str, features: list[dict]) -> str:
     rel = f"/geo/maps/{map_id}.json"
     path = ROOT / "public" / rel.lstrip("/")
     path.parent.mkdir(parents=True, exist_ok=True)
-    fc = {"type": "FeatureCollection", "features": [simplify_feature(f) for f in features]}
+    max_pts = 220 if map_id.startswith("chn") else 60
+    china = map_id.startswith("chn")
+    if china:
+        close_enclave_gaps(features, CHINA_ENCLAVES)
+    out = [simplify_feature(f, max_pts=max_pts) for f in features]
+    if china:
+        # Seal after simplify so independently-reduced borders still overlap.
+        try:
+            seal_internal_gaps(out, buffer_deg=0.06)
+        except ImportError:
+            print("shapely not installed; china map gaps not sealed")
+    fc = {"type": "FeatureCollection", "features": out}
     path.write_text(json.dumps(fc, separators=(",", ":")), encoding="utf-8")
     return rel
 
