@@ -54,3 +54,58 @@ export function countryHoverBorder(
     fillOpacity: 1,
   };
 }
+
+/** Shift-click selection — reads against fill-matched adaptive strokes. */
+export function countrySelectedBorder(
+  kind: "cinema" | "light" = "cinema",
+): Pick<
+  PathOptions,
+  "stroke" | "weight" | "color" | "opacity" | "lineJoin" | "lineCap"
+> {
+  if (kind === "cinema") {
+    return {
+      stroke: true,
+      weight: 2.2,
+      color: "rgba(255, 255, 255, 0.92)",
+      opacity: 1,
+      lineJoin: "round",
+      lineCap: "round",
+    };
+  }
+  return {
+    stroke: true,
+    weight: 2.25,
+    color: "rgba(18, 28, 38, 0.82)",
+    opacity: 1,
+    lineJoin: "round",
+    lineCap: "round",
+  };
+}
+
+/** Outer ring of a dissolved selection — one path, so neighbours keep a clean edge. */
+export function countrySelectionOutline(
+  kind: "cinema" | "light" = "cinema",
+): PathOptions {
+  if (kind === "cinema") {
+    return {
+      stroke: true,
+      fill: true,
+      fillOpacity: 0,
+      weight: 1.6,
+      color: "rgba(255, 255, 255, 0.9)",
+      opacity: 1,
+      lineJoin: "round",
+      lineCap: "round",
+    };
+  }
+  return {
+    stroke: true,
+    fill: true,
+    fillOpacity: 0,
+    weight: 1.65,
+    color: "rgba(18, 28, 38, 0.78)",
+    opacity: 1,
+    lineJoin: "round",
+    lineCap: "round",
+  };
+}

@@ -259,9 +259,15 @@
   background: none !important;
   border: none !important;
   box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
 }
 .br-map-value-text {
-  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: max-content;
   transform: translate(-50%, -50%);
   color: #111111;
   font-size: 11px;
@@ -274,6 +280,12 @@
   -webkit-text-stroke: 3px #fff;
   paint-order: stroke fill;
   text-shadow: 0 0 2px #fff, 0 1px 0 #fff;
+}
+.br-map-blob-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: 4px #fff;
 }
 .br-map-tip {
   display: flex;

@@ -40,7 +40,7 @@ export type CountryMapEntry = {
 };
 
 const ADMIN1_GEO: Record<string, string> = {
-  USA: "/geo/admin1-usa.json",
+  USA: "/geo/admin1-usa.json?v=census20m2",
   DEU: "/geo/admin1-deu.json",
   IND: "/geo/admin1-ind.json",
   CHN: "/geo/admin1-chn.json?v=seal",

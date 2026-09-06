@@ -3,14 +3,16 @@
 import * as React from "react";
 import { MapContainer, GeoJSON, Marker, ZoomControl, useMap } from "react-leaflet";
 import L from "leaflet";
-import type { Layer, PathOptions } from "leaflet";
+import type { Layer, LeafletMouseEvent, PathOptions } from "leaflet";
 import type { Feature, FeatureCollection, GeoJsonObject } from "geojson";
 import { useRouter } from "next/navigation";
 import {
   MAP_OCEAN,
   countryBorderStyle,
   countryHoverBorder,
+  countrySelectionOutline,
 } from "@/lib/map-path-style";
+import { unionFeatures } from "@/lib/geo-union";
 import { cn, formatCompact } from "@/lib/utils";
 
 export type RegionChoroplethDatum = {
@@ -18,6 +20,10 @@ export type RegionChoroplethDatum = {
   slug: string;
   name: string;
   value: number;
+};
+
+export type RegionActivateEvent = {
+  shiftKey: boolean;
 };
 
 function FitUsaContiguous() {
@@ -38,10 +44,12 @@ function AdaptiveStrokeSync({
   layerRef,
   cinema,
   enabled,
+  baseStyle,
 }: {
   layerRef: React.MutableRefObject<L.GeoJSON | null>;
   cinema: boolean;
   enabled: boolean;
+  baseStyle: (feature?: Feature) => PathOptions;
 }) {
   const map = useMap();
 
@@ -55,6 +63,7 @@ function AdaptiveStrokeSync({
         options: PathOptions;
       };
       if (!path.setStyle) return;
+      if (path.feature) path.setStyle(baseStyle(path.feature));
       const fill =
         typeof path.options.fillColor === "string" && path.options.fillColor
           ? path.options.fillColor
@@ -96,7 +105,7 @@ function AdaptiveStrokeSync({
         lineCap: "round",
       });
     });
-  }, [cinema, enabled, layerRef, map]);
+  }, [baseStyle, cinema, enabled, layerRef, map]);
 
   React.useEffect(() => {
     if (!enabled) return;
@@ -173,15 +182,15 @@ function sortSmallestLast(features: Feature[]): Feature[] {
   return [...features].sort((a, b) => featureArea(b) - featureArea(a));
 }
 
-function largestRing(feature: Feature): number[][] | null {
+function largestPolygon(feature: Feature): number[][][] | null {
   const g = feature.geometry as { type?: string; coordinates?: unknown } | null;
   if (!g?.coordinates) return null;
   if (g.type === "Polygon") {
-    const ring = (g.coordinates as number[][][])[0];
-    return ring?.length ? ring : null;
+    const poly = g.coordinates as number[][][];
+    return poly?.[0]?.length ? poly : null;
   }
   if (g.type === "MultiPolygon") {
-    let best: number[][] | null = null;
+    let best: number[][][] | null = null;
     let bestA = -1;
     for (const poly of g.coordinates as number[][][][]) {
       const ring = poly[0];
@@ -189,12 +198,20 @@ function largestRing(feature: Feature): number[][] | null {
       const a = ringArea(ring);
       if (a > bestA) {
         bestA = a;
-        best = ring;
+        best = poly;
       }
     }
     return best;
   }
   return null;
+}
+
+function pointInPolygon(lng: number, lat: number, poly: number[][][]): boolean {
+  if (!pointInRing(lng, lat, poly[0])) return false;
+  for (let i = 1; i < poly.length; i++) {
+    if (pointInRing(lng, lat, poly[i])) return false;
+  }
+  return true;
 }
 
 function pointInRing(lng: number, lat: number, ring: number[][]): boolean {
@@ -212,32 +229,50 @@ function pointInRing(lng: number, lat: number, ring: number[][]): boolean {
   return inside;
 }
 
-function ringCentroidLngLat(ring: number[][]): [number, number] {
-  let x = 0;
-  let y = 0;
-  let a = 0;
-  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
-    const cross = ring[j][0] * ring[i][1] - ring[i][0] * ring[j][1];
-    a += cross;
-    x += (ring[j][0] + ring[i][0]) * cross;
-    y += (ring[j][1] + ring[i][1]) * cross;
-  }
-  if (Math.abs(a) < 1e-12) {
-    const n = ring.length || 1;
-    return [
-      ring.reduce((s, p) => s + p[0], 0) / n,
-      ring.reduce((s, p) => s + p[1], 0) / n,
-    ];
-  }
-  return [x / (3 * a), y / (3 * a)];
+function distToSegmentM(
+  px: number,
+  py: number,
+  ax: number,
+  ay: number,
+  bx: number,
+  by: number,
+): number {
+  const dx = bx - ax;
+  const dy = by - ay;
+  const len2 = dx * dx + dy * dy;
+  const t =
+    len2 === 0
+      ? 0
+      : Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / len2));
+  const x = ax + t * dx;
+  const y = ay + t * dy;
+  const k = Math.cos((py * Math.PI) / 180);
+  const dlng = (px - x) * k;
+  const dlat = py - y;
+  return Math.hypot(dlng, dlat);
 }
 
-/** Point inside the largest polygon part — centroid, or a nearby interior sample. */
+function minDistToRings(lng: number, lat: number, rings: number[][][]): number {
+  let min = Infinity;
+  for (const ring of rings) {
+    for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+      min = Math.min(
+        min,
+        distToSegmentM(lng, lat, ring[j][0], ring[j][1], ring[i][0], ring[i][1]),
+      );
+    }
+  }
+  return min;
+}
+
+/**
+ * Label anchor: geographic middle of the bbox when that point is on land,
+ * otherwise the interior point farthest from the coast (Florida, Michigan, etc.).
+ */
 function labelLngLat(feature: Feature): [number, number] | null {
-  const ring = largestRing(feature);
-  if (!ring || ring.length < 3) return null;
-  const [cx, cy] = ringCentroidLngLat(ring);
-  if (pointInRing(cx, cy, ring)) return [cx, cy];
+  const poly = largestPolygon(feature);
+  const ring = poly?.[0];
+  if (!poly || !ring || ring.length < 3) return null;
   let minx = Infinity;
   let miny = Infinity;
   let maxx = -Infinity;
@@ -248,22 +283,40 @@ function labelLngLat(feature: Feature): [number, number] | null {
     miny = Math.min(miny, y);
     maxy = Math.max(maxy, y);
   }
-  let best: [number, number] | null = null;
-  let bestD = Infinity;
-  const n = 16;
-  for (let i = 1; i < n; i++) {
-    for (let j = 1; j < n; j++) {
-      const x = minx + ((maxx - minx) * i) / n;
-      const y = miny + ((maxy - miny) * j) / n;
-      if (!pointInRing(x, y, ring)) continue;
-      const d = (x - cx) ** 2 + (y - cy) ** 2;
-      if (d < bestD) {
-        bestD = d;
-        best = [x, y];
+  const cx = (minx + maxx) / 2;
+  const cy = (miny + maxy) / 2;
+  if (pointInPolygon(cx, cy, poly)) return [cx, cy];
+
+  const sample = (
+    x0: number,
+    x1: number,
+    y0: number,
+    y1: number,
+    n: number,
+  ): { pt: [number, number]; d: number } | null => {
+    let best: [number, number] | null = null;
+    let bestD = -1;
+    for (let i = 1; i < n; i++) {
+      for (let j = 1; j < n; j++) {
+        const x = x0 + ((x1 - x0) * i) / n;
+        const y = y0 + ((y1 - y0) * j) / n;
+        if (!pointInPolygon(x, y, poly)) continue;
+        const d = minDistToRings(x, y, poly);
+        if (d > bestD) {
+          bestD = d;
+          best = [x, y];
+        }
       }
     }
-  }
-  return best;
+    return best ? { pt: best, d: bestD } : null;
+  };
+  const coarse = sample(minx, maxx, miny, maxy, 28);
+  if (!coarse) return null;
+  const [bx, by] = coarse.pt;
+  const dx = (maxx - minx) / 28;
+  const dy = (maxy - miny) / 28;
+  const fine = sample(bx - dx, bx + dx, by - dy, by + dy, 10);
+  return fine && fine.d >= coarse.d ? fine.pt : coarse.pt;
 }
 
 function mapLabelText(
@@ -281,11 +334,13 @@ function ValueLabels({
   byId,
   featureId,
   formatValue,
+  hideIds,
 }: {
   geo: FeatureCollection;
   byId: Map<string, RegionChoroplethDatum>;
   featureId: (feature?: Feature) => string | undefined;
   formatValue?: (value: number) => string;
+  hideIds?: Set<string>;
 }) {
   const items = React.useMemo(() => {
     const out: {
@@ -298,6 +353,7 @@ function ValueLabels({
       const id = featureId(feature);
       const datum = id ? byId.get(id) : undefined;
       if (!id || !datum) continue;
+      if (hideIds?.has(id)) continue;
       const pt = labelLngLat(feature);
       if (!pt) continue;
       const text = mapLabelText(datum.value, formatValue);
@@ -309,7 +365,7 @@ function ValueLabels({
       });
     }
     return out;
-  }, [byId, featureId, formatValue, geo.features]);
+  }, [byId, featureId, formatValue, geo.features, hideIds]);
 
   return (
     <>
@@ -327,6 +383,78 @@ function ValueLabels({
           })}
         />
       ))}
+    </>
+  );
+}
+
+function SelectionOverlay({
+  geo,
+  selectedIds,
+  featureId,
+  combine,
+  fillColor,
+  cinema,
+  labelText,
+}: {
+  geo: FeatureCollection;
+  selectedIds: Set<string>;
+  featureId: (feature?: Feature) => string | undefined;
+  combine: boolean;
+  fillColor?: string;
+  cinema: boolean;
+  labelText?: string | null;
+}) {
+  const union = React.useMemo(() => {
+    if (selectedIds.size === 0) return null;
+    const feats = geo.features.filter((f) => {
+      const id = featureId(f);
+      return Boolean(id && selectedIds.has(id));
+    });
+    return unionFeatures(feats);
+  }, [featureId, geo.features, selectedIds]);
+
+  const style = React.useMemo((): PathOptions => {
+    const outline = countrySelectionOutline(cinema ? "cinema" : "light");
+    if (combine && fillColor) {
+      return {
+        ...outline,
+        fillColor,
+        fillOpacity: 1,
+      };
+    }
+    return outline;
+  }, [cinema, combine, fillColor]);
+
+  const labelPt = React.useMemo(
+    () => (combine && union ? labelLngLat(union) : null),
+    [combine, union],
+  );
+
+  if (!union) return null;
+  const selectKey = [...selectedIds].sort().join(",");
+
+  return (
+    <>
+      <GeoJSON
+        key={`${selectKey}-${combine ? "blob" : "ring"}`}
+        data={union}
+        style={style}
+        interactive={false}
+      />
+      {labelPt && labelText ? (
+        <Marker
+          key={`blob-${selectKey}`}
+          position={[labelPt[1], labelPt[0]]}
+          interactive={false}
+          keyboard={false}
+          icon={L.divIcon({
+            className: "br-map-value",
+            html: `<span class="br-map-value-text br-map-blob-text">${labelText}</span>`,
+            iconSize: [0, 0],
+            iconAnchor: [0, 0],
+          })}
+        />
+      ) : null}
     </>
   );
 }
@@ -476,6 +604,10 @@ export function RegionChoroplethMap({
   oceanColor,
   className,
   showLabels = false,
+  selectedIds,
+  onRegionActivate,
+  combineSelection = false,
+  selectedValue = null,
 }: {
   geoUrl: string;
   data: RegionChoroplethDatum[];
@@ -507,6 +639,17 @@ export function RegionChoroplethMap({
   className?: string;
   /** Paint values on each region so they can be read without hovering. */
   showLabels?: boolean;
+  /** Region ids currently in a shift-click selection. */
+  selectedIds?: string[];
+  /** Shift-click to select; plain click to navigate (parent can override). */
+  onRegionActivate?: (
+    datum: RegionChoroplethDatum,
+    event: RegionActivateEvent,
+  ) => void;
+  /** Dissolve the selection into one filled area (social-share “blob”). */
+  combineSelection?: boolean;
+  /** Aggregate value for the combined blob fill + label. */
+  selectedValue?: number | null;
 }) {
   const router = useRouter();
   const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
@@ -593,22 +736,32 @@ export function RegionChoroplethMap({
     return undefined;
   }, []);
 
+  const selectedSet = React.useMemo(
+    () => new Set(selectedIds ?? []),
+    [selectedIds],
+  );
+  const blobMode = combineSelection && selectedSet.size > 0;
+  const blobFill =
+    blobMode && selectedValue != null ? colorFor(selectedValue) : undefined;
+
   const style = React.useCallback(
     (feature?: Feature): PathOptions => {
       const id = featureId(feature);
       const datum = id ? byId.get(id) : undefined;
-      const fillColor = datum
-        ? colorFor(datum.value)
-        : cinema
-          ? "#161616"
-          : "rgba(120, 130, 145, 0.22)";
+      const selected = Boolean(id && selectedSet.has(id));
+      const fillColor =
+        blobMode && selected && blobFill
+          ? blobFill
+          : datum
+            ? colorFor(datum.value)
+            : cinema
+              ? "#161616"
+              : "rgba(120, 130, 145, 0.22)";
       return {
         fillColor,
-        fillOpacity: 1,
+        fillOpacity: blobMode && !selected ? 0.34 : 1,
         fillRule: "nonzero",
         ...border,
-        // Dense layers: start with fill-matched stroke to seal SVG gaps;
-        // AdaptiveStrokeSync then tunes seams by zoom.
         ...(adaptiveStroke
           ? {
               stroke: true,
@@ -621,7 +774,17 @@ export function RegionChoroplethMap({
           : null),
       };
     },
-    [adaptiveStroke, byId, border, cinema, colorFor, featureId],
+    [
+      adaptiveStroke,
+      blobFill,
+      blobMode,
+      byId,
+      border,
+      cinema,
+      colorFor,
+      featureId,
+      selectedSet,
+    ],
   );
 
   const onEach = React.useCallback(
@@ -646,6 +809,8 @@ export function RegionChoroplethMap({
       );
       layer.on({
         mouseover: (e) => {
+          const hid = featureId(feature);
+          if (blobMode && hid && selectedSet.has(hid)) return;
           const t = e.target as {
             setStyle: (s: PathOptions) => void;
             bringToFront?: () => void;
@@ -659,16 +824,23 @@ export function RegionChoroplethMap({
             _map?: L.Map;
           };
           t.setStyle(style(feature));
-          // Re-apply zoom-based seam weight after hover resets style.
           t._map?.fire("br:restyle-borders");
         },
-        click: () => {
-          if (!navigate || !datum?.slug) return;
+        click: (e: LeafletMouseEvent) => {
+          const shiftKey = Boolean(e.originalEvent?.shiftKey);
+          if (shiftKey) e.originalEvent.preventDefault();
+          if (!datum) return;
+          if (onRegionActivate) {
+            onRegionActivate(datum, { shiftKey });
+            return;
+          }
+          if (shiftKey || !navigate || !datum.slug) return;
           router.push(`${hrefPrefix}/${datum.slug}`);
         },
       });
     },
     [
+      blobMode,
       byId,
       cinema,
       decimals,
@@ -676,7 +848,9 @@ export function RegionChoroplethMap({
       formatValue,
       hrefPrefix,
       navigate,
+      onRegionActivate,
       router,
+      selectedSet,
       style,
       unit,
     ],
@@ -689,7 +863,7 @@ export function RegionChoroplethMap({
   return (
     <div
       className={cn(
-        "relative overflow-hidden",
+        "relative overflow-hidden select-none",
         cinema
           ? "rounded-none border-0 bg-black"
           : "rounded-none border border-border bg-card",
@@ -705,6 +879,7 @@ export function RegionChoroplethMap({
           zoomSnap={0.25}
           minZoom={1}
           maxZoom={Math.max(12, Math.ceil(fitMaxZoom + 2))}
+          boxZoom={false}
           scrollWheelZoom
           zoomControl={false}
           preferCanvas={false}
@@ -726,6 +901,7 @@ export function RegionChoroplethMap({
             layerRef={geoJsonRef}
             cinema={cinema}
             enabled={adaptiveStroke}
+            baseStyle={style}
           />
           <ZoomControl position="bottomright" />
           <GeoJSON
@@ -737,12 +913,28 @@ export function RegionChoroplethMap({
             style={style}
             onEachFeature={onEach}
           />
+          {selectedSet.size > 0 && displayGeo ? (
+            <SelectionOverlay
+              geo={displayGeo as FeatureCollection}
+              selectedIds={selectedSet}
+              featureId={featureId}
+              combine={blobMode}
+              fillColor={blobFill}
+              cinema={cinema}
+              labelText={
+                blobMode && selectedValue != null
+                  ? mapLabelText(selectedValue, formatValue)
+                  : null
+              }
+            />
+          ) : null}
           {showLabels ? (
             <ValueLabels
               geo={displayGeo as FeatureCollection}
               byId={byId}
               featureId={featureId}
               formatValue={formatValue}
+              hideIds={blobMode ? selectedSet : undefined}
             />
           ) : null}
         </MapContainer>

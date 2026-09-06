@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { buildColorScale } from "@/lib/color-scale";
 import {
   getCountryMapAtlas,
@@ -38,11 +39,26 @@ export function CountryMapExplorer({
   const [year, setYear] = React.useState<number | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
   const [showValues, setShowValues] = React.useState(false);
+  const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
+  const [combineSelection, setCombineSelection] = React.useState(true);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
+  const router = useRouter();
 
   React.useEffect(() => {
     setIso3(initialIso3.toUpperCase());
   }, [initialIso3]);
+
+  React.useEffect(() => {
+    setSelectedIds([]);
+  }, [iso3]);
+
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedIds([]);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -136,6 +152,42 @@ export function CountryMapExplorer({
     [metric],
   );
 
+  const selectedRegions = React.useMemo(() => {
+    if (selectedIds.length === 0) return [];
+    const by = new Map(regions.map((r) => [r.id, r]));
+    return selectedIds
+      .map((id) => by.get(id))
+      .filter((r): r is NonNullable<typeof r> => r != null && r.value != null);
+  }, [regions, selectedIds]);
+
+  const additiveMetric = metric?.id === "population";
+  const selectedAggregate = React.useMemo(() => {
+    if (selectedRegions.length === 0) return null;
+    const vals = selectedRegions.map((r) => r.value as number);
+    if (additiveMetric) return vals.reduce((a, b) => a + b, 0);
+    return vals.reduce((a, b) => a + b, 0) / vals.length;
+  }, [additiveMetric, selectedRegions]);
+
+  const onRegionActivate = React.useCallback(
+    (
+      datum: { id: string; slug: string; name: string; value: number },
+      event: { shiftKey: boolean },
+    ) => {
+      if (event.shiftKey) {
+        setSelectedIds((prev) =>
+          prev.includes(datum.id)
+            ? prev.filter((id) => id !== datum.id)
+            : [...prev, datum.id],
+        );
+        return;
+      }
+      if (country.hrefPrefix && datum.slug) {
+        router.push(`${country.hrefPrefix}/${datum.slug}`);
+      }
+    },
+    [country.hrefPrefix, router],
+  );
+
   const national =
     metric && activeYear != null
       ? metric.nationalByYear[activeYear]
@@ -169,7 +221,7 @@ export function CountryMapExplorer({
               decimals={metric?.decimals ?? 2}
               height="100%"
               className="h-full border-0 bg-[#9aa8b5]"
-              fit="bounds"
+              fit={country.iso3 === "USA" ? "usa" : "bounds"}
               fitMaxZoom={country.iso3 === "RUS" ? 3.6 : 5.5}
               fitPaddingTopLeft={fitPaddingTopLeft}
               fitPaddingBottomRight={[40, 8]}
@@ -184,6 +236,10 @@ export function CountryMapExplorer({
               variant="light"
               adaptiveStroke
               showLabels={showValues}
+              selectedIds={selectedIds}
+              onRegionActivate={onRegionActivate}
+              combineSelection={combineSelection}
+              selectedValue={selectedAggregate}
             />
           ) : (
             <div className="flex h-full items-center justify-center text-sm text-black/40">
@@ -362,7 +418,67 @@ export function CountryMapExplorer({
                   {showValues ? "On" : "Off"}
                 </span>
               </button>
+              <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+                Shift-click regions on the map to add them up.
+              </p>
             </div>
+
+            {selectedRegions.length > 0 && selectedAggregate != null && (
+              <div className="border-t border-border pt-4">
+                <div className="flex items-start justify-between gap-2">
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                    Selection
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => setSelectedIds([])}
+                    className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <p className="mt-1.5 text-3xl font-semibold tabular-nums tracking-tight">
+                  {formatValue(selectedAggregate)}
+                </p>
+                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  {additiveMetric ? "Sum" : "Average"} of{" "}
+                  {selectedRegions.length} selected
+                </p>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={combineSelection}
+                  onClick={() => setCombineSelection((v) => !v)}
+                  className={cn(
+                    "mt-2.5 flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                    combineSelection
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-input bg-background text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  <span>One area on map</span>
+                  <span className="text-[10px] uppercase tracking-[0.14em]">
+                    {combineSelection ? "On" : "Off"}
+                  </span>
+                </button>
+                <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+                  Merges the selection into a single shape for screenshots.
+                </p>
+                <ul className="mt-2 text-[13px]">
+                  {selectedRegions.map((r) => (
+                    <li
+                      key={r.id}
+                      className="flex items-baseline justify-between gap-2 border-t border-border/70 py-1.5"
+                    >
+                      <span className="min-w-0 truncate">{r.name}</span>
+                      <span className="shrink-0 tabular-nums text-primary">
+                        {formatValue(r.value!)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {country.note && (
               <p className="text-[13px] leading-relaxed text-muted-foreground">
@@ -458,13 +574,35 @@ export function CountryMapExplorer({
           </div>
         </aside>
       ) : (
-        <button
-          type="button"
-          onClick={() => setPanelOpen(true)}
-          className="absolute left-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md"
-        >
-          Show panel
-        </button>
+        <>
+          <button
+            type="button"
+            onClick={() => setPanelOpen(true)}
+            className="absolute left-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md"
+          >
+            Show panel
+          </button>
+          {selectedRegions.length > 0 && selectedAggregate != null ? (
+            <div className="absolute left-3 top-12 z-[1100] w-[min(100%-1.5rem,18rem)] rounded-sm border border-black/10 bg-white/95 px-3 py-2.5 shadow-md">
+              <div className="flex items-start justify-between gap-2">
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  {additiveMetric ? "Sum" : "Average"} · {selectedRegions.length}{" "}
+                  selected
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSelectedIds([])}
+                  className="text-[10px] uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground"
+                >
+                  Clear
+                </button>
+              </div>
+              <p className="mt-1 text-xl font-semibold tabular-nums tracking-tight">
+                {formatValue(selectedAggregate)}
+              </p>
+            </div>
+          ) : null}
+        </>
       )}
     </div>
   );
