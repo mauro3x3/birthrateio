@@ -11,6 +11,8 @@ import { PostHogProvider } from "@/components/posthog-provider";
 import { PostHogPageView } from "@/components/posthog-pageview";
 import { siteConfig } from "@/lib/site";
 
+const ADSENSE_CLIENT = "ca-pub-6123691867563576";
+
 const sans = Open_Sans({
   subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
@@ -80,6 +82,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+      <head>
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${sans.className} font-sans antialiased`}>
         <PostHogProvider>
           <Suspense fallback={null}>
