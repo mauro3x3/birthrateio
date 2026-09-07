@@ -35,6 +35,19 @@ function FitUsaContiguous() {
   return null;
 }
 
+/** Blob overlay sits above state fills so hover/bringToFront cannot punch holes. */
+const SELECTION_PANE = "br-selection";
+
+function SelectionPane() {
+  const map = useMap();
+  if (!map.getPane(SELECTION_PANE)) {
+    const pane = map.createPane(SELECTION_PANE);
+    pane.style.zIndex = "450";
+    pane.style.pointerEvents = "none";
+  }
+  return null;
+}
+
 /**
  * Thin / hide contrasting polygon seams when zoomed out so dense areas
  * (London MSOAs) don’t wash out. Always keep a fill-matched stroke so
@@ -456,6 +469,7 @@ function SelectionOverlay({
         data={union}
         style={style}
         interactive={false}
+        pane={SELECTION_PANE}
       />
       {labelPt && labelText ? (
         <Marker
@@ -803,6 +817,22 @@ export function RegionChoroplethMap({
     ],
   );
 
+  const styleRef = React.useRef(style);
+  const blobModeRef = React.useRef(blobMode);
+  const selectedSetRef = React.useRef(selectedSet);
+  styleRef.current = style;
+  blobModeRef.current = blobMode;
+  selectedSetRef.current = selectedSet;
+
+  React.useEffect(() => {
+    const layer = geoJsonRef.current;
+    if (!layer) return;
+    layer.eachLayer((l) => {
+      const path = l as L.Path & { feature?: Feature };
+      if (path.feature && path.setStyle) path.setStyle(style(path.feature));
+    });
+  }, [style]);
+
   const onEach = React.useCallback(
     (feature: Feature, layer: Layer) => {
       const id = featureId(feature);
@@ -826,20 +856,22 @@ export function RegionChoroplethMap({
       layer.on({
         mouseover: (e) => {
           const hid = featureId(feature);
-          if (blobMode && hid && selectedSet.has(hid)) return;
+          if (blobModeRef.current && hid && selectedSetRef.current.has(hid)) {
+            return;
+          }
           const t = e.target as {
             setStyle: (s: PathOptions) => void;
             bringToFront?: () => void;
           };
           t.setStyle(countryHoverBorder(cinema ? "cinema" : "light"));
-          t.bringToFront?.();
+          if (!blobModeRef.current) t.bringToFront?.();
         },
         mouseout: (e) => {
           const t = e.target as {
             setStyle: (s: PathOptions) => void;
             _map?: L.Map;
           };
-          t.setStyle(style(feature));
+          t.setStyle(styleRef.current(feature));
           t._map?.fire("br:restyle-borders");
         },
         click: (e: LeafletMouseEvent) => {
@@ -856,7 +888,6 @@ export function RegionChoroplethMap({
       });
     },
     [
-      blobMode,
       byId,
       cinema,
       decimals,
@@ -866,8 +897,6 @@ export function RegionChoroplethMap({
       navigate,
       onRegionActivate,
       router,
-      selectedSet,
-      style,
       unit,
     ],
   );
@@ -913,6 +942,7 @@ export function RegionChoroplethMap({
               paddingBottomRight={fitPaddingBottomRight}
             />
           )}
+          <SelectionPane />
           <AdaptiveStrokeSync
             layerRef={geoJsonRef}
             cinema={cinema}
