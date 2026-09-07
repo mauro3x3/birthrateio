@@ -8,8 +8,10 @@ export interface ScaleStop {
 // Sequential — soft slate→ink (editorial, not default Blues).
 const SEQUENTIAL: ScaleStop[] = [
   { t: 0, color: [236, 232, 224] },
-  { t: 0.18, color: [210, 208, 198] },
-  { t: 0.35, color: [160, 172, 178] },
+  { t: 0.18, color: [204, 200, 188] },
+  // Keep this darker than atlas water (#c4d3e0) so Great Lakes states don’t
+  // dissolve into the ocean (Ohio, Michigan, Indiana on population maps).
+  { t: 0.35, color: [148, 156, 158] },
   { t: 0.52, color: [100, 130, 148] },
   { t: 0.7, color: [55, 95, 120] },
   { t: 0.86, color: [28, 62, 88] },

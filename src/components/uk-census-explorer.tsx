@@ -16,6 +16,7 @@ import {
   type UkGeographyLevel,
   type UkMsoaFile,
 } from "@/lib/sources/uk-census-data";
+import { MAP_OCEAN } from "@/lib/map-path-style";
 import { formatNumber, cn } from "@/lib/utils";
 
 const RegionChoroplethMap = dynamic(
@@ -143,7 +144,10 @@ export function UkCensusExplorer({
   );
 
   return (
-    <div className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden bg-[#9aa8b5] text-foreground">
+    <div
+      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      style={{ background: MAP_OCEAN.atlas }}
+    >
       {/* Full-bleed map — light ONS-style stage */}
       <div className="absolute inset-0">
         <RegionChoroplethMap
@@ -153,7 +157,7 @@ export function UkCensusExplorer({
           unit="%"
           decimals={1}
           height="100%"
-          className="h-full border-0 bg-[#9aa8b5]"
+          className="h-full border-0"
           fit="bounds"
           fitMaxZoom={fitMaxZoom}
           fitPaddingTopLeft={fitPaddingTopLeft}
@@ -165,7 +169,7 @@ export function UkCensusExplorer({
           revision={`${level}-${groupId}-${ladCode ?? "ew"}-${panelOpen ? "p" : "f"}`}
           filterIds={filterIds}
           adaptiveStroke={level === "msoa"}
-          oceanColor="#9aa8b5"
+          oceanColor={MAP_OCEAN.atlas}
           variant="light"
         />
       </div>

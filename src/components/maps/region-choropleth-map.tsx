@@ -40,6 +40,22 @@ function FitUsaContiguous() {
  * (London MSOAs) don’t wash out. Always keep a fill-matched stroke so
  * anti-aliased gaps don’t show the ocean as a black/white spiderweb.
  */
+function parseCssRgb(color: string): [number, number, number] | null {
+  const rgb = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+  if (rgb) return [Number(rgb[1]), Number(rgb[2]), Number(rgb[3])];
+  const hex = color.trim().match(/^#([0-9a-f]{6})$/i);
+  if (!hex) return null;
+  const n = parseInt(hex[1], 16);
+  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+function darkenCssColor(color: string, amount = 0.16): string {
+  const rgb = parseCssRgb(color);
+  if (!rgb) return color;
+  const d = (c: number) => Math.max(0, Math.round(c * (1 - amount)));
+  return `rgb(${d(rgb[0])}, ${d(rgb[1])}, ${d(rgb[2])})`;
+}
+
 function AdaptiveStrokeSync({
   layerRef,
   cinema,
@@ -78,7 +94,7 @@ function AdaptiveStrokeSync({
           stroke: true,
           weight: 2.75,
           opacity: 1,
-          color: fill,
+          color: cinema ? fill : darkenCssColor(fill, 0.28),
           lineJoin: "round",
           lineCap: "round",
         });
@@ -759,7 +775,7 @@ export function RegionChoroplethMap({
               : "rgba(120, 130, 145, 0.22)";
       return {
         fillColor,
-        fillOpacity: blobMode && !selected ? 0.34 : 1,
+        fillOpacity: blobMode && !selected ? 0.78 : 1,
         fillRule: "nonzero",
         ...border,
         ...(adaptiveStroke
@@ -869,7 +885,7 @@ export function RegionChoroplethMap({
           : "rounded-none border border-border bg-card",
         className,
       )}
-      style={{ height }}
+      style={{ height, background: ocean }}
     >
       {displayGeo ? (
         <MapContainer

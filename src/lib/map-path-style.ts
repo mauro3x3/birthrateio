@@ -5,6 +5,8 @@ export const MAP_OCEAN = {
   cinema: "#0a0a0a",
   light: "#e8eee8",
   soft: "hsl(40 22% 94%)",
+  /** Atlas water — lighter/bluer than sequential land greys so coasts read. */
+  atlas: "#c4d3e0",
 } as const;
 
 /**
@@ -30,8 +32,8 @@ export function countryBorderStyle(
   // (Census-style), not dark fences.
   return {
     stroke: true,
-    color: "rgba(255, 255, 255, 0.9)",
-    weight: 0.85,
+    color: "rgba(255, 255, 255, 0.95)",
+    weight: 1.15,
     opacity: 1,
     lineJoin: "round",
     lineCap: "round",

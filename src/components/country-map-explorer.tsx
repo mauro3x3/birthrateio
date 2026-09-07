@@ -10,6 +10,7 @@ import {
   type CountryMapMetric,
   type MapMetricId,
 } from "@/lib/country-map-atlas";
+import { MAP_OCEAN } from "@/lib/map-path-style";
 import { formatNumber, cn } from "@/lib/utils";
 
 type MapComponent = typeof import("@/components/maps/region-choropleth-map").RegionChoroplethMap;
@@ -208,7 +209,10 @@ export function CountryMapExplorer({
   };
 
   return (
-    <div className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden bg-[#9aa8b5] text-foreground">
+    <div
+      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      style={{ background: MAP_OCEAN.atlas }}
+    >
       {country.geoUrl && mapData.length > 0 ? (
         <div className="absolute inset-0">
           {MapView ? (
@@ -220,7 +224,7 @@ export function CountryMapExplorer({
               unit={metric?.unit ?? ""}
               decimals={metric?.decimals ?? 2}
               height="100%"
-              className="h-full border-0 bg-[#9aa8b5]"
+              className="h-full border-0"
               fit={country.iso3 === "USA" ? "usa" : "bounds"}
               fitMaxZoom={country.iso3 === "RUS" ? 3.6 : 5.5}
               fitPaddingTopLeft={fitPaddingTopLeft}
@@ -232,9 +236,9 @@ export function CountryMapExplorer({
               legendPlacement="bottom-right"
               formatValue={formatValue}
               revision={`${country.iso3}-${metric?.id}-${activeYear}-${panelOpen ? "p" : "f"}`}
-              oceanColor="#9aa8b5"
+              oceanColor={MAP_OCEAN.atlas}
               variant="light"
-              adaptiveStroke
+              adaptiveStroke={country.iso3 !== "USA"}
               showLabels={showValues}
               selectedIds={selectedIds}
               onRegionActivate={onRegionActivate}

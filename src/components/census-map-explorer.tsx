@@ -18,6 +18,7 @@ import {
   ukPctClassColor,
   ukPctLegendFromBreaks,
 } from "@/lib/sources/uk-census-data";
+import { MAP_OCEAN } from "@/lib/map-path-style";
 import { formatNumber, cn } from "@/lib/utils";
 
 const RegionChoroplethMap = dynamic(
@@ -28,7 +29,10 @@ const RegionChoroplethMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-full min-h-[24rem] items-center justify-center bg-[#9aa8b5] text-sm text-black/40">
+      <div
+        className="flex h-full min-h-[24rem] items-center justify-center text-sm text-black/40"
+        style={{ background: MAP_OCEAN.atlas }}
+      >
         Loading map…
       </div>
     ),
@@ -215,7 +219,10 @@ export function CensusMapExplorer({
     !(file && file.areas.msoa);
 
   return (
-    <div className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden bg-[#9aa8b5] text-foreground">
+    <div
+      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      style={{ background: MAP_OCEAN.atlas }}
+    >
       <div className="absolute inset-0">
         {level && mapData.length > 0 ? (
           <RegionChoroplethMap
@@ -225,7 +232,7 @@ export function CensusMapExplorer({
             unit="%"
             decimals={1}
             height="100%"
-            className="h-full border-0 bg-[#9aa8b5]"
+            className="h-full border-0"
             fit="bounds"
             fitMaxZoom={fitMaxZoom}
             fitPaddingTopLeft={fitPaddingTopLeft}
@@ -237,7 +244,7 @@ export function CensusMapExplorer({
             revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${panelOpen ? "p" : "f"}`}
             filterIds={filterIds}
             adaptiveStroke={areas.length > 80}
-            oceanColor="#9aa8b5"
+            oceanColor={MAP_OCEAN.atlas}
             variant="light"
           />
         ) : (
