@@ -27,6 +27,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { Slider } from "@/components/ui/slider";
 import { colorAt } from "@/components/charts/palette";
 import { cn, formatByUnit } from "@/lib/utils";
+import { HISTORIC_FERTILITY_SOURCE } from "@/components/historic-fertility-note";
 
 const METRICS = [
   { slug: "fertility-rate", label: "Fertility Rate" },
@@ -229,7 +230,13 @@ export function CompareTool({
               ? `Overlay ${windowStart}–${windowEnd}. Drag the handles to stretch the dates.`
               : "Overlay time series for the selected countries."
         }
-        source="World Bank"
+        source={
+          metric === "fertility-rate" && span != null && span.min < 1960
+            ? HISTORIC_FERTILITY_SOURCE
+            : metric === "life-expectancy" && span != null && span.min < 1960
+              ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
+              : "World Bank"
+        }
         csvRows={visibleRows}
         csvName={
           windowStart != null && windowEnd != null

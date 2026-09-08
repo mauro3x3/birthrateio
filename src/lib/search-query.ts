@@ -34,7 +34,7 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     label: "Population",
     hash: "overview",
     href: "/population",
-    keywords: ["population", "pop growth"],
+    keywords: ["population", "pop growth", "where the births", "birth shares"],
   },
   {
     id: "migration",

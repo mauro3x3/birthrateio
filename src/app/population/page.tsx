@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { TopicShell } from "@/components/topic-shell";
 import { SectionHeading } from "@/components/section-heading";
 import { ExplorerTable } from "@/components/explorer-table";
@@ -120,6 +121,20 @@ export default async function PopulationPage() {
         />
       }
     >
+      <section>
+        <SectionHeading id="where-births-are" title="Where the births are" />
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          Which countries make up a region’s people, and which make up its
+          babies. A younger country can account for more of the births than of
+          the residents.
+        </p>
+        <p className="mt-3">
+          <Link href="/population/shares" className="link-editorial font-medium">
+            Africa, Europe, Oceania, and the rest
+          </Link>
+        </p>
+      </section>
+
       <section>
         <SectionHeading id="growth-calculator" title="Growth calculator" />
         <div className="mt-5">

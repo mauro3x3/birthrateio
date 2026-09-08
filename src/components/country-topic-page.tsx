@@ -33,6 +33,10 @@ import { safe } from "@/lib/safe";
 import { relatedInsightsForCountryTopic } from "@/lib/search-insights";
 import { siteConfig } from "@/lib/site";
 import { formatByUnit, formatCompact, formatNumber } from "@/lib/utils";
+import {
+  HistoricFertilityNote,
+  HISTORIC_FERTILITY_SOURCE,
+} from "@/components/historic-fertility-note";
 
 function formatLeadValue(
   value: number,
@@ -292,8 +296,11 @@ export async function CountryTopicPage({
     isBasedOn: "https://data.worldbank.org/",
   };
 
-  const sourceName =
-    primaryInd?.source === "WORLD_BANK"
+  const historicFertility =
+    topicId === "fertility" && first != null && first.year < 1960;
+  const sourceName = historicFertility
+    ? HISTORIC_FERTILITY_SOURCE
+    : primaryInd?.source === "WORLD_BANK"
       ? "World Bank"
       : primaryInd?.source === "OWID"
         ? "Our World in Data"
@@ -399,6 +406,7 @@ export async function CountryTopicPage({
               <TimeSeriesChart
                 data={primarySeries}
                 decimals={decimals}
+                height={historicFertility ? 360 : 280}
                 unit={
                   topic.unit.includes("%")
                     ? "%"
@@ -406,7 +414,11 @@ export async function CountryTopicPage({
                       ? undefined
                       : undefined
                 }
-                color="hsl(211 62% 45%)"
+                color={
+                  topicId === "fertility"
+                    ? "hsl(340 82% 52%)"
+                    : "hsl(211 62% 45%)"
+                }
                 referenceY={
                   topicId === "fertility"
                     ? 2.1
@@ -423,6 +435,10 @@ export async function CountryTopicPage({
                 }
               />
             </ChartCard>
+          )}
+
+          {historicFertility && (
+            <HistoricFertilityNote className="text-xs leading-relaxed text-muted-foreground" />
           )}
 
           {/* Population-specific SSR blocks */}

@@ -62,8 +62,10 @@ const POPULAR_TOPICS = [
   { id: "maps", title: "Regional maps", href: "/maps", description: "Fertility by state & province" },
   { id: "census", title: "Census maps", href: "/demographics", description: "Ethnicity, ancestry, race" },
   { id: "fertility", title: "Fertility", href: "/fertility", description: "Rates, nowcasts & rankings" },
+  { id: "tfr-history", title: "Fertility since 1800", href: "/fertility#since-1800", description: "Long-run TFR for most countries" },
   { id: "tfr-decomp", title: "Many mothers, or large families?", href: "/fertility/many-mothers-or-large-families", description: "TFR split in two" },
   { id: "population", title: "Population", href: "/population", description: "Levels & projections" },
+  { id: "birth-shares", title: "Where the births are", href: "/population/shares", description: "Regional people vs births" },
   { id: "cities", title: "Cities", href: "/cities", description: "World metro areas" },
 ];
 

@@ -15,6 +15,10 @@ import { ChartCard } from "@/components/charts/chart-card";
 import { ChartBrandProvider } from "@/components/charts/chart-brand";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { WhyTfrDeclining } from "@/components/why-tfr-declining";
+import {
+  HistoricFertilityNote,
+  HISTORIC_FERTILITY_SOURCE,
+} from "@/components/historic-fertility-note";
 import { TfrAncestryChart } from "@/components/tfr-ancestry-chart";
 import { getTfrAncestryPack } from "@/lib/sources/tfr-by-ancestry-data";
 import { getCountryMapEntry } from "@/lib/country-map-atlas";
@@ -283,7 +287,7 @@ export default async function CountryPage({
   const fertilityStart = fertility.length ? fertility[0].year : null;
   const fertilitySource =
     fertilityStart != null && fertilityStart < 1960
-      ? "HFD / UN WPP / Gapminder (pre-1960) · World Bank (from 1960)"
+      ? HISTORIC_FERTILITY_SOURCE
       : "World Bank";
 
   // Build projection overlay rows keyed by year.
@@ -674,6 +678,7 @@ export default async function CountryPage({
             <TimeSeriesChart
               data={fertility}
               decimals={2}
+              height={fertilityStart != null && fertilityStart < 1960 ? 360 : 280}
               referenceY={2.1}
               referenceLabel="Replacement"
               color="hsl(340 82% 52%)"
@@ -681,33 +686,7 @@ export default async function CountryPage({
           </ChartCard>
 
           {fertilityStart != null && fertilityStart < 1960 && (
-            <p className="lg:col-span-2 text-xs leading-relaxed text-muted-foreground">
-              Pre-1960 fertility blends three sources, best available first:
-              the{" "}
-              <Link
-                href="https://www.humanfertility.org"
-                className="underline underline-offset-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Human Fertility Database
-              </Link>{" "}
-              (official birth-registration reconstructions, coverage starting
-              anywhere from 1891 to 1950 depending on the country), UN World
-              Population Prospects for 1950–1959, and{" "}
-              <Link
-                href="https://www.gapminder.org/data/documentation/gd008/"
-                className="underline underline-offset-2"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Gapminder
-              </Link>
-              &apos;s historic estimate for earlier gaps. It is a period rate
-              — a snapshot of that year&apos;s age-specific birth rates — not
-              the number of children women born in a given year went on to
-              have. From 1960, birthrate.io switches to World Bank WDI.
-            </p>
+            <HistoricFertilityNote className="lg:col-span-2 text-xs leading-relaxed text-muted-foreground" />
           )}
 
           {ancestryPack && (

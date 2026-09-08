@@ -2,6 +2,10 @@ import catalog from "@/lib/data/subnational-maps.json";
 import admin1 from "@/lib/data/admin1-demographics.json";
 import type { ScaleType } from "@/lib/color-scale";
 import type { SubnationalCatalog, SubnationalMap } from "@/lib/subnational-maps";
+import {
+  regionalSharesFor,
+  type RegionalShareSet,
+} from "@/lib/regional-shares";
 
 export type MapMetricId = "tfr" | "population" | "pop-growth" | "gfr";
 
@@ -57,6 +61,8 @@ export type CountryMapEntry = {
   metrics: CountryMapMetric[];
   note?: string;
   mapTabs?: CountryMapTab[];
+  /** Population / birth pies for continental maps. */
+  shares?: RegionalShareSet | null;
 };
 
 const ADMIN1_GEO: Record<string, string> = {
@@ -451,6 +457,7 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
         : metrics,
       note: defaultTab?.note ?? first.note,
       mapTabs,
+      shares: regionalSharesFor(iso3),
     });
   }
 

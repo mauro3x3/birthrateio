@@ -29,6 +29,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "Ethnicity, ancestry, race, and country of birth from national censuses — the UK, Denmark, Germany, Russia, the United States, and the rest of Europe.",
   },
   {
+    id: "birth-shares",
+    kicker: "Population",
+    title: "Where the births are",
+    href: "/population/shares",
+    description:
+      "Share of a region's residents, and share of its babies — country by country. A younger country can punch above its population.",
+  },
+  {
     id: "tfr-education",
     kicker: "Fertility",
     title: "Fertility by education and income",
@@ -45,12 +53,20 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "The same total fertility rate can mean most women become mothers, or that a smaller group of mothers have larger families.",
   },
   {
+    id: "tfr-history",
+    kicker: "Fertility",
+    title: "Fertility since 1800",
+    href: "/fertility#since-1800",
+    description:
+      "Total fertility for most countries back to the nineteenth century — Human Fertility Database, UN WPP, and Gapminder reconstructions, then World Bank from 1960.",
+  },
+  {
     id: "fertility",
     kicker: "Fertility",
     title: "World fertility",
     href: "/fertility",
     description:
-      "Interactive timeline, 2026 nowcast, country rankings, and the biggest movers.",
+      "Interactive timeline, TFR since 1800, 2026 nowcast, country rankings, and the biggest movers.",
   },
   {
     id: "cities",

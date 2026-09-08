@@ -1,0 +1,1759 @@
+{
+  "source": "World Bank World Development Indicators, SP.POP.TOTL (population) and SP.DYN.CBRT.IN (crude birth rate), latest year per country. Births are estimated as population \u00d7 CBR / 1,000 \u2014 not a vital-statistics birth count. Oceania is UN-style sovereign states (not Hawaii or Western New Guinea).",
+  "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+  "regions": {
+    "EU": {
+      "id": "EU",
+      "name": "Europe",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "RUS",
+          "name": "Russian Federation",
+          "population": 143513328,
+          "popYear": 2025,
+          "cbr": 8.4,
+          "cbrYear": 2024,
+          "births": 1205512
+        },
+        {
+          "iso3": "TUR",
+          "name": "Turkiye",
+          "population": 85878556,
+          "popYear": 2025,
+          "cbr": 11.0,
+          "cbrYear": 2024,
+          "births": 944664
+        },
+        {
+          "iso3": "DEU",
+          "name": "Germany",
+          "population": 83491249,
+          "popYear": 2025,
+          "cbr": 8.1,
+          "cbrYear": 2024,
+          "births": 676279
+        },
+        {
+          "iso3": "GBR",
+          "name": "United Kingdom",
+          "population": 69487000,
+          "popYear": 2025,
+          "cbr": 9.89,
+          "cbrYear": 2024,
+          "births": 687365
+        },
+        {
+          "iso3": "FRA",
+          "name": "France",
+          "population": 68720337,
+          "popYear": 2025,
+          "cbr": 9.7,
+          "cbrYear": 2024,
+          "births": 666587
+        },
+        {
+          "iso3": "ITA",
+          "name": "Italy",
+          "population": 58915656,
+          "popYear": 2025,
+          "cbr": 6.3,
+          "cbrYear": 2024,
+          "births": 371169
+        },
+        {
+          "iso3": "ESP",
+          "name": "Spain",
+          "population": 49355143,
+          "popYear": 2025,
+          "cbr": 6.5,
+          "cbrYear": 2024,
+          "births": 320808
+        },
+        {
+          "iso3": "UKR",
+          "name": "Ukraine",
+          "population": 38980376,
+          "popYear": 2025,
+          "cbr": 5.47,
+          "cbrYear": 2024,
+          "births": 213067
+        },
+        {
+          "iso3": "POL",
+          "name": "Poland",
+          "population": 36435861,
+          "popYear": 2025,
+          "cbr": 6.9,
+          "cbrYear": 2024,
+          "births": 251407
+        },
+        {
+          "iso3": "ROU",
+          "name": "Romania",
+          "population": 19020271,
+          "popYear": 2025,
+          "cbr": 7.5,
+          "cbrYear": 2024,
+          "births": 142652
+        },
+        {
+          "iso3": "NLD",
+          "name": "Netherlands",
+          "population": 18087633,
+          "popYear": 2025,
+          "cbr": 9.2,
+          "cbrYear": 2024,
+          "births": 166406
+        },
+        {
+          "iso3": "BEL",
+          "name": "Belgium",
+          "population": 11941781,
+          "popYear": 2025,
+          "cbr": 9.2,
+          "cbrYear": 2024,
+          "births": 109864
+        },
+        {
+          "iso3": "CZE",
+          "name": "Czechia",
+          "population": 10886878,
+          "popYear": 2025,
+          "cbr": 7.7,
+          "cbrYear": 2024,
+          "births": 83829
+        },
+        {
+          "iso3": "PRT",
+          "name": "Portugal",
+          "population": 10804871,
+          "popYear": 2025,
+          "cbr": 7.9,
+          "cbrYear": 2024,
+          "births": 85358
+        },
+        {
+          "iso3": "SWE",
+          "name": "Sweden",
+          "population": 10596620,
+          "popYear": 2025,
+          "cbr": 9.3,
+          "cbrYear": 2024,
+          "births": 98549
+        },
+        {
+          "iso3": "GRC",
+          "name": "Greece",
+          "population": 10413962,
+          "popYear": 2025,
+          "cbr": 6.6,
+          "cbrYear": 2024,
+          "births": 68732
+        },
+        {
+          "iso3": "HUN",
+          "name": "Hungary",
+          "population": 9514251,
+          "popYear": 2025,
+          "cbr": 8.2,
+          "cbrYear": 2024,
+          "births": 78017
+        },
+        {
+          "iso3": "AUT",
+          "name": "Austria",
+          "population": 9208163,
+          "popYear": 2025,
+          "cbr": 8.4,
+          "cbrYear": 2024,
+          "births": 77349
+        },
+        {
+          "iso3": "CHE",
+          "name": "Switzerland",
+          "population": 9092436,
+          "popYear": 2025,
+          "cbr": 8.7,
+          "cbrYear": 2024,
+          "births": 79104
+        },
+        {
+          "iso3": "BLR",
+          "name": "Belarus",
+          "population": 9085991,
+          "popYear": 2025,
+          "cbr": 7.03,
+          "cbrYear": 2024,
+          "births": 63884
+        },
+        {
+          "iso3": "SRB",
+          "name": "Serbia",
+          "population": 6549143,
+          "popYear": 2025,
+          "cbr": 9.2,
+          "cbrYear": 2024,
+          "births": 60252
+        },
+        {
+          "iso3": "BGR",
+          "name": "Bulgaria",
+          "population": 6433302,
+          "popYear": 2025,
+          "cbr": 8.3,
+          "cbrYear": 2024,
+          "births": 53396
+        },
+        {
+          "iso3": "DNK",
+          "name": "Denmark",
+          "population": 6009169,
+          "popYear": 2025,
+          "cbr": 9.5,
+          "cbrYear": 2024,
+          "births": 57087
+        },
+        {
+          "iso3": "FIN",
+          "name": "Finland",
+          "population": 5646436,
+          "popYear": 2025,
+          "cbr": 7.8,
+          "cbrYear": 2024,
+          "births": 44042
+        },
+        {
+          "iso3": "NOR",
+          "name": "Norway",
+          "population": 5610870,
+          "popYear": 2025,
+          "cbr": 9.7,
+          "cbrYear": 2024,
+          "births": 54425
+        },
+        {
+          "iso3": "IRL",
+          "name": "Ireland",
+          "population": 5484367,
+          "popYear": 2025,
+          "cbr": 10.0,
+          "cbrYear": 2024,
+          "births": 54844
+        },
+        {
+          "iso3": "SVK",
+          "name": "Slovak Republic",
+          "population": 5413813,
+          "popYear": 2025,
+          "cbr": 8.5,
+          "cbrYear": 2024,
+          "births": 46017
+        },
+        {
+          "iso3": "HRV",
+          "name": "Croatia",
+          "population": 3876200,
+          "popYear": 2025,
+          "cbr": 8.3,
+          "cbrYear": 2024,
+          "births": 32172
+        },
+        {
+          "iso3": "BIH",
+          "name": "Bosnia and Herzegovina",
+          "population": 3140095,
+          "popYear": 2025,
+          "cbr": 7.72,
+          "cbrYear": 2024,
+          "births": 24242
+        },
+        {
+          "iso3": "LTU",
+          "name": "Lithuania",
+          "population": 2888774,
+          "popYear": 2025,
+          "cbr": 6.6,
+          "cbrYear": 2024,
+          "births": 19066
+        },
+        {
+          "iso3": "MDA",
+          "name": "Moldova",
+          "population": 2360527,
+          "popYear": 2025,
+          "cbr": 10.59,
+          "cbrYear": 2024,
+          "births": 24998
+        },
+        {
+          "iso3": "ALB",
+          "name": "Albania",
+          "population": 2349580,
+          "popYear": 2025,
+          "cbr": 10.13,
+          "cbrYear": 2024,
+          "births": 23804
+        },
+        {
+          "iso3": "SVN",
+          "name": "Slovenia",
+          "population": 2130986,
+          "popYear": 2025,
+          "cbr": 7.9,
+          "cbrYear": 2024,
+          "births": 16835
+        },
+        {
+          "iso3": "LVA",
+          "name": "Latvia",
+          "population": 1847785,
+          "popYear": 2025,
+          "cbr": 6.9,
+          "cbrYear": 2024,
+          "births": 12750
+        },
+        {
+          "iso3": "MKD",
+          "name": "North Macedonia",
+          "population": 1820909,
+          "popYear": 2025,
+          "cbr": 8.8,
+          "cbrYear": 2024,
+          "births": 16024
+        },
+        {
+          "iso3": "XKX",
+          "name": "Kosovo",
+          "population": 1576876,
+          "popYear": 2025,
+          "cbr": 11.85,
+          "cbrYear": 2024,
+          "births": 18689
+        },
+        {
+          "iso3": "CYP",
+          "name": "Cyprus",
+          "population": 1370754,
+          "popYear": 2025,
+          "cbr": 10.52,
+          "cbrYear": 2024,
+          "births": 14416
+        },
+        {
+          "iso3": "EST",
+          "name": "Estonia",
+          "population": 1366475,
+          "popYear": 2025,
+          "cbr": 7.1,
+          "cbrYear": 2024,
+          "births": 9702
+        },
+        {
+          "iso3": "LUX",
+          "name": "Luxembourg",
+          "population": 686970,
+          "popYear": 2025,
+          "cbr": 9.5,
+          "cbrYear": 2024,
+          "births": 6526
+        },
+        {
+          "iso3": "MNE",
+          "name": "Montenegro",
+          "population": 623129,
+          "popYear": 2025,
+          "cbr": 11.2,
+          "cbrYear": 2024,
+          "births": 6979
+        },
+        {
+          "iso3": "MLT",
+          "name": "Malta",
+          "population": 579704,
+          "popYear": 2025,
+          "cbr": 7.7,
+          "cbrYear": 2024,
+          "births": 4464
+        },
+        {
+          "iso3": "ISL",
+          "name": "Iceland",
+          "population": 392404,
+          "popYear": 2025,
+          "cbr": 11.2,
+          "cbrYear": 2024,
+          "births": 4395
+        },
+        {
+          "iso3": "LIE",
+          "name": "Liechtenstein",
+          "population": 41024,
+          "popYear": 2025,
+          "cbr": 8.4,
+          "cbrYear": 2024,
+          "births": 345
+        }
+      ]
+    },
+    "MENA": {
+      "id": "MENA",
+      "name": "Middle East & North Africa",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "EGY",
+          "name": "Egypt, Arab Rep.",
+          "population": 118365995,
+          "popYear": 2025,
+          "cbr": 20.91,
+          "cbrYear": 2024,
+          "births": 2475625
+        },
+        {
+          "iso3": "IRN",
+          "name": "Iran, Islamic Rep.",
+          "population": 92417681,
+          "popYear": 2025,
+          "cbr": 12.57,
+          "cbrYear": 2024,
+          "births": 1161783
+        },
+        {
+          "iso3": "TUR",
+          "name": "Turkiye",
+          "population": 85878556,
+          "popYear": 2025,
+          "cbr": 11.0,
+          "cbrYear": 2024,
+          "births": 944664
+        },
+        {
+          "iso3": "SDN",
+          "name": "Sudan",
+          "population": 51662147,
+          "popYear": 2025,
+          "cbr": 33.0,
+          "cbrYear": 2024,
+          "births": 1704644
+        },
+        {
+          "iso3": "DZA",
+          "name": "Algeria",
+          "population": 47435312,
+          "popYear": 2025,
+          "cbr": 18.84,
+          "cbrYear": 2024,
+          "births": 893539
+        },
+        {
+          "iso3": "IRQ",
+          "name": "Iraq",
+          "population": 47020774,
+          "popYear": 2025,
+          "cbr": 25.58,
+          "cbrYear": 2024,
+          "births": 1202791
+        },
+        {
+          "iso3": "YEM",
+          "name": "Yemen, Rep.",
+          "population": 41773878,
+          "popYear": 2025,
+          "cbr": 34.36,
+          "cbrYear": 2024,
+          "births": 1435309
+        },
+        {
+          "iso3": "MAR",
+          "name": "Morocco",
+          "population": 38430770,
+          "popYear": 2025,
+          "cbr": 16.4,
+          "cbrYear": 2024,
+          "births": 630341
+        },
+        {
+          "iso3": "SAU",
+          "name": "Saudi Arabia",
+          "population": 36973555,
+          "popYear": 2025,
+          "cbr": 16.5,
+          "cbrYear": 2024,
+          "births": 609879
+        },
+        {
+          "iso3": "SYR",
+          "name": "Syrian Arab Republic",
+          "population": 25620427,
+          "popYear": 2025,
+          "cbr": 23.16,
+          "cbrYear": 2024,
+          "births": 593420
+        },
+        {
+          "iso3": "SOM",
+          "name": "Somalia, Fed. Rep.",
+          "population": 19654739,
+          "popYear": 2025,
+          "cbr": 42.35,
+          "cbrYear": 2024,
+          "births": 832300
+        },
+        {
+          "iso3": "TUN",
+          "name": "Tunisia",
+          "population": 12348573,
+          "popYear": 2025,
+          "cbr": 13.37,
+          "cbrYear": 2024,
+          "births": 165100
+        },
+        {
+          "iso3": "JOR",
+          "name": "Jordan",
+          "population": 11520684,
+          "popYear": 2025,
+          "cbr": 20.45,
+          "cbrYear": 2024,
+          "births": 235621
+        },
+        {
+          "iso3": "ARE",
+          "name": "United Arab Emirates",
+          "population": 11513149,
+          "popYear": 2025,
+          "cbr": 9.82,
+          "cbrYear": 2024,
+          "births": 113048
+        },
+        {
+          "iso3": "ISR",
+          "name": "Israel",
+          "population": 10122800,
+          "popYear": 2025,
+          "cbr": 18.6,
+          "cbrYear": 2024,
+          "births": 188284
+        },
+        {
+          "iso3": "LBY",
+          "name": "Libya",
+          "population": 7458555,
+          "popYear": 2025,
+          "cbr": 16.5,
+          "cbrYear": 2024,
+          "births": 123029
+        },
+        {
+          "iso3": "LBN",
+          "name": "Lebanon",
+          "population": 5849421,
+          "popYear": 2025,
+          "cbr": 15.96,
+          "cbrYear": 2024,
+          "births": 93345
+        },
+        {
+          "iso3": "OMN",
+          "name": "Oman",
+          "population": 5494691,
+          "popYear": 2025,
+          "cbr": 16.78,
+          "cbrYear": 2024,
+          "births": 92190
+        },
+        {
+          "iso3": "PSE",
+          "name": "West Bank and Gaza",
+          "population": 5413596,
+          "popYear": 2025,
+          "cbr": 26.46,
+          "cbrYear": 2024,
+          "births": 143271
+        },
+        {
+          "iso3": "MRT",
+          "name": "Mauritania",
+          "population": 5315065,
+          "popYear": 2025,
+          "cbr": 34.03,
+          "cbrYear": 2024,
+          "births": 180872
+        },
+        {
+          "iso3": "KWT",
+          "name": "Kuwait",
+          "population": 4865298,
+          "popYear": 2025,
+          "cbr": 10.02,
+          "cbrYear": 2024,
+          "births": 48750
+        },
+        {
+          "iso3": "QAT",
+          "name": "Qatar",
+          "population": 2972215,
+          "popYear": 2025,
+          "cbr": 9.52,
+          "cbrYear": 2024,
+          "births": 28307
+        },
+        {
+          "iso3": "BHR",
+          "name": "Bahrain",
+          "population": 1600366,
+          "popYear": 2025,
+          "cbr": 12.03,
+          "cbrYear": 2024,
+          "births": 19257
+        },
+        {
+          "iso3": "DJI",
+          "name": "Djibouti",
+          "population": 1184076,
+          "popYear": 2025,
+          "cbr": 20.93,
+          "cbrYear": 2024,
+          "births": 24784
+        }
+      ]
+    },
+    "AFRICA": {
+      "id": "AFRICA",
+      "name": "Africa",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "NGA",
+          "name": "Nigeria",
+          "population": 237527782,
+          "popYear": 2025,
+          "cbr": 32.49,
+          "cbrYear": 2024,
+          "births": 7717990
+        },
+        {
+          "iso3": "ETH",
+          "name": "Ethiopia",
+          "population": 135472051,
+          "popYear": 2025,
+          "cbr": 31.47,
+          "cbrYear": 2024,
+          "births": 4263170
+        },
+        {
+          "iso3": "EGY",
+          "name": "Egypt, Arab Rep.",
+          "population": 118365995,
+          "popYear": 2025,
+          "cbr": 20.91,
+          "cbrYear": 2024,
+          "births": 2475625
+        },
+        {
+          "iso3": "COD",
+          "name": "Congo, Dem. Rep.",
+          "population": 112832473,
+          "popYear": 2025,
+          "cbr": 40.88,
+          "cbrYear": 2024,
+          "births": 4613156
+        },
+        {
+          "iso3": "TZA",
+          "name": "Tanzania",
+          "population": 70545865,
+          "popYear": 2025,
+          "cbr": 34.8,
+          "cbrYear": 2024,
+          "births": 2455067
+        },
+        {
+          "iso3": "ZAF",
+          "name": "South Africa",
+          "population": 64747319,
+          "popYear": 2025,
+          "cbr": 18.48,
+          "cbrYear": 2024,
+          "births": 1196530
+        },
+        {
+          "iso3": "KEN",
+          "name": "Kenya",
+          "population": 57532493,
+          "popYear": 2025,
+          "cbr": 26.97,
+          "cbrYear": 2024,
+          "births": 1551536
+        },
+        {
+          "iso3": "SDN",
+          "name": "Sudan",
+          "population": 51662147,
+          "popYear": 2025,
+          "cbr": 33.0,
+          "cbrYear": 2024,
+          "births": 1704644
+        },
+        {
+          "iso3": "UGA",
+          "name": "Uganda",
+          "population": 51384894,
+          "popYear": 2025,
+          "cbr": 34.44,
+          "cbrYear": 2024,
+          "births": 1769490
+        },
+        {
+          "iso3": "DZA",
+          "name": "Algeria",
+          "population": 47435312,
+          "popYear": 2025,
+          "cbr": 18.84,
+          "cbrYear": 2024,
+          "births": 893539
+        },
+        {
+          "iso3": "AGO",
+          "name": "Angola",
+          "population": 39040039,
+          "popYear": 2025,
+          "cbr": 37.16,
+          "cbrYear": 2024,
+          "births": 1450650
+        },
+        {
+          "iso3": "MAR",
+          "name": "Morocco",
+          "population": 38430770,
+          "popYear": 2025,
+          "cbr": 16.4,
+          "cbrYear": 2024,
+          "births": 630341
+        },
+        {
+          "iso3": "MOZ",
+          "name": "Mozambique",
+          "population": 35631653,
+          "popYear": 2025,
+          "cbr": 37.03,
+          "cbrYear": 2024,
+          "births": 1319369
+        },
+        {
+          "iso3": "GHA",
+          "name": "Ghana",
+          "population": 35064272,
+          "popYear": 2025,
+          "cbr": 25.92,
+          "cbrYear": 2024,
+          "births": 908866
+        },
+        {
+          "iso3": "MDG",
+          "name": "Madagascar",
+          "population": 32740678,
+          "popYear": 2025,
+          "cbr": 31.71,
+          "cbrYear": 2024,
+          "births": 1038338
+        },
+        {
+          "iso3": "CIV",
+          "name": "Cote d'Ivoire",
+          "population": 32711547,
+          "popYear": 2025,
+          "cbr": 31.56,
+          "cbrYear": 2024,
+          "births": 1032507
+        },
+        {
+          "iso3": "CMR",
+          "name": "Cameroon",
+          "population": 29879337,
+          "popYear": 2025,
+          "cbr": 33.34,
+          "cbrYear": 2024,
+          "births": 996297
+        },
+        {
+          "iso3": "NER",
+          "name": "Niger",
+          "population": 27917831,
+          "popYear": 2025,
+          "cbr": 41.42,
+          "cbrYear": 2024,
+          "births": 1156357
+        },
+        {
+          "iso3": "MLI",
+          "name": "Mali",
+          "population": 25198821,
+          "popYear": 2025,
+          "cbr": 39.53,
+          "cbrYear": 2024,
+          "births": 996160
+        },
+        {
+          "iso3": "BFA",
+          "name": "Burkina Faso",
+          "population": 24074580,
+          "popYear": 2025,
+          "cbr": 31.34,
+          "cbrYear": 2024,
+          "births": 754401
+        },
+        {
+          "iso3": "MWI",
+          "name": "Malawi",
+          "population": 22216120,
+          "popYear": 2025,
+          "cbr": 31.14,
+          "cbrYear": 2024,
+          "births": 691877
+        },
+        {
+          "iso3": "ZMB",
+          "name": "Zambia",
+          "population": 21913874,
+          "popYear": 2025,
+          "cbr": 32.72,
+          "cbrYear": 2024,
+          "births": 717110
+        },
+        {
+          "iso3": "TCD",
+          "name": "Chad",
+          "population": 21003705,
+          "popYear": 2025,
+          "cbr": 43.26,
+          "cbrYear": 2024,
+          "births": 908704
+        },
+        {
+          "iso3": "SOM",
+          "name": "Somalia, Fed. Rep.",
+          "population": 19654739,
+          "popYear": 2025,
+          "cbr": 42.35,
+          "cbrYear": 2024,
+          "births": 832300
+        },
+        {
+          "iso3": "SEN",
+          "name": "Senegal",
+          "population": 18931966,
+          "popYear": 2025,
+          "cbr": 29.18,
+          "cbrYear": 2024,
+          "births": 552510
+        },
+        {
+          "iso3": "ZWE",
+          "name": "Zimbabwe",
+          "population": 16950795,
+          "popYear": 2025,
+          "cbr": 29.89,
+          "cbrYear": 2024,
+          "births": 506676
+        },
+        {
+          "iso3": "GIN",
+          "name": "Guinea",
+          "population": 15099727,
+          "popYear": 2025,
+          "cbr": 33.33,
+          "cbrYear": 2024,
+          "births": 503198
+        },
+        {
+          "iso3": "BEN",
+          "name": "Benin",
+          "population": 14814460,
+          "popYear": 2025,
+          "cbr": 33.42,
+          "cbrYear": 2024,
+          "births": 495084
+        },
+        {
+          "iso3": "RWA",
+          "name": "Rwanda",
+          "population": 14569341,
+          "popYear": 2025,
+          "cbr": 28.06,
+          "cbrYear": 2024,
+          "births": 408845
+        },
+        {
+          "iso3": "BDI",
+          "name": "Burundi",
+          "population": 14390003,
+          "popYear": 2025,
+          "cbr": 33.21,
+          "cbrYear": 2024,
+          "births": 477906
+        },
+        {
+          "iso3": "TUN",
+          "name": "Tunisia",
+          "population": 12348573,
+          "popYear": 2025,
+          "cbr": 13.37,
+          "cbrYear": 2024,
+          "births": 165100
+        },
+        {
+          "iso3": "SSD",
+          "name": "South Sudan",
+          "population": 12188788,
+          "popYear": 2025,
+          "cbr": 29.22,
+          "cbrYear": 2024,
+          "births": 356181
+        },
+        {
+          "iso3": "SLE",
+          "name": "Sierra Leone",
+          "population": 8819794,
+          "popYear": 2025,
+          "cbr": 30.11,
+          "cbrYear": 2024,
+          "births": 265546
+        },
+        {
+          "iso3": "TGO",
+          "name": "Togo",
+          "population": 8591626,
+          "popYear": 2025,
+          "cbr": 32.06,
+          "cbrYear": 2024,
+          "births": 275456
+        },
+        {
+          "iso3": "LBY",
+          "name": "Libya",
+          "population": 7458555,
+          "popYear": 2025,
+          "cbr": 16.5,
+          "cbrYear": 2024,
+          "births": 123029
+        },
+        {
+          "iso3": "COG",
+          "name": "Congo, Rep.",
+          "population": 6484437,
+          "popYear": 2025,
+          "cbr": 30.42,
+          "cbrYear": 2024,
+          "births": 197283
+        },
+        {
+          "iso3": "LBR",
+          "name": "Liberia",
+          "population": 5731206,
+          "popYear": 2025,
+          "cbr": 30.58,
+          "cbrYear": 2024,
+          "births": 175243
+        },
+        {
+          "iso3": "CAF",
+          "name": "Central African Republic",
+          "population": 5513282,
+          "popYear": 2025,
+          "cbr": 46.19,
+          "cbrYear": 2024,
+          "births": 254675
+        },
+        {
+          "iso3": "MRT",
+          "name": "Mauritania",
+          "population": 5315065,
+          "popYear": 2025,
+          "cbr": 34.03,
+          "cbrYear": 2024,
+          "births": 180872
+        },
+        {
+          "iso3": "ERI",
+          "name": "Eritrea",
+          "population": 3607003,
+          "popYear": 2025,
+          "cbr": 28.72,
+          "cbrYear": 2024,
+          "births": 103590
+        },
+        {
+          "iso3": "NAM",
+          "name": "Namibia",
+          "population": 3092816,
+          "popYear": 2025,
+          "cbr": 25.89,
+          "cbrYear": 2024,
+          "births": 80076
+        },
+        {
+          "iso3": "GMB",
+          "name": "Gambia, The",
+          "population": 2822093,
+          "popYear": 2025,
+          "cbr": 29.86,
+          "cbrYear": 2024,
+          "births": 84259
+        },
+        {
+          "iso3": "GAB",
+          "name": "Gabon",
+          "population": 2593130,
+          "popYear": 2025,
+          "cbr": 27.13,
+          "cbrYear": 2024,
+          "births": 70344
+        },
+        {
+          "iso3": "BWA",
+          "name": "Botswana",
+          "population": 2562122,
+          "popYear": 2025,
+          "cbr": 24.36,
+          "cbrYear": 2024,
+          "births": 62416
+        },
+        {
+          "iso3": "LSO",
+          "name": "Lesotho",
+          "population": 2363325,
+          "popYear": 2025,
+          "cbr": 23.76,
+          "cbrYear": 2024,
+          "births": 56157
+        },
+        {
+          "iso3": "GNB",
+          "name": "Guinea-Bissau",
+          "population": 2249515,
+          "popYear": 2025,
+          "cbr": 29.56,
+          "cbrYear": 2024,
+          "births": 66496
+        },
+        {
+          "iso3": "GNQ",
+          "name": "Equatorial Guinea",
+          "population": 1938431,
+          "popYear": 2025,
+          "cbr": 29.99,
+          "cbrYear": 2024,
+          "births": 58141
+        },
+        {
+          "iso3": "SWZ",
+          "name": "Eswatini",
+          "population": 1256174,
+          "popYear": 2025,
+          "cbr": 23.65,
+          "cbrYear": 2024,
+          "births": 29706
+        },
+        {
+          "iso3": "MUS",
+          "name": "Mauritius",
+          "population": 1243741,
+          "popYear": 2025,
+          "cbr": 10.3,
+          "cbrYear": 2024,
+          "births": 12811
+        },
+        {
+          "iso3": "DJI",
+          "name": "Djibouti",
+          "population": 1184076,
+          "popYear": 2025,
+          "cbr": 20.93,
+          "cbrYear": 2024,
+          "births": 24784
+        },
+        {
+          "iso3": "COM",
+          "name": "Comoros",
+          "population": 882847,
+          "popYear": 2025,
+          "cbr": 28.23,
+          "cbrYear": 2024,
+          "births": 24925
+        },
+        {
+          "iso3": "CPV",
+          "name": "Cabo Verde",
+          "population": 527326,
+          "popYear": 2025,
+          "cbr": 12.22,
+          "cbrYear": 2024,
+          "births": 6445
+        },
+        {
+          "iso3": "STP",
+          "name": "Sao Tome and Principe",
+          "population": 240254,
+          "popYear": 2025,
+          "cbr": 28.09,
+          "cbrYear": 2024,
+          "births": 6750
+        },
+        {
+          "iso3": "SYC",
+          "name": "Seychelles",
+          "population": 122730,
+          "popYear": 2025,
+          "cbr": 11.0,
+          "cbrYear": 2024,
+          "births": 1350
+        }
+      ]
+    },
+    "SOUTHAMERICA": {
+      "id": "SOUTHAMERICA",
+      "name": "South America",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "BRA",
+          "name": "Brazil",
+          "population": 212812405,
+          "popYear": 2025,
+          "cbr": 12.13,
+          "cbrYear": 2024,
+          "births": 2582053
+        },
+        {
+          "iso3": "COL",
+          "name": "Colombia",
+          "population": 53425635,
+          "popYear": 2025,
+          "cbr": 13.25,
+          "cbrYear": 2024,
+          "births": 707943
+        },
+        {
+          "iso3": "ARG",
+          "name": "Argentina",
+          "population": 45851378,
+          "popYear": 2025,
+          "cbr": 11.09,
+          "cbrYear": 2024,
+          "births": 508308
+        },
+        {
+          "iso3": "PER",
+          "name": "Peru",
+          "population": 34576665,
+          "popYear": 2025,
+          "cbr": 15.75,
+          "cbrYear": 2024,
+          "births": 544617
+        },
+        {
+          "iso3": "VEN",
+          "name": "Venezuela, RB",
+          "population": 28516896,
+          "popYear": 2025,
+          "cbr": 15.23,
+          "cbrYear": 2024,
+          "births": 434341
+        },
+        {
+          "iso3": "CHL",
+          "name": "Chile",
+          "population": 19859921,
+          "popYear": 2025,
+          "cbr": 8.72,
+          "cbrYear": 2024,
+          "births": 173238
+        },
+        {
+          "iso3": "ECU",
+          "name": "Ecuador",
+          "population": 18289896,
+          "popYear": 2025,
+          "cbr": 14.82,
+          "cbrYear": 2024,
+          "births": 271056
+        },
+        {
+          "iso3": "BOL",
+          "name": "Bolivia",
+          "population": 12581843,
+          "popYear": 2025,
+          "cbr": 21.03,
+          "cbrYear": 2024,
+          "births": 264546
+        },
+        {
+          "iso3": "PRY",
+          "name": "Paraguay",
+          "population": 7013078,
+          "popYear": 2025,
+          "cbr": 19.73,
+          "cbrYear": 2024,
+          "births": 138354
+        },
+        {
+          "iso3": "URY",
+          "name": "Uruguay",
+          "population": 3384688,
+          "popYear": 2025,
+          "cbr": 9.8,
+          "cbrYear": 2024,
+          "births": 33177
+        },
+        {
+          "iso3": "GUY",
+          "name": "Guyana",
+          "population": 835986,
+          "popYear": 2025,
+          "cbr": 19.88,
+          "cbrYear": 2024,
+          "births": 16622
+        },
+        {
+          "iso3": "SUR",
+          "name": "Suriname",
+          "population": 639850,
+          "popYear": 2025,
+          "cbr": 17.15,
+          "cbrYear": 2024,
+          "births": 10975
+        }
+      ]
+    },
+    "CARIBBEAN": {
+      "id": "CARIBBEAN",
+      "name": "Caribbean",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "HTI",
+          "name": "Haiti",
+          "population": 11906095,
+          "popYear": 2025,
+          "cbr": 21.94,
+          "cbrYear": 2024,
+          "births": 261267
+        },
+        {
+          "iso3": "DOM",
+          "name": "Dominican Republic",
+          "population": 11520487,
+          "popYear": 2025,
+          "cbr": 17.62,
+          "cbrYear": 2024,
+          "births": 202991
+        },
+        {
+          "iso3": "CUB",
+          "name": "Cuba",
+          "population": 10937203,
+          "popYear": 2025,
+          "cbr": 8.62,
+          "cbrYear": 2024,
+          "births": 94279
+        },
+        {
+          "iso3": "PRI",
+          "name": "Puerto Rico (US)",
+          "population": 3184835,
+          "popYear": 2025,
+          "cbr": 5.7,
+          "cbrYear": 2024,
+          "births": 18154
+        },
+        {
+          "iso3": "JAM",
+          "name": "Jamaica",
+          "population": 2837077,
+          "popYear": 2025,
+          "cbr": 11.45,
+          "cbrYear": 2024,
+          "births": 32485
+        },
+        {
+          "iso3": "TTO",
+          "name": "Trinidad and Tobago",
+          "population": 1367764,
+          "popYear": 2025,
+          "cbr": 10.54,
+          "cbrYear": 2024,
+          "births": 14420
+        },
+        {
+          "iso3": "BHS",
+          "name": "Bahamas, The",
+          "population": 403033,
+          "popYear": 2025,
+          "cbr": 10.82,
+          "cbrYear": 2024,
+          "births": 4360
+        },
+        {
+          "iso3": "BRB",
+          "name": "Barbados",
+          "population": 282623,
+          "popYear": 2025,
+          "cbr": 11.12,
+          "cbrYear": 2024,
+          "births": 3142
+        },
+        {
+          "iso3": "LCA",
+          "name": "St. Lucia",
+          "population": 180149,
+          "popYear": 2025,
+          "cbr": 11.21,
+          "cbrYear": 2024,
+          "births": 2019
+        },
+        {
+          "iso3": "GRD",
+          "name": "Grenada",
+          "population": 117303,
+          "popYear": 2025,
+          "cbr": 11.48,
+          "cbrYear": 2024,
+          "births": 1346
+        },
+        {
+          "iso3": "VCT",
+          "name": "St. Vincent and the Grenadines",
+          "population": 99924,
+          "popYear": 2025,
+          "cbr": 11.96,
+          "cbrYear": 2024,
+          "births": 1195
+        },
+        {
+          "iso3": "ATG",
+          "name": "Antigua and Barbuda",
+          "population": 94209,
+          "popYear": 2025,
+          "cbr": 11.75,
+          "cbrYear": 2024,
+          "births": 1107
+        },
+        {
+          "iso3": "DMA",
+          "name": "Dominica",
+          "population": 65871,
+          "popYear": 2025,
+          "cbr": 10.98,
+          "cbrYear": 2024,
+          "births": 723
+        },
+        {
+          "iso3": "KNA",
+          "name": "St. Kitts and Nevis",
+          "population": 46922,
+          "popYear": 2025,
+          "cbr": 11.74,
+          "cbrYear": 2024,
+          "births": 551
+        }
+      ]
+    },
+    "SEASIA": {
+      "id": "SEASIA",
+      "name": "Southeast Asia",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "IDN",
+          "name": "Indonesia",
+          "population": 285721236,
+          "popYear": 2025,
+          "cbr": 15.76,
+          "cbrYear": 2024,
+          "births": 4503538
+        },
+        {
+          "iso3": "PHL",
+          "name": "Philippines",
+          "population": 116786962,
+          "popYear": 2025,
+          "cbr": 15.89,
+          "cbrYear": 2024,
+          "births": 1856212
+        },
+        {
+          "iso3": "VNM",
+          "name": "Viet Nam",
+          "population": 101598527,
+          "popYear": 2025,
+          "cbr": 13.42,
+          "cbrYear": 2024,
+          "births": 1363757
+        },
+        {
+          "iso3": "THA",
+          "name": "Thailand",
+          "population": 71619863,
+          "popYear": 2025,
+          "cbr": 8.12,
+          "cbrYear": 2024,
+          "births": 581267
+        },
+        {
+          "iso3": "MMR",
+          "name": "Myanmar",
+          "population": 54850648,
+          "popYear": 2025,
+          "cbr": 16.46,
+          "cbrYear": 2024,
+          "births": 903061
+        },
+        {
+          "iso3": "MYS",
+          "name": "Malaysia",
+          "population": 35977838,
+          "popYear": 2025,
+          "cbr": 12.36,
+          "cbrYear": 2024,
+          "births": 444758
+        },
+        {
+          "iso3": "KHM",
+          "name": "Cambodia",
+          "population": 17847982,
+          "popYear": 2025,
+          "cbr": 20.31,
+          "cbrYear": 2024,
+          "births": 362475
+        },
+        {
+          "iso3": "LAO",
+          "name": "Lao PDR",
+          "population": 7873046,
+          "popYear": 2025,
+          "cbr": 20.93,
+          "cbrYear": 2024,
+          "births": 164806
+        },
+        {
+          "iso3": "SGP",
+          "name": "Singapore",
+          "population": 6111175,
+          "popYear": 2025,
+          "cbr": 7.4,
+          "cbrYear": 2024,
+          "births": 45223
+        },
+        {
+          "iso3": "TLS",
+          "name": "Timor-Leste",
+          "population": 1418517,
+          "popYear": 2025,
+          "cbr": 21.77,
+          "cbrYear": 2024,
+          "births": 30878
+        },
+        {
+          "iso3": "BRN",
+          "name": "Brunei Darussalam",
+          "population": 466330,
+          "popYear": 2025,
+          "cbr": 13.33,
+          "cbrYear": 2024,
+          "births": 6215
+        }
+      ]
+    },
+    "CENTRALAMERICA": {
+      "id": "CENTRALAMERICA",
+      "name": "Central America",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "GTM",
+          "name": "Guatemala",
+          "population": 18687881,
+          "popYear": 2025,
+          "cbr": 20.62,
+          "cbrYear": 2024,
+          "births": 385325
+        },
+        {
+          "iso3": "HND",
+          "name": "Honduras",
+          "population": 11005850,
+          "popYear": 2025,
+          "cbr": 21.65,
+          "cbrYear": 2024,
+          "births": 238266
+        },
+        {
+          "iso3": "NIC",
+          "name": "Nicaragua",
+          "population": 7007502,
+          "popYear": 2025,
+          "cbr": 19.14,
+          "cbrYear": 2024,
+          "births": 134131
+        },
+        {
+          "iso3": "SLV",
+          "name": "El Salvador",
+          "population": 6365503,
+          "popYear": 2025,
+          "cbr": 15.6,
+          "cbrYear": 2024,
+          "births": 99283
+        },
+        {
+          "iso3": "CRI",
+          "name": "Costa Rica",
+          "population": 5152950,
+          "popYear": 2025,
+          "cbr": 9.99,
+          "cbrYear": 2024,
+          "births": 51483
+        },
+        {
+          "iso3": "PAN",
+          "name": "Panama",
+          "population": 4571189,
+          "popYear": 2025,
+          "cbr": 15.87,
+          "cbrYear": 2024,
+          "births": 72531
+        },
+        {
+          "iso3": "BLZ",
+          "name": "Belize",
+          "population": 422924,
+          "popYear": 2025,
+          "cbr": 18.05,
+          "cbrYear": 2024,
+          "births": 7634
+        }
+      ]
+    },
+    "CENTRALASIA": {
+      "id": "CENTRALASIA",
+      "name": "Central Asia",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "UZB",
+          "name": "Uzbekistan",
+          "population": 37053428,
+          "popYear": 2025,
+          "cbr": 25.56,
+          "cbrYear": 2024,
+          "births": 946974
+        },
+        {
+          "iso3": "KAZ",
+          "name": "Kazakhstan",
+          "population": 20843754,
+          "popYear": 2025,
+          "cbr": 19.52,
+          "cbrYear": 2024,
+          "births": 406891
+        },
+        {
+          "iso3": "TJK",
+          "name": "Tajikistan",
+          "population": 10786734,
+          "popYear": 2025,
+          "cbr": 25.33,
+          "cbrYear": 2024,
+          "births": 273260
+        },
+        {
+          "iso3": "TKM",
+          "name": "Turkmenistan",
+          "population": 7618847,
+          "popYear": 2025,
+          "cbr": 20.91,
+          "cbrYear": 2024,
+          "births": 159280
+        },
+        {
+          "iso3": "KGZ",
+          "name": "Kyrgyz Republic",
+          "population": 7343064,
+          "popYear": 2025,
+          "cbr": 19.4,
+          "cbrYear": 2024,
+          "births": 142455
+        }
+      ]
+    },
+    "NORTHAMERICA": {
+      "id": "NORTHAMERICA",
+      "name": "North America",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "USA",
+          "name": "United States",
+          "population": 341784857,
+          "popYear": 2025,
+          "cbr": 10.6,
+          "cbrYear": 2024,
+          "births": 3622919
+        },
+        {
+          "iso3": "MEX",
+          "name": "Mexico",
+          "population": 131946900,
+          "popYear": 2025,
+          "cbr": 15.46,
+          "cbrYear": 2024,
+          "births": 2040427
+        },
+        {
+          "iso3": "CAN",
+          "name": "Canada",
+          "population": 41651653,
+          "popYear": 2025,
+          "cbr": 8.9,
+          "cbrYear": 2024,
+          "births": 370700
+        }
+      ]
+    },
+    "OCEANIA": {
+      "id": "OCEANIA",
+      "name": "Oceania",
+      "year": 2025,
+      "countries": [
+        {
+          "iso3": "AUS",
+          "name": "Australia",
+          "population": 27614411,
+          "popYear": 2025,
+          "cbr": 10.7,
+          "cbrYear": 2024,
+          "births": 295474
+        },
+        {
+          "iso3": "PNG",
+          "name": "Papua New Guinea",
+          "population": 10762817,
+          "popYear": 2025,
+          "cbr": 24.29,
+          "cbrYear": 2024,
+          "births": 261440
+        },
+        {
+          "iso3": "NZL",
+          "name": "New Zealand",
+          "population": 5324700,
+          "popYear": 2025,
+          "cbr": 11.03,
+          "cbrYear": 2024,
+          "births": 58731
+        },
+        {
+          "iso3": "FJI",
+          "name": "Fiji",
+          "population": 933154,
+          "popYear": 2025,
+          "cbr": 17.86,
+          "cbrYear": 2024,
+          "births": 16670
+        },
+        {
+          "iso3": "SLB",
+          "name": "Solomon Islands",
+          "population": 838645,
+          "popYear": 2025,
+          "cbr": 26.71,
+          "cbrYear": 2024,
+          "births": 22398
+        },
+        {
+          "iso3": "VUT",
+          "name": "Vanuatu",
+          "population": 335169,
+          "popYear": 2025,
+          "cbr": 27.65,
+          "cbrYear": 2024,
+          "births": 9268
+        },
+        {
+          "iso3": "WSM",
+          "name": "Samoa",
+          "population": 219306,
+          "popYear": 2025,
+          "cbr": 24.97,
+          "cbrYear": 2024,
+          "births": 5476
+        },
+        {
+          "iso3": "KIR",
+          "name": "Kiribati",
+          "population": 136488,
+          "popYear": 2025,
+          "cbr": 25.31,
+          "cbrYear": 2024,
+          "births": 3454
+        },
+        {
+          "iso3": "FSM",
+          "name": "Micronesia, Fed. Sts.",
+          "population": 113683,
+          "popYear": 2025,
+          "cbr": 22.32,
+          "cbrYear": 2024,
+          "births": 2537
+        },
+        {
+          "iso3": "TON",
+          "name": "Tonga",
+          "population": 103742,
+          "popYear": 2025,
+          "cbr": 23.04,
+          "cbrYear": 2024,
+          "births": 2390
+        },
+        {
+          "iso3": "MHL",
+          "name": "Marshall Islands",
+          "population": 36282,
+          "popYear": 2025,
+          "cbr": 20.09,
+          "cbrYear": 2024,
+          "births": 729
+        },
+        {
+          "iso3": "PLW",
+          "name": "Palau",
+          "population": 17663,
+          "popYear": 2025,
+          "cbr": 10.69,
+          "cbrYear": 2024,
+          "births": 189
+        },
+        {
+          "iso3": "NRU",
+          "name": "Naoero",
+          "population": 12025,
+          "popYear": 2025,
+          "cbr": 24.56,
+          "cbrYear": 2024,
+          "births": 295
+        },
+        {
+          "iso3": "TUV",
+          "name": "Tuvalu",
+          "population": 9492,
+          "popYear": 2025,
+          "cbr": 21.97,
+          "cbrYear": 2024,
+          "births": 209
+        }
+      ]
+    }
+  }
+}

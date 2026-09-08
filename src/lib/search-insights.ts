@@ -164,6 +164,21 @@ const STATISTICS: StatisticDef[] = [
     keywords: ["compare fertility", "compare tfr"],
   },
   {
+    id: "tfr-history",
+    title: "Fertility since 1800",
+    href: "/fertility#since-1800",
+    region: "Worldwide",
+    topicIds: ["fertility"],
+    keywords: [
+      "historic fertility",
+      "historical tfr",
+      "1800",
+      "nineteenth",
+      "long run fertility",
+      "gapminder",
+    ],
+  },
+  {
     id: "tfr-maps",
     title: "Fertility maps by region",
     href: "/maps",
@@ -432,6 +447,7 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "World population rankings", href: "/population#population-rankings", region: "Worldwide" },
   ],
   "/population": [
+    { title: "Where the births are", href: "/population/shares", region: "Worldwide" },
     { title: "India population", href: "/population/india", region: "India" },
     { title: "China population", href: "/population/china", region: "China" },
     { title: "Nigeria population", href: "/population/nigeria", region: "Africa" },

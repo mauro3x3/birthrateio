@@ -8,6 +8,7 @@ const TOPICS = [
   { title: "Census maps", href: "/demographics" },
   { title: "Fertility", href: "/fertility" },
   { title: "Population", href: "/population" },
+  { title: "Where the births are", href: "/population/shares" },
   { title: "Migration", href: "/migration" },
   { title: "Cities", href: "/cities" },
 ];

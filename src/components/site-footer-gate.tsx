@@ -17,9 +17,11 @@ export function SiteFooterGate() {
   const pathname = usePathname();
   const censusMap =
     pathname.startsWith("/demographics/") && pathname !== "/demographics";
+  const populationShares = pathname.startsWith("/population/shares");
   if (
-    censusMap ||
-    FULLSCREEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`))
+    !populationShares &&
+    (censusMap ||
+      FULLSCREEN_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`)))
   ) {
     return null;
   }

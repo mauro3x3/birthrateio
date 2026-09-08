@@ -13,8 +13,9 @@ interface ChatMessage {
 const SITE_MAP = `
 - / : Homepage dashboard (latest fertility/population highlights, global maps, rankings)
 - /topics : Subject catalogue (People, Society, Economy, Tools) — DST-style topic hub
-- /fertility : Fertility explorer (global map, rankings, movers, TFR by ancestry/origin/religion where published — Denmark FERT1, Norway 12482, India NFHS religion)
+- /fertility : Fertility explorer (global map, rankings, movers, TFR back to 1800 for most countries via HFD / UN WPP / Gapminder then World Bank from 1960, TFR by ancestry/origin/religion where published — Denmark FERT1, Norway 12482, India NFHS religion)
 - /population : Population explorer (rankings, projections, growth calculator)
+- /population/shares : Where the births are — Wikipedia-style pies of each region's residents and estimated births by country (Africa, Europe, MENA, Oceania, …)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
@@ -68,7 +69,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /topics /fertility /population /migration /mortality /crime /demographics /demographics/us /gdp /states /maps /cities /calendar /clock /contribute.
+- Explorers: /topics /fertility /population /population/shares /migration /mortality /crime /demographics /demographics/us /gdp /states /maps /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {

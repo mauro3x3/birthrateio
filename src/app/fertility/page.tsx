@@ -21,13 +21,14 @@ import { ArrowRight } from "lucide-react";
 import { TFR_ANCESTRY_PACKS } from "@/lib/sources/tfr-by-ancestry-data";
 import { ExploreDestinationGrid } from "@/components/explore-destination-grid";
 import { featuredById } from "@/lib/featured-destinations";
+import { HistoricFertilityNote } from "@/components/historic-fertility-note";
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Fertility Explorer — Global Fertility Rates & Trends",
   description:
-    "Explore total fertility rates for every country. Interactive timeline map, 2026 provisional nowcast, rankings, and the biggest fertility movers.",
+    "Explore total fertility rates for every country, including reconstructions back to 1800. Interactive timeline map, 2026 provisional nowcast, rankings, and the biggest fertility movers.",
   alternates: { canonical: "/fertility" },
 };
 
@@ -104,12 +105,13 @@ export default async function FertilityPage() {
         <SectionHeading
           id="featured-explorers"
           title="Maps and special charts"
-          description="The fertility views that are easy to miss on this page — the TFR split, subnational maps, and census maps."
+          description="The fertility views that are easy to miss on this page — TFR since 1800, the TFR split, subnational maps, and census maps."
           tocLabel="Maps & charts"
         />
         <div className="mt-5">
           <ExploreDestinationGrid
             items={[
+              featuredById("tfr-history")!,
               featuredById("tfr-decomp")!,
               featuredById("tfr-education")!,
               featuredById("regional-maps")!,
@@ -117,6 +119,53 @@ export default async function FertilityPage() {
             ]}
           />
         </div>
+      </section>
+
+      <section>
+        <SectionHeading
+          id="since-1800"
+          title="Fertility since 1800"
+          description="Most country pages now carry total fertility back through the nineteenth century. Open a country, or overlay a few in Compare. Chart cards export PNG and CSV."
+          tocLabel="Since 1800"
+        />
+        <ul className="mt-5 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+          {[
+            { slug: "russian-federation", name: "Russia" },
+            { slug: "sweden", name: "Sweden" },
+            { slug: "france", name: "France" },
+            { slug: "japan", name: "Japan" },
+            { slug: "united-states", name: "United States" },
+            { slug: "united-kingdom", name: "United Kingdom" },
+            { slug: "china", name: "China" },
+            { slug: "india", name: "India" },
+            { slug: "nigeria", name: "Nigeria" },
+            { slug: "brazil", name: "Brazil" },
+          ].map((c) => (
+            <li key={c.slug} className="bg-background">
+              <Link
+                href={`/fertility/${c.slug}`}
+                className="group flex items-center justify-between gap-3 px-4 py-3 text-sm"
+              >
+                <span className="font-serif font-medium text-primary group-hover:underline">
+                  {c.name}
+                </span>
+                <ArrowRight
+                  className="h-3.5 w-3.5 shrink-0 text-muted-foreground"
+                  aria-hidden
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-4">
+          <Link
+            href="/compare?countries=russian-federation,sweden,france,japan&metric=fertility-rate"
+            className="text-sm font-medium text-primary underline-offset-2 hover:underline"
+          >
+            Compare Russia, Sweden, France, and Japan from 1800
+          </Link>
+        </p>
+        <HistoricFertilityNote className="mt-4 max-w-3xl text-xs leading-relaxed text-muted-foreground" />
       </section>
 
       <section>

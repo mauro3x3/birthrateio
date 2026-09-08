@@ -8,11 +8,18 @@ import {
   getCountryMapAtlas,
   type CountryMapEntry,
   type CountryMapMetric,
+  type CountryMapTab,
   type MapMetricId,
 } from "@/lib/country-map-atlas";
 import { MAP_OCEAN } from "@/lib/map-path-style";
 import { downloadMapSharePng, mapShareUrl } from "@/lib/map-share-export";
-import { formatNumber, cn } from "@/lib/utils";
+import {
+  REGIONAL_SHARES_SOURCE,
+  REGIONAL_SHARES_SOURCE_URL,
+  tidyCountryName,
+} from "@/lib/regional-shares";
+import { RegionSharePies } from "@/components/region-share-pies";
+import { formatNumber, formatCompact, cn } from "@/lib/utils";
 
 type MapComponent = typeof import("@/components/maps/region-choropleth-map").RegionChoroplethMap;
 
@@ -38,6 +45,34 @@ function metricOf(
   return metrics.find((m) => m.id === id);
 }
 
+function displayTabsFor(country: CountryMapEntry): CountryMapTab[] | undefined {
+  if (!country.shares) return country.mapTabs;
+  const shareTab: CountryMapTab = {
+    id: "shares",
+    label: "Shares",
+    geoUrl: "",
+    kind: "shares",
+    metrics: [],
+    note: country.shares.year
+      ? `World Bank population and crude birth rate, latest year (mostly ${country.shares.year}). Births are population × CBR / 1,000, not a civil-registration count.`
+      : undefined,
+  };
+  if (country.mapTabs && country.mapTabs.length > 0) {
+    return [...country.mapTabs, shareTab];
+  }
+  return [
+    {
+      id: "map",
+      label: "Map",
+      geoUrl: country.geoUrl,
+      kind: country.kind,
+      note: country.note,
+      metrics: country.metrics,
+    },
+    shareTab,
+  ];
+}
+
 export function CountryMapExplorer({
   initialIso3,
 }: {
@@ -48,6 +83,9 @@ export function CountryMapExplorer({
   const [metricId, setMetricId] = React.useState<MapMetricId>("tfr");
   const [year, setYear] = React.useState<number | null>(null);
   const [tabId, setTabId] = React.useState<string | null>(null);
+  const [shareMetric, setShareMetric] = React.useState<"population" | "births">(
+    "population",
+  );
   const [variantId, setVariantId] = React.useState<string | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
   const [showValues, setShowValues] = React.useState(() => {
@@ -86,10 +124,11 @@ export function CountryMapExplorer({
 
   const country =
     atlas.find((c) => c.iso3 === iso3) ?? atlas[0];
-  const activeTab =
-    country.mapTabs?.find((t) => t.id === tabId) ?? country.mapTabs?.[0];
-  const viewMetrics = activeTab?.metrics ?? country.metrics;
-  const geoUrl = activeTab?.geoUrl ?? country.geoUrl;
+  const tabs = displayTabsFor(country);
+  const activeTab = tabs?.find((t) => t.id === tabId) ?? tabs?.[0];
+  const shareMode = activeTab?.kind === "shares" && country.shares != null;
+  const viewMetrics = shareMode ? [] : (activeTab?.metrics ?? country.metrics);
+  const geoUrl = shareMode ? "" : (activeTab?.geoUrl ?? country.geoUrl);
   const kind = activeTab?.kind ?? country.kind;
   const note = activeTab?.note ?? country.note;
 
@@ -97,6 +136,7 @@ export function CountryMapExplorer({
     setSelectedIds([]);
     setTabId(null);
     setVariantId(null);
+    setShareMetric("population");
   }, [iso3]);
 
   React.useEffect(() => {
@@ -170,6 +210,25 @@ export function CountryMapExplorer({
         .sort((a, b) => (b.value ?? 0) - (a.value ?? 0)),
     [regions],
   );
+
+  const shareRows = React.useMemo(() => {
+    if (!country.shares) return [];
+    return [...country.shares.countries]
+      .map((c) => ({
+        id: c.iso3,
+        slug: c.iso3.toLowerCase(),
+        name: tidyCountryName(c.name),
+        value:
+          shareMetric === "births"
+            ? (c.births ?? null)
+            : c.population,
+      }))
+      .filter((r) => r.value != null)
+      .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+  }, [country.shares, shareMetric]);
+
+  const shareTotal = shareRows.reduce((s, r) => s + (r.value ?? 0), 0);
+  const panelRows = shareMode ? shareRows : ranked;
 
   const colorFor = React.useCallback(
     (v: number) => scale.color(v),
@@ -297,7 +356,7 @@ export function CountryMapExplorer({
       className="br-map-share relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
-      {geoUrl && mapData.length > 0 ? (
+      {geoUrl && mapData.length > 0 && !shareMode ? (
         <div className="br-map-canvas absolute inset-0">
           {MapView ? (
             <MapView
@@ -372,6 +431,10 @@ export function CountryMapExplorer({
             </div>
           )}
         </div>
+      ) : shareMode && country.shares ? (
+        <div className="br-map-canvas absolute inset-0 overflow-auto bg-white">
+          <RegionSharePies region={country.shares} />
+        </div>
       ) : (
         <div className="br-map-canvas absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-black/50">
           {note ?? "No regional layer for this country yet."}
@@ -389,8 +452,10 @@ export function CountryMapExplorer({
                 {country.country}
               </h1>
               <p className="mt-0.5 text-xs text-muted-foreground">
-                {kind}
-                {activeYear != null
+                {shareMode
+                  ? `shares · ${country.shares?.year ?? ""}`
+                  : kind}
+                {!shareMode && activeYear != null
                   ? metric?.yearFrom
                     ? ` · ${metric.yearFrom}–${activeYear}`
                     : ` · ${activeYear}`
@@ -478,15 +543,15 @@ export function CountryMapExplorer({
               </div>
             </div>
 
-            {country.mapTabs && country.mapTabs.length > 1 && (
+            {tabs && tabs.length > 1 && (
               <div data-export-ignore>
                 <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   Geography
                 </p>
-                <div className="mt-1.5 flex gap-1">
-                  {country.mapTabs.map((tab) => {
+                <div className="mt-1.5 flex flex-wrap gap-1">
+                  {tabs.map((tab) => {
                     const on =
-                      tab.id === (activeTab?.id ?? country.mapTabs?.[0]?.id);
+                      tab.id === (activeTab?.id ?? tabs[0]?.id);
                     return (
                       <button
                         key={tab.id}
@@ -511,13 +576,21 @@ export function CountryMapExplorer({
               </div>
             )}
 
-            {national != null && metric && (
+            {(shareMode ? shareTotal > 0 : national != null && metric) && (
               <div className="br-map-share-tfr">
                 <p className="br-map-share-tfr-value font-serif text-4xl font-semibold tabular-nums tracking-tight">
-                  {formatValue(national)}
+                  {shareMode
+                    ? formatCompact(shareTotal)
+                    : formatValue(national as number)}
                 </p>
                 <p className="br-map-share-tfr-label mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                  {country.country} · {metric.label}
+                  {shareMode
+                    ? `${country.country} · ${
+                        shareMetric === "births"
+                          ? "Estimated births"
+                          : "Population"
+                      }`
+                    : `${country.country} · ${metric?.label}`}
                 </p>
               </div>
             )}
@@ -526,6 +599,36 @@ export function CountryMapExplorer({
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Indicator
               </p>
+              {shareMode ? (
+                <>
+                  {(
+                    [
+                      ["population", "Population"],
+                      ["births", "Births"],
+                    ] as const
+                  ).map(([id, label]) => (
+                    <button
+                      key={id}
+                      type="button"
+                      onClick={() => setShareMetric(id)}
+                      className={cn(
+                        "flex w-full items-center justify-between rounded-sm px-2.5 py-2 text-left text-sm transition-colors",
+                        id === shareMetric
+                          ? "bg-foreground text-background"
+                          : "text-muted-foreground hover:bg-muted hover:text-foreground",
+                      )}
+                    >
+                      <span>{label}</span>
+                    </button>
+                  ))}
+                  <p className="pt-1 text-[11px] leading-relaxed text-muted-foreground">
+                    Births are estimated from the crude birth rate, so a younger
+                    population can account for more of the region’s births than
+                    of its residents.
+                  </p>
+                </>
+              ) : (
+                <>
               {METRIC_ORDER.map((id) => {
                 const m = metricOf(viewMetrics, id);
                 const locked = !m;
@@ -565,6 +668,8 @@ export function CountryMapExplorer({
                 Migration is not published as a comparable provincial series for
                 these maps yet.
               </p>
+                </>
+              )}
             </div>
 
             {metric?.variants && metric.variants.length > 1 && (
@@ -623,6 +728,7 @@ export function CountryMapExplorer({
               </div>
             )}
 
+            {!shareMode && (
             <div data-export-ignore>
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Labels
@@ -648,6 +754,7 @@ export function CountryMapExplorer({
                 Shift-click regions on the map to add them up.
               </p>
             </div>
+            )}
 
             {selectedRegions.length > 0 && selectedAggregate != null && (
               <div className="border-t border-border pt-4">
@@ -726,7 +833,7 @@ export function CountryMapExplorer({
               </p>
             )}
 
-            {ranked.length > 0 && (
+            {panelRows.length > 0 && (
               <>
                 <dl className="text-[13px]">
                   <div className="border-t border-border py-2.5">
@@ -734,9 +841,14 @@ export function CountryMapExplorer({
                       Highest
                     </dt>
                     <dd className="mt-0.5">
-                      {ranked[0].name}
+                      {panelRows[0].name}
                       <span className="ml-2 tabular-nums text-primary">
-                        {formatValue(ranked[0].value!)}
+                        {shareMode
+                          ? `${formatCompact(panelRows[0].value!)} · ${(
+                              ((panelRows[0].value ?? 0) / shareTotal) *
+                              100
+                            ).toFixed(1)}%`
+                          : formatValue(panelRows[0].value!)}
                       </span>
                     </dd>
                   </div>
@@ -745,19 +857,21 @@ export function CountryMapExplorer({
                       Lowest
                     </dt>
                     <dd className="mt-0.5">
-                      {ranked[ranked.length - 1].name}
+                      {panelRows[panelRows.length - 1].name}
                       <span className="ml-2 tabular-nums text-primary">
-                        {formatValue(ranked[ranked.length - 1].value!)}
+                        {shareMode
+                          ? formatCompact(panelRows[panelRows.length - 1].value!)
+                          : formatValue(panelRows[panelRows.length - 1].value!)}
                       </span>
                     </dd>
                   </div>
                 </dl>
                 <div>
                   <p className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                    Regions
+                    {shareMode ? "Countries" : "Regions"}
                   </p>
                   <ol className="text-[13px]">
-                    {ranked.slice(0, 24).map((r, i) => (
+                    {panelRows.slice(0, 24).map((r, i) => (
                       <li
                         key={r.id}
                         className="flex items-baseline justify-between gap-2 border-t border-border/70 py-1.5"
@@ -769,7 +883,13 @@ export function CountryMapExplorer({
                           {r.name}
                         </span>
                         <span className="shrink-0 tabular-nums text-primary">
-                          {formatValue(r.value!)}
+                          {shareMode
+                            ? `${formatCompact(r.value!)}${
+                                shareTotal
+                                  ? ` · ${((r.value! / shareTotal) * 100).toFixed(1)}%`
+                                  : ""
+                              }`
+                            : formatValue(r.value!)}
                         </span>
                       </li>
                     ))}
@@ -778,7 +898,18 @@ export function CountryMapExplorer({
               </>
             )}
 
-            {metric && activeYear != null && (
+            {shareMode ? (
+              <p className="text-[11px] leading-relaxed text-muted-foreground">
+                <a
+                  href={REGIONAL_SHARES_SOURCE_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  {REGIONAL_SHARES_SOURCE}
+                </a>
+              </p>
+            ) : metric && activeYear != null ? (
               <p className="text-[11px] leading-relaxed text-muted-foreground">
                 {metric.credit ? `${metric.credit} ` : null}
                 <a
@@ -799,7 +930,7 @@ export function CountryMapExplorer({
                 </Link>
                 .
               </p>
-            )}
+            ) : null}
           </div>
         </aside>
       ) : (

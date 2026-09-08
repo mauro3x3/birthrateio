@@ -67,6 +67,7 @@ export const TOPIC_META: TopicMeta[] = [
     ],
     caveats: [
       "The total fertility rate is a period measure: it describes one year's rates, not the completed families of real women.",
+      "Pre-1960 TFR is reconstructed: Human Fertility Database where official registration exists, UN WPP for 1950–1959, and Gapminder estimates for earlier gaps. Nineteenth-century series for countries without vital registration can be nearly flat by construction.",
       "Provisional figures come from national statistical offices ahead of final annual data and are revised.",
       "TFR by ancestry, origin, or religion is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories, India’s NFHS religion groups, or U.S. race.",
       "U.S. birth certificates do not record language spoken at home; Hispanic-origin TFR is the closest official split, not a language table.",
@@ -98,6 +99,11 @@ export const TOPIC_META: TopicMeta[] = [
         title: "Migration",
         href: "/migration",
         note: "Why growth can diverge from natural change",
+      },
+      {
+        title: "Where the births are",
+        href: "/population/shares",
+        note: "Who makes up a region's people, and who makes up its births",
       },
       {
         title: "Cities",

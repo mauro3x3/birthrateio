@@ -15,8 +15,8 @@ export function HomeExplore() {
           </h2>
           <p className="mt-2 text-base leading-relaxed text-muted-foreground">
             The charts most people come here for — regional fertility maps,
-            census maps, and the fertility decomposition — plus the rest of the
-            catalogue.
+            census maps, where the births are, and the fertility
+            decomposition — plus the rest of the catalogue.
           </p>
         </div>
         <ExploreDestinationGrid items={FEATURED_DESTINATIONS} />

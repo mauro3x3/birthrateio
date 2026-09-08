@@ -58,6 +58,27 @@ export default async function ClockPage() {
         <div className="container space-y-8 py-8 md:py-12">
           <FertilityClock {...props} />
 
+          <div className="max-w-3xl border border-border/80 bg-white px-5 py-5">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+              Next
+            </p>
+            <p className="mt-1.5 font-serif text-xl font-semibold tracking-tight">
+              Where are those births coming from?
+            </p>
+            <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+              Africa, Europe, Oceania, and every other region — share of the
+              people, and share of the babies.
+            </p>
+            <p className="mt-3">
+              <Link
+                href="/population/shares"
+                className="text-sm font-medium text-primary underline-offset-2 hover:underline"
+              >
+                Open Where the births are
+              </Link>
+            </p>
+          </div>
+
           <aside className="max-w-3xl space-y-3 border-l-2 border-[hsl(var(--brand-navy))]/25 pl-4 text-sm leading-relaxed text-muted-foreground">
             <p>
               <span className="font-medium text-foreground">Disclaimer:</span>{" "}
@@ -86,12 +107,19 @@ export default async function ClockPage() {
                     .filter((v, i, a) => a.indexOf(v) === i)
                     .join(", ")}`
                 : ""}
-              . Explore country profiles or the{" "}
+              . Explore country profiles, the{" "}
               <Link
                 href="/population"
                 className="text-primary underline-offset-2 hover:underline"
               >
                 population explorer
+              </Link>
+              , or{" "}
+              <Link
+                href="/population/shares"
+                className="text-primary underline-offset-2 hover:underline"
+              >
+                where those births are coming from
               </Link>
               .
             </p>

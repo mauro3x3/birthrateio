@@ -89,12 +89,18 @@ export const navTopics: NavTopic[] = [
         title: "Fertility",
         href: "/fertility",
         description:
-          "Total fertility rates, nowcasts, rankings, and TFR by ancestry or religion where published",
+          "Total fertility since 1800, nowcasts, rankings, and TFR by ancestry or religion where published",
       },
       {
         title: "Population",
         href: "/population",
         description: "Population levels, growth, and projections",
+      },
+      {
+        title: "Where the births are",
+        href: "/population/shares",
+        description:
+          "Each region's people, and which countries account for its births",
       },
       {
         title: "Migration",

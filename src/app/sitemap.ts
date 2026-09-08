@@ -19,6 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/fertility/many-mothers-or-large-families",
     "/fertility/education",
     "/population",
+    "/population/shares",
     "/migration",
     "/mortality",
     "/crime",
