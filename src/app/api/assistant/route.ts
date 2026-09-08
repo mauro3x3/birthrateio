@@ -13,13 +13,13 @@ interface ChatMessage {
 const SITE_MAP = `
 - / : Homepage dashboard (latest fertility/population highlights, global maps, rankings)
 - /topics : Subject catalogue (People, Society, Economy, Tools) — DST-style topic hub
-- /fertility : Fertility explorer (global map, rankings, movers, TFR by ancestry/origin where NSOs publish it — Denmark FERT1, Norway 12482)
+- /fertility : Fertility explorer (global map, rankings, movers, TFR by ancestry/origin/religion where published — Denmark FERT1, Norway 12482, India NFHS religion)
 - /population : Population explorer (rankings, projections, growth calculator)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
-- /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
+- /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Pakistan (PDHS 2017–18 provinces), Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
 - /demographics : Census maps hub — ethnicity, ancestry, race, and country of birth. Lists the US, UK, Denmark, Germany, Russia, and the rest of Europe.
 - /demographics/us : US demographics map — race & Hispanic origin by state (ACS)
 - /demographics/uk : England & Wales Census 2021 ethnic group by LAD/MSOA

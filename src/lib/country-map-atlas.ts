@@ -49,6 +49,7 @@ const ADMIN1_GEO: Record<string, string> = {
 
 const FEATURED = [
   "IND",
+  "PAK",
   "IRN",
   "RUS",
   "CHN",
@@ -346,6 +347,7 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
       geoUrl: ADMIN1_GEO[iso3] || first.geoUrl || "",
       hrefPrefix: ADMIN1_GEO[iso3] ? "/state" : null,
       metrics,
+      note: first.note,
     });
   }
 

@@ -1,5 +1,6 @@
 import denmark from "../data/tfr-by-ancestry-denmark.json";
 import norway from "../data/tfr-by-background-norway.json";
+import india from "../data/tfr-by-religion-india.json";
 import availability from "../data/tfr-by-ancestry-availability.json";
 
 export type TfrAncestryStatus =
@@ -39,11 +40,16 @@ export type TfrAncestryPack = {
   source: string;
   sourceUrl: string;
   statbank: string;
+  sourceUrlLabel?: string;
+  tableLinkLabel?: string;
   groups: string[];
-  series: { year: number; groups: Record<string, number> }[];
+  series: { year: number; label?: string; groups: Record<string, number> }[];
   colors?: Record<string, string>;
+  dashed?: string[];
   defaultFrom?: number;
   headline?: string;
+  /** Sparse official survey rounds rather than an annual series. */
+  discreteSurveys?: boolean;
 };
 
 const DNK_COLORS: Record<string, string> = {
@@ -60,6 +66,17 @@ const NOR_COLORS: Record<string, string> = {
   "Other population": "hsl(213 62% 32%)",
 };
 
+const IND_COLORS: Record<string, string> = {
+  Hindu: "hsl(25 72% 46%)",
+  Muslim: "hsl(142 42% 36%)",
+  Christian: "hsl(221 52% 46%)",
+  Sikh: "hsl(340 48% 44%)",
+  Buddhist: "hsl(42 62% 42%)",
+  Jain: "hsl(280 36% 46%)",
+  Other: "hsl(215 12% 52%)",
+  "All India": "hsl(213 62% 28%)",
+};
+
 const PACKS: TfrAncestryPack[] = [
   {
     ...(denmark as TfrAncestryPack),
@@ -72,6 +89,15 @@ const PACKS: TfrAncestryPack[] = [
     colors: NOR_COLORS,
     headline: "Total fertility rate by mother's immigrant category",
   },
+  {
+    ...(india as TfrAncestryPack),
+    colors: IND_COLORS,
+    dashed: ["All India"],
+    discreteSurveys: true,
+    headline: "Total fertility rate by religion",
+    sourceUrlLabel: "NFHS portal",
+    tableLinkLabel: "Open NFHS-5 Table 4.2 (PDF)",
+  },
 ];
 
 export const TFR_ANCESTRY_PACKS = PACKS;
@@ -82,7 +108,8 @@ export function getTfrAncestryPack(iso3: string): TfrAncestryPack | undefined {
 
 export function tfrAncestryOverlay(pack: TfrAncestryPack) {
   const rows = pack.series.map((snap) => {
-    const row: Record<string, number | null> = { year: snap.year };
+    const row: Record<string, number | string | null> = { year: snap.year };
+    if (snap.label) row.survey = snap.label;
     for (const g of pack.groups) {
       const v = snap.groups[g];
       row[g] = v != null && Number.isFinite(v) ? v : null;
@@ -93,6 +120,12 @@ export function tfrAncestryOverlay(pack: TfrAncestryPack) {
     key,
     label: key,
     color: pack.colors?.[key],
+    dashed: pack.dashed?.includes(key),
   }));
-  return { pack, rows, series };
+  const yearLabels = Object.fromEntries(
+    pack.series
+      .filter((s) => s.label)
+      .map((s) => [s.year, s.label as string]),
+  );
+  return { pack, rows, series, yearLabels };
 }

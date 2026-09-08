@@ -220,9 +220,10 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={cn(
+                    className={cn(
                     "px-2.5 py-2 text-[0.8125rem] font-medium transition-colors",
                     item.title === "Clock" && "hidden xl:inline-flex",
+                    item.title === "Contribute" && "hidden lg:inline-flex",
                     active ? "text-white" : "text-white/75 hover:text-white",
                   )}
                 >
@@ -314,6 +315,12 @@ export function SiteHeader() {
                 </div>
               );
             })}
+            <Link
+              href="/pricing"
+              className="block rounded-sm px-3 py-2 text-sm font-medium text-white hover:bg-white/10"
+            >
+              Pricing
+            </Link>
             <div className="mt-2 border-t border-white/10 pt-2">
               <p className="px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-wide text-white/50">
                 About the data

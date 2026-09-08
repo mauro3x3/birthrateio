@@ -132,8 +132,8 @@ export default async function FertilityPage() {
         <section>
           <SectionHeading
             id="fertility-by-ancestry"
-            title="Fertility by ancestry"
-            description="A handful of statistical offices publish TFR disaggregated by ancestry, immigrant category, or mother's country of birth. Definitions are not comparable across countries."
+            title="Fertility by ancestry and religion"
+            description="A handful of statistical offices publish TFR disaggregated by ancestry, immigrant category, or religion. Definitions are not comparable across countries."
             tocLabel="By ancestry"
           />
           <ul className="mt-5 divide-y divide-border border-y border-border">

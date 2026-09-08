@@ -18,7 +18,7 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     title: "Regional fertility maps",
     href: "/maps",
     description:
-      "Total fertility and population by state, province, and prefecture — India, the United States, China, Japan, and 25 other countries.",
+      "Total fertility and population by state, province, and prefecture — India, Pakistan, the United States, China, Japan, and 25 other countries.",
   },
   {
     id: "census-maps",

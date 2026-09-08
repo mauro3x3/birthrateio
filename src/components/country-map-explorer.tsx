@@ -306,7 +306,7 @@ export function CountryMapExplorer({
               <div className="mt-2 flex flex-wrap gap-1">
                 {atlas
                   .filter((c) =>
-                    ["IND", "IRN", "RUS", "CHN", "USA"].includes(c.iso3),
+                    ["IND", "PAK", "IRN", "RUS", "CHN", "USA"].includes(c.iso3),
                   )
                   .map((c) => (
                     <button

@@ -32,7 +32,7 @@ const pillars = [
   {
     icon: Globe2,
     title: "Free for everyone",
-    body: "No paywalls on country profiles, explorers, or downloads. Open access for students, journalists, and policymakers.",
+    body: "No paywall on country profiles, explorers, or ordinary downloads. Open access for students, journalists, and policymakers.",
   },
   {
     icon: BookOpen,
@@ -59,9 +59,14 @@ export default function SupportPage() {
             globe.
           </p>
           <p className="leading-relaxed text-muted-foreground">
-            We are not supported by ads or subscriptions. If birthrate.io helps
-            your research, reporting, or curiosity, please consider giving what
-            you can. Most gifts are small, but together they keep the lights on.
+            We are independent. The public site is free and carries ads. If
+            birthrate.io helps your research, reporting, or curiosity, please
+            consider giving what you can — or see{" "}
+            <Link href="/pricing" className="text-primary underline-offset-2 hover:underline">
+              Pro
+            </Link>{" "}
+            if you need the data at scale. Most gifts are small, but together
+            they keep the lights on.
           </p>
         </section>
 

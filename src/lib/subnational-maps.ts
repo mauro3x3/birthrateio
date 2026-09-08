@@ -27,6 +27,8 @@ export type SubnationalMap = {
   tab?: string;
   /** Extra headline figures (e.g. Taiwan / Hong Kong / Macao next to China). */
   highlights?: { name: string; value: number }[];
+  /** Caveat shown in the country-map explorer (coverage, vintage geography). */
+  note?: string;
   regions: SubnationalRegion[];
   min: number | null;
   max: number | null;

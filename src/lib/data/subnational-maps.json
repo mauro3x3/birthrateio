@@ -2252,8 +2252,7 @@
         }
       ],
       "min": 0.74,
-      "max": 1.74,
-      "tab": "2020 census"
+      "max": 1.74
     },
     {
       "id": "hrv-tfr",
@@ -2992,6 +2991,76 @@
       ],
       "min": 1.1,
       "max": 3
+    },
+    {
+      "id": "pak-tfr",
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "title": "Total fertility rate, Pakistan 2018",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "province",
+      "year": 2018,
+      "national": 3.6,
+      "source": "NIPS/ICF, Pakistan Demographic and Health Survey 2017\u201318, Table 5.2 \u2014 total fertility rate (women 15\u201349) by region, 1\u201336 months before interview.",
+      "sourceUrl": "https://dhsprogram.com/pubs/pdf/FR354/FR354.pdf",
+      "credit": null,
+      "geoUrl": "/geo/maps/pak-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "note": "The PDHS national TFR (3.6) excludes Azad Jammu and Kashmir and Gilgit Baltistan; those regions are still drawn. FATA is shown as published in 2017\u201318; it was later merged into Khyber Pakhtunkhwa.",
+      "regions": [
+        {
+          "id": "pakistan-gilgit-baltistan",
+          "slug": "pakistan-gilgit-baltistan",
+          "name": "Gilgit Baltistan",
+          "value": 4.7
+        },
+        {
+          "id": "pakistan-khyber-pakhtunkhwa",
+          "slug": "pakistan-khyber-pakhtunkhwa",
+          "name": "Khyber Pakhtunkhwa",
+          "value": 4.0
+        },
+        {
+          "id": "pakistan-fata",
+          "slug": "pakistan-fata",
+          "name": "FATA",
+          "value": 4.8
+        },
+        {
+          "id": "pakistan-balochistan",
+          "slug": "pakistan-balochistan",
+          "name": "Balochistan",
+          "value": 4.0
+        },
+        {
+          "id": "pakistan-punjab",
+          "slug": "pakistan-punjab",
+          "name": "Punjab",
+          "value": 3.4
+        },
+        {
+          "id": "pakistan-sindh",
+          "slug": "pakistan-sindh",
+          "name": "Sindh",
+          "value": 3.6
+        },
+        {
+          "id": "pakistan-azad-jammu-and-kashmir",
+          "slug": "pakistan-azad-jammu-and-kashmir",
+          "name": "Azad Jammu and Kashmir",
+          "value": 3.5
+        },
+        {
+          "id": "pakistan-ict-islamabad",
+          "slug": "pakistan-ict-islamabad",
+          "name": "ICT Islamabad",
+          "value": 3.0
+        }
+      ],
+      "min": 3.0,
+      "max": 4.8
     },
     {
       "id": "irl-tfr",

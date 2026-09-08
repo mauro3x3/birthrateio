@@ -41,6 +41,9 @@ export function SiteFooter() {
             <Link href="/contribute" className="text-primary hover:underline">
               Help improve the data
             </Link>
+            <Link href="/pricing" className="text-primary hover:underline">
+              Pricing
+            </Link>
           </div>
         </div>
 

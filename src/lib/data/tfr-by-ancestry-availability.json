@@ -1,8 +1,22 @@
 {
   "metric": "tfr_by_ancestry_or_origin",
-  "updated": "2026-08-31",
-  "note": "A handful of statistical offices publish total fertility by ancestry, immigrant category, or mother's country of birth. Definitions are not comparable across countries. We chart official series only — never estimates pieced together from population shares.",
+  "updated": "2026-09-08",
+  "note": "A handful of statistical offices publish total fertility by ancestry, immigrant category, mother's country of birth, or religion. Definitions are not comparable across countries. We chart official series only — never estimates pieced together from population shares.",
   "countries": [
+    {
+      "iso3": "IND",
+      "status": "AVAILABLE",
+      "level": "religion",
+      "detail": "IIPS / MoHFW National Family Health Survey — TFR (ages 15–49) by religion, NFHS-1 (1992–93) through NFHS-5 (2019–21). Table 4.2 in NFHS-5. Not an annual vital-statistics series.",
+      "sourceUrl": "https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf"
+    },
+    {
+      "iso3": "PAK",
+      "status": "NOT_AVAILABLE",
+      "level": null,
+      "detail": "NIPS / PDHS fertility tables (including 2017–18 Table 5.2) split TFR by residence, education, wealth, and province — not by religion. The Pakistan census publishes population by religion, not TFR. Pakistan is ~96% Muslim, so a religion-disaggregated TFR comparable to India’s NFHS Table 4.2 is not in the official reports.",
+      "sourceUrl": "https://dhsprogram.com/pubs/pdf/FR354/FR354.pdf"
+    },
     {
       "iso3": "DNK",
       "status": "AVAILABLE",

@@ -63,7 +63,7 @@ export const TOPIC_META: TopicMeta[] = [
     caveats: [
       "The total fertility rate is a period measure: it describes one year's rates, not the completed families of real women.",
       "Provisional figures come from national statistical offices ahead of final annual data and are revised.",
-      "TFR by ancestry or origin is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories or U.S. race.",
+      "TFR by ancestry, origin, or religion is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories, India’s NFHS religion groups, or U.S. race.",
     ],
   },
   {
@@ -331,7 +331,7 @@ export const TOPIC_META: TopicMeta[] = [
       },
     ],
     caveats: [
-      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Iran has no redistributable provincial table yet.",
+      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Pakistan uses PDHS 2017–18 regions, including FATA as then published. Iran has no redistributable provincial table yet.",
     ],
   },
   {

@@ -27,7 +27,7 @@ export interface MultiSeries {
 }
 
 function lastNumericIndex(
-  data: Record<string, number | null>[],
+  data: Record<string, number | string | null>[],
   key: string,
 ): number {
   for (let i = data.length - 1; i >= 0; i--) {
@@ -37,7 +37,7 @@ function lastNumericIndex(
 }
 
 function lastNumericValue(
-  data: Record<string, number | null>[],
+  data: Record<string, number | string | null>[],
   key: string,
 ): number | null {
   const i = lastNumericIndex(data, key);
@@ -48,7 +48,7 @@ function lastNumericValue(
 
 /** First year where `to` rises above `from` (e.g. deaths overtaking births). */
 function firstCrossYear(
-  data: Record<string, number | null>[],
+  data: Record<string, number | string | null>[],
   fromKey: string,
   toKey: string,
 ): number | null {
@@ -86,8 +86,10 @@ export function MultiSeriesChart({
   referenceY,
   referenceLabel,
   markCrossing,
+  xTickFormatter,
+  tooltipLabelFormatter,
 }: {
-  data: Record<string, number | null>[];
+  data: Record<string, number | string | null>[];
   series: MultiSeries[];
   height?: number;
   unit?: string;
@@ -96,6 +98,8 @@ export function MultiSeriesChart({
   referenceLabel?: string;
   /** Draw a year marker where one series overtakes another. */
   markCrossing?: { from: string; to: string };
+  xTickFormatter?: (value: number | string) => string;
+  tooltipLabelFormatter?: (value: number | string) => string;
 }) {
   if (!data || data.length === 0) {
     return (
@@ -169,6 +173,8 @@ export function MultiSeriesChart({
           tickLine={false}
           axisLine={{ stroke: "hsl(var(--foreground) / 0.28)", strokeWidth: 1 }}
           minTickGap={28}
+          interval={sparse ? 0 : undefined}
+          tickFormatter={xTickFormatter}
         />
         <YAxis
           tickFormatter={fmt}
@@ -186,6 +192,7 @@ export function MultiSeriesChart({
               {...props}
               unit={unit}
               decimals={decimals}
+              labelFormatter={tooltipLabelFormatter}
             />
           )}
         />

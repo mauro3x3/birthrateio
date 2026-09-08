@@ -55,6 +55,10 @@ export const supportConfig = {
   currency: "USD",
 };
 
+export const contactConfig = {
+  organisationsEmail: "kinderheimrune@proton.me",
+};
+
 export type NavLink = {
   title: string;
   href: string;
@@ -85,7 +89,7 @@ export const navTopics: NavTopic[] = [
         title: "Fertility",
         href: "/fertility",
         description:
-          "Total fertility rates, nowcasts, rankings, and TFR by ancestry where published",
+          "Total fertility rates, nowcasts, rankings, and TFR by ancestry or religion where published",
       },
       {
         title: "Population",
@@ -241,6 +245,7 @@ export const primaryNav: NavLink[] = [
   { title: "Cities", href: "/cities" },
   { title: "Clock", href: "/clock" },
   { title: "Contribute", href: "/contribute" },
+  { title: "Pricing", href: "/pricing" },
 ];
 
 /** Flat list of every content page (sitemap, assistants, legacy). */

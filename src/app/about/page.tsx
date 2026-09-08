@@ -152,8 +152,12 @@ export default function AboutPage() {
             page.
           </p>
           <p className="text-sm leading-relaxed text-muted-foreground">
-            The site is free to read, carries no advertising, and is run
-            independently. Running costs are covered by{" "}
+            The site is free to read. Ordinary use is supported by ads;
+            organisations that need an API or bulk downloads can use{" "}
+            <Link href="/pricing" className="link-editorial">
+              Pro
+            </Link>
+            . Running costs are also covered by{" "}
             <Link href="/support" className="link-editorial">
               voluntary donations
             </Link>

@@ -1,0 +1,89 @@
+{
+  "iso3": "IND",
+  "slug": "india",
+  "country": "India",
+  "metric": "tfr_by_religion",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Total fertility rate (ages 15–49) by religion of the woman, from successive National Family Health Surveys. Each point is the TFR for the three years preceding that survey, not an annual vital-statistics rate. NFHS-5 (2019–21) Table 4.2: Muslim 2.36, Other 2.15, Hindu 1.94, Christian 1.88, Sikh 1.61, Jain 1.60, Buddhist/Neo-Buddhist 1.39, all India 1.99. Muslim TFR fell from 4.41 in NFHS-1 (1992–93) to 2.36 in NFHS-5 — about 47%. NFHS-1 published Hindus, Muslims, and a residual other-religions group (Christians, Sikhs, Buddhists, Jains, and others combined at 2.70); we do not chart that residual against later Other, which excludes the named minorities. The NFHS-3 Jain figure (1.54) is based on 125–249 woman-years of exposure. Religion TFR is not comparable to Denmark ancestry series or Norway immigrant-category TFR.",
+  "source": "IIPS / MoHFW National Family Health Survey (NFHS-1 to NFHS-5)",
+  "sourceUrl": "https://rchiips.org/NFHS/factsheet_NFHS-5.shtml",
+  "statbank": "https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf",
+  "groups": [
+    "Hindu",
+    "Muslim",
+    "Christian",
+    "Sikh",
+    "Buddhist",
+    "Jain",
+    "Other",
+    "All India"
+  ],
+  "series": [
+    {
+      "year": 1993,
+      "label": "NFHS-1 (1992–93)",
+      "groups": {
+        "Hindu": 3.3,
+        "Muslim": 4.41,
+        "All India": 3.39
+      }
+    },
+    {
+      "year": 1999,
+      "label": "NFHS-2 (1998–99)",
+      "groups": {
+        "Hindu": 2.78,
+        "Muslim": 3.59,
+        "Christian": 2.44,
+        "Sikh": 2.26,
+        "Buddhist": 2.13,
+        "Jain": 1.9,
+        "Other": 2.33,
+        "All India": 2.85
+      }
+    },
+    {
+      "year": 2006,
+      "label": "NFHS-3 (2005–06)",
+      "groups": {
+        "Hindu": 2.59,
+        "Muslim": 3.4,
+        "Christian": 2.34,
+        "Sikh": 1.95,
+        "Buddhist": 2.25,
+        "Jain": 1.54,
+        "Other": 3.98,
+        "All India": 2.68
+      }
+    },
+    {
+      "year": 2016,
+      "label": "NFHS-4 (2015–16)",
+      "groups": {
+        "Hindu": 2.13,
+        "Muslim": 2.62,
+        "Christian": 1.99,
+        "Sikh": 1.58,
+        "Buddhist": 1.74,
+        "Jain": 1.2,
+        "Other": 2.57,
+        "All India": 2.18
+      }
+    },
+    {
+      "year": 2021,
+      "label": "NFHS-5 (2019–21)",
+      "groups": {
+        "Hindu": 1.94,
+        "Muslim": 2.36,
+        "Christian": 1.88,
+        "Sikh": 1.61,
+        "Buddhist": 1.39,
+        "Jain": 1.6,
+        "Other": 2.15,
+        "All India": 1.99
+      }
+    }
+  ]
+}

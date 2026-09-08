@@ -22,7 +22,7 @@ export function TfrAncestryChart({
   pack: TfrAncestryPack;
   className?: string;
 }) {
-  const { rows, series } = React.useMemo(
+  const { rows, series, yearLabels } = React.useMemo(
     () => tfrAncestryOverlay(pack),
     [pack],
   );
@@ -53,6 +53,9 @@ export function TfrAncestryChart({
     setToYear(hi === spanMax ? null : hi);
   };
 
+  const discrete = pack.discreteSurveys || rows.length <= 6;
+  const csvMetric = pack.metric.replace(/_/g, "-");
+
   return (
     <div className={className}>
       <ChartCard
@@ -60,10 +63,14 @@ export function TfrAncestryChart({
           pack.headline ??
           `Total fertility rate by ancestry — ${pack.country}`
         }
-        description={`Children per woman · ${windowStart}–${windowEnd}. Drag the handles to stretch the dates.`}
+        description={
+          discrete
+            ? `Children per woman · official survey rounds. Lines connect successive surveys, not annual rates.`
+            : `Children per woman · ${windowStart}–${windowEnd}. Drag the handles to stretch the dates.`
+        }
         source={pack.source}
         csvRows={visible}
-        csvName={`${pack.slug}-tfr-by-ancestry-${windowStart}-${windowEnd}`}
+        csvName={`${pack.slug}-${csvMetric}-${windowStart}-${windowEnd}`}
       >
         <MultiSeriesChart
           data={visible}
@@ -73,8 +80,18 @@ export function TfrAncestryChart({
           height={380}
           referenceY={2.1}
           referenceLabel="Replacement"
+          xTickFormatter={
+            Object.keys(yearLabels).length
+              ? (y) => {
+                  const full = yearLabels[Number(y)];
+                  if (!full) return String(y);
+                  const m = full.match(/\(([^)]+)\)/);
+                  return m?.[1] ?? full;
+                }
+              : undefined
+          }
         />
-        {spanMax > spanMin ? (
+        {!discrete && spanMax > spanMin ? (
           <div
             data-export-ignore
             className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4"
@@ -158,7 +175,7 @@ export function TfrAncestryChart({
             rel="noopener noreferrer"
             className="underline underline-offset-2"
           >
-            Open the source table
+            {pack.tableLinkLabel ?? "Open the source table"}
           </a>
           {pack.sourceUrl !== pack.statbank ? (
             <>
@@ -170,7 +187,7 @@ export function TfrAncestryChart({
                 rel="noopener noreferrer"
                 className="underline underline-offset-2"
               >
-                Statistical office
+                {pack.sourceUrlLabel ?? "Statistical office"}
               </a>
             </>
           ) : null}
@@ -179,8 +196,9 @@ export function TfrAncestryChart({
           <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
             {pack.definition}{" "}
             Replacement-level fertility is marked at 2.1 children per woman.
-            Group sizes differ sharply — descendant series in particular can
-            jump around when the number of women is small.
+            {pack.metric === "tfr_by_religion"
+              ? null
+              : " Group sizes differ sharply — descendant series in particular can jump around when the number of women is small."}
           </p>
         </CollapsibleSection>
       </ChartCard>

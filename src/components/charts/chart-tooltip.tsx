@@ -36,14 +36,25 @@ export function MultiSeriesTooltip({
   label,
   unit,
   decimals = 2,
+  labelFormatter,
 }: TooltipProps<ValueType, NameType> & {
   unit?: string;
   decimals?: number;
+  labelFormatter?: (value: number | string) => string;
 }) {
   if (!active || !payload?.length) return null;
 
   const fmt = (v: number) =>
     v.toLocaleString("en-US", { maximumFractionDigits: decimals });
+
+  const survey =
+    payload[0]?.payload && typeof payload[0].payload === "object"
+      ? (payload[0].payload as { survey?: string }).survey
+      : undefined;
+  const heading =
+    (typeof survey === "string" && survey) ||
+    (labelFormatter ? labelFormatter(label as number | string) : null) ||
+    `Year ${label}`;
 
   return (
     <div
@@ -51,7 +62,7 @@ export function MultiSeriesTooltip({
       style={{ pointerEvents: "none" }}
     >
       <p className="mb-1.5 text-xs font-medium text-muted-foreground">
-        Year {label}
+        {heading}
       </p>
       <ul className="space-y-1">
         {payload

@@ -6,7 +6,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Regional maps — Fertility and population by state and province",
   description:
-    "Census-style choropleth maps of total fertility rate, population, and population change for states, provinces and regions. India, Russia, China, the United States and 25 other countries from official sources.",
+    "Census-style choropleth maps of total fertility rate, population, and population change for states, provinces and regions. India, Pakistan, Russia, China, the United States and 25 other countries from official sources.",
   alternates: { canonical: "/maps" },
 };
 
