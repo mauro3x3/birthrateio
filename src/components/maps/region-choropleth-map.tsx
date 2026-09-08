@@ -564,6 +564,8 @@ function FitGeo({
   const padBottom = paddingBottomRight?.[0] ?? padding[0];
 
   React.useEffect(() => {
+    let observer: MutationObserver | undefined;
+    let onResize: (() => void) | undefined;
     try {
       const coords = collectLngLats(geo);
       if (coords.length === 0) return;
@@ -583,17 +585,66 @@ function FitGeo({
         L.latLng(minLat, minLng),
         L.latLng(maxLat, maxLng),
       );
-      if (b.isValid()) {
+      const apply = (exporting: boolean) => {
+        if (!b.isValid()) return;
+        map.invalidateSize();
         map.fitBounds(b, {
-          maxZoom,
-          paddingTopLeft: [padY, padXLeft],
-          paddingBottomRight: [padBottom, padXRight],
+          animate: false,
+          maxZoom: exporting ? 10 : maxZoom,
+          paddingTopLeft: exporting ? [8, padXLeft] : [padY, padXLeft],
+          paddingBottomRight: exporting ? [12, 10] : [padBottom, padXRight],
         });
+        if (!exporting) return;
+        const size = map.getSize();
+        const availW = Math.max(1, size.x - padXLeft - 16);
+        const availH = Math.max(1, size.y - 16);
+        const span = (bounds: L.LatLngBounds) => {
+          const nw = map.latLngToContainerPoint(bounds.getNorthWest());
+          const se = map.latLngToContainerPoint(bounds.getSouthEast());
+          return { nw, w: se.x - nw.x, h: se.y - nw.y };
+        };
+        const fitted = span(b);
+        if (fitted.w > 8 && fitted.h > 8) {
+          const scale = Math.min(availW / fitted.w, availH / fitted.h) * 0.96;
+          if (scale > 1.02) {
+            map.setZoom(Math.min(map.getZoom() + Math.log2(scale), 10), {
+              animate: false,
+            });
+          }
+        }
+        const placed = span(b);
+        const targetX = padXLeft + Math.max(0, (availW - placed.w) / 2);
+        const targetY = Math.max(6, (size.y - placed.h) / 2);
+        map.panBy([placed.nw.x - targetX, placed.nw.y - targetY], {
+          animate: false,
+        });
+      };
+
+      apply(false);
+      const root = map.getContainer().closest(".br-map-share");
+      const sync = () =>
+        apply(root?.classList.contains("br-exporting") ?? false);
+      onResize = sync;
+      if (root) {
+        observer = new MutationObserver(() => {
+          requestAnimationFrame(sync);
+        });
+        observer.observe(root, { attributes: true, attributeFilter: ["class"] });
       }
+      map.on("resize", sync);
+      window.addEventListener("br-map-export-fit", sync);
     } catch {
       /* ignore */
     }
-    setTimeout(() => map.invalidateSize(), 60);
+    const t = window.setTimeout(() => map.invalidateSize(), 60);
+    return () => {
+      observer?.disconnect();
+      if (onResize) {
+        map.off("resize", onResize);
+        window.removeEventListener("br-map-export-fit", onResize);
+      }
+      window.clearTimeout(t);
+    };
   }, [map, geo, maxZoom, padY, padXLeft, padXRight, padBottom]);
   return null;
 }

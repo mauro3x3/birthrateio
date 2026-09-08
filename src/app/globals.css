@@ -146,6 +146,55 @@
   color: hsl(var(--muted-foreground) / 0.55);
 }
 
+/* Regional map PNG — hide chrome, keep map + panel + share URL. */
+.br-map-share.br-exporting [data-export-ignore],
+.br-map-share.br-exporting .leaflet-control-container {
+  display: none !important;
+}
+.br-map-share-url {
+  pointer-events: none;
+}
+.br-map-share.br-exporting {
+  width: 1280px !important;
+  height: 800px !important;
+  min-height: 0 !important;
+}
+.br-map-share.br-exporting .br-map-canvas,
+.br-map-share.br-exporting aside {
+  bottom: 4.1rem;
+}
+.br-map-share.br-exporting .br-map-share-url {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  right: auto;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 1.85rem;
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  padding: 0.85rem 1rem;
+  box-shadow: none;
+}
+.br-map-share.br-exporting .br-map-share-tfr-value {
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+  font-size: 5.25rem;
+  font-weight: 650;
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+.br-map-share.br-exporting .br-map-share-tfr-label {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+}
+
 /* Inline text links read like reference links. */
 .link-editorial {
   @apply text-primary underline-offset-2 hover:underline;

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ChartCard } from "@/components/charts/chart-card";
+import { GroupedBarChart } from "@/components/charts/grouped-bar-chart";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import { Slider } from "@/components/ui/slider";
 import { CollapsibleSection } from "@/components/collapsible-section";
@@ -32,6 +33,9 @@ export function TfrAncestryChart({
     pack.defaultFrom ?? null,
   );
   const [toYear, setToYear] = React.useState<number | null>(null);
+  const [chartKind, setChartKind] = React.useState<"bars" | "lines">(
+    pack.discreteSurveys ? "bars" : "lines",
+  );
 
   if (spanMin == null || spanMax == null) return null;
 
@@ -55,6 +59,15 @@ export function TfrAncestryChart({
 
   const discrete = pack.discreteSurveys || rows.length <= 6;
   const csvMetric = pack.metric.replace(/_/g, "-");
+  const useBars = discrete && chartKind === "bars";
+  const xTickFormatter = Object.keys(yearLabels).length
+    ? (y: number | string) => {
+        const full = yearLabels[Number(y)];
+        if (!full) return String(y);
+        const m = full.match(/\(([^)]+)\)/);
+        return m?.[1] ?? full;
+      }
+    : undefined;
 
   return (
     <div className={className}>
@@ -65,32 +78,65 @@ export function TfrAncestryChart({
         }
         description={
           discrete
-            ? `Children per woman · official survey rounds. Lines connect successive surveys, not annual rates.`
+            ? useBars
+              ? "Children per woman · official survey rounds."
+              : "Children per woman · official survey rounds. Lines connect successive surveys, not annual rates."
             : `Children per woman · ${windowStart}–${windowEnd}. Drag the handles to stretch the dates.`
         }
         source={pack.source}
         csvRows={visible}
         csvName={`${pack.slug}-${csvMetric}-${windowStart}-${windowEnd}`}
+        action={
+          pack.discreteSurveys ? (
+            <span className="inline-flex items-center gap-2">
+              <button
+                type="button"
+                className={cn(
+                  "font-medium",
+                  useBars ? "text-foreground" : "link-editorial",
+                )}
+                onClick={() => setChartKind("bars")}
+              >
+                Bars
+              </button>
+              <span className="text-muted-foreground/40">·</span>
+              <button
+                type="button"
+                className={cn(
+                  "font-medium",
+                  !useBars ? "text-foreground" : "link-editorial",
+                )}
+                onClick={() => setChartKind("lines")}
+              >
+                Lines
+              </button>
+            </span>
+          ) : undefined
+        }
       >
-        <MultiSeriesChart
-          data={visible}
-          series={series}
-          unit={pack.unit}
-          decimals={pack.decimals}
-          height={380}
-          referenceY={2.1}
-          referenceLabel="Replacement"
-          xTickFormatter={
-            Object.keys(yearLabels).length
-              ? (y) => {
-                  const full = yearLabels[Number(y)];
-                  if (!full) return String(y);
-                  const m = full.match(/\(([^)]+)\)/);
-                  return m?.[1] ?? full;
-                }
-              : undefined
-          }
-        />
+        {useBars ? (
+          <GroupedBarChart
+            data={visible}
+            series={series}
+            unit={pack.unit}
+            decimals={pack.decimals}
+            height={380}
+            referenceY={2.1}
+            referenceLabel="Replacement"
+            xTickFormatter={xTickFormatter}
+          />
+        ) : (
+          <MultiSeriesChart
+            data={visible}
+            series={series}
+            unit={pack.unit}
+            decimals={pack.decimals}
+            height={380}
+            referenceY={2.1}
+            referenceLabel="Replacement"
+            xTickFormatter={xTickFormatter}
+          />
+        )}
         {!discrete && spanMax > spanMin ? (
           <div
             data-export-ignore

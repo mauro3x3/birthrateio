@@ -11,6 +11,7 @@ import {
   type MapMetricId,
 } from "@/lib/country-map-atlas";
 import { MAP_OCEAN } from "@/lib/map-path-style";
+import { downloadMapSharePng, mapShareUrl } from "@/lib/map-share-export";
 import { formatNumber, cn } from "@/lib/utils";
 
 type MapComponent = typeof import("@/components/maps/region-choropleth-map").RegionChoroplethMap;
@@ -43,6 +44,9 @@ export function CountryMapExplorer({
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
   const [combineSelection, setCombineSelection] = React.useState(true);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
+  const [exporting, setExporting] = React.useState(false);
+  const [exportWhenPanelOpens, setExportWhenPanelOpens] = React.useState(false);
+  const frameRef = React.useRef<HTMLDivElement>(null);
   const router = useRouter();
 
   React.useEffect(() => {
@@ -208,13 +212,54 @@ export function CountryMapExplorer({
     window.history.replaceState(null, "", `/maps/${next.toLowerCase()}`);
   };
 
+  const shareUrl = mapShareUrl(country.iso3);
+  const exportingRef = React.useRef(false);
+
+  const captureSharePng = React.useCallback(async () => {
+    const node = frameRef.current;
+    if (!node || exportingRef.current) return;
+    exportingRef.current = true;
+    setExporting(true);
+    try {
+      await downloadMapSharePng({
+        node,
+        iso3: country.iso3,
+        background: MAP_OCEAN.atlas,
+      });
+    } catch (err) {
+      console.error("Map PNG export failed", err);
+    } finally {
+      exportingRef.current = false;
+      setExporting(false);
+    }
+  }, [country.iso3]);
+
+  const requestSharePng = React.useCallback(() => {
+    if (!panelOpen) {
+      setExportWhenPanelOpens(true);
+      setPanelOpen(true);
+      return;
+    }
+    void captureSharePng();
+  }, [captureSharePng, panelOpen]);
+
+  React.useEffect(() => {
+    if (!exportWhenPanelOpens || !panelOpen) return;
+    const t = window.setTimeout(() => {
+      setExportWhenPanelOpens(false);
+      void captureSharePng();
+    }, 450);
+    return () => window.clearTimeout(t);
+  }, [captureSharePng, exportWhenPanelOpens, panelOpen]);
+
   return (
     <div
-      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      ref={frameRef}
+      className="br-map-share relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
       {country.geoUrl && mapData.length > 0 ? (
-        <div className="absolute inset-0">
+        <div className="br-map-canvas absolute inset-0">
           {MapView ? (
             <MapView
               key={country.iso3}
@@ -252,7 +297,7 @@ export function CountryMapExplorer({
           )}
         </div>
       ) : (
-        <div className="absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-black/50">
+        <div className="br-map-canvas absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-black/50">
           {country.note ?? "No regional layer for this country yet."}
         </div>
       )}
@@ -276,18 +321,30 @@ export function CountryMapExplorer({
                   : ""}
               </p>
             </div>
-            <button
-              type="button"
-              aria-label="Hide panel"
-              onClick={() => setPanelOpen(false)}
-              className="shrink-0 rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              Close
-            </button>
+            <div className="flex shrink-0 items-start gap-1">
+              <button
+                type="button"
+                data-export-ignore
+                disabled={exporting}
+                onClick={requestSharePng}
+                className="rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground disabled:opacity-60"
+              >
+                {exporting ? "Saving…" : "Download image"}
+              </button>
+              <button
+                type="button"
+                data-export-ignore
+                aria-label="Hide panel"
+                onClick={() => setPanelOpen(false)}
+                className="shrink-0 rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                Close
+              </button>
+            </div>
           </div>
 
           <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-4">
-            <div>
+            <div data-export-ignore>
               <label className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Country
               </label>
@@ -327,17 +384,17 @@ export function CountryMapExplorer({
             </div>
 
             {national != null && metric && (
-              <div>
-                <p className="text-4xl font-semibold tabular-nums tracking-tight">
+              <div className="br-map-share-tfr">
+                <p className="br-map-share-tfr-value font-serif text-4xl font-semibold tabular-nums tracking-tight">
                   {formatValue(national)}
                 </p>
-                <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                <p className="br-map-share-tfr-label mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   {country.country} · {metric.label}
                 </p>
               </div>
             )}
 
-            <div className="space-y-1">
+            <div data-export-ignore className="space-y-1">
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Indicator
               </p>
@@ -383,7 +440,7 @@ export function CountryMapExplorer({
             </div>
 
             {metric && metric.years.length > 1 && (
-              <div>
+              <div data-export-ignore>
                 <label className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   Year
                 </label>
@@ -401,7 +458,7 @@ export function CountryMapExplorer({
               </div>
             )}
 
-            <div>
+            <div data-export-ignore>
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Labels
               </p>
@@ -448,26 +505,28 @@ export function CountryMapExplorer({
                   {additiveMetric ? "Sum" : "Average"} of{" "}
                   {selectedRegions.length} selected
                 </p>
-                <button
-                  type="button"
-                  role="switch"
-                  aria-checked={combineSelection}
-                  onClick={() => setCombineSelection((v) => !v)}
-                  className={cn(
-                    "mt-2.5 flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
-                    combineSelection
-                      ? "border-foreground bg-foreground text-background"
-                      : "border-input bg-background text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  <span>One area on map</span>
-                  <span className="text-[10px] uppercase tracking-[0.14em]">
-                    {combineSelection ? "On" : "Off"}
-                  </span>
-                </button>
-                <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
-                  Merges the selection into a single shape for screenshots.
-                </p>
+                <div data-export-ignore>
+                  <button
+                    type="button"
+                    role="switch"
+                    aria-checked={combineSelection}
+                    onClick={() => setCombineSelection((v) => !v)}
+                    className={cn(
+                      "mt-2.5 flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                      combineSelection
+                        ? "border-foreground bg-foreground text-background"
+                        : "border-input bg-background text-muted-foreground hover:text-foreground",
+                    )}
+                  >
+                    <span>One area on map</span>
+                    <span className="text-[10px] uppercase tracking-[0.14em]">
+                      {combineSelection ? "On" : "Off"}
+                    </span>
+                  </button>
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+                    Merges the selection into a single shape for screenshots.
+                  </p>
+                </div>
                 <ul className="mt-2 text-[13px]">
                   {selectedRegions.map((r) => (
                     <li
@@ -567,6 +626,7 @@ export function CountryMapExplorer({
                 </a>
                 .{" "}
                 <Link
+                  data-export-ignore
                   href="/demographics"
                   className="underline underline-offset-2 hover:text-foreground"
                 >
@@ -579,13 +639,26 @@ export function CountryMapExplorer({
         </aside>
       ) : (
         <>
-          <button
-            type="button"
-            onClick={() => setPanelOpen(true)}
-            className="absolute left-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md"
+          <div
+            data-export-ignore
+            className="absolute left-3 top-3 z-[1100] flex gap-2"
           >
-            Show panel
-          </button>
+            <button
+              type="button"
+              onClick={() => setPanelOpen(true)}
+              className="rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md"
+            >
+              Show panel
+            </button>
+            <button
+              type="button"
+              disabled={exporting}
+              onClick={requestSharePng}
+              className="rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md disabled:opacity-60"
+            >
+              {exporting ? "Saving…" : "Download image"}
+            </button>
+          </div>
           {selectedRegions.length > 0 && selectedAggregate != null ? (
             <div className="absolute left-3 top-12 z-[1100] w-[min(100%-1.5rem,18rem)] rounded-sm border border-black/10 bg-white/95 px-3 py-2.5 shadow-md">
               <div className="flex items-start justify-between gap-2">
@@ -608,6 +681,10 @@ export function CountryMapExplorer({
           ) : null}
         </>
       )}
+
+      <p className="br-map-share-url absolute right-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3.5 py-2 font-serif text-base font-semibold tracking-tight text-foreground shadow-md">
+        {shareUrl}
+      </p>
     </div>
   );
 }
