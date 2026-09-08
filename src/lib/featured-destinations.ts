@@ -18,7 +18,7 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     title: "Regional fertility maps",
     href: "/maps",
     description:
-      "Total fertility and population by state, province, and prefecture — India, Pakistan, the United States, China, Japan, and 25 other countries.",
+      "Total fertility by state, province, and country — India, Pakistan, Nigeria, Brazil, Indonesia, Europe (NUTS 2), Africa, the Caribbean, and dozens of other official maps.",
   },
   {
     id: "census-maps",
@@ -27,6 +27,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     href: "/demographics",
     description:
       "Ethnicity, ancestry, race, and country of birth from national censuses — the UK, Denmark, Germany, Russia, the United States, and the rest of Europe.",
+  },
+  {
+    id: "tfr-education",
+    kicker: "Fertility",
+    title: "Fertility by education and income",
+    href: "/fertility/education",
+    description:
+      "DHS TFR by schooling and wealth quintile, U.S. TFR by educational attainment, and why language spoken at home has no official U.S. fertility table.",
   },
   {
     id: "tfr-decomp",

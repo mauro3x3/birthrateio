@@ -19,7 +19,7 @@ const SITE_MAP = `
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /states : States & provinces explorer (US, Germany, India, China, Russia, …)
-- /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change) for India, Pakistan (PDHS 2017–18 provinces), Russia, China, USA and ~25 other countries. Iran is listed but has no redistributable provincial table yet.
+- /maps and /maps/<iso3> : Census-style regional choropleths (TFR, population, population change). Countries include India, Pakistan, Nigeria (NDHS 2023–24 states), Brazil (IBGE 2023), Indonesia (BPS SUPAS 2025, 38 provinces, national TFR 2.13), Kenya, Japan, Germany, Turkey, Ghana, Bangladesh, Tanzania, Angola, South Africa, Jordan, Nepal, the Philippines, plus EU / MENA / Africa / Caribbean / South America / Southeast Asia / Central America / Central Asia / North America / Oceania country-level maps. Iran is listed but has no redistributable provincial table yet.
 - /demographics : Census maps hub — ethnicity, ancestry, race, and country of birth. Lists the US, UK, Denmark, Germany, Russia, and the rest of Europe.
 - /demographics/us : US demographics map — race & Hispanic origin by state (ACS)
 - /demographics/uk : England & Wales Census 2021 ethnic group by LAD/MSOA
@@ -36,7 +36,7 @@ const SITE_MAP = `
 - /clock : Live fertility / world population clock (illustrative extrapolation from annual rates)
 - /calendar : Upcoming demographic data releases (TFR/fertility highlighted)
 - /contribute : Tip form to report newly released official demographic data
-- /country/<slug> : Full country profile — population, fertility, births vs deaths, historic mortality (life expectancy / HMD death rates / child mortality), GDP, exports & imports (OEC/BACI treemap), migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), population pyramid, modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
+- /country/<slug> : Full country profile — population, fertility, births vs deaths, historic mortality (life expectancy / HMD death rates / child mortality), GDP, exports & imports (OEC/BACI treemap), migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), animated population pyramid to 2100 (play/pause, GIF/MP4 export), modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
 `.trim();
 
 function buildSystemPrompt(countryList: string): string {

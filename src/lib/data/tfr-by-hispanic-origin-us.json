@@ -1,0 +1,20 @@
+{
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2023,
+  "unit": "children per woman",
+  "decimals": 2,
+  "source": "NCHS National Vital Statistics Reports vol. 74 no. 1, Table 2 and Table 11 — total fertility rate by race and Hispanic origin of the mother, 2023.",
+  "sourceUrl": "https://www.cdc.gov/nchs/data/nvsr/nvsr74/nvsr74-01.pdf",
+  "doi": "https://doi.org/10.15620/cdc/175204",
+  "note": "U.S. birth certificates do not record language spoken at home, so there is no official TFR by language. Hispanic origin is the closest published split for the largest non-English language community (Spanish). Non-Hispanic groups are single race. Rates are NCHS TFR per 1,000 women divided by 1,000.",
+  "groups": [
+    { "group": "All women", "value": 1.621 },
+    { "group": "Hispanic (any race)", "value": 1.946 },
+    { "group": "Non-Hispanic White", "value": 1.5325 },
+    { "group": "Non-Hispanic Black", "value": 1.581 },
+    { "group": "Non-Hispanic Asian", "value": 1.309 },
+    { "group": "Non-Hispanic American Indian and Alaska Native", "value": 1.411 },
+    { "group": "Non-Hispanic Native Hawaiian and Other Pacific Islander", "value": 2.218 }
+  ]
+}

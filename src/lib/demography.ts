@@ -56,10 +56,15 @@ export interface ProjectionSnapshot {
   deaths: number;
 }
 
+/** Weibull shape: higher e0 → more rectangular. Continuous so male/female
+ *  e0 that straddle a threshold (e.g. 75) don't invert survival at 100+. */
+function weibullShape(e0: number): number {
+  const t = Math.min(1, Math.max(0, (e0 - 50) / 30));
+  return 3 + 3.5 * t; // ~3 at e0=50, ~6.5 at e0=80+
+}
+
 /** Weibull survivorship l(x) calibrated so life expectancy ≈ e0. */
-function survivorship(e0: number): number[] {
-  // l(x) = exp(-(x/scale)^shape). Choose shape by e0 (higher e0 => rectangular).
-  const shape = e0 >= 75 ? 6.5 : e0 >= 65 ? 5 : e0 >= 55 ? 3.8 : 3;
+function survivorship(e0: number, shape = weibullShape(e0)): number[] {
   // Solve scale so that ∫ l(x) dx = e0 (trapezoidal over 0..110).
   const integ = (scale: number) => {
     let sum = 0;
@@ -90,8 +95,8 @@ function survivorship(e0: number): number[] {
 }
 
 /** 5-year survival ratios Sx = L(x+5)/L(x). */
-function survivalRatios(e0: number): number[] {
-  const l = survivorship(e0);
+function survivalRatios(e0: number, shape?: number): number[] {
+  const l = survivorship(e0, shape);
   const L: number[] = [];
   for (let i = 0; i < N; i++) L.push(((l[i] + l[i + 1]) / 2) * STEP);
   // Final open group person-years (rough tail).
@@ -103,8 +108,8 @@ function survivalRatios(e0: number): number[] {
   return S;
 }
 
-function birthSurvival(e0: number): number {
-  const l = survivorship(e0);
+function birthSurvival(e0: number, shape?: number): number {
+  const l = survivorship(e0, shape);
   const L0 = ((l[0] + l[1]) / 2) * STEP;
   return L0 / (STEP * 1); // l0 = 1
 }
@@ -206,10 +211,14 @@ function step(
 ): { next: AgeSexPopulation; births: number; deaths: number } {
   const e0f = params.lifeExpectancy + 2.5;
   const e0m = params.lifeExpectancy - 2.5;
-  const Sf = survivalRatios(e0f);
-  const Sm = survivalRatios(e0m);
-  const bsF = birthSurvival(e0f);
-  const bsM = birthSurvival(e0m);
+  // Same rectangularity for both sexes; only the scale (e0) differs. A shape
+  // cliff at e0=75 used to make male 100+ outlive female when the sexes sat
+  // on either side of the threshold.
+  const shape = weibullShape(params.lifeExpectancy);
+  const Sf = survivalRatios(e0f, shape);
+  const Sm = survivalRatios(e0m, shape);
+  const bsF = birthSurvival(e0f, shape);
+  const bsM = birthSurvival(e0m, shape);
 
   const before = totalPop(pop);
 

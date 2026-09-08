@@ -550,12 +550,14 @@ function FitGeo({
   padding = DEFAULT_FIT_PADDING,
   paddingTopLeft,
   paddingBottomRight,
+  clamp,
 }: {
   geo: GeoJsonObject;
   maxZoom?: number;
   padding?: [number, number];
   paddingTopLeft?: [number, number];
   paddingBottomRight?: [number, number];
+  clamp?: { west: number; south: number; east: number; north: number } | null;
 }) {
   const map = useMap();
   const padY = paddingTopLeft?.[0] ?? paddingBottomRight?.[0] ?? padding[0];
@@ -574,11 +576,31 @@ function FitGeo({
       let maxLat = -90;
       let minLng = 180;
       let maxLng = -180;
+      let used = 0;
       for (const [lng, lat] of coords) {
+        if (clamp) {
+          if (lng < clamp.west || lng > clamp.east) continue;
+          if (lat < clamp.south || lat > clamp.north) continue;
+        }
         minLat = Math.min(minLat, lat);
         maxLat = Math.max(maxLat, lat);
         minLng = Math.min(minLng, lng);
         maxLng = Math.max(maxLng, lng);
+        used += 1;
+      }
+      if (used === 0) {
+        for (const [lng, lat] of coords) {
+          minLat = Math.min(minLat, lat);
+          maxLat = Math.max(maxLat, lat);
+          minLng = Math.min(minLng, lng);
+          maxLng = Math.max(maxLng, lng);
+        }
+      }
+      if (clamp && used > 0) {
+        minLng = Math.max(minLng, clamp.west);
+        maxLng = Math.min(maxLng, clamp.east);
+        minLat = Math.max(minLat, clamp.south);
+        maxLat = Math.min(maxLat, clamp.north);
       }
 
       const b = L.latLngBounds(
@@ -645,7 +667,7 @@ function FitGeo({
       }
       window.clearTimeout(t);
     };
-  }, [map, geo, maxZoom, padY, padXLeft, padXRight, padBottom]);
+  }, [map, geo, maxZoom, padY, padXLeft, padXRight, padBottom, clamp]);
   return null;
 }
 
@@ -680,6 +702,7 @@ export function RegionChoroplethMap({
   fitPadding,
   fitPaddingTopLeft,
   fitPaddingBottomRight,
+  fitClamp,
   legendPlacement = "bottom-left",
   preferCanvas = false,
   oceanColor,
@@ -712,6 +735,8 @@ export function RegionChoroplethMap({
   /** Asymmetric fitBounds padding when a floating panel covers part of the map. */
   fitPaddingTopLeft?: [number, number];
   fitPaddingBottomRight?: [number, number];
+  /** Ignore overseas fragments when framing (Canaries, Cape Verde, Siberia). */
+  fitClamp?: { west: number; south: number; east: number; north: number } | null;
   legendPlacement?: "bottom-left" | "bottom-right";
   /** Canvas renderer — cleaner dense choropleths (UK MSOA). */
   preferCanvas?: boolean;
@@ -991,6 +1016,7 @@ export function RegionChoroplethMap({
               padding={fitPadding}
               paddingTopLeft={fitPaddingTopLeft}
               paddingBottomRight={fitPaddingBottomRight}
+              clamp={fitClamp}
             />
           )}
           <SelectionPane />

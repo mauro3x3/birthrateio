@@ -111,6 +111,7 @@ export default async function FertilityPage() {
           <ExploreDestinationGrid
             items={[
               featuredById("tfr-decomp")!,
+              featuredById("tfr-education")!,
               featuredById("regional-maps")!,
               featuredById("census-maps")!,
             ]}

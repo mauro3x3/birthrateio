@@ -17,17 +17,16 @@ import {
 import { StatCard } from "@/components/stat-card";
 import { ChartCard } from "@/components/charts/chart-card";
 import { TimeSeriesChart } from "@/components/charts/time-series-chart";
-import { PopulationPyramid } from "@/components/charts/population-pyramid";
+import { CinematicPyramid, PyramidLegend } from "@/components/charts/cinematic-pyramid";
 import { CountrySelect } from "@/components/country-select";
-import { AnimationExportButton } from "@/components/animation-export-button";
+import { PyramidExportDialog, type AxisScale } from "@/components/pyramid-export-dialog";
 import type { CountryOption } from "@/components/country-multi-select";
 import {
-  AGE_GROUPS,
-  AGE_STARTS,
   buildStablePopulation,
   project,
   summarize,
 } from "@/lib/demography";
+import { maxSingleYearBand } from "@/lib/pyramid-animation";
 import { formatCompact } from "@/lib/utils";
 
 const TFR_PRESETS = [
@@ -267,13 +266,7 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
   }, [snapshots, horizon]);
 
   // Keep the horizontal axis steady while playing — scale to the largest band.
-  const maxBand = React.useMemo(() => {
-    let m = 0;
-    for (const fr of frames)
-      for (let i = 0; i < fr.male.length; i++)
-        m = Math.max(m, fr.male[i], fr.female[i]);
-    return m;
-  }, [frames]);
+  const maxBand = React.useMemo(() => maxSingleYearBand(frames), [frames]);
 
   React.useEffect(() => {
     setFrameIdx(frames.length - 1);
@@ -303,24 +296,17 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
   // --- Animation export (video / gif) ------------------------------------
   const captureRef = React.useRef<HTMLDivElement>(null);
   const [recording, setRecording] = React.useState(false);
+  const [exportOpen, setExportOpen] = React.useState(false);
+  const [axisScale, setAxisScale] = React.useState<AxisScale>("fixed");
   const startIdxRef = React.useRef(0);
 
-  // Frame indices respecting the chosen step granularity.
-  const exportIndices = React.useMemo(() => {
-    const idxs: number[] = [];
-    for (let i = 0; i < frames.length; i += stepYears) idxs.push(i);
-    if (frames.length > 0 && idxs[idxs.length - 1] !== frames.length - 1)
-      idxs.push(frames.length - 1);
-    return idxs;
-  }, [frames.length, stepYears]);
-
-  const renderExportFrame = React.useCallback(
+  const applyExportFrame = React.useCallback(
     (i: number) =>
       new Promise<void>((resolve) => {
-        setFrameIdx(exportIndices[i] ?? 0);
+        setFrameIdx(i);
         requestAnimationFrame(() => requestAnimationFrame(() => resolve()));
       }),
-    [exportIndices],
+    [],
   );
 
   const baseYear = frames[0]?.year ?? new Date().getFullYear();
@@ -345,6 +331,10 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
   const endTotalGdp = totalGdpSeries[totalGdpSeries.length - 1];
 
   const current = frames[Math.min(frameIdx, frames.length - 1)];
+  const chartMax =
+    (recording || exportOpen) && axisScale === "fit" && current
+      ? maxSingleYearBand([current])
+      : maxBand;
   const summary = current
     ? summarize({ ...current, births: 0, deaths: 0 })
     : null;
@@ -352,15 +342,6 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
   const last = frames[frames.length - 1];
   const totalChangePct =
     first && last ? ((last.total - first.total) / first.total) * 100 : 0;
-
-  const pyramidRows = current
-    ? AGE_GROUPS.map((ageGroup, i) => ({
-        ageGroup,
-        ageStart: AGE_STARTS[i],
-        male: current.male[i],
-        female: current.female[i],
-      }))
-    : [];
 
   return (
     <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
@@ -592,40 +573,27 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
 
         <Card>
           <CardHeader>
-            <CardTitle className="flex items-center justify-between text-base">
-              <span>Age structure</span>
-              <span className="rounded-md bg-muted px-2.5 py-1 text-sm tabular-nums">
-                {current?.year}
-              </span>
-            </CardTitle>
+            <CardTitle className="text-base">Age structure</CardTitle>
           </CardHeader>
           <CardContent>
-            <div ref={captureRef} className="rounded-md bg-card p-1">
-              <div className="mb-1 flex items-end justify-between px-2">
-                <div>
-                  <p className="text-xs text-muted-foreground">
-                    Total population
-                  </p>
-                  <p className="font-sans text-2xl font-bold leading-tight tabular-nums">
-                    {formatCompact(current?.total ?? 0)}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-xs text-muted-foreground">
-                    {countryLabel ?? "Simulation"}
-                  </p>
-                  <p className="text-xl font-semibold tabular-nums">
-                    {current?.year}
-                  </p>
-                </div>
-              </div>
-              <PopulationPyramid
-                rows={pyramidRows}
-                height={420}
-                maxValue={maxBand}
-                showSummary={false}
-                showPercentages={false}
-              />
+            <div ref={captureRef} className="bg-background">
+              {current && (
+                <>
+                  <PyramidLegend
+                    year={current.year}
+                    total={current.total}
+                    maleTotal={current.male.reduce((s, v) => s + v, 0)}
+                    femaleTotal={current.female.reduce((s, v) => s + v, 0)}
+                  />
+                  <CinematicPyramid
+                    country={countryLabel ?? "Simulation"}
+                    year={current.year}
+                    male={current.male}
+                    female={current.female}
+                    maxValue={chartMax}
+                  />
+                </>
+              )}
             </div>
 
             <div className="mt-4 space-y-3">
@@ -677,25 +645,18 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
                 </Select>
 
                 <div className="ml-auto">
-                  <AnimationExportButton
-                    getNode={() => captureRef.current}
-                    frameCount={exportIndices.length}
-                    renderFrame={renderExportFrame}
-                    holdMs={speedMs}
-                    fileBase={`${(countryLabel ?? "population")
-                      .toLowerCase()
-                      .replace(/\s+/g, "-")}-pyramid`}
-                    disabled={recording}
-                    onStart={() => {
-                      startIdxRef.current = frameIdx;
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    disabled={recording || frames.length < 2}
+                    onClick={() => {
                       setPlaying(false);
-                      setRecording(true);
+                      setExportOpen(true);
                     }}
-                    onDone={() => {
-                      setRecording(false);
-                      setFrameIdx(startIdxRef.current);
-                    }}
-                  />
+                  >
+                    Export animation
+                  </Button>
                 </div>
               </div>
 
@@ -778,6 +739,32 @@ export function Simulator({ countries }: { countries: CountryOption[] }) {
             />
           </ChartCard>
         </div>
+
+        {first && last && (
+          <PyramidExportDialog
+            open={exportOpen}
+            onOpenChange={setExportOpen}
+            minYear={first.year}
+            maxYear={last.year}
+            fileBase={`${(countryLabel ?? "population")
+              .toLowerCase()
+              .replace(/\s+/g, "-")}-pyramid`}
+            getNode={() => captureRef.current}
+            frameYears={frames.map((fr) => fr.year)}
+            applyFrameIndex={applyExportFrame}
+            axisScale={axisScale}
+            onAxisScaleChange={setAxisScale}
+            onStart={() => {
+              startIdxRef.current = frameIdx;
+              setPlaying(false);
+              setRecording(true);
+            }}
+            onDone={() => {
+              setRecording(false);
+              setFrameIdx(startIdxRef.current);
+            }}
+          />
+        )}
       </div>
     </div>
   );

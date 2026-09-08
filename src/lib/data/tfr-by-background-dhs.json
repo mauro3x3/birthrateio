@@ -1,0 +1,2262 @@
+{
+  "updated": "2026-09-08",
+  "indicator": "FE_FRTR_W_TFR",
+  "unit": "children per woman",
+  "source": "DHS STATcompiler, total fertility rate (FE_FRTR_W_TFR) by education and wealth quintile, latest Demographic and Health Survey from 2015 onward.",
+  "sourceUrl": "https://www.statcompiler.com/en/",
+  "note": "Each country is one survey. TFR is for the three years before interview. Education groups are No education / Primary / Secondary / Higher. Wealth is the DHS household wealth quintile, not income. Surveys are not comparable as a time series across countries.",
+  "countries": [
+    {
+      "iso3": "AFG",
+      "country": "Afghanistan",
+      "survey": "AF2015DHS",
+      "year": 2015,
+      "national": 5.3,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.5
+        },
+        {
+          "group": "Primary",
+          "value": 4.7
+        },
+        {
+          "group": "Secondary",
+          "value": 4.3
+        },
+        {
+          "group": "Higher",
+          "value": 3.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.3
+        },
+        {
+          "group": "Second",
+          "value": 5.4
+        },
+        {
+          "group": "Middle",
+          "value": 5.8
+        },
+        {
+          "group": "Fourth",
+          "value": 5.3
+        },
+        {
+          "group": "Highest",
+          "value": 4.6
+        }
+      ]
+    },
+    {
+      "iso3": "ALB",
+      "country": "Albania",
+      "survey": "AL2017DHS",
+      "year": 2017,
+      "national": 1.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 1.8
+        },
+        {
+          "group": "Primary",
+          "value": 2.4
+        },
+        {
+          "group": "Secondary",
+          "value": 1.9
+        },
+        {
+          "group": "Higher",
+          "value": 1.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.0
+        },
+        {
+          "group": "Second",
+          "value": 1.9
+        },
+        {
+          "group": "Middle",
+          "value": 1.7
+        },
+        {
+          "group": "Fourth",
+          "value": 1.7
+        },
+        {
+          "group": "Highest",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "iso3": "AGO",
+      "country": "Angola",
+      "survey": "AO2023DHS",
+      "year": 2023,
+      "national": 4.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.7
+        },
+        {
+          "group": "Primary",
+          "value": 6.2
+        },
+        {
+          "group": "Secondary",
+          "value": 3.6
+        },
+        {
+          "group": "Higher",
+          "value": 2.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 7.3
+        },
+        {
+          "group": "Second",
+          "value": 6.7
+        },
+        {
+          "group": "Middle",
+          "value": 5.0
+        },
+        {
+          "group": "Fourth",
+          "value": 3.4
+        },
+        {
+          "group": "Highest",
+          "value": 2.8
+        }
+      ]
+    },
+    {
+      "iso3": "ARM",
+      "country": "Armenia",
+      "survey": "AM2016DHS",
+      "year": 2016,
+      "national": 1.7,
+      "education": [
+        {
+          "group": "Primary",
+          "value": 2.8
+        },
+        {
+          "group": "Secondary",
+          "value": 1.9
+        },
+        {
+          "group": "Higher",
+          "value": 1.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.0
+        },
+        {
+          "group": "Second",
+          "value": 1.7
+        },
+        {
+          "group": "Middle",
+          "value": 1.7
+        },
+        {
+          "group": "Fourth",
+          "value": 1.4
+        },
+        {
+          "group": "Highest",
+          "value": 1.9
+        }
+      ]
+    },
+    {
+      "iso3": "BGD",
+      "country": "Bangladesh",
+      "survey": "BD2022DHS",
+      "year": 2022,
+      "national": 2.3,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.4
+        },
+        {
+          "group": "Primary",
+          "value": 2.7
+        },
+        {
+          "group": "Secondary",
+          "value": 2.3
+        },
+        {
+          "group": "Higher",
+          "value": 2.3
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.8
+        },
+        {
+          "group": "Second",
+          "value": 2.4
+        },
+        {
+          "group": "Middle",
+          "value": 2.3
+        },
+        {
+          "group": "Fourth",
+          "value": 2.2
+        },
+        {
+          "group": "Highest",
+          "value": 2.0
+        }
+      ]
+    },
+    {
+      "iso3": "BEN",
+      "country": "Benin",
+      "survey": "BJ2017DHS",
+      "year": 2017,
+      "national": 5.7,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.4
+        },
+        {
+          "group": "Primary",
+          "value": 5.4
+        },
+        {
+          "group": "Secondary",
+          "value": 4.3
+        },
+        {
+          "group": "Higher",
+          "value": 3.2
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 7.0
+        },
+        {
+          "group": "Second",
+          "value": 6.2
+        },
+        {
+          "group": "Middle",
+          "value": 6.1
+        },
+        {
+          "group": "Fourth",
+          "value": 5.3
+        },
+        {
+          "group": "Highest",
+          "value": 4.2
+        }
+      ]
+    },
+    {
+      "iso3": "BFA",
+      "country": "Burkina Faso",
+      "survey": "BF2021DHS",
+      "year": 2021,
+      "national": 4.4,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.0
+        },
+        {
+          "group": "Primary",
+          "value": 4.6
+        },
+        {
+          "group": "Secondary",
+          "value": 3.4
+        },
+        {
+          "group": "Higher",
+          "value": 2.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.5
+        },
+        {
+          "group": "Second",
+          "value": 5.2
+        },
+        {
+          "group": "Middle",
+          "value": 4.7
+        },
+        {
+          "group": "Fourth",
+          "value": 4.2
+        },
+        {
+          "group": "Highest",
+          "value": 3.1
+        }
+      ]
+    },
+    {
+      "iso3": "BDI",
+      "country": "Burundi",
+      "survey": "BU2016DHS",
+      "year": 2016,
+      "national": 5.5,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.3
+        },
+        {
+          "group": "Primary",
+          "value": 6.0
+        },
+        {
+          "group": "Secondary",
+          "value": 4.2
+        },
+        {
+          "group": "Higher",
+          "value": 3.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.0
+        },
+        {
+          "group": "Second",
+          "value": 6.0
+        },
+        {
+          "group": "Middle",
+          "value": 5.5
+        },
+        {
+          "group": "Fourth",
+          "value": 5.8
+        },
+        {
+          "group": "Highest",
+          "value": 4.4
+        }
+      ]
+    },
+    {
+      "iso3": "KHM",
+      "country": "Cambodia",
+      "survey": "KH2021DHS",
+      "year": 2021,
+      "national": 2.7,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.4
+        },
+        {
+          "group": "Primary",
+          "value": 3.1
+        },
+        {
+          "group": "Secondary",
+          "value": 2.6
+        },
+        {
+          "group": "Higher",
+          "value": 2.4
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.5
+        },
+        {
+          "group": "Second",
+          "value": 3.0
+        },
+        {
+          "group": "Middle",
+          "value": 2.7
+        },
+        {
+          "group": "Fourth",
+          "value": 2.6
+        },
+        {
+          "group": "Highest",
+          "value": 2.2
+        }
+      ]
+    },
+    {
+      "iso3": "CMR",
+      "country": "Cameroon",
+      "survey": "CM2018DHS",
+      "year": 2018,
+      "national": 4.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.2
+        },
+        {
+          "group": "Primary",
+          "value": 5.6
+        },
+        {
+          "group": "Secondary",
+          "value": 4.0
+        },
+        {
+          "group": "Higher",
+          "value": 3.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.6
+        },
+        {
+          "group": "Second",
+          "value": 6.0
+        },
+        {
+          "group": "Middle",
+          "value": 5.1
+        },
+        {
+          "group": "Fourth",
+          "value": 4.0
+        },
+        {
+          "group": "Highest",
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "iso3": "COL",
+      "country": "Colombia",
+      "survey": "CO2015DHS",
+      "year": 2015,
+      "national": 2.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.9
+        },
+        {
+          "group": "Primary",
+          "value": 3.0
+        },
+        {
+          "group": "Secondary",
+          "value": 2.1
+        },
+        {
+          "group": "Higher",
+          "value": 1.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.8
+        },
+        {
+          "group": "Second",
+          "value": 2.3
+        },
+        {
+          "group": "Middle",
+          "value": 1.9
+        },
+        {
+          "group": "Fourth",
+          "value": 1.5
+        },
+        {
+          "group": "Highest",
+          "value": 1.3
+        }
+      ]
+    },
+    {
+      "iso3": "COD",
+      "country": "Congo Democratic Republic",
+      "survey": "CD2023DHS",
+      "year": 2023,
+      "national": 5.5,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.2
+        },
+        {
+          "group": "Primary",
+          "value": 6.7
+        },
+        {
+          "group": "Secondary",
+          "value": 5.0
+        },
+        {
+          "group": "Higher",
+          "value": 2.8
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.9
+        },
+        {
+          "group": "Second",
+          "value": 6.3
+        },
+        {
+          "group": "Middle",
+          "value": 6.0
+        },
+        {
+          "group": "Fourth",
+          "value": 5.2
+        },
+        {
+          "group": "Highest",
+          "value": 3.6
+        }
+      ]
+    },
+    {
+      "iso3": "CIV",
+      "country": "Cote d'Ivoire",
+      "survey": "CI2021DHS",
+      "year": 2021,
+      "national": 4.3,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.0
+        },
+        {
+          "group": "Primary",
+          "value": 4.3
+        },
+        {
+          "group": "Secondary",
+          "value": 3.4
+        },
+        {
+          "group": "Higher",
+          "value": 2.7
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.9
+        },
+        {
+          "group": "Second",
+          "value": 5.3
+        },
+        {
+          "group": "Middle",
+          "value": 4.4
+        },
+        {
+          "group": "Fourth",
+          "value": 3.5
+        },
+        {
+          "group": "Highest",
+          "value": 3.0
+        }
+      ]
+    },
+    {
+      "iso3": "ETH",
+      "country": "Ethiopia",
+      "survey": "ET2024DHS",
+      "year": 2024,
+      "national": 4.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.0
+        },
+        {
+          "group": "Primary",
+          "value": 4.2
+        },
+        {
+          "group": "Secondary",
+          "value": 3.2
+        },
+        {
+          "group": "Higher",
+          "value": 3.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.7
+        },
+        {
+          "group": "Second",
+          "value": 4.4
+        },
+        {
+          "group": "Middle",
+          "value": 4.2
+        },
+        {
+          "group": "Fourth",
+          "value": 3.9
+        },
+        {
+          "group": "Highest",
+          "value": 2.9
+        }
+      ]
+    },
+    {
+      "iso3": "GAB",
+      "country": "Gabon",
+      "survey": "GA2019DHS",
+      "year": 2019,
+      "national": 3.9,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.3
+        },
+        {
+          "group": "Primary",
+          "value": 5.4
+        },
+        {
+          "group": "Secondary",
+          "value": 3.8
+        },
+        {
+          "group": "Higher",
+          "value": 2.8
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.4
+        },
+        {
+          "group": "Second",
+          "value": 3.9
+        },
+        {
+          "group": "Middle",
+          "value": 4.0
+        },
+        {
+          "group": "Fourth",
+          "value": 3.7
+        },
+        {
+          "group": "Highest",
+          "value": 2.9
+        }
+      ]
+    },
+    {
+      "iso3": "GMB",
+      "country": "Gambia",
+      "survey": "GM2019DHS",
+      "year": 2019,
+      "national": 4.4,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.7
+        },
+        {
+          "group": "Primary",
+          "value": 5.1
+        },
+        {
+          "group": "Secondary",
+          "value": 3.6
+        },
+        {
+          "group": "Higher",
+          "value": 2.4
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.0
+        },
+        {
+          "group": "Second",
+          "value": 5.2
+        },
+        {
+          "group": "Middle",
+          "value": 4.6
+        },
+        {
+          "group": "Fourth",
+          "value": 3.8
+        },
+        {
+          "group": "Highest",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "iso3": "GHA",
+      "country": "Ghana",
+      "survey": "GH2022DHS",
+      "year": 2022,
+      "national": 3.9,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.8
+        },
+        {
+          "group": "Primary",
+          "value": 4.7
+        },
+        {
+          "group": "Secondary",
+          "value": 3.5
+        },
+        {
+          "group": "Higher",
+          "value": 2.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.9
+        },
+        {
+          "group": "Second",
+          "value": 4.9
+        },
+        {
+          "group": "Middle",
+          "value": 3.7
+        },
+        {
+          "group": "Fourth",
+          "value": 3.1
+        },
+        {
+          "group": "Highest",
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "iso3": "GTM",
+      "country": "Guatemala",
+      "survey": "GU2015DHS",
+      "year": 2015,
+      "national": 3.1,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.6
+        },
+        {
+          "group": "Primary",
+          "value": 3.5
+        },
+        {
+          "group": "Secondary",
+          "value": 2.4
+        },
+        {
+          "group": "Higher",
+          "value": 1.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 4.9
+        },
+        {
+          "group": "Second",
+          "value": 3.9
+        },
+        {
+          "group": "Middle",
+          "value": 3.0
+        },
+        {
+          "group": "Fourth",
+          "value": 2.5
+        },
+        {
+          "group": "Highest",
+          "value": 1.9
+        }
+      ]
+    },
+    {
+      "iso3": "GIN",
+      "country": "Guinea",
+      "survey": "GN2018DHS",
+      "year": 2018,
+      "national": 4.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.2
+        },
+        {
+          "group": "Primary",
+          "value": 4.9
+        },
+        {
+          "group": "Secondary",
+          "value": 4.0
+        },
+        {
+          "group": "Higher",
+          "value": 2.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.9
+        },
+        {
+          "group": "Second",
+          "value": 5.5
+        },
+        {
+          "group": "Middle",
+          "value": 4.9
+        },
+        {
+          "group": "Fourth",
+          "value": 4.7
+        },
+        {
+          "group": "Highest",
+          "value": 3.4
+        }
+      ]
+    },
+    {
+      "iso3": "HTI",
+      "country": "Haiti",
+      "survey": "HT2016DHS",
+      "year": 2016,
+      "national": 3.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.9
+        },
+        {
+          "group": "Primary",
+          "value": 4.1
+        },
+        {
+          "group": "Secondary",
+          "value": 2.4
+        },
+        {
+          "group": "Higher",
+          "value": 1.2
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.4
+        },
+        {
+          "group": "Second",
+          "value": 4.1
+        },
+        {
+          "group": "Middle",
+          "value": 3.3
+        },
+        {
+          "group": "Fourth",
+          "value": 2.2
+        },
+        {
+          "group": "Highest",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "iso3": "IND",
+      "country": "India",
+      "survey": "IA2020DHS",
+      "year": 2020,
+      "national": 2.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.8
+        },
+        {
+          "group": "Primary",
+          "value": 2.3
+        },
+        {
+          "group": "Secondary",
+          "value": 2.0
+        },
+        {
+          "group": "Higher",
+          "value": 1.7
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.6
+        },
+        {
+          "group": "Second",
+          "value": 2.1
+        },
+        {
+          "group": "Middle",
+          "value": 1.9
+        },
+        {
+          "group": "Fourth",
+          "value": 1.7
+        },
+        {
+          "group": "Highest",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "iso3": "IDN",
+      "country": "Indonesia",
+      "survey": "ID2017DHS",
+      "year": 2017,
+      "national": 2.4,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.7
+        },
+        {
+          "group": "Primary",
+          "value": 2.9
+        },
+        {
+          "group": "Secondary",
+          "value": 2.5
+        },
+        {
+          "group": "Higher",
+          "value": 2.3
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.9
+        },
+        {
+          "group": "Second",
+          "value": 2.6
+        },
+        {
+          "group": "Middle",
+          "value": 2.3
+        },
+        {
+          "group": "Fourth",
+          "value": 2.3
+        },
+        {
+          "group": "Highest",
+          "value": 2.1
+        }
+      ]
+    },
+    {
+      "iso3": "JOR",
+      "country": "Jordan",
+      "survey": "JO2023DHS",
+      "year": 2023,
+      "national": 2.6,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.4
+        },
+        {
+          "group": "Primary",
+          "value": 3.9
+        },
+        {
+          "group": "Secondary",
+          "value": 3.1
+        },
+        {
+          "group": "Higher",
+          "value": 2.1
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.9
+        },
+        {
+          "group": "Second",
+          "value": 3.0
+        },
+        {
+          "group": "Middle",
+          "value": 2.6
+        },
+        {
+          "group": "Fourth",
+          "value": 2.2
+        },
+        {
+          "group": "Highest",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "iso3": "KEN",
+      "country": "Kenya",
+      "survey": "KE2022DHS",
+      "year": 2022,
+      "national": 3.4,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.3
+        },
+        {
+          "group": "Primary",
+          "value": 3.9
+        },
+        {
+          "group": "Secondary",
+          "value": 3.1
+        },
+        {
+          "group": "Higher",
+          "value": 2.8
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.3
+        },
+        {
+          "group": "Second",
+          "value": 3.8
+        },
+        {
+          "group": "Middle",
+          "value": 3.4
+        },
+        {
+          "group": "Fourth",
+          "value": 3.0
+        },
+        {
+          "group": "Highest",
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "iso3": "LSO",
+      "country": "Lesotho",
+      "survey": "LS2023DHS",
+      "year": 2023,
+      "national": 2.5,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.3
+        },
+        {
+          "group": "Primary",
+          "value": 3.3
+        },
+        {
+          "group": "Secondary",
+          "value": 2.4
+        },
+        {
+          "group": "Higher",
+          "value": 1.7
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.9
+        },
+        {
+          "group": "Second",
+          "value": 2.9
+        },
+        {
+          "group": "Middle",
+          "value": 2.6
+        },
+        {
+          "group": "Fourth",
+          "value": 2.1
+        },
+        {
+          "group": "Highest",
+          "value": 1.8
+        }
+      ]
+    },
+    {
+      "iso3": "LBR",
+      "country": "Liberia",
+      "survey": "LB2019DHS",
+      "year": 2019,
+      "national": 4.2,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.3
+        },
+        {
+          "group": "Primary",
+          "value": 5.1
+        },
+        {
+          "group": "Secondary",
+          "value": 3.3
+        },
+        {
+          "group": "Higher",
+          "value": 2.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.2
+        },
+        {
+          "group": "Second",
+          "value": 5.3
+        },
+        {
+          "group": "Middle",
+          "value": 4.2
+        },
+        {
+          "group": "Fourth",
+          "value": 3.3
+        },
+        {
+          "group": "Highest",
+          "value": 2.8
+        }
+      ]
+    },
+    {
+      "iso3": "MDG",
+      "country": "Madagascar",
+      "survey": "MD2021DHS",
+      "year": 2021,
+      "national": 4.3,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.1
+        },
+        {
+          "group": "Primary",
+          "value": 4.5
+        },
+        {
+          "group": "Secondary",
+          "value": 3.5
+        },
+        {
+          "group": "Higher",
+          "value": 2.4
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.6
+        },
+        {
+          "group": "Second",
+          "value": 5.1
+        },
+        {
+          "group": "Middle",
+          "value": 4.3
+        },
+        {
+          "group": "Fourth",
+          "value": 3.6
+        },
+        {
+          "group": "Highest",
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "iso3": "MWI",
+      "country": "Malawi",
+      "survey": "MW2024DHS",
+      "year": 2024,
+      "national": 3.7,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.8
+        },
+        {
+          "group": "Primary",
+          "value": 4.0
+        },
+        {
+          "group": "Secondary",
+          "value": 3.0
+        },
+        {
+          "group": "Higher",
+          "value": 2.1
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 4.7
+        },
+        {
+          "group": "Second",
+          "value": 4.1
+        },
+        {
+          "group": "Middle",
+          "value": 3.7
+        },
+        {
+          "group": "Fourth",
+          "value": 3.5
+        },
+        {
+          "group": "Highest",
+          "value": 2.8
+        }
+      ]
+    },
+    {
+      "iso3": "MDV",
+      "country": "Maldives",
+      "survey": "MV2016DHS",
+      "year": 2016,
+      "national": 2.1,
+      "education": [
+        {
+          "group": "No education",
+          "value": 1.6
+        },
+        {
+          "group": "Primary",
+          "value": 2.4
+        },
+        {
+          "group": "Secondary",
+          "value": 2.3
+        },
+        {
+          "group": "Higher",
+          "value": 1.9
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.5
+        },
+        {
+          "group": "Second",
+          "value": 2.6
+        },
+        {
+          "group": "Middle",
+          "value": 2.3
+        },
+        {
+          "group": "Fourth",
+          "value": 1.9
+        },
+        {
+          "group": "Highest",
+          "value": 1.7
+        }
+      ]
+    },
+    {
+      "iso3": "MLI",
+      "country": "Mali",
+      "survey": "ML2023DHS",
+      "year": 2023,
+      "national": 6.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.5
+        },
+        {
+          "group": "Primary",
+          "value": 6.2
+        },
+        {
+          "group": "Secondary",
+          "value": 5.4
+        },
+        {
+          "group": "Higher",
+          "value": 3.7
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 7.1
+        },
+        {
+          "group": "Second",
+          "value": 6.9
+        },
+        {
+          "group": "Middle",
+          "value": 6.2
+        },
+        {
+          "group": "Fourth",
+          "value": 5.7
+        },
+        {
+          "group": "Highest",
+          "value": 4.9
+        }
+      ]
+    },
+    {
+      "iso3": "MRT",
+      "country": "Mauritania",
+      "survey": "MR2020DHS",
+      "year": 2020,
+      "national": 5.2,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.0
+        },
+        {
+          "group": "Primary",
+          "value": 5.7
+        },
+        {
+          "group": "Secondary",
+          "value": 3.7
+        },
+        {
+          "group": "Higher",
+          "value": 2.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 7.6
+        },
+        {
+          "group": "Second",
+          "value": 6.4
+        },
+        {
+          "group": "Middle",
+          "value": 5.1
+        },
+        {
+          "group": "Fourth",
+          "value": 4.3
+        },
+        {
+          "group": "Highest",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "iso3": "MOZ",
+      "country": "Mozambique",
+      "survey": "MZ2022DHS",
+      "year": 2022,
+      "national": 4.9,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.9
+        },
+        {
+          "group": "Primary",
+          "value": 5.4
+        },
+        {
+          "group": "Secondary",
+          "value": 3.3
+        },
+        {
+          "group": "Higher",
+          "value": 2.1
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.8
+        },
+        {
+          "group": "Second",
+          "value": 6.3
+        },
+        {
+          "group": "Middle",
+          "value": 5.3
+        },
+        {
+          "group": "Fourth",
+          "value": 4.3
+        },
+        {
+          "group": "Highest",
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "iso3": "MMR",
+      "country": "Myanmar",
+      "survey": "MM2016DHS",
+      "year": 2016,
+      "national": 2.3,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.6
+        },
+        {
+          "group": "Primary",
+          "value": 2.6
+        },
+        {
+          "group": "Secondary",
+          "value": 2.0
+        },
+        {
+          "group": "Higher",
+          "value": 1.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.5
+        },
+        {
+          "group": "Second",
+          "value": 2.5
+        },
+        {
+          "group": "Middle",
+          "value": 2.1
+        },
+        {
+          "group": "Fourth",
+          "value": 1.9
+        },
+        {
+          "group": "Highest",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "iso3": "NPL",
+      "country": "Nepal",
+      "survey": "NP2022DHS",
+      "year": 2022,
+      "national": 2.1,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.3
+        },
+        {
+          "group": "Primary",
+          "value": 2.3
+        },
+        {
+          "group": "Secondary",
+          "value": 1.8
+        },
+        {
+          "group": "Higher",
+          "value": 1.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 2.8
+        },
+        {
+          "group": "Second",
+          "value": 2.4
+        },
+        {
+          "group": "Middle",
+          "value": 2.1
+        },
+        {
+          "group": "Fourth",
+          "value": 1.7
+        },
+        {
+          "group": "Highest",
+          "value": 1.6
+        }
+      ]
+    },
+    {
+      "iso3": "NGA",
+      "country": "Nigeria",
+      "survey": "NG2024DHS",
+      "year": 2024,
+      "national": 4.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.3
+        },
+        {
+          "group": "Primary",
+          "value": 5.3
+        },
+        {
+          "group": "Secondary",
+          "value": 4.1
+        },
+        {
+          "group": "Higher",
+          "value": 3.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.6
+        },
+        {
+          "group": "Second",
+          "value": 5.7
+        },
+        {
+          "group": "Middle",
+          "value": 4.8
+        },
+        {
+          "group": "Fourth",
+          "value": 4.0
+        },
+        {
+          "group": "Highest",
+          "value": 3.3
+        }
+      ]
+    },
+    {
+      "iso3": "PAK",
+      "country": "Pakistan",
+      "survey": "PK2017DHS",
+      "year": 2017,
+      "national": 3.6,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.2
+        },
+        {
+          "group": "Primary",
+          "value": 3.6
+        },
+        {
+          "group": "Secondary",
+          "value": 3.2
+        },
+        {
+          "group": "Higher",
+          "value": 2.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 4.9
+        },
+        {
+          "group": "Second",
+          "value": 3.6
+        },
+        {
+          "group": "Middle",
+          "value": 3.8
+        },
+        {
+          "group": "Fourth",
+          "value": 3.0
+        },
+        {
+          "group": "Highest",
+          "value": 2.8
+        }
+      ]
+    },
+    {
+      "iso3": "PNG",
+      "country": "Papua New Guinea",
+      "survey": "PG2017DHS",
+      "year": 2017,
+      "national": 4.2,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.6
+        },
+        {
+          "group": "Primary",
+          "value": 4.4
+        },
+        {
+          "group": "Secondary",
+          "value": 3.8
+        },
+        {
+          "group": "Higher",
+          "value": 3.1
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.0
+        },
+        {
+          "group": "Second",
+          "value": 4.4
+        },
+        {
+          "group": "Middle",
+          "value": 4.5
+        },
+        {
+          "group": "Fourth",
+          "value": 4.2
+        },
+        {
+          "group": "Highest",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "iso3": "PHL",
+      "country": "Philippines",
+      "survey": "PH2022DHS",
+      "year": 2022,
+      "national": 1.9,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.5
+        },
+        {
+          "group": "Primary",
+          "value": 3.0
+        },
+        {
+          "group": "Secondary",
+          "value": 2.3
+        },
+        {
+          "group": "Higher",
+          "value": 1.5
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.1
+        },
+        {
+          "group": "Second",
+          "value": 2.2
+        },
+        {
+          "group": "Middle",
+          "value": 2.0
+        },
+        {
+          "group": "Fourth",
+          "value": 1.5
+        },
+        {
+          "group": "Highest",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "iso3": "RWA",
+      "country": "Rwanda",
+      "survey": "RW2025DHS",
+      "year": 2025,
+      "national": 3.7,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.7
+        },
+        {
+          "group": "Primary",
+          "value": 4.0
+        },
+        {
+          "group": "Secondary",
+          "value": 3.4
+        },
+        {
+          "group": "Higher",
+          "value": 2.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 4.5
+        },
+        {
+          "group": "Second",
+          "value": 4.0
+        },
+        {
+          "group": "Middle",
+          "value": 3.7
+        },
+        {
+          "group": "Fourth",
+          "value": 3.6
+        },
+        {
+          "group": "Highest",
+          "value": 2.9
+        }
+      ]
+    },
+    {
+      "iso3": "SEN",
+      "country": "Senegal",
+      "survey": "SN2023DHS",
+      "year": 2023,
+      "national": 4.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.7
+        },
+        {
+          "group": "Primary",
+          "value": 4.0
+        },
+        {
+          "group": "Secondary",
+          "value": 3.5
+        },
+        {
+          "group": "Higher",
+          "value": 3.1
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.4
+        },
+        {
+          "group": "Second",
+          "value": 4.8
+        },
+        {
+          "group": "Middle",
+          "value": 4.0
+        },
+        {
+          "group": "Fourth",
+          "value": 3.2
+        },
+        {
+          "group": "Highest",
+          "value": 3.1
+        }
+      ]
+    },
+    {
+      "iso3": "SLE",
+      "country": "Sierra Leone",
+      "survey": "SL2019DHS",
+      "year": 2019,
+      "national": 4.2,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.0
+        },
+        {
+          "group": "Primary",
+          "value": 4.7
+        },
+        {
+          "group": "Secondary",
+          "value": 3.3
+        },
+        {
+          "group": "Higher",
+          "value": 2.0
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.6
+        },
+        {
+          "group": "Second",
+          "value": 5.1
+        },
+        {
+          "group": "Middle",
+          "value": 4.7
+        },
+        {
+          "group": "Fourth",
+          "value": 3.6
+        },
+        {
+          "group": "Highest",
+          "value": 2.6
+        }
+      ]
+    },
+    {
+      "iso3": "ZAF",
+      "country": "South Africa",
+      "survey": "ZA2016DHS",
+      "year": 2016,
+      "national": 2.6,
+      "education": [
+        {
+          "group": "No education",
+          "value": 2.8
+        },
+        {
+          "group": "Primary",
+          "value": 3.4
+        },
+        {
+          "group": "Secondary",
+          "value": 2.6
+        },
+        {
+          "group": "Higher",
+          "value": 2.2
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.1
+        },
+        {
+          "group": "Second",
+          "value": 2.9
+        },
+        {
+          "group": "Middle",
+          "value": 2.7
+        },
+        {
+          "group": "Fourth",
+          "value": 2.3
+        },
+        {
+          "group": "Highest",
+          "value": 2.1
+        }
+      ]
+    },
+    {
+      "iso3": "TJK",
+      "country": "Tajikistan",
+      "survey": "TJ2023DHS",
+      "year": 2023,
+      "national": 3.5,
+      "education": [
+        {
+          "group": "No education",
+          "value": 3.2
+        },
+        {
+          "group": "Primary",
+          "value": 3.7
+        },
+        {
+          "group": "Secondary",
+          "value": 3.5
+        },
+        {
+          "group": "Higher",
+          "value": 3.3
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 3.7
+        },
+        {
+          "group": "Second",
+          "value": 3.5
+        },
+        {
+          "group": "Middle",
+          "value": 3.5
+        },
+        {
+          "group": "Fourth",
+          "value": 3.5
+        },
+        {
+          "group": "Highest",
+          "value": 3.2
+        }
+      ]
+    },
+    {
+      "iso3": "TZA",
+      "country": "Tanzania",
+      "survey": "TZ2022DHS",
+      "year": 2022,
+      "national": 4.8,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.3
+        },
+        {
+          "group": "Primary",
+          "value": 5.1
+        },
+        {
+          "group": "Secondary",
+          "value": 3.9
+        },
+        {
+          "group": "Higher",
+          "value": 2.7
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 6.7
+        },
+        {
+          "group": "Second",
+          "value": 5.9
+        },
+        {
+          "group": "Middle",
+          "value": 5.2
+        },
+        {
+          "group": "Fourth",
+          "value": 4.2
+        },
+        {
+          "group": "Highest",
+          "value": 3.3
+        }
+      ]
+    },
+    {
+      "iso3": "TLS",
+      "country": "Timor-Leste",
+      "survey": "TL2016DHS",
+      "year": 2016,
+      "national": 4.2,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.8
+        },
+        {
+          "group": "Primary",
+          "value": 4.7
+        },
+        {
+          "group": "Secondary",
+          "value": 4.3
+        },
+        {
+          "group": "Higher",
+          "value": 3.3
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.2
+        },
+        {
+          "group": "Second",
+          "value": 4.7
+        },
+        {
+          "group": "Middle",
+          "value": 4.3
+        },
+        {
+          "group": "Fourth",
+          "value": 3.9
+        },
+        {
+          "group": "Highest",
+          "value": 3.4
+        }
+      ]
+    },
+    {
+      "iso3": "UGA",
+      "country": "Uganda",
+      "survey": "UG2016DHS",
+      "year": 2016,
+      "national": 5.4,
+      "education": [
+        {
+          "group": "No education",
+          "value": 6.4
+        },
+        {
+          "group": "Primary",
+          "value": 5.9
+        },
+        {
+          "group": "Secondary",
+          "value": 4.4
+        },
+        {
+          "group": "Higher",
+          "value": 3.6
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 7.1
+        },
+        {
+          "group": "Second",
+          "value": 6.3
+        },
+        {
+          "group": "Middle",
+          "value": 5.6
+        },
+        {
+          "group": "Fourth",
+          "value": 4.9
+        },
+        {
+          "group": "Highest",
+          "value": 3.8
+        }
+      ]
+    },
+    {
+      "iso3": "ZMB",
+      "country": "Zambia",
+      "survey": "ZM2024DHS",
+      "year": 2024,
+      "national": 4.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 5.1
+        },
+        {
+          "group": "Primary",
+          "value": 5.0
+        },
+        {
+          "group": "Secondary",
+          "value": 3.5
+        },
+        {
+          "group": "Higher",
+          "value": 2.3
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.6
+        },
+        {
+          "group": "Second",
+          "value": 5.0
+        },
+        {
+          "group": "Middle",
+          "value": 4.3
+        },
+        {
+          "group": "Fourth",
+          "value": 3.4
+        },
+        {
+          "group": "Highest",
+          "value": 2.6
+        }
+      ]
+    },
+    {
+      "iso3": "ZWE",
+      "country": "Zimbabwe",
+      "survey": "ZW2015DHS",
+      "year": 2015,
+      "national": 4.0,
+      "education": [
+        {
+          "group": "No education",
+          "value": 4.7
+        },
+        {
+          "group": "Primary",
+          "value": 5.0
+        },
+        {
+          "group": "Secondary",
+          "value": 3.8
+        },
+        {
+          "group": "Higher",
+          "value": 2.2
+        }
+      ],
+      "wealth": [
+        {
+          "group": "Lowest",
+          "value": 5.6
+        },
+        {
+          "group": "Second",
+          "value": 4.9
+        },
+        {
+          "group": "Middle",
+          "value": 4.5
+        },
+        {
+          "group": "Fourth",
+          "value": 3.7
+        },
+        {
+          "group": "Highest",
+          "value": 2.4
+        }
+      ]
+    }
+  ]
+}

@@ -17,8 +17,9 @@ import { TimeSeriesChart } from "@/components/charts/time-series-chart";
 import { WhyTfrDeclining } from "@/components/why-tfr-declining";
 import { TfrAncestryChart } from "@/components/tfr-ancestry-chart";
 import { getTfrAncestryPack } from "@/lib/sources/tfr-by-ancestry-data";
+import { getCountryMapEntry } from "@/lib/country-map-atlas";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
-import { PopulationPyramid } from "@/components/charts/population-pyramid";
+import { PopulationPyramidPlayer } from "@/components/population-pyramid-player";
 import {
   CompositionChart,
   CompositionLegend,
@@ -81,6 +82,8 @@ import {
   CountrySectionNav,
 } from "@/components/country-section-nav";
 import { oecIdForIso3 } from "@/lib/oec-fetch";
+import { AGE_GROUPS } from "@/lib/demography";
+import { unProjectionReading } from "@/lib/demography-brief";
 
 export const revalidate = 86400;
 
@@ -252,6 +255,7 @@ export default async function CountryPage({
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
   const ancestryPack = getTfrAncestryPack(country.iso3);
+  const countryMap = getCountryMapEntry(country.iso3);
   const hasCrimeBreakdown =
     crimeAncestry.groups.length > 0 ||
     crimeCitizenship.groups.length > 0 ||
@@ -347,6 +351,8 @@ export default async function CountryPage({
     pyramidMap.set(r.ageGroup, cur);
   }
   const pyramidRows = Array.from(pyramidMap.values());
+  const pyramidMale = AGE_GROUPS.map((g) => pyramidMap.get(g)?.male ?? 0);
+  const pyramidFemale = AGE_GROUPS.map((g) => pyramidMap.get(g)?.female ?? 0);
 
   // Modeled population pyramid by ethnicity (blends overall + births comp).
   // Anchor "overall" to the composition snapshot closest to the pyramid's year
@@ -385,6 +391,44 @@ export default async function CountryPage({
       : null;
 
   const s = stats as Record<string, { value: number; year: number } | null>;
+  const modelTfr =
+    fertilityNowcast?.tfr2026 ??
+    fertilityNowcast?.tfr2025 ??
+    fertilityNowcast?.tfr2024 ??
+    s[SLUG.fertility]?.value ??
+    null;
+  const recentNetMigration = [...migration]
+    .filter((p) => Number.isFinite(p.value))
+    .sort((a, b) => b.year - a.year)
+    .slice(0, 5);
+  const rawNetMigrationAnnual =
+    recentNetMigration.length > 0
+      ? recentNetMigration.reduce((sum, p) => sum + p.value, 0) /
+        recentNetMigration.length
+      : (s[SLUG.netMigration]?.value ?? null);
+  const startPop =
+    s[SLUG.population]?.value ??
+    pyramidMale.reduce((sum, v, i) => sum + v + (pyramidFemale[i] ?? 0), 0);
+  const migrationIsShock =
+    rawNetMigrationAnnual != null &&
+    startPop > 0 &&
+    Math.abs(rawNetMigrationAnnual) > 0.01 * startPop;
+  const netMigrationAnnual = migrationIsShock ? 0 : rawNetMigrationAnnual;
+  const un2100row = projectionData.find((r) => r.year === 2100);
+  const un2100 = un2100row
+    ? {
+        low: typeof un2100row.low === "number" ? un2100row.low : undefined,
+        medium:
+          typeof un2100row.medium === "number" ? un2100row.medium : undefined,
+        high: typeof un2100row.high === "number" ? un2100row.high : undefined,
+      }
+    : null;
+  const unReading = unProjectionReading({
+    country: country.name,
+    nowPop: s[SLUG.population]?.value ?? startPop,
+    nowYear: s[SLUG.population]?.year ?? null,
+    un: un2100,
+  });
 
   const hasSociety = !!(
     divorce ||
@@ -497,11 +541,20 @@ export default async function CountryPage({
                 ))}
               </nav>
             </div>
-            <Button asChild variant="outline">
-              <Link href={`/compare?countries=${country.slug}`}>
-                <ArrowLeftRight className="h-4 w-4" /> Compare
-              </Link>
-            </Button>
+            <div className="flex flex-wrap gap-2">
+              {countryMap?.geoUrl && countryMap.metrics.length > 0 ? (
+                <Button asChild variant="outline">
+                  <Link href={`/maps/${country.iso3.toLowerCase()}`}>
+                    Regional map
+                  </Link>
+                </Button>
+              ) : null}
+              <Button asChild variant="outline">
+                <Link href={`/compare?countries=${country.slug}`}>
+                  <ArrowLeftRight className="h-4 w-4" /> Compare
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -1095,35 +1148,41 @@ export default async function CountryPage({
           description="Age structure, projections, and population composition."
         >
         {/* Projections + pyramid */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          <ChartCard
-            title="Population projections to 2100"
-            description="Official UN projections — Low / Medium / High variants"
-            source="UN World Population Prospects 2024"
-            csvRows={projectionData}
-            csvName={`${slug}-projections`}
-          >
-            <MultiSeriesChart
-              data={projectionData}
-              decimals={0}
-              series={[
-                { key: "high", label: "High variant", color: "hsl(142 71% 45%)" },
-                { key: "medium", label: "Medium variant", color: "hsl(221 83% 53%)" },
-                { key: "low", label: "Low variant", color: "hsl(0 72% 51%)" },
-              ]}
-            />
-          </ChartCard>
+        {pyramid.year && pyramidRows.length > 0 && (
+          <PopulationPyramidPlayer
+            countryName={country.name}
+            countrySlug={slug}
+            year={pyramid.year}
+            male={pyramidMale}
+            female={pyramidFemale}
+            tfr={modelTfr}
+            lifeExpectancy={s[SLUG.lifeExpectancy]?.value ?? null}
+            netMigrationAnnual={netMigrationAnnual}
+            migrationHeldAtZero={migrationIsShock}
+            un2100={un2100}
+          />
+        )}
 
-          <ChartCard
-            title={`Population pyramid${pyramid.year ? ` (${pyramid.year})` : ""}`}
-            description="Age & sex structure · share of total population by 5-year cohort"
-            source="birthrate.io model"
-            csvRows={pyramidRows}
-            csvName={`${slug}-pyramid`}
-          >
-            <PopulationPyramid rows={pyramidRows} />
-          </ChartCard>
-        </div>
+        <ChartCard
+          title="Population projections to 2100"
+          description={
+            unReading ??
+            "Official UN projections — Low / Medium / High variants"
+          }
+          source="UN World Population Prospects 2024"
+          csvRows={projectionData}
+          csvName={`${slug}-projections`}
+        >
+          <MultiSeriesChart
+            data={projectionData}
+            decimals={0}
+            series={[
+              { key: "high", label: "High variant", color: "hsl(142 71% 45%)" },
+              { key: "medium", label: "Medium variant", color: "hsl(221 83% 53%)" },
+              { key: "low", label: "Low variant", color: "hsl(0 72% 51%)" },
+            ]}
+          />
+        </ChartCard>
 
         {/* Modeled population pyramid by ethnicity */}
         {ethnicityPyramid && (

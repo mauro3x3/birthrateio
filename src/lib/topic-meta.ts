@@ -55,6 +55,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Labeled choropleths from statistical offices",
       },
       {
+        title: "By education and income",
+        href: "/fertility/education",
+        note: "DHS schooling and wealth, plus U.S. education and Hispanic origin",
+      },
+      {
         title: "Simulator",
         href: "/simulator",
         note: "Project a population under different fertility paths",
@@ -64,6 +69,7 @@ export const TOPIC_META: TopicMeta[] = [
       "The total fertility rate is a period measure: it describes one year's rates, not the completed families of real women.",
       "Provisional figures come from national statistical offices ahead of final annual data and are revised.",
       "TFR by ancestry, origin, or religion is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories, India’s NFHS religion groups, or U.S. race.",
+      "U.S. birth certificates do not record language spoken at home; Hispanic-origin TFR is the closest official split, not a language table.",
     ],
   },
   {
@@ -331,7 +337,7 @@ export const TOPIC_META: TopicMeta[] = [
       },
     ],
     caveats: [
-      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Pakistan uses PDHS 2017–18 regions, including FATA as then published. Iran has no redistributable provincial table yet.",
+      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Pakistan uses PDHS 2017–18 regions, including FATA as then published. Nigeria is NDHS 2023–24 states; Brazil is IBGE 2024-revision TFT for 2023; Indonesia is BPS SUPAS 2025 (38 provinces). EU, MENA, Africa, Caribbean, South America, Southeast Asia, Central America, Central Asia, North America and Oceania maps colour countries with World Bank national TFR. Iran has no redistributable provincial table yet.",
     ],
   },
   {

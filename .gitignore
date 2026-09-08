@@ -36,3 +36,4 @@ yarn-error.log*
 # ingestion cache
 /.cache
 /data/raw
+/.tmp-map-build

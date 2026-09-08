@@ -12,6 +12,14 @@ export type CountryMapRegion = {
   value: number | null;
 };
 
+export type CountryMapVariant = {
+  id: string;
+  label: string;
+  valuesByYear: Record<number, CountryMapRegion[]>;
+  nationalByYear: Record<number, number | null>;
+  sourceByYear: Record<number, string>;
+};
+
 export type CountryMapMetric = {
   id: MapMetricId;
   label: string;
@@ -27,6 +35,17 @@ export type CountryMapMetric = {
   sourceUrl: string;
   credit: string | null;
   highlights?: { name: string; value: number }[];
+  /** Same geography, different published population (e.g. Saudi vs all residents). */
+  variants?: CountryMapVariant[];
+};
+
+export type CountryMapTab = {
+  id: string;
+  label: string;
+  geoUrl: string;
+  kind: string;
+  note?: string;
+  metrics: CountryMapMetric[];
 };
 
 export type CountryMapEntry = {
@@ -37,6 +56,7 @@ export type CountryMapEntry = {
   hrefPrefix: string | null;
   metrics: CountryMapMetric[];
   note?: string;
+  mapTabs?: CountryMapTab[];
 };
 
 const ADMIN1_GEO: Record<string, string> = {
@@ -50,6 +70,22 @@ const ADMIN1_GEO: Record<string, string> = {
 const FEATURED = [
   "IND",
   "PAK",
+  "NGA",
+  "BRA",
+  "IDN",
+  "EU",
+  "MENA",
+  "SAU",
+  "MAR",
+  "JOR",
+  "YEM",
+  "AFRICA",
+  "SOUTHAMERICA",
+  "CARIBBEAN",
+  "SEASIA",
+  "CENTRALAMERICA",
+  "NORTHAMERICA",
+  "OCEANIA",
   "IRN",
   "RUS",
   "CHN",
@@ -57,6 +93,16 @@ const FEATURED = [
   "JPN",
   "KOR",
   "DEU",
+  "TUR",
+  "KEN",
+  "PHL",
+  "GHA",
+  "BGD",
+  "TZA",
+  "ZAF",
+  "NPL",
+  "KHM",
+  "SEN",
   "AUS",
   "CAN",
   "ITA",
@@ -116,9 +162,7 @@ function seriesByYear(
   return out;
 }
 
-function catalogToTfr(iso3: string, layers: SubnationalMap[]): CountryMapMetric | null {
-  const tfrMaps = layers.filter((m) => m.metric === "tfr");
-  if (tfrMaps.length === 0) return null;
+function tfrMapsToMetric(tfrMaps: SubnationalMap[]): CountryMapMetric {
   const valuesByYear: Record<number, CountryMapRegion[]> = {};
   const nationalByYear: Record<number, number | null> = {};
   const sourceByYear: Record<number, string> = {};
@@ -159,6 +203,38 @@ function catalogToTfr(iso3: string, layers: SubnationalMap[]): CountryMapMetric 
     credit,
     highlights,
   };
+}
+
+function catalogToTfr(layers: SubnationalMap[]): CountryMapMetric | null {
+  const tfrMaps = layers.filter((m) => m.metric === "tfr");
+  if (tfrMaps.length === 0) return null;
+  const sameGeo = new Set(tfrMaps.map((m) => m.geoUrl)).size <= 1;
+  const tabbed = tfrMaps.filter((m) => m.tab);
+  if (sameGeo && tabbed.length >= 2) {
+    const years = new Set(tfrMaps.map((m) => m.year));
+    if (years.size === 1) {
+    const byTab = new Map<string, SubnationalMap[]>();
+    for (const m of tfrMaps) {
+      const key = m.tab ?? "default";
+      byTab.set(key, [...(byTab.get(key) ?? []), m]);
+    }
+    const variants: CountryMapVariant[] = [...byTab.entries()].map(
+      ([label, group]) => {
+        const metric = tfrMapsToMetric(group);
+        return {
+          id: group[0].id,
+          label,
+          valuesByYear: metric.valuesByYear,
+          nationalByYear: metric.nationalByYear,
+          sourceByYear: metric.sourceByYear,
+        };
+      },
+    );
+    const base = tfrMapsToMetric(byTab.values().next().value ?? tfrMaps);
+    return { ...base, variants };
+    }
+  }
+  return tfrMapsToMetric(tfrMaps);
 }
 
 function catalogPopChange(layer: SubnationalMap): CountryMapMetric {
@@ -322,32 +398,59 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
   const entries: CountryMapEntry[] = [];
   for (const [iso3, layers] of byIso) {
     const first = layers[0];
-    const metrics: CountryMapMetric[] = [];
-    const tfr = catalogToTfr(iso3, layers);
-    if (tfr) {
-      metrics.push(
-        ADMIN1_GEO[iso3] ? mergeAdmin1TfrYears(iso3, tfr) : tfr,
-      );
-    }
+    const tfrLayers = layers.filter((m) => m.metric === "tfr");
+    const splitTabs =
+      tfrLayers.some((m) => m.tab) &&
+      new Set(tfrLayers.map((m) => m.geoUrl)).size > 1;
+
+    const extraMetrics: CountryMapMetric[] = [];
     const pop = adminPopulation(iso3);
-    if (pop) metrics.push(pop);
+    if (pop) extraMetrics.push(pop);
     const growth = adminPopGrowth(iso3);
     const catalogGrowth = layers.find((m) => m.metric === "pop-change");
-    if (growth) metrics.push(growth);
-    else if (catalogGrowth) metrics.push(catalogPopChange(catalogGrowth));
+    if (growth) extraMetrics.push(growth);
+    else if (catalogGrowth) extraMetrics.push(catalogPopChange(catalogGrowth));
     const gfr = adminGfr(iso3);
-    if (gfr) metrics.push(gfr);
+    if (gfr) extraMetrics.push(gfr);
 
+    const mapTabs: CountryMapTab[] | undefined = splitTabs
+      ? [...tfrLayers]
+          .sort((a, b) => {
+            const ap = a.kind === "country" ? 1 : 0;
+            const bp = b.kind === "country" ? 1 : 0;
+            return ap - bp;
+          })
+          .map((m) => ({
+            id: m.id,
+            label: m.tab ?? m.kind,
+            geoUrl: m.geoUrl,
+            kind: m.kind,
+            note: m.note,
+            metrics: [tfrMapsToMetric([m])],
+          }))
+      : undefined;
+
+    const tfr = catalogToTfr(layers);
+    const metrics: CountryMapMetric[] = [];
+    if (tfr) {
+      metrics.push(ADMIN1_GEO[iso3] ? mergeAdmin1TfrYears(iso3, tfr) : tfr);
+    }
+    metrics.push(...extraMetrics);
+
+    const defaultTab = mapTabs?.[0];
     entries.push({
       iso3,
       country: first.country,
-      kind: first.kind,
+      kind: defaultTab?.kind ?? first.kind,
       // Prefer the full admin-1 layer when we have one. Catalog TFR geos are
       // aggressively simplified and leave holes (Beijing/Tianjin inside Hebei).
-      geoUrl: ADMIN1_GEO[iso3] || first.geoUrl || "",
+      geoUrl: ADMIN1_GEO[iso3] || defaultTab?.geoUrl || first.geoUrl || "",
       hrefPrefix: ADMIN1_GEO[iso3] ? "/state" : null,
-      metrics,
-      note: first.note,
+      metrics: defaultTab
+        ? [...defaultTab.metrics, ...extraMetrics]
+        : metrics,
+      note: defaultTab?.note ?? first.note,
+      mapTabs,
     });
   }
 

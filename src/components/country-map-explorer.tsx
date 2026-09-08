@@ -23,11 +23,19 @@ const METRIC_ORDER: MapMetricId[] = [
   "gfr",
 ];
 
+/** Default camera ignores overseas islands / Siberia so Download image frames the continent. */
+const MAP_FIT_CLAMP: Partial<
+  Record<string, { west: number; south: number; east: number; north: number }>
+> = {
+  EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
+  AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
+};
+
 function metricOf(
-  country: CountryMapEntry,
+  metrics: CountryMapMetric[],
   id: MapMetricId,
 ): CountryMapMetric | undefined {
-  return country.metrics.find((m) => m.id === id);
+  return metrics.find((m) => m.id === id);
 }
 
 export function CountryMapExplorer({
@@ -39,8 +47,13 @@ export function CountryMapExplorer({
   const [iso3, setIso3] = React.useState(initialIso3.toUpperCase());
   const [metricId, setMetricId] = React.useState<MapMetricId>("tfr");
   const [year, setYear] = React.useState<number | null>(null);
+  const [tabId, setTabId] = React.useState<string | null>(null);
+  const [variantId, setVariantId] = React.useState<string | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
-  const [showValues, setShowValues] = React.useState(false);
+  const [showValues, setShowValues] = React.useState(() => {
+    const iso = initialIso3.toUpperCase();
+    return iso !== "MENA" && iso !== "EU";
+  });
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
   const [combineSelection, setCombineSelection] = React.useState(true);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
@@ -52,10 +65,6 @@ export function CountryMapExplorer({
   React.useEffect(() => {
     setIso3(initialIso3.toUpperCase());
   }, [initialIso3]);
-
-  React.useEffect(() => {
-    setSelectedIds([]);
-  }, [iso3]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -77,17 +86,47 @@ export function CountryMapExplorer({
 
   const country =
     atlas.find((c) => c.iso3 === iso3) ?? atlas[0];
+  const activeTab =
+    country.mapTabs?.find((t) => t.id === tabId) ?? country.mapTabs?.[0];
+  const viewMetrics = activeTab?.metrics ?? country.metrics;
+  const geoUrl = activeTab?.geoUrl ?? country.geoUrl;
+  const kind = activeTab?.kind ?? country.kind;
+  const note = activeTab?.note ?? country.note;
 
   React.useEffect(() => {
-    const available = country.metrics.map((m) => m.id);
+    setSelectedIds([]);
+    setTabId(null);
+    setVariantId(null);
+  }, [iso3]);
+
+  React.useEffect(() => {
+    setShowValues(
+      !(
+        kind === "province" &&
+        (country.iso3 === "MENA" || country.iso3 === "EU")
+      ),
+    );
+  }, [country.iso3, kind]);
+
+  React.useEffect(() => {
+    const available = viewMetrics.map((m) => m.id);
     if (!available.includes(metricId)) {
       setMetricId(available[0] ?? "tfr");
     }
-  }, [country, metricId]);
+  }, [country, viewMetrics, metricId]);
 
-  const metric = metricOf(country, metricId) ?? country.metrics[0];
+  const metric = metricOf(viewMetrics, metricId) ?? viewMetrics[0];
+  const variant =
+    metric?.variants?.find((v) => v.id === variantId) ?? metric?.variants?.[0];
+  const valuesByYear = variant?.valuesByYear ?? metric?.valuesByYear;
+  const nationalByYear = variant?.nationalByYear ?? metric?.nationalByYear;
+  const years = variant
+    ? Object.keys(variant.valuesByYear)
+        .map(Number)
+        .sort((a, b) => b - a)
+    : (metric?.years ?? []);
   const activeYear = metric
-    ? (year && metric.years.includes(year) ? year : metric.years[0])
+    ? (year && years.includes(year) ? year : years[0])
     : null;
 
   React.useEffect(() => {
@@ -95,7 +134,7 @@ export function CountryMapExplorer({
   }, [metric, activeYear]);
 
   const regions = metric && activeYear != null
-    ? (metric.valuesByYear[activeYear] ?? [])
+    ? (valuesByYear?.[activeYear] ?? [])
     : [];
   const values = regions
     .map((r) => r.value)
@@ -195,7 +234,7 @@ export function CountryMapExplorer({
 
   const national =
     metric && activeYear != null
-      ? metric.nationalByYear[activeYear]
+      ? (nationalByYear?.[activeYear] ?? null)
       : null;
 
   const fitPaddingTopLeft = React.useMemo<[number, number]>(
@@ -258,12 +297,12 @@ export function CountryMapExplorer({
       className="br-map-share relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
-      {country.geoUrl && mapData.length > 0 ? (
+      {geoUrl && mapData.length > 0 ? (
         <div className="br-map-canvas absolute inset-0">
           {MapView ? (
             <MapView
-              key={country.iso3}
-              geoUrl={country.geoUrl}
+              key={`${country.iso3}-${geoUrl}-${variant?.id ?? "base"}`}
+              geoUrl={geoUrl}
               data={mapData}
               colorFor={colorFor}
               unit={metric?.unit ?? ""}
@@ -271,16 +310,53 @@ export function CountryMapExplorer({
               height="100%"
               className="h-full border-0"
               fit={country.iso3 === "USA" ? "usa" : "bounds"}
-              fitMaxZoom={country.iso3 === "RUS" ? 3.6 : 5.5}
+              fitMaxZoom={
+                {
+                  RUS: 3.6,
+                  AFRICA: 4.5,
+                  EU: 4.15,
+                  SOUTHAMERICA: 2.9,
+                  MENA: 3.2,
+                  SAU: 5.8,
+                  YEM: 5.6,
+                  JOR: 6.4,
+                  CARIBBEAN: 4.8,
+                  SEASIA: 3.4,
+                  CENTRALAMERICA: 4.4,
+                  CENTRALASIA: 4.0,
+                  NORTHAMERICA: 2.7,
+                  OCEANIA: 2.35,
+                  BRA: 4.0,
+                  IDN: 4.2,
+                  NGA: 5.3,
+                  KEN: 5.8,
+                  AGO: 5.2,
+                  PHL: 5.4,
+                  GHA: 6.2,
+                  TZA: 5.0,
+                  ZAF: 5.4,
+                  NPL: 6.4,
+                  ZMB: 5.4,
+                  MOZ: 5.0,
+                  SEN: 6.2,
+                  MLI: 5.0,
+                  BFA: 6.0,
+                  BGD: 6.4,
+                  KHM: 6.0,
+                  TJK: 6.2,
+                  MWI: 6.4,
+                }[country.iso3] ?? 5.5
+              }
               fitPaddingTopLeft={fitPaddingTopLeft}
               fitPaddingBottomRight={[40, 8]}
+              fitClamp={MAP_FIT_CLAMP[country.iso3] ?? null}
               navigate={Boolean(country.hrefPrefix)}
               hrefPrefix={country.hrefPrefix ?? "/state"}
               legend={legend}
               legendTitle={metric?.label ?? country.country}
               legendPlacement="bottom-right"
               formatValue={formatValue}
-              revision={`${country.iso3}-${metric?.id}-${activeYear}-${panelOpen ? "p" : "f"}`}
+              revision={`${country.iso3}-${geoUrl}-${metric?.id}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}`}
               oceanColor={MAP_OCEAN.atlas}
               variant="light"
               adaptiveStroke={country.iso3 !== "USA"}
@@ -298,7 +374,7 @@ export function CountryMapExplorer({
         </div>
       ) : (
         <div className="br-map-canvas absolute inset-0 flex items-center justify-center px-8 text-center text-sm text-black/50">
-          {country.note ?? "No regional layer for this country yet."}
+          {note ?? "No regional layer for this country yet."}
         </div>
       )}
 
@@ -313,7 +389,7 @@ export function CountryMapExplorer({
                 {country.country}
               </h1>
               <p className="mt-0.5 text-xs text-muted-foreground">
-                {country.kind}
+                {kind}
                 {activeYear != null
                   ? metric?.yearFrom
                     ? ` · ${metric.yearFrom}–${activeYear}`
@@ -363,7 +439,26 @@ export function CountryMapExplorer({
               <div className="mt-2 flex flex-wrap gap-1">
                 {atlas
                   .filter((c) =>
-                    ["IND", "PAK", "IRN", "RUS", "CHN", "USA"].includes(c.iso3),
+                    [
+                      "IND",
+                      "PAK",
+                      "NGA",
+                      "BRA",
+                      "IDN",
+                      "EU",
+                      "MENA",
+                      "SAU",
+                      "MAR",
+                      "JOR",
+                      "YEM",
+                      "AFRICA",
+                      "CARIBBEAN",
+                      "SOUTHAMERICA",
+                      "JPN",
+                      "DEU",
+                      "TUR",
+                      "USA",
+                    ].includes(c.iso3),
                   )
                   .map((c) => (
                     <button
@@ -383,6 +478,39 @@ export function CountryMapExplorer({
               </div>
             </div>
 
+            {country.mapTabs && country.mapTabs.length > 1 && (
+              <div data-export-ignore>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Geography
+                </p>
+                <div className="mt-1.5 flex gap-1">
+                  {country.mapTabs.map((tab) => {
+                    const on =
+                      tab.id === (activeTab?.id ?? country.mapTabs?.[0]?.id);
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => {
+                          setTabId(tab.id);
+                          setSelectedIds([]);
+                          setYear(null);
+                        }}
+                        className={cn(
+                          "flex-1 rounded-sm border px-2 py-1.5 text-xs transition-colors",
+                          on
+                            ? "border-foreground bg-foreground text-background"
+                            : "border-input text-muted-foreground hover:text-foreground",
+                        )}
+                      >
+                        {tab.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+
             {national != null && metric && (
               <div className="br-map-share-tfr">
                 <p className="br-map-share-tfr-value font-serif text-4xl font-semibold tabular-nums tracking-tight">
@@ -399,7 +527,7 @@ export function CountryMapExplorer({
                 Indicator
               </p>
               {METRIC_ORDER.map((id) => {
-                const m = metricOf(country, id);
+                const m = metricOf(viewMetrics, id);
                 const locked = !m;
                 const label =
                   id === "tfr"
@@ -439,7 +567,44 @@ export function CountryMapExplorer({
               </p>
             </div>
 
-            {metric && metric.years.length > 1 && (
+            {metric?.variants && metric.variants.length > 1 && (
+              <div data-export-ignore>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Women counted
+                </p>
+                <div className="mt-1.5 flex flex-col gap-1">
+                  {metric.variants.map((v) => {
+                    const on = v.id === (variant?.id ?? metric.variants?.[0]?.id);
+                    return (
+                      <button
+                        key={v.id}
+                        type="button"
+                        role="switch"
+                        aria-checked={on}
+                        onClick={() => setVariantId(v.id)}
+                        className={cn(
+                          "flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                          on
+                            ? "border-foreground bg-foreground text-background"
+                            : "border-input bg-background text-muted-foreground hover:text-foreground",
+                        )}
+                      >
+                        <span>{v.label}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+                {country.iso3 === "SAU" ? (
+                  <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+                    Saudi women only drops non-Saudi residents. That is the
+                    published census split, not a modelled residual. Non-Saudi
+                    TFR was 0.91 nationally in 2022.
+                  </p>
+                ) : null}
+              </div>
+            )}
+
+            {metric && years.length > 1 && (
               <div data-export-ignore>
                 <label className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   Year
@@ -449,7 +614,7 @@ export function CountryMapExplorer({
                   value={activeYear ?? ""}
                   onChange={(e) => setYear(Number(e.target.value))}
                 >
-                  {metric.years.map((y) => (
+                  {years.map((y) => (
                     <option key={y} value={y}>
                       {y}
                     </option>
@@ -543,9 +708,9 @@ export function CountryMapExplorer({
               </div>
             )}
 
-            {country.note && (
+            {note && (
               <p className="text-[13px] leading-relaxed text-muted-foreground">
-                {country.note}
+                {note}
                 {country.iso3 === "IRN" ? (
                   <>
                     {" "}

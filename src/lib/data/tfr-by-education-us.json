@@ -1,0 +1,21 @@
+{
+  "iso3": "USA",
+  "country": "United States",
+  "year": 2019,
+  "unit": "children per woman",
+  "decimals": 2,
+  "source": "NCHS National Vital Statistics Reports vol. 70 no. 5, Table 1 — total fertility rate by educational attainment of the mother, 2019.",
+  "sourceUrl": "https://www.cdc.gov/nchs/data/nvsr/nvsr70/nvsr70-05.pdf",
+  "doi": "https://doi.org/10.15620/cdc:105234",
+  "note": "TFR is births per woman (NCHS publishes per 1,000 women; figures here are divided by 1,000). This is the latest NCHS table that splits TFR by education. Later final-births reports publish TFR by race and Hispanic origin, not by schooling.",
+  "groups": [
+    { "group": "12th grade or less", "value": 2.791 },
+    { "group": "High school graduate or GED", "value": 2.053 },
+    { "group": "Some college, no degree", "value": 1.808 },
+    { "group": "Associate's degree", "value": 1.312 },
+    { "group": "Bachelor's degree", "value": 1.284 },
+    { "group": "Master's degree", "value": 1.405 },
+    { "group": "Doctorate or professional degree", "value": 1.523 },
+    { "group": "All women", "value": 1.705 }
+  ]
+}
