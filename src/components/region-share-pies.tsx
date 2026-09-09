@@ -11,6 +11,7 @@ import {
 import {
   shareSlices,
   type RegionalShareSet,
+  type ShareSlice,
 } from "@/lib/regional-shares";
 import { formatCompact } from "@/lib/utils";
 
@@ -25,9 +26,28 @@ const SLICE_COLORS = [
   "#ca8a04",
   "#64748b",
 ];
+const OTHER_FILL = "#e2e8f0";
 
-function sliceFill(name: string, i: number): string {
-  return name === "Other" ? "#e2e8f0" : SLICE_COLORS[i % SLICE_COLORS.length];
+type ColoredSlice = ShareSlice & { color: string };
+
+/** Same country, same fill on both pies — keyed by iso3, not by rank. */
+function colorSlices(
+  primary: ShareSlice[],
+  secondary: ShareSlice[],
+): { left: ColoredSlice[]; right: ColoredSlice[] } {
+  const fills = new Map<string, string>();
+  let next = 0;
+  for (const s of [...primary, ...secondary]) {
+    const key = s.iso3 ?? s.name;
+    if (s.name === "Other" || fills.has(key)) continue;
+    fills.set(key, SLICE_COLORS[next % SLICE_COLORS.length]);
+    next += 1;
+  }
+  const paint = (s: ShareSlice): ColoredSlice => ({
+    ...s,
+    color: s.name === "Other" ? OTHER_FILL : (fills.get(s.iso3 ?? s.name) ?? SLICE_COLORS[0]),
+  });
+  return { left: primary.map(paint), right: secondary.map(paint) };
 }
 
 function SliceTooltip({
@@ -61,7 +81,7 @@ function PieBlock({
 }: {
   title: string;
   totalLabel: string;
-  slices: { name: string; value: number; pct: number }[];
+  slices: ColoredSlice[];
   total: number;
   layout?: "fill" | "page";
   showSliceNames?: boolean;
@@ -104,20 +124,20 @@ function PieBlock({
               }
               labelLine={showSliceNames}
             >
-              {data.map((s, i) => (
-                <Cell key={s.name} fill={sliceFill(s.name, i)} />
+              {data.map((s) => (
+                <Cell key={s.iso3 ?? s.name} fill={s.color} />
               ))}
             </Pie>
           </PieChart>
         </ResponsiveContainer>
       </div>
       <ul className="mt-1 grid w-full max-w-sm grid-cols-1 gap-x-4 gap-y-1 text-[13px] sm:grid-cols-2">
-        {slices.map((s, i) => (
-          <li key={s.name} className="flex items-baseline justify-between gap-2">
+        {slices.map((s) => (
+          <li key={s.iso3 ?? s.name} className="flex items-baseline justify-between gap-2">
             <span className="flex min-w-0 items-center gap-1.5 truncate">
               <span
                 className="h-2 w-2 shrink-0 rounded-sm"
-                style={{ background: sliceFill(s.name, i) }}
+                style={{ background: s.color }}
               />
               <span className="truncate">{s.name}</span>
             </span>
@@ -145,6 +165,7 @@ export function RegionSharePies({
 }) {
   const pop = shareSlices(region.countries, "population");
   const births = shareSlices(region.countries, "births");
+  const { left, right } = colorSlices(pop.slices, births.slices);
   return (
     <div
       className={
@@ -157,7 +178,7 @@ export function RegionSharePies({
         <PieBlock
           title={`${region.name} population by country`}
           totalLabel={`Share of residents · ${region.year ?? ""}`}
-          slices={pop.slices}
+          slices={left}
           total={pop.total}
           layout={layout}
           showSliceNames={showSliceNames}
@@ -165,7 +186,7 @@ export function RegionSharePies({
         <PieBlock
           title={`Where ${region.name} births come from`}
           totalLabel={`Share of estimated births · ${region.year ?? ""}`}
-          slices={births.slices}
+          slices={right}
           total={births.total}
           layout={layout}
           showSliceNames={showSliceNames}

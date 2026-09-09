@@ -36,6 +36,7 @@ const MAP_FIT_CLAMP: Partial<
 > = {
   EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
   AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
+  COL: { west: -79.15, south: -4.35, east: -66.8, north: 12.55 },
 };
 
 function metricOf(
@@ -386,7 +387,9 @@ export function CountryMapExplorer({
                   NORTHAMERICA: 2.7,
                   OCEANIA: 2.35,
                   BRA: 4.0,
+                  COL: 5.2,
                   IDN: 4.2,
+                  IRN: 5.4,
                   NGA: 5.3,
                   KEN: 5.8,
                   AGO: 5.2,
@@ -509,7 +512,9 @@ export function CountryMapExplorer({
                       "PAK",
                       "NGA",
                       "BRA",
+                      "COL",
                       "IDN",
+                      "IRN",
                       "EU",
                       "MENA",
                       "SAU",
@@ -818,18 +823,6 @@ export function CountryMapExplorer({
             {note && (
               <p className="text-[13px] leading-relaxed text-muted-foreground">
                 {note}
-                {country.iso3 === "IRN" ? (
-                  <>
-                    {" "}
-                    <a
-                      href="/country/iran-islamic-rep"
-                      className="underline underline-offset-2"
-                    >
-                      Iran country page
-                    </a>
-                    .
-                  </>
-                ) : null}
               </p>
             )}
 

@@ -78,7 +78,9 @@ const FEATURED = [
   "PAK",
   "NGA",
   "BRA",
+  "COL",
   "IDN",
+  "IRN",
   "EU",
   "MENA",
   "SAU",
@@ -92,7 +94,6 @@ const FEATURED = [
   "CENTRALAMERICA",
   "NORTHAMERICA",
   "OCEANIA",
-  "IRN",
   "RUS",
   "CHN",
   "USA",
@@ -460,16 +461,6 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
       shares: regionalSharesFor(iso3),
     });
   }
-
-  entries.push({
-    iso3: "IRN",
-    country: "Iran",
-    kind: "province",
-    geoUrl: "",
-    hrefPrefix: null,
-    metrics: [],
-    note: "Statistical Centre of Iran has not released a provincial TFR or population table we can redistribute. BirthGauge publishes a 2025 provincial fertility map (national TFR 1.47); we credit that map but do not copy the unpublished figures. National series are on the Iran country page.",
-  });
 
   entries.sort((a, b) => {
     const ai = FEATURED.indexOf(a.iso3);

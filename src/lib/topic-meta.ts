@@ -343,7 +343,7 @@ export const TOPIC_META: TopicMeta[] = [
       },
     ],
     caveats: [
-      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Pakistan uses PDHS 2017–18 regions, including FATA as then published. Nigeria is NDHS 2023–24 states; Brazil is IBGE 2024-revision TFT for 2023; Indonesia is BPS SUPAS 2025 (38 provinces). EU, MENA, Africa, Caribbean, South America, Southeast Asia, Central America, Central Asia, North America and Oceania maps colour countries with World Bank national TFR. Iran has no redistributable provincial table yet.",
+      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Iran 2025 is a BirthGauge estimate from provincial births and citypopulation.de age structure, not an SCI table. Colombia is DANE Estadísticas Vitales TGF by department (2023–24). Pakistan uses PDHS 2017–18 regions, including FATA as then published. Nigeria is NDHS 2023–24 states; Brazil is IBGE 2024-revision TFT for 2023; Indonesia is BPS SUPAS 2025 (38 provinces). EU, MENA, Africa, Caribbean, South America, Southeast Asia, Central America, Central Asia, North America and Oceania maps colour countries with World Bank national TFR except where a later official figure is noted (Egypt 2.34, CAPMAS / EFHS 2025).",
     ],
   },
   {

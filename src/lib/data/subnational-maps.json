@@ -7091,10 +7091,10 @@
       "kind": "country",
       "year": 2024,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Saudi Arabia (GASTAT 2024), Tunisia (INS 2024), Morocco (HCP 2024), and Egypt (CAPMAS / EFHS 2025: 2.34).",
       "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
       "geoUrl": "/geo/maps/mena-tfr.json",
-      "note": "National TFR, latest official year. World Bank WDI except Saudi Arabia (GASTAT Population Estimates 2024: 2.0 all residents) and Tunisia (INS 2024: 1.54). Morocco on this tab is HCP RGPH 2024 (1.97). Open the Provinces tab for Saudi regions, Moroccan regions, Jordanian governorates, and other published provincial series.",
+      "note": "National TFR, latest official year. World Bank WDI except Saudi Arabia (GASTAT Population Estimates 2024: 2.0 all residents), Tunisia (INS 2024: 1.54), Morocco (HCP RGPH 2024: 1.97), and Egypt (CAPMAS / Egyptian Family Health Survey 2025: 2.34). Open the Provinces tab for Saudi regions, Moroccan regions, Jordanian governorates, and other published provincial series.",
       "regions": [
         {
           "id": "mena-yemen-rep",
@@ -7220,7 +7220,7 @@
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.73
+          "value": 2.34
         },
         {
           "id": "mena-djibouti",
@@ -7364,10 +7364,10 @@
       "kind": "country",
       "year": 2024,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Colombia (DANE TGF 2024: 1.1).",
       "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
       "geoUrl": "/geo/maps/southamerica-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year).",
+      "note": "National TFR from World Bank WDI (latest year), except Colombia 1.1 from DANE Estad\u00edsticas Vitales 2024 (tasa global de fecundidad).",
       "regions": [
         {
           "id": "southamerica-venezuela-rb",
@@ -7415,7 +7415,7 @@
           "id": "southamerica-colombia",
           "slug": "southamerica-colombia",
           "name": "Colombia",
-          "value": 1.63
+          "value": 1.1
         },
         {
           "id": "southamerica-chile",
@@ -7447,7 +7447,7 @@
       "unit": "children per woman",
       "credit": null,
       "scale": "plasma",
-      "min": 1.14,
+      "min": 1.1,
       "max": 2.52
     },
     {
@@ -7458,10 +7458,10 @@
       "kind": "country",
       "year": 2024,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Egypt (CAPMAS / EFHS 2025: 2.34).",
       "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
       "geoUrl": "/geo/maps/africa-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year). Colours are comparable within this map.",
+      "note": "National TFR from World Bank WDI (latest year), except Egypt 2.34 from CAPMAS / Egyptian Family Health Survey 2025 (preliminary; also the end-2025 figure reported to the National Population Council). Colours are therefore not one vintage.",
       "regions": [
         {
           "id": "africa-zimbabwe",
@@ -7695,7 +7695,7 @@
           "id": "africa-egypt-arab-rep",
           "slug": "africa-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.73
+          "value": 2.34
         },
         {
           "id": "africa-djibouti",
@@ -8617,7 +8617,7 @@
       "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (T\u00fcrkiye). Remaining countries are national World Bank WDI TFR except Saudi Arabia (GASTAT 2024) and Tunisia (INS 2024) on the Countries tab.",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mena-prov-tfr.json",
-      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. Egypt\u2019s 2014 DHS published only regional (not governorate) TFR. Iran\u2019s statistical office has not released redistributable provincial TFR. Arab Barometer is an opinion survey and does not publish TFR. Use the Countries tab for a national map.",
+      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. Egypt is the CAPMAS / Egyptian Family Health Survey 2025 national figure (2.34); the 2014 DHS published only regional (not governorate) TFR. Iran on this tab is still the World Bank national series. Arab Barometer is an opinion survey and does not publish TFR. Use the Countries tab for a national map.",
       "tab": "Provinces",
       "regions": [
         {
@@ -9218,7 +9218,7 @@
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.73
+          "value": 2.34
         },
         {
           "id": "mena-djibouti",
@@ -11113,6 +11113,684 @@
       "credit": null,
       "min": 0.82,
       "max": 2.79
+    },
+    {
+      "id": "irn-tfr",
+      "iso3": "IRN",
+      "country": "Iran",
+      "title": "Total fertility rate, Iran 2025",
+      "kind": "province",
+      "year": 2025,
+      "national": 1.47,
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 \u2014 provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
+      "sourceUrl": "https://x.com/BirthGauge/status/2090510597460795531",
+      "credit": "Provincial estimates compiled by BirthGauge (@BirthGauge).",
+      "geoUrl": "/geo/maps/irn-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "highlights": [
+        {
+          "name": "Alborz",
+          "value": 0.88
+        },
+        {
+          "name": "Sistan and Baluchestan",
+          "value": 3.34
+        }
+      ],
+      "note": "Statistical Centre of Iran has not published a provincial TFR table for 2025. These are BirthGauge estimates from provincial birth counts and citypopulation.de age structure. The Tehran metropolitan area (Tehran + Alborz) is 1.02. Not official SCI TFR.",
+      "regions": [
+        {
+          "id": "iran-west-azerbaijan",
+          "slug": "iran-west-azerbaijan",
+          "name": "West Azerbaijan",
+          "value": 1.65
+        },
+        {
+          "id": "iran-east-azerbaijan",
+          "slug": "iran-east-azerbaijan",
+          "name": "East Azerbaijan",
+          "value": 1.36
+        },
+        {
+          "id": "iran-ardabil",
+          "slug": "iran-ardabil",
+          "name": "Ardabil",
+          "value": 1.42
+        },
+        {
+          "id": "iran-gilan",
+          "slug": "iran-gilan",
+          "name": "Gilan",
+          "value": 0.91
+        },
+        {
+          "id": "iran-mazandaran",
+          "slug": "iran-mazandaran",
+          "name": "Mazandaran",
+          "value": 0.92
+        },
+        {
+          "id": "iran-golestan",
+          "slug": "iran-golestan",
+          "name": "Golestan",
+          "value": 1.83
+        },
+        {
+          "id": "iran-north-khorasan",
+          "slug": "iran-north-khorasan",
+          "name": "North Khorasan",
+          "value": 1.8
+        },
+        {
+          "id": "iran-razavi-khorasan",
+          "slug": "iran-razavi-khorasan",
+          "name": "Razavi Khorasan",
+          "value": 1.76
+        },
+        {
+          "id": "iran-south-khorasan",
+          "slug": "iran-south-khorasan",
+          "name": "South Khorasan",
+          "value": 2.23
+        },
+        {
+          "id": "iran-sistan-and-baluchestan",
+          "slug": "iran-sistan-and-baluchestan",
+          "name": "Sistan and Baluchestan",
+          "value": 3.34
+        },
+        {
+          "id": "iran-hormozgan",
+          "slug": "iran-hormozgan",
+          "name": "Hormozgan",
+          "value": 1.82
+        },
+        {
+          "id": "iran-kerman",
+          "slug": "iran-kerman",
+          "name": "Kerman",
+          "value": 1.58
+        },
+        {
+          "id": "iran-yazd",
+          "slug": "iran-yazd",
+          "name": "Yazd",
+          "value": 1.72
+        },
+        {
+          "id": "iran-isfahan",
+          "slug": "iran-isfahan",
+          "name": "Isfahan",
+          "value": 1.17
+        },
+        {
+          "id": "iran-fars",
+          "slug": "iran-fars",
+          "name": "Fars",
+          "value": 1.27
+        },
+        {
+          "id": "iran-bushehr",
+          "slug": "iran-bushehr",
+          "name": "Bushehr",
+          "value": 1.21
+        },
+        {
+          "id": "iran-kohgiluyeh-and-boyer-ahmad",
+          "slug": "iran-kohgiluyeh-and-boyer-ahmad",
+          "name": "Kohgiluyeh and Boyer-Ahmad",
+          "value": 1.49
+        },
+        {
+          "id": "iran-chaharmahal-and-bakhtiari",
+          "slug": "iran-chaharmahal-and-bakhtiari",
+          "name": "Chaharmahal and Bakhtiari",
+          "value": 1.69
+        },
+        {
+          "id": "iran-khuzestan",
+          "slug": "iran-khuzestan",
+          "name": "Khuzestan",
+          "value": 2.14
+        },
+        {
+          "id": "iran-ilam",
+          "slug": "iran-ilam",
+          "name": "Ilam",
+          "value": 1.34
+        },
+        {
+          "id": "iran-lorestan",
+          "slug": "iran-lorestan",
+          "name": "Lorestan",
+          "value": 1.62
+        },
+        {
+          "id": "iran-kermanshah",
+          "slug": "iran-kermanshah",
+          "name": "Kermanshah",
+          "value": 1.39
+        },
+        {
+          "id": "iran-kurdistan",
+          "slug": "iran-kurdistan",
+          "name": "Kurdistan",
+          "value": 1.43
+        },
+        {
+          "id": "iran-hamadan",
+          "slug": "iran-hamadan",
+          "name": "Hamadan",
+          "value": 1.54
+        },
+        {
+          "id": "iran-markazi",
+          "slug": "iran-markazi",
+          "name": "Markazi",
+          "value": 1.07
+        },
+        {
+          "id": "iran-qom",
+          "slug": "iran-qom",
+          "name": "Qom",
+          "value": 1.53
+        },
+        {
+          "id": "iran-tehran",
+          "slug": "iran-tehran",
+          "name": "Tehran",
+          "value": 1.05
+        },
+        {
+          "id": "iran-alborz",
+          "slug": "iran-alborz",
+          "name": "Alborz",
+          "value": 0.88
+        },
+        {
+          "id": "iran-qazvin",
+          "slug": "iran-qazvin",
+          "name": "Qazvin",
+          "value": 1.25
+        },
+        {
+          "id": "iran-zanjan",
+          "slug": "iran-zanjan",
+          "name": "Zanjan",
+          "value": 1.56
+        },
+        {
+          "id": "iran-semnan",
+          "slug": "iran-semnan",
+          "name": "Semnan",
+          "value": 1.0
+        }
+      ],
+      "metric": "tfr",
+      "unit": "children per woman",
+      "min": 0.88,
+      "max": 3.34
+    },
+    {
+      "iso3": "COL",
+      "country": "Colombia",
+      "kind": "department",
+      "sourceUrl": "https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/nacimientos-y-defunciones/nacimientos/nacimientos-2024",
+      "credit": "DANE, Estad\u00edsticas Vitales.",
+      "geoUrl": "/geo/maps/col-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "note": "DANE Estad\u00edsticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andr\u00e9s is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
+      "id": "col-tfr-2024",
+      "title": "Total fertility rate, Colombia 2024",
+      "year": 2024,
+      "national": 1.1,
+      "source": "DANE, Estad\u00edsticas Vitales \u2014 tasa global de fecundidad by department of mother's residence, 2024 (Tabla 1 in the Feb 2026 vital-statistics bulletin). National TGF 1.1.",
+      "highlights": [
+        {
+          "name": "Caldas",
+          "value": 0.7
+        },
+        {
+          "name": "Vaup\u00e9s",
+          "value": 2.0
+        }
+      ],
+      "regions": [
+        {
+          "id": "colombia-amazonas",
+          "slug": "colombia-amazonas",
+          "name": "Amazonas",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-antioquia",
+          "slug": "colombia-antioquia",
+          "name": "Antioquia",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-arauca",
+          "slug": "colombia-arauca",
+          "name": "Arauca",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-atlantico",
+          "slug": "colombia-atlantico",
+          "name": "Atl\u00e1ntico",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-bogota-capital-district",
+          "slug": "colombia-bogota-capital-district",
+          "name": "Bogot\u00e1",
+          "value": 0.8
+        },
+        {
+          "id": "colombia-bolivar",
+          "slug": "colombia-bolivar",
+          "name": "Bol\u00edvar",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-boyaca",
+          "slug": "colombia-boyaca",
+          "name": "Boyac\u00e1",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-caldas",
+          "slug": "colombia-caldas",
+          "name": "Caldas",
+          "value": 0.7
+        },
+        {
+          "id": "colombia-caqueta",
+          "slug": "colombia-caqueta",
+          "name": "Caquet\u00e1",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-casanare",
+          "slug": "colombia-casanare",
+          "name": "Casanare",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-cauca",
+          "slug": "colombia-cauca",
+          "name": "Cauca",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-cesar",
+          "slug": "colombia-cesar",
+          "name": "Cesar",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-choco",
+          "slug": "colombia-choco",
+          "name": "Choc\u00f3",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-cordoba",
+          "slug": "colombia-cordoba",
+          "name": "C\u00f3rdoba",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-cundinamarca",
+          "slug": "colombia-cundinamarca",
+          "name": "Cundinamarca",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-guainia",
+          "slug": "colombia-guainia",
+          "name": "Guain\u00eda",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-guaviare",
+          "slug": "colombia-guaviare",
+          "name": "Guaviare",
+          "value": 1.5
+        },
+        {
+          "id": "colombia-huila",
+          "slug": "colombia-huila",
+          "name": "Huila",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-la-guajira",
+          "slug": "colombia-la-guajira",
+          "name": "La Guajira",
+          "value": 1.9
+        },
+        {
+          "id": "colombia-magdalena",
+          "slug": "colombia-magdalena",
+          "name": "Magdalena",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-meta",
+          "slug": "colombia-meta",
+          "name": "Meta",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-narino",
+          "slug": "colombia-narino",
+          "name": "Nari\u00f1o",
+          "value": 0.8
+        },
+        {
+          "id": "colombia-norte-de-santander",
+          "slug": "colombia-norte-de-santander",
+          "name": "Norte de Santander",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-putumayo",
+          "slug": "colombia-putumayo",
+          "name": "Putumayo",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-quindio",
+          "slug": "colombia-quindio",
+          "name": "Quind\u00edo",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-risaralda",
+          "slug": "colombia-risaralda",
+          "name": "Risaralda",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
+          "slug": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
+          "name": "San Andr\u00e9s y Providencia",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-santander",
+          "slug": "colombia-santander",
+          "name": "Santander",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-sucre",
+          "slug": "colombia-sucre",
+          "name": "Sucre",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-tolima",
+          "slug": "colombia-tolima",
+          "name": "Tolima",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-valle-del-cauca",
+          "slug": "colombia-valle-del-cauca",
+          "name": "Valle del Cauca",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-vaupes",
+          "slug": "colombia-vaupes",
+          "name": "Vaup\u00e9s",
+          "value": 2.0
+        },
+        {
+          "id": "colombia-vichada",
+          "slug": "colombia-vichada",
+          "name": "Vichada",
+          "value": 1.2
+        }
+      ],
+      "metric": "tfr",
+      "unit": "children per woman",
+      "min": 0.7,
+      "max": 2.0
+    },
+    {
+      "iso3": "COL",
+      "country": "Colombia",
+      "kind": "department",
+      "sourceUrl": "https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/nacimientos-y-defunciones/nacimientos/nacimientos-2024",
+      "credit": "DANE, Estad\u00edsticas Vitales.",
+      "geoUrl": "/geo/maps/col-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "note": "DANE Estad\u00edsticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andr\u00e9s is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
+      "id": "col-tfr-2023",
+      "title": "Total fertility rate, Colombia 2023",
+      "year": 2023,
+      "national": 1.2,
+      "source": "DANE, Estad\u00edsticas Vitales \u2014 tasa global de fecundidad by department of mother's residence, 2023 (Tabla 2 in the 19 Dec 2024 births bulletin). National TGF 1.2.",
+      "highlights": [
+        {
+          "name": "Bogot\u00e1",
+          "value": 0.9
+        },
+        {
+          "name": "La Guajira",
+          "value": 2.2
+        }
+      ],
+      "regions": [
+        {
+          "id": "colombia-amazonas",
+          "slug": "colombia-amazonas",
+          "name": "Amazonas",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-antioquia",
+          "slug": "colombia-antioquia",
+          "name": "Antioquia",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-arauca",
+          "slug": "colombia-arauca",
+          "name": "Arauca",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-atlantico",
+          "slug": "colombia-atlantico",
+          "name": "Atl\u00e1ntico",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-bogota-capital-district",
+          "slug": "colombia-bogota-capital-district",
+          "name": "Bogot\u00e1",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-bolivar",
+          "slug": "colombia-bolivar",
+          "name": "Bol\u00edvar",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-boyaca",
+          "slug": "colombia-boyaca",
+          "name": "Boyac\u00e1",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-caldas",
+          "slug": "colombia-caldas",
+          "name": "Caldas",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-caqueta",
+          "slug": "colombia-caqueta",
+          "name": "Caquet\u00e1",
+          "value": 1.5
+        },
+        {
+          "id": "colombia-casanare",
+          "slug": "colombia-casanare",
+          "name": "Casanare",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-cauca",
+          "slug": "colombia-cauca",
+          "name": "Cauca",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-cesar",
+          "slug": "colombia-cesar",
+          "name": "Cesar",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-choco",
+          "slug": "colombia-choco",
+          "name": "Choc\u00f3",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-cordoba",
+          "slug": "colombia-cordoba",
+          "name": "C\u00f3rdoba",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-cundinamarca",
+          "slug": "colombia-cundinamarca",
+          "name": "Cundinamarca",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-guainia",
+          "slug": "colombia-guainia",
+          "name": "Guain\u00eda",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-guaviare",
+          "slug": "colombia-guaviare",
+          "name": "Guaviare",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-huila",
+          "slug": "colombia-huila",
+          "name": "Huila",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-la-guajira",
+          "slug": "colombia-la-guajira",
+          "name": "La Guajira",
+          "value": 2.2
+        },
+        {
+          "id": "colombia-magdalena",
+          "slug": "colombia-magdalena",
+          "name": "Magdalena",
+          "value": 1.6
+        },
+        {
+          "id": "colombia-meta",
+          "slug": "colombia-meta",
+          "name": "Meta",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-narino",
+          "slug": "colombia-narino",
+          "name": "Nari\u00f1o",
+          "value": 0.9
+        },
+        {
+          "id": "colombia-norte-de-santander",
+          "slug": "colombia-norte-de-santander",
+          "name": "Norte de Santander",
+          "value": 1.4
+        },
+        {
+          "id": "colombia-putumayo",
+          "slug": "colombia-putumayo",
+          "name": "Putumayo",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-quindio",
+          "slug": "colombia-quindio",
+          "name": "Quind\u00edo",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-risaralda",
+          "slug": "colombia-risaralda",
+          "name": "Risaralda",
+          "value": 1.1
+        },
+        {
+          "id": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
+          "slug": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
+          "name": "San Andr\u00e9s y Providencia",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-santander",
+          "slug": "colombia-santander",
+          "name": "Santander",
+          "value": 1.2
+        },
+        {
+          "id": "colombia-sucre",
+          "slug": "colombia-sucre",
+          "name": "Sucre",
+          "value": 1.5
+        },
+        {
+          "id": "colombia-tolima",
+          "slug": "colombia-tolima",
+          "name": "Tolima",
+          "value": 1.3
+        },
+        {
+          "id": "colombia-valle-del-cauca",
+          "slug": "colombia-valle-del-cauca",
+          "name": "Valle del Cauca",
+          "value": 1.0
+        },
+        {
+          "id": "colombia-vaupes",
+          "slug": "colombia-vaupes",
+          "name": "Vaup\u00e9s",
+          "value": 2.1
+        },
+        {
+          "id": "colombia-vichada",
+          "slug": "colombia-vichada",
+          "name": "Vichada",
+          "value": 1.6
+        }
+      ],
+      "metric": "tfr",
+      "unit": "children per woman",
+      "min": 0.9,
+      "max": 2.2
     }
   ]
 }

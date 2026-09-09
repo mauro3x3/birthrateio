@@ -18,7 +18,7 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     title: "Regional fertility maps",
     href: "/maps",
     description:
-      "Total fertility by state, province, and country — India, Pakistan, Nigeria, Brazil, Indonesia, Europe (NUTS 2), Africa, the Caribbean, and dozens of other official maps.",
+      "Total fertility by state, province, and country — India, Pakistan, Nigeria, Brazil, Colombia, Indonesia, Iran, Europe (NUTS 2), Africa, the Caribbean, and dozens of other official maps.",
   },
   {
     id: "census-maps",
