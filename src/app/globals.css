@@ -163,6 +163,15 @@
 .br-map-share.br-exporting aside {
   bottom: 4.1rem;
 }
+/* Shares pies sit beside the floating panel instead of under it. */
+@media (min-width: 640px) {
+  .br-map-share:has(aside) .br-map-shares-canvas {
+    left: 21.5rem;
+  }
+}
+.br-map-share.br-exporting .br-map-shares-canvas {
+  left: 21.5rem;
+}
 .br-map-share.br-exporting .br-map-share-url {
   display: flex;
   align-items: center;

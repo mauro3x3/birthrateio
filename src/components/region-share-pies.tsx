@@ -205,6 +205,7 @@ export function RegionSharePies({
             <Link
               href={`/population/shares?region=${region.id.toLowerCase()}`}
               className="underline underline-offset-2"
+              data-export-ignore
             >
               Open on Where the births are
             </Link>

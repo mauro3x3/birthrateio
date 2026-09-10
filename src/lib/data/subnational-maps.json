@@ -6902,57 +6902,57 @@
       "id": "eu-tfr",
       "iso3": "EU",
       "country": "Europe",
-      "title": "Total fertility rate, European Union 2024",
+      "title": "Total fertility rate, European Union 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": 1.34,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/eu-tfr.json",
-      "note": "EU member states, national TFR from World Bank WDI (latest year). Not a NUTS map. Open the Provinces tab for Eurostat NUTS 2 regions across the EU, EFTA, the UK (ONS/NRS/NISRA 2024), T\u00fcrkiye and the Western Balkans. Overseas fragments of France can pull this frame; zoom in if needed.",
+      "note": "EU member states. National TFR is BirthGauge\u2019s latest compiled year (up to 2026), from national statistical offices. Open the Provinces tab for Eurostat NUTS 2 regions across the EU, EFTA, the UK (ONS/NRS/NISRA 2024), T\u00fcrkiye and the Western Balkans. Overseas fragments of France can pull this frame; zoom in if needed.",
       "tab": "Countries",
       "regions": [
         {
           "id": "eu-sweden",
           "slug": "eu-sweden",
           "name": "Sweden",
-          "value": 1.43
+          "value": 1.45
         },
         {
           "id": "eu-spain",
           "slug": "eu-spain",
           "name": "Spain",
-          "value": 1.1
+          "value": 1.12
         },
         {
           "id": "eu-slovak-republic",
           "slug": "eu-slovak-republic",
           "name": "Slovak Republic",
-          "value": 1.46
+          "value": 1.35
         },
         {
           "id": "eu-slovenia",
           "slug": "eu-slovenia",
           "name": "Slovenia",
-          "value": 1.52
+          "value": 1.55
         },
         {
           "id": "eu-romania",
           "slug": "eu-romania",
           "name": "Romania",
-          "value": 1.39
+          "value": 1.28
         },
         {
           "id": "eu-portugal",
           "slug": "eu-portugal",
           "name": "Portugal",
-          "value": 1.41
+          "value": 1.48
         },
         {
           "id": "eu-poland",
           "slug": "eu-poland",
           "name": "Poland",
-          "value": 1.14
+          "value": 1.1
         },
         {
           "id": "eu-netherlands",
@@ -6964,103 +6964,103 @@
           "id": "eu-malta",
           "slug": "eu-malta",
           "name": "Malta",
-          "value": 1.01
+          "value": 1.03
         },
         {
           "id": "eu-luxembourg",
           "slug": "eu-luxembourg",
           "name": "Luxembourg",
-          "value": 1.25
+          "value": 1.23
         },
         {
           "id": "eu-lithuania",
           "slug": "eu-lithuania",
           "name": "Lithuania",
-          "value": 1.11
+          "value": 1.1
         },
         {
           "id": "eu-latvia",
           "slug": "eu-latvia",
           "name": "Latvia",
-          "value": 1.24
+          "value": 1.19
         },
         {
           "id": "eu-italy",
           "slug": "eu-italy",
           "name": "Italy",
-          "value": 1.18
+          "value": 1.14
         },
         {
           "id": "eu-ireland",
           "slug": "eu-ireland",
           "name": "Ireland",
-          "value": 1.47
+          "value": 1.43
         },
         {
           "id": "eu-hungary",
           "slug": "eu-hungary",
           "name": "Hungary",
-          "value": 1.41
+          "value": 1.3
         },
         {
           "id": "eu-greece",
           "slug": "eu-greece",
           "name": "Greece",
-          "value": 1.24
+          "value": 1.26
         },
         {
           "id": "eu-germany",
           "slug": "eu-germany",
           "name": "Germany",
-          "value": 1.36
+          "value": 1.31
         },
         {
           "id": "eu-france",
           "slug": "eu-france",
           "name": "France",
-          "value": 1.61
+          "value": 1.53
         },
         {
           "id": "eu-finland",
           "slug": "eu-finland",
           "name": "Finland",
-          "value": 1.25
+          "value": 1.38
         },
         {
           "id": "eu-estonia",
           "slug": "eu-estonia",
           "name": "Estonia",
-          "value": 1.18
+          "value": 1.15
         },
         {
           "id": "eu-denmark",
           "slug": "eu-denmark",
           "name": "Denmark",
-          "value": 1.47
+          "value": 1.51
         },
         {
           "id": "eu-czechia",
           "slug": "eu-czechia",
           "name": "Czechia",
-          "value": 1.36
+          "value": 1.28
         },
         {
           "id": "eu-cyprus",
           "slug": "eu-cyprus",
           "name": "Cyprus",
-          "value": 1.38
+          "value": 1.35
         },
         {
           "id": "eu-croatia",
           "slug": "eu-croatia",
           "name": "Croatia",
-          "value": 1.46
+          "value": 1.55
         },
         {
           "id": "eu-bulgaria",
           "slug": "eu-bulgaria",
           "name": "Bulgaria",
-          "value": 1.72
+          "value": 1.67
         },
         {
           "id": "eu-belgium",
@@ -7072,29 +7072,29 @@
           "id": "eu-austria",
           "slug": "eu-austria",
           "name": "Austria",
-          "value": 1.31
+          "value": 1.29
         }
       ],
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 1.01,
-      "max": 1.72
+      "min": 1.03,
+      "max": 1.67
     },
     {
       "id": "mena-tfr",
       "iso3": "MENA",
       "country": "Middle East & North Africa",
-      "title": "Total fertility rate, Middle East & North Africa 2024",
+      "title": "Total fertility rate, Middle East & North Africa 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Saudi Arabia (GASTAT 2024), Tunisia (INS 2024), Morocco (HCP 2024), and Egypt (CAPMAS / EFHS 2025: 2.34).",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/mena-tfr.json",
-      "note": "National TFR, latest official year. World Bank WDI except Saudi Arabia (GASTAT Population Estimates 2024: 2.0 all residents), Tunisia (INS 2024: 1.54), Morocco (HCP RGPH 2024: 1.97), and Egypt (CAPMAS / Egyptian Family Health Survey 2025: 2.34). Open the Provinces tab for Saudi regions, Moroccan regions, Jordanian governorates, and other published provincial series.",
+      "note": "National TFR, mixed vintage. 13 countries use BirthGauge\u2019s latest compiled year (up to 2026). 11 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "mena-yemen-rep",
@@ -7106,19 +7106,19 @@
           "id": "mena-united-arab-emirates",
           "slug": "mena-united-arab-emirates",
           "name": "United Arab Emirates",
-          "value": 1.21
+          "value": 2.89
         },
         {
           "id": "mena-turkiye",
           "slug": "mena-turkiye",
           "name": "Turkiye",
-          "value": 1.48
+          "value": 1.42
         },
         {
           "id": "mena-tunisia",
           "slug": "mena-tunisia",
           "name": "Tunisia",
-          "value": 1.54
+          "value": 1.3
         },
         {
           "id": "mena-syrian-arab-republic",
@@ -7142,7 +7142,7 @@
           "id": "mena-saudi-arabia",
           "slug": "mena-saudi-arabia",
           "name": "Saudi Arabia",
-          "value": 2.0
+          "value": 2.7
         },
         {
           "id": "mena-qatar",
@@ -7154,7 +7154,7 @@
           "id": "mena-oman",
           "slug": "mena-oman",
           "name": "Oman",
-          "value": 2.51
+          "value": 2.77
         },
         {
           "id": "mena-morocco",
@@ -7184,43 +7184,43 @@
           "id": "mena-kuwait",
           "slug": "mena-kuwait",
           "name": "Kuwait",
-          "value": 1.56
+          "value": 2.79
         },
         {
           "id": "mena-jordan",
           "slug": "mena-jordan",
           "name": "Jordan",
-          "value": 2.6
+          "value": 2.32
         },
         {
           "id": "mena-israel",
           "slug": "mena-israel",
           "name": "Israel",
-          "value": 2.87
+          "value": 2.9
         },
         {
           "id": "mena-west-bank-and-gaza",
           "slug": "mena-west-bank-and-gaza",
           "name": "West Bank and Gaza",
-          "value": 3.25
+          "value": 2.82
         },
         {
           "id": "mena-iraq",
           "slug": "mena-iraq",
           "name": "Iraq",
-          "value": 3.22
+          "value": 2.78
         },
         {
           "id": "mena-iran-islamic-rep",
           "slug": "mena-iran-islamic-rep",
           "name": "Iran, Islamic Rep.",
-          "value": 1.68
+          "value": 1.31
         },
         {
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.34
+          "value": 2.52
         },
         {
           "id": "mena-djibouti",
@@ -7238,15 +7238,15 @@
           "id": "mena-algeria",
           "slug": "mena-algeria",
           "name": "Algeria",
-          "value": 2.72
+          "value": 2.85
         }
       ],
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 1.21,
+      "min": 1.3,
       "max": 6.01,
       "tab": "Countries"
     },
@@ -7254,20 +7254,20 @@
       "id": "caribbean-tfr",
       "iso3": "CARIBBEAN",
       "country": "Caribbean",
-      "title": "Total fertility rate, Caribbean 2024",
+      "title": "Total fertility rate, Caribbean 2025",
       "kind": "country",
-      "year": 2024,
+      "year": 2025,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2025 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/caribbean-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year). Territories without a WDI series are omitted.",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2025). 10 countries remain World Bank WDI (no BirthGauge series). Cuba 1.12 and Puerto Rico 0.85 are 2025; Jamaica 1.51 is 2025 (corrected for uncounted emigration); Dominican Republic 1.95 is 2024. Haiti is still World Bank (2.62) \u2014 BirthGauge has not published a Haiti TFR.",
       "regions": [
         {
           "id": "caribbean-puerto-rico-us",
           "slug": "caribbean-puerto-rico-us",
           "name": "Puerto Rico (US)",
-          "value": 0.92
+          "value": 0.85
         },
         {
           "id": "caribbean-trinidad-and-tobago",
@@ -7297,7 +7297,7 @@
           "id": "caribbean-jamaica",
           "slug": "caribbean-jamaica",
           "name": "Jamaica",
-          "value": 1.35
+          "value": 1.51
         },
         {
           "id": "caribbean-haiti",
@@ -7315,7 +7315,7 @@
           "id": "caribbean-dominican-republic",
           "slug": "caribbean-dominican-republic",
           "name": "Dominican Republic",
-          "value": 2.22
+          "value": 1.95
         },
         {
           "id": "caribbean-dominica",
@@ -7327,7 +7327,7 @@
           "id": "caribbean-cuba",
           "slug": "caribbean-cuba",
           "name": "Cuba",
-          "value": 1.45
+          "value": 1.12
         },
         {
           "id": "caribbean-barbados",
@@ -7351,53 +7351,53 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 0.92,
+      "min": 0.85,
       "max": 2.62
     },
     {
       "id": "southamerica-tfr",
       "iso3": "SOUTHAMERICA",
       "country": "South America",
-      "title": "Total fertility rate, South America 2024",
+      "title": "Total fertility rate, South America 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Colombia (DANE TGF 2024: 1.1).",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/southamerica-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year), except Colombia 1.1 from DANE Estad\u00edsticas Vitales 2024 (tasa global de fecundidad).",
+      "note": "National TFR, mixed vintage. 11 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "southamerica-venezuela-rb",
           "slug": "southamerica-venezuela-rb",
           "name": "Venezuela, RB",
-          "value": 2.08
+          "value": 2.23
         },
         {
           "id": "southamerica-uruguay",
           "slug": "southamerica-uruguay",
           "name": "Uruguay",
-          "value": 1.4
+          "value": 1.15
         },
         {
           "id": "southamerica-suriname",
           "slug": "southamerica-suriname",
           "name": "Suriname",
-          "value": 2.23
+          "value": 1.7
         },
         {
           "id": "southamerica-peru",
           "slug": "southamerica-peru",
           "name": "Peru",
-          "value": 1.97
+          "value": 1.5
         },
         {
           "id": "southamerica-paraguay",
           "slug": "southamerica-paraguay",
           "name": "Paraguay",
-          "value": 2.42
+          "value": 1.77
         },
         {
           "id": "southamerica-guyana",
@@ -7409,59 +7409,59 @@
           "id": "southamerica-ecuador",
           "slug": "southamerica-ecuador",
           "name": "Ecuador",
-          "value": 1.81
+          "value": 1.52
         },
         {
           "id": "southamerica-colombia",
           "slug": "southamerica-colombia",
           "name": "Colombia",
-          "value": 1.1
+          "value": 1.28
         },
         {
           "id": "southamerica-chile",
           "slug": "southamerica-chile",
           "name": "Chile",
-          "value": 1.14
+          "value": 1.0
         },
         {
           "id": "southamerica-brazil",
           "slug": "southamerica-brazil",
           "name": "Brazil",
-          "value": 1.61
+          "value": 1.51
         },
         {
           "id": "southamerica-bolivia",
           "slug": "southamerica-bolivia",
           "name": "Bolivia",
-          "value": 2.52
+          "value": 1.8
         },
         {
           "id": "southamerica-argentina",
           "slug": "southamerica-argentina",
           "name": "Argentina",
-          "value": 1.5
+          "value": 1.11
         }
       ],
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 1.1,
-      "max": 2.52
+      "min": 1.0,
+      "max": 2.4
     },
     {
       "id": "africa-tfr",
       "iso3": "AFRICA",
       "country": "Africa",
-      "title": "Total fertility rate, Africa 2024",
+      "title": "Total fertility rate, Africa 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year, except Egypt (CAPMAS / EFHS 2025: 2.34).",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "DHS STATcompiler FE_FRTR_W_TFR (latest survey since 2020), Congo DHS 2025 Key Indicators Report (PR167, ISF 3.5), Statistics South Africa TFR 2026 (2.12), BirthGauge for Egypt, Tunisia, Algeria and Mauritius, otherwise World Bank WDI.",
+      "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/africa-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year), except Egypt 2.34 from CAPMAS / Egyptian Family Health Survey 2025 (preliminary; also the end-2025 figure reported to the National Population Council). Colours are therefore not one vintage.",
+      "note": "Mixed vintage. 23 countries use a 2020\u201325 DHS/MIS national TFR, Congo-Brazzaville is EDSC-III 2025 (3.5), South Africa is Stats SA 2026 (2.12), 4 countries use BirthGauge (Egypt, Tunisia, Algeria, Mauritius), 25 remain World Bank WDI. DHS TFR is for the three years before interview, not a single calendar year.",
       "regions": [
         {
           "id": "africa-zimbabwe",
@@ -7473,19 +7473,19 @@
           "id": "africa-zambia",
           "slug": "africa-zambia",
           "name": "Zambia",
-          "value": 4.04
+          "value": 4.0
         },
         {
           "id": "africa-uganda",
           "slug": "africa-uganda",
           "name": "Uganda",
-          "value": 4.17
+          "value": 4.6
         },
         {
           "id": "africa-tunisia",
           "slug": "africa-tunisia",
           "name": "Tunisia",
-          "value": 1.54
+          "value": 1.3
         },
         {
           "id": "africa-togo",
@@ -7497,7 +7497,7 @@
           "id": "africa-tanzania",
           "slug": "africa-tanzania",
           "name": "Tanzania",
-          "value": 4.54
+          "value": 4.8
         },
         {
           "id": "africa-eswatini",
@@ -7521,7 +7521,7 @@
           "id": "africa-south-africa",
           "slug": "africa-south-africa",
           "name": "South Africa",
-          "value": 2.21
+          "value": 2.12
         },
         {
           "id": "africa-somalia-fed-rep",
@@ -7545,7 +7545,7 @@
           "id": "africa-senegal",
           "slug": "africa-senegal",
           "name": "Senegal",
-          "value": 3.77
+          "value": 4.0
         },
         {
           "id": "africa-sao-tome-and-principe",
@@ -7557,19 +7557,19 @@
           "id": "africa-rwanda",
           "slug": "africa-rwanda",
           "name": "Rwanda",
-          "value": 3.65
+          "value": 3.7
         },
         {
           "id": "africa-nigeria",
           "slug": "africa-nigeria",
           "name": "Nigeria",
-          "value": 4.38
+          "value": 4.8
         },
         {
           "id": "africa-niger",
           "slug": "africa-niger",
           "name": "Niger",
-          "value": 5.93
+          "value": 6.2
         },
         {
           "id": "africa-namibia",
@@ -7581,7 +7581,7 @@
           "id": "africa-mozambique",
           "slug": "africa-mozambique",
           "name": "Mozambique",
-          "value": 4.69
+          "value": 4.9
         },
         {
           "id": "africa-morocco",
@@ -7593,31 +7593,31 @@
           "id": "africa-mauritius",
           "slug": "africa-mauritius",
           "name": "Mauritius",
-          "value": 1.44
+          "value": 1.52
         },
         {
           "id": "africa-mauritania",
           "slug": "africa-mauritania",
           "name": "Mauritania",
-          "value": 4.62
+          "value": 5.2
         },
         {
           "id": "africa-mali",
           "slug": "africa-mali",
           "name": "Mali",
-          "value": 5.51
+          "value": 6.0
         },
         {
           "id": "africa-malawi",
           "slug": "africa-malawi",
           "name": "Malawi",
-          "value": 3.59
+          "value": 3.7
         },
         {
           "id": "africa-madagascar",
           "slug": "africa-madagascar",
           "name": "Madagascar",
-          "value": 3.91
+          "value": 4.3
         },
         {
           "id": "africa-libya",
@@ -7629,19 +7629,19 @@
           "id": "africa-liberia",
           "slug": "africa-liberia",
           "name": "Liberia",
-          "value": 3.86
+          "value": 3.8
         },
         {
           "id": "africa-lesotho",
           "slug": "africa-lesotho",
           "name": "Lesotho",
-          "value": 2.66
+          "value": 2.5
         },
         {
           "id": "africa-kenya",
           "slug": "africa-kenya",
           "name": "Kenya",
-          "value": 3.17
+          "value": 3.4
         },
         {
           "id": "africa-guinea-bissau",
@@ -7653,13 +7653,13 @@
           "id": "africa-guinea",
           "slug": "africa-guinea",
           "name": "Guinea",
-          "value": 4.13
+          "value": 4.1
         },
         {
           "id": "africa-ghana",
           "slug": "africa-ghana",
           "name": "Ghana",
-          "value": 3.34
+          "value": 3.9
         },
         {
           "id": "africa-gambia-the",
@@ -7677,7 +7677,7 @@
           "id": "africa-ethiopia",
           "slug": "africa-ethiopia",
           "name": "Ethiopia",
-          "value": 3.91
+          "value": 4.0
         },
         {
           "id": "africa-eritrea",
@@ -7695,7 +7695,7 @@
           "id": "africa-egypt-arab-rep",
           "slug": "africa-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.34
+          "value": 2.52
         },
         {
           "id": "africa-djibouti",
@@ -7707,19 +7707,19 @@
           "id": "africa-cote-d-ivoire",
           "slug": "africa-cote-d-ivoire",
           "name": "Cote d'Ivoire",
-          "value": 4.23
+          "value": 4.3
         },
         {
           "id": "africa-congo-dem-rep",
           "slug": "africa-congo-dem-rep",
           "name": "Congo, Dem. Rep.",
-          "value": 5.98
+          "value": 5.5
         },
         {
           "id": "africa-congo-rep",
           "slug": "africa-congo-rep",
           "name": "Congo, Rep.",
-          "value": 4.11
+          "value": 3.5
         },
         {
           "id": "africa-comoros",
@@ -7749,7 +7749,7 @@
           "id": "africa-cameroon",
           "slug": "africa-cameroon",
           "name": "Cameroon",
-          "value": 4.26
+          "value": 4.3
         },
         {
           "id": "africa-burundi",
@@ -7761,7 +7761,7 @@
           "id": "africa-burkina-faso",
           "slug": "africa-burkina-faso",
           "name": "Burkina Faso",
-          "value": 4.11
+          "value": 4.4
         },
         {
           "id": "africa-botswana",
@@ -7779,41 +7779,41 @@
           "id": "africa-angola",
           "slug": "africa-angola",
           "name": "Angola",
-          "value": 5.05
+          "value": 4.8
         },
         {
           "id": "africa-algeria",
           "slug": "africa-algeria",
           "name": "Algeria",
-          "value": 2.72
+          "value": 2.85
         }
       ],
       "labelValues": false,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Recent DHS national TFR via STATcompiler; Congo 2025 KIR; South Africa Stats SA 2026 via BirthGauge.",
       "scale": "plasma",
-      "min": 1.44,
-      "max": 6.03
+      "min": 1.3,
+      "max": 6.2
     },
     {
       "id": "seasia-tfr",
       "iso3": "SEASIA",
       "country": "Southeast Asia",
-      "title": "Total fertility rate, Southeast Asia 2024",
+      "title": "Total fertility rate, Southeast Asia 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/seasia-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year).",
+      "note": "National TFR, mixed vintage. 5 countries use BirthGauge\u2019s latest compiled year (up to 2026). 6 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "seasia-viet-nam",
           "slug": "seasia-viet-nam",
           "name": "Viet Nam",
-          "value": 1.9
+          "value": 1.93
         },
         {
           "id": "seasia-timor-leste",
@@ -7825,25 +7825,25 @@
           "id": "seasia-thailand",
           "slug": "seasia-thailand",
           "name": "Thailand",
-          "value": 1.2
+          "value": 0.76
         },
         {
           "id": "seasia-singapore",
           "slug": "seasia-singapore",
           "name": "Singapore",
-          "value": 0.97
+          "value": 0.82
         },
         {
           "id": "seasia-philippines",
           "slug": "seasia-philippines",
           "name": "Philippines",
-          "value": 1.89
+          "value": 1.7
         },
         {
           "id": "seasia-malaysia",
           "slug": "seasia-malaysia",
           "name": "Malaysia",
-          "value": 1.54
+          "value": 1.43
         },
         {
           "id": "seasia-lao-pdr",
@@ -7879,47 +7879,47 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 0.97,
+      "min": 0.76,
       "max": 2.63
     },
     {
       "id": "centralamerica-tfr",
       "iso3": "CENTRALAMERICA",
       "country": "Central America",
-      "title": "Total fertility rate, Central America 2024",
+      "title": "Total fertility rate, Central America 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/centralamerica-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year). Mexico is on the North America map.",
+      "note": "National TFR, mixed vintage. 6 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "centralamerica-panama",
           "slug": "centralamerica-panama",
           "name": "Panama",
-          "value": 2.11
+          "value": 1.7
         },
         {
           "id": "centralamerica-nicaragua",
           "slug": "centralamerica-nicaragua",
           "name": "Nicaragua",
-          "value": 2.21
+          "value": 2.13
         },
         {
           "id": "centralamerica-honduras",
           "slug": "centralamerica-honduras",
           "name": "Honduras",
-          "value": 2.48
+          "value": 1.88
         },
         {
           "id": "centralamerica-guatemala",
           "slug": "centralamerica-guatemala",
           "name": "Guatemala",
-          "value": 2.29
+          "value": 1.71
         },
         {
           "id": "centralamerica-el-salvador",
@@ -7931,41 +7931,41 @@
           "id": "centralamerica-costa-rica",
           "slug": "centralamerica-costa-rica",
           "name": "Costa Rica",
-          "value": 1.32
+          "value": 1.11
         },
         {
           "id": "centralamerica-belize",
           "slug": "centralamerica-belize",
           "name": "Belize",
-          "value": 2.02
+          "value": 1.88
         }
       ],
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 1.32,
-      "max": 2.48
+      "min": 1.11,
+      "max": 2.13
     },
     {
       "id": "centralasia-tfr",
       "iso3": "CENTRALASIA",
       "country": "Central Asia",
-      "title": "Total fertility rate, Central Asia 2024",
+      "title": "Total fertility rate, Central Asia 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/centralasia-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year).",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "centralasia-uzbekistan",
           "slug": "centralasia-uzbekistan",
           "name": "Uzbekistan",
-          "value": 3.49
+          "value": 3.05
         },
         {
           "id": "centralasia-turkmenistan",
@@ -7977,53 +7977,53 @@
           "id": "centralasia-tajikistan",
           "slug": "centralasia-tajikistan",
           "name": "Tajikistan",
-          "value": 3.04
+          "value": 3.6
         },
         {
           "id": "centralasia-kyrgyz-republic",
           "slug": "centralasia-kyrgyz-republic",
           "name": "Kyrgyz Republic",
-          "value": 2.6
+          "value": 3.55
         },
         {
           "id": "centralasia-kazakhstan",
           "slug": "centralasia-kazakhstan",
           "name": "Kazakhstan",
-          "value": 2.98
+          "value": 2.41
         }
       ],
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
-      "min": 2.6,
-      "max": 3.49
+      "min": 2.41,
+      "max": 3.6
     },
     {
       "id": "northamerica-tfr",
       "iso3": "NORTHAMERICA",
       "country": "North America",
-      "title": "Total fertility rate, North America 2024",
+      "title": "Total fertility rate, North America 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/northamerica-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year) for Canada, Mexico and the United States.",
+      "note": "National TFR, mixed vintage. 3 countries use BirthGauge\u2019s latest compiled year (up to 2026). Every country on this map has a BirthGauge figure.",
       "regions": [
         {
           "id": "northamerica-united-states",
           "slug": "northamerica-united-states",
           "name": "United States",
-          "value": 1.63
+          "value": 1.55
         },
         {
           "id": "northamerica-mexico",
           "slug": "northamerica-mexico",
           "name": "Mexico",
-          "value": 1.89
+          "value": 1.38
         },
         {
           "id": "northamerica-canada",
@@ -8035,23 +8035,23 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
       "min": 1.25,
-      "max": 1.89
+      "max": 1.55
     },
     {
       "id": "oceania-tfr",
       "iso3": "OCEANIA",
       "country": "Oceania",
-      "title": "Total fertility rate, Oceania 2024",
+      "title": "Total fertility rate, Oceania 2026",
       "kind": "country",
-      "year": 2024,
+      "year": 2026,
       "national": null,
-      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), latest year.",
-      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/oceania-tfr.json",
-      "note": "National TFR from World Bank WDI (latest year). Small island states without a WDI series are omitted.",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2026). 12 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "oceania-vanuatu",
@@ -8105,7 +8105,7 @@
           "id": "oceania-new-zealand",
           "slug": "oceania-new-zealand",
           "name": "New Zealand",
-          "value": 1.57
+          "value": 1.48
         },
         {
           "id": "oceania-naoero",
@@ -8129,19 +8129,19 @@
           "id": "oceania-australia",
           "slug": "oceania-australia",
           "name": "Australia",
-          "value": 1.48
+          "value": 1.5
         },
         {
           "id": "oceania-australia",
           "slug": "oceania-australia",
           "name": "Australia",
-          "value": 1.48
+          "value": 1.5
         },
         {
           "id": "oceania-australia",
           "slug": "oceania-australia",
           "name": "Australia",
-          "value": 1.48
+          "value": 1.5
         },
         {
           "id": "oceania-tuvalu",
@@ -8153,7 +8153,7 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": null,
+      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
       "scale": "plasma",
       "min": 1.48,
       "max": 3.8
@@ -8614,10 +8614,10 @@
       "kind": "province",
       "year": 2022,
       "national": null,
-      "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (T\u00fcrkiye). Remaining countries are national World Bank WDI TFR except Saudi Arabia (GASTAT 2024) and Tunisia (INS 2024) on the Countries tab.",
+      "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (T\u00fcrkiye). National fills for other countries use BirthGauge\u2019s latest year where compiled, else World Bank WDI.",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mena-prov-tfr.json",
-      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. Egypt is the CAPMAS / Egyptian Family Health Survey 2025 national figure (2.34); the 2014 DHS published only regional (not governorate) TFR. Iran on this tab is still the World Bank national series. Arab Barometer is an opinion survey and does not publish TFR. Use the Countries tab for a national map.",
+      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. National fills now use BirthGauge where compiled (Egypt 2.52 in 2026). Egypt\u2019s 2014 DHS published only regional (not governorate) TFR. Use the Countries tab for a national map.",
       "tab": "Provinces",
       "regions": [
         {
@@ -9128,13 +9128,13 @@
           "id": "mena-united-arab-emirates",
           "slug": "mena-united-arab-emirates",
           "name": "United Arab Emirates",
-          "value": 1.21
+          "value": 2.89
         },
         {
           "id": "mena-tunisia",
           "slug": "mena-tunisia",
           "name": "Tunisia",
-          "value": 1.54
+          "value": 1.3
         },
         {
           "id": "mena-syrian-arab-republic",
@@ -9164,7 +9164,7 @@
           "id": "mena-oman",
           "slug": "mena-oman",
           "name": "Oman",
-          "value": 2.51
+          "value": 2.77
         },
         {
           "id": "mena-mauritania",
@@ -9188,37 +9188,37 @@
           "id": "mena-kuwait",
           "slug": "mena-kuwait",
           "name": "Kuwait",
-          "value": 1.56
+          "value": 2.79
         },
         {
           "id": "mena-israel",
           "slug": "mena-israel",
           "name": "Israel",
-          "value": 2.87
+          "value": 2.9
         },
         {
           "id": "mena-west-bank-and-gaza",
           "slug": "mena-west-bank-and-gaza",
           "name": "West Bank and Gaza",
-          "value": 3.25
+          "value": 2.82
         },
         {
           "id": "mena-iraq",
           "slug": "mena-iraq",
           "name": "Iraq",
-          "value": 3.22
+          "value": 2.78
         },
         {
           "id": "mena-iran-islamic-rep",
           "slug": "mena-iran-islamic-rep",
           "name": "Iran, Islamic Rep.",
-          "value": 1.68
+          "value": 1.31
         },
         {
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.34
+          "value": 2.52
         },
         {
           "id": "mena-djibouti",
@@ -9236,7 +9236,7 @@
           "id": "mena-algeria",
           "slug": "mena-algeria",
           "name": "Algeria",
-          "value": 2.72
+          "value": 2.85
         }
       ],
       "scale": "diverging-tfr",

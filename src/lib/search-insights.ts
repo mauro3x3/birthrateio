@@ -301,7 +301,12 @@ const STATISTICS: StatisticDef[] = [
     href: "/maps/africa",
     region: "Africa",
     topicIds: ["fertility", "maps"],
-    keywords: ["africa fertility", "african tfr map"],
+    keywords: [
+      "africa fertility",
+      "african tfr map",
+      "congo fertility",
+      "south africa tfr",
+    ],
   },
   {
     id: "tfr-maps-bra",

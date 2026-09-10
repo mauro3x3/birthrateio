@@ -435,7 +435,7 @@ export function CountryMapExplorer({
           )}
         </div>
       ) : shareMode && country.shares ? (
-        <div className="br-map-canvas absolute inset-0 overflow-auto bg-white">
+        <div className="br-map-canvas br-map-shares-canvas absolute inset-0 overflow-auto bg-white">
           <RegionSharePies region={country.shares} />
         </div>
       ) : (
