@@ -104,6 +104,12 @@ def main() -> None:
             r["value"] = val
             n_bg += 1
             years.append(year)
+        if mid == "southamerica-tfr":
+            for r in m.get("regions") or []:
+                if (r.get("slug") or "").endswith("guyana"):
+                    r["value"] = 1.75
+                    n_wb = max(0, n_wb - 1)
+                    break
         vals = [r["value"] for r in m["regions"] if r.get("value") is not None]
         if vals:
             m["min"] = round(min(vals), 2)
@@ -140,6 +146,22 @@ def main() -> None:
                         "Jamaica 1.51 is 2025 (corrected for uncounted emigration); "
                         "Dominican Republic 1.95 is 2024. Haiti is still World Bank (2.62) — "
                         "BirthGauge has not published a Haiti TFR."
+                    )
+                if mid == "southamerica-tfr":
+                    leftover = (
+                        "Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of "
+                        "Statistics GRO registered live births (13,132), not a published "
+                        "age-specific TFR."
+                    )
+                    m["source"] = (
+                        "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — "
+                        "latest compiled year from national statistical offices. Guyana 1.75 is "
+                        "an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered "
+                        "live births (13,132), not a published age-specific TFR."
+                    )
+                    m["credit"] = (
+                        "BirthGauge for 11 countries; Guyana TFR is an unofficial estimate "
+                        "from GRO registered births."
                     )
                 m["note"] = (
                     f"National TFR, mixed vintage. {n_bg} countries use BirthGauge’s latest "

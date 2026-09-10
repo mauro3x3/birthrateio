@@ -412,7 +412,7 @@ const STATISTICS: StatisticDef[] = [
     href: "/maps/southamerica",
     region: "South America",
     topicIds: ["fertility", "maps"],
-    keywords: ["south america fertility", "latin america tfr"],
+    keywords: ["south america fertility", "latin america tfr", "guyana tfr"],
   },
   {
     id: "tfr-decomposition",

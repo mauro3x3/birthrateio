@@ -7364,10 +7364,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132), not a published age-specific TFR.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/southamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 11 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 11 countries use BirthGauge\u2019s latest compiled year (up to 2026). Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132 in 2025; 12,832 in 2024), not a published BoS TFR table.",
       "regions": [
         {
           "id": "southamerica-venezuela-rb",
@@ -7403,7 +7403,7 @@
           "id": "southamerica-guyana",
           "slug": "southamerica-guyana",
           "name": "Guyana",
-          "value": 2.4
+          "value": 1.75
         },
         {
           "id": "southamerica-ecuador",
@@ -7445,10 +7445,10 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
+      "credit": "BirthGauge for 11 countries; Guyana TFR is an unofficial estimate from GRO registered births.",
       "scale": "plasma",
       "min": 1.0,
-      "max": 2.4
+      "max": 2.23
     },
     {
       "id": "africa-tfr",
