@@ -7364,16 +7364,16 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132), not a published age-specific TFR.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Venezuela 2.01 is UCAB ENCOVI 2023 (household survey), not INE vital statistics. Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132), not a published age-specific TFR.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/southamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 11 countries use BirthGauge\u2019s latest compiled year (up to 2026). Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132 in 2025; 12,832 in 2024), not a published BoS TFR table.",
+      "note": "National TFR, mixed vintage. 10 countries use BirthGauge\u2019s latest compiled year (up to 2026). Venezuela 2.01 is UCAB ENCOVI 2023: INE has not published complete vital statistics since about 2019, so the old BirthGauge 2.23 (2020) is not a current official TFR. UN WPP still models ~2.08; there is no sourced national TFR of 1.5. Guyana 1.75 is an unofficial 2025 estimate from GRO registered live births (13,132 in 2025; 12,832 in 2024).",
       "regions": [
         {
           "id": "southamerica-venezuela-rb",
           "slug": "southamerica-venezuela-rb",
           "name": "Venezuela, RB",
-          "value": 2.23
+          "value": 2.01
         },
         {
           "id": "southamerica-uruguay",
@@ -7445,10 +7445,10 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": "BirthGauge for 11 countries; Guyana TFR is an unofficial estimate from GRO registered births.",
+      "credit": "BirthGauge for 10 countries; Venezuela is ENCOVI 2023 (UCAB); Guyana TFR is an unofficial estimate from GRO registered births.",
       "scale": "plasma",
       "min": 1.0,
-      "max": 2.23
+      "max": 2.01
     },
     {
       "id": "africa-tfr",
@@ -7892,10 +7892,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Nicaragua 2.2 is INIDE 2020\u20132025 (BCN Nicaragua en Cifras 2025). El Salvador 1.4 is the 2024 population census TGF (BCR/ONEC).",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/centralamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 6 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 5 countries use BirthGauge\u2019s latest compiled year (up to 2026). Nicaragua 2.2 is INIDE\u2019s 2020\u20132025 TGF (Banco Central, Nicaragua en Cifras 2025), not BirthGauge\u2019s 2020 figure (2.13). El Salvador 1.4 is the 2024 census TGF (BCR/ONEC), not World Bank WDI 1.77.",
       "regions": [
         {
           "id": "centralamerica-panama",
@@ -7907,7 +7907,7 @@
           "id": "centralamerica-nicaragua",
           "slug": "centralamerica-nicaragua",
           "name": "Nicaragua",
-          "value": 2.13
+          "value": 2.2
         },
         {
           "id": "centralamerica-honduras",
@@ -7925,7 +7925,7 @@
           "id": "centralamerica-el-salvador",
           "slug": "centralamerica-el-salvador",
           "name": "El Salvador",
-          "value": 1.77
+          "value": 1.4
         },
         {
           "id": "centralamerica-costa-rica",
@@ -7943,10 +7943,10 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": "Latest TFR compiled by BirthGauge (@BirthGauge) from national statistical offices.",
+      "credit": "BirthGauge for 5 countries; Nicaragua is INIDE 2020\u20132025 (BCN Nicaragua en Cifras 2025); El Salvador is the 2024 census (BCR/ONEC).",
       "scale": "plasma",
       "min": 1.11,
-      "max": 2.13
+      "max": 2.2
     },
     {
       "id": "centralasia-tfr",

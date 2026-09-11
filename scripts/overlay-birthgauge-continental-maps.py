@@ -106,10 +106,22 @@ def main() -> None:
             years.append(year)
         if mid == "southamerica-tfr":
             for r in m.get("regions") or []:
-                if (r.get("slug") or "").endswith("guyana"):
+                slug = r.get("slug") or ""
+                if slug.endswith("guyana"):
                     r["value"] = 1.75
                     n_wb = max(0, n_wb - 1)
-                    break
+                elif "venezuela" in slug:
+                    r["value"] = 2.01
+                    n_bg = max(0, n_bg - 1)
+        if mid == "centralamerica-tfr":
+            for r in m.get("regions") or []:
+                slug = r.get("slug") or ""
+                if "nicaragua" in slug:
+                    r["value"] = 2.2
+                    n_bg = max(0, n_bg - 1)
+                elif "el-salvador" in slug:
+                    r["value"] = 1.4
+                    n_wb = max(0, n_wb - 1)
         vals = [r["value"] for r in m["regions"] if r.get("value") is not None]
         if vals:
             m["min"] = round(min(vals), 2)
@@ -149,19 +161,39 @@ def main() -> None:
                     )
                 if mid == "southamerica-tfr":
                     leftover = (
-                        "Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of "
-                        "Statistics GRO registered live births (13,132), not a published "
-                        "age-specific TFR."
+                        "Venezuela 2.01 is UCAB ENCOVI 2023 (household survey): INE has not "
+                        "published complete vital statistics since about 2019, so the old "
+                        "BirthGauge 2.23 (2020) is not a current official TFR. Guyana 1.75 is "
+                        "an unofficial 2025 TFR estimate from Bureau of Statistics GRO "
+                        "registered live births (13,132), not a published age-specific TFR."
                     )
                     m["source"] = (
                         "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — "
-                        "latest compiled year from national statistical offices. Guyana 1.75 is "
-                        "an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered "
+                        "latest compiled year from national statistical offices. Venezuela 2.01 "
+                        "is UCAB ENCOVI 2023, not INE vital statistics. Guyana 1.75 is an "
+                        "unofficial 2025 TFR estimate from Bureau of Statistics GRO registered "
                         "live births (13,132), not a published age-specific TFR."
                     )
                     m["credit"] = (
-                        "BirthGauge for 11 countries; Guyana TFR is an unofficial estimate "
-                        "from GRO registered births."
+                        "BirthGauge for 10 countries; Venezuela is ENCOVI 2023 (UCAB); "
+                        "Guyana TFR is an unofficial estimate from GRO registered births."
+                    )
+                if mid == "centralamerica-tfr":
+                    leftover = (
+                        "Nicaragua 2.2 is INIDE’s 2020–2025 TGF (Banco Central, Nicaragua en "
+                        "Cifras 2025), not BirthGauge’s 2020 figure (2.13). El Salvador 1.4 is "
+                        "the 2024 census TGF (BCR/ONEC), not World Bank WDI 1.77."
+                    )
+                    m["source"] = (
+                        "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — "
+                        "latest compiled year from national statistical offices. Nicaragua 2.2 "
+                        "is INIDE 2020–2025 (BCN Nicaragua en Cifras 2025). El Salvador 1.4 is "
+                        "the 2024 population census TGF (BCR/ONEC)."
+                    )
+                    m["credit"] = (
+                        "BirthGauge for 5 countries; Nicaragua is INIDE 2020–2025 "
+                        "(BCN Nicaragua en Cifras 2025); El Salvador is the 2024 census "
+                        "(BCR/ONEC)."
                     )
                 m["note"] = (
                     f"National TFR, mixed vintage. {n_bg} countries use BirthGauge’s latest "
