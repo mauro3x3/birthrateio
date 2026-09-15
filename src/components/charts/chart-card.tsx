@@ -24,6 +24,8 @@ export interface ChartCardProps {
   action?: React.ReactNode;
   /** Offer a “Show numbers” toggle for shareable value labels. Default true. */
   valueLabels?: boolean;
+  /** Start with value labels on (good for share-first charts). */
+  defaultShowValues?: boolean;
 }
 
 function csvPreamble(opts: {
@@ -56,24 +58,31 @@ export function ChartCard({
   children,
   action,
   valueLabels = true,
+  defaultShowValues = false,
 }: ChartCardProps) {
   const brand = useChartBrand();
   const subject = subjectProp ?? brand.subject;
   const path = brand.path;
   const ref = React.useRef<HTMLDivElement>(null);
-  const [showValues, setShowValues] = React.useState(false);
+  const [showValues, setShowValues] = React.useState(defaultShowValues);
+  const [exporting, setExporting] = React.useState(false);
 
   const handlePng = React.useCallback(async () => {
     const node = ref.current;
     if (!node) return;
+    setExporting(true);
     node.classList.add("br-exporting");
+    // Let ChartFrame ResizeObserver pick up the fixed social export width.
     await new Promise<void>((resolve) =>
       requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
     );
+    await new Promise((r) => setTimeout(r, 220));
     try {
+      if (document.fonts?.ready) await document.fonts.ready;
       const dataUrl = await toPng(node, {
         backgroundColor: "#ffffff",
         pixelRatio: 2,
+        cacheBust: true,
         filter: (el) => {
           if (!(el instanceof HTMLElement)) return true;
           return el.dataset.exportIgnore == null;
@@ -85,6 +94,7 @@ export function ChartCard({
       a.click();
     } finally {
       node.classList.remove("br-exporting");
+      setExporting(false);
     }
   }, [csvName]);
 
@@ -106,6 +116,7 @@ export function ChartCard({
       <ChartDisplayProvider
         showValues={showValues}
         setShowValues={setShowValues}
+        exporting={exporting}
       >
         <div ref={ref} className="br-chart-share bg-background px-0.5">
           <div className="br-share-masthead mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">

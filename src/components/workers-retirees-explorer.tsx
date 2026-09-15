@@ -127,21 +127,13 @@ export function WorkersRetireesExplorer({
       String(sample.now.year),
       String(sample.at2040.year),
       String(sample.at2060.year),
-      `${sample.at2060Replacement.year} @2.1`,
     ];
   }, [compareRows, rows]);
 
   const compareData = periodLabels.map((period, i) => {
     const row: Record<string, number | string | null> = { period };
     for (const c of compareRows) {
-      const band =
-        i === 0
-          ? c.now
-          : i === 1
-            ? c.at2040
-            : i === 2
-              ? c.at2060
-              : c.at2060Replacement;
+      const band = i === 0 ? c.now : i === 1 ? c.at2040 : c.at2060;
       row[c.slug] = ratio(band.workersPerRetiree);
     }
     return row;
@@ -170,11 +162,6 @@ export function WorkersRetireesExplorer({
           working: spot.at2060.workingMil,
           retirees: spot.at2060.oldMil,
         },
-        {
-          period: `${spot.at2060Replacement.year} @2.1`,
-          working: spot.at2060Replacement.workingMil,
-          retirees: spot.at2060Replacement.oldMil,
-        },
       ]
     : [];
 
@@ -200,22 +187,22 @@ export function WorkersRetireesExplorer({
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             Workers per retiree (ages 15–64 ÷ 65+), modeled from today’s pyramid.
-            Pick countries to see how the ratio moves toward 2060 — and what
-            holding fertility at 2.1 would change.
+            Pick countries to see how the ratio moves toward 2060.
           </p>
         </div>
         <CountryMultiSelect
           options={options}
           selected={selected}
           onChange={setSelected}
-          max={8}
+          max={6}
         />
         <ChartCard
           title="Workers per retiree"
           description="Modeled 15–64 ÷ 65+. 2040 is mostly already born; TFR shows up more by 2060."
-          source="birthrate.io cohort model from World Bank pyramids"
+          source="World Bank"
           csvName="workers-per-retiree-compare"
           csvRows={compareData}
+          defaultShowValues
         >
           {compareSeries.length > 0 ? (
             <GroupedBarChart
@@ -224,7 +211,7 @@ export function WorkersRetireesExplorer({
               xKey="period"
               unit="workers per retiree"
               decimals={2}
-              height={360}
+              height={420}
             />
           ) : (
             <p className="py-16 text-center text-sm text-muted-foreground">
@@ -265,10 +252,11 @@ export function WorkersRetireesExplorer({
           <ChartCard
             title={`Working-age and retirees, ${spot.name}`}
             description="15–64 vs 65+, modeled from today’s pyramid"
-            source="birthrate.io cohort model"
+            source="World Bank"
             subject={spot.name}
             csvName={`${spot.slug}-workers-retirees`}
             csvRows={spotData}
+            defaultShowValues
           >
             <GroupedBarChart
               data={spotData}
@@ -276,7 +264,7 @@ export function WorkersRetireesExplorer({
               xKey="period"
               unit="millions of people"
               decimals={1}
-              height={340}
+              height={400}
             />
             <p className="mt-3 text-sm text-muted-foreground">
               <Link
@@ -458,7 +446,7 @@ export function WorkersRetireesExplorer({
                       className="flex items-center gap-2 font-medium hover:text-primary"
                       onClick={() => {
                         setSpotlight(row.slug);
-                        if (!selected.includes(row.slug) && selected.length < 8) {
+                        if (!selected.includes(row.slug) && selected.length < 6) {
                           setSelected([...selected, row.slug]);
                         }
                       }}

@@ -15,7 +15,7 @@ import { formatCompact } from "@/lib/utils";
 import { niceStep } from "./axis";
 import { MultiSeriesTooltip } from "./chart-tooltip";
 import { ChartFrame } from "./chart-frame";
-import { useChartShowValues } from "./chart-display";
+import { useChartExporting, useChartShowValues } from "./chart-display";
 import type { MultiSeries } from "./multi-series-chart";
 
 function domainFromZero(
@@ -31,16 +31,32 @@ function domainFromZero(
   return [0, Number.isFinite(top) && top > 0 ? top : hi * 1.1];
 }
 
-export function GroupedBarLegend({ series }: { series: MultiSeries[] }) {
+export function GroupedBarLegend({
+  series,
+  large = false,
+}: {
+  series: MultiSeries[];
+  large?: boolean;
+}) {
   return (
-    <div className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1.5">
+    <div
+      className={
+        large
+          ? "mb-4 flex flex-wrap justify-center gap-x-5 gap-y-2"
+          : "mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1.5"
+      }
+    >
       {series.map((s, i) => (
         <span
           key={s.key}
-          className="flex items-center gap-1.5 text-xs text-foreground"
+          className={
+            large
+              ? "flex items-center gap-2 text-sm font-medium text-foreground"
+              : "flex items-center gap-1.5 text-xs text-foreground"
+          }
         >
           <span
-            className="h-2.5 w-2.5 shrink-0"
+            className={large ? "h-3 w-3 shrink-0" : "h-2.5 w-2.5 shrink-0"}
             style={{ background: s.color ?? colorAt(i) }}
           />
           {s.label}
@@ -81,6 +97,7 @@ export function GroupedBarChart({
   showValues?: boolean;
 }) {
   const showValues = useChartShowValues(showValuesProp);
+  const exporting = useChartExporting();
 
   if (!data?.length || !series.length) {
     return (
@@ -98,6 +115,8 @@ export function GroupedBarChart({
       ? formatCompact(v)
       : v.toLocaleString("en-US", { maximumFractionDigits: decimals });
 
+  const plotHeight = exporting ? Math.max(height, 460) : height;
+
   const domain = domainFromZero(
     data.flatMap((row) =>
       series
@@ -105,31 +124,40 @@ export function GroupedBarChart({
         .filter((v): v is number => typeof v === "number"),
     ),
     referenceY,
-    showValues ? 1.18 : 1.04,
+    showValues || exporting ? 1.22 : 1.04,
   );
 
   const longLabels = data.some(
     (row) => String(row[xKey] ?? "").length > 10,
   );
   const crowded = series.length >= 5 || data.length * series.length > 16;
-  const labelSize = crowded ? 8 : series.length >= 3 ? 9 : 10;
+  const labelSize = exporting
+    ? crowded
+      ? 11
+      : 13
+    : crowded
+      ? 8
+      : series.length >= 3
+        ? 9
+        : 10;
+  const tickSize = exporting ? 13 : longLabels ? 10 : 11;
 
   return (
     <div style={{ width: "100%", minWidth: 0 }}>
-      <GroupedBarLegend series={series} />
-      <ChartFrame height={height}>
+      <GroupedBarLegend series={series} large={exporting} />
+      <ChartFrame height={plotHeight}>
         {(width) => (
           <BarChart
             width={width}
-            height={height}
+            height={plotHeight}
             data={data}
-            barGap={2}
-            barCategoryGap="18%"
+            barGap={exporting ? 3 : 2}
+            barCategoryGap={exporting ? "22%" : "18%"}
             margin={{
-              top: showValues ? 22 : 8,
-              right: 8,
+              top: showValues || exporting ? 28 : 8,
+              right: 10,
               left: 4,
-              bottom: longLabels ? 40 : 4,
+              bottom: longLabels ? 40 : exporting ? 8 : 4,
             }}
             style={{ cursor: "crosshair" }}
           >
@@ -140,22 +168,22 @@ export function GroupedBarChart({
             />
             <XAxis
               dataKey={xKey}
-              tick={{ fontSize: longLabels ? 10 : 11, fill: "#64748b" }}
+              tick={{ fontSize: tickSize, fill: "#475569", fontWeight: exporting ? 600 : 400 }}
               tickLine={false}
               axisLine={{ stroke: "#cbd5e1", strokeWidth: 1 }}
               interval={0}
               angle={longLabels ? -28 : 0}
               textAnchor={longLabels ? "end" : "middle"}
-              height={longLabels ? 52 : 28}
+              height={longLabels ? 52 : exporting ? 34 : 28}
               tickFormatter={xTickFormatter}
             />
             <YAxis
               tickFormatter={fmt}
               domain={domain}
-              tick={{ fontSize: 11, fill: "#64748b" }}
+              tick={{ fontSize: tickSize, fill: "#64748b" }}
               tickLine={false}
               axisLine={false}
-              width={52}
+              width={exporting ? 56 : 52}
             />
             <Tooltip
               cursor={{ fill: "#f1f5f9", opacity: 0.8 }}
@@ -192,20 +220,20 @@ export function GroupedBarChart({
                 name={s.label}
                 fill={s.color ?? colorAt(i)}
                 isAnimationActive={false}
-                maxBarSize={48}
+                maxBarSize={exporting ? 64 : 52}
               >
                 {showValues ? (
                   <LabelList
                     dataKey={s.key}
                     position="top"
-                    offset={4}
+                    offset={exporting ? 6 : 4}
                     formatter={(v) =>
                       typeof v === "number" && Number.isFinite(v) ? fmt(v) : ""
                     }
                     style={{
                       fontSize: labelSize,
-                      fontWeight: 600,
-                      fill: "#334155",
+                      fontWeight: 700,
+                      fill: "#1e293b",
                     }}
                   />
                 ) : null}
