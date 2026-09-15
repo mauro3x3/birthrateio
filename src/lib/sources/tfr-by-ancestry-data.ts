@@ -1,6 +1,7 @@
 import denmark from "../data/tfr-by-ancestry-denmark.json";
 import norway from "../data/tfr-by-background-norway.json";
 import india from "../data/tfr-by-religion-india.json";
+import israel from "../data/tfr-by-religion-israel.json";
 import availability from "../data/tfr-by-ancestry-availability.json";
 
 export type TfrAncestryStatus =
@@ -77,6 +78,14 @@ const IND_COLORS: Record<string, string> = {
   "All India": "hsl(213 62% 28%)",
 };
 
+const ISR_COLORS: Record<string, string> = {
+  Jewish: "hsl(213 62% 32%)",
+  Muslim: "hsl(142 42% 36%)",
+  Druze: "hsl(24 68% 50%)",
+  Arab: "hsl(199 52% 42%)",
+  Total: "hsl(215 12% 42%)",
+};
+
 const PACKS: TfrAncestryPack[] = [
   {
     ...(denmark as TfrAncestryPack),
@@ -97,6 +106,14 @@ const PACKS: TfrAncestryPack[] = [
     headline: "Total fertility rate by religion",
     sourceUrlLabel: "NFHS portal",
     tableLinkLabel: "Open NFHS-5 Table 4.2 (PDF)",
+  },
+  {
+    ...(israel as TfrAncestryPack),
+    colors: ISR_COLORS,
+    dashed: ["Total"],
+    headline: "Total fertility rate by religion",
+    sourceUrlLabel: "CBS fertility by religion",
+    tableLinkLabel: "Open CBS 1960–2020 fertility table (PDF)",
   },
 ];
 

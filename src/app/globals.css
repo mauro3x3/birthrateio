@@ -377,3 +377,37 @@
   background: hsl(var(--muted-foreground) / 0.3);
   border-radius: 9999px;
 }
+
+@media print {
+  header,
+  .print\:hidden {
+    display: none !important;
+  }
+  .br-briefing {
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+  .br-briefing-field {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: none !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    padding: 0 !important;
+  }
+}
+
+.br-briefing-field {
+  border: 1px solid transparent;
+  border-radius: 0.125rem;
+  padding: 0.15rem 0.25rem;
+  outline: none;
+}
+.br-briefing-field:hover {
+  border-color: hsl(var(--border));
+}
+.br-briefing-field:focus {
+  border-color: hsl(var(--ring));
+}

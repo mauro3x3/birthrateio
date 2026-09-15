@@ -38,6 +38,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/pricing",
     "/support",
     "/about",
+    "/why",
+    "/brief",
     "/methodology",
     "/glossary",
     "/sources",
@@ -65,6 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   let countryRoutes: MetadataRoute.Sitemap = [];
+  let briefRoutes: MetadataRoute.Sitemap = [];
   let topicCountryRoutes: MetadataRoute.Sitemap = [];
   let cityRoutes: MetadataRoute.Sitemap = [];
   let stateRoutes: MetadataRoute.Sitemap = [];
@@ -87,6 +90,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: c.updatedAt,
       changeFrequency: "weekly" as const,
       priority: 0.7,
+    }));
+
+    briefRoutes = countries.map((c) => ({
+      url: `${base}/country/${c.slug}/brief`,
+      lastModified: c.updatedAt,
+      changeFrequency: "weekly" as const,
+      priority: 0.55,
     }));
 
     // Topic × country — the programmatic SEO matrix (~5 × 200 URLs).
@@ -156,6 +166,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...mapCountryRoutes,
     ...censusRoutes,
     ...countryRoutes,
+    ...briefRoutes,
     ...topicCountryRoutes,
     ...compareRoutes,
     ...stateRoutes,

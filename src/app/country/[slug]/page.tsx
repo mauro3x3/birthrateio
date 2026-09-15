@@ -1,7 +1,7 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeftRight, MapPin } from "lucide-react";
+import { ArrowLeftRight, FileText, MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -88,6 +88,7 @@ import {
 import { oecIdForIso3 } from "@/lib/oec-fetch";
 import { AGE_GROUPS } from "@/lib/demography";
 import { unProjectionReading } from "@/lib/demography-brief";
+import { getBriefingAngle } from "@/lib/briefing-angles";
 
 export const revalidate = 86400;
 
@@ -472,7 +473,9 @@ export default async function CountryPage({
     ...(hasSociety ? [{ id: "society", label: "Society" }] : []),
     ...(admin1Ranking.length > 0 ? [{ id: "states", label: "States" }] : []),
     ...(hasCrimeSection ? [{ id: "crime", label: "Crime" }] : []),
+    { id: "why", label: "Why it matters" },
   ];
+  const briefingAngle = getBriefingAngle(country.iso3);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -553,6 +556,11 @@ export default async function CountryPage({
                   </Link>
                 </Button>
               ) : null}
+              <Button asChild variant="outline">
+                <Link href={`/country/${country.slug}/brief`}>
+                  <FileText className="h-4 w-4" /> Briefing
+                </Link>
+              </Button>
               <Button asChild variant="outline">
                 <Link href={`/compare?countries=${country.slug}`}>
                   <ArrowLeftRight className="h-4 w-4" /> Compare
@@ -1739,6 +1747,38 @@ export default async function CountryPage({
             </div>
           </CountryPanel>
         )}
+
+        <CountryPanel
+          id="why"
+          title="Why this country’s demographics matter"
+          description="Age structure, fertility gaps, and migration change budgets and electorates. This is the constraint, not a manifesto."
+        >
+          <div className="max-w-3xl space-y-4 text-sm leading-relaxed text-muted-foreground">
+            <p className="text-foreground">{briefingAngle.headline}</p>
+            <ul className="list-disc space-y-2 pl-5">
+              {briefingAngle.stakes.map((stake) => (
+                <li key={stake.slice(0, 48)}>{stake}</li>
+              ))}
+            </ul>
+            <p>
+              The longer argument — pensions, schools, coalitions, and
+              what migration does and does not offset — is on{" "}
+              <Link href="/why" className="link-editorial">
+                why birthrates matter
+              </Link>
+              . To turn this country’s series into a memo you can forward,
+              open the{" "}
+              <Link
+                href={`/country/${country.slug}/brief`}
+                className="link-editorial"
+              >
+                briefing builder
+              </Link>
+              {" "}— generate a draft, write it yourself, then expand any
+              paragraph.
+            </p>
+          </div>
+        </CountryPanel>
       </div>
     </div>
     </ChartBrandProvider>

@@ -56,7 +56,8 @@ export const supportConfig = {
 };
 
 export const contactConfig = {
-  organisationsEmail: "kinderheimrune@proton.me",
+  /** Public org inbox. Empty until a birthrate.io address is ready. */
+  organisationsEmail: null as string | null,
 };
 
 export type NavLink = {
@@ -85,6 +86,12 @@ export const navTopics: NavTopic[] = [
     description:
       "Fertility, population size, migration, mortality, and cities.",
     links: [
+      {
+        title: "Why birthrates matter",
+        href: "/why",
+        description:
+          "Pensions, labour, schools, elections, and geopolitics — why the series is worth a briefing",
+      },
       {
         title: "Fertility",
         href: "/fertility",
@@ -187,6 +194,12 @@ export const navTopics: NavTopic[] = [
     href: "/topics#tools",
     description: "Compare countries, simulate futures, and track releases.",
     links: [
+      {
+        title: "Country briefings",
+        href: "/brief",
+        description:
+          "AI memo you can forward — pick the sections and charts for any country",
+      },
       {
         title: "Compare",
         href: "/compare",

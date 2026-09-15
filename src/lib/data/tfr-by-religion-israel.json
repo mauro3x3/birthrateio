@@ -1,0 +1,98 @@
+{
+  "iso3": "ISR",
+  "slug": "israel",
+  "country": "Israel",
+  "metric": "tfr_by_religion",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Period total fertility rate by religion of the woman. Long series from CBS live-births/fertility releases (1960, 2000–2020) and Statistical Abstract 2024 diagrams (2022–2023). 2023: Jewish 3.00, Muslim 2.81, Druze 1.75, Arab women 2.66, national 2.85. Jewish and Muslim period rates crossed around 2020. Haredi (ultra-Orthodox) fertility is not in this religion table; the Israel Democracy Institute reports 6.4 children per woman in 2020–2022 versus 2.5 among other Jewish women.",
+  "source": "CBS live births and fertility in Israel 2020 (table, 1960–2020); CBS Statistical Abstract of Israel 2024 — population and fertility diagrams (2022–2023)",
+  "sourceUrl": "https://www.cbs.gov.il/he/mediarelease/doclib/2022/062/01_22_062t3.pdf",
+  "statbank": "https://www.cbs.gov.il/en/publications/Pages/2023/Fertility-of-Jewish-and-Other-Women-in-Israel-by-Level-of-Religiosity-1979%E2%80%932022.aspx",
+  "groups": [
+    "Jewish",
+    "Muslim",
+    "Druze",
+    "Arab",
+    "Total"
+  ],
+  "series": [
+    {
+      "year": 1960,
+      "groups": {
+        "Jewish": 3.49,
+        "Muslim": 9.31,
+        "Druze": 7.88,
+        "Arab": 7.99,
+        "Total": 3.95
+      }
+    },
+    {
+      "year": 2000,
+      "groups": {
+        "Jewish": 2.66,
+        "Muslim": 4.74,
+        "Druze": 3.07,
+        "Arab": 4.37,
+        "Total": 2.95
+      }
+    },
+    {
+      "year": 2005,
+      "groups": {
+        "Jewish": 2.69,
+        "Muslim": 4.03,
+        "Druze": 2.59,
+        "Total": 2.84
+      }
+    },
+    {
+      "year": 2010,
+      "groups": {
+        "Jewish": 2.97,
+        "Muslim": 3.75,
+        "Druze": 2.48,
+        "Arab": 3.51,
+        "Total": 3.03
+      }
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Jewish": 3.13,
+        "Muslim": 3.32,
+        "Druze": 2.19,
+        "Total": 3.09
+      }
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Jewish": 3.0,
+        "Muslim": 2.99,
+        "Druze": 1.94,
+        "Arab": 2.82,
+        "Total": 2.9
+      }
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Jewish": 3.03,
+        "Muslim": 2.91,
+        "Druze": 1.85,
+        "Arab": 2.75
+      }
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Jewish": 3.0,
+        "Muslim": 2.81,
+        "Druze": 1.75,
+        "Arab": 2.66,
+        "Total": 2.85
+      }
+    }
+  ]
+}

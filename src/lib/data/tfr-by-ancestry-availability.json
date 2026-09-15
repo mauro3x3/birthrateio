@@ -4,6 +4,13 @@
   "note": "A handful of statistical offices publish total fertility by ancestry, immigrant category, mother's country of birth, or religion. Definitions are not comparable across countries. We chart official series only — never estimates pieced together from population shares.",
   "countries": [
     {
+      "iso3": "ISR",
+      "status": "AVAILABLE",
+      "level": "religion",
+      "detail": "CBS period TFR by religion of the woman (Jewish, Muslim, Druze, Arab, national), 1960 and 2000–2023. Haredi TFR is not in that religion table; IDI reports 6.4 in 2020–2022 versus 2.5 for other Jewish women.",
+      "sourceUrl": "https://www.cbs.gov.il/he/publications/DocLib/2024/2.ShnatonPopulation/diagrams2.pdf"
+    },
+    {
       "iso3": "IND",
       "status": "AVAILABLE",
       "level": "religion",

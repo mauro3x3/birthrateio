@@ -13,7 +13,7 @@ interface ChatMessage {
 const SITE_MAP = `
 - / : Homepage dashboard (latest fertility/population highlights, global maps, rankings)
 - /topics : Subject catalogue (People, Society, Economy, Tools) — DST-style topic hub
-- /fertility : Fertility explorer (global map, rankings, movers, TFR back to 1800 for most countries via HFD / UN WPP / Gapminder then World Bank from 1960, TFR by ancestry/origin/religion where published — Denmark FERT1, Norway 12482, India NFHS religion)
+- /fertility : Fertility explorer (global map, rankings, movers, TFR back to 1800 for most countries via HFD / UN WPP / Gapminder then World Bank from 1960, TFR by ancestry/origin/religion where published — Denmark FERT1, Norway 12482, India NFHS religion, Israel CBS religion)
 - /population : Population explorer (rankings, projections, growth calculator)
 - /population/shares : Where the births are — Wikipedia-style pies of each region's residents and estimated births by country (Africa, Europe, MENA, Oceania, …)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
@@ -37,7 +37,10 @@ const SITE_MAP = `
 - /clock : Live fertility / world population clock (illustrative extrapolation from annual rates)
 - /calendar : Upcoming demographic data releases (TFR/fertility highlighted)
 - /contribute : Tip form to report newly released official demographic data
-- /country/<slug> : Full country profile — population, fertility, births vs deaths, historic mortality (life expectancy / HMD death rates / child mortality), GDP, exports & imports (OEC/BACI treemap), migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), animated population pyramid to 2100 (play/pause, GIF/MP4 export), modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more
+- /why : Why birthrates and demographics matter — age structure, pensions, schools, coalitions, and country briefings
+- /country/<slug> : Full country profile — population, fertility, births vs deaths, historic mortality (life expectancy / HMD death rates / child mortality), GDP, exports & imports (OEC/BACI treemap), migration, foreign-born/diaspora, unemployment native vs foreign-born, crime-by-ancestry where published (or an explicit note when not), animated population pyramid to 2100 (play/pause, GIF/MP4 export), modeled ethnicity pyramid, ethnic & religious composition over time, births by ethnicity, abortion/homicide/divorce/home-ownership and more. Hash tabs include #why (why this country) and a Briefing button to /country/<slug>/brief
+- /brief : Country briefing hub — pick any country, then generate a memo
+- /country/<slug>/brief : AI demographic briefing builder — user picks sections and charts; every country; Israel includes CBS religion TFR, Haredi (IDI), settlers, coalition and fiscal stakes
 `.trim();
 
 function buildSystemPrompt(countryList: string): string {
@@ -69,7 +72,7 @@ LINK RULES (href MUST be a relative path starting with "/", never a full URL):
 - Country profile: /country/<slug>. Use the exact slug from the COUNTRY LIST when present; otherwise lowercase the name and replace spaces with hyphens.
 - Compare countries: /compare?countries=slug1,slug2 (2–5 slugs).
 - Pre-fill the simulator for scenarios: /simulator?country=italy&tfr=1.2&years=80 (params above).
-- Explorers: /topics /fertility /population /population/shares /migration /mortality /crime /demographics /demographics/us /gdp /states /maps /cities /calendar /clock /contribute.
+- Explorers: /topics /why /fertility /population /population/shares /migration /mortality /crime /demographics /demographics/us /gdp /states /maps /cities /calendar /clock /contribute.
 
 Respond with STRICT JSON only (no code fences), matching this shape:
 {

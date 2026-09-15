@@ -13,6 +13,14 @@ export type FeaturedDestination = {
  */
 export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
   {
+    id: "why",
+    kicker: "People",
+    title: "Why birthrates matter",
+    href: "/why",
+    description:
+      "Age structure, pensions, schools, and coalitions — then generate a country briefing you can send to someone who has to act on it.",
+  },
+  {
     id: "regional-maps",
     kicker: "Maps",
     title: "Regional fertility maps",
@@ -75,6 +83,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     href: "/cities",
     description:
       "Population, fertility, and foreign-born share for metropolitan areas worldwide.",
+  },
+  {
+    id: "briefings",
+    kicker: "Tools",
+    title: "Country briefings",
+    href: "/brief",
+    description:
+      "A memo you can forward: fertility, neighbors, workers versus retirees, and whether family policy has moved TFR elsewhere. Every country on the site.",
   },
   {
     id: "compare",

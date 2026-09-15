@@ -13,8 +13,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/pricing" },
 };
 
-const mailtoPro = `mailto:${contactConfig.organisationsEmail}?subject=${encodeURIComponent("Pro access — birthrate.io")}`;
-const mailtoBusiness = `mailto:${contactConfig.organisationsEmail}?subject=${encodeURIComponent("Business use / higher limits — birthrate.io")}`;
+const orgEmail = contactConfig.organisationsEmail;
+const mailtoPro = orgEmail
+  ? `mailto:${orgEmail}?subject=${encodeURIComponent("Pro access — birthrate.io")}`
+  : null;
+const mailtoBusiness = orgEmail
+  ? `mailto:${orgEmail}?subject=${encodeURIComponent("Business use / higher limits — birthrate.io")}`
+  : null;
 
 export default function PricingPage() {
   return (
@@ -63,21 +68,36 @@ export default function PricingPage() {
               <li>Bulk dataset downloads</li>
               <li>Higher API and download limits</li>
             </ul>
-            <Button asChild className="mt-8">
-              <a href={mailtoPro}>Get Pro</a>
-            </Button>
+            {mailtoPro ? (
+              <Button asChild className="mt-8">
+                <a href={mailtoPro}>Get Pro</a>
+              </Button>
+            ) : (
+              <Button className="mt-8" disabled>
+                Get Pro
+              </Button>
+            )}
           </section>
         </div>
 
         <p className="text-center text-sm text-muted-foreground">
-          Need higher limits or birthrate.io for business use?{" "}
-          <a
-            href={mailtoBusiness}
-            className="font-medium text-primary underline-offset-2 hover:underline"
-          >
-            Contact us
-          </a>{" "}
-          at {contactConfig.organisationsEmail}.
+          {mailtoBusiness && orgEmail ? (
+            <>
+              Need higher limits or birthrate.io for business use?{" "}
+              <a
+                href={mailtoBusiness}
+                className="font-medium text-primary underline-offset-2 hover:underline"
+              >
+                Contact us
+              </a>{" "}
+              at {orgEmail}.
+            </>
+          ) : (
+            <>
+              Need higher limits or birthrate.io for business use? A contact
+              address will be listed here shortly.
+            </>
+          )}
         </p>
       </div>
     </div>

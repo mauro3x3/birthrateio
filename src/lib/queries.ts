@@ -87,6 +87,58 @@ export async function getCountryByIso3(iso3: string) {
   return prisma.country.findUnique({ where: { iso3 } });
 }
 
+export async function getLatestFertilityForIso3s(iso3s: string[]): Promise<
+  Array<{
+    iso3: string;
+    name: string;
+    slug: string;
+    flagEmoji: string | null;
+    tfr: number;
+    year: number;
+  }>
+> {
+  const unique = [...new Set(iso3s.map((s) => s.toUpperCase()))];
+  if (unique.length === 0) return [];
+  const fertId = await indicatorId(SLUG.fertility);
+  if (!fertId) return [];
+  const countries = await prisma.country.findMany({
+    where: { iso3: { in: unique } },
+    select: { id: true, iso3: true, name: true, slug: true, flagEmoji: true },
+  });
+  if (countries.length === 0) return [];
+  const rows = await prisma.indicatorValue.findMany({
+    where: {
+      countryId: { in: countries.map((c) => c.id) },
+      indicatorId: fertId,
+      dimension: null,
+      kind: "ESTIMATE",
+    },
+    select: { countryId: true, year: true, value: true },
+    orderBy: { year: "desc" },
+  });
+  const latest = new Map<number, { year: number; value: number }>();
+  for (const r of rows) {
+    if (r.countryId == null) continue;
+    if (!latest.has(r.countryId)) {
+      latest.set(r.countryId, { year: r.year, value: r.value });
+    }
+  }
+  return countries
+    .map((c) => {
+      const row = latest.get(c.id);
+      if (!row) return null;
+      return {
+        iso3: c.iso3,
+        name: c.name,
+        slug: c.slug,
+        flagEmoji: c.flagEmoji,
+        tfr: row.value,
+        year: row.year,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null);
+}
+
 export async function getCountryTimeSeries(
   countryId: number,
   slug: string,
@@ -344,6 +396,22 @@ export async function getRelatedCountries(
     orderBy: { name: "asc" },
     take: limit,
   });
+}
+
+/** ISO3 codes in the same World Bank continent, for briefing neighbor charts. */
+export async function getContinentIso3s(
+  continent: string,
+  excludeIso3: string,
+): Promise<string[]> {
+  const rows = await prisma.country.findMany({
+    where: {
+      isAggregate: false,
+      continent,
+      iso3: { not: excludeIso3.toUpperCase() },
+    },
+    select: { iso3: true },
+  });
+  return rows.map((r) => r.iso3);
 }
 
 /** Country ranking for an indicator. Defaults to each country's latest value;

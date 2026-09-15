@@ -19,6 +19,31 @@ export type TopicMeta = {
  */
 export const TOPIC_META: TopicMeta[] = [
   {
+    href: "/why",
+    title: "Why birthrates matter",
+    indicators: [SLUG.fertility, SLUG.ageDependencyRatio, SLUG.population],
+    related: [
+      {
+        title: "Fertility",
+        href: "/fertility",
+        note: "The series behind the argument",
+      },
+      {
+        title: "Population",
+        href: "/population",
+        note: "How fertility feeds through to headcount",
+      },
+      {
+        title: "Country briefings",
+        href: "/brief",
+        note: "A memo you can forward for any country",
+      },
+    ],
+    caveats: [
+      "This page is an explainer, not a policy position. Period TFR is not completed cohort fertility, and group splits are only used where a national office publishes them.",
+    ],
+  },
+  {
     href: "/fertility",
     title: "Fertility",
     indicators: [
@@ -69,7 +94,7 @@ export const TOPIC_META: TopicMeta[] = [
       "The total fertility rate is a period measure: it describes one year's rates, not the completed families of real women.",
       "Pre-1960 TFR is reconstructed: Human Fertility Database where official registration exists, UN WPP for 1950–1959, and Gapminder estimates for earlier gaps. Nineteenth-century series for countries without vital registration can be nearly flat by construction.",
       "Provisional figures come from national statistical offices ahead of final annual data and are revised.",
-      "TFR by ancestry, origin, or religion is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories, India’s NFHS religion groups, or U.S. race.",
+      "TFR by ancestry, origin, or religion is only shown where a statistical office publishes it; Denmark’s ancestry groups are not the same as Norway’s immigrant categories, India’s NFHS religion groups, Israel’s CBS religion TFR, or U.S. race.",
       "U.S. birth certificates do not record language spoken at home; Hispanic-origin TFR is the closest official split, not a language table.",
     ],
   },

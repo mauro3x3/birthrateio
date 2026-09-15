@@ -4,6 +4,7 @@ import Link from "next/link";
 import { GlobalSearch } from "@/components/global-search";
 
 const TOPICS = [
+  { title: "Why birthrates matter", href: "/why" },
   { title: "Maps", href: "/maps" },
   { title: "Census maps", href: "/demographics" },
   { title: "Fertility", href: "/fertility" },

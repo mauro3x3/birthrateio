@@ -40,13 +40,21 @@ export interface AssistantChartSpec {
   data: Record<string, number | string>[];
   unit?: string;
   note?: string;
+  id?: string;
+  after?: string;
 }
 
 function fmt(v: unknown) {
   return typeof v === "number" ? formatCompact(v) : String(v);
 }
 
-export function AssistantChart({ spec }: { spec: AssistantChartSpec }) {
+export function AssistantChart({
+  spec,
+  preview = false,
+}: {
+  spec: AssistantChartSpec;
+  preview?: boolean;
+}) {
   const ref = React.useRef<HTMLDivElement>(null);
   const { type, title, subtitle, xKey, series, data, unit, note } = spec;
 
@@ -63,7 +71,7 @@ export function AssistantChart({ spec }: { spec: AssistantChartSpec }) {
   }, [title]);
 
   const stacked = type === "stackedArea" || type === "stackedBar";
-  const height = 260;
+  const height = preview ? 140 : 260;
 
   const chart = (() => {
     if (type === "pie") {
@@ -145,14 +153,35 @@ export function AssistantChart({ spec }: { spec: AssistantChartSpec }) {
   })();
 
   return (
-    <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
-      <div ref={ref} className="bg-white px-3.5 pb-2 pt-3.5 text-slate-900">
-        <div className="mb-2 flex items-start justify-between gap-2">
+    <div
+      className={
+        preview
+          ? "overflow-hidden rounded-sm border border-slate-200 bg-white"
+          : "overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm"
+      }
+    >
+      <div
+        ref={ref}
+        className={
+          preview
+            ? "bg-white px-2.5 pb-1.5 pt-2 text-slate-900"
+            : "bg-white px-3.5 pb-2 pt-3.5 text-slate-900"
+        }
+      >
+        <div className="mb-1.5 flex items-start justify-between gap-2">
           <div>
-            <p className="font-sans text-sm font-semibold leading-tight text-slate-900">
+            <p
+              className={
+                preview
+                  ? "font-sans text-xs font-semibold leading-tight text-slate-900"
+                  : "font-sans text-sm font-semibold leading-tight text-slate-900"
+              }
+            >
               {title}
             </p>
-            {subtitle && <p className="text-xs text-slate-500">{subtitle}</p>}
+            {!preview && subtitle ? (
+              <p className="text-xs text-slate-500">{subtitle}</p>
+            ) : null}
           </div>
           {unit && (
             <span className="shrink-0 rounded bg-slate-100 px-1.5 py-0.5 text-[10px] text-slate-500">
@@ -163,21 +192,25 @@ export function AssistantChart({ spec }: { spec: AssistantChartSpec }) {
         <ResponsiveContainer width="100%" height={height}>
           {chart}
         </ResponsiveContainer>
-        <div className="mt-1.5 flex items-center justify-between border-t border-slate-200 pt-1.5">
-          <span className="text-[10px] text-slate-400">
-            {note || "AI estimate — for illustration"}
-          </span>
-          <span className="font-serif text-[11px] font-semibold text-slate-900">
-            birthrate<span className="text-primary">.io</span>
-          </span>
-        </div>
+        {!preview ? (
+          <div className="mt-1.5 flex items-center justify-between border-t border-slate-200 pt-1.5">
+            <span className="text-[10px] text-slate-400">
+              {note || "AI estimate — for illustration"}
+            </span>
+            <span className="font-serif text-[11px] font-semibold text-slate-900">
+              birthrate<span className="text-primary">.io</span>
+            </span>
+          </div>
+        ) : null}
       </div>
-      <button
-        onClick={download}
-        className="flex w-full items-center justify-center gap-1.5 border-t border-slate-200 bg-slate-50 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-      >
-        <Download className="h-3.5 w-3.5" /> Download image
-      </button>
+      {!preview ? (
+        <button
+          onClick={download}
+          className="flex w-full items-center justify-center gap-1.5 border-t border-slate-200 bg-slate-50 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
+        >
+          <Download className="h-3.5 w-3.5" /> Download image
+        </button>
+      ) : null}
     </div>
   );
 }
