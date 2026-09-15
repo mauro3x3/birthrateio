@@ -21,7 +21,12 @@ export function ChartDisplayProvider({
   setShowValues,
   exporting = false,
   children,
-}: ChartDisplay & { children: React.ReactNode }) {
+}: {
+  showValues: boolean;
+  setShowValues: (next: boolean | ((prev: boolean) => boolean)) => void;
+  exporting?: boolean;
+  children: React.ReactNode;
+}) {
   const value = React.useMemo(
     () => ({ showValues, setShowValues, exporting }),
     [showValues, setShowValues, exporting],
