@@ -537,7 +537,7 @@ function HorizontalBars({
                 dataKey={valueKey}
                 position="right"
                 offset={6}
-                formatter={(v) =>
+                formatter={(v: number | string) =>
                   typeof v === "number" && Number.isFinite(v) ? fmt(v) : ""
                 }
                 style={{

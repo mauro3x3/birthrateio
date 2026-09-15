@@ -131,7 +131,7 @@ export function StackedBarChart({
                 dataKey="__total"
                 position="top"
                 offset={4}
-                formatter={(v) =>
+                formatter={(v: number | string) =>
                   typeof v === "number" && Number.isFinite(v)
                     ? formatCompact(v)
                     : ""

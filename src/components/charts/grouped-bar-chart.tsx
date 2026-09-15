@@ -227,7 +227,7 @@ export function GroupedBarChart({
                     dataKey={s.key}
                     position="top"
                     offset={exporting ? 6 : 4}
-                    formatter={(v) =>
+                    formatter={(v: number | string) =>
                       typeof v === "number" && Number.isFinite(v) ? fmt(v) : ""
                     }
                     style={{
