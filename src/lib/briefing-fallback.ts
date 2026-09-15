@@ -104,10 +104,47 @@ export function compiledBriefing(opts: {
 
   const groupLine = g
     ? `${g.source.split(";")[0]} (${g.latestYear}): ${Object.entries(g.latest)
-        .filter(([k]) => k !== "Total")
+        .filter(([k]) => k !== "Total" && k !== "All women")
         .map(([k, v]) => `${k} ${formatNumber(v, 2)}`)
         .join("; ")}.`
     : `${facts.name} has no official religion, ancestry, or origin TFR pack on this site.`;
+
+  const compositionLine = (() => {
+    const c = facts.composition;
+    if (c && c.points.length >= 2) {
+      const first = c.points[0];
+      const lastHist =
+        c.points.filter(
+          (p) => c.projectionFromYear == null || p.year < c.projectionFromYear,
+        ).at(-1) ?? c.points.at(-1)!;
+      const lastProj =
+        c.projectionFromYear != null ? c.points[c.points.length - 1] : null;
+      const fmtShare = (row: { year: number; groups: Record<string, number> }) =>
+        c.groups
+          .map((k) => `${k} ${formatNumber(row.groups[k] ?? 0, 1)}%`)
+          .join("; ");
+      let body = `${c.source} In ${first.year}: ${fmtShare(first)}. In ${lastHist.year}: ${fmtShare(lastHist)}.`;
+      if (lastProj && lastProj.year !== lastHist.year) {
+        body += ` Projection for ${lastProj.year}: ${fmtShare(lastProj)}.`;
+      }
+      const births = facts.birthsComposition;
+      if (births && births.points.length >= 1) {
+        const bLast = births.points[births.points.length - 1];
+        body += ` Births lead the stock (${births.source}): in ${bLast.year}, ${births.groups
+          .map((k) => `${k} ${formatNumber(bLast.groups[k] ?? 0, 1)}%`)
+          .join("; ")}.`;
+      }
+      return body;
+    }
+    const r = facts.religion;
+    if (r && r.points.length >= 1) {
+      const snap = r.points[r.points.length - 1];
+      return `${r.source} Religion share (${snap.year}): ${r.groups
+        .map((k) => `${k} ${formatNumber(snap.groups[k] ?? 0, 1)}%`)
+        .join("; ")}. Race/ethnicity time series is not curated for this country yet.`;
+    }
+    return null;
+  })();
 
   const byId: Record<BriefingModuleId, { heading: string; body: string }> = {
     snapshot: {
@@ -129,14 +166,27 @@ export function compiledBriefing(opts: {
     age: {
       heading: "Who is already born",
       body: L
-        ? `People aged 15–64 in ${L.at2040.year} are almost all alive today. Births this year show up in the workforce around 2041–2045, not in next year’s budget. ${s[SLUG.popShare65plus] ? `Share aged 65+ is ${stat(s[SLUG.popShare65plus], 1)}.` : ""} Play the pyramid on the country demography tab if you want the 2100 picture.`
+        ? `People aged 15–64 in ${L.at2040.year} are almost all alive today. Births this year show up in the workforce around 2041–2045, not in next year’s budget. ${s[SLUG.popShare65plus] ? `Share aged 65+ is ${stat(s[SLUG.popShare65plus], 1)}.` : ""} ${facts.pyramid ? `The age pyramid (${facts.pyramid.year}) is the picture: a fat base means many future workers; a fat top means many retirees already on the ledger.` : "Play the pyramid on the country demography tab if you want the 2100 picture."}`
         : `Play the pyramid on the country demography tab. The 2040 workforce is mostly people already born.`,
     },
     groups: {
       heading: "Not one fertility rate",
       body: groupLine + (facts.iso3 === "ISR"
         ? " Jewish and Muslim period rates have converged since the 1960s, when Muslim TFR was above 9. The remaining gap that matters for coalition math is religiosity inside the Jewish population (Haredi vs other), which CBS does not put on this religion table — cite IDI for that split."
-        : " If a group is not on an official table, this memo will not invent it."),
+        : facts.iso3 === "USA"
+          ? " These are NCHS rates by race and Hispanic origin of the mother — not ancestry, language, or religion."
+          : facts.groupTfr?.headline.includes("DHS")
+            ? " These are DHS education splits — a background table, not a religion or ancestry census. If a national office publishes a different split, prefer that."
+            : " If a group is not on an official table, this memo will not invent it."),
+    },
+    composition: {
+      heading: "Who the country is becoming",
+      body:
+        (compositionLine ??
+          `${facts.name} has no curated race / ethnicity or religion composition series on this site yet. Use the country demography charts if available.`) +
+        (facts.extras.compositionWhy
+          ? `\n\n${facts.extras.compositionWhy}`
+          : ""),
     },
     labor: {
       heading: "Taxpayers and retirees",
@@ -146,13 +196,53 @@ export function compiledBriefing(opts: {
     },
     migration: {
       heading: "What migration does",
-      body: facts.series.migration.length >= 2
-        ? `Net migration can hold headcount up while fertility is below replacement. It does not freeze the age structure unless inflows stay large and young, year after year. Latest: ${stat(s[SLUG.netMigration], 0, true)}.`
-        : `Net migration is thin on this profile.`,
+      body: (() => {
+        const net = facts.series.migration.length
+          ? `Latest net migration: ${stat(s[SLUG.netMigration], 0, true)}.`
+          : `Net migration is thin on this profile.`;
+        const stock =
+          facts.migrantStock && facts.migrantStockShare
+            ? ` Foreign-born stock about ${people(facts.migrantStock.value)} (${formatNumber(facts.migrantStockShare.value, 1)}% of residents) in ${facts.migrantStock.year}.`
+            : "";
+        const origins = facts.immigrationOrigins
+          ? ` Top birth countries of the foreign-born (${facts.immigrationOrigins.latestYear}, UN DESA stock): ${facts.immigrationOrigins.rows
+              .slice(0, 5)
+              .map((r) => `${r.name} ${people(r.value)}`)
+              .join("; ")}.`
+          : "";
+        const abroad = facts.emigrationDestinations
+          ? ` People born in ${facts.name} living abroad (${facts.emigrationDestinations.latestYear}): ${facts.emigrationDestinations.rows
+              .slice(0, 4)
+              .map((r) => `${r.name} ${people(r.value)}`)
+              .join("; ")}. That is stock abroad, not annual emigration.`
+          : "";
+        const fiscal = facts.extras.migrationFiscal
+          ? `\n\n${facts.extras.migrationFiscal.note} (${facts.extras.migrationFiscal.source}).`
+          : "";
+        return `Net migration can hold headcount up while fertility is below replacement. It does not freeze the age structure unless inflows stay large and young, year after year. ${net}${stock}${origins}${abroad}${fiscal}`;
+      })(),
     },
     economy: {
       heading: "The budget constraint",
-      body: `Pay-as-you-go pensions and tax-funded care are transfers from current workers to current retirees. When workers-per-retiree falls, contributions, taxes, or benefits have to move — or the retirement age does. GDP per capita is ${stat(s[SLUG.gdpPerCapita], 0)}. That is arithmetic, not a programme.`,
+      body: (() => {
+        const health = s[SLUG.healthExpenditure]
+          ? ` Current health expenditure is ${stat(s[SLUG.healthExpenditure], 1)} of GDP.`
+          : "";
+        const old = s[SLUG.popShare65plus]
+          ? ` Share aged 65+ is ${stat(s[SLUG.popShare65plus], 1)}.`
+          : "";
+        const laborBit = L
+          ? ` Modeled workers per retiree: ${formatNumber(L.now.workersPerRetiree, 1)} now, about ${formatNumber(L.at2040.workersPerRetiree, 1)} in ${L.at2040.year}.`
+          : "";
+        const base = `Pay-as-you-go pensions and tax-funded care are transfers from current workers to current retirees. When workers-per-retiree falls, contributions, taxes, or benefits have to move — or the retirement age does. GDP per capita is ${stat(s[SLUG.gdpPerCapita], 0)}.${health}${old}${laborBit}`;
+        if (!facts.extras.budget) {
+          return `${base} A full national budget breakdown (pensions as a share of outlays) is not curated for this country yet — use the health-spend and age-65+ charts as pressure gauges, not as a substitute for a finance ministry table.`;
+        }
+        const b = facts.extras.budget;
+        return `${base}
+
+United States federal budget (${b.yearLabel}, CBO): total outlays about $${b.totalOutlaysT} trillion (${b.outlaysPctGdp}% of GDP). Social Security benefits about $${b.socialSecurityT} trillion; Medicare about $${(b.medicareB / 1000).toFixed(2)} trillion. Together those two programs are already a large share of federal spending — and they scale with the number and longevity of retirees, not with last year’s births. ${b.source}`;
+      })(),
     },
     politics: {
       heading: "Political arithmetic",
@@ -164,7 +254,7 @@ export function compiledBriefing(opts: {
     },
     watch: {
       heading: "What to watch",
-      body: `The next figure that would change this memo is a new national-office vital-statistics release, or a new group TFR table from the same office. Sources: ${facts.angle.cite.join("; ")}.`,
+      body: `The next figure that would change this memo is a new national-office vital-statistics release, or a new group TFR or composition table from the same office. Sources: ${facts.angle.cite.join("; ")}.`,
     },
   };
 
@@ -178,6 +268,13 @@ export function compiledBriefing(opts: {
       ...facts.angle.cite,
       "World Bank WDI (TFR, population, migration, age shares)",
       ...(L ? ["birthrate.io cohort-component model from the current age pyramid"] : []),
+      ...(facts.composition ? [facts.composition.source] : []),
+      ...(facts.birthsComposition ? [facts.birthsComposition.source] : []),
+      ...(facts.religion ? [facts.religion.source] : []),
+      ...(facts.extras.budget ? [facts.extras.budget.source] : []),
+      ...(facts.extras.migrationFiscal
+        ? [facts.extras.migrationFiscal.source]
+        : []),
       ...(modules.includes("levers")
         ? [
             "OECD, Society at a Glance 2024 (fertility and family-policy spend)",
@@ -188,6 +285,9 @@ export function compiledBriefing(opts: {
     links: [
       { label: `${facts.name} profile`, href: `/country/${facts.slug}` },
       { label: "Why birthrates matter", href: "/why" },
+      ...(facts.iso3 === "USA"
+        ? [{ label: "US race & Hispanic origin map", href: "/demographics/us" }]
+        : []),
       ...(facts.mapHref
         ? [{ label: `${facts.name} regional map`, href: facts.mapHref }]
         : []),

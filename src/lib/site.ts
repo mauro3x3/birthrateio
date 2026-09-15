@@ -161,12 +161,18 @@ export const navTopics: NavTopic[] = [
     id: "society",
     title: "Society",
     href: "/topics#society",
-    description: "Crime and related social indicators.",
+    description: "Crime, ageing, and related social indicators.",
     links: [
       {
         title: "Crime",
         href: "/crime",
         description: "Homicide and crime rates by country",
+      },
+      {
+        title: "Workers vs retirees",
+        href: "/workers-retirees",
+        description:
+          "Working-age and 65+ headcounts — compare countries through 2060",
       },
     ],
   },

@@ -111,6 +111,7 @@ const PACKS: TfrAncestryPack[] = [
     ...(israel as TfrAncestryPack),
     colors: ISR_COLORS,
     dashed: ["Total"],
+    defaultFrom: 2000,
     headline: "Total fertility rate by religion",
     sourceUrlLabel: "CBS fertility by religion",
     tableLinkLabel: "Open CBS 1960–2020 fertility table (PDF)",

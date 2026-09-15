@@ -84,10 +84,93 @@ ${
 ${
   g
     ? `- Group TFR (${g.source}, ${g.latestYear}): ${Object.entries(g.latest)
+        .filter(([k]) => k !== "Total" && k !== "All women")
         .map(([k, v]) => `${k} ${v}`)
         .join("; ")}`
     : "- No official group TFR pack on this site. Do not invent religion/ancestry TFR."
 }
+${
+  facts.composition
+    ? `- Population composition (${facts.composition.source}): ${facts.composition.points
+        .map(
+          (p) =>
+            `${p.year}: ${facts.composition!.groups
+              .map((k) => `${k} ${(p.groups[k] ?? 0).toFixed(1)}%`)
+              .join(", ")}`,
+        )
+        .join(" | ")}${
+        facts.composition.projectionFromYear
+          ? ` (years from ${facts.composition.projectionFromYear} are projections)`
+          : ""
+      }`
+    : "- No curated race/ethnicity population composition series on file."
+}
+${
+  facts.birthsComposition
+    ? `- Births composition (${facts.birthsComposition.source}): ${facts.birthsComposition.points
+        .map(
+          (p) =>
+            `${p.year}: ${facts.birthsComposition!.groups
+              .map((k) => `${k} ${(p.groups[k] ?? 0).toFixed(1)}%`)
+              .join(", ")}`,
+        )
+        .join(" | ")}`
+    : ""
+}
+${
+  facts.religion
+    ? `- Religion share (${facts.religion.source}): ${facts.religion.points
+        .map(
+          (p) =>
+            `${p.year}: ${facts.religion!.groups
+              .map((k) => `${k} ${(p.groups[k] ?? 0).toFixed(1)}%`)
+              .join(", ")}`,
+        )
+        .join(" | ")}`
+    : ""
+}
+${
+  facts.migrantStock
+    ? `- Foreign-born stock: ${Math.round(facts.migrantStock.value).toLocaleString("en-US")} (${facts.migrantStock.year})${
+        facts.migrantStockShare
+          ? ` · ${facts.migrantStockShare.value.toFixed(1)}% of residents`
+          : ""
+      }`
+    : ""
+}
+${
+  facts.immigrationOrigins
+    ? `- Immigrant origins (UN DESA stock ${facts.immigrationOrigins.latestYear}): ${facts.immigrationOrigins.rows
+        .slice(0, 6)
+        .map((r) => `${r.name} ${Math.round(r.value).toLocaleString("en-US")}`)
+        .join("; ")}`
+    : ""
+}
+${
+  facts.emigrationDestinations
+    ? `- ${facts.name}-born living abroad (UN DESA stock ${facts.emigrationDestinations.latestYear}): ${facts.emigrationDestinations.rows
+        .slice(0, 5)
+        .map((r) => `${r.name} ${Math.round(r.value).toLocaleString("en-US")}`)
+        .join("; ")}`
+    : ""
+}
+${
+  facts.extras.budget
+    ? `- US federal budget ${facts.extras.budget.yearLabel} (CBO): total outlays $${facts.extras.budget.totalOutlaysT}T (${facts.extras.budget.outlaysPctGdp}% of GDP); Social Security $${facts.extras.budget.socialSecurityT}T; Medicare $${(facts.extras.budget.medicareB / 1000).toFixed(2)}T.`
+    : ""
+}
+${
+  facts.extras.migrationFiscal
+    ? `- Migration fiscal note: ${facts.extras.migrationFiscal.note}`
+    : ""
+}
+${
+  facts.extras.compositionWhy
+    ? `- Composition stakes (use in composition section): ${facts.extras.compositionWhy}`
+    : ""
+}
+- Health expenditure % GDP: ${fmtStat(s[SLUG.healthExpenditure], 1)}
+- Share aged 65+: ${fmtStat(s[SLUG.popShare65plus], 1)}
 Neighbors TFR: ${peers || "none on file"}
 ${
   L
@@ -118,10 +201,11 @@ Ids mean:
 - neighbors: 60–100 words. Name the peers and why a politician should care that next door looks different.
 - trajectory: fertility path; timing vs quantum.
 - age: who is already born. 2040 vs 2060.
-- groups: official splits only. For Israel, convergence of Jewish/Muslim TFR since 1960, then Haredi as IDI not CBS.
+- groups: official splits only. For Israel, convergence of Jewish/Muslim TFR since 1960, then Haredi as IDI not CBS. For the US, NCHS race and Hispanic-origin TFR only.
+- composition: race/ethnicity or religion share of residents. Use POPULATION COMPOSITION / RELIGION figures. Label projections clearly. Explain why group age structure, geography, and relative growth matter for schools, local politics, and the future electorate — descriptive, not a campaign brief.
 - labor: use LABOR MODEL numbers. Taxpayers vs retirees.
-- migration: flows vs fertility.
-- economy: the budget constraint.
+- migration: net flows plus foreign-born stock and top origins/destinations when present. Label UN DESA as stock. Include the migration fiscal note if provided.
+- economy: the budget constraint. Cite curated budget figures when present; otherwise use health expenditure % GDP, share aged 65+, and workers-per-retiree. Do not invent pension-line items.
 - politics: 150–250 words. Use latest TFR vs replacement, named neighbors, official group TFR if present, and the labor model. No invented religion/ancestry split. For Israel, 300–450 words using POLITICS DETAIL (Haredi employment, tax, schools, draft pool, Judea and Samaria TFR).
 - levers: 280–400 words. Keep the four arithmetic inputs (births / who works / retirement age / working-age migration). Then a fifth: family policy. Use PRONATALISM FACTS below. Name countries, years, and TFR. Distinguish period TFR bumps (timing) from completed family size. Do not recommend a policy.
 - watch: 3 short bullets.
@@ -181,7 +265,20 @@ You may cite these figures only (do not invent others):
 - Life expectancy: ${fmtStat(s[SLUG.lifeExpectancy], 1)}
 - GDP per capita: ${fmtStat(s[SLUG.gdpPerCapita], 0)}
 - Net migration: ${fmtStat(s[SLUG.netMigration], 0)}
-${g ? `- Group TFR (${g.source}, ${g.latestYear}): ${Object.entries(g.latest).map(([k, v]) => `${k} ${v}`).join("; ")}` : "- No official group TFR."}
+${g ? `- Group TFR (${g.source}, ${g.latestYear}): ${Object.entries(g.latest).filter(([k]) => k !== "Total" && k !== "All women").map(([k, v]) => `${k} ${v}`).join("; ")}` : "- No official group TFR."}
+${
+  facts.composition
+    ? `- Population composition (${facts.composition.source}): latest historical ${(() => {
+        const c = facts.composition!;
+        const row =
+          c.points.filter(
+            (p) => c.projectionFromYear == null || p.year < c.projectionFromYear,
+          ).at(-1) ?? c.points.at(-1);
+        if (!row) return "n/a";
+        return `${row.year}: ${c.groups.map((k) => `${k} ${(row.groups[k] ?? 0).toFixed(1)}%`).join("; ")}`;
+      })()}`
+    : ""
+}
 Neighbors: ${peers || "none"}
 ${
   L

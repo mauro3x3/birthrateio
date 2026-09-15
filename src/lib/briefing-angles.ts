@@ -93,17 +93,29 @@ Put a round number on the long run, still as a model not a verdict. The Finance 
   USA: {
     iso3: "USA",
     headline:
-      "U.S. fertility is below replacement; race and Hispanic-origin TFR still differ, and Social Security math is an age-structure story.",
+      "U.S. fertility is below replacement; the population is shifting by race and Hispanic origin, and Social Security math is an age-structure story.",
     stakes: [
-      "NCHS TFR by race and Hispanic origin of the mother is the official split — not ancestry or religion.",
-      "Immigration is the main reason population still grows while TFR is below 2.1.",
-      "State maps (CDC / BirthGauge) show the political geography of births.",
+      "Census: non-Hispanic White share fell from about 80% in 1980 to 58% in 2020; projections put it near 44% by 2060, with Hispanic rising toward 28%.",
+      "Births lead the stock: by 2022 nearly half of births were to non-Hispanic White mothers — lower than their share of residents. Groups also differ by age and by metro/region.",
+      "NCHS 2023 TFR by race and Hispanic origin of the mother is the official fertility split — Hispanic ~1.95, non-Hispanic White ~1.53, non-Hispanic Black ~1.58.",
+      "Immigration is the main reason population still grows while national TFR is below 2.1. UN DESA stock and World Bank net migration are the series to cite.",
+      "FY2024 federal outlays ~$6.8T (CBO); Social Security ~$1.45T and Medicare ~$0.87T already dominate the age-linked budget.",
+      "State maps (CDC / BirthGauge) and /demographics/us show the geography of births and ACS race shares.",
     ],
     notes: [
-      "Do not invent a religion TFR for the United States.",
-      "Social Security / Medicare worker-to-beneficiary arithmetic is the fiscal exhibit.",
+      "Use Census Bureau race/Hispanic shares for 1980–2020 and label 2030–2060 as projections.",
+      "Use NCHS race/Hispanic-origin TFR for fertility splits. Do not invent a religion TFR.",
+      "For migration fiscal effects, cite National Academies 2017 — first generation vs U.S.-born children — not a blog estimate.",
+      "For the budget section, use the curated CBO FY2024 Social Security / Medicare / total outlays figures.",
     ],
-    cite: ["NCHS vital statistics", "Census ACS race and Hispanic origin"],
+    cite: [
+      "U.S. Census Bureau (race/Hispanic origin; projections)",
+      "CDC/NCHS natality and TFR by race and Hispanic origin",
+      "UN DESA International Migrant Stock",
+      "CBO Monthly Budget Review FY2024",
+      "National Academies, The Economic and Fiscal Consequences of Immigration (2017)",
+      "Census ACS race and Hispanic origin",
+    ],
   },
   DNK: {
     iso3: "DNK",

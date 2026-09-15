@@ -80,6 +80,7 @@ export default async function CountryBriefPage({
             modules: facts.modules,
             charts: facts.charts,
             chartPreviews: briefingChartsFromFacts(facts, [...BRIEFING_CHART_IDS]),
+            pyramid: facts.pyramid,
             mapHref: facts.mapHref,
             callouts: facts.callouts,
             cite: facts.angle.cite,

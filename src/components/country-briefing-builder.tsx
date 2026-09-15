@@ -17,6 +17,7 @@ import {
   AssistantChart,
   type AssistantChartSpec,
 } from "@/components/assistant-chart";
+import { BriefingPyramidCard } from "@/components/briefing-pyramid-card";
 import { Button } from "@/components/ui/button";
 import type { BriefingCallout } from "@/lib/briefing-facts";
 import type {
@@ -25,6 +26,7 @@ import type {
   BriefingModuleId,
   BriefingPlaceAfter,
 } from "@/lib/briefing-modules";
+import type { PyramidRow } from "@/components/charts/population-pyramid";
 import { cn } from "@/lib/utils";
 
 export type BriefingBuilderInput = {
@@ -37,6 +39,7 @@ export type BriefingBuilderInput = {
   modules: BriefingModule[];
   charts: Array<BriefingChart & { available: boolean }>;
   chartPreviews: AssistantChartSpec[];
+  pyramid: { year: number; rows: PyramidRow[] } | null;
   mapHref: string | null;
   callouts: BriefingCallout[];
   cite: string[];
@@ -188,6 +191,9 @@ export function CountryBriefingBuilder({
   const blankLinks = () => [
     { label: `${input.name} profile`, href: `/country/${input.slug}` },
     { label: "Why birthrates matter", href: "/why" },
+    ...(input.iso3 === "USA"
+      ? [{ label: "US race & Hispanic origin map", href: "/demographics/us" }]
+      : []),
     ...(input.mapHref
       ? [{ label: `${input.name} regional map`, href: input.mapHref }]
       : []),
@@ -484,7 +490,16 @@ export function CountryBriefingBuilder({
                     )}
                     aria-hidden={!on}
                   >
-                    <AssistantChart spec={preview} preview />
+                    {preview.id === "pyramid" && input.pyramid ? (
+                      <BriefingPyramidCard
+                        year={input.pyramid.year}
+                        rows={input.pyramid.rows}
+                        countrySlug={input.slug}
+                        countryName={input.name}
+                      />
+                    ) : (
+                      <AssistantChart spec={preview} preview />
+                    )}
                   </div>
                 ) : null}
                 {on ? (
@@ -652,6 +667,9 @@ export function CountryBriefingBuilder({
           <ChartBlock
             charts={chartsAfter("top")}
             onMove={moveResultChart}
+            pyramid={input.pyramid}
+            countrySlug={input.slug}
+            countryName={input.name}
           />
 
           {result.sections.map((section) => {
@@ -757,6 +775,9 @@ export function CountryBriefingBuilder({
                 <ChartBlock
                   charts={chartsAfter(section.id)}
                   onMove={moveResultChart}
+                  pyramid={input.pyramid}
+                  countrySlug={input.slug}
+                  countryName={input.name}
                 />
               </section>
             );
@@ -775,7 +796,13 @@ export function CountryBriefingBuilder({
           </div>
 
           {orphanCharts.length > 0 ? (
-            <ChartBlock charts={orphanCharts} onMove={moveResultChart} />
+            <ChartBlock
+              charts={orphanCharts}
+              onMove={moveResultChart}
+              pyramid={input.pyramid}
+              countrySlug={input.slug}
+              countryName={input.name}
+            />
           ) : null}
 
           {result.sources.length > 0 ? (
@@ -826,17 +853,39 @@ export function CountryBriefingBuilder({
 function ChartBlock({
   charts,
   onMove,
+  pyramid,
+  countrySlug,
+  countryName,
 }: {
   charts: AssistantChartSpec[];
   onMove: (id: string, dir: -1 | 1) => void;
+  pyramid?: { year: number; rows: PyramidRow[] } | null;
+  countrySlug?: string;
+  countryName?: string;
 }) {
   if (charts.length === 0) return null;
+  const wide =
+    (spec: AssistantChartSpec) =>
+      spec.id === "pyramid" ||
+      spec.id === "composition" ||
+      spec.id === "birthsComposition" ||
+      spec.id === "migrationOrigins" ||
+      spec.id === "migrationDestinations" ||
+      spec.id === "budget" ||
+      spec.id === "religion" ||
+      spec.id === "health" ||
+      spec.id === "share65" ||
+      spec.layout === "horizontal" ||
+      spec.type === "stackedArea";
   return (
     <div className="grid gap-4 md:grid-cols-2">
       {charts.map((spec) => {
         const id = spec.id ?? spec.title;
         return (
-          <div key={id} className="space-y-1">
+          <div
+            key={id}
+            className={cn("space-y-1", wide(spec) && "md:col-span-2")}
+          >
             <div className="flex justify-end gap-1 print:hidden">
               <Button
                 type="button"
@@ -857,7 +906,16 @@ function ChartBlock({
                 <ChevronDown className="h-3.5 w-3.5" />
               </Button>
             </div>
-            <AssistantChart spec={spec} />
+            {spec.id === "pyramid" && pyramid && countrySlug && countryName ? (
+              <BriefingPyramidCard
+                year={pyramid.year}
+                rows={pyramid.rows}
+                countrySlug={countrySlug}
+                countryName={countryName}
+              />
+            ) : (
+              <AssistantChart spec={spec} />
+            )}
           </div>
         );
       })}

@@ -6,7 +6,6 @@ import {
   Line,
   LineChart,
   ReferenceLine,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -17,7 +16,9 @@ import {
   chartTooltipProps,
   MultiSeriesTooltip,
 } from "./chart-tooltip";
-import { computeDomain } from "./axis";
+import { computeDomain, niceTicks, niceYearTicks } from "./axis";
+import { ChartFrame } from "./chart-frame";
+import { useChartShowValues } from "./chart-display";
 
 export interface MultiSeries {
   key: string;
@@ -51,6 +52,7 @@ function firstCrossYear(
   data: Record<string, number | string | null>[],
   fromKey: string,
   toKey: string,
+  xKey: string,
 ): number | null {
   for (let i = 1; i < data.length; i++) {
     const a0 = data[i - 1][fromKey];
@@ -65,11 +67,20 @@ function firstCrossYear(
       a0 >= b0 &&
       a1 < b1
     ) {
-      const y = data[i].year;
+      const y = data[i][xKey];
       return typeof y === "number" ? y : null;
     }
   }
   return null;
+}
+
+function numericXs(
+  data: Record<string, number | string | null>[],
+  xKey: string,
+): number[] {
+  return data
+    .map((row) => row[xKey])
+    .filter((v): v is number => typeof v === "number" && Number.isFinite(v));
 }
 
 /**
@@ -86,8 +97,10 @@ export function MultiSeriesChart({
   referenceY,
   referenceLabel,
   markCrossing,
+  xKey = "year",
   xTickFormatter,
   tooltipLabelFormatter,
+  showValues: showValuesProp,
 }: {
   data: Record<string, number | string | null>[];
   series: MultiSeries[];
@@ -98,9 +111,13 @@ export function MultiSeriesChart({
   referenceLabel?: string;
   /** Draw a year marker where one series overtakes another. */
   markCrossing?: { from: string; to: string };
+  xKey?: string;
   xTickFormatter?: (value: number | string) => string;
   tooltipLabelFormatter?: (value: number | string) => string;
+  /** Override ChartCard “Show numbers” context. */
+  showValues?: boolean;
 }) {
+  const showValues = useChartShowValues(showValuesProp);
   if (!data || data.length === 0) {
     return (
       <div
@@ -126,10 +143,17 @@ export function MultiSeriesChart({
     referenceY,
   );
 
-  // A handful of annual points shouldn't be smoothed into a fabricated
-  // continuous trend — draw straight segments between honest, visible
-  // data points instead (see time-series-chart.tsx for the same rule).
-  const sparse = data.length <= 5;
+  const xs = numericXs(data, xKey);
+  const numericX = xs.length === data.length && xs.length >= 2;
+  const xMin = numericX ? Math.min(...xs) : undefined;
+  const xMax = numericX ? Math.max(...xs) : undefined;
+  const avgGap =
+    numericX && xs.length >= 2 && xMin != null && xMax != null
+      ? (xMax - xMin) / (xs.length - 1)
+      : 1;
+  // Sparse / gappy official points (religion TFR, NFHS rounds) should show
+  // as straight segments between honest observations, not a smoothed curve.
+  const sparse = data.length <= 8 || (data.length <= 12 && avgGap > 2);
 
   const lastIdx = Object.fromEntries(
     series.map((s) => [s.key, lastNumericIndex(data, s.key)]),
@@ -138,130 +162,209 @@ export function MultiSeriesChart({
   const rankedEnds = series
     .map((s) => ({ key: s.key, value: lastNumericValue(data, s.key) ?? 0 }))
     .sort((a, b) => b.value - a.value);
+  const plotH = Math.max(80, height - 40);
   const endDy: Record<string, number> = {};
-  const span = domain ? domain[1] - domain[0] : 1;
-  for (let i = 1; i < rankedEnds.length; i++) {
-    const gap = rankedEnds[i - 1].value - rankedEnds[i].value;
-    if (span > 0 && gap / span < 0.08) {
-      endDy[rankedEnds[i - 1].key] = (endDy[rankedEnds[i - 1].key] ?? 0) - 8;
-      endDy[rankedEnds[i].key] = (endDy[rankedEnds[i].key] ?? 0) + 8;
+  if (domain) {
+    const yOf = (v: number) =>
+      ((domain[1] - v) / Math.max(domain[1] - domain[0], 1e-6)) * plotH;
+    let lastY = -Infinity;
+    const minSep = 14;
+    for (const item of rankedEnds) {
+      const natural = yOf(item.value);
+      const placed = lastY === -Infinity ? natural : Math.max(natural, lastY + minSep);
+      endDy[item.key] = placed - natural;
+      lastY = placed;
     }
   }
 
   const longestLabel = Math.max(...series.map((s) => s.label.length), 8);
-  const rightPad = Math.min(148, 28 + longestLabel * 7.2);
+  const rightPad = Math.min(156, 32 + longestLabel * 7.2);
 
   const crossYear = markCrossing
-    ? firstCrossYear(data, markCrossing.from, markCrossing.to)
+    ? firstCrossYear(data, markCrossing.from, markCrossing.to, xKey)
     : null;
 
+  const yearTicks =
+    numericX && xMin != null && xMax != null ? niceYearTicks(xMin, xMax) : undefined;
+
   return (
-    <ResponsiveContainer width="100%" height={height}>
-      <LineChart
-        data={data}
-        margin={{ top: 10, right: rightPad, left: 0, bottom: 4 }}
-        style={{ cursor: "crosshair" }}
-      >
-        <CartesianGrid
-          vertical={false}
-          stroke="hsl(var(--border))"
-          strokeOpacity={0.85}
-        />
-        <XAxis
-          dataKey="year"
-          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-          tickLine={false}
-          axisLine={{ stroke: "hsl(var(--foreground) / 0.28)", strokeWidth: 1 }}
-          minTickGap={28}
-          interval={sparse ? 0 : undefined}
-          tickFormatter={xTickFormatter}
-        />
-        <YAxis
-          tickFormatter={fmt}
-          domain={domain ?? ["auto", "auto"]}
-          allowDataOverflow={false}
-          tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-          tickLine={false}
-          axisLine={false}
-          width={44}
-        />
-        <Tooltip
-          {...chartTooltipProps}
-          content={(props) => (
-            <MultiSeriesTooltip
-              {...props}
-              unit={unit}
-              decimals={decimals}
-              labelFormatter={tooltipLabelFormatter}
+    <ChartFrame height={height}>
+      {(width) => (
+        <LineChart
+          width={width}
+          height={height}
+          data={data}
+          margin={{
+            top: showValues ? 18 : 10,
+            right: rightPad,
+            left: 4,
+            bottom: 4,
+          }}
+          style={{ cursor: "crosshair" }}
+        >
+          <CartesianGrid
+            vertical={false}
+            stroke="#e5e7eb"
+            strokeDasharray="3 3"
+          />
+          <XAxis
+            dataKey={xKey}
+            type={numericX ? "number" : undefined}
+            domain={numericX ? [xMin!, xMax!] : undefined}
+            ticks={yearTicks}
+            allowDecimals={false}
+            tick={{ fontSize: 11, fill: "#64748b" }}
+            tickLine={false}
+            axisLine={{ stroke: "#cbd5e1", strokeWidth: 1 }}
+            minTickGap={28}
+            interval={sparse && !numericX ? 0 : undefined}
+            tickFormatter={xTickFormatter}
+          />
+          <YAxis
+            tickFormatter={fmt}
+            domain={domain ?? ["auto", "auto"]}
+            ticks={domain ? niceTicks(domain) : undefined}
+            allowDataOverflow={false}
+            tick={{ fontSize: 11, fill: "#64748b" }}
+            tickLine={false}
+            axisLine={false}
+            width={36}
+          />
+          <Tooltip
+            {...chartTooltipProps}
+            content={(props) => (
+              <MultiSeriesTooltip
+                {...props}
+                unit={unit}
+                decimals={decimals}
+                labelFormatter={tooltipLabelFormatter}
+              />
+            )}
+          />
+          {referenceY !== undefined && (
+            <ReferenceLine
+              y={referenceY}
+              stroke="#94a3b8"
+              strokeDasharray="4 4"
+              label={{
+                value: referenceLabel,
+                position: "insideBottomLeft",
+                fontSize: 10,
+                fill: "#64748b",
+              }}
             />
           )}
-        />
-        {referenceY !== undefined && (
-          <ReferenceLine
-            y={referenceY}
-            stroke="hsl(var(--muted-foreground))"
-            strokeDasharray="4 4"
-            label={{
-              value: referenceLabel,
-              position: "insideTopRight",
-              fontSize: 11,
-              fill: "hsl(var(--muted-foreground))",
-            }}
-          />
-        )}
-        {crossYear != null && (
-          <ReferenceLine
-            x={crossYear}
-            stroke="hsl(var(--foreground) / 0.28)"
-            strokeDasharray="3 3"
-            label={{
-              value: String(crossYear),
-              position: "insideTop",
-              fontSize: 11,
-              fontWeight: 600,
-              fill: "hsl(var(--foreground))",
-            }}
-          />
-        )}
-        {series.map((s, i) => {
-          const stroke = s.color ?? colorAt(i);
-          const end = lastIdx[s.key];
-          const dy = endDy[s.key] ?? 0;
-          return (
-            <Line
-              key={s.key}
-              type={sparse ? "linear" : "monotone"}
-              dataKey={s.key}
-              name={s.label}
-              stroke={stroke}
-              strokeWidth={2.4}
-              strokeDasharray={s.dashed ? "5 4" : undefined}
-              dot={sparse ? { r: 3, strokeWidth: 0, fill: stroke } : false}
-              connectNulls
-              activeDot={{ r: 4, strokeWidth: 0 }}
-              isAnimationActive={false}
-            >
-              <LabelList
+          {crossYear != null && (
+            <ReferenceLine
+              x={crossYear}
+              stroke="#94a3b8"
+              strokeDasharray="3 3"
+              label={{
+                value: String(crossYear),
+                position: "insideTop",
+                fontSize: 11,
+                fontWeight: 600,
+                fill: "#334155",
+              }}
+            />
+          )}
+          {series.map((s, i) => {
+            const stroke = s.color ?? colorAt(i);
+            const end = lastIdx[s.key];
+            const dy = endDy[s.key] ?? 0;
+            return (
+              <Line
+                key={s.key}
+                type={sparse ? "linear" : "monotone"}
                 dataKey={s.key}
-                content={(p) => {
-                  if (p.index !== end || p.x == null || p.y == null) return null;
-                  return (
-                    <text
-                      x={Number(p.x) + 8}
-                      y={Number(p.y) + 4 + dy}
-                      fontSize={11}
-                      fontWeight={500}
-                      fill={stroke}
-                    >
-                      {s.label}
-                    </text>
-                  );
-                }}
-              />
-            </Line>
-          );
-        })}
-      </LineChart>
-    </ResponsiveContainer>
+                name={s.label}
+                stroke={stroke}
+                strokeWidth={2.4}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeDasharray={s.dashed ? "5 4" : undefined}
+                dot={
+                  sparse || (showValues && data.length <= 10)
+                    ? {
+                        r: sparse ? 3.25 : 2.5,
+                        strokeWidth: 1.5,
+                        stroke: "#fff",
+                        fill: stroke,
+                      }
+                    : false
+                }
+                connectNulls
+                activeDot={{ r: 5, strokeWidth: 0, fill: stroke }}
+                isAnimationActive={false}
+              >
+                <LabelList
+                  dataKey={s.key}
+                  content={(p) => {
+                    if (p.x == null || p.y == null) return null;
+                    const raw = p.value;
+                    const num =
+                      typeof raw === "number"
+                        ? raw
+                        : typeof raw === "string"
+                          ? Number(raw)
+                          : NaN;
+                    if (!Number.isFinite(num)) return null;
+
+                    // End-of-line series name (legend substitute).
+                    if (p.index === end) {
+                      return (
+                        <g>
+                          {showValues && (sparse || data.length <= 10) ? (
+                            <text
+                              x={Number(p.x)}
+                              y={Number(p.y) - 8}
+                              textAnchor="middle"
+                              fontSize={10}
+                              fontWeight={600}
+                              fill={stroke}
+                            >
+                              {fmt(num)}
+                            </text>
+                          ) : null}
+                          <text
+                            x={Number(p.x) + 8}
+                            y={Number(p.y) + 4 + dy}
+                            fontSize={11}
+                            fontWeight={500}
+                            fill={stroke}
+                          >
+                            {showValues && !sparse
+                              ? `${s.label} · ${fmt(num)}`
+                              : s.label}
+                          </text>
+                        </g>
+                      );
+                    }
+
+                    // Sparse / short series: number every interior point.
+                    if (showValues && (sparse || data.length <= 10)) {
+                      return (
+                        <text
+                          x={Number(p.x)}
+                          y={Number(p.y) - 8}
+                          textAnchor="middle"
+                          fontSize={10}
+                          fontWeight={600}
+                          fill={stroke}
+                        >
+                          {fmt(num)}
+                        </text>
+                      );
+                    }
+
+                    return null;
+                  }}
+                />
+              </Line>
+            );
+          })}
+        </LineChart>
+      )}
+    </ChartFrame>
   );
 }

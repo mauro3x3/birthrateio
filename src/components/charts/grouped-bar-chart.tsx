@@ -4,8 +4,8 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
+  LabelList,
   ReferenceLine,
-  ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
@@ -13,20 +13,22 @@ import {
 import { colorAt } from "./palette";
 import { formatCompact } from "@/lib/utils";
 import { niceStep } from "./axis";
-import {
-  chartTooltipProps,
-  MultiSeriesTooltip,
-} from "./chart-tooltip";
+import { MultiSeriesTooltip } from "./chart-tooltip";
+import { ChartFrame } from "./chart-frame";
+import { useChartShowValues } from "./chart-display";
 import type { MultiSeries } from "./multi-series-chart";
 
 function domainFromZero(
   values: number[],
   referenceY?: number,
+  headroom = 1.04,
 ): [number, number] {
-  const hi = Math.max(0, ...values, referenceY ?? 0);
-  if (hi === 0) return [0, 1];
+  const finite = values.filter((v) => Number.isFinite(v));
+  const hi = Math.max(0, ...finite, referenceY ?? 0);
+  if (!Number.isFinite(hi) || hi === 0) return [0, 1];
   const step = niceStep(hi / 5);
-  return [0, Math.ceil((hi * 1.04) / step) * step];
+  const top = Math.ceil((hi * headroom) / step) * step;
+  return [0, Number.isFinite(top) && top > 0 ? top : hi * 1.1];
 }
 
 export function GroupedBarLegend({ series }: { series: MultiSeries[] }) {
@@ -60,8 +62,10 @@ export function GroupedBarChart({
   decimals = 2,
   referenceY,
   referenceLabel,
+  xKey = "year",
   xTickFormatter,
   tooltipLabelFormatter,
+  showValues: showValuesProp,
 }: {
   data: Record<string, number | string | null>[];
   series: MultiSeries[];
@@ -70,9 +74,14 @@ export function GroupedBarChart({
   decimals?: number;
   referenceY?: number;
   referenceLabel?: string;
+  xKey?: string;
   xTickFormatter?: (value: number | string) => string;
   tooltipLabelFormatter?: (value: number | string) => string;
+  /** Override ChartCard “Show numbers” context. */
+  showValues?: boolean;
 }) {
+  const showValues = useChartShowValues(showValuesProp);
+
   if (!data?.length || !series.length) {
     return (
       <div
@@ -96,81 +105,115 @@ export function GroupedBarChart({
         .filter((v): v is number => typeof v === "number"),
     ),
     referenceY,
+    showValues ? 1.18 : 1.04,
   );
 
+  const longLabels = data.some(
+    (row) => String(row[xKey] ?? "").length > 10,
+  );
+  const crowded = series.length >= 5 || data.length * series.length > 16;
+  const labelSize = crowded ? 8 : series.length >= 3 ? 9 : 10;
+
   return (
-    <div>
+    <div style={{ width: "100%", minWidth: 0 }}>
       <GroupedBarLegend series={series} />
-      <ResponsiveContainer width="100%" height={height}>
-        <BarChart
-          data={data}
-          barGap={0}
-          barCategoryGap="22%"
-          margin={{ top: 8, right: 8, left: 0, bottom: 0 }}
-          style={{ cursor: "crosshair" }}
-        >
-          <CartesianGrid
-            vertical={false}
-            stroke="hsl(var(--border))"
-            strokeOpacity={0.85}
-          />
-          <XAxis
-            dataKey="year"
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-            tickLine={false}
-            axisLine={{ stroke: "hsl(var(--foreground) / 0.28)", strokeWidth: 1 }}
-            interval={0}
-            tickFormatter={xTickFormatter}
-          />
-          <YAxis
-            tickFormatter={fmt}
-            domain={domain}
-            allowDataOverflow={false}
-            tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }}
-            tickLine={false}
-            axisLine={false}
-            width={44}
-          />
-          <Tooltip
-            {...chartTooltipProps}
-            cursor={{ fill: "hsl(var(--muted))", opacity: 0.35 }}
-            content={(props) => (
-              <MultiSeriesTooltip
-                {...props}
-                unit={unit}
-                decimals={decimals}
-                labelFormatter={tooltipLabelFormatter}
+      <ChartFrame height={height}>
+        {(width) => (
+          <BarChart
+            width={width}
+            height={height}
+            data={data}
+            barGap={2}
+            barCategoryGap="18%"
+            margin={{
+              top: showValues ? 22 : 8,
+              right: 8,
+              left: 4,
+              bottom: longLabels ? 40 : 4,
+            }}
+            style={{ cursor: "crosshair" }}
+          >
+            <CartesianGrid
+              vertical={false}
+              stroke="#e5e7eb"
+              strokeDasharray="3 3"
+            />
+            <XAxis
+              dataKey={xKey}
+              tick={{ fontSize: longLabels ? 10 : 11, fill: "#64748b" }}
+              tickLine={false}
+              axisLine={{ stroke: "#cbd5e1", strokeWidth: 1 }}
+              interval={0}
+              angle={longLabels ? -28 : 0}
+              textAnchor={longLabels ? "end" : "middle"}
+              height={longLabels ? 52 : 28}
+              tickFormatter={xTickFormatter}
+            />
+            <YAxis
+              tickFormatter={fmt}
+              domain={domain}
+              tick={{ fontSize: 11, fill: "#64748b" }}
+              tickLine={false}
+              axisLine={false}
+              width={52}
+            />
+            <Tooltip
+              cursor={{ fill: "#f1f5f9", opacity: 0.8 }}
+              content={(props) => (
+                <MultiSeriesTooltip
+                  {...props}
+                  unit={unit}
+                  decimals={decimals}
+                  labelFormatter={tooltipLabelFormatter}
+                />
+              )}
+            />
+            {referenceY !== undefined && (
+              <ReferenceLine
+                y={referenceY}
+                stroke="#94a3b8"
+                strokeDasharray="4 4"
+                label={
+                  referenceLabel
+                    ? {
+                        value: referenceLabel,
+                        position: "insideTopRight",
+                        fontSize: 11,
+                        fill: "#64748b",
+                      }
+                    : undefined
+                }
               />
             )}
-          />
-          {referenceY !== undefined && (
-            <ReferenceLine
-              y={referenceY}
-              stroke="hsl(var(--muted-foreground))"
-              strokeDasharray="4 4"
-              label={
-                referenceLabel
-                  ? {
-                      value: referenceLabel,
-                      position: "insideTopRight",
-                      fontSize: 11,
-                      fill: "hsl(var(--muted-foreground))",
+            {series.map((s, i) => (
+              <Bar
+                key={s.key}
+                dataKey={s.key}
+                name={s.label}
+                fill={s.color ?? colorAt(i)}
+                isAnimationActive={false}
+                maxBarSize={48}
+              >
+                {showValues ? (
+                  <LabelList
+                    dataKey={s.key}
+                    position="top"
+                    offset={4}
+                    formatter={(v) =>
+                      typeof v === "number" && Number.isFinite(v) ? fmt(v) : ""
                     }
-                  : undefined
-              }
-            />
-          )}
-          {series.map((s, i) => (
-            <Bar
-              key={s.key}
-              dataKey={s.key}
-              name={s.label}
-              fill={s.color ?? colorAt(i)}
-              isAnimationActive={false}
-            />
-          ))}
-        </BarChart>
-      </ResponsiveContainer>
+                    style={{
+                      fontSize: labelSize,
+                      fontWeight: 600,
+                      fill: "#334155",
+                    }}
+                  />
+                ) : null}
+              </Bar>
+            ))}
+          </BarChart>
+        )}
+      </ChartFrame>
     </div>
   );
 }

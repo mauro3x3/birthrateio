@@ -72,6 +72,22 @@ export const SEARCH_TOPICS: SearchTopic[] = [
     keywords: ["homicide", "crime"],
   },
   {
+    id: "workers-retirees",
+    label: "Workers vs retirees",
+    hash: "society",
+    href: "/workers-retirees",
+    keywords: [
+      "workers",
+      "retirees",
+      "dependency",
+      "pension",
+      "working age",
+      "ageing",
+      "aging",
+      "65+",
+    ],
+  },
+  {
     id: "demography",
     label: "Demography",
     hash: "demography",

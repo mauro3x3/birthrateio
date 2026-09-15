@@ -5,6 +5,7 @@ import { toPng } from "html-to-image";
 import { SectionHeading } from "@/components/section-heading";
 import { HelpImproveData } from "@/components/help-improve-data";
 import { useChartBrand } from "@/components/charts/chart-brand";
+import { ChartDisplayProvider } from "@/components/charts/chart-display";
 import { siteConfig } from "@/lib/site";
 import { downloadFile, toCSV } from "@/lib/utils";
 
@@ -21,6 +22,8 @@ export interface ChartCardProps {
   csvName?: string;
   children: React.ReactNode;
   action?: React.ReactNode;
+  /** Offer a “Show numbers” toggle for shareable value labels. Default true. */
+  valueLabels?: boolean;
 }
 
 function csvPreamble(opts: {
@@ -52,11 +55,13 @@ export function ChartCard({
   csvName = "chart-data",
   children,
   action,
+  valueLabels = true,
 }: ChartCardProps) {
   const brand = useChartBrand();
   const subject = subjectProp ?? brand.subject;
   const path = brand.path;
   const ref = React.useRef<HTMLDivElement>(null);
+  const [showValues, setShowValues] = React.useState(false);
 
   const handlePng = React.useCallback(async () => {
     const node = ref.current;
@@ -98,75 +103,91 @@ export function ChartCard({
 
   return (
     <section className="border-t border-border pt-5">
-      <div ref={ref} className="br-chart-share bg-background px-0.5">
-        <div className="br-share-masthead mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
-          <p className="br-share-subject min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
-            {subject ?? siteConfig.name}
-          </p>
-          {subject ? (
-            <p
-              data-export-ignore
-              className="br-share-site shrink-0 text-[0.7rem] font-medium text-muted-foreground"
-            >
-              {siteConfig.name}
+      <ChartDisplayProvider
+        showValues={showValues}
+        setShowValues={setShowValues}
+      >
+        <div ref={ref} className="br-chart-share bg-background px-0.5">
+          <div className="br-share-masthead mb-3 flex items-baseline justify-between gap-3 border-b border-border/80 pb-2">
+            <p className="br-share-subject min-w-0 truncate font-serif text-sm font-semibold tracking-tight text-primary md:text-base">
+              {subject ?? siteConfig.name}
             </p>
-          ) : null}
-        </div>
-        <SectionHeading
-          className="br-share-heading"
-          title={
-            titleExtra ? (
-              <span className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <span>{title}</span>
-                <span
-                  data-export-ignore
-                  className="inline-flex font-sans text-xs font-medium normal-case tracking-normal"
-                >
-                  {titleExtra}
+            {subject ? (
+              <p
+                data-export-ignore
+                className="br-share-site shrink-0 text-[0.7rem] font-medium text-muted-foreground"
+              >
+                {siteConfig.name}
+              </p>
+            ) : null}
+          </div>
+          <SectionHeading
+            className="br-share-heading"
+            title={
+              titleExtra ? (
+                <span className="inline-flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                  <span>{title}</span>
+                  <span
+                    data-export-ignore
+                    className="inline-flex font-sans text-xs font-medium normal-case tracking-normal"
+                  >
+                    {titleExtra}
+                  </span>
                 </span>
-              </span>
-            ) : (
-              title
-            )
-          }
-          description={description}
-          actions={
-            <div
-              data-export-ignore
-              className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
-            >
-              {action}
-              {csvRows && csvRows.length > 0 && (
+              ) : (
+                title
+              )
+            }
+            description={description}
+            actions={
+              <div
+                data-export-ignore
+                className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs"
+              >
+                {action}
+                {valueLabels ? (
+                  <button
+                    type="button"
+                    role="switch"
+                    aria-checked={showValues}
+                    onClick={() => setShowValues((v) => !v)}
+                    className="link-editorial font-medium"
+                  >
+                    {showValues ? "Hide numbers" : "Show numbers"}
+                  </button>
+                ) : null}
+                {csvRows && csvRows.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={handleCsv}
+                    className="link-editorial font-medium"
+                  >
+                    Download CSV
+                  </button>
+                )}
                 <button
                   type="button"
-                  onClick={handleCsv}
+                  onClick={handlePng}
                   className="link-editorial font-medium"
                 >
-                  Download CSV
+                  Download PNG
                 </button>
-              )}
-              <button
-                type="button"
-                onClick={handlePng}
-                className="link-editorial font-medium"
-              >
-                Download PNG
-              </button>
-            </div>
-          }
-        />
-        {children}
-        <div className="br-share-footer mt-3 space-y-1">
-          {source && (
-            <p className="br-share-source text-xs text-muted-foreground">
-              Source: {source}
+              </div>
+            }
+          />
+          {children}
+          <div className="br-share-footer mt-3 space-y-1">
+            {source && (
+              <p className="br-share-source text-xs text-muted-foreground">
+                Source: {source}
+              </p>
+            )}
+            <p className="br-share-url text-[0.7rem] text-muted-foreground/80">
+              {shareUrl}
             </p>
-          )}
-          <p className="br-share-url text-[0.7rem] text-muted-foreground/80">
-            {shareUrl}
-          </p>
+          </div>
         </div>
-      </div>
+      </ChartDisplayProvider>
       <div data-export-ignore className="mt-1.5">
         <HelpImproveData context={subject ? `${subject} — ${title}` : title} />
       </div>

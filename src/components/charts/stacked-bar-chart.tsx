@@ -4,6 +4,7 @@ import {
   Bar,
   BarChart,
   CartesianGrid,
+  LabelList,
   ResponsiveContainer,
   Tooltip,
   XAxis,
@@ -12,6 +13,7 @@ import {
 import type { TooltipProps } from "recharts";
 import { colorAt } from "./palette";
 import { formatCompact } from "@/lib/utils";
+import { useChartShowValues } from "./chart-display";
 
 function StackedBarTooltip({
   active,
@@ -56,11 +58,15 @@ export function StackedBarChart({
   data,
   groups,
   height = 340,
+  showValues: showValuesProp,
 }: {
   data: Record<string, number>[];
   groups: string[];
   height?: number;
+  showValues?: boolean;
 }) {
+  const showValues = useChartShowValues(showValuesProp);
+
   if (!data?.length || !groups.length) {
     return (
       <div
@@ -72,11 +78,16 @@ export function StackedBarChart({
     );
   }
 
+  const withTotal = data.map((row) => ({
+    ...row,
+    __total: groups.reduce((s, g) => s + (Number(row[g]) || 0), 0),
+  }));
+
   return (
     <ResponsiveContainer width="100%" height={height}>
       <BarChart
-        data={data}
-        margin={{ top: 8, right: 12, left: 4, bottom: 0 }}
+        data={withTotal}
+        margin={{ top: showValues ? 22 : 8, right: 12, left: 4, bottom: 0 }}
         style={{ cursor: "crosshair" }}
       >
         <CartesianGrid
@@ -114,7 +125,25 @@ export function StackedBarChart({
             stackId="a"
             fill={colorAt(i)}
             isAnimationActive={false}
-          />
+          >
+            {showValues && i === groups.length - 1 ? (
+              <LabelList
+                dataKey="__total"
+                position="top"
+                offset={4}
+                formatter={(v) =>
+                  typeof v === "number" && Number.isFinite(v)
+                    ? formatCompact(v)
+                    : ""
+                }
+                style={{
+                  fontSize: 10,
+                  fontWeight: 600,
+                  fill: "#334155",
+                }}
+              />
+            ) : null}
+          </Bar>
         ))}
       </BarChart>
     </ResponsiveContainer>

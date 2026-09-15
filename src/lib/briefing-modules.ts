@@ -4,6 +4,7 @@ export type BriefingModuleId =
   | "trajectory"
   | "age"
   | "groups"
+  | "composition"
   | "labor"
   | "migration"
   | "economy"
@@ -15,10 +16,19 @@ export type BriefingChartId =
   | "neighbors"
   | "tfr"
   | "groups"
+  | "composition"
+  | "birthsComposition"
+  | "religion"
+  | "pyramid"
   | "labor"
   | "population"
   | "migration"
-  | "dependency";
+  | "migrationOrigins"
+  | "migrationDestinations"
+  | "budget"
+  | "health"
+  | "dependency"
+  | "share65";
 
 export type BriefingPlaceAfter = BriefingModuleId | "top";
 
@@ -70,6 +80,13 @@ export const BRIEFING_MODULES: BriefingModule[] = [
     defaultOn: true,
   },
   {
+    id: "composition",
+    label: "Demographic change",
+    description:
+      "Race / ethnicity / religion shares where published, and births by group when available.",
+    defaultOn: true,
+  },
+  {
     id: "labor",
     label: "Workers and retirees",
     description: "Working-age headcount and workers per retiree, now → 2040 → 2060.",
@@ -79,7 +96,7 @@ export const BRIEFING_MODULES: BriefingModule[] = [
     id: "migration",
     label: "Migration",
     description: "Net flows, and what they do and do not offset.",
-    defaultOn: false,
+    defaultOn: true,
   },
   {
     id: "economy",
@@ -132,6 +149,36 @@ export const BRIEFING_CHARTS: BriefingChart[] = [
     defaultAfter: "groups",
   },
   {
+    id: "composition",
+    label: "Population by group",
+    description:
+      "Race / ethnicity share of residents over time (projections where published).",
+    defaultOn: true,
+    defaultAfter: "composition",
+  },
+  {
+    id: "birthsComposition",
+    label: "Births by group",
+    description:
+      "Share of births by mother's race / ethnicity — a leading indicator.",
+    defaultOn: true,
+    defaultAfter: "composition",
+  },
+  {
+    id: "religion",
+    label: "Religion share",
+    description: "Pew / census religion snapshot where curated.",
+    defaultOn: true,
+    defaultAfter: "composition",
+  },
+  {
+    id: "pyramid",
+    label: "Age pyramid",
+    description: "Who is already born — male/female by age band.",
+    defaultOn: true,
+    defaultAfter: "age",
+  },
+  {
     id: "labor",
     label: "Workers vs retirees",
     description: "Modeled 15–64 and 65+ from today’s pyramid.",
@@ -149,15 +196,50 @@ export const BRIEFING_CHARTS: BriefingChart[] = [
     id: "migration",
     label: "Net migration",
     description: "Immigrants minus emigrants.",
-    defaultOn: false,
+    defaultOn: true,
     defaultAfter: "migration",
+  },
+  {
+    id: "migrationOrigins",
+    label: "Where immigrants come from",
+    description: "Foreign-born stock by country of birth (UN DESA).",
+    defaultOn: true,
+    defaultAfter: "migration",
+  },
+  {
+    id: "migrationDestinations",
+    label: "Where emigrants live",
+    description: "People born here living abroad by destination (UN DESA stock).",
+    defaultOn: true,
+    defaultAfter: "migration",
+  },
+  {
+    id: "budget",
+    label: "Budget / pensions",
+    description: "Curated pension and outlay figures where published (e.g. US CBO).",
+    defaultOn: true,
+    defaultAfter: "economy",
+  },
+  {
+    id: "health",
+    label: "Health spending",
+    description: "Current health expenditure as % of GDP (World Bank).",
+    defaultOn: true,
+    defaultAfter: "economy",
   },
   {
     id: "dependency",
     label: "Age dependency",
     description: "Young and old per working-age person.",
-    defaultOn: false,
+    defaultOn: true,
     defaultAfter: "age",
+  },
+  {
+    id: "share65",
+    label: "Share aged 65+",
+    description: "Old-age share of the population over time.",
+    defaultOn: true,
+    defaultAfter: "economy",
   },
 ];
 

@@ -23,7 +23,7 @@ function lineChart(
     subtitle,
     xKey: "year",
     series: [{ key: seriesKey, label: seriesLabel }],
-    data: points.map((p) => ({ year: String(p.year), [seriesKey]: p.value })),
+    data: points.map((p) => ({ year: p.year, [seriesKey]: p.value })),
     unit,
     note,
   };
@@ -77,10 +77,24 @@ export function briefingChartsFromFacts(
   if (want.has("groups") && facts.groupTfr) {
     const g = facts.groupTfr;
     const keys = g.groups.filter(
-      (k) => k !== "Total" && g.points.some((p) => p.groups[k] != null),
+      (k) =>
+        k !== "Total" &&
+        k !== "All women" &&
+        g.points.some((p) => p.groups[k] != null),
     );
     if (keys.length) {
       const manyYears = g.points.length >= 4;
+      const shortLabel = (k: string) => {
+        if (k === "Hispanic (any race)") return "Hispanic";
+        if (k === "Non-Hispanic White") return "White (NH)";
+        if (k === "Non-Hispanic Black") return "Black (NH)";
+        if (k === "Non-Hispanic Asian") return "Asian (NH)";
+        if (k === "Non-Hispanic American Indian and Alaska Native")
+          return "AIAN (NH)";
+        if (k === "Non-Hispanic Native Hawaiian and Other Pacific Islander")
+          return "NHPI (NH)";
+        return k;
+      };
       out.push({
         id: "groups",
         after: afterOf("groups"),
@@ -88,66 +102,221 @@ export function briefingChartsFromFacts(
         title: g.headline,
         subtitle: facts.name,
         xKey: manyYears ? "year" : "group",
+        layout: manyYears ? undefined : "horizontal",
         series: manyYears
-          ? keys.map((k) => ({ key: k, label: k }))
+          ? keys.map((k) => ({
+              key: k,
+              label: k,
+              color: g.colors?.[k],
+              dashed: g.dashed?.includes(k),
+            }))
           : [{ key: "tfr", label: "TFR" }],
         data: manyYears
           ? g.points.map((p) => {
-              const row: Record<string, string | number> = {
-                year: String(p.year),
+              const row: Record<string, string | number | null> = {
+                year: p.year,
               };
               for (const k of keys) {
-                if (p.groups[k] != null) row[k] = p.groups[k];
+                row[k] = p.groups[k] ?? null;
               }
               return row;
             })
-          : keys.map((k) => ({
-              group: k,
+          : keys.map((k, i) => ({
+              group: shortLabel(k),
               tfr: g.latest[k] ?? g.points[g.points.length - 1]?.groups[k] ?? 0,
+              // color via Cell index in horizontal chart
+              _i: i,
             })),
-        unit: "children per woman",
+        unit: g.unit ?? "children per woman",
         note: g.source,
+        decimals: g.decimals ?? 2,
+        referenceY: 2.1,
+        referenceLabel: "Replacement 2.1",
+        defaultFromYear: manyYears ? g.defaultFrom : undefined,
       });
     }
   }
 
+  const pushComposition = (
+    id: "composition" | "birthsComposition",
+    pack: NonNullable<BriefingFacts["composition"]>,
+  ) => {
+    out.push({
+      id,
+      after: afterOf(id),
+      type: "stackedArea",
+      title: pack.headline,
+      subtitle: facts.name,
+      xKey: "year",
+      series: pack.groups.map((k) => ({ key: k, label: k })),
+      data: pack.points.map((p) => {
+        const row: Record<string, string | number | null> = { year: p.year };
+        for (const k of pack.groups) {
+          row[k] = p.groups[k] ?? 0;
+        }
+        return row;
+      }),
+      unit: pack.unit,
+      note:
+        pack.projectionFromYear != null
+          ? `${pack.source} Years from ${pack.projectionFromYear} are Census Bureau projections.`
+          : pack.source,
+      decimals: 1,
+    });
+  };
+
+  if (want.has("composition") && facts.composition) {
+    pushComposition("composition", facts.composition);
+  }
+  if (want.has("birthsComposition") && facts.birthsComposition) {
+    pushComposition("birthsComposition", facts.birthsComposition);
+  }
+
+  if (want.has("religion") && facts.religion) {
+    const r = facts.religion;
+    const snap = r.points[r.points.length - 1];
+    out.push({
+      id: "religion",
+      after: afterOf("religion"),
+      type: "bar",
+      title: r.headline,
+      subtitle: `${facts.name} · ${snap.year}`,
+      xKey: "group",
+      layout: "horizontal",
+      series: [{ key: "share", label: "Share" }],
+      data: r.groups.map((k) => ({
+        group: k,
+        share: snap.groups[k] ?? 0,
+      })),
+      unit: r.unit,
+      note: r.source,
+      decimals: 1,
+    });
+  }
+
+  if (want.has("pyramid") && facts.pyramid) {
+    out.push({
+      id: "pyramid",
+      after: afterOf("pyramid"),
+      type: "bar",
+      title: `Age pyramid, ${facts.name}`,
+      subtitle: `${facts.pyramid.year} · male / female`,
+      xKey: "ageGroup",
+      series: [{ key: "male", label: "Male" }],
+      data: [],
+      unit: "people",
+      note: "World Bank population by age and sex.",
+    });
+  }
+
   if (want.has("labor") && facts.labor) {
     const L = facts.labor;
+    // Chart in millions — raw headcounts (~1e8) make Recharts clip-height NaN in short previews.
+    const mil = (n: number) => Math.round(n / 1e5) / 10; // one decimal million
     out.push({
       id: "labor",
       after: afterOf("labor"),
       type: "bar",
       title: `Working-age and retirees, ${facts.name}`,
       subtitle: "15–64 vs 65+, modeled from today’s pyramid",
-      xKey: "label",
+      xKey: "period",
       series: [
         { key: "working", label: "Working age (15–64)" },
         { key: "retirees", label: "Age 65+" },
       ],
       data: [
         {
-          label: String(L.now.year),
-          working: Math.round(L.now.working),
-          retirees: Math.round(L.now.old),
+          period: String(L.now.year),
+          working: mil(L.now.working),
+          retirees: mil(L.now.old),
         },
         {
-          label: String(L.at2040.year),
-          working: Math.round(L.at2040.working),
-          retirees: Math.round(L.at2040.old),
+          period: String(L.at2040.year),
+          working: mil(L.at2040.working),
+          retirees: mil(L.at2040.old),
         },
         {
-          label: `${L.at2060.year}`,
-          working: Math.round(L.at2060.working),
-          retirees: Math.round(L.at2060.old),
+          period: `${L.at2060.year}`,
+          working: mil(L.at2060.working),
+          retirees: mil(L.at2060.old),
         },
         {
-          label: `${L.at2060Replacement.year} @2.1`,
-          working: Math.round(L.at2060Replacement.working),
-          retirees: Math.round(L.at2060Replacement.old),
+          period: `${L.at2060Replacement.year} @2.1`,
+          working: mil(L.at2060Replacement.working),
+          retirees: mil(L.at2060Replacement.old),
         },
       ],
-      unit: "people",
+      unit: "millions of people",
+      decimals: 1,
       note: L.note,
+    });
+  }
+
+  if (want.has("migrationOrigins") && facts.immigrationOrigins) {
+    const o = facts.immigrationOrigins;
+    out.push({
+      id: "migrationOrigins",
+      after: afterOf("migrationOrigins"),
+      type: "bar",
+      title: `Foreign-born stock by origin, ${facts.name}`,
+      subtitle: `${o.latestYear} · UN DESA migrant stock (not annual inflows)`,
+      xKey: "name",
+      layout: "horizontal",
+      series: [{ key: "people", label: "People" }],
+      data: o.rows.slice(0, 8).map((r) => ({
+        name: r.name,
+        people: Math.round(r.value),
+      })),
+      unit: "people",
+      note: `UN DESA International Migrant Stock. Total in corridors on file: ${Math.round(o.total).toLocaleString("en-US")}.`,
+      decimals: 0,
+    });
+  }
+
+  if (want.has("migrationDestinations") && facts.emigrationDestinations) {
+    const d = facts.emigrationDestinations;
+    out.push({
+      id: "migrationDestinations",
+      after: afterOf("migrationDestinations"),
+      type: "bar",
+      title: `${facts.name}-born living abroad`,
+      subtitle: `${d.latestYear} · UN DESA migrant stock by destination`,
+      xKey: "name",
+      layout: "horizontal",
+      series: [{ key: "people", label: "People" }],
+      data: d.rows.slice(0, 8).map((r) => ({
+        name: r.name,
+        people: Math.round(r.value),
+      })),
+      unit: "people",
+      note: `UN DESA International Migrant Stock. People born in ${facts.name} residing elsewhere.`,
+      decimals: 0,
+    });
+  }
+
+  if (want.has("budget") && facts.extras.budget) {
+    const b = facts.extras.budget;
+    const other = Math.max(
+      0,
+      b.totalOutlaysT * 1000 - b.socialSecurityT * 1000 - b.medicareB,
+    );
+    out.push({
+      id: "budget",
+      after: afterOf("budget"),
+      type: "bar",
+      title: `Federal outlays, United States (${b.yearLabel})`,
+      subtitle: `Total ${b.totalOutlaysT}T · ${b.outlaysPctGdp}% of GDP`,
+      xKey: "item",
+      layout: "horizontal",
+      series: [{ key: "billions", label: "$ billions" }],
+      data: [
+        { item: "Social Security", billions: Math.round(b.socialSecurityT * 1000) },
+        { item: "Medicare", billions: Math.round(b.medicareB) },
+        { item: "All other outlays", billions: Math.round(other) },
+      ],
+      unit: "$ billions",
+      note: b.source,
+      decimals: 0,
     });
   }
 
@@ -192,6 +361,36 @@ export function briefingChartsFromFacts(
       "Dependency ratio",
       "%",
       "World Bank age-dependency ratio.",
+    );
+    if (chart) out.push(chart);
+  }
+
+  if (want.has("share65")) {
+    const chart = lineChart(
+      "share65",
+      afterOf("share65"),
+      `Share aged 65+, ${facts.name}`,
+      "Old-age share of residents",
+      facts.series.share65,
+      "share65",
+      "Age 65+",
+      "%",
+      "World Bank population ages 65 and above (% of total).",
+    );
+    if (chart) out.push(chart);
+  }
+
+  if (want.has("health")) {
+    const chart = lineChart(
+      "health",
+      afterOf("health"),
+      `Health expenditure, ${facts.name}`,
+      "Current health expenditure",
+      facts.series.health,
+      "health",
+      "Health spend",
+      "% of GDP",
+      "World Bank current health expenditure (% of GDP). Not a pension line item — a proxy for age-linked public cost pressure.",
     );
     if (chart) out.push(chart);
   }

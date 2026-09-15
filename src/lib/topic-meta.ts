@@ -131,6 +131,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Who makes up a region's people, and who makes up its births",
       },
       {
+        title: "Workers vs retirees",
+        href: "/workers-retirees",
+        note: "Working-age and 65+ through 2060",
+      },
+      {
         title: "Cities",
         href: "/cities",
         note: "Where that population actually lives",
@@ -271,10 +276,48 @@ export const TOPIC_META: TopicMeta[] = [
         href: "/demographics/us",
         note: "Population composition by state",
       },
+      {
+        title: "Workers vs retirees",
+        href: "/workers-retirees",
+        note: "Age structure that shapes pensions and labour",
+      },
     ],
     caveats: [
       "Homicide is the only crime counted consistently enough for international comparison; other offence counts reflect reporting and policing practice as much as underlying crime.",
       "Citizenship is not ancestry or migration background, and prison populations reflect sentencing and remand policy as well as offending.",
+    ],
+  },
+  {
+    href: "/workers-retirees",
+    title: "Workers vs retirees",
+    indicators: [
+      SLUG.popShare15to64,
+      SLUG.popShare65plus,
+      SLUG.ageDependencyRatio,
+      SLUG.fertility,
+      SLUG.lifeExpectancy,
+    ],
+    related: [
+      {
+        title: "Population",
+        href: "/population",
+        note: "Totals, growth, and dependency rankings",
+      },
+      {
+        title: "Country briefings",
+        href: "/brief",
+        note: "Per-country memo with the same labour chart",
+      },
+      {
+        title: "Fertility",
+        href: "/fertility",
+        note: "TFR that feeds the 2060 workforce",
+      },
+    ],
+    caveats: [
+      "Workers vs retirees here means ages 15–64 versus 65+, not employment or pension enrolment.",
+      "Projections hold recent fertility, life expectancy, and net migration constant; they are illustrative, not official UN or national forecasts.",
+      "People of working age in ~2040 are mostly already born, so near-term ratios are driven by today’s pyramid more than by this year’s births.",
     ],
   },
   {
