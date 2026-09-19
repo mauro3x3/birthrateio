@@ -1,0 +1,179 @@
+{
+  "title": "Recent intermarriage and endogamy — global updates",
+  "note": "Compiled from national statistical offices, DHS/NFHS, and peer-reviewed census analyses published roughly 2017–2026. Definitions differ (race, ethnicity, religion, nationality, kin). Prefer each source’s own wording over cross-country ranking.",
+  "unitedStates": {
+    "title": "United States — married-couple stock (ACS 2022)",
+    "source": "U.S. Census Bureau, American Community Survey 2022 (Hernandez & Hemez / Census analysis of same-sex and opposite-sex couples).",
+    "sourceUrl": "https://www.census.gov/library/stories/2023/11/same-sex-couple-diversity.html",
+    "note": "Stock of currently married couples, not newlyweds. Pew’s 2015 newlywed rates (17% overall) remain the best published by-group flow estimates; 2020 ACS race coding changes create a break in microdata trends.",
+    "rows": [
+      {
+        "group": "Opposite-sex married couples",
+        "interracial": 19,
+        "year": 2022
+      },
+      {
+        "group": "Same-sex married couples",
+        "interracial": 31,
+        "year": 2022
+      },
+      {
+        "group": "Opposite-sex unmarried couples",
+        "interracial": 29,
+        "year": 2022
+      },
+      {
+        "group": "Same-sex unmarried couples",
+        "interracial": 34,
+        "year": 2022
+      }
+    ],
+    "pewNewlyweds2015": 17,
+    "pewMarriedStock2015": 10
+  },
+  "india": {
+    "title": "India — caste, ethnicity, and religion",
+    "source": "Dongardive & Nagdeve (2023), Population Geography, NFHS-5 2019–21; Pew Research Center Religion in India (2019–20 survey); marriage-cohort estimates from NFHS analyses.",
+    "sourceUrl": "https://apgin.org/wp-content/uploads/2023/09/Population-Geography_Journal_Vol45_June2023-87-104.pdf",
+    "note": "Inter-caste is far more common than interfaith. Pew’s survey finds 99% of married Indians report a same-religion spouse (attitudinal/survey self-report). NFHS-5 couple file yields ~3% inter-religious.",
+    "nfhs5": [
+      { "measure": "Inter-caste", "share": 17 },
+      { "measure": "Inter-ethnic", "share": 10 },
+      { "measure": "Inter-religious", "share": 3 }
+    ],
+    "pewSameReligionSpouse": 99,
+    "intercasteCohorts": [
+      { "cohort": "1981–85", "share": 10.4 },
+      { "cohort": "2016–20", "share": 14.8 }
+    ],
+    "regionalIntercasteHigh": "Karnataka ~24%",
+    "regionalIntercasteLow": "Ladakh ~4%"
+  },
+  "china": {
+    "title": "China — ethnic intermarriage",
+    "source": "Seventh National Population Census analyses (minority interethnic rate 2020); Wang et al. census analysis 1982–2015; Jian (2017) Journal of Chinese Sociology.",
+    "sourceUrl": "https://epc.swu.edu.cn/info/1252/4982.htm",
+    "note": "National rates look low because Han are >90% of the population; among ethnic minorities the interethnic rate is much higher and rising. Over 80% of minority interethnic marriages are with Han.",
+    "nationalTrend": [
+      { "year": 1982, "interethnicShareOfMarriages": 2.28 },
+      { "year": 2000, "interethnicShareOfMarriages": 4.25 },
+      { "year": 2015, "interethnicShareOfMarriages": 4.89 }
+    ],
+    "minorityInterethnicRate": [
+      { "year": 2010, "share": 21.47 },
+      { "year": 2020, "share": 25.61 }
+    ],
+    "minorityBirthCohorts2020": [
+      { "born": "1960s–70s", "interethnic": 20 },
+      { "born": "1980s", "interethnic": 30 },
+      { "born": "1990s", "interethnic": 35 }
+    ],
+    "education2020": [
+      { "level": "Bachelor’s", "interethnic": 50 },
+      { "level": "Graduate", "interethnic": 70 }
+    ],
+    "byGroup2010": [
+      { "group": "Manchu", "interethnic": 48.0 },
+      { "group": "Mongolian", "interethnic": 45.8 },
+      { "group": "Korean", "interethnic": 27.7 },
+      { "group": "Southern minorities", "interethnic": 19.8 },
+      { "group": "Hui", "interethnic": 12.1 },
+      { "group": "Tibetan", "interethnic": 6.4 },
+      { "group": "Kazakh", "interethnic": 3.1 },
+      { "group": "Uyghur", "interethnic": 0.5 }
+    ]
+  },
+  "brazil": {
+    "title": "Brazil — interracial unions",
+    "source": "PNAD / PNAD Contínua analysis of interracial unions among couples aged 20–24 (Telles tradition; recent update 2002–2022).",
+    "sourceUrl": "https://doi.org/10.20947/s0102-3098a0290",
+    "note": "Racial categories are White, Brown (parda), Black, and others — more fluid than U.S. race. Interracial union shares have been roughly stable near one-third since the early 2000s after rising through the late 20th century.",
+    "series": [
+      { "year": 2002, "interracial": 28.9 },
+      { "year": 2007, "interracial": 35.9 },
+      { "year": 2012, "interracial": 32.5 },
+      { "year": 2017, "interracial": 32.9 },
+      { "year": 2022, "interracial": 33.5 }
+    ]
+  },
+  "japan": {
+    "title": "Japan — international marriages",
+    "source": "Ministry of Health, Labour and Welfare vital statistics via IPSS Population Statistics of Japan 2025, Table 6-16.",
+    "sourceUrl": "https://www.ipss.go.jp/syoushika/tohkei/Data/Popular2025/T06-16.files/sheet001.htm",
+    "note": "Nationality of spouses, not ethnicity. Peak international share was mid-2000s (~5–6%); COVID years compressed absolute counts; 2023 share of marriages with at least one foreign spouse is about 3.8% (excluding two-foreigner couples from the ‘international with Japanese’ total if preferred — here we report both Japanese nationals vs any foreign involvement).",
+    "series": [
+      {
+        "year": 2005,
+        "bothJapanese": 93.69,
+        "japaneseHusbandForeignWife": 4.61,
+        "foreignHusbandJapaneseWife": 1.16,
+        "bothForeign": 0.53
+      },
+      {
+        "year": 2010,
+        "bothJapanese": 95.18,
+        "japaneseHusbandForeignWife": 3.24,
+        "foreignHusbandJapaneseWife": 1.05,
+        "bothForeign": 0.53
+      },
+      {
+        "year": 2015,
+        "bothJapanese": 96.15,
+        "japaneseHusbandForeignWife": 2.32,
+        "foreignHusbandJapaneseWife": 0.97,
+        "bothForeign": 0.56
+      },
+      {
+        "year": 2019,
+        "bothJapanese": 95.6,
+        "japaneseHusbandForeignWife": 2.47,
+        "foreignHusbandJapaneseWife": 1.16,
+        "bothForeign": 0.77
+      },
+      {
+        "year": 2020,
+        "bothJapanese": 96.38,
+        "japaneseHusbandForeignWife": 1.74,
+        "foreignHusbandJapaneseWife": 1.18,
+        "bothForeign": 0.7
+      },
+      {
+        "year": 2023,
+        "bothJapanese": 95.05,
+        "japaneseHusbandForeignWife": 2.45,
+        "foreignHusbandJapaneseWife": 1.39,
+        "bothForeign": 1.1
+      }
+    ]
+  },
+  "denmark": {
+    "title": "Denmark — mixed unions among 1.5- and second-generation immigrants",
+    "source": "Elwert & Tegunimataka register study (unions formed 1986–2016 among 1.5- and second-generation immigrants from 120 origins).",
+    "sourceUrl": "https://doi.org/10.1177/01979183231177969",
+    "note": "Share who ever formed a mixed union with a native Dane by age 40 (or censoring). Religion of origin country is the strongest predictor; Turkish, Pakistani and Somali origins remain highly endogamous.",
+    "mixedWithNative": [
+      { "origin": "Swedish", "share": 59 },
+      { "origin": "Polish", "share": 56 },
+      { "origin": "Dutch", "share": 53 },
+      { "origin": "Turkish", "share": 8 },
+      { "origin": "Pakistani", "share": 8 },
+      { "origin": "Somali", "share": 8 }
+    ],
+    "unmixedSameOrigin": [
+      { "origin": "Turkish", "share": 68 },
+      { "origin": "Pakistani", "share": 52 },
+      { "origin": "Vietnamese", "share": 49 },
+      { "origin": "Sri Lankan", "share": 44 },
+      { "origin": "Somali", "share": 37 }
+    ]
+  },
+  "pakistan": {
+    "title": "Pakistan — consanguinity (DHS)",
+    "source": "Pakistan Demographic and Health Survey 2017–18; BMC Women’s Health reanalysis of PDHS waves 1990–2018.",
+    "sourceUrl": "https://dhsprogram.com/pubs/pdf/SR257/SR257.pdf",
+    "note": "First-cousin marriage ~50% has been essentially flat for three decades. Broader consanguinity (any relative) is about 64%.",
+    "firstCousin": 49.6,
+    "anyConsanguineous": 63.6,
+    "firstCousin1990": 50.3
+  }
+}

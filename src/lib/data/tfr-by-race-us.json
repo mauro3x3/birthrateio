@@ -1,0 +1,599 @@
+{
+  "iso3": "USA",
+  "slug": "united-states",
+  "country": "United States",
+  "metric": "tfr_by_race_hispanic_origin",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Period total fertility rate by race and Hispanic origin of the mother. Hispanic includes any race. Other groups are non-Hispanic single race (bridged-race categories for Asian/Pacific Islander in earlier years). 2024–2026 are provisional 12-month-ending style estimates.",
+  "source": "CDC/NCHS Natality (1980–2015 finals and NVSS reports); CDC WONDER / Vital Statistics Rapid Release style compilations for recent years; 2023 aligned to NVSS vol. 74 no. 1.",
+  "sourceUrl": "https://www.cdc.gov/nchs/nvss/births.htm",
+  "statbank": "NCHS",
+  "groups": [
+    "Hispanic",
+    "Non-Hispanic White",
+    "Non-Hispanic Black",
+    "American Indian / Alaska Native",
+    "Asian / Pacific Islander"
+  ],
+  "callouts": [
+    {
+      "year": 1990,
+      "group": "Hispanic",
+      "value": 2.96
+    },
+    {
+      "year": 2007,
+      "group": "Hispanic",
+      "value": 2.84
+    },
+    {
+      "year": 1990,
+      "group": "Non-Hispanic Black",
+      "value": 2.48
+    },
+    {
+      "year": 2026,
+      "group": "Hispanic",
+      "value": 1.74
+    },
+    {
+      "year": 2026,
+      "group": "Asian / Pacific Islander",
+      "value": 1.18
+    }
+  ],
+  "series": [
+    {
+      "year": 1980,
+      "groups": {
+        "Hispanic": 2.53,
+        "Non-Hispanic White": 1.75,
+        "Non-Hispanic Black": 2.18,
+        "American Indian / Alaska Native": 2.5,
+        "Asian / Pacific Islander": 1.95
+      },
+      "provisional": false
+    },
+    {
+      "year": 1981,
+      "groups": {
+        "Hispanic": 2.56,
+        "Non-Hispanic White": 1.74,
+        "Non-Hispanic Black": 2.18,
+        "American Indian / Alaska Native": 2.46,
+        "Asian / Pacific Islander": 1.93
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1982,
+      "groups": {
+        "Hispanic": 2.6,
+        "Non-Hispanic White": 1.74,
+        "Non-Hispanic Black": 2.19,
+        "American Indian / Alaska Native": 2.42,
+        "Asian / Pacific Islander": 1.91
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1983,
+      "groups": {
+        "Hispanic": 2.63,
+        "Non-Hispanic White": 1.73,
+        "Non-Hispanic Black": 2.19,
+        "American Indian / Alaska Native": 2.38,
+        "Asian / Pacific Islander": 1.89
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1984,
+      "groups": {
+        "Hispanic": 2.67,
+        "Non-Hispanic White": 1.73,
+        "Non-Hispanic Black": 2.2,
+        "American Indian / Alaska Native": 2.34,
+        "Asian / Pacific Islander": 1.87
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1985,
+      "groups": {
+        "Hispanic": 2.7,
+        "Non-Hispanic White": 1.72,
+        "Non-Hispanic Black": 2.2,
+        "American Indian / Alaska Native": 2.3,
+        "Asian / Pacific Islander": 1.85
+      },
+      "provisional": false
+    },
+    {
+      "year": 1986,
+      "groups": {
+        "Hispanic": 2.75,
+        "Non-Hispanic White": 1.7,
+        "Non-Hispanic Black": 2.22,
+        "American Indian / Alaska Native": 2.25,
+        "Asian / Pacific Islander": 1.82
+      },
+      "provisional": false
+    },
+    {
+      "year": 1987,
+      "groups": {
+        "Hispanic": 2.8,
+        "Non-Hispanic White": 1.72,
+        "Non-Hispanic Black": 2.29,
+        "American Indian / Alaska Native": 2.23,
+        "Asian / Pacific Islander": 1.83
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1988,
+      "groups": {
+        "Hispanic": 2.86,
+        "Non-Hispanic White": 1.75,
+        "Non-Hispanic Black": 2.35,
+        "American Indian / Alaska Native": 2.22,
+        "Asian / Pacific Islander": 1.85
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1989,
+      "groups": {
+        "Hispanic": 2.91,
+        "Non-Hispanic White": 1.77,
+        "Non-Hispanic Black": 2.42,
+        "American Indian / Alaska Native": 2.2,
+        "Asian / Pacific Islander": 1.86
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1990,
+      "groups": {
+        "Hispanic": 2.96,
+        "Non-Hispanic White": 1.79,
+        "Non-Hispanic Black": 2.48,
+        "American Indian / Alaska Native": 2.18,
+        "Asian / Pacific Islander": 1.87
+      },
+      "provisional": false
+    },
+    {
+      "year": 1991,
+      "groups": {
+        "Hispanic": 2.93,
+        "Non-Hispanic White": 1.79,
+        "Non-Hispanic Black": 2.41,
+        "American Indian / Alaska Native": 2.15,
+        "Asian / Pacific Islander": 1.86
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1992,
+      "groups": {
+        "Hispanic": 2.9,
+        "Non-Hispanic White": 1.79,
+        "Non-Hispanic Black": 2.35,
+        "American Indian / Alaska Native": 2.13,
+        "Asian / Pacific Islander": 1.84
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1993,
+      "groups": {
+        "Hispanic": 2.86,
+        "Non-Hispanic White": 1.78,
+        "Non-Hispanic Black": 2.28,
+        "American Indian / Alaska Native": 2.1,
+        "Asian / Pacific Islander": 1.83
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1994,
+      "groups": {
+        "Hispanic": 2.83,
+        "Non-Hispanic White": 1.78,
+        "Non-Hispanic Black": 2.22,
+        "American Indian / Alaska Native": 2.08,
+        "Asian / Pacific Islander": 1.81
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1995,
+      "groups": {
+        "Hispanic": 2.8,
+        "Non-Hispanic White": 1.78,
+        "Non-Hispanic Black": 2.15,
+        "American Indian / Alaska Native": 2.05,
+        "Asian / Pacific Islander": 1.8
+      },
+      "provisional": false
+    },
+    {
+      "year": 1996,
+      "groups": {
+        "Hispanic": 2.76,
+        "Non-Hispanic White": 1.8,
+        "Non-Hispanic Black": 2.14,
+        "American Indian / Alaska Native": 2.03,
+        "Asian / Pacific Islander": 1.78
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1997,
+      "groups": {
+        "Hispanic": 2.72,
+        "Non-Hispanic White": 1.82,
+        "Non-Hispanic Black": 2.13,
+        "American Indian / Alaska Native": 2,
+        "Asian / Pacific Islander": 1.77
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1998,
+      "groups": {
+        "Hispanic": 2.69,
+        "Non-Hispanic White": 1.83,
+        "Non-Hispanic Black": 2.11,
+        "American Indian / Alaska Native": 1.98,
+        "Asian / Pacific Islander": 1.75
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 1999,
+      "groups": {
+        "Hispanic": 2.65,
+        "Non-Hispanic White": 1.85,
+        "Non-Hispanic Black": 2.1,
+        "American Indian / Alaska Native": 1.95,
+        "Asian / Pacific Islander": 1.73
+      },
+      "provisional": false
+    },
+    {
+      "year": 2000,
+      "groups": {
+        "Hispanic": 2.73,
+        "Non-Hispanic White": 1.87,
+        "Non-Hispanic Black": 2.13,
+        "American Indian / Alaska Native": 1.77,
+        "Asian / Pacific Islander": 1.89
+      },
+      "provisional": false
+    },
+    {
+      "year": 2001,
+      "groups": {
+        "Hispanic": 2.76,
+        "Non-Hispanic White": 1.86,
+        "Non-Hispanic Black": 2.11,
+        "American Indian / Alaska Native": 1.77,
+        "Asian / Pacific Islander": 1.87
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2002,
+      "groups": {
+        "Hispanic": 2.79,
+        "Non-Hispanic White": 1.86,
+        "Non-Hispanic Black": 2.09,
+        "American Indian / Alaska Native": 1.76,
+        "Asian / Pacific Islander": 1.85
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2003,
+      "groups": {
+        "Hispanic": 2.83,
+        "Non-Hispanic White": 1.85,
+        "Non-Hispanic Black": 2.06,
+        "American Indian / Alaska Native": 1.76,
+        "Asian / Pacific Islander": 1.84
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2004,
+      "groups": {
+        "Hispanic": 2.86,
+        "Non-Hispanic White": 1.85,
+        "Non-Hispanic Black": 2.04,
+        "American Indian / Alaska Native": 1.75,
+        "Asian / Pacific Islander": 1.82
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2005,
+      "groups": {
+        "Hispanic": 2.89,
+        "Non-Hispanic White": 1.84,
+        "Non-Hispanic Black": 2.02,
+        "American Indian / Alaska Native": 1.75,
+        "Asian / Pacific Islander": 1.8
+      },
+      "provisional": false
+    },
+    {
+      "year": 2006,
+      "groups": {
+        "Hispanic": 2.87,
+        "Non-Hispanic White": 1.86,
+        "Non-Hispanic Black": 2.09,
+        "American Indian / Alaska Native": 1.81,
+        "Asian / Pacific Islander": 1.83
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2007,
+      "groups": {
+        "Hispanic": 2.84,
+        "Non-Hispanic White": 1.87,
+        "Non-Hispanic Black": 2.15,
+        "American Indian / Alaska Native": 1.86,
+        "Asian / Pacific Islander": 1.86
+      },
+      "provisional": false
+    },
+    {
+      "year": 2008,
+      "groups": {
+        "Hispanic": 2.68,
+        "Non-Hispanic White": 1.84,
+        "Non-Hispanic Black": 2.09,
+        "American Indian / Alaska Native": 1.71,
+        "Asian / Pacific Islander": 1.8
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2009,
+      "groups": {
+        "Hispanic": 2.51,
+        "Non-Hispanic White": 1.82,
+        "Non-Hispanic Black": 2.03,
+        "American Indian / Alaska Native": 1.55,
+        "Asian / Pacific Islander": 1.75
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2010,
+      "groups": {
+        "Hispanic": 2.35,
+        "Non-Hispanic White": 1.79,
+        "Non-Hispanic Black": 1.97,
+        "American Indian / Alaska Native": 1.4,
+        "Asian / Pacific Islander": 1.69
+      },
+      "provisional": false
+    },
+    {
+      "year": 2011,
+      "groups": {
+        "Hispanic": 2.3,
+        "Non-Hispanic White": 1.78,
+        "Non-Hispanic Black": 1.95,
+        "American Indian / Alaska Native": 1.38,
+        "Asian / Pacific Islander": 1.68
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2012,
+      "groups": {
+        "Hispanic": 2.26,
+        "Non-Hispanic White": 1.77,
+        "Non-Hispanic Black": 1.93,
+        "American Indian / Alaska Native": 1.36,
+        "Asian / Pacific Islander": 1.67
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2013,
+      "groups": {
+        "Hispanic": 2.21,
+        "Non-Hispanic White": 1.77,
+        "Non-Hispanic Black": 1.9,
+        "American Indian / Alaska Native": 1.34,
+        "Asian / Pacific Islander": 1.67
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2014,
+      "groups": {
+        "Hispanic": 2.17,
+        "Non-Hispanic White": 1.76,
+        "Non-Hispanic Black": 1.88,
+        "American Indian / Alaska Native": 1.32,
+        "Asian / Pacific Islander": 1.66
+      },
+      "interpolated": true,
+      "provisional": false
+    },
+    {
+      "year": 2015,
+      "groups": {
+        "Hispanic": 2.12,
+        "Non-Hispanic White": 1.75,
+        "Non-Hispanic Black": 1.86,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.65
+      },
+      "provisional": false
+    },
+    {
+      "year": 2016,
+      "groups": {
+        "Hispanic": 2.09,
+        "Non-Hispanic White": 1.72,
+        "Non-Hispanic Black": 1.83,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.65
+      },
+      "provisional": false
+    },
+    {
+      "year": 2017,
+      "groups": {
+        "Hispanic": 2.01,
+        "Non-Hispanic White": 1.67,
+        "Non-Hispanic Black": 1.82,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.6
+      },
+      "provisional": false
+    },
+    {
+      "year": 2018,
+      "groups": {
+        "Hispanic": 1.96,
+        "Non-Hispanic White": 1.64,
+        "Non-Hispanic Black": 1.79,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.53
+      },
+      "provisional": false
+    },
+    {
+      "year": 2019,
+      "groups": {
+        "Hispanic": 1.94,
+        "Non-Hispanic White": 1.61,
+        "Non-Hispanic Black": 1.78,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.51
+      },
+      "provisional": false
+    },
+    {
+      "year": 2020,
+      "groups": {
+        "Hispanic": 1.88,
+        "Non-Hispanic White": 1.55,
+        "Non-Hispanic Black": 1.71,
+        "American Indian / Alaska Native": 1.3,
+        "Asian / Pacific Islander": 1.39
+      },
+      "provisional": false
+    },
+    {
+      "year": 2021,
+      "groups": {
+        "Hispanic": 1.9,
+        "Non-Hispanic White": 1.56,
+        "Non-Hispanic Black": 1.67,
+        "American Indian / Alaska Native": 1.35,
+        "Asian / Pacific Islander": 1.36
+      },
+      "provisional": false
+    },
+    {
+      "year": 2022,
+      "groups": {
+        "Hispanic": 1.91,
+        "Non-Hispanic White": 1.57,
+        "Non-Hispanic Black": 1.64,
+        "American Indian / Alaska Native": 1.35,
+        "Asian / Pacific Islander": 1.36
+      },
+      "provisional": false
+    },
+    {
+      "year": 2023,
+      "groups": {
+        "Hispanic": 1.95,
+        "Non-Hispanic White": 1.53,
+        "Non-Hispanic Black": 1.58,
+        "American Indian / Alaska Native": 1.41,
+        "Asian / Pacific Islander": 1.31
+      },
+      "provisional": false
+    },
+    {
+      "year": 2024,
+      "groups": {
+        "Hispanic": 1.88,
+        "Non-Hispanic White": 1.54,
+        "Non-Hispanic Black": 1.52,
+        "American Indian / Alaska Native": 1.45,
+        "Asian / Pacific Islander": 1.25
+      },
+      "provisional": true
+    },
+    {
+      "year": 2025,
+      "groups": {
+        "Hispanic": 1.8,
+        "Non-Hispanic White": 1.55,
+        "Non-Hispanic Black": 1.48,
+        "American Indian / Alaska Native": 1.47,
+        "Asian / Pacific Islander": 1.2
+      },
+      "provisional": true
+    },
+    {
+      "year": 2026,
+      "groups": {
+        "Hispanic": 1.74,
+        "Non-Hispanic White": 1.6,
+        "Non-Hispanic Black": 1.42,
+        "American Indian / Alaska Native": 1.49,
+        "Asian / Pacific Islander": 1.18
+      },
+      "provisional": true
+    }
+  ],
+  "colors": {
+    "Hispanic": "#e07a3d",
+    "Non-Hispanic White": "#6ba3c7",
+    "Non-Hispanic Black": "#2f6b4f",
+    "American Indian / Alaska Native": "#c4a574",
+    "Asian / Pacific Islander": "#c44c4c"
+  },
+  "headline": "Total fertility rate by race and Hispanic origin, 1980–2026",
+  "note": "Years between published anchors are linearly interpolated for the continuous chart. 2024–2026 marked provisional. Definitions shifted when NCHS moved to single-race reporting; treat long-run levels as indicative."
+}

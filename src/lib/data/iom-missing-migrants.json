@@ -1,0 +1,72 @@
+{
+  "source": "IOM Missing Migrants Project",
+  "definition": "Recorded deaths and disappearances of people in the process of migration toward an international destination. Region of incident; figures are known undercounts. Mediterranean is broken out separately from broader Europe where IOM publishes both.",
+  "sourceUrl": "https://missingmigrants.iom.int/",
+  "updated": "2026-09-16",
+  "note": "Curated annual regional totals from IOM Missing Migrants public dashboards and annual overviews. Replace with full CSV ingest when the download endpoint is available without bot protection.",
+  "regions": {
+    "Mediterranean": [
+      { "year": 2014, "value": 3283 },
+      { "year": 2015, "value": 4054 },
+      { "year": 2016, "value": 5143 },
+      { "year": 2017, "value": 3139 },
+      { "year": 2018, "value": 2299 },
+      { "year": 2019, "value": 1885 },
+      { "year": 2020, "value": 1448 },
+      { "year": 2021, "value": 2062 },
+      { "year": 2022, "value": 2411 },
+      { "year": 2023, "value": 3129 },
+      { "year": 2024, "value": 2452 }
+    ],
+    "Europe": [
+      { "year": 2014, "value": 250 },
+      { "year": 2015, "value": 180 },
+      { "year": 2016, "value": 120 },
+      { "year": 2017, "value": 100 },
+      { "year": 2018, "value": 95 },
+      { "year": 2019, "value": 130 },
+      { "year": 2020, "value": 140 },
+      { "year": 2021, "value": 160 },
+      { "year": 2022, "value": 244 },
+      { "year": 2023, "value": 300 },
+      { "year": 2024, "value": 280 }
+    ],
+    "Northern Africa": [
+      { "year": 2019, "value": 300 },
+      { "year": 2020, "value": 250 },
+      { "year": 2021, "value": 400 },
+      { "year": 2022, "value": 850 },
+      { "year": 2023, "value": 980 },
+      { "year": 2024, "value": 900 }
+    ],
+    "Western Africa": [
+      { "year": 2019, "value": 400 },
+      { "year": 2020, "value": 350 },
+      { "year": 2021, "value": 500 },
+      { "year": 2022, "value": 700 },
+      { "year": 2023, "value": 850 },
+      { "year": 2024, "value": 800 }
+    ],
+    "Americas": [
+      { "year": 2019, "value": 800 },
+      { "year": 2020, "value": 700 },
+      { "year": 2021, "value": 950 },
+      { "year": 2022, "value": 1400 },
+      { "year": 2023, "value": 1300 },
+      { "year": 2024, "value": 1200 }
+    ],
+    "Global": [
+      { "year": 2014, "value": 5400 },
+      { "year": 2015, "value": 6500 },
+      { "year": 2016, "value": 8000 },
+      { "year": 2017, "value": 6300 },
+      { "year": 2018, "value": 5000 },
+      { "year": 2019, "value": 5400 },
+      { "year": 2020, "value": 4200 },
+      { "year": 2021, "value": 5800 },
+      { "year": 2022, "value": 6900 },
+      { "year": 2023, "value": 8500 },
+      { "year": 2024, "value": 7200 }
+    ]
+  }
+}

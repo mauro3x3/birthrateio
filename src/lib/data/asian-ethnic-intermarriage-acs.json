@@ -1,0 +1,54 @@
+{
+  "title": "Foreign-born Asian Americans — spouse ethnicity (ACS)",
+  "metric": "asian_ethnic_marriage_foreign_born",
+  "unit": "%",
+  "years": "2008–2012",
+  "definition": "Among foreign-born Asian householders who are married with spouse present, the share whose spouse is the same Asian ethnicity (endogamy / intra-ethnic), another Asian ethnicity (interethnic), or a non-Asian (interracial). From ACS PUMS analysis limited to the foreign-born.",
+  "source": "Yang, Philip Q., and Maggie Bohm-Jordan. 2018. “Patterns of Interracial and Interethnic Marriages among Foreign-Born Asians in the United States.” Societies 8(3): 87. Table 2, ACS 2008–2012 PUMS.",
+  "sourceUrl": "https://www.mdpi.com/2075-4698/8/3/87",
+  "note": "Foreign-born rates only — U.S.-born Asians intermarry far more (Pew: 46% of U.S.-born Asian newlyweds in 2015). Endogamy here is co-ethnic marriage, stricter than “any Asian spouse.” Across all foreign-born Asian householders, 88.8% married co-ethnics, 8.0% married non-Asians, and 3.3% married another Asian ethnicity.",
+  "groups": [
+    {
+      "group": "Asian Indian",
+      "endogamy": 93.2,
+      "interracial": 5.4,
+      "interethnic": 1.4
+    },
+    {
+      "group": "Vietnamese",
+      "endogamy": 91.6,
+      "interracial": 4.5,
+      "interethnic": 3.9
+    },
+    {
+      "group": "Chinese",
+      "endogamy": 90.0,
+      "interracial": 5.8,
+      "interethnic": 3.9
+    },
+    {
+      "group": "Korean",
+      "endogamy": 88.4,
+      "interracial": 8.9,
+      "interethnic": 2.5
+    },
+    {
+      "group": "Pakistani",
+      "endogamy": 88.1,
+      "interracial": 7.7,
+      "interethnic": 4.2
+    },
+    {
+      "group": "Filipino",
+      "endogamy": 83.9,
+      "interracial": 13.2,
+      "interethnic": 2.9
+    },
+    {
+      "group": "Japanese",
+      "endogamy": 66.0,
+      "interracial": 21.0,
+      "interethnic": 13.0
+    }
+  ]
+}

@@ -27,6 +27,8 @@ export type CountryTopicDef = {
   metricLabel: string;
   /** One-line definition used in prose and meta. */
   definition: string;
+  /** Second lead paragraph — how to read the metric (reduces template sameness). */
+  howToRead: string;
 };
 
 export const COUNTRY_TOPICS: readonly CountryTopicDef[] = [
@@ -46,6 +48,8 @@ export const COUNTRY_TOPICS: readonly CountryTopicDef[] = [
     metricLabel: "fertility rate",
     definition:
       "the average number of children a woman would have over her lifetime at current age-specific rates",
+    howToRead:
+      "Period TFR describes one year's schedule of births, not the completed families of women now finishing childbearing. Replacement is about 2.1 in low-mortality countries; a year or two of movement is usually timing, not a new regime. Subnational maps and official group splits (where they exist) matter more than the national average for schools and politics.",
   },
   {
     id: "population",
@@ -63,19 +67,29 @@ export const COUNTRY_TOPICS: readonly CountryTopicDef[] = [
     order: "desc",
     metricLabel: "population",
     definition: "the total resident population, all ages and both sexes",
+    howToRead:
+      "Headcount is the stock; growth is the flow. Fertility, mortality, and net migration all move the total, but age structure decides how many workers and retirees that stock contains. UN medium projections on this site are scenarios, not commitments.",
   },
   {
     id: "migration",
     hubPath: "/migration",
     name: "Migration",
     primarySlug: SLUG.netMigration,
-    secondarySlugs: [SLUG.migrantStock, SLUG.migrantStockShare],
+    secondarySlugs: [
+      SLUG.migrantStock,
+      SLUG.migrantStockShare,
+      SLUG.refugees,
+      SLUG.asylumSeekers,
+      SLUG.refugeeShareOfMigrants,
+    ],
     unit: "people",
     decimals: 0,
     order: "desc",
     metricLabel: "net migration",
     definition:
       "immigrants minus emigrants in a year — a net figure that can hide large flows in both directions",
+    howToRead:
+      "Net migration can be near zero while both inflows and outflows are large. Foreign-born stock is a different series (people already present). Asylum, returns, and border detections — where shown — are Western or route-level layers, not a substitute for the national net figure.",
   },
   {
     id: "mortality",
@@ -95,6 +109,8 @@ export const COUNTRY_TOPICS: readonly CountryTopicDef[] = [
     metricLabel: "life expectancy",
     definition:
       "the number of years a newborn would live if current mortality patterns stayed constant",
+    howToRead:
+      "Period life expectancy rises when deaths fall at any age; a pandemic year can pull it down without rewriting long-run health. Infant and under-five mortality are the clearer development signals in high-mortality settings. Sex splits show gap patterns that a single national figure hides.",
   },
   {
     id: "gdp",
@@ -113,6 +129,8 @@ export const COUNTRY_TOPICS: readonly CountryTopicDef[] = [
     metricLabel: "GDP per capita (PPP)",
     definition:
       "output per person at purchasing-power parity and constant 2021 prices — the most comparable living-standards measure",
+    howToRead:
+      "PPP constant-dollar GDP per capita is for cross-country living-standards comparisons; current-dollar series move with exchange rates. Neither is a distribution — median incomes and regional gaps can diverge from the mean. Growth rates and levels answer different questions.",
   },
 ];
 

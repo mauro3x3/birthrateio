@@ -263,3 +263,128 @@ export function toLaborExplorerRows(rows: LaborOutlookRow[]): LaborExplorerRow[]
     at2060Replacement: toExplorerBand(r.at2060Replacement),
   }));
 }
+
+export type LaborTimelinePoint = {
+  iso3: string;
+  slug: string;
+  name: string;
+  value: number;
+  continent: string | null;
+};
+
+export type LaborTimelineFrame = {
+  year: number;
+  data: LaborTimelinePoint[];
+};
+
+/** Now / ~2040 / ~2060 frames for the animated "workers per retiree" map. */
+export function toLaborTimelineFrames(
+  rows: LaborExplorerRow[],
+): LaborTimelineFrame[] {
+  const sample = rows[0];
+  if (!sample) return [];
+  const bandsOf = (r: LaborExplorerRow) => [r.now, r.at2040, r.at2060];
+  const years = bandsOf(sample).map((b) => b.year);
+  return years.map((year, i) => ({
+    year,
+    data: rows
+      .map((r) => {
+        const b = bandsOf(r)[i];
+        return {
+          iso3: r.iso3,
+          slug: r.slug,
+          name: r.name,
+          value: b.workersPerRetiree,
+          continent: r.continent,
+        };
+      })
+      .filter((d) => Number.isFinite(d.value) && d.value > 0),
+  }));
+}
+
+/** Population-weighted global workers-per-retiree, keyed by frame year. */
+export function globalWorkersPerRetireeByYear(
+  rows: LaborExplorerRow[],
+): Record<number, number> {
+  const sample = rows[0];
+  if (!sample) return {};
+  const bandsOf = (r: LaborExplorerRow) => [r.now, r.at2040, r.at2060];
+  const years = bandsOf(sample).map((b) => b.year);
+  const out: Record<number, number> = {};
+  years.forEach((year, i) => {
+    let working = 0;
+    let old = 0;
+    for (const r of rows) {
+      const b = bandsOf(r)[i];
+      working += b.workingMil;
+      old += b.oldMil;
+    }
+    out[year] = old > 0 ? working / old : 0;
+  });
+  return out;
+}
+
+export type LaborHighlights = {
+  oldestToday: { row: LaborExplorerRow; value: number };
+  steepestDecline: { row: LaborExplorerRow; pct: number };
+  medianNow: number;
+  median2060: number;
+};
+
+function median(values: number[]): number {
+  const s = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(s.length / 2);
+  return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+}
+
+function ratioChangePct(r: LaborExplorerRow) {
+  if (r.now.workersPerRetiree <= 0) return 0;
+  return (r.at2060.workersPerRetiree / r.now.workersPerRetiree - 1) * 100;
+}
+
+/** Skip tiny / migrant-labour outliers when ranking “who is aging fastest”. */
+const LARGE_WORKING_MIL = 10;
+/** Gulf migrant pyramids start at 20–50 workers/retiree; those collapses aren’t “aging”. */
+const AGING_RATIO_CAP = 12;
+
+function sizable(rows: LaborExplorerRow[], minWorkingMil = LARGE_WORKING_MIL) {
+  const large = rows.filter((r) => r.now.workingMil >= minWorkingMil);
+  return large.length >= 8 ? large : rows;
+}
+
+/** Headline stats for the page's KPI strip. Filters out degenerate rows. */
+export function getLaborHighlights(
+  rows: LaborExplorerRow[],
+): LaborHighlights | null {
+  const valid = rows.filter(
+    (r) => r.now.workersPerRetiree > 0.3 && r.at2060.workersPerRetiree > 0.3,
+  );
+  if (valid.length === 0) return null;
+
+  const oldestPool = sizable(valid, 3);
+  const byNowAsc = [...oldestPool].sort(
+    (a, b) => a.now.workersPerRetiree - b.now.workersPerRetiree,
+  );
+  const oldestToday = byNowAsc[0];
+
+  const agingPool = sizable(valid).filter(
+    (r) => r.now.workersPerRetiree <= AGING_RATIO_CAP,
+  );
+  const byPctAsc = [...(agingPool.length >= 8 ? agingPool : sizable(valid))].sort(
+    (a, b) => ratioChangePct(a) - ratioChangePct(b),
+  );
+  const steepest = byPctAsc[0];
+
+  return {
+    oldestToday: {
+      row: oldestToday,
+      value: oldestToday.now.workersPerRetiree,
+    },
+    steepestDecline: {
+      row: steepest,
+      pct: ratioChangePct(steepest),
+    },
+    medianNow: median(valid.map((r) => r.now.workersPerRetiree)),
+    median2060: median(valid.map((r) => r.at2060.workersPerRetiree)),
+  };
+}

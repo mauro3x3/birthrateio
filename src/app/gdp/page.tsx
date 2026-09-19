@@ -87,6 +87,24 @@ export default async function GdpPage() {
       title="GDP"
       path="/gdp"
       updatedAt={updatedAt}
+      description="GDP and GDP per capita — levels, growth, and purchasing-power comparisons across countries."
+      intro={
+        <>
+          <p>
+            GDP per capita at purchasing-power parity (constant dollars) is the
+            series for comparing living standards across countries. Current-dollar
+            GDP moves with exchange rates and is better for sizing economies in
+            market terms. Neither number is a distribution: regional gaps and
+            median incomes can diverge from the mean.
+          </p>
+          <p>
+            Growth rates answer a different question from levels. A fast-growing
+            low-income country can still sit far below a rich country that is
+            barely growing. Use the map and rankings together, and check the
+            country profile for trade and GNI companions.
+          </p>
+        </>
+      }
       hero={
         <TimelineExplorer
           frames={timelineFrames}

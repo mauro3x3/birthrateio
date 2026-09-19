@@ -1,0 +1,19 @@
+{
+  "title": "Iranian American marriage by generation",
+  "source": "Harris, Kevan, Roxanne Corbeil, and Gilad Wenig. 2024. Iranian Diaspora Dashboard. UCLA Center for Near Eastern Studies.",
+  "sourceUrl": "https://iraniandiaspora.github.io/",
+  "definition": "Share of married Iranian Americans whose spouse is also Iranian (endogamy) versus a spouse of another ancestry (exogamy), from American Community Survey microdata. The project uses “Iranian” to include Persian, Azeri, Kurdish, Armenian, Jewish, Baloch and other Iranian-origin groups.",
+  "note": "The generational gap is large: first-generation endogamy is about 60% (exogamy ~40%); second-generation endogamy falls to about 20% (exogamy ~80%). The most common spouse category for the second generation is non-Hispanic White. Attitudinal surveys from the 1990s (e.g. Chaichian 1997) found much lower approval of exogamy than today’s behaviour implies.",
+  "rows": [
+    {
+      "generation": "1st generation",
+      "endogamy": 60,
+      "exogamy": 40
+    },
+    {
+      "generation": "2nd generation",
+      "endogamy": 20,
+      "exogamy": 80
+    }
+  ]
+}

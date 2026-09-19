@@ -1,0 +1,37 @@
+{
+  "iso3": "XKX",
+  "slug": "kosovo",
+  "country": "Kosovo",
+  "metric": "tfr_by_ethnicity_mics",
+  "unit": "children per woman",
+  "decimals": 1,
+  "definition": "Total fertility rate from Kosovo Multiple Indicator Cluster Surveys (MICS), by ethnicity of the household. Roma, Ashkali and Egyptian communities are grouped in the newest round.",
+  "source": "Kosovo MICS (UNICEF / ASK) — 2013–14, 2019–20, and 2023–25 rounds (BirthGauge summary of the newest survey).",
+  "sourceUrl": "https://mics.unicef.org/",
+  "statbank": "MICS",
+  "groups": ["Albanian", "Roma / Ashkali / Egyptian"],
+  "series": [
+    {
+      "year": 2014,
+      "label": "2013–14",
+      "groups": { "Albanian": 2.3, "Roma / Ashkali / Egyptian": 3.7 }
+    },
+    {
+      "year": 2020,
+      "label": "2019–20",
+      "groups": { "Albanian": 2.3, "Roma / Ashkali / Egyptian": 3.6 }
+    },
+    {
+      "year": 2025,
+      "label": "2023–25",
+      "groups": { "Albanian": 2.1, "Roma / Ashkali / Egyptian": 3.4 }
+    }
+  ],
+  "colors": {
+    "Albanian": "hsl(213 62% 36%)",
+    "Roma / Ashkali / Egyptian": "hsl(24 68% 48%)"
+  },
+  "discreteSurveys": true,
+  "headline": "Total fertility rate by ethnicity (MICS)",
+  "note": "Sample size was too small to publish a Serb TFR in the newest round. Ethnicity categories are survey definitions, not vital-registration ancestry."
+}

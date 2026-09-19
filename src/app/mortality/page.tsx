@@ -75,7 +75,30 @@ export default async function MortalityPage() {
   const narrowestGap = sexGap.slice(-12).reverse();
 
   return (
-    <TopicShell title="Mortality" path="/mortality" updatedAt={updatedAt}>
+    <TopicShell
+      title="Mortality"
+      path="/mortality"
+      updatedAt={updatedAt}
+      description="Life expectancy, child mortality, and historic death rates — including reconstructions where vital registration is thin."
+      intro={
+        <>
+          <p>
+            Period life expectancy asks how long a newborn would live if
+            today&apos;s death rates at every age stayed constant. It rises when
+            mortality falls at any age; a bad flu or pandemic year can pull it
+            down without erasing long-run gains. Infant and under-five mortality
+            remain the clearest development signals where deaths concentrate
+            early in life.
+          </p>
+          <p>
+            Historic crude death rates on this page reach back through Human
+            Mortality Database and Our World in Data reconstructions where
+            national registration is incomplete. Sex-specific life expectancy
+            shows gaps that a single national figure hides.
+          </p>
+        </>
+      }
+    >
       <section>
         <MapCard
           id="life-expectancy-map"

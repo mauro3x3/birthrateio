@@ -146,6 +146,46 @@ export const DATA_SOURCES = [
     description:
       "Long-run demographic reconstructions (e.g. total fertility rate back to 1800) compiled by Gapminder from historical vital statistics, census records and UN sources.",
   },
+  {
+    code: "UNHCR",
+    name: "UNHCR Refugee Statistics",
+    url: "https://www.unhcr.org/refugee-statistics/",
+    license: "UNHCR terms",
+    description:
+      "End-year stock figures for refugees, people in refugee-like situations, and asylum-seekers by country of asylum (Refugee Population Statistics Database).",
+  },
+  {
+    code: "FRONTEX",
+    name: "Frontex — EU border detections",
+    url: "https://www.frontex.europa.eu/what-we-do/monitoring-and-risk-analysis/migratory-map/",
+    license: "Frontex terms",
+    description:
+      "Detected illegal border crossings on EU external borders, by migratory route. Administrative detections, not a population estimate.",
+  },
+  {
+    code: "IOM_MISSING_MIGRANTS",
+    name: "IOM Missing Migrants Project",
+    url: "https://missingmigrants.iom.int/",
+    license: "IOM terms",
+    description:
+      "Recorded deaths and disappearances of people in the process of migration toward an international destination. Region-level; undercounts are likely.",
+  },
+  {
+    code: "ZENODO_IRREGULAR",
+    name: "Irregular migrant stock estimates (Zenodo)",
+    url: "https://zenodo.org/records/15862994",
+    license: "CC BY 4.0",
+    description:
+      "Compiled research estimates of irregular / unauthorized migrant stocks for selected Western countries (EU, Canada, United States). Methodologies differ by country; treat as order-of-magnitude, not census counts.",
+  },
+  {
+    code: "ILO",
+    name: "International Labour Organization (ILOSTAT)",
+    url: "https://ilostat.ilo.org/",
+    license: "ILO terms",
+    description:
+      "International labour migration and labour-force statistics. Labour-force participation by citizenship on this site is primarily Eurostat LFS where available.",
+  },
 ];
 
 export async function ensureSources(prisma: PrismaClient) {

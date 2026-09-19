@@ -45,6 +45,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "Share of a region's residents, and share of its babies — country by country. A younger country can punch above its population.",
   },
   {
+    id: "tfr-race",
+    kicker: "Fertility",
+    title: "Fertility by race, origin & income",
+    href: "/fertility/race",
+    description:
+      "U.S. TFR by race since 1980, Austria national-origin and Kosovo ethnicity tables, Bolivian projections, and a GDP–fertility scatter.",
+  },
+  {
     id: "tfr-education",
     kicker: "Fertility",
     title: "Fertility by education and income",

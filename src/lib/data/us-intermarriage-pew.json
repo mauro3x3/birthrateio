@@ -1,0 +1,74 @@
+{
+  "title": "U.S. newlywed intermarriage by race and ethnicity",
+  "metric": "intermarriage_newlyweds",
+  "unit": "%",
+  "year": 2015,
+  "definition": "Share of newlyweds (married in the past year) whose spouse is of a different race or ethnicity. Hispanic is treated as an ethnicity that can pair with any race; non-Hispanic Whites, Blacks, and Asians are mutually exclusive race groups in Pew’s ACS analysis.",
+  "source": "Pew Research Center analysis of U.S. Census Bureau American Community Survey (ACS) data, primarily 2014–2015 for detailed splits; 2015 for headline rates.",
+  "sourceUrl": "https://www.pewresearch.org/social-trends/2017/05/18/1-trends-and-patterns-in-intermarriage/",
+  "note": "These are newlywed rates, not the stock of all currently married couples (10% of all married people were intermarried in 2015). Endogamy here is simply 100 minus the intermarriage rate for the same universe. Definitions differ from ancestry-specific ACS tables (e.g. Iranian diaspora endogamy).",
+  "overallNewlyweds": 17,
+  "overallMarriedStock": 10,
+  "groups": [
+    {
+      "group": "White (non-Hispanic)",
+      "exogamy": 11,
+      "endogamy": 89,
+      "exogamy1980": 4
+    },
+    {
+      "group": "Black",
+      "exogamy": 18,
+      "endogamy": 82,
+      "exogamy1980": 5
+    },
+    {
+      "group": "Hispanic",
+      "exogamy": 27,
+      "endogamy": 73,
+      "exogamy1980": 26
+    },
+    {
+      "group": "Asian",
+      "exogamy": 29,
+      "endogamy": 71,
+      "exogamy1980": 30
+    }
+  ],
+  "byNativity": [
+    {
+      "group": "Hispanic",
+      "nativity": "Foreign-born",
+      "exogamy": 15,
+      "endogamy": 85
+    },
+    {
+      "group": "Hispanic",
+      "nativity": "U.S.-born",
+      "exogamy": 39,
+      "endogamy": 61
+    },
+    {
+      "group": "Asian",
+      "nativity": "Foreign-born",
+      "exogamy": 24,
+      "endogamy": 76
+    },
+    {
+      "group": "Asian",
+      "nativity": "U.S.-born",
+      "exogamy": 46,
+      "endogamy": 54
+    }
+  ],
+  "byGender": [
+    { "group": "Black men", "exogamy": 24 },
+    { "group": "Black women", "exogamy": 12 },
+    { "group": "Asian women", "exogamy": 36 },
+    { "group": "Asian men", "exogamy": 21 },
+    { "group": "Hispanic men", "exogamy": 26 },
+    { "group": "Hispanic women", "exogamy": 28 },
+    { "group": "White men", "exogamy": 12 },
+    { "group": "White women", "exogamy": 10 }
+  ]
+}

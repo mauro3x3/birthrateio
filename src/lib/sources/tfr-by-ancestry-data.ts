@@ -2,6 +2,8 @@ import denmark from "../data/tfr-by-ancestry-denmark.json";
 import norway from "../data/tfr-by-background-norway.json";
 import india from "../data/tfr-by-religion-india.json";
 import israel from "../data/tfr-by-religion-israel.json";
+import austria from "../data/tfr-by-origin-austria.json";
+import kosovo from "../data/tfr-by-ethnicity-kosovo.json";
 import availability from "../data/tfr-by-ancestry-availability.json";
 
 export type TfrAncestryStatus =
@@ -115,6 +117,21 @@ const PACKS: TfrAncestryPack[] = [
     headline: "Total fertility rate by religion",
     sourceUrlLabel: "CBS fertility by religion",
     tableLinkLabel: "Open CBS 1960–2020 fertility table (PDF)",
+  },
+  {
+    ...(austria as unknown as TfrAncestryPack),
+    colors: (austria as { colors?: Record<string, string> }).colors,
+    dashed: ["National total"],
+    discreteSurveys: true,
+    headline: "Total fertility rate by national origin",
+    sourceUrlLabel: "Statistik Austria",
+  },
+  {
+    ...(kosovo as unknown as TfrAncestryPack),
+    colors: (kosovo as { colors?: Record<string, string> }).colors,
+    discreteSurveys: true,
+    headline: "Total fertility rate by ethnicity (MICS)",
+    sourceUrlLabel: "Kosovo MICS",
   },
 ];
 

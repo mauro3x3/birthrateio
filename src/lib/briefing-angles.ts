@@ -206,6 +206,131 @@ Put a round number on the long run, still as a model not a verdict. The Finance 
     ],
     cite: ["NBS births", "BirthGauge China compilation"],
   },
+  FRA: {
+    iso3: "FRA",
+    headline:
+      "France’s relatively high European TFR still sits below replacement; family policy is the political story, not a return to 2.1.",
+    stakes: [
+      "INSEE period TFR has been among the highest in Western Europe for decades, yet remains under replacement.",
+      "Immigrant vs native-born fertility gaps exist in research literature; cite INSEE/Eurostat carefully and do not invent a religion TFR.",
+      "Pension age and dependency are the fiscal exhibit; births are the lagging input.",
+    ],
+    notes: [
+      "Prefer INSEE and Eurostat. No homemade Muslim TFR.",
+      "Family-policy history (allocations, crèches) belongs as context, not as proof that TFR can be dialled back to 2.1.",
+    ],
+    cite: ["INSEE", "Eurostat", "birthrate.io France country page"],
+  },
+  GBR: {
+    iso3: "GBR",
+    headline:
+      "UK fertility is below replacement; ONS ethnicity and country-of-birth birth statistics are the composition series — not a single national slogan.",
+    stakes: [
+      "ONS period TFR for England & Wales is the headline; Scotland and NI have their own releases.",
+      "Births by mother’s country of birth and ethnicity (where published) beat invented group TFRs.",
+      "Net migration has been the swing factor for population growth while TFR stays below 2.1.",
+    ],
+    notes: [
+      "Use ONS; do not invent a religion TFR for the UK.",
+      "Point to /demographics/uk for census maps.",
+    ],
+    cite: ["ONS", "birthrate.io UK demographics"],
+  },
+  KOR: {
+    iso3: "KOR",
+    headline:
+      "South Korea is the ultra-low TFR case among large economies: family policy spend has not restored replacement.",
+    stakes: [
+      "Period TFR near or below 1.0 in recent years is the exhibit — among the lowest recorded for a large high-income country.",
+      "Housing, work culture, and marriage timing dominate the public debate; say what the data show, not which lever to pull.",
+      "The 2040 workforce is mostly already born.",
+    ],
+    notes: [
+      "Use Statistics Korea / World Bank series. No invented ethnicity TFR.",
+    ],
+    cite: ["Statistics Korea", "birthrate.io Korea country page"],
+  },
+  BRA: {
+    iso3: "BRA",
+    headline:
+      "Brazil has completed a fast fertility transition; regional and education gaps still shape the age structure.",
+    stakes: [
+      "National TFR is below replacement; Northern and lower-education schedules remain higher than the South and Southeast.",
+      "The demographic dividend window narrows as the pyramid ages — jobs and productivity are the constraint.",
+    ],
+    notes: ["Prefer IBGE / World Bank. No invented religion TFR."],
+    cite: ["IBGE", "World Bank"],
+  },
+  MEX: {
+    iso3: "MEX",
+    headline:
+      "Mexico’s fertility fall is advanced; migration to the United States still frames population and labour debates on both sides of the border.",
+    stakes: [
+      "Period TFR is near or below replacement in recent World Bank / UN compilations.",
+      "State variation and education gradients matter more than the national average for school planning.",
+      "Net migration and remittances are separate series from TFR — keep them in their own section.",
+    ],
+    notes: ["INEGI / World Bank. No invented ethnicity TFR."],
+    cite: ["INEGI", "World Bank", "UN DESA migrant stock"],
+  },
+  CAN: {
+    iso3: "CAN",
+    headline:
+      "Canada’s below-replacement fertility sits under a high-immigration population model; Statistics Canada origin splits are the composition series.",
+    stakes: [
+      "National TFR is well below 2.1; population growth is dominated by permanent and temporary immigration.",
+      "StatCan publishes immigrant / non-immigrant fertility where available — use that, not a homemade religion table.",
+      "Provincial age structures diverge (Atlantic aging vs. high-inflow metros).",
+    ],
+    notes: ["Statistics Canada only for group splits."],
+    cite: ["Statistics Canada", "birthrate.io Canada page"],
+  },
+  AUS: {
+    iso3: "AUS",
+    headline:
+      "Australia combines below-replacement fertility with migration-led growth; ABS is the source for births and overseas-born shares.",
+    stakes: [
+      "Period TFR below replacement; net overseas migration drives headcount.",
+      "State maps (NSW/Vic vs. smaller states) show where births and overseas-born residents concentrate.",
+    ],
+    notes: ["ABS only. No invented religion TFR."],
+    cite: ["ABS", "birthrate.io Australia page"],
+  },
+  ESP: {
+    iso3: "ESP",
+    headline:
+      "Spain pairs very low fertility with rapid aging and large regional gaps between empty interior provinces and coastal metros.",
+    stakes: [
+      "INE period TFR is among the lowest in Europe.",
+      "Foreign-born shares and births to foreign mothers are the composition series where published.",
+      "Pension and health spending track the 65+ share more tightly than any one year’s TFR.",
+    ],
+    notes: ["INE / Eurostat. No invented religion TFR."],
+    cite: ["INE", "Eurostat"],
+  },
+  POL: {
+    iso3: "POL",
+    headline:
+      "Poland’s low fertility and emigration of working-age adults tighten the workers-per-retiree path faster than TFR alone implies.",
+    stakes: [
+      "Period TFR well below replacement; EU free movement shaped net migration for two decades.",
+      "Family-policy packages (e.g. child benefits) are politically salient — cite GUS outcomes, not campaign claims.",
+    ],
+    notes: ["GUS / Eurostat. Descriptive only on policy."],
+    cite: ["GUS", "Eurostat"],
+  },
+  SWE: {
+    iso3: "SWE",
+    headline:
+      "Sweden’s fertility is below replacement; Statistics Sweden origin and foreign-born series are the composition tables to cite.",
+    stakes: [
+      "Period TFR has drifted down from the Nordic ‘high’ of the 1980s–90s.",
+      "Foreign-born vs Swedish-born fertility gaps exist in SCB tables — use those definitions exactly.",
+      "Welfare-state financing is an age-structure story as much as a birth story.",
+    ],
+    notes: ["SCB only. Do not invent a Muslim TFR."],
+    cite: ["Statistics Sweden (SCB)", "Eurostat"],
+  },
 };
 
 export function getBriefingAngle(iso3: string): BriefingAngle {

@@ -101,6 +101,8 @@ export function MultiSeriesChart({
   xTickFormatter,
   tooltipLabelFormatter,
   showValues: showValuesProp,
+  callouts,
+  endLabelStyle = "auto",
 }: {
   data: Record<string, number | string | null>[];
   series: MultiSeries[];
@@ -116,8 +118,16 @@ export function MultiSeriesChart({
   tooltipLabelFormatter?: (value: number | string) => string;
   /** Override ChartCard “Show numbers” context. */
   showValues?: boolean;
+  /** Peak / landmark values drawn on the line (Datawrapper-style). */
+  callouts?: Array<{ year: number; key: string }>;
+  /**
+   * End-of-line labels. `datawrapper` always shows “Name · value” and skips
+   * a separate legend-style name-only mode.
+   */
+  endLabelStyle?: "auto" | "datawrapper";
 }) {
   const showValues = useChartShowValues(showValuesProp);
+  const datawrapper = endLabelStyle === "datawrapper";
   if (!data || data.length === 0) {
     return (
       <div
@@ -178,7 +188,14 @@ export function MultiSeriesChart({
   }
 
   const longestLabel = Math.max(...series.map((s) => s.label.length), 8);
-  const rightPad = Math.min(156, 32 + longestLabel * 7.2);
+  const rightPad = Math.min(
+    datawrapper || showValues ? 210 : 156,
+    36 + longestLabel * (datawrapper || showValues ? 8.4 : 7.2),
+  );
+
+  const calloutSet = new Set(
+    (callouts ?? []).map((c) => `${c.year}::${c.key}`),
+  );
 
   const crossYear = markCrossing
     ? firstCrossYear(data, markCrossing.from, markCrossing.to, xKey)
@@ -195,7 +212,7 @@ export function MultiSeriesChart({
           height={height}
           data={data}
           margin={{
-            top: showValues ? 18 : 10,
+            top: showValues || datawrapper || calloutSet.size > 0 ? 20 : 10,
             right: rightPad,
             left: 4,
             bottom: 4,
@@ -310,14 +327,25 @@ export function MultiSeriesChart({
                           : NaN;
                     if (!Number.isFinite(num)) return null;
 
+                    const row = data[p.index as number];
+                    const yearVal = row?.[xKey];
+                    const isCallout =
+                      typeof yearVal === "number" &&
+                      calloutSet.has(`${yearVal}::${s.key}`);
+
                     // End-of-line series name (legend substitute).
                     if (p.index === end) {
+                      const endText =
+                        datawrapper || (showValues && !sparse)
+                          ? `${s.label} · ${fmt(num)}`
+                          : s.label;
                       return (
                         <g>
-                          {showValues && (sparse || data.length <= 10) ? (
+                          {(showValues && (sparse || data.length <= 10)) ||
+                          (datawrapper && isCallout) ? (
                             <text
                               x={Number(p.x)}
-                              y={Number(p.y) - 8}
+                              y={Number(p.y) - 10}
                               textAnchor="middle"
                               fontSize={10}
                               fontWeight={600}
@@ -326,16 +354,50 @@ export function MultiSeriesChart({
                               {fmt(num)}
                             </text>
                           ) : null}
+                          {datawrapper || isCallout ? (
+                            <circle
+                              cx={Number(p.x)}
+                              cy={Number(p.y)}
+                              r={3.5}
+                              fill={stroke}
+                              stroke="#fff"
+                              strokeWidth={1.5}
+                            />
+                          ) : null}
                           <text
-                            x={Number(p.x) + 8}
+                            x={Number(p.x) + 10}
                             y={Number(p.y) + 4 + dy}
                             fontSize={11}
                             fontWeight={500}
                             fill={stroke}
                           >
-                            {showValues && !sparse
-                              ? `${s.label} · ${fmt(num)}`
-                              : s.label}
+                            {endText}
+                          </text>
+                        </g>
+                      );
+                    }
+
+                    // Landmark callouts along the series.
+                    if (isCallout) {
+                      return (
+                        <g>
+                          <circle
+                            cx={Number(p.x)}
+                            cy={Number(p.y)}
+                            r={3.5}
+                            fill={stroke}
+                            stroke="#fff"
+                            strokeWidth={1.5}
+                          />
+                          <text
+                            x={Number(p.x)}
+                            y={Number(p.y) - 10}
+                            textAnchor="middle"
+                            fontSize={10}
+                            fontWeight={600}
+                            fill={stroke}
+                          >
+                            {fmt(num)}
                           </text>
                         </g>
                       );

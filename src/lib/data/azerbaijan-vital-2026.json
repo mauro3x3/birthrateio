@@ -1,0 +1,29 @@
+{
+  "iso3": "AZE",
+  "slug": "azerbaijan",
+  "country": "Azerbaijan",
+  "note": "National statistical office vital statistics for January–July, year-over-year. Estimated period TFR near 1.2 puts Azerbaijan on par with ultra-low East Asian levels and below Armenia (~1.65) and Georgia (~1.6) on recent compiled series.",
+  "source": "State Statistical Committee of Azerbaijan — January–July vital statistics (compiled via BirthGauge / public releases, 2026).",
+  "sourceUrl": "https://www.stat.gov.az/",
+  "estimatedTfr": 1.2,
+  "estimatedTfrYear": 2026,
+  "neighbors": [
+    { "name": "Armenia", "tfr": 1.65 },
+    { "name": "Georgia", "tfr": 1.6 },
+    { "name": "Japan", "tfr": 1.2 }
+  ],
+  "vitalStats": [
+    {
+      "period": "January–July 2025",
+      "liveBirths": 54898,
+      "deaths": 34994,
+      "naturalIncrease": 19904
+    },
+    {
+      "period": "January–July 2026",
+      "liveBirths": 48954,
+      "deaths": 35829,
+      "naturalIncrease": 13125
+    }
+  ]
+}

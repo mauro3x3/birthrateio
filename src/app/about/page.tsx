@@ -175,7 +175,20 @@ export default function AboutPage() {
             <Link href="/contribute" className="link-editorial">
               tell us
             </Link>{" "}
-            which page and series, and it will be traced back to the source.
+            which page and series, and it will be traced back to the source. For
+            other enquiries, see{" "}
+            <Link href="/contact" className="link-editorial">
+              contact
+            </Link>
+            . Privacy and reuse rules:{" "}
+            <Link href="/privacy" className="link-editorial">
+              privacy
+            </Link>{" "}
+            ·{" "}
+            <Link href="/terms" className="link-editorial">
+              terms
+            </Link>
+            .
           </p>
         </section>
       </div>

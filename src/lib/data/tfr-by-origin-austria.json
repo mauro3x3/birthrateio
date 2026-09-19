@@ -1,0 +1,82 @@
+{
+  "iso3": "AUT",
+  "slug": "austria",
+  "country": "Austria",
+  "metric": "tfr_by_national_origin",
+  "unit": "children per woman",
+  "decimals": 2,
+  "definition": "Period total fertility rate by national origin of the mother (Austrian origin vs foreign origin, with selected foreign-origin groups). Statistik Austria categories as reported via BirthGauge compilations of the official release.",
+  "source": "Statistik Austria vital statistics (compiled via BirthGauge, Sept 2026 note on 2025 national TFR).",
+  "sourceUrl": "https://www.statistik.at/en/",
+  "statbank": "Statistik Austria",
+  "groups": [
+    "Austrian origin",
+    "Foreign origin",
+    "EU/EFTA/UK",
+    "Former Yugoslavia",
+    "Turkey",
+    "Elsewhere",
+    "National total"
+  ],
+  "series": [
+    {
+      "year": 2024,
+      "groups": {
+        "Austrian origin": 1.21,
+        "Foreign origin": 1.55,
+        "EU/EFTA/UK": 1.31,
+        "Former Yugoslavia": 1.89,
+        "Turkey": 1.64,
+        "Elsewhere": 1.77,
+        "National total": 1.31
+      }
+    },
+    {
+      "year": 2025,
+      "groups": {
+        "Austrian origin": 1.18,
+        "Foreign origin": 1.55,
+        "EU/EFTA/UK": 1.32,
+        "Former Yugoslavia": 1.87,
+        "Turkey": 1.53,
+        "Elsewhere": 1.81,
+        "National total": 1.3
+      }
+    }
+  ],
+  "regions": [
+    {
+      "name": "Vienna",
+      "series": [
+        {
+          "year": 2024,
+          "groups": {
+            "Total": 1.22,
+            "Austrian origin": 1.01,
+            "Foreign origin": 1.45
+          }
+        },
+        {
+          "year": 2025,
+          "groups": {
+            "Total": 1.21,
+            "Austrian origin": 0.98,
+            "Foreign origin": 1.45
+          }
+        }
+      ]
+    }
+  ],
+  "colors": {
+    "Austrian origin": "hsl(213 62% 32%)",
+    "Foreign origin": "hsl(24 68% 50%)",
+    "EU/EFTA/UK": "hsl(199 52% 45%)",
+    "Former Yugoslavia": "hsl(140 32% 36%)",
+    "Turkey": "hsl(0 55% 45%)",
+    "Elsewhere": "hsl(280 36% 46%)",
+    "National total": "hsl(215 12% 42%)"
+  },
+  "dashed": ["National total"],
+  "headline": "Total fertility rate by national origin",
+  "note": "2025 national TFR 1.30 is the lowest value Statistik Austria has recorded. Vienna Austrian-origin TFR was 0.98 in 2025."
+}

@@ -95,7 +95,12 @@ export default function FertilityByEducationPage() {
         </section>
 
         <p className="text-sm text-muted-foreground">
-          Regional maps, including Saudi Arabia’s census split of Saudi vs all
+          U.S. race time series, Austria origin TFR, Kosovo ethnicity, and the
+          income–fertility scatter:{" "}
+          <Link href="/fertility/race" className="link-editorial font-medium">
+            Fertility by race, origin &amp; income
+          </Link>
+          . Regional maps, including Saudi Arabia’s census split of Saudi vs all
           residents:{" "}
           <Link href="/maps/sau" className="link-editorial font-medium">
             Saudi Arabia map

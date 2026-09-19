@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { TopicShell } from "@/components/topic-shell";
-import { SectionHeading } from "@/components/section-heading";
 import { ExplorerTable } from "@/components/explorer-table";
+import { CollapsibleSection } from "@/components/collapsible-section";
+import { StatCard } from "@/components/stat-card";
+import { TimelineExplorer } from "@/components/maps/timeline-explorer";
 import { WorkersRetireesExplorer } from "@/components/workers-retirees-explorer";
-import { getAllLaborOutlooks, toLaborExplorerRows } from "@/lib/briefing-labor";
+import {
+  getAllLaborOutlooks,
+  getLaborHighlights,
+  globalWorkersPerRetireeByYear,
+  toLaborExplorerRows,
+  toLaborTimelineFrames,
+} from "@/lib/briefing-labor";
 import { getIndicatorsUpdatedAt, getRanking } from "@/lib/queries";
 import { SLUG } from "@/lib/indicators";
 import { safe } from "@/lib/safe";
@@ -34,8 +42,10 @@ export default async function WorkersRetireesPage() {
     ),
   ]);
 
-  const note = outlooks[0]?.note;
   const explorerRows = toLaborExplorerRows(outlooks);
+  const timelineFrames = toLaborTimelineFrames(explorerRows);
+  const globalByYear = globalWorkersPerRetireeByYear(explorerRows);
+  const highlights = getLaborHighlights(explorerRows);
 
   return (
     <TopicShell
@@ -48,22 +58,84 @@ export default async function WorkersRetireesPage() {
           country by country — today and under a simple projection to ~2060.
         </>
       }
+      intro={
+        <>
+          <p>
+            The working-age and 65+ shares of today&apos;s pyramid already fix
+            most of the next two decades of workers-per-retiree. Fertility
+            changes show up later; migration and retirement age move the ratio
+            sooner. The map and scatter use the same simple projection as the
+            country briefing chart — hold recent fertility, life expectancy, and
+            net migration, then age the population forward.
+          </p>
+          <p>
+            This is arithmetic for planning conversations, not an official UN
+            forecast. Microstates and extreme Gulf ratios are filtered from some
+            comparisons so the chart stays readable; the full table keeps the
+            wider set.
+          </p>
+        </>
+      }
+      hero={
+        explorerRows.length > 0 ? (
+          <TimelineExplorer
+            frames={timelineFrames}
+            globalByYear={globalByYear}
+            unit="workers/retiree"
+            decimals={2}
+            scaleType="sequential-log"
+            source="World Bank"
+            headline="World"
+            metricLabel="Workers per retiree"
+            playMs={900}
+          />
+        ) : undefined
+      }
     >
-      <section>
+      <section className="space-y-4">
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Same model as the{" "}
+          Same age pools as the{" "}
           <Link href="/brief" className="link-editorial font-medium">
             country briefing
           </Link>{" "}
-          “Workers vs retirees” chart: start from today’s age pyramid, hold
-          recent fertility, life expectancy, and net migration, then age the
-          population forward. This is not employment — it is the age pools that
-          shape pensions and the labour force.
+          chart — not employment counts. Pick a country on the scatter or table
+          to spotlight its path.
         </p>
-        {note ? (
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            {note}
-          </p>
+
+        {highlights ? (
+          <div className="grid gap-3 sm:grid-cols-3">
+            <StatCard
+              label="Fewest workers per retiree, today"
+              value={
+                <>
+                  {highlights.oldestToday.row.flagEmoji ?? "🏳️"}{" "}
+                  {highlights.oldestToday.value.toFixed(2)}
+                </>
+              }
+              sub={highlights.oldestToday.row.name}
+            />
+            <StatCard
+              label="Fastest aging by ~2060"
+              value={
+                <>
+                  {highlights.steepestDecline.row.flagEmoji ?? "🏳️"}{" "}
+                  {highlights.steepestDecline.pct.toFixed(0)}%
+                </>
+              }
+              sub={`${highlights.steepestDecline.row.name} · large countries`}
+              trend={highlights.steepestDecline.pct}
+            />
+            <StatCard
+              label="Country median, now → ~2060"
+              value={
+                <>
+                  {highlights.medianNow.toFixed(1)} →{" "}
+                  {highlights.median2060.toFixed(1)}
+                </>
+              }
+              sub="Half of countries fall on either side"
+            />
+          </div>
         ) : null}
       </section>
 
@@ -76,18 +148,13 @@ export default async function WorkersRetireesPage() {
       )}
 
       {(share65.length > 0 || dependency.length > 0) && (
-        <section>
-          <SectionHeading
-            id="official-age-structure"
-            title="Official age structure"
-            tocLabel="World Bank age shares"
-          />
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+        <CollapsibleSection title="Official age-structure rankings (World Bank)">
+          <p className="mb-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">
             For context, World Bank estimates of the share aged 65+ and the age
             dependency ratio (young + old per 100 working-age). These are
-            observed series, not the projection above.
+            observed series, not the modeled projection above.
           </p>
-          <div className="mt-5 grid gap-8 xl:grid-cols-2">
+          <div className="grid gap-8 xl:grid-cols-2">
             {share65.length > 0 && (
               <div>
                 <h3 className="mb-3 text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
@@ -119,7 +186,7 @@ export default async function WorkersRetireesPage() {
               </div>
             )}
           </div>
-        </section>
+        </CollapsibleSection>
       )}
     </TopicShell>
   );

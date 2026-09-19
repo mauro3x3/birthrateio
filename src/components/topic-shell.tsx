@@ -21,6 +21,7 @@ const CONTENT_ID = "topic-content";
 export function TopicShell({
   title,
   description,
+  intro,
   path,
   hero,
   updatedAt,
@@ -29,6 +30,8 @@ export function TopicShell({
 }: {
   title: string;
   description?: React.ReactNode;
+  /** Longer hub prose shown above charts (indexed; not collapsed). */
+  intro?: React.ReactNode;
   path: string;
   hero?: React.ReactNode;
   updatedAt?: Date | string | null;
@@ -65,11 +68,7 @@ export function TopicShell({
 
   return (
     <div>
-      <PageHeader
-        title={title}
-        description={chartFirst ? undefined : description}
-        compact={chartFirst}
-      >
+      <PageHeader title={title} description={description} compact={chartFirst}>
         <LastUpdated date={updatedAt} />
       </PageHeader>
 
@@ -78,12 +77,20 @@ export function TopicShell({
       <div className="container">
         {chartFirst ? (
           <article id={CONTENT_ID} className="min-w-0 space-y-8 py-6 md:py-8">
+            {intro ? (
+              <div className="max-w-3xl space-y-3 text-sm leading-relaxed text-muted-foreground md:text-[0.95rem]">
+                {intro}
+              </div>
+            ) : null}
             {children}
             <RelatedInsights items={insights} />
             {definitions ? (
-              <CollapsibleSection title="What this page measures">
+              <section className="space-y-3 border-t border-border pt-6">
+                <h2 className="font-serif text-lg font-semibold tracking-tight text-primary">
+                  What this page measures
+                </h2>
                 {definitions}
-              </CollapsibleSection>
+              </section>
             ) : null}
             <CollapsibleSection title="Sources & citation">{footer}</CollapsibleSection>
           </article>

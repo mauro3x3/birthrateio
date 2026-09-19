@@ -260,6 +260,21 @@ export const referenceNav: NavLink[] = [
     href: "/sources",
     description: "Providers behind the figures, with licence terms",
   },
+  {
+    title: "Contact",
+    href: "/contact",
+    description: "Corrections, privacy requests, and enquiries",
+  },
+  {
+    title: "Privacy",
+    href: "/privacy",
+    description: "Cookies, analytics, and advertising",
+  },
+  {
+    title: "Terms",
+    href: "/terms",
+    description: "Reuse, attribution, and acceptable use",
+  },
 ];
 
 /** Slim primary header links — hubs and high-traffic destinations. */

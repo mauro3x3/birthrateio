@@ -1,0 +1,41 @@
+{
+  "title": "Jewish American marriage — inmarriage vs intermarriage",
+  "metric": "jewish_intermarriage",
+  "unit": "%",
+  "year": 2020,
+  "definition": "Among currently married U.S. Jewish adults, the share whose spouse is Jewish (endogamy / inmarriage) versus not Jewish (exogamy / intermarriage). Pew’s definition of Jewish includes Jews by religion and Jews of no religion with Jewish parentage or upbringing.",
+  "source": "Pew Research Center, Jewish Americans in 2020 (fielded Nov 2019–June 2020).",
+  "sourceUrl": "https://www.pewresearch.org/religion/2021/05/11/marriage-families-and-children/",
+  "note": "Religious intermarriage, not racial intermarriage. Rates are for Jewish individuals, not couples (a couples rate is higher because two Jews who marry each other count as one couple). Orthodox Jews barely intermarry; non-Orthodox recent marriages are mostly intermarried.",
+  "currentlyMarried": [
+    { "label": "All married Jews", "endogamy": 58, "exogamy": 42 },
+    { "label": "Orthodox", "endogamy": 98, "exogamy": 2 },
+    { "label": "Conservative", "endogamy": 75, "exogamy": 25 },
+    { "label": "Reform", "endogamy": 58, "exogamy": 42 },
+    { "label": "No branch", "endogamy": 32, "exogamy": 68 }
+  ],
+  "byMarriageCohort": [
+    { "cohort": "Before 1980", "exogamy": 18, "endogamy": 82 },
+    { "cohort": "1980s", "exogamy": 42, "endogamy": 58 },
+    { "cohort": "1990s", "exogamy": 37, "endogamy": 63 },
+    { "cohort": "2000–2009", "exogamy": 45, "endogamy": 55 },
+    { "cohort": "2010–2020", "exogamy": 61, "endogamy": 39 },
+    {
+      "cohort": "Non-Orthodox, 2010–2020",
+      "exogamy": 72,
+      "endogamy": 28
+    }
+  ],
+  "byParentage": [
+    {
+      "label": "Two Jewish parents",
+      "exogamy": 34,
+      "endogamy": 66
+    },
+    {
+      "label": "One Jewish parent",
+      "exogamy": 82,
+      "endogamy": 18
+    }
+  ]
+}

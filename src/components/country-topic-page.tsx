@@ -51,6 +51,7 @@ function buildLeadProse(opts: {
   topicName: string;
   metricLabel: string;
   definition: string;
+  howToRead: string;
   valueLabel: string;
   year: number;
   rank: number | null;
@@ -74,7 +75,9 @@ function buildLeadProse(opts: {
         ? ` Comparable figures begin in ${opts.firstYear}, when the value was ${opts.firstValueLabel}.`
         : "";
 
-  return `${opts.countryName}'s ${opts.metricLabel} is ${opts.valueLabel} as of ${opts.year} — ${opts.definition}.${rankBit}${worldBit}${historyBit}`;
+  const first = `${opts.countryName}'s ${opts.metricLabel} is ${opts.valueLabel} as of ${opts.year} — ${opts.definition}.${rankBit}${worldBit}${historyBit}`;
+  const second = `${opts.howToRead} Open the ${opts.topicName.toLowerCase()} chart below for the full series, or the country profile for neighbouring indicators.`;
+  return `${first} ${second}`;
 }
 
 export async function generateCountryTopicMetadata(
@@ -128,6 +131,11 @@ export async function generateCountryTopicMetadata(
       url: path,
       type: "article",
     },
+    // Empty shells are crawlable for discovery but should not compete as thin
+    // index targets (AdSense / search quality).
+    ...(rank
+      ? {}
+      : { robots: { index: false, follow: true } }),
   };
 }
 
@@ -247,6 +255,7 @@ export async function CountryTopicPage({
           topicName: topic.name,
           metricLabel: topic.metricLabel,
           definition: topic.definition,
+          howToRead: topic.howToRead,
           valueLabel,
           year: latest.year,
           rank: "rank" in latest ? (latest.rank as number | null) : null,
@@ -256,7 +265,7 @@ export async function CountryTopicPage({
           firstValueLabel,
           changeLabel,
         })
-      : `${country.name} does not yet have a published series for ${topic.metricLabel} in our database. Browse the ${topic.name.toLowerCase()} explorer for countries that do.`;
+      : `${country.name} does not yet have a published series for ${topic.metricLabel} in our database. Browse the ${topic.name.toLowerCase()} explorer for countries that do. ${topic.howToRead}`;
 
   const path = countryTopicHref(topicId, slug);
   const pageTitle = topicPageTitle(topic, country.name, latest?.year);

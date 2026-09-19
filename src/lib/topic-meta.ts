@@ -80,6 +80,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Labeled choropleths from statistical offices",
       },
       {
+        title: "By race, origin & income",
+        href: "/fertility/race",
+        note: "U.S. race TFR since 1980, Austria & Kosovo splits, GDP–fertility scatter",
+      },
+      {
         title: "By education and income",
         href: "/fertility/education",
         note: "DHS schooling and wealth, plus U.S. education and Hispanic origin",
@@ -157,12 +162,28 @@ export const TOPIC_META: TopicMeta[] = [
       SLUG.netMigration,
       SLUG.migrantStock,
       SLUG.migrantStockShare,
+      SLUG.refugees,
+      SLUG.asylumSeekers,
+      SLUG.refugeeShareOfMigrants,
+      SLUG.orderedToLeave,
+      SLUG.returnedAfterOrder,
+      SLUG.returnRate,
+      SLUG.lfprNationals,
+      SLUG.lfprForeignCitizens,
+      SLUG.irregularMigrantStock,
+      SLUG.illegalBorderCrossings,
+      SLUG.migrantDeaths,
     ],
     related: [
       {
         title: "Population",
         href: "/population",
         note: "How migration changes population totals",
+      },
+      {
+        title: "Workers vs retirees",
+        href: "/workers-retirees",
+        note: "Age structure that shapes labour supply",
       },
       {
         title: "Cities",
@@ -183,6 +204,9 @@ export const TOPIC_META: TopicMeta[] = [
     caveats: [
       "Net migration nets arrivals against departures, so a small figure can hide very large flows in both directions.",
       "Migration statistics are among the least complete demographic data; definitions and coverage differ by country.",
+      "Eurostat returns, LFPR by citizenship and Frontex detections are Western / EU reporting series — not global rankings.",
+      "Irregular-stock figures are research estimates (MIrreM); methods and population definitions differ by country.",
+      "IOM Missing Migrants totals are undercounts and are published by region of incident, not destination country.",
     ],
   },
   {

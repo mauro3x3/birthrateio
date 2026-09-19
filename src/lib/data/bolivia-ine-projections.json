@@ -1,0 +1,43 @@
+{
+  "iso3": "BOL",
+  "slug": "bolivia",
+  "country": "Bolivia",
+  "source": "Instituto Nacional de Estadística (INE) — Estimaciones y proyecciones de población, Revisión 2025 (Anexo N° 1).",
+  "sourceUrl": "https://www.ine.gob.bo/",
+  "note": "Official projection revision. National TFR was still near 2.7 around 2020 and only fell below replacement in 2024. Projected 2026 TFR of 1.56 sits near a typical U.S. provisional level (~1.57).",
+  "series": [
+    {
+      "year": 2024,
+      "population": 11916453,
+      "births": 165718,
+      "cbr": 13.89,
+      "deaths": 76549,
+      "cdr": 6.42,
+      "netMigration": -60359,
+      "lifeExpectancy": 72.8,
+      "imr": 12.7,
+      "tfr": 1.69
+    },
+    { "year": 2025, "tfr": 1.61, "netMigration": -42042 },
+    { "year": 2026, "tfr": 1.56, "netMigration": -42042 },
+    { "year": 2027, "tfr": 1.53, "netMigration": -42042 },
+    { "year": 2028, "tfr": 1.51, "netMigration": -42042 },
+    { "year": 2029, "tfr": 1.5, "netMigration": -42042 },
+    { "year": 2030, "tfr": 1.48, "netMigration": -42042 },
+    { "year": 2031, "tfr": 1.48 },
+    { "year": 2032, "tfr": 1.47 },
+    { "year": 2033, "tfr": 1.47 },
+    {
+      "year": 2034,
+      "population": 12157674,
+      "births": 146044,
+      "cbr": 12.0,
+      "deaths": 91180,
+      "cdr": 7.49,
+      "netMigration": -38779,
+      "lifeExpectancy": 74.5,
+      "imr": 8.2,
+      "tfr": 1.47
+    }
+  ]
+}

@@ -63,8 +63,22 @@
       "iso3": "USA",
       "status": "PARTIAL",
       "level": "race / Hispanic origin",
-      "detail": "NCHS publishes TFR by race and Hispanic origin of the mother. That is not immigrant ancestry or country of birth.",
+      "detail": "NCHS publishes TFR by race and Hispanic origin of the mother (not immigrant ancestry). birthrate.io charts the 1980–2026 compilation on /fertility/race; 2024–2026 are provisional.",
       "sourceUrl": "https://www.cdc.gov/nchs/nvss/births.htm"
+    },
+    {
+      "iso3": "AUT",
+      "status": "AVAILABLE",
+      "level": "national origin",
+      "detail": "Statistik Austria TFR by Austrian vs foreign origin (with EU/EFTA/UK, former Yugoslavia, Turkey, elsewhere), including Vienna splits. 2025 national TFR 1.30 is the lowest on record.",
+      "sourceUrl": "https://www.statistik.at/en/"
+    },
+    {
+      "iso3": "XKX",
+      "status": "AVAILABLE",
+      "level": "ethnicity (MICS)",
+      "detail": "Kosovo MICS rounds publish TFR for Albanian and Roma/Ashkali/Egyptian communities. Not a vital-registration ancestry series; Serb TFR was suppressed for sample size in the newest round.",
+      "sourceUrl": "https://mics.unicef.org/"
     },
     {
       "iso3": "DEU",

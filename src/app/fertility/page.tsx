@@ -87,6 +87,26 @@ export default async function FertilityPage() {
       title="Fertility"
       path="/fertility"
       updatedAt={updatedAt}
+      description="Total fertility rates for every country — timeline map, rankings, movers, and provisional nowcasts."
+      intro={
+        <>
+          <p>
+            The total fertility rate (TFR) is a period measure: the average number
+            of children a woman would have if she experienced today&apos;s
+            age-specific birth rates throughout her life. It is not completed
+            cohort fertility, and a single-year bounce often reflects timing
+            (delayed births) rather than a permanent change in family size.
+          </p>
+          <p>
+            Replacement is about 2.1 children per woman in low-mortality
+            countries. Most of Europe and East Asia sit well below that; parts of
+            sub-Saharan Africa remain well above. Where statistical offices
+            publish ancestry, religion, or education splits, those pages matter
+            more than the national average for schools and politics — see the
+            caveats under &ldquo;What this page measures.&rdquo;
+          </p>
+        </>
+      }
       hero={
         <TimelineExplorer
           frames={timelineFrames}
@@ -113,6 +133,7 @@ export default async function FertilityPage() {
             items={[
               featuredById("tfr-history")!,
               featuredById("tfr-decomp")!,
+              featuredById("tfr-race")!,
               featuredById("tfr-education")!,
               featuredById("regional-maps")!,
               featuredById("census-maps")!,
@@ -204,6 +225,13 @@ export default async function FertilityPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-4 text-sm text-muted-foreground">
+            U.S. race series, Austria origin detail, Kosovo MICS, and more:{" "}
+            <Link href="/fertility/race" className="link-editorial font-medium">
+              Fertility by race, origin &amp; income
+            </Link>
+            .
+          </p>
         </section>
       )}
 

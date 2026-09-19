@@ -1,0 +1,197 @@
+{
+  "title": "Consanguineous marriage — Middle East, North Africa, and selected countries",
+  "metric": "consanguineous_marriage_share",
+  "unit": "%",
+  "definition": "Share of marriages between blood relatives (usually second cousins or closer). This is kin endogamy — marrying inside the extended family — not the same as ethnic or religious intermarriage with outsiders. First-cousin unions are the most common subtype in Arab populations.",
+  "source": "Tadmouri et al. 2009 review (Reproductive Health) for Arab country ranges; Egypt DHS 2014; Algeria MICS 2019; Turkey Ministry of Health national survey 2013. Global context from Bittles via Tadmouri: ~20% of world population lives in communities with a preference for consanguineous marriage.",
+  "sourceUrl": "https://link.springer.com/article/10.1186/1742-4755-6-17",
+  "note": "Rates vary widely within countries by rural/urban, education, and wealth. Some Gulf surveys report rising consanguinity in younger cohorts; Egypt and parts of the Levant show declines from earlier decades. Figures are survey-based and not strictly comparable year-to-year.",
+  "worldContext": {
+    "shareOfWorldInPreferringCommunities": 20,
+    "arabTypicalRange": "20–50% of marriages",
+    "arabFirstCousinTypical": "20–30% of marriages in high-consanguinity settings"
+  },
+  "spotlight": [
+    {
+      "country": "Pakistan",
+      "iso3": "PAK",
+      "year": 2018,
+      "anyRelative": 63.6,
+      "firstCousin": 49.6,
+      "source": "Pakistan DHS 2017–18"
+    },
+    {
+      "country": "Egypt",
+      "iso3": "EGY",
+      "year": 2014,
+      "anyRelative": 32,
+      "firstCousin": 17,
+      "source": "Egypt DHS 2014"
+    },
+    {
+      "country": "Algeria",
+      "iso3": "DZA",
+      "year": 2019,
+      "anyRelative": 23,
+      "firstCousin": null,
+      "source": "Algeria MICS6 2019"
+    },
+    {
+      "country": "Turkey",
+      "iso3": "TUR",
+      "year": 2013,
+      "anyRelative": 18.5,
+      "firstCousin": 10.7,
+      "source": "Turkish Ministry of Health national survey 2013 (57.8% of consanguineous unions were first-cousin)"
+    }
+  ],
+  "countries": [
+    {
+      "country": "Qatar",
+      "iso3": "QAT",
+      "overallMid": 54,
+      "overallMin": 54,
+      "overallMax": 54,
+      "firstCousinMid": 34.8
+    },
+    {
+      "country": "Oman",
+      "iso3": "OMN",
+      "overallMid": 56.3,
+      "overallMin": 56.3,
+      "overallMax": 56.3,
+      "firstCousinMid": 24.1
+    },
+    {
+      "country": "Saudi Arabia",
+      "iso3": "SAU",
+      "overallMid": 54,
+      "overallMin": 42.1,
+      "overallMax": 66.7,
+      "firstCousinMid": 33
+    },
+    {
+      "country": "Iraq",
+      "iso3": "IRQ",
+      "overallMid": 53.5,
+      "overallMin": 47,
+      "overallMax": 60,
+      "firstCousinMid": 31
+    },
+    {
+      "country": "UAE",
+      "iso3": "ARE",
+      "overallMid": 47,
+      "overallMin": 40,
+      "overallMax": 54.2,
+      "firstCousinMid": 24.5
+    },
+    {
+      "country": "Sudan",
+      "iso3": "SDN",
+      "overallMid": 54,
+      "overallMin": 44.2,
+      "overallMax": 63.3,
+      "firstCousinMid": 47
+    },
+    {
+      "country": "Jordan",
+      "iso3": "JOR",
+      "overallMid": 46,
+      "overallMin": 28.5,
+      "overallMax": 63.7,
+      "firstCousinMid": 29
+    },
+    {
+      "country": "Yemen",
+      "iso3": "YEM",
+      "overallMid": 42,
+      "overallMin": 40,
+      "overallMax": 44.7,
+      "firstCousinMid": 33
+    },
+    {
+      "country": "Kuwait",
+      "iso3": "KWT",
+      "overallMid": 43,
+      "overallMin": 22.5,
+      "overallMax": 64.3,
+      "firstCousinMid": 24
+    },
+    {
+      "country": "Palestine",
+      "iso3": "PSE",
+      "overallMid": 42,
+      "overallMin": 17.5,
+      "overallMax": 66.3,
+      "firstCousinMid": 24
+    },
+    {
+      "country": "Bahrain",
+      "iso3": "BHR",
+      "overallMid": 42.5,
+      "overallMin": 39.4,
+      "overallMax": 45.5,
+      "firstCousinMid": 24.5
+    },
+    {
+      "country": "Syria",
+      "iso3": "SYR",
+      "overallMid": 35,
+      "overallMin": 30.3,
+      "overallMax": 39.8,
+      "firstCousinMid": 28.7
+    },
+    {
+      "country": "Egypt",
+      "iso3": "EGY",
+      "overallMid": 32,
+      "overallMin": 20.9,
+      "overallMax": 32.8,
+      "firstCousinMid": 17,
+      "preferredSource": "Egypt DHS 2014"
+    },
+    {
+      "country": "Tunisia",
+      "iso3": "TUN",
+      "overallMid": 30,
+      "overallMin": 20.1,
+      "overallMax": 39.3,
+      "firstCousinMid": 20
+    },
+    {
+      "country": "Algeria",
+      "iso3": "DZA",
+      "overallMid": 23,
+      "overallMin": 22.6,
+      "overallMax": 34,
+      "firstCousinMid": 11.3,
+      "preferredSource": "Algeria MICS 2019 (23%)"
+    },
+    {
+      "country": "Morocco",
+      "iso3": "MAR",
+      "overallMid": 24,
+      "overallMin": 19.9,
+      "overallMax": 28,
+      "firstCousinMid": 9
+    },
+    {
+      "country": "Lebanon",
+      "iso3": "LBN",
+      "overallMid": 27,
+      "overallMin": 12.8,
+      "overallMax": 42,
+      "firstCousinMid": 19
+    },
+    {
+      "country": "Turkey",
+      "iso3": "TUR",
+      "overallMid": 18.5,
+      "overallMin": 18.5,
+      "overallMax": 22,
+      "firstCousinMid": 10.7,
+      "preferredSource": "MoH national survey 2013"
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "title": "European partner choice — recent national statistics",
+  "note": "Citizenship, birthplace, and migrant-background definitions differ by country. Netherlands and Nordic figures are origin-group endogamy among marrying persons; Germany/Italy/Spain/France/Belgium/Switzerland/Portugal are shares of registered marriages involving a foreign national (or different nationality group).",
+  "netherlands": {
+    "title": "Netherlands — marriage partner by origin (2021)",
+    "source": "CBS, Rapportage Integratie en Samenleven 2022 (table published 1 Dec 2022).",
+    "sourceUrl": "https://www.cbs.nl/nl-nl/nieuws/2022/48/mensen-met-herkomst-buiten-nederland-wonen-relatief-vaak-in-grote-steden",
+    "note": "Among people marrying in 2021. ‘Same origin’ combines a co-ethnic partner already in the Netherlands and a migration marriage. Second-generation Turkish and Moroccan newlyweds remain ~80% endogamous; Caribbean and Indonesian origins marry Dutch-background partners far more often.",
+    "rows": [
+      {
+        "group": "Turkish · 2nd gen",
+        "dutchPartner": 7.5,
+        "sameOriginTotal": 80.0,
+        "other": 12.5
+      },
+      {
+        "group": "Moroccan · 2nd gen",
+        "dutchPartner": 10.2,
+        "sameOriginTotal": 76.2,
+        "other": 13.6
+      },
+      {
+        "group": "Surinamese · 2nd gen",
+        "dutchPartner": 32.8,
+        "sameOriginTotal": 42.5,
+        "other": 24.7
+      },
+      {
+        "group": "Caribbean · 2nd gen",
+        "dutchPartner": 58.4,
+        "sameOriginTotal": 10.7,
+        "other": 30.9
+      },
+      {
+        "group": "Indonesian · 2nd gen",
+        "dutchPartner": 70.8,
+        "sameOriginTotal": 8.1,
+        "other": 21.2
+      },
+      {
+        "group": "Dutch background",
+        "dutchPartner": 82.7,
+        "sameOriginTotal": null,
+        "other": 17.3
+      }
+    ]
+  },
+  "germany": {
+    "title": "Germany — German × foreign-national marriages",
+    "source": "Destatis Eheschließungen zwischen Deutschen und Ausländern; BiB Fakt L117.",
+    "sourceUrl": "https://www.destatis.de/DE/Themen/Gesellschaft-Umwelt/Bevoelkerung/Eheschliessungen-Ehescheidungen-Lebenspartnerschaften/Tabellen/eheschliessungen-deutsch-auslaender.html",
+    "note": "Citizenship at marriage, not ethnicity. BiB summarises roughly 86% both German, ~11% one German / one foreign, ~3% both foreign among registry marriages.",
+    "years": [
+      {
+        "year": 2022,
+        "totalMarriages": 390743,
+        "binationalTotal": 43467,
+        "binationalShare": 11.1
+      },
+      {
+        "year": 2023,
+        "totalMarriages": 360979,
+        "binationalTotal": 41662,
+        "binationalShare": 11.5
+      }
+    ]
+  },
+  "france": {
+    "title": "France — French × foreign-national marriages (INSEE)",
+    "source": "INSEE état civil Retro6 — Mariages selon la nationalité des époux (Français ou étranger), champ France.",
+    "sourceUrl": "https://www.insee.fr/fr/statistiques/8570894?sommaire=8571148",
+    "note": "FR_ETR = one French and one foreign citizen (mariage mixte). Shares computed from Retro6 absolute counts across opposite- and same-sex marriages.",
+    "years": [
+      {
+        "year": 2022,
+        "totalMarriages": 241710,
+        "mixed": 33602,
+        "mixedShare": 13.9,
+        "bothForeign": 10707,
+        "bothForeignShare": 4.4,
+        "atLeastOneForeignShare": 18.3
+      },
+      {
+        "year": 2023,
+        "totalMarriages": 241080,
+        "mixed": 32872,
+        "mixedShare": 13.6,
+        "bothForeign": 11607,
+        "bothForeignShare": 4.8,
+        "atLeastOneForeignShare": 18.4
+      }
+    ]
+  },
+  "italy": {
+    "title": "Italy — mixed-citizenship marriages (2022)",
+    "source": "ISTAT, Matrimoni, unioni civili, separazioni e divorzi — Anno 2022 (Dec 2023 report).",
+    "sourceUrl": "https://www.istat.it/it/files/2023/12/REPORT_matrimoni-seprazionei-dic2023.pdf",
+    "note": "Matrimoni misti = one Italian and one foreign citizen. About three-quarters are Italian husband + foreign wife.",
+    "year": 2022,
+    "totalMarriages": 189140,
+    "mixed": 20678,
+    "mixedShare": 10.9,
+    "italianHusbandForeignWife": 15138,
+    "italianWifeForeignHusband": 5540,
+    "atLeastOneForeign": 29574
+  },
+  "spain": {
+    "title": "Spain — marriages with a foreign spouse (2022)",
+    "source": "INE Movimiento Natural de la Población / press summaries of 2022 nuptiality.",
+    "sourceUrl": "https://www.ine.es/",
+    "note": "Among opposite-sex marriages, 18.2% had at least one foreign spouse (17.4% in 2021).",
+    "year": 2022,
+    "totalMarriages": 179107,
+    "oppositeSexWithForeignShare": 18.2,
+    "oppositeSexWithForeignShare2021": 17.4,
+    "spanishManForeignWoman": 16248,
+    "spanishWomanForeignMan": 9727
+  },
+  "belgium": {
+    "title": "Belgium — mixed nationality-group marriages (2024)",
+    "source": "Statbel, Marriages 2024 release (12 March 2025).",
+    "sourceUrl": "https://statbel.fgov.be/en/news/48589-marriages-2024",
+    "note": "Statbel reports 22.5% of marriages between partners from different nationality groups (77.5% same group).",
+    "year": 2024,
+    "totalMarriages": 48589,
+    "mixedShare": 22.5
+  },
+  "portugal": {
+    "title": "Portugal — Portuguese × foreign-national marriages (INE)",
+    "source": "INE indicator 0012711 — Proporção de casamentos celebrados entre indivíduos de nacionalidade portuguesa e nacionalidade estrangeira.",
+    "sourceUrl": "https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0012711&lingua=PT",
+    "note": "Share of all registered marriages that unite one Portuguese and one foreign national.",
+    "years": [
+      { "year": 2023, "mixedShare": 14.6 },
+      { "year": 2024, "mixedShare": 16.4 },
+      { "year": 2025, "mixedShare": 16.2 }
+    ]
+  },
+  "switzerland": {
+    "title": "Switzerland — gemischtnationale marriages (BFS)",
+    "source": "BFS su-d-01.06.01.01.17 Heiraten nach Staatsangehörigkeitskategorie der Ehepartner.",
+    "sourceUrl": "https://www.bfs.admin.ch/asset/de/36631450",
+    "note": "Gemischtnationale Ehe = one Swiss and one foreign national among marriages where the reference person has permanent Swiss residence.",
+    "years": [
+      {
+        "year": 2022,
+        "totalMarriages": 40938,
+        "binational": 6353,
+        "binationalShare": 15.5
+      },
+      {
+        "year": 2023,
+        "totalMarriages": 37763,
+        "binational": 6460,
+        "binationalShare": 17.1
+      },
+      {
+        "year": 2024,
+        "totalMarriages": 36769,
+        "binational": 6500,
+        "binationalShare": 17.7
+      }
+    ]
+  },
+  "norway": {
+    "title": "Norway — spouse choice among Norwegian-born to immigrant parents",
+    "source": "Statistics Norway (SSB) register studies of first marriages among Norwegian-born to immigrant parents (birth cohorts 1972–1994; marriages through ~2012).",
+    "sourceUrl": "https://www.ssb.no/en/befolkning/artikler-og-publikasjoner/valg-av-ektefelle-blant-norskfodte-med-innvandrerforeldre",
+    "note": "Among those who married: 76% had a spouse with immigrant background; 51% shared parents’ country of origin. Endogamy is higher for Pakistani and Turkish parental origins than for Vietnamese, Indian or Moroccan.",
+    "immigrantBackgroundSpouse": 76,
+    "sameCountryOfOriginSpouse": 51,
+    "majoritySpouseApprox": 24
+  },
+  "nordicCompare": {
+    "title": "Norway vs Sweden — second-generation partner type",
+    "source": "Wiik & Holland, Acta Sociologica (register first marriages 1990–2012, birth cohorts 1972–1989).",
+    "sourceUrl": "https://doi.org/10.1177/0001699317718611",
+    "note": "Among married second-generation individuals: same-origin partners are far more common in Norway than Sweden; majority-background spouses are more common in Sweden.",
+    "rows": [
+      {
+        "country": "Norway",
+        "sameOriginPartner": 74,
+        "majorityPartner": 18
+      },
+      {
+        "country": "Sweden",
+        "sameOriginPartner": 38,
+        "majorityPartner": 45
+      }
+    ]
+  },
+  "binationalShares": [
+    {
+      "country": "Belgium",
+      "year": 2024,
+      "measure": "% marriages different nationality group",
+      "share": 22.5
+    },
+    {
+      "country": "Spain",
+      "year": 2022,
+      "measure": "% opposite-sex marriages with ≥1 foreign spouse",
+      "share": 18.2
+    },
+    {
+      "country": "Switzerland",
+      "year": 2023,
+      "measure": "% Swiss × foreign national",
+      "share": 17.1
+    },
+    {
+      "country": "Portugal",
+      "year": 2024,
+      "measure": "% Portuguese × foreign national",
+      "share": 16.4
+    },
+    {
+      "country": "France",
+      "year": 2023,
+      "measure": "% French × foreign national (FR_ETR)",
+      "share": 13.6
+    },
+    {
+      "country": "Germany",
+      "year": 2023,
+      "measure": "% marriages German × foreign national",
+      "share": 11.5
+    },
+    {
+      "country": "Italy",
+      "year": 2022,
+      "measure": "% mixed-citizenship marriages",
+      "share": 10.9
+    }
+  ]
+}

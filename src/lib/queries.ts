@@ -1556,3 +1556,42 @@ export async function getEmigrationDestinations(
     limit,
   );
 }
+
+/** Latest TFR vs GDP per capita (PPP) for an income–fertility scatter. */
+export async function getFertilityIncomeScatter(): Promise<
+  Array<{
+    iso3: string;
+    slug: string;
+    name: string;
+    continent: string | null;
+    flagEmoji: string | null;
+    tfr: number;
+    tfrYear: number;
+    gdp: number;
+    gdpYear: number;
+  }>
+> {
+  const [tfrRows, gdpRows] = await Promise.all([
+    getLatestRanking(SLUG.fertility, { order: "desc" }),
+    getLatestRanking(SLUG.gdpPerCapitaPpp, { order: "desc" }),
+  ]);
+  const gdpByIso = new Map(gdpRows.map((r) => [r.iso3, r]));
+  const out = [];
+  for (const t of tfrRows) {
+    const g = gdpByIso.get(t.iso3);
+    if (!g) continue;
+    if (!(t.value > 0) || !(g.value > 0)) continue;
+    out.push({
+      iso3: t.iso3,
+      slug: t.slug,
+      name: t.name,
+      continent: t.continent,
+      flagEmoji: t.flagEmoji,
+      tfr: t.value,
+      tfrYear: t.year,
+      gdp: g.value,
+      gdpYear: g.year,
+    });
+  }
+  return out;
+}

@@ -1,0 +1,27 @@
+{
+  "title": "England and Wales — inter-ethnic partnerships",
+  "metric": "interethnic_couple_share",
+  "unit": "%",
+  "year": 2011,
+  "definition": "Among people living as part of a couple (married, civil partnership, or cohabiting), the share whose partner reports a different ethnic group. Endogamy = same ethnic group.",
+  "source": "Office for National Statistics — 2011 Census analysis: What does the 2011 Census tell us about inter-ethnic relationships?",
+  "sourceUrl": "https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/marriagecohabitationandcivilpartnerships/articles/whatdoesthe2011censustellusaboutinterethnicrelationships/2014-07-03",
+  "note": "Overall 9% of people in couples were in an inter-ethnic relationship in 2011 (up from 7% in 2001). White British rates are low partly because the group is large. South Asian groups remain highly endogamous in marriage; cohabiting rates are much higher for the same groups. Census 2021 reports 5.7% of multi-person households had ethnic groups that differ within partnerships (a household, not person, measure).",
+  "overall": 9,
+  "overall2001": 7,
+  "groups": [
+    { "group": "White British", "exogamy": 4, "endogamy": 96 },
+    { "group": "Bangladeshi", "exogamy": 7, "endogamy": 93 },
+    { "group": "Pakistani", "exogamy": 9, "endogamy": 91 },
+    { "group": "Indian", "exogamy": 12, "endogamy": 88 },
+    { "group": "Black African", "exogamy": 22, "endogamy": 78 },
+    { "group": "Chinese", "exogamy": 31, "endogamy": 69 },
+    { "group": "Other Asian", "exogamy": 32, "endogamy": 68 },
+    { "group": "Arab", "exogamy": 35, "endogamy": 65 },
+    { "group": "Other White", "exogamy": 39, "endogamy": 61 },
+    { "group": "Black Caribbean", "exogamy": 43, "endogamy": 57 },
+    { "group": "White Irish", "exogamy": 71, "endogamy": 29 },
+    { "group": "White and Asian (Mixed)", "exogamy": 87, "endogamy": 13 },
+    { "group": "White and Black Caribbean (Mixed)", "exogamy": 88, "endogamy": 12 }
+  ]
+}

@@ -25,6 +25,12 @@ import { seedAdmin1 } from "../src/lib/sources/admin1-data";
 import { seedHistoricMortality } from "../src/lib/sources/historic-mortality-data";
 import { seedHistoricFertility } from "../src/lib/sources/historic-fertility-data";
 import { seedWorkPermits } from "../src/lib/sources/work-permits-data";
+import { seedEurostatReturns } from "../src/lib/sources/eurostat-returns-data";
+import { seedEurostatLfpr } from "../src/lib/sources/eurostat-lfpr-data";
+import { seedUnhcrRefugees } from "../src/lib/sources/unhcr-refugees-data";
+import { seedIrregularStocks } from "../src/lib/sources/irregular-stocks-data";
+import { seedFrontexDetections } from "../src/lib/sources/frontex-detections-data";
+import { seedIomMissingMigrants } from "../src/lib/sources/iom-missing-migrants-data";
 
 async function main() {
   await ensureSources(prisma);
@@ -50,6 +56,12 @@ async function main() {
   await seedHistoricMortality(prisma);
   await seedHistoricFertility(prisma);
   await seedWorkPermits(prisma);
+  await seedEurostatReturns(prisma);
+  await seedEurostatLfpr(prisma);
+  await seedUnhcrRefugees(prisma);
+  await seedIrregularStocks(prisma);
+  await seedFrontexDetections(prisma);
+  await seedIomMissingMigrants(prisma);
 }
 
 main()

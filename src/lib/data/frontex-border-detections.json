@@ -1,0 +1,73 @@
+{
+  "source": "Frontex",
+  "definition": "Detected illegal border crossings on EU external borders (FRAN/JORA). Counts detections, not unique persons — the same person can be counted more than once.",
+  "sourceUrl": "https://www.frontex.europa.eu/what-we-do/monitoring-and-risk-analysis/migratory-map/",
+  "updated": "2026-09-16",
+  "note": "Route and EU-total series curated from Frontex annual briefs and migratory-map releases (2019–2024). Automate from monthly route downloads when available.",
+  "routes": {
+    "Central Mediterranean": [
+      { "year": 2019, "value": 14000 },
+      { "year": 2020, "value": 36000 },
+      { "year": 2021, "value": 67500 },
+      { "year": 2022, "value": 102000 },
+      { "year": 2023, "value": 158000 },
+      { "year": 2024, "value": 67000 }
+    ],
+    "Eastern Mediterranean": [
+      { "year": 2019, "value": 83000 },
+      { "year": 2020, "value": 20000 },
+      { "year": 2021, "value": 20500 },
+      { "year": 2022, "value": 43000 },
+      { "year": 2023, "value": 61000 },
+      { "year": 2024, "value": 69400 }
+    ],
+    "Western Mediterranean": [
+      { "year": 2019, "value": 24000 },
+      { "year": 2020, "value": 17000 },
+      { "year": 2021, "value": 18000 },
+      { "year": 2022, "value": 15000 },
+      { "year": 2023, "value": 17000 },
+      { "year": 2024, "value": 14000 }
+    ],
+    "Western African": [
+      { "year": 2019, "value": 2700 },
+      { "year": 2020, "value": 23000 },
+      { "year": 2021, "value": 22300 },
+      { "year": 2022, "value": 15500 },
+      { "year": 2023, "value": 40000 },
+      { "year": 2024, "value": 47000 }
+    ],
+    "Western Balkan": [
+      { "year": 2019, "value": 15000 },
+      { "year": 2020, "value": 27000 },
+      { "year": 2021, "value": 61500 },
+      { "year": 2022, "value": 144000 },
+      { "year": 2023, "value": 99000 },
+      { "year": 2024, "value": 22000 }
+    ],
+    "Eastern Borders": [
+      { "year": 2019, "value": 1000 },
+      { "year": 2020, "value": 800 },
+      { "year": 2021, "value": 8000 },
+      { "year": 2022, "value": 6000 },
+      { "year": 2023, "value": 5600 },
+      { "year": 2024, "value": 17000 }
+    ],
+    "English Channel": [
+      { "year": 2019, "value": 2000 },
+      { "year": 2020, "value": 8500 },
+      { "year": 2021, "value": 28500 },
+      { "year": 2022, "value": 45700 },
+      { "year": 2023, "value": 36000 },
+      { "year": 2024, "value": 39000 }
+    ]
+  },
+  "euTotal": [
+    { "year": 2019, "value": 141800 },
+    { "year": 2020, "value": 124100 },
+    { "year": 2021, "value": 200000 },
+    { "year": 2022, "value": 330000 },
+    { "year": 2023, "value": 380000 },
+    { "year": 2024, "value": 239000 }
+  ]
+}

@@ -107,6 +107,24 @@ export default async function PopulationPage() {
       title="Population"
       path="/population"
       updatedAt={updatedAt}
+      description="World population by country — rankings, growth rates, age structure, and an animated growth map."
+      intro={
+        <>
+          <p>
+            Population is a stock; growth is a flow. Fertility, mortality, and
+            net migration all move the total, but age structure decides how many
+            of those people are children, workers, or of retirement age. A
+            country can grow in headcount while its workforce shrinks, or shrink
+            while GDP per worker rises.
+          </p>
+          <p>
+            The map below tracks annual population growth. Rankings and the
+            calculator further down use the same World Bank / UN series as the
+            country profiles. Medium-variant projections on country pages are
+            scenarios — labelled as such — not official forecasts.
+          </p>
+        </>
+      }
       hero={
         <TimelineExplorer
           frames={timelineFrames}

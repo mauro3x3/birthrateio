@@ -35,6 +35,9 @@ export function SiteFooter() {
             <Link href="/about" className="text-primary hover:underline">
               About
             </Link>
+            <Link href="/contact" className="text-primary hover:underline">
+              Contact
+            </Link>
             <Link href="/support" className="text-primary hover:underline">
               Donate
             </Link>
@@ -138,18 +141,34 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="border-t py-5">
-        <div className="container flex flex-col items-start justify-between gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <div className="container flex flex-col items-start justify-between gap-3 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>
             © {new Date().getFullYear()} {siteConfig.name}. Data from World Bank,
             UN, OECD &amp; IMF.
           </p>
-          <p>
-            Projections labeled “modeled” are estimates, not official forecasts.
-            See{" "}
-            <Link href="/methodology" className="underline hover:text-foreground">
-              methodology
+          <p className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <Link href="/privacy" className="underline hover:text-foreground">
+              Privacy
             </Link>
-            .
+            <Link href="/terms" className="underline hover:text-foreground">
+              Terms
+            </Link>
+            <Link href="/contact" className="underline hover:text-foreground">
+              Contact
+            </Link>
+            <span className="text-muted-foreground/50" aria-hidden>
+              ·
+            </span>
+            <span>
+              Modeled projections are estimates. See{" "}
+              <Link
+                href="/methodology"
+                className="underline hover:text-foreground"
+              >
+                methodology
+              </Link>
+              .
+            </span>
           </p>
         </div>
       </div>

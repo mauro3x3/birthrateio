@@ -8,7 +8,7 @@ import { Slider } from "@/components/ui/slider";
 import { AnimationExportButton } from "@/components/animation-export-button";
 import { HelpImproveData } from "@/components/help-improve-data";
 import { buildColorScale, type ScaleType } from "@/lib/color-scale";
-import { formatByUnit, slugify } from "@/lib/utils";
+import { cn, formatByUnit, slugify } from "@/lib/utils";
 import type { ChoroplethDatum } from "./choropleth-map";
 
 const ChoroplethMap = dynamic(
@@ -16,7 +16,7 @@ const ChoroplethMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[380px] w-full items-center justify-center bg-black text-sm text-white/30">
+      <div className="flex h-[380px] w-full items-center justify-center bg-muted/40 text-sm text-muted-foreground">
         Loading map…
       </div>
     ),
@@ -33,7 +33,7 @@ function scaleHint(unit?: string, scaleType?: ScaleType): string {
     return "Blue = growing, red = shrinking.";
   }
   if (scaleType?.includes("diverging")) {
-    return "Stronger colours = farther from the midpoint.";
+    return "Teal = net in, copper = net out.";
   }
   if (unit === "US$" || unit === "$") {
     return "Darker = higher GDP per capita.";
@@ -53,6 +53,7 @@ export function MapCard({
   mid,
   frameStats,
   height = 400,
+  appearance = "cinema",
 }: {
   /** Anchor target; also picked up by the in-page table of contents. */
   id?: string;
@@ -67,6 +68,8 @@ export function MapCard({
   /** Optional per-year readout (e.g. world average) shown in the context strip. */
   frameStats?: { year: number; label: string }[];
   height?: number;
+  /** Cinema = dark stage. Light = atlas paper (readable for learning). */
+  appearance?: "cinema" | "light";
 }) {
   const lastIdx = Math.max(0, frames.length - 1);
   const [idx, setIdx] = React.useState(lastIdx);
@@ -74,6 +77,7 @@ export function MapCard({
   const [recording, setRecording] = React.useState(false);
   const captureRef = React.useRef<HTMLDivElement>(null);
   const startIdxRef = React.useRef(0);
+  const cinema = appearance === "cinema";
 
   React.useEffect(() => {
     setIdx(Math.max(0, frames.length - 1));
@@ -99,7 +103,13 @@ export function MapCard({
   const firstYear = frames[0]?.year;
   const lastYear = frames[lastIdx]?.year;
 
-  const cinemaScale = React.useMemo((): ScaleType => {
+  const resolvedScale = React.useMemo((): ScaleType => {
+    if (!cinema) {
+      if (scaleType === "diverging-growth-dark") return "diverging-growth";
+      if (scaleType === "diverging-dark") return "diverging";
+      if (scaleType === "sequential-dark") return "sequential";
+      return scaleType;
+    }
     if (scaleType === "diverging-growth" || scaleType === "diverging-growth-dark")
       return "diverging-growth-dark";
     if (scaleType === "diverging" || scaleType === "diverging-dark")
@@ -107,7 +117,7 @@ export function MapCard({
     if (scaleType === "sequential" || scaleType === "sequential-dark")
       return "sequential-dark";
     return scaleType;
-  }, [scaleType]);
+  }, [cinema, scaleType]);
 
   const domain = React.useMemo(() => {
     const vals: number[] = [];
@@ -122,8 +132,8 @@ export function MapCard({
 
   const scale = React.useMemo(() => {
     const sample = current?.data.map((d) => d.value) ?? [];
-    return buildColorScale(sample, cinemaScale, mid, domain);
-  }, [cinemaScale, current?.data, domain, mid]);
+    return buildColorScale(sample, resolvedScale, mid, domain);
+  }, [resolvedScale, current?.data, domain, mid]);
 
   const gradientCss = React.useMemo(() => {
     if (scale.legend.length < 2) return undefined;
@@ -155,7 +165,7 @@ export function MapCard({
   return (
     <section className="overflow-hidden border border-border bg-card">
       <header className="flex flex-col gap-2 border-b border-border px-4 py-2.5 sm:px-5 lg:flex-row lg:items-center lg:gap-4">
-        <div className="min-w-0 shrink-0">
+        <div className="min-w-0 shrink-0 lg:max-w-sm">
           <h2
             id={id}
             className="scroll-mt-24 font-serif text-lg font-semibold tracking-tight text-primary sm:text-xl"
@@ -163,7 +173,7 @@ export function MapCard({
             {title}
           </h2>
           {description && (
-            <p className="mt-0.5 line-clamp-2 text-sm text-muted-foreground">
+            <p className="mt-0.5 text-sm leading-snug text-muted-foreground">
               {description}
             </p>
           )}
@@ -242,12 +252,30 @@ export function MapCard({
         )}
       </header>
 
-      <div ref={captureRef} className="relative bg-black">
+      <div
+        ref={captureRef}
+        className={cn(
+          "relative",
+          cinema ? "bg-black" : "bg-[hsl(40_22%_94%)]",
+        )}
+      >
         {current && (
-          <div className="pointer-events-none absolute left-3 top-3 z-[500] rounded-sm bg-black/55 px-2 py-1 font-sans text-sm font-semibold tabular-nums text-white backdrop-blur-sm">
+          <div
+            className={cn(
+              "pointer-events-none absolute left-3 top-3 z-[500] px-2 py-1 font-sans text-sm font-semibold tabular-nums backdrop-blur-sm",
+              cinema
+                ? "rounded-sm bg-black/55 text-white"
+                : "rounded-sm border border-border/70 bg-card/95 text-primary shadow-sm",
+            )}
+          >
             {current.year}
             {currentStat ? (
-              <span className="ml-2 font-sans text-[0.7rem] font-normal text-white/70">
+              <span
+                className={cn(
+                  "ml-2 font-sans text-[0.7rem] font-normal",
+                  cinema ? "text-white/70" : "text-muted-foreground",
+                )}
+              >
                 {currentStat}
               </span>
             ) : null}
@@ -255,32 +283,49 @@ export function MapCard({
         )}
         {gradientCss && (
           <div
-            className="pointer-events-none absolute bottom-3 left-3 z-[500] rounded-sm bg-black/55 px-3 py-2 backdrop-blur-sm"
-            aria-label={scaleHint(unit, cinemaScale)}
+            className={cn(
+              "pointer-events-none absolute bottom-3 left-3 z-[500] px-3 py-2 backdrop-blur-sm",
+              cinema
+                ? "rounded-sm bg-black/55"
+                : "rounded-sm border border-border/70 bg-card/95 shadow-sm",
+            )}
+            aria-label={scaleHint(unit, resolvedScale)}
           >
             <div
               className="h-1.5 w-36 rounded-full"
               style={{ background: gradientCss }}
               aria-hidden
             />
-            <div className="mt-1.5 flex w-36 justify-between text-[10px] tabular-nums text-white/50">
+            <div
+              className={cn(
+                "mt-1.5 flex w-36 justify-between text-[10px] tabular-nums",
+                cinema ? "text-white/50" : "text-muted-foreground",
+              )}
+            >
               <span>{fmt(scale.min)}</span>
               {scale.mid !== undefined && (
-                <span className="text-white/75">{fmt(scale.mid)}</span>
+                <span className={cinema ? "text-white/75" : "text-foreground/80"}>
+                  {fmt(scale.mid)}
+                </span>
               )}
               <span>{fmt(scale.max)}</span>
             </div>
+            {!cinema && resolvedScale.includes("diverging") && (
+              <p className="mt-1 text-[9px] text-muted-foreground">
+                Copper = net out · Teal = net in
+              </p>
+            )}
           </div>
         )}
         <ChoroplethMap
           data={current?.data ?? []}
           unit={unit}
           decimals={decimals}
-          scaleType={cinemaScale}
+          scaleType={resolvedScale}
           mid={mid}
           domain={domain}
           height={height}
-          variant="cinema"
+          variant={cinema ? "cinema" : "immersive"}
           hideLegend
         />
       </div>
