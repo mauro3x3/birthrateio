@@ -27,8 +27,8 @@
     "RUS": {
       "fertility": "Rosstat — total fertility rate by federal subject (Суммарный коэффициент рождаемости), via Wikipedia compilation 2020–2025",
       "fertilityUrl": "https://en.wikipedia.org/wiki/List_of_federal_subjects_of_Russia_by_total_fertility_rate",
-      "population": "Rosstat estimated resident population of federal subjects",
-      "populationUrl": "https://rosstat.gov.ru"
+      "population": "Rosstat estimated resident population of federal subjects (Wikipedia compilation, 1 Jan 2025 estimate; Crimea/Sevastopol from Russian Wikipedia table)",
+      "populationUrl": "https://en.wikipedia.org/wiki/List_of_federal_subjects_of_Russia_by_population"
     }
   },
   "divisions": [
@@ -8539,182 +8539,182 @@
     ],
     "russia-moscow": [
       {
-        "year": 2023,
-        "value": 13104177
+        "year": 2025,
+        "value": 13258262
       }
     ],
     "russia-saint-petersburg": [
       {
-        "year": 2023,
-        "value": 5600044
+        "year": 2025,
+        "value": 5645943
       }
     ],
     "russia-moscow-oblast": [
       {
-        "year": 2023,
-        "value": 8591736
+        "year": 2025,
+        "value": 8766594
       }
     ],
     "russia-krasnodar-krai": [
       {
-        "year": 2023,
-        "value": 5838497
+        "year": 2025,
+        "value": 5841846
       }
     ],
     "russia-sverdlovsk-oblast": [
       {
-        "year": 2023,
-        "value": 4239161
+        "year": 2025,
+        "value": 4218204
       }
     ],
     "russia-rostov-oblast": [
       {
-        "year": 2023,
-        "value": 4152325
+        "year": 2025,
+        "value": 4135018
       }
     ],
     "russia-bashkortostan": [
       {
-        "year": 2023,
-        "value": 4067688
+        "year": 2025,
+        "value": 4046094
       }
     ],
     "russia-tatarstan": [
       {
-        "year": 2023,
-        "value": 4004809
+        "year": 2025,
+        "value": 4016571
       }
     ],
     "russia-chelyabinsk-oblast": [
       {
-        "year": 2023,
-        "value": 3401221
+        "year": 2025,
+        "value": 3383188
       }
     ],
     "russia-nizhny-novgorod-oblast": [
       {
-        "year": 2023,
-        "value": 3082886
+        "year": 2025,
+        "value": 3037816
       }
     ],
     "russia-samara-oblast": [
       {
-        "year": 2023,
-        "value": 3125554
+        "year": 2025,
+        "value": 3108944
       }
     ],
     "russia-krasnoyarsk-krai": [
       {
-        "year": 2023,
-        "value": 2846104
+        "year": 2025,
+        "value": 2837374
       }
     ],
     "russia-dagestan": [
       {
-        "year": 2023,
-        "value": 3218134
+        "year": 2025,
+        "value": 3258993
       }
     ],
     "russia-stavropol-krai": [
       {
-        "year": 2023,
-        "value": 2907593
+        "year": 2025,
+        "value": 2883494
       }
     ],
     "russia-novosibirsk-oblast": [
       {
-        "year": 2023,
-        "value": 2794176
+        "year": 2025,
+        "value": 2784587
       }
     ],
     "russia-kemerovo-oblast": [
       {
-        "year": 2023,
-        "value": 2555649
+        "year": 2025,
+        "value": 2526384
       }
     ],
     "russia-perm-krai": [
       {
-        "year": 2023,
-        "value": 2508352
+        "year": 2025,
+        "value": 2482080
       }
     ],
     "russia-volgograd-oblast": [
       {
-        "year": 2023,
-        "value": 2470337
+        "year": 2025,
+        "value": 2435355
       }
     ],
     "russia-saratov-oblast": [
       {
-        "year": 2023,
-        "value": 2403655
+        "year": 2025,
+        "value": 2368387
       }
     ],
     "russia-tyumen-oblast": [
       {
-        "year": 2023,
-        "value": 3858831
+        "year": 2025,
+        "value": 1625129
       }
     ],
     "russia-irkutsk-oblast": [
       {
-        "year": 2023,
-        "value": 2344372
+        "year": 2025,
+        "value": 2316571
       }
     ],
     "russia-altai-krai": [
       {
-        "year": 2023,
-        "value": 2296350
+        "year": 2025,
+        "value": 2098979
       }
     ],
     "russia-voronezh-oblast": [
       {
-        "year": 2023,
-        "value": 2285404
+        "year": 2025,
+        "value": 2259610
       }
     ],
     "russia-orenburg-oblast": [
       {
-        "year": 2023,
-        "value": 1930224
+        "year": 2025,
+        "value": 1815655
       }
     ],
     "russia-omsk-oblast": [
       {
-        "year": 2023,
-        "value": 1860377
+        "year": 2025,
+        "value": 1805443
       }
     ],
     "russia-primorsky-krai": [
       {
-        "year": 2023,
-        "value": 1845509
+        "year": 2025,
+        "value": 1798047
       }
     ],
     "russia-leningrad-oblast": [
       {
-        "year": 2023,
-        "value": 2025863
+        "year": 2025,
+        "value": 2057708
       }
     ],
     "russia-khanty-mansi": [
       {
-        "year": 2023,
-        "value": 1730368
+        "year": 2025,
+        "value": 1779510
       }
     ],
     "russia-chechnya": [
       {
-        "year": 2023,
-        "value": 1552717
+        "year": 2025,
+        "value": 1575819
       }
     ],
     "russia-sakha": [
       {
-        "year": 2023,
-        "value": 1001684
+        "year": 2025,
+        "value": 1007058
       }
     ],
     "united-states-alabama": [
@@ -9837,6 +9837,336 @@
       {
         "year": 2024,
         "value": 587618
+      }
+    ],
+    "russia-belgorod-oblast": [
+      {
+        "year": 2025,
+        "value": 1481098
+      }
+    ],
+    "russia-tula-oblast": [
+      {
+        "year": 2025,
+        "value": 1455911
+      }
+    ],
+    "russia-udmurtia": [
+      {
+        "year": 2025,
+        "value": 1427018
+      }
+    ],
+    "russia-vladimir-oblast": [
+      {
+        "year": 2025,
+        "value": 1295930
+      }
+    ],
+    "russia-khabarovsk-krai": [
+      {
+        "year": 2025,
+        "value": 1273093
+      }
+    ],
+    "russia-penza-oblast": [
+      {
+        "year": 2025,
+        "value": 1225984
+      }
+    ],
+    "russia-tver-oblast": [
+      {
+        "year": 2025,
+        "value": 1189685
+      }
+    ],
+    "russia-yaroslavl-oblast": [
+      {
+        "year": 2025,
+        "value": 1179301
+      }
+    ],
+    "russia-ulyanovsk-oblast": [
+      {
+        "year": 2025,
+        "value": 1164837
+      }
+    ],
+    "russia-chuvashia": [
+      {
+        "year": 2025,
+        "value": 1159757
+      }
+    ],
+    "russia-bryansk-oblast": [
+      {
+        "year": 2025,
+        "value": 1132475
+      }
+    ],
+    "russia-kirov-oblast": [
+      {
+        "year": 2025,
+        "value": 1120178
+      }
+    ],
+    "russia-vologda-oblast": [
+      {
+        "year": 2025,
+        "value": 1114639
+      }
+    ],
+    "russia-lipetsk-oblast": [
+      {
+        "year": 2025,
+        "value": 1107812
+      }
+    ],
+    "russia-ryazan-oblast": [
+      {
+        "year": 2025,
+        "value": 1073981
+      }
+    ],
+    "russia-kaluga-oblast": [
+      {
+        "year": 2025,
+        "value": 1064747
+      }
+    ],
+    "russia-kursk-oblast": [
+      {
+        "year": 2025,
+        "value": 1050134
+      }
+    ],
+    "russia-tomsk-oblast": [
+      {
+        "year": 2025,
+        "value": 1039458
+      }
+    ],
+    "russia-kaliningrad-oblast": [
+      {
+        "year": 2025,
+        "value": 1033128
+      }
+    ],
+    "russia-zabaykalsky-krai": [
+      {
+        "year": 2025,
+        "value": 982525
+      }
+    ],
+    "russia-buryatia": [
+      {
+        "year": 2025,
+        "value": 970679
+      }
+    ],
+    "russia-arkhangelsk-oblast": [
+      {
+        "year": 2025,
+        "value": 947192
+      }
+    ],
+    "russia-tambov-oblast": [
+      {
+        "year": 2025,
+        "value": 946010
+      }
+    ],
+    "russia-astrakhan-oblast": [
+      {
+        "year": 2025,
+        "value": 945991
+      }
+    ],
+    "russia-kabardino-balkaria": [
+      {
+        "year": 2025,
+        "value": 908090
+      }
+    ],
+    "russia-ivanovo-oblast": [
+      {
+        "year": 2025,
+        "value": 897869
+      }
+    ],
+    "russia-smolensk-oblast": [
+      {
+        "year": 2025,
+        "value": 857847
+      }
+    ],
+    "russia-mordovia": [
+      {
+        "year": 2025,
+        "value": 758390
+      }
+    ],
+    "russia-amur-oblast": [
+      {
+        "year": 2025,
+        "value": 750870
+      }
+    ],
+    "russia-kurgan-oblast": [
+      {
+        "year": 2025,
+        "value": 744197
+      }
+    ],
+    "russia-komi": [
+      {
+        "year": 2025,
+        "value": 714391
+      }
+    ],
+    "russia-oryol-oblast": [
+      {
+        "year": 2025,
+        "value": 685693
+      }
+    ],
+    "russia-north-ossetia": [
+      {
+        "year": 2025,
+        "value": 678454
+      }
+    ],
+    "russia-mari-el": [
+      {
+        "year": 2025,
+        "value": 665983
+      }
+    ],
+    "russia-murmansk-oblast": [
+      {
+        "year": 2025,
+        "value": 650920
+      }
+    ],
+    "russia-pskov-oblast": [
+      {
+        "year": 2025,
+        "value": 574199
+      }
+    ],
+    "russia-novgorod-oblast": [
+      {
+        "year": 2025,
+        "value": 566745
+      }
+    ],
+    "russia-kostroma-oblast": [
+      {
+        "year": 2025,
+        "value": 560758
+      }
+    ],
+    "russia-ingushetia": [
+      {
+        "year": 2025,
+        "value": 534219
+      }
+    ],
+    "russia-khakassia": [
+      {
+        "year": 2025,
+        "value": 525451
+      }
+    ],
+    "russia-yamalo-nenets": [
+      {
+        "year": 2025,
+        "value": 521655
+      }
+    ],
+    "russia-karelia": [
+      {
+        "year": 2025,
+        "value": 518644
+      }
+    ],
+    "russia-adygea": [
+      {
+        "year": 2025,
+        "value": 501038
+      }
+    ],
+    "russia-karachay-cherkessia": [
+      {
+        "year": 2025,
+        "value": 468531
+      }
+    ],
+    "russia-sakhalin-oblast": [
+      {
+        "year": 2025,
+        "value": 456792
+      }
+    ],
+    "russia-tuva": [
+      {
+        "year": 2025,
+        "value": 338341
+      }
+    ],
+    "russia-kamchatka-krai": [
+      {
+        "year": 2025,
+        "value": 287949
+      }
+    ],
+    "russia-kalmykia": [
+      {
+        "year": 2025,
+        "value": 267376
+      }
+    ],
+    "russia-altai-republic": [
+      {
+        "year": 2025,
+        "value": 210099
+      }
+    ],
+    "russia-jewish-autonomous-oblast": [
+      {
+        "year": 2025,
+        "value": 144389
+      }
+    ],
+    "russia-magadan-oblast": [
+      {
+        "year": 2025,
+        "value": 134202
+      }
+    ],
+    "russia-chukotka": [
+      {
+        "year": 2025,
+        "value": 47902
+      }
+    ],
+    "russia-nenets": [
+      {
+        "year": 2025,
+        "value": 41829
+      }
+    ],
+    "russia-crimea": [
+      {
+        "year": 2025,
+        "value": 1902249
+      }
+    ],
+    "russia-sevastopol": [
+      {
+        "year": 2025,
+        "value": 558302
       }
     ]
   },

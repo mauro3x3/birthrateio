@@ -3,6 +3,7 @@
  * Prefer official audits. Do not invent pension-line items that are not on file.
  */
 import { USA_BRIEFING_EXTRAS, type UsaBriefingExtras } from "./usa-briefing-extras";
+import { migrationFiscalNoteForCountry } from "./europe-immigrant-fiscal-data";
 
 export type BriefingExtras = {
   budget?: UsaBriefingExtras["budget"];
@@ -21,20 +22,27 @@ export const GENERIC_MIGRATION_FISCAL = `The fiscal effect of immigration depend
 const BY_ISO3: Record<string, BriefingExtras> = {
   USA: {
     budget: USA_BRIEFING_EXTRAS.budget,
+    // Prefer National Academies lifetime framing; OECD row still available on /migration/fiscal-balance
     migrationFiscal: USA_BRIEFING_EXTRAS.migrationFiscal,
     compositionWhy: USA_BRIEFING_EXTRAS.compositionWhy,
   },
 };
 
 export function getBriefingExtras(iso3: string): BriefingExtras {
-  const curated = BY_ISO3[iso3.toUpperCase()];
+  const code = iso3.toUpperCase();
+  const curated = BY_ISO3[code];
+  const fromPack = migrationFiscalNoteForCountry(code);
+
   return {
     budget: curated?.budget,
-    migrationFiscal: curated?.migrationFiscal ?? {
-      note: GENERIC_MIGRATION_FISCAL,
-      source: "birthrate.io briefing note (age/education framing; not a country audit)",
-      sourceUrl: "https://birthrate.io/why",
-    },
+    migrationFiscal:
+      curated?.migrationFiscal ??
+      fromPack ?? {
+        note: GENERIC_MIGRATION_FISCAL,
+        source:
+          "birthrate.io briefing note (age/education framing; not a country audit)",
+        sourceUrl: "https://birthrate.io/why",
+      },
     compositionWhy: curated?.compositionWhy ?? GENERIC_COMPOSITION_WHY,
   };
 }

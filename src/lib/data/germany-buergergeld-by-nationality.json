@@ -1,0 +1,40 @@
+{
+  "title": "Germany — Bürgergeld (SGB II) rate by nationality",
+  "asOf": "2025-02",
+  "publishedIn": "Migrationsmonitor Mai 2025 (3-month lag)",
+  "source": "Bundesagentur für Arbeit, Migrationsmonitor — Tabelle 1.3 (SGB II-Quote) & Tabelle 4.1 / Zeitreihe rT4_1 (ELB)",
+  "sourceUrl": "https://statistik.arbeitsagentur.de/DE/Navigation/Statistiken/Themen-im-Fokus/Migration/Personen-nach-Staatsangehoerigkeiten/Personen-nach-Staatsangehoerigkeiten-Nav.html",
+  "definition": "SGB II-Quote = Leistungsberechtigte (Bürgergeld) as a share of each nationality’s population in Germany (Germans: Bevölkerungsfortschreibung ages 0 to under statutory retirement age; foreigners: AZR ages 0 to under 65). This is a within-group rate, not the share of all recipients.",
+  "note": "Viral charts titled “Bürgergeld-Empfänger nach Staatsangehörigkeit” often reuse these rates while implying they are shares of all recipients. They are not: rates do not sum to 100%. In February 2025, German nationals were still 52.5% of erwerbsfähige Leistungsberechtigte (ELB).",
+  "rates": [
+    { "nationality": "Ukraine", "sgb2Rate": 59.0 },
+    { "nationality": "Syria", "sgb2Rate": 53.8 },
+    { "nationality": "Afghanistan", "sgb2Rate": 47.1 },
+    { "nationality": "Somalia", "sgb2Rate": 39.6 },
+    { "nationality": "Iraq", "sgb2Rate": 38.2 },
+    { "nationality": "Eritrea", "sgb2Rate": 30.1 },
+    { "nationality": "Nigeria", "sgb2Rate": 24.0 },
+    { "nationality": "Iran", "sgb2Rate": 19.4 },
+    { "nationality": "Pakistan", "sgb2Rate": 15.6 },
+    { "nationality": "Germany", "sgb2Rate": 5.4 }
+  ],
+  "chartNote": "February 2025 SGB II-Quote from BA Migrationsmonitor time series. A widely shared graphic showed Germany at 5.3% (matching Jan/Mar/May 2025); the February figure is 5.4%.",
+  "elbRecipients": {
+    "month": "2025-02",
+    "total": 3970638,
+    "rows": [
+      { "nationality": "Germany", "count": 2084283, "shareOfElb": 52.5 },
+      { "nationality": "Foreign nationals", "count": 1886325, "shareOfElb": 47.5 },
+      { "nationality": "Ukraine", "count": 506250, "shareOfElb": 12.7 },
+      { "nationality": "Syria", "count": 351556, "shareOfElb": 8.9 },
+      { "nationality": "Afghanistan", "count": 135171, "shareOfElb": 3.4 },
+      { "nationality": "Iraq", "count": 69762, "shareOfElb": 1.8 },
+      { "nationality": "Iran", "count": 24404, "shareOfElb": 0.6 },
+      { "nationality": "Somalia", "count": 14467, "shareOfElb": 0.4 },
+      { "nationality": "Eritrea", "count": 14087, "shareOfElb": 0.4 },
+      { "nationality": "Pakistan", "count": 11830, "shareOfElb": 0.3 },
+      { "nationality": "Nigeria", "count": 9985, "shareOfElb": 0.3 }
+    ],
+    "note": "Erwerbsfähige Leistungsberechtigte (ELB) — working-age Bürgergeld recipients. German share of ELB was 52.5% in February 2025 (BA rT4_1)."
+  }
+}

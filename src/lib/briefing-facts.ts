@@ -35,6 +35,10 @@ import {
   TFR_US_HISPANIC_ORIGIN,
 } from "@/lib/sources/tfr-by-group-data";
 import { getBriefingExtras, type BriefingExtras } from "@/lib/sources/briefing-extras";
+import {
+  getOecdImmigrantFiscal,
+  getPolaniBreakeven,
+} from "@/lib/sources/europe-immigrant-fiscal-data";
 import type { PyramidRow } from "@/components/charts/population-pyramid";
 
 export type BriefingNeighbor = {
@@ -438,6 +442,22 @@ export async function getBriefingFacts(
     }
   }
 
+  const polaniBreak = getPolaniBreakeven(country.iso3);
+  const oecdFiscal = getOecdImmigrantFiscal(country.iso3);
+  if (polaniBreak) {
+    callouts.push({
+      label: "Fiscal break-even",
+      value: `${polaniBreak.percentile}th pct`,
+      hint: `Polani 2026 · main-earner pay percentile for a couple+2 kids arriving at 30 to break even over 60 years.`,
+    });
+  } else if (oecdFiscal) {
+    callouts.push({
+      label: "Immigrant fiscal (OECD)",
+      value: `${oecdFiscal.foreignA.toFixed(1)}% GDP`,
+      hint: `Spec A 2006–18 · individual taxes/benefits. Spec C2 (full public goods): ${oecdFiscal.foreignC2.toFixed(2)}% GDP.`,
+    });
+  }
+
   const map = getCountryMapEntry(country.iso3);
   const hasTfr = (seriesMap[SLUG.fertility] ?? []).length > 1;
   const hasPop = (seriesMap[SLUG.population] ?? []).length > 1;
@@ -511,6 +531,9 @@ export async function getBriefingFacts(
           !!emigrationDestinations &&
           emigrationDestinations.rows.length >= 2) ||
         (c.id === "budget" && !!extras.budget) ||
+        (c.id === "immigrantFiscal" &&
+          (!!getOecdImmigrantFiscal(country.iso3) ||
+            !!getPolaniBreakeven(country.iso3))) ||
         (c.id === "health" && hasHealth) ||
         (c.id === "share65" && hasShare65) ||
         (c.id === "dependency" && hasDep) ||

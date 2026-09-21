@@ -1,0 +1,19 @@
+{
+  "title": "India population \u2014 WorldPop dot density",
+  "source": "WorldPop R2025A constrained 1 km UN-adjusted population counts for India (2025).",
+  "sourceUrl": "https://hub.worldpop.org/geodata/listing?id=135",
+  "year": 2025,
+  "resolution": "1km",
+  "peoplePerDot": 100.0,
+  "pmtilesPath": "/tiles/india-population.pmtiles",
+  "layer": "population",
+  "note": "Dots are placed randomly inside WorldPop grid cells. This is modeled population, not a census microdata point map. At 1:100, each dot stands for about 100 people so the national tileset stays browser-friendly; rebuild with --people-per-dot 1 for a full 1:1 map.",
+  "bounds": [
+    68.19,
+    6.75,
+    97.39,
+    35.51
+  ],
+  "minZoom": 3,
+  "maxZoom": 12
+}

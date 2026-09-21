@@ -136,6 +136,16 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Who makes up a region's people, and who makes up its births",
       },
       {
+        title: "India population dots",
+        href: "/population/india-dots",
+        note: "WorldPop PMTiles night-lights style map",
+      },
+      {
+        title: "Compare regional populations",
+        href: "/population/compare",
+        note: "Paint provinces into groups and download a map",
+      },
+      {
         title: "Workers vs retirees",
         href: "/workers-retirees",
         note: "Working-age and 65+ through 2060",
@@ -179,6 +189,16 @@ export const TOPIC_META: TopicMeta[] = [
         title: "Population",
         href: "/population",
         note: "How migration changes population totals",
+      },
+      {
+        title: "Germany Bürgergeld by nationality",
+        href: "/migration/buergergeld",
+        note: "BA SGB II rates within nationality, plus ELB shares",
+      },
+      {
+        title: "Immigrant fiscal break-even",
+        href: "/migration/fiscal-balance",
+        note: "UK vs DE/ES/FR lifetime balance by pay percentile",
       },
       {
         title: "Workers vs retirees",
@@ -294,6 +314,11 @@ export const TOPIC_META: TopicMeta[] = [
         title: "Migration",
         href: "/migration",
         note: "Foreign-born population for context",
+      },
+      {
+        title: "Germany Bürgergeld by nationality",
+        href: "/migration/buergergeld",
+        note: "Citizenship rates vs share of recipients",
       },
       {
         title: "US demographics",

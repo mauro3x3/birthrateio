@@ -33,9 +33,9 @@ export const USA_BRIEFING_EXTRAS: UsaBriefingExtras = {
   },
   migrationFiscal:
     {
-      note: "The National Academies (2017) found that first-generation immigrants, on average, cost more in state and local services than they pay in taxes over a 75-year horizon, while their U.S.-born children are strongly net fiscal contributors. Federal accounts look different (payroll taxes, income taxes). Age and education of arrivals drive the result more than nativity alone — working-age, higher-educated arrivals pay more; older and lower-educated arrivals draw more. This is an accounting result, not a verdict on whether immigration should rise or fall.",
+      note: "The National Academies (2017) found that first-generation immigrants, on average, cost more in state and local services than they pay in taxes over a 75-year horizon, while their U.S.-born children are strongly net fiscal contributors. Federal accounts look different (payroll taxes, income taxes). Age and education of arrivals drive the result more than nativity alone — working-age, higher-educated arrivals pay more; older and lower-educated arrivals draw more. OECD IMO 2021 (2006–18) puts the U.S. foreign-born net contribution at about +1.0% of GDP on individual tax/benefit items (Spec A) and −0.68% of GDP once all public goods are included (Spec C2). This is an accounting result, not a verdict on whether immigration should rise or fall. Charts: /migration/fiscal-balance.",
       source:
-        "National Academies of Sciences, Engineering, and Medicine, The Economic and Fiscal Consequences of Immigration (2017)",
+        "National Academies of Sciences, Engineering, and Medicine, The Economic and Fiscal Consequences of Immigration (2017); OECD International Migration Outlook 2021, Table 4.1",
       sourceUrl: "https://nap.nationalacademies.org/catalog/23550/the-economic-and-fiscal-consequences-of-immigration",
     },
   compositionWhy: `Race and Hispanic origin are census categories, not destiny — but they shape where people live, how old each group is, and how fast each group grows. Non-Hispanic White Americans are older on average than Hispanic and Black Americans, so their share of births is already lower than their share of residents. That feeds school rolls, local politics, and the future electorate without anyone “planning” it.

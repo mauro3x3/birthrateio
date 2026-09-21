@@ -26,6 +26,7 @@ export type BriefingChartId =
   | "migrationOrigins"
   | "migrationDestinations"
   | "budget"
+  | "immigrantFiscal"
   | "health"
   | "dependency"
   | "share65";
@@ -219,6 +220,14 @@ export const BRIEFING_CHARTS: BriefingChart[] = [
     description: "Curated pension and outlay figures where published (e.g. US CBO).",
     defaultOn: true,
     defaultAfter: "economy",
+  },
+  {
+    id: "immigrantFiscal",
+    label: "Immigrant fiscal impact",
+    description:
+      "OECD net contribution (% GDP) and/or Polani lifetime break-even percentile where available.",
+    defaultOn: true,
+    defaultAfter: "migration",
   },
   {
     id: "health",

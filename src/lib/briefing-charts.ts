@@ -2,6 +2,11 @@ import type { AssistantChartSpec } from "@/components/assistant-chart";
 import type { BriefingChartId, BriefingPlaceAfter } from "@/lib/briefing-modules";
 import { BRIEFING_CHARTS } from "@/lib/briefing-modules";
 import type { BriefingFacts } from "@/lib/briefing-facts";
+import {
+  EUROPE_IMMIGRANT_FISCAL,
+  getOecdImmigrantFiscal,
+  getPolaniBreakeven,
+} from "@/lib/sources/europe-immigrant-fiscal-data";
 
 function lineChart(
   id: BriefingChartId,
@@ -318,6 +323,58 @@ export function briefingChartsFromFacts(
       note: b.source,
       decimals: 0,
     });
+  }
+
+  if (want.has("immigrantFiscal")) {
+    const oecd = getOecdImmigrantFiscal(facts.iso3);
+    const polani = getPolaniBreakeven(facts.iso3);
+    if (polani) {
+      out.push({
+        id: "immigrantFiscal",
+        after: afterOf("immigrantFiscal"),
+        type: "bar",
+        title: "Lifetime fiscal break-even by pay percentile",
+        subtitle: `Couple + 2 children arriving at 30 · Polani 2026 · ${polani.country} highlighted`,
+        xKey: "country",
+        layout: "horizontal",
+        series: [{ key: "percentile", label: "Break-even percentile" }],
+        data: EUROPE_IMMIGRANT_FISCAL.breakEven.map((r) => ({
+          country: r.country,
+          percentile: r.percentile,
+        })),
+        unit: "percentile",
+        note: `${EUROPE_IMMIGRANT_FISCAL.source}. ${facts.name} break-even ≈ ${polani.percentile}th percentile.`,
+        decimals: 0,
+      });
+    } else if (oecd) {
+      out.push({
+        id: "immigrantFiscal",
+        after: afterOf("immigrantFiscal"),
+        type: "bar",
+        title: `Immigrant vs native net fiscal contribution, ${facts.name}`,
+        subtitle: "OECD IMO 2021 · % of GDP · 2006–18 average",
+        xKey: "spec",
+        series: [
+          { key: "Immigrants", label: "Foreign-born" },
+          { key: "Natives", label: "Native-born" },
+        ],
+        data: [
+          {
+            spec: "Individual items (A)",
+            Immigrants: oecd.foreignA,
+            Natives: oecd.nativeA,
+          },
+          {
+            spec: "All public goods (C2)",
+            Immigrants: oecd.foreignC2,
+            Natives: oecd.nativeC2,
+          },
+        ],
+        unit: "% of GDP",
+        note: "OECD International Migration Outlook 2021, Table 4.1. Spec A = taxes/benefits only; C2 includes congestible and pure public goods.",
+        decimals: 2,
+      });
+    }
   }
 
   if (want.has("population")) {

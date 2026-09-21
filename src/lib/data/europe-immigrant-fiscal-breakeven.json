@@ -1,0 +1,157 @@
+{
+  "title": "Immigrant fiscal break-even by pay percentile",
+  "subtitle": "60-year fiscal balance for a couple arriving at age 30, by main earner’s pay percentile",
+  "source": "Usama Polani, Migration, Household Employment & Europe’s Public Finances (2026), as charted by John Burn-Murdoch / Financial Times",
+  "sourceUrl": "https://siepr.stanford.edu/people/usama-polani-0",
+  "definition": "Hypothetical immigrant couple with two children; second adult earns two-thirds of the primary earner’s pay. All countries share the same cohort characteristics so differences isolate the fiscal system (taxes, benefits, pensions), not migrant selection.",
+  "note": "Curve values are digitized from the FT graphic of Polani (2026) and rounded to $10k; treat them as approximate. The headline result is the break-even percentile — the pay rank at which the 60-year balance crosses zero.",
+  "unit": "$000s",
+  "unitLabel": "60-year fiscal balance ($000s)",
+  "assumptions": [
+    "Couple arrives at age 30",
+    "Two children",
+    "Second adult earns two-thirds of primary earner pay",
+    "Same hypothetical cohort in every country"
+  ],
+  "breakEven": [
+    { "country": "Germany", "percentile": 30, "note": "Earliest break-even of the four" },
+    { "country": "Spain", "percentile": 37 },
+    { "country": "France", "percentile": 47 },
+    { "country": "UK", "percentile": 55, "note": "Highest earnings bar among the four" }
+  ],
+  "series": [
+    {
+      "percentile": 10,
+      "Germany": -300,
+      "Spain": -250,
+      "France": -380,
+      "UK": -500
+    },
+    {
+      "percentile": 15,
+      "Germany": -220,
+      "Spain": -200,
+      "France": -330,
+      "UK": -440
+    },
+    {
+      "percentile": 20,
+      "Germany": -150,
+      "Spain": -150,
+      "France": -270,
+      "UK": -380
+    },
+    {
+      "percentile": 25,
+      "Germany": -70,
+      "Spain": -110,
+      "France": -220,
+      "UK": -330
+    },
+    {
+      "percentile": 30,
+      "Germany": 0,
+      "Spain": -70,
+      "France": -170,
+      "UK": -280
+    },
+    {
+      "percentile": 35,
+      "Germany": 120,
+      "Spain": -20,
+      "France": -120,
+      "UK": -220
+    },
+    {
+      "percentile": 37,
+      "Germany": 160,
+      "Spain": 0,
+      "France": -100,
+      "UK": -200
+    },
+    {
+      "percentile": 40,
+      "Germany": 220,
+      "Spain": 60,
+      "France": -70,
+      "UK": -160
+    },
+    {
+      "percentile": 45,
+      "Germany": 340,
+      "Spain": 160,
+      "France": -20,
+      "UK": -90
+    },
+    {
+      "percentile": 47,
+      "Germany": 390,
+      "Spain": 200,
+      "France": 0,
+      "UK": -70
+    },
+    {
+      "percentile": 50,
+      "Germany": 450,
+      "Spain": 260,
+      "France": 70,
+      "UK": -40
+    },
+    {
+      "percentile": 55,
+      "Germany": 560,
+      "Spain": 360,
+      "France": 180,
+      "UK": 0
+    },
+    {
+      "percentile": 60,
+      "Germany": 680,
+      "Spain": 470,
+      "France": 290,
+      "UK": 120
+    },
+    {
+      "percentile": 65,
+      "Germany": 820,
+      "Spain": 590,
+      "France": 410,
+      "UK": 260
+    },
+    {
+      "percentile": 70,
+      "Germany": 950,
+      "Spain": 710,
+      "France": 540,
+      "UK": 400
+    },
+    {
+      "percentile": 75,
+      "Germany": 1080,
+      "Spain": 830,
+      "France": 680,
+      "UK": 560
+    },
+    {
+      "percentile": 80,
+      "Germany": 1200,
+      "Spain": 940,
+      "France": 820,
+      "UK": 720
+    },
+    {
+      "percentile": 85,
+      "Germany": 1300,
+      "Spain": 1020,
+      "France": 960,
+      "UK": 900
+    },
+    {
+      "percentile": 90,
+      "Germany": 1400,
+      "Spain": 1100,
+      "France": 1080,
+      "UK": 1050
+    }
+  ]
+}

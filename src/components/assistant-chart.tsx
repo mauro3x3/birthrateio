@@ -69,11 +69,23 @@ function domainFromZero(
   headroom = 1.04,
 ): [number, number] {
   const finite = values.filter((v) => Number.isFinite(v));
-  const hi = Math.max(0, ...finite, referenceY ?? 0);
-  if (!Number.isFinite(hi) || hi === 0) return [0, 1];
-  const step = niceStep(hi / 5);
-  const top = Math.ceil((hi * headroom) / step) * step;
-  return [0, Number.isFinite(top) && top > 0 ? top : hi * 1.1];
+  if (finite.length === 0) return [0, 1];
+  const loRaw = Math.min(0, ...finite, referenceY ?? 0);
+  const hiRaw = Math.max(0, ...finite, referenceY ?? 0);
+  if (loRaw === 0 && hiRaw === 0) return [0, 1];
+  if (loRaw < 0) {
+    const span = Math.max(hiRaw - loRaw, Math.abs(loRaw), Math.abs(hiRaw), 1e-6);
+    const step = niceStep(span / 5);
+    const bottom = Math.floor((loRaw * headroom) / step) * step;
+    const top = Math.ceil((hiRaw * headroom) / step) * step;
+    return [
+      Number.isFinite(bottom) ? bottom : loRaw * 1.1,
+      Number.isFinite(top) && top > bottom ? top : hiRaw * 1.1 || 1,
+    ];
+  }
+  const step = niceStep(hiRaw / 5);
+  const top = Math.ceil((hiRaw * headroom) / step) * step;
+  return [0, Number.isFinite(top) && top > 0 ? top : hiRaw * 1.1];
 }
 
 export function AssistantChart({

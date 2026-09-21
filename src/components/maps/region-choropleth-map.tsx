@@ -712,8 +712,12 @@ export function RegionChoroplethMap({
   onRegionActivate,
   combineSelection = false,
   selectedValue = null,
+  fillForId,
+  geoData: geoDataProp,
 }: {
-  geoUrl: string;
+  geoUrl?: string;
+  /** When set, skip fetch and use this FeatureCollection directly. */
+  geoData?: GeoJsonObject | null;
   data: RegionChoroplethDatum[];
   colorFor: (value: number) => string;
   unit?: string;
@@ -756,9 +760,13 @@ export function RegionChoroplethMap({
   combineSelection?: boolean;
   /** Aggregate value for the combined blob fill + label. */
   selectedValue?: number | null;
+  /** Override choropleth fill by region id (e.g. paint groups). */
+  fillForId?: (id: string) => string | undefined;
 }) {
   const router = useRouter();
-  const [geo, setGeo] = React.useState<GeoJsonObject | null>(null);
+  const [geo, setGeo] = React.useState<GeoJsonObject | null>(
+    geoDataProp ?? null,
+  );
   const geoJsonRef = React.useRef<L.GeoJSON | null>(null);
   const cinema = variant === "cinema";
   const border = countryBorderStyle(cinema ? "cinema" : "light");
@@ -766,6 +774,14 @@ export function RegionChoroplethMap({
     oceanColor ?? (cinema ? MAP_OCEAN.cinema : MAP_OCEAN.light);
 
   React.useEffect(() => {
+    if (geoDataProp) {
+      setGeo(normalizeAntimeridianGeo(geoDataProp));
+      return;
+    }
+    if (!geoUrl) {
+      setGeo(null);
+      return;
+    }
     let active = true;
     setGeo(null);
     fetch(geoUrl)
@@ -779,7 +795,7 @@ export function RegionChoroplethMap({
     return () => {
       active = false;
     };
-  }, [geoUrl]);
+  }, [geoUrl, geoDataProp]);
 
   const filterSet = React.useMemo(() => {
     if (!filterIds?.length) return null;
@@ -855,14 +871,17 @@ export function RegionChoroplethMap({
       const id = featureId(feature);
       const datum = id ? byId.get(id) : undefined;
       const selected = Boolean(id && selectedSet.has(id));
+      const painted = id ? fillForId?.(id) : undefined;
       const fillColor =
         blobMode && selected && blobFill
           ? blobFill
-          : datum
-            ? colorFor(datum.value)
-            : cinema
-              ? "#161616"
-              : "rgba(120, 130, 145, 0.22)";
+          : painted
+            ? painted
+            : datum
+              ? colorFor(datum.value)
+              : cinema
+                ? "#161616"
+                : "rgba(120, 130, 145, 0.22)";
       return {
         fillColor,
         fillOpacity: blobMode && !selected ? 0.78 : 1,
@@ -889,6 +908,7 @@ export function RegionChoroplethMap({
       cinema,
       colorFor,
       featureId,
+      fillForId,
       selectedSet,
     ],
   );

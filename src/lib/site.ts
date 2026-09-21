@@ -104,6 +104,12 @@ export const navTopics: NavTopic[] = [
         description: "Population levels, growth, and projections",
       },
       {
+        title: "Compare regions",
+        href: "/population/compare",
+        description:
+          "Paint provinces into groups, sum populations, download a map",
+      },
+      {
         title: "Where the births are",
         href: "/population/shares",
         description:

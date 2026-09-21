@@ -154,6 +154,46 @@ export default async function PopulationPage() {
       </section>
 
       <section>
+        <SectionHeading
+          id="india-dots"
+          title="India as population dots"
+        />
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          WorldPop 2025 grid → MapLibre + PMTiles. Each glowing point is a
+          modeled cluster of people; zoom in and the tiles stream without a
+          tile server.
+        </p>
+        <p className="mt-3">
+          <Link
+            href="/population/india-dots"
+            className="link-editorial font-medium"
+          >
+            Open the India population map
+          </Link>
+        </p>
+      </section>
+
+      <section>
+        <SectionHeading
+          id="compare-regions"
+          title="Compare regions yourself"
+        />
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          Paint provinces, oblasts, or states into color groups, sum their
+          populations, and download a social-ready image — the Far East vs
+          northern China contrast, or your own.
+        </p>
+        <p className="mt-3">
+          <Link
+            href="/population/compare"
+            className="link-editorial font-medium"
+          >
+            Open the region compare map
+          </Link>
+        </p>
+      </section>
+
+      <section>
         <SectionHeading id="growth-calculator" title="Growth calculator" />
         <div className="mt-5">
           <PopulationCalculator
