@@ -100,6 +100,8 @@ export function MultiSeriesChart({
   xKey = "year",
   xTickFormatter,
   tooltipLabelFormatter,
+  xTickFormat,
+  tooltipLabelFormat,
   showValues: showValuesProp,
   callouts,
   endLabelStyle = "auto",
@@ -114,8 +116,14 @@ export function MultiSeriesChart({
   /** Draw a year marker where one series overtakes another. */
   markCrossing?: { from: string; to: string };
   xKey?: string;
+  /** Client-only formatter. Prefer `xTickFormat` from Server Components. */
   xTickFormatter?: (value: number | string) => string;
+  /** Client-only formatter. Prefer `tooltipLabelFormat` from Server Components. */
   tooltipLabelFormatter?: (value: number | string) => string;
+  /** Serializable axis label preset (safe across the RSC boundary). */
+  xTickFormat?: "ordinal-th";
+  /** Serializable tooltip label preset (safe across the RSC boundary). */
+  tooltipLabelFormat?: "ordinal-th-pay";
   /** Override ChartCard “Show numbers” context. */
   showValues?: boolean;
   /** Peak / landmark values drawn on the line (Datawrapper-style). */
@@ -127,6 +135,14 @@ export function MultiSeriesChart({
   endLabelStyle?: "auto" | "datawrapper";
 }) {
   const showValues = useChartShowValues(showValuesProp);
+  const formatXTick =
+    xTickFormatter ??
+    (xTickFormat === "ordinal-th" ? (v: number | string) => `${v}th` : undefined);
+  const formatTooltipLabel =
+    tooltipLabelFormatter ??
+    (tooltipLabelFormat === "ordinal-th-pay"
+      ? (v: number | string) => `${v}th pay percentile`
+      : undefined);
   const datawrapper = endLabelStyle === "datawrapper";
   if (!data || data.length === 0) {
     return (
@@ -235,7 +251,7 @@ export function MultiSeriesChart({
             axisLine={{ stroke: "#cbd5e1", strokeWidth: 1 }}
             minTickGap={28}
             interval={sparse && !numericX ? 0 : undefined}
-            tickFormatter={xTickFormatter}
+            tickFormatter={formatXTick}
           />
           <YAxis
             tickFormatter={fmt}
@@ -254,7 +270,7 @@ export function MultiSeriesChart({
                 {...props}
                 unit={unit}
                 decimals={decimals}
-                labelFormatter={tooltipLabelFormatter}
+                labelFormatter={formatTooltipLabel}
               />
             )}
           />

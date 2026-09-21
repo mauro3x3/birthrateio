@@ -181,8 +181,8 @@ export default function ImmigrantFiscalBalancePage() {
                 unit={polani.unitLabel}
                 referenceY={0}
                 referenceLabel="Break-even"
-                xTickFormatter={(v) => `${v}th`}
-                tooltipLabelFormatter={(v) => `${v}th pay percentile`}
+                xTickFormat="ordinal-th"
+                tooltipLabelFormat="ordinal-th-pay"
                 endLabelStyle="datawrapper"
                 showValues
               />
