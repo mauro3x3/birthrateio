@@ -8,6 +8,9 @@ export type RegionalShareCountry = {
   cbr?: number;
   cbrYear?: number;
   births?: number;
+  birthYear?: number;
+  /** `wpp` = UN World Population Prospects birth count; `cbr` = pop × CBR fallback. */
+  birthMethod?: "wpp" | "cbr";
 };
 
 export type RegionalShareSet = {

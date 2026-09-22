@@ -1,369 +1,6 @@
 {
   "countries": [
     {
-      "slug": "denmark",
-      "iso3": "DNK",
-      "iso2": "DK",
-      "name": "Denmark",
-      "kicker": "Statistics Denmark 2026",
-      "title": "Ancestry",
-      "year": 2026,
-      "source": "Statistics Denmark — FOLK1C population by ancestry, 1 July 2026 (2026K2)",
-      "sourceUrl": "https://www.statistikbanken.dk/FOLK1C",
-      "nationalLabel": "Denmark",
-      "topicLabel": "Ancestry",
-      "groups": [
-        {
-          "id": "danish",
-          "shortLabel": "Danish origin",
-          "label": "Persons of Danish origin"
-        },
-        {
-          "id": "immigrant",
-          "shortLabel": "Immigrants",
-          "label": "Immigrants (born abroad, both parents born abroad)"
-        },
-        {
-          "id": "descendant",
-          "shortLabel": "Descendants",
-          "label": "Descendants of immigrants (born in Denmark, both parents born abroad)"
-        }
-      ],
-      "levels": [
-        {
-          "id": "region",
-          "label": "Region",
-          "kind": "Regions",
-          "geoUrl": "/geo/census/dnk-region.json"
-        },
-        {
-          "id": "kommune",
-          "label": "Kommune",
-          "kind": "Municipalities",
-          "geoUrl": "/geo/census/dnk-kommune.json"
-        }
-      ],
-      "dataUrl": "/data/census/dnk.json",
-      "fitMaxZoom": 8.2
-    },
-    {
-      "slug": "germany",
-      "iso3": "DEU",
-      "iso2": "DE",
-      "name": "Germany",
-      "kicker": "Census 2021",
-      "title": "Country of birth",
-      "year": 2021,
-      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
-      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
-      "nationalLabel": "Germany",
-      "topicLabel": "Country of birth",
-      "groups": [
-        {
-          "id": "native",
-          "shortLabel": "Native-born",
-          "label": "Born in this country"
-        },
-        {
-          "id": "other_eu",
-          "shortLabel": "Other EU",
-          "label": "Born in another EU country"
-        },
-        {
-          "id": "europe",
-          "shortLabel": "Rest of Europe",
-          "label": "Born in a European country outside the EU"
-        },
-        {
-          "id": "africa",
-          "shortLabel": "Africa",
-          "label": "Born in Africa"
-        },
-        {
-          "id": "asia",
-          "shortLabel": "Asia",
-          "label": "Born in Asia"
-        },
-        {
-          "id": "americas",
-          "shortLabel": "Americas & other",
-          "label": "Born in the Americas, Oceania, or unknown"
-        }
-      ],
-      "levels": [
-        {
-          "id": "nuts1",
-          "label": "Land",
-          "kind": "Länder",
-          "geoUrl": "/geo/census/deu-nuts1.json"
-        },
-        {
-          "id": "nuts3",
-          "label": "Kreis",
-          "kind": "Districts",
-          "geoUrl": "/geo/census/deu-nuts3.json"
-        }
-      ],
-      "dataUrl": "/data/census/deu.json",
-      "fitMaxZoom": 5.6
-    },
-    {
-      "slug": "spain",
-      "iso3": "ESP",
-      "iso2": "ES",
-      "name": "Spain",
-      "kicker": "Census 2021",
-      "title": "Country of birth",
-      "year": 2021,
-      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
-      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
-      "nationalLabel": "Spain",
-      "topicLabel": "Country of birth",
-      "groups": [
-        {
-          "id": "native",
-          "shortLabel": "Native-born",
-          "label": "Born in this country"
-        },
-        {
-          "id": "other_eu",
-          "shortLabel": "Other EU",
-          "label": "Born in another EU country"
-        },
-        {
-          "id": "europe",
-          "shortLabel": "Rest of Europe",
-          "label": "Born in a European country outside the EU"
-        },
-        {
-          "id": "africa",
-          "shortLabel": "Africa",
-          "label": "Born in Africa"
-        },
-        {
-          "id": "asia",
-          "shortLabel": "Asia",
-          "label": "Born in Asia"
-        },
-        {
-          "id": "americas",
-          "shortLabel": "Americas & other",
-          "label": "Born in the Americas, Oceania, or unknown"
-        }
-      ],
-      "levels": [
-        {
-          "id": "nuts2",
-          "label": "Community",
-          "kind": "Autonomous communities",
-          "geoUrl": "/geo/census/esp-nuts2.json"
-        },
-        {
-          "id": "nuts3",
-          "label": "Province",
-          "kind": "Provinces",
-          "geoUrl": "/geo/census/esp-nuts3.json"
-        }
-      ],
-      "dataUrl": "/data/census/esp.json",
-      "fitMaxZoom": 5.6
-    },
-    {
-      "slug": "russia",
-      "iso3": "RUS",
-      "iso2": "RU",
-      "name": "Russia",
-      "kicker": "Census 2021",
-      "title": "Ethnic group",
-      "year": 2021,
-      "source": "Rosstat — 2020 All-Russian Population Census (VPN-2020), Volume 5 Table 1, national composition by federal subject",
-      "sourceUrl": "https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami",
-      "nationalLabel": "Russia",
-      "topicLabel": "Ethnic group",
-      "groups": [
-        {
-          "id": "russian",
-          "shortLabel": "Russians",
-          "label": "Ethnic Russians (including Cossacks and Pomors)"
-        },
-        {
-          "id": "tatar",
-          "shortLabel": "Tatars",
-          "label": "Tatars (excluding Crimean Tatars)"
-        },
-        {
-          "id": "chechen",
-          "shortLabel": "Chechens",
-          "label": "Chechens"
-        },
-        {
-          "id": "bashkir",
-          "shortLabel": "Bashkirs",
-          "label": "Bashkirs"
-        },
-        {
-          "id": "other",
-          "shortLabel": "Other",
-          "label": "All other stated ethnic groups"
-        },
-        {
-          "id": "not_stated",
-          "shortLabel": "Not stated",
-          "label": "Ethnicity not stated on the census form"
-        }
-      ],
-      "levels": [
-        {
-          "id": "subject",
-          "label": "Subject",
-          "kind": "Federal subjects",
-          "geoUrl": "/geo/census/rus-subject.json"
-        }
-      ],
-      "dataUrl": "/data/census/rus.json",
-      "fitMaxZoom": 4.4
-    },
-    {
-      "slug": "france",
-      "iso3": "FRA",
-      "iso2": "FR",
-      "name": "France",
-      "kicker": "Census 2021",
-      "title": "Country of birth",
-      "year": 2021,
-      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
-      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
-      "nationalLabel": "France",
-      "topicLabel": "Country of birth",
-      "groups": [
-        {
-          "id": "native",
-          "shortLabel": "Native-born",
-          "label": "Born in this country"
-        },
-        {
-          "id": "other_eu",
-          "shortLabel": "Other EU",
-          "label": "Born in another EU country"
-        },
-        {
-          "id": "europe",
-          "shortLabel": "Rest of Europe",
-          "label": "Born in a European country outside the EU"
-        },
-        {
-          "id": "africa",
-          "shortLabel": "Africa",
-          "label": "Born in Africa"
-        },
-        {
-          "id": "asia",
-          "shortLabel": "Asia",
-          "label": "Born in Asia"
-        },
-        {
-          "id": "americas",
-          "shortLabel": "Americas & other",
-          "label": "Born in the Americas, Oceania, or unknown"
-        }
-      ],
-      "levels": [
-        {
-          "id": "nuts2",
-          "label": "Region",
-          "kind": "Regions",
-          "geoUrl": "/geo/census/fra-nuts2.json"
-        },
-        {
-          "id": "nuts3",
-          "label": "Department",
-          "kind": "Departments",
-          "geoUrl": "/geo/census/fra-nuts3.json"
-        }
-      ],
-      "dataUrl": "/data/census/fra.json",
-      "fitMaxZoom": 5.6
-    },
-    {
-      "slug": "italy",
-      "iso3": "ITA",
-      "iso2": "IT",
-      "name": "Italy",
-      "kicker": "Census 2021",
-      "title": "Country of birth",
-      "year": 2021,
-      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
-      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
-      "nationalLabel": "Italy",
-      "topicLabel": "Country of birth",
-      "groups": [
-        {
-          "id": "native",
-          "shortLabel": "Native-born",
-          "label": "Born in this country"
-        },
-        {
-          "id": "other_eu",
-          "shortLabel": "Other EU",
-          "label": "Born in another EU country"
-        },
-        {
-          "id": "europe",
-          "shortLabel": "Rest of Europe",
-          "label": "Born in a European country outside the EU"
-        },
-        {
-          "id": "africa",
-          "shortLabel": "Africa",
-          "label": "Born in Africa"
-        },
-        {
-          "id": "asia",
-          "shortLabel": "Asia",
-          "label": "Born in Asia"
-        },
-        {
-          "id": "americas",
-          "shortLabel": "Americas & other",
-          "label": "Born in the Americas, Oceania, or unknown"
-        }
-      ],
-      "levels": [
-        {
-          "id": "nuts2",
-          "label": "Region",
-          "kind": "Regions",
-          "geoUrl": "/geo/census/ita-nuts2.json"
-        },
-        {
-          "id": "nuts3",
-          "label": "Province",
-          "kind": "Provinces",
-          "geoUrl": "/geo/census/ita-nuts3.json"
-        }
-      ],
-      "dataUrl": "/data/census/ita.json",
-      "fitMaxZoom": 5.6
-    },
-    {
-      "slug": "uk",
-      "iso3": "GBR",
-      "iso2": "UK",
-      "name": "United Kingdom",
-      "kicker": "UK Census 2021",
-      "title": "Ethnic group",
-      "year": 2021,
-      "source": "ONS Census 2021 (TS021)",
-      "sourceUrl": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/3",
-      "nationalLabel": "England & Wales",
-      "topicLabel": "Ethnic group",
-      "builtin": "uk",
-      "groups": [],
-      "levels": [],
-      "dataUrl": "",
-      "fitMaxZoom": 9.5
-    },
-    {
       "slug": "austria",
       "iso3": "AUT",
       "iso2": "AT",
@@ -486,6 +123,62 @@
       "fitMaxZoom": 6.2
     },
     {
+      "slug": "brazil",
+      "iso3": "BRA",
+      "iso2": "BR",
+      "name": "Brazil",
+      "kicker": "Census 2022",
+      "title": "Colour / race",
+      "year": 2022,
+      "source": "IBGE — Censo Demográfico 2022, Tabela 3: população residente por cor ou raça e total de pessoas indígenas, Unidades da Federação.",
+      "sourceUrl": "https://ftp.ibge.gov.br/Censos/Censo_Demografico_2022/Populacao_por_cor_ou_raca_Resultados_do_universo/Tabelas_selecionadas/",
+      "nationalLabel": "Brazil",
+      "topicLabel": "Colour or race",
+      "mapMode": "share",
+      "groups": [
+        {
+          "id": "pardo",
+          "shortLabel": "Pardo",
+          "label": "Pardo (mixed / brown)",
+          "color": "#c9955a"
+        },
+        {
+          "id": "white",
+          "shortLabel": "White",
+          "label": "White (Branca)",
+          "color": "#e8dcc8"
+        },
+        {
+          "id": "black",
+          "shortLabel": "Black",
+          "label": "Black (Preta)",
+          "color": "#3d2b1f"
+        },
+        {
+          "id": "asian",
+          "shortLabel": "Asian",
+          "label": "Asian (Amarela)",
+          "color": "#d4a017"
+        },
+        {
+          "id": "indigenous",
+          "shortLabel": "Indigenous",
+          "label": "Indigenous (Indígena)",
+          "color": "#2f6fed"
+        }
+      ],
+      "levels": [
+        {
+          "id": "uf",
+          "label": "State",
+          "kind": "Unidades da Federação",
+          "geoUrl": "/geo/census/bra-uf.json"
+        }
+      ],
+      "dataUrl": "/data/census/bra.json",
+      "fitMaxZoom": 4.8
+    },
+    {
       "slug": "bulgaria",
       "iso3": "BGR",
       "iso2": "BG",
@@ -545,6 +238,110 @@
       ],
       "dataUrl": "/data/census/bgr.json",
       "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "canada",
+      "iso3": "CAN",
+      "iso2": "CA",
+      "name": "Canada",
+      "kicker": "Census 2021",
+      "title": "Visible minority",
+      "year": 2021,
+      "source": "Statistics Canada — 2021 Census, table 98-10-0308-01: Visible minority by immigrant status (Total), provinces and territories. Persons in private households.",
+      "sourceUrl": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=9810030801",
+      "nationalLabel": "Canada",
+      "topicLabel": "Visible minority",
+      "mapMode": "share",
+      "groups": [
+        {
+          "id": "not_vm",
+          "shortLabel": "Not visible minority",
+          "label": "Not a visible minority (mostly White + Indigenous)",
+          "color": "#c4b5a0"
+        },
+        {
+          "id": "south_asian",
+          "shortLabel": "South Asian",
+          "label": "South Asian",
+          "color": "#c23b2e"
+        },
+        {
+          "id": "chinese",
+          "shortLabel": "Chinese",
+          "label": "Chinese",
+          "color": "#d4a017"
+        },
+        {
+          "id": "black",
+          "shortLabel": "Black",
+          "label": "Black",
+          "color": "#1e3a5f"
+        },
+        {
+          "id": "filipino",
+          "shortLabel": "Filipino",
+          "label": "Filipino",
+          "color": "#2f6fed"
+        },
+        {
+          "id": "arab",
+          "shortLabel": "Arab",
+          "label": "Arab",
+          "color": "#0f766e"
+        },
+        {
+          "id": "latin_american",
+          "shortLabel": "Latin American",
+          "label": "Latin American",
+          "color": "#ea580c"
+        },
+        {
+          "id": "southeast_asian",
+          "shortLabel": "Southeast Asian",
+          "label": "Southeast Asian",
+          "color": "#65a30d"
+        },
+        {
+          "id": "west_asian",
+          "shortLabel": "West Asian",
+          "label": "West Asian",
+          "color": "#7c3aed"
+        },
+        {
+          "id": "korean",
+          "shortLabel": "Korean",
+          "label": "Korean",
+          "color": "#0891b2"
+        },
+        {
+          "id": "japanese",
+          "shortLabel": "Japanese",
+          "label": "Japanese",
+          "color": "#db2777"
+        },
+        {
+          "id": "multiple",
+          "shortLabel": "Multiple",
+          "label": "Multiple visible minorities",
+          "color": "#64748b"
+        },
+        {
+          "id": "vm_other",
+          "shortLabel": "Other VM",
+          "label": "Visible minority, n.i.e.",
+          "color": "#94a3b8"
+        }
+      ],
+      "levels": [
+        {
+          "id": "province",
+          "label": "Province",
+          "kind": "Provinces and territories",
+          "geoUrl": "/geo/census/can-province.json"
+        }
+      ],
+      "dataUrl": "/data/census/can.json",
+      "fitMaxZoom": 3.8
     },
     {
       "slug": "croatia",
@@ -663,6 +460,52 @@
       "fitMaxZoom": 5.6
     },
     {
+      "slug": "denmark",
+      "iso3": "DNK",
+      "iso2": "DK",
+      "name": "Denmark",
+      "kicker": "Statistics Denmark 2026",
+      "title": "Ancestry",
+      "year": 2026,
+      "source": "Statistics Denmark — FOLK1C population by ancestry, 1 July 2026 (2026K2)",
+      "sourceUrl": "https://www.statistikbanken.dk/FOLK1C",
+      "nationalLabel": "Denmark",
+      "topicLabel": "Ancestry",
+      "groups": [
+        {
+          "id": "danish",
+          "shortLabel": "Danish origin",
+          "label": "Persons of Danish origin"
+        },
+        {
+          "id": "immigrant",
+          "shortLabel": "Immigrants",
+          "label": "Immigrants (born abroad, both parents born abroad)"
+        },
+        {
+          "id": "descendant",
+          "shortLabel": "Descendants",
+          "label": "Descendants of immigrants (born in Denmark, both parents born abroad)"
+        }
+      ],
+      "levels": [
+        {
+          "id": "region",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/dnk-region.json"
+        },
+        {
+          "id": "kommune",
+          "label": "Kommune",
+          "kind": "Municipalities",
+          "geoUrl": "/geo/census/dnk-kommune.json"
+        }
+      ],
+      "dataUrl": "/data/census/dnk.json",
+      "fitMaxZoom": 8.2
+    },
+    {
       "slug": "estonia",
       "iso3": "EST",
       "iso2": "EE",
@@ -770,6 +613,128 @@
         }
       ],
       "dataUrl": "/data/census/fin.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "france",
+      "iso3": "FRA",
+      "iso2": "FR",
+      "name": "France",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "France",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/fra-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Department",
+          "kind": "Departments",
+          "geoUrl": "/geo/census/fra-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/fra.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "germany",
+      "iso3": "DEU",
+      "iso2": "DE",
+      "name": "Germany",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Germany",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts1",
+          "label": "Land",
+          "kind": "Länder",
+          "geoUrl": "/geo/census/deu-nuts1.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Kreis",
+          "kind": "Districts",
+          "geoUrl": "/geo/census/deu-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/deu.json",
       "fitMaxZoom": 5.6
     },
     {
@@ -895,6 +860,86 @@
       "fitMaxZoom": 5.6
     },
     {
+      "slug": "iran",
+      "iso3": "IRN",
+      "iso2": "IR",
+      "name": "Iran",
+      "kicker": "Ethnic map",
+      "title": "Ethnic groups",
+      "year": 2016,
+      "source": "National ethnic shares: CIA World Factbook (Iran — Ethnic groups). Province colours: plurality classification from Karami, S. (2025), “Spatial Analysis of Economic Indicators among Iranian-Islamic Provinces and Ethnicities,” Journal of Geography and Urban Research 1(1) — not an official SCI ethnicity census. Iran does not publish provincial ethnicity percentages. Religion pie: CIA World Factbook.",
+      "sourceUrl": "https://www.cia.gov/the-world-factbook/countries/iran/",
+      "nationalLabel": "Iran",
+      "topicLabel": "Ethnic group",
+      "mapMode": "plurality",
+      "groups": [
+        {
+          "id": "persian",
+          "shortLabel": "Persians",
+          "label": "Persians (incl. many Gilaki/Mazani speakers in national Factbook share)",
+          "color": "#c995b8"
+        },
+        {
+          "id": "azeris",
+          "shortLabel": "Azeris",
+          "label": "Azerbaijanis (Azeris)",
+          "color": "#7eb8d4"
+        },
+        {
+          "id": "kurds",
+          "shortLabel": "Kurds",
+          "label": "Kurds",
+          "color": "#8b6914"
+        },
+        {
+          "id": "lurs",
+          "shortLabel": "Lurs",
+          "label": "Lurs",
+          "color": "#5b8fa8"
+        },
+        {
+          "id": "gilaki_mazani",
+          "shortLabel": "Gilaki–Mazani",
+          "label": "Gilaki and Mazandarani (Caspian) — province map only; folded into Persians in Factbook %",
+          "color": "#b85c7a"
+        },
+        {
+          "id": "arabs",
+          "shortLabel": "Arabs",
+          "label": "Arabs",
+          "color": "#3d8b6e"
+        },
+        {
+          "id": "baluchs",
+          "shortLabel": "Baluchs",
+          "label": "Baluchs",
+          "color": "#c4a574"
+        },
+        {
+          "id": "turkmens",
+          "shortLabel": "Turkmens",
+          "label": "Turkmens and other Turkic tribes",
+          "color": "#5aae8b"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "label": "Other",
+          "color": "#94a3b8"
+        }
+      ],
+      "levels": [
+        {
+          "id": "ostan",
+          "label": "Province",
+          "kind": "Ostāns",
+          "geoUrl": "/geo/census/irn-ostan.json"
+        }
+      ],
+      "dataUrl": "/data/census/irn.json",
+      "fitMaxZoom": 5.8
+    },
+    {
       "slug": "ireland",
       "iso3": "IRL",
       "iso2": "IE",
@@ -947,6 +992,67 @@
         }
       ],
       "dataUrl": "/data/census/irl.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "italy",
+      "iso3": "ITA",
+      "iso2": "IT",
+      "name": "Italy",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Italy",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Region",
+          "kind": "Regions",
+          "geoUrl": "/geo/census/ita-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/ita-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/ita.json",
       "fitMaxZoom": 5.6
     },
     {
@@ -1359,6 +1465,61 @@
       "fitMaxZoom": 5.6
     },
     {
+      "slug": "russia",
+      "iso3": "RUS",
+      "iso2": "RU",
+      "name": "Russia",
+      "kicker": "Census 2021",
+      "title": "Ethnic group",
+      "year": 2021,
+      "source": "Rosstat — 2020 All-Russian Population Census (VPN-2020), Volume 5 Table 1, national composition by federal subject",
+      "sourceUrl": "https://rosstat.gov.ru/vpn/2020/Tom5_Nacionalnyj_sostav_i_vladenie_yazykami",
+      "nationalLabel": "Russia",
+      "topicLabel": "Ethnic group",
+      "groups": [
+        {
+          "id": "russian",
+          "shortLabel": "Russians",
+          "label": "Ethnic Russians (including Cossacks and Pomors)"
+        },
+        {
+          "id": "tatar",
+          "shortLabel": "Tatars",
+          "label": "Tatars (excluding Crimean Tatars)"
+        },
+        {
+          "id": "chechen",
+          "shortLabel": "Chechens",
+          "label": "Chechens"
+        },
+        {
+          "id": "bashkir",
+          "shortLabel": "Bashkirs",
+          "label": "Bashkirs"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "label": "All other stated ethnic groups"
+        },
+        {
+          "id": "not_stated",
+          "shortLabel": "Not stated",
+          "label": "Ethnicity not stated on the census form"
+        }
+      ],
+      "levels": [
+        {
+          "id": "subject",
+          "label": "Subject",
+          "kind": "Federal subjects",
+          "geoUrl": "/geo/census/rus-subject.json"
+        }
+      ],
+      "dataUrl": "/data/census/rus.json",
+      "fitMaxZoom": 4.4
+    },
+    {
       "slug": "slovakia",
       "iso3": "SVK",
       "iso2": "SK",
@@ -1472,6 +1633,123 @@
         }
       ],
       "dataUrl": "/data/census/svn.json",
+      "fitMaxZoom": 5.6
+    },
+    {
+      "slug": "south-africa",
+      "iso3": "ZAF",
+      "iso2": "ZA",
+      "name": "South Africa",
+      "kicker": "Census 2022",
+      "title": "Population group",
+      "year": 2022,
+      "source": "Statistics South Africa — Census 2022 population group by province (compiled via Wikipedia Demographics of South Africa; national Black African 81.4% matches Stats SA release).",
+      "sourceUrl": "https://www.statssa.gov.za/?page_id=4286&id=11321",
+      "nationalLabel": "South Africa",
+      "topicLabel": "Population group",
+      "mapMode": "share",
+      "groups": [
+        {
+          "id": "black",
+          "shortLabel": "Black African",
+          "label": "Black African",
+          "color": "#1e3a5f"
+        },
+        {
+          "id": "coloured",
+          "shortLabel": "Coloured",
+          "label": "Coloured",
+          "color": "#c9955a"
+        },
+        {
+          "id": "white",
+          "shortLabel": "White",
+          "label": "White",
+          "color": "#e8dcc8"
+        },
+        {
+          "id": "indian",
+          "shortLabel": "Indian/Asian",
+          "label": "Indian / Asian",
+          "color": "#d4a017"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "label": "Other",
+          "color": "#94a3b8"
+        }
+      ],
+      "levels": [
+        {
+          "id": "province",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/zaf-province.json"
+        }
+      ],
+      "dataUrl": "/data/census/zaf.json",
+      "fitMaxZoom": 5.5
+    },
+    {
+      "slug": "spain",
+      "iso3": "ESP",
+      "iso2": "ES",
+      "name": "Spain",
+      "kicker": "Census 2021",
+      "title": "Country of birth",
+      "year": 2021,
+      "source": "Eurostat Census 2021 — population by country of birth (cens_21cob_r3)",
+      "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/cens_21cob_r3",
+      "nationalLabel": "Spain",
+      "topicLabel": "Country of birth",
+      "groups": [
+        {
+          "id": "native",
+          "shortLabel": "Native-born",
+          "label": "Born in this country"
+        },
+        {
+          "id": "other_eu",
+          "shortLabel": "Other EU",
+          "label": "Born in another EU country"
+        },
+        {
+          "id": "europe",
+          "shortLabel": "Rest of Europe",
+          "label": "Born in a European country outside the EU"
+        },
+        {
+          "id": "africa",
+          "shortLabel": "Africa",
+          "label": "Born in Africa"
+        },
+        {
+          "id": "asia",
+          "shortLabel": "Asia",
+          "label": "Born in Asia"
+        },
+        {
+          "id": "americas",
+          "shortLabel": "Americas & other",
+          "label": "Born in the Americas, Oceania, or unknown"
+        }
+      ],
+      "levels": [
+        {
+          "id": "nuts2",
+          "label": "Community",
+          "kind": "Autonomous communities",
+          "geoUrl": "/geo/census/esp-nuts2.json"
+        },
+        {
+          "id": "nuts3",
+          "label": "Province",
+          "kind": "Provinces",
+          "geoUrl": "/geo/census/esp-nuts3.json"
+        }
+      ],
+      "dataUrl": "/data/census/esp.json",
       "fitMaxZoom": 5.6
     },
     {
@@ -1595,6 +1873,24 @@
       ],
       "dataUrl": "/data/census/che.json",
       "fitMaxZoom": 6.2
+    },
+    {
+      "slug": "uk",
+      "iso3": "GBR",
+      "iso2": "UK",
+      "name": "United Kingdom",
+      "kicker": "UK Census 2021",
+      "title": "Ethnic group",
+      "year": 2021,
+      "source": "ONS Census 2021 (TS021)",
+      "sourceUrl": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/3",
+      "nationalLabel": "England & Wales",
+      "topicLabel": "Ethnic group",
+      "builtin": "uk",
+      "groups": [],
+      "levels": [],
+      "dataUrl": "",
+      "fitMaxZoom": 9.5
     }
   ]
 }

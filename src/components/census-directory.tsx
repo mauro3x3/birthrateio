@@ -10,11 +10,12 @@ import { cn } from "@/lib/utils";
 const FEATURED_SLUGS = [
   "us",
   "uk",
-  "denmark",
-  "germany",
+  "brazil",
+  "iran",
+  "canada",
+  "south-africa",
   "russia",
-  "spain",
-  "france",
+  "denmark",
 ];
 
 const US_ENTRY = {

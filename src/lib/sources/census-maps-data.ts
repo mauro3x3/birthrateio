@@ -11,6 +11,8 @@ export type CensusGroup = {
   id: string;
   shortLabel: string;
   label: string;
+  /** Fixed swatch for plurality / categorical maps. */
+  color?: string;
 };
 
 export type CensusLevel = {
@@ -37,6 +39,8 @@ export type CensusCatalogCountry = {
   dataUrl: string;
   fitMaxZoom: number;
   builtin?: string;
+  /** `plurality` = colour provinces by dominant group (not a % choropleth). */
+  mapMode?: "share" | "plurality";
 };
 
 export type CensusArea = {
@@ -46,6 +50,14 @@ export type CensusArea = {
   population: number;
   shares: Record<string, number>;
   parent?: string | null;
+  /** Dominant group id when mapMode is plurality. */
+  plurality?: string;
+};
+
+export type CensusReligion = {
+  label: string;
+  shares: Record<string, number>;
+  groups: CensusGroup[];
 };
 
 export type CensusFile = {
@@ -55,6 +67,8 @@ export type CensusFile = {
   unit: string;
   national: { population: number; shares: Record<string, number> };
   areas: Record<string, Record<string, CensusArea>>;
+  mapMode?: "share" | "plurality";
+  religion?: CensusReligion;
 };
 
 export const UK_CATALOG: CensusCatalogCountry = {
@@ -112,7 +126,18 @@ export function getCensusCountry(
 }
 
 export function defaultCensusGroup(groups: CensusGroup[]): string {
-  const prefer = ["immigrant", "other_eu", "mixed", "russian", "other", "asia"];
+  const prefer = [
+    "persian",
+    "pardo",
+    "black",
+    "not_vm",
+    "immigrant",
+    "other_eu",
+    "mixed",
+    "russian",
+    "other",
+    "asia",
+  ];
   for (const id of prefer) {
     if (groups.some((g) => g.id === id)) return id;
   }

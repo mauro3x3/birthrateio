@@ -1,13 +1,19 @@
 #!/usr/bin/env python3
-"""Country shares of population and estimated births for regional maps.
+"""Country shares of population and births for regional maps.
 
-Births = population × crude birth rate / 1,000 (World Bank). Does not invent TFR.
+Population: World Bank SP.POP.TOTL (latest).
+Births: UN World Population Prospects annual birth counts via Our World in Data
+(Number of births). Prefer the latest non-projected year so shares are coherent
+demographic estimates — not population × crude birth rate.
+Falls back to pop × World Bank CBR / 1,000 only when WPP births are missing.
 Does not run build-subnational-maps.py.
 """
 
 from __future__ import annotations
 
+import csv
 import importlib.util
+import io
 import json
 import sys
 from pathlib import Path
@@ -31,6 +37,10 @@ WB_POP = (
 WB_CBR = (
     "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.CBRT.IN"
     "?format=json&mrnev=1&per_page=400"
+)
+OWID_BIRTHS = (
+    "https://ourworldindata.org/grapher/number-of-births-per-year.csv"
+    "?v=1&csvType=full&useColumnShortNames=false"
 )
 
 # Same membership as the regional TFR maps, plus geographic Europe (not EU-27 only).
@@ -66,18 +76,90 @@ def wb_latest(url: str, cache_name: str) -> dict[str, tuple[float, int, str]]:
     return out
 
 
+def owid_births() -> dict[str, dict[int, tuple[int, bool]]]:
+    """iso3 -> {year: (births, is_projected)}."""
+    cache = CACHE / "owid-number-of-births.csv"
+    text = more.fetch_text(OWID_BIRTHS, cache)
+    out: dict[str, dict[int, tuple[int, bool]]] = {}
+    reader = csv.DictReader(io.StringIO(text))
+    for row in reader:
+        code = (row.get("Code") or "").strip().upper()
+        if len(code) != 3:
+            continue
+        year_s = (row.get("Year") or "").strip()
+        if not year_s.isdigit():
+            continue
+        year = int(year_s)
+        raw = (row.get("Number of births") or "").strip()
+        projected = bool((row.get("Projected (Projected)") or "").strip())
+        if not raw:
+            # Projected column sometimes holds the value instead.
+            raw = (row.get("Projected (Projected)") or "").strip()
+            if not raw:
+                continue
+            projected = True
+        try:
+            births = int(round(float(raw)))
+        except ValueError:
+            continue
+        out.setdefault(code, {})[year] = (births, projected)
+    return out
+
+
+def pick_births(
+    series: dict[int, tuple[int, bool]] | None,
+    prefer_year: int | None,
+) -> tuple[int, int, str] | None:
+    """Return (births, year, method) preferring non-projected estimates."""
+    if not series:
+        return None
+    estimates = {y: v for y, (v, proj) in series.items() if not proj}
+    pool = estimates or {y: v for y, (v, _) in series.items()}
+    if prefer_year is not None and prefer_year in pool:
+        return pool[prefer_year], prefer_year, "wpp"
+    year = max(pool)
+    return pool[year], year, "wpp"
+
+
 def main():
     print("World Bank population…")
     pop = wb_latest(WB_POP, "wb-pop.json")
     print(f"  {len(pop)}")
-    print("World Bank crude birth rate…")
+    print("World Bank crude birth rate (fallback only)…")
     cbr = wb_latest(WB_CBR, "wb-cbr.json")
     print(f"  {len(cbr)}")
+    print("UN WPP births via Our World in Data…")
+    # fetch_text may not exist — fall back
+    if not hasattr(more, "fetch_text"):
+        def fetch_text(url: str, cache: Path) -> str:
+            if cache.exists():
+                return cache.read_text(encoding="utf-8")
+            import urllib.request
+
+            req = urllib.request.Request(url, headers={"User-Agent": "birthrate.io"})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                text = resp.read().decode("utf-8")
+            cache.write_text(text, encoding="utf-8")
+            return text
+
+        more.fetch_text = fetch_text  # type: ignore[attr-defined]
+
+    births_by_iso = owid_births()
+    print(f"  {len(births_by_iso)} countries")
+
+    # Prefer a shared recent estimate year (usually 2023 in WPP 2024).
+    all_est_years: list[int] = []
+    for series in births_by_iso.values():
+        all_est_years.extend(y for y, (_, proj) in series.items() if not proj)
+    prefer_year = max(all_est_years) if all_est_years else None
+    print(f"  prefer birth year {prefer_year}")
 
     regions = {}
     for iso3, name, members in REGIONS:
         countries = []
         years: list[int] = []
+        n_wpp = 0
+        n_cbr = 0
         for code in members:
             if code not in pop:
                 print(f"  skip {iso3} {code} (no population)")
@@ -90,31 +172,49 @@ def main():
                 "popYear": pyear,
             }
             years.append(pyear)
-            if code in cbr:
+
+            picked = pick_births(births_by_iso.get(code), prefer_year)
+            if picked:
+                bval, byear, _ = picked
+                rec["births"] = bval
+                rec["birthYear"] = byear
+                rec["birthMethod"] = "wpp"
+                years.append(byear)
+                n_wpp += 1
+            elif code in cbr:
                 cval, cyear, _ = cbr[code]
                 rec["cbr"] = round(cval, 2)
                 rec["cbrYear"] = cyear
                 rec["births"] = round(pval * cval / 1000.0)
+                rec["birthYear"] = cyear
+                rec["birthMethod"] = "cbr"
                 years.append(cyear)
+                n_cbr += 1
+
             countries.append(rec)
         countries.sort(key=lambda r: r["population"], reverse=True)
+        birth_years = [c["birthYear"] for c in countries if "birthYear" in c]
         regions[iso3] = {
             "id": iso3,
             "name": name,
-            "year": max(years) if years else None,
+            "year": max(birth_years) if birth_years else (max(years) if years else None),
             "countries": countries,
         }
-        n_b = sum(1 for c in countries if c.get("births") is not None)
-        print(f"  {iso3:16} {len(countries):3} countries  {n_b:3} with births")
+        print(
+            f"  {iso3:16} {len(countries):3} countries  "
+            f"{n_wpp:3} WPP births  {n_cbr:3} CBR fallback"
+        )
 
     payload = {
         "source": (
-            "World Bank World Development Indicators, SP.POP.TOTL (population) "
-            "and SP.DYN.CBRT.IN (crude birth rate), latest year per country. "
-            "Births are estimated as population × CBR / 1,000 — not a vital-statistics "
-            "birth count. Oceania is UN-style sovereign states (not Hawaii or Western New Guinea)."
+            "Population: World Bank WDI SP.POP.TOTL (latest). "
+            "Births: UN World Population Prospects annual birth counts "
+            "(via Our World in Data “Number of births”), latest non-projected year. "
+            "Where WPP births are missing, falls back to population × World Bank "
+            "crude birth rate / 1,000. Oceania is UN-style sovereign states "
+            "(not Hawaii or Western New Guinea)."
         ),
-        "sourceUrl": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+        "sourceUrl": "https://ourworldindata.org/grapher/number-of-births-per-year",
         "regions": regions,
     }
     OUT.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")

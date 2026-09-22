@@ -166,6 +166,14 @@ export function RegionSharePies({
   const pop = shareSlices(region.countries, "population");
   const births = shareSlices(region.countries, "births");
   const { left, right } = colorSlices(pop.slices, births.slices);
+  const popYears = region.countries.map((c) => c.popYear).filter(Boolean);
+  const birthYears = region.countries
+    .map((c) => c.birthYear)
+    .filter((y): y is number => y != null);
+  const popYearLabel =
+    popYears.length > 0 ? Math.max(...popYears) : region.year;
+  const birthYearLabel =
+    birthYears.length > 0 ? Math.max(...birthYears) : region.year;
   return (
     <div
       className={
@@ -177,7 +185,7 @@ export function RegionSharePies({
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
         <PieBlock
           title={`${region.name} population by country`}
-          totalLabel={`Share of residents · ${region.year ?? ""}`}
+          totalLabel={`Share of residents · ${popYearLabel ?? ""}`}
           slices={left}
           total={pop.total}
           layout={layout}
@@ -185,7 +193,7 @@ export function RegionSharePies({
         />
         <PieBlock
           title={`Where ${region.name} births come from`}
-          totalLabel={`Share of estimated births · ${region.year ?? ""}`}
+          totalLabel={`Share of births · ${birthYearLabel ?? ""}`}
           slices={right}
           total={births.total}
           layout={layout}
@@ -193,9 +201,9 @@ export function RegionSharePies({
         />
       </div>
       <p className="mx-auto mt-8 max-w-2xl text-center text-[11px] leading-relaxed text-muted-foreground">
-        World Bank population (SP.POP.TOTL) and crude birth rate (SP.DYN.CBRT.IN),
-        latest year per country. Births are estimated as population × CBR / 1,000
-        — not a civil-registration count.
+        Population: World Bank (SP.POP.TOTL). Births: UN World Population
+        Prospects annual birth counts (via Our World in Data), latest
+        non-projected year — not population × crude birth rate.
         {region.id === "OCEANIA"
           ? " Oceania here is sovereign states only, not Hawaii or Western New Guinea."
           : ""}

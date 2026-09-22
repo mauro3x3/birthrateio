@@ -8,7 +8,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Where the births are — Regional population and birth shares",
   description:
-    "Each region's residents, and which countries account for its births. A younger country can make up more of the babies than of the people. World Bank population and crude birth rates, latest year.",
+    "Each region's residents, and which countries account for its births. Population from World Bank; births from UN World Population Prospects annual counts.",
   alternates: { canonical: "/population/shares" },
 };
 

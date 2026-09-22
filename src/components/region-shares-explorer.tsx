@@ -124,7 +124,7 @@ export function RegionSharesExplorer({
     );
     downloadFile(
       `birthrate-${slug}-shares.csv`,
-      `# ${region.name} population and birth shares\n# birthrate.io/population/shares?region=${slug}\n# Births estimated as population × crude birth rate / 1,000 (World Bank)\n${body}`,
+      `# ${region.name} population and birth shares\n# birthrate.io/population/shares?region=${slug}\n# Births: UN World Population Prospects (via Our World in Data); population: World Bank\n${body}`,
     );
   }, [rows, region.name, slug]);
 
@@ -162,7 +162,7 @@ export function RegionSharesExplorer({
             {region.name}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            Share of residents and of estimated births
+            Share of residents and of births
             {region.year != null ? ` · ${region.year}` : ""}
           </p>
         </div>
@@ -204,11 +204,18 @@ export function RegionSharesExplorer({
       </div>
 
       <div ref={exportRef} className="space-y-8 bg-[hsl(40_28%_97%)]">
-        <div className="flex items-baseline justify-between border-b border-border/80 pb-2">
-          <p className="font-serif text-sm font-semibold tracking-tight text-primary">
-            {region.name} · Where the births are
+        <div className="flex items-start justify-between gap-4 border-b border-border/80 pb-3">
+          <div className="min-w-0">
+            <p className="font-serif text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
+              {region.name}
+            </p>
+            <p className="mt-1 text-sm font-medium text-foreground/70 sm:text-base">
+              Where the births are
+            </p>
+          </div>
+          <p className="shrink-0 pt-1.5 text-xs font-medium text-muted-foreground sm:text-sm">
+            birthrate.io
           </p>
-          <p className="text-[0.7rem] text-muted-foreground">birthrate.io</p>
         </div>
         <div className="grid gap-px border border-border/80 bg-border/80 sm:grid-cols-2">
           <div className="bg-white px-5 py-6">
@@ -224,13 +231,14 @@ export function RegionSharesExplorer({
           </div>
           <div className="bg-white px-5 py-6">
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-              Estimated births
+              Births
             </p>
             <p className="mt-2 font-sans text-4xl font-bold tabular-nums tracking-tight sm:text-5xl">
               {formatCompact(birthTotal)}
             </p>
             <p className="mt-1.5 text-sm text-muted-foreground">
-              {formatNumber(birthTotal, 0)} births that year
+              {formatNumber(birthTotal, 0)} births
+              {region.year != null ? ` · ${region.year}` : ""}
             </p>
           </div>
         </div>
@@ -252,7 +260,7 @@ export function RegionSharesExplorer({
         />
         <InsightList
           title="Fewer births than their population share"
-          caption="Lower crude birth rates — older, or further through the fertility decline."
+          caption="Lower fertility or older age structure — fewer births than their population share."
           rows={older.filter((r) => r.delta < -0.002)}
         />
       </div>

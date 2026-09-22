@@ -18,6 +18,7 @@ import {
   ukPctClassColor,
   ukPctLegendFromBreaks,
 } from "@/lib/sources/uk-census-data";
+import { CompositionDonut } from "@/components/composition-donut";
 import { MAP_OCEAN } from "@/lib/map-path-style";
 import { formatNumber, cn } from "@/lib/utils";
 
@@ -40,11 +41,12 @@ const RegionChoroplethMap = dynamic(
 );
 
 const FEATURED_SLUGS = [
-  "denmark",
-  "germany",
-  "spain",
+  "brazil",
+  "iran",
+  "canada",
+  "south-africa",
   "russia",
-  "france",
+  "denmark",
   "uk",
 ];
 
@@ -124,6 +126,22 @@ export function CensusMapExplorer({
     resolved.levels[0];
   const coarse = resolved.levels[0];
   const fine = resolved.levels[resolved.levels.length - 1];
+  const isPlurality =
+    resolved.mapMode === "plurality" || file?.mapMode === "plurality";
+
+  const groupColor = React.useMemo(() => {
+    const m = new Map<string, string>();
+    for (const g of resolved.groups) {
+      if (g.color) m.set(g.id, g.color);
+    }
+    return m;
+  }, [resolved.groups]);
+
+  const groupIndex = React.useMemo(() => {
+    const m = new Map<string, number>();
+    resolved.groups.forEach((g, i) => m.set(g.id, i + 1));
+    return m;
+  }, [resolved.groups]);
 
   const parentAreas = React.useMemo(() => {
     if (!file || !coarse) return [];
@@ -152,20 +170,42 @@ export function CensusMapExplorer({
     [areas, group],
   );
   const breaks = React.useMemo(() => ukPctBreaks(values, 5), [values]);
-  const legend = React.useMemo(
-    () => ukPctLegendFromBreaks(breaks),
-    [breaks],
-  );
+  const legend = React.useMemo(() => {
+    if (isPlurality) {
+      return resolved.groups
+        .filter((g) => g.id !== "other" || (file?.national.shares[g.id] ?? 0) > 0)
+        .map((g) => ({
+          label: g.shortLabel,
+          color: g.color ?? "#94a3b8",
+        }));
+    }
+    return ukPctLegendFromBreaks(breaks);
+  }, [isPlurality, resolved.groups, file?.national.shares, breaks]);
 
   const mapData = React.useMemo(
     () =>
-      areas.map((a) => ({
-        id: a.code,
-        slug: a.slug,
-        name: a.name,
-        value: a.shares[group?.id] ?? 0,
-      })),
-    [areas, group],
+      areas.map((a) => {
+        const plural = a.plurality ?? group?.id ?? "";
+        return {
+          id: a.code,
+          slug: a.slug,
+          name: a.name,
+          value: isPlurality
+            ? (groupIndex.get(plural) ?? 0)
+            : (a.shares[group?.id] ?? 0),
+        };
+      }),
+    [areas, group, isPlurality, groupIndex],
+  );
+
+  const fillForId = React.useCallback(
+    (id: string) => {
+      if (!isPlurality) return undefined;
+      const area = areas.find((a) => a.code === id || a.slug === id);
+      const plural = area?.plurality;
+      return plural ? groupColor.get(plural) : undefined;
+    },
+    [isPlurality, areas, groupColor],
   );
 
   const filterIds = React.useMemo(() => {
@@ -185,8 +225,18 @@ export function CensusMapExplorer({
   const lowest = ranked[ranked.length - 1];
 
   const colorFor = React.useCallback(
-    (v: number) => ukPctClassColor(v, breaks),
-    [breaks],
+    (v: number) =>
+      isPlurality ? "#d7dde5" : ukPctClassColor(v, breaks),
+    [breaks, isPlurality],
+  );
+
+  const formatValue = React.useCallback(
+    (v: number) => {
+      if (!isPlurality) return `${formatNumber(v, 1)}%`;
+      const g = resolved.groups[Math.round(v) - 1];
+      return g?.shortLabel ?? "—";
+    },
+    [isPlurality, resolved.groups],
   );
 
   const selectedParent =
@@ -203,6 +253,19 @@ export function CensusMapExplorer({
     () => (panelOpen ? [8, 328] : [8, 8]),
     [panelOpen],
   );
+
+  const provincesByGroup = React.useMemo(() => {
+    if (!isPlurality) return [];
+    return resolved.groups
+      .map((g) => ({
+        group: g,
+        provinces: areas
+          .filter((a) => a.plurality === g.id)
+          .sort((a, b) => a.name.localeCompare(b.name)),
+      }))
+      .filter((row) => row.provinces.length > 0);
+  }, [isPlurality, resolved.groups, areas]);
+
 
   React.useEffect(() => {
     document.title = `${resolved.name} census map — ${resolved.title} · birthrate.io`;
@@ -229,8 +292,9 @@ export function CensusMapExplorer({
             geoUrl={level.geoUrl}
             data={mapData}
             colorFor={colorFor}
-            unit="%"
-            decimals={1}
+            fillForId={isPlurality ? fillForId : undefined}
+            unit={isPlurality ? undefined : "%"}
+            decimals={isPlurality ? 0 : 1}
             height="100%"
             className="h-full border-0"
             fit="bounds"
@@ -239,13 +303,19 @@ export function CensusMapExplorer({
             fitPaddingBottomRight={[40, 8]}
             navigate={false}
             legend={legend}
-            legendTitle={`${areaLabel}: ${group?.shortLabel ?? ""}`}
+            legendTitle={
+              isPlurality
+                ? "Dominant group (province)"
+                : `${areaLabel}: ${group?.shortLabel ?? ""}`
+            }
             legendPlacement="bottom-right"
-            revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${panelOpen ? "p" : "f"}`}
+            revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${panelOpen ? "p" : "f"}-${isPlurality ? "pl" : "sh"}`}
             filterIds={filterIds}
             adaptiveStroke={areas.length > 80}
             oceanColor={MAP_OCEAN.atlas}
             variant="light"
+            formatValue={formatValue}
+            showLabels={false}
           />
         ) : (
           <div className="flex h-full items-center justify-center text-sm text-black/40">
@@ -323,16 +393,94 @@ export function CensusMapExplorer({
             </div>
 
             <div>
-              <p
-                className="text-4xl font-semibold tabular-nums tracking-tight text-foreground"
-                key={`${resolved.slug}-${group?.id}-${parentCode ?? "nat"}`}
-              >
-                {formatNumber(headline.shares[group?.id] ?? 0, 1)}%
-              </p>
-              <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                {headline.name} · {group?.shortLabel}
-              </p>
+              {isPlurality ? (
+                <>
+                  <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                    People of {resolved.name} — ethnic shares
+                  </p>
+                  <div className="mt-3">
+                    <CompositionDonut
+                      shares={file?.national.shares ?? {}}
+                      groups={resolved.groups}
+                    />
+                  </div>
+                  <ul className="mt-3 space-y-1 text-[12px]">
+                    {resolved.groups.map((g) => {
+                      const pct = file?.national.shares[g.id] ?? 0;
+                      if (pct <= 0 && g.id === "gilaki_mazani") return null;
+                      return (
+                        <li
+                          key={g.id}
+                          className="flex items-center justify-between gap-2"
+                        >
+                          <span className="flex min-w-0 items-center gap-1.5 truncate">
+                            <span
+                              className="h-2 w-2 shrink-0"
+                              style={{ background: g.color ?? "#94a3b8" }}
+                            />
+                            <span className="truncate">{g.shortLabel}</span>
+                          </span>
+                          <span className="tabular-nums text-muted-foreground">
+                            {pct > 0 ? `${formatNumber(pct, 0)}%` : "map only"}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
+                    National % from CIA World Factbook. Map colours are
+                    province majority groups from academic classification — not
+                    census percentages (Iran does not publish those).
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p
+                    className="text-4xl font-semibold tabular-nums tracking-tight text-foreground"
+                    key={`${resolved.slug}-${group?.id}-${parentCode ?? "nat"}`}
+                  >
+                    {formatNumber(headline.shares[group?.id] ?? 0, 1)}%
+                  </p>
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                    {headline.name} · {group?.shortLabel}
+                  </p>
+                </>
+              )}
             </div>
+
+            {isPlurality && file?.religion ? (
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  {file.religion.label} of {resolved.name}
+                </p>
+                <div className="mt-3">
+                  <CompositionDonut
+                    shares={file.religion.shares}
+                    groups={file.religion.groups}
+                    size={112}
+                  />
+                </div>
+                <ul className="mt-3 space-y-1 text-[12px]">
+                  {file.religion.groups.map((g) => (
+                    <li
+                      key={g.id}
+                      className="flex items-center justify-between gap-2"
+                    >
+                      <span className="flex min-w-0 items-center gap-1.5 truncate">
+                        <span
+                          className="h-2 w-2 shrink-0"
+                          style={{ background: g.color ?? "#94a3b8" }}
+                        />
+                        <span className="truncate">{g.shortLabel}</span>
+                      </span>
+                      <span className="tabular-nums text-muted-foreground">
+                        {formatNumber(file.religion!.shares[g.id] ?? 0, 0)}%
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
 
             {resolved.levels.length > 1 && (
               <div className="space-y-2">
@@ -375,91 +523,126 @@ export function CensusMapExplorer({
               </select>
             )}
 
-            <div className="space-y-1">
-              <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                {resolved.topicLabel}
-              </p>
-              {resolved.groups.map((g) => (
-                <button
-                  key={g.id}
-                  type="button"
-                  onClick={() => setGroupId(g.id)}
-                  className={cn(
-                    "flex w-full items-center justify-between rounded-sm px-2.5 py-2 text-left text-sm transition-colors",
-                    g.id === group?.id
-                      ? "bg-foreground text-background"
-                      : "text-muted-foreground hover:bg-muted hover:text-foreground",
-                  )}
-                >
-                  <span>{g.shortLabel}</span>
-                  <span
+            {!isPlurality ? (
+              <div className="space-y-1">
+                <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  {resolved.topicLabel}
+                </p>
+                {resolved.groups.map((g) => (
+                  <button
+                    key={g.id}
+                    type="button"
+                    onClick={() => setGroupId(g.id)}
                     className={cn(
-                      "tabular-nums text-xs",
+                      "flex w-full items-center justify-between rounded-sm px-2.5 py-2 text-left text-sm transition-colors",
                       g.id === group?.id
-                        ? "text-background/70"
-                        : "text-muted-foreground/80",
+                        ? "bg-foreground text-background"
+                        : "text-muted-foreground hover:bg-muted hover:text-foreground",
                     )}
                   >
-                    {formatNumber(file?.national.shares[g.id] ?? 0, 1)}%
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            <dl className="text-[13px]">
-              <div className="border-t border-border py-2.5">
-                <dt className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                  Highest
-                </dt>
-                <dd className="mt-0.5">
-                  <span className="text-foreground">{highest?.name ?? "—"}</span>
-                  {highest ? (
-                    <span className="ml-2 tabular-nums text-primary">
-                      {formatNumber(highest.shares[group?.id] ?? 0, 1)}%
-                    </span>
-                  ) : null}
-                </dd>
-              </div>
-              <div className="border-t border-border py-2.5">
-                <dt className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                  Lowest
-                </dt>
-                <dd className="mt-0.5">
-                  <span className="text-foreground">{lowest?.name ?? "—"}</span>
-                  {lowest ? (
-                    <span className="ml-2 tabular-nums text-primary">
-                      {formatNumber(lowest.shares[group?.id] ?? 0, 1)}%
-                    </span>
-                  ) : null}
-                </dd>
-              </div>
-            </dl>
-
-            <div>
-              <p className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                Top {level?.kind.toLowerCase() ?? "areas"}
-              </p>
-              <ol className="space-y-0 text-[13px]">
-                {ranked
-                  .slice(0, level?.id === fine?.id && !parentCode ? 12 : 20)
-                  .map((a, i) => (
-                    <li
-                      key={a.code}
-                      className="flex items-baseline justify-between gap-2 border-t border-border/70 py-1.5"
+                    <span>{g.shortLabel}</span>
+                    <span
+                      className={cn(
+                        "tabular-nums text-xs",
+                        g.id === group?.id
+                          ? "text-background/70"
+                          : "text-muted-foreground/80",
+                      )}
                     >
-                      <span className="min-w-0 truncate text-foreground/85">
-                        <span className="mr-1.5 font-mono text-[10px] text-muted-foreground/60">
-                          {i + 1}.
+                      {formatNumber(file?.national.shares[g.id] ?? 0, 1)}%
+                    </span>
+                  </button>
+                ))}
+              </div>
+            ) : (
+              <div>
+                <p className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Provinces by dominant group
+                </p>
+                <div className="space-y-3">
+                  {provincesByGroup.map(({ group: g, provinces }) => (
+                    <div key={g.id}>
+                      <p className="flex items-center gap-1.5 text-[12px] font-medium text-foreground">
+                        <span
+                          className="h-2 w-2 shrink-0"
+                          style={{ background: g.color ?? "#94a3b8" }}
+                        />
+                        {g.shortLabel}
+                        <span className="font-normal text-muted-foreground">
+                          · {provinces.length}
                         </span>
-                        {a.name}
-                      </span>
-                      <span className="shrink-0 tabular-nums text-primary">
-                        {formatNumber(a.shares[group?.id] ?? 0, 1)}%
-                      </span>
-                    </li>
+                      </p>
+                      <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
+                        {provinces.map((p) => p.name).join(", ")}
+                      </p>
+                    </div>
                   ))}
-              </ol>
-            </div>
+                </div>
+              </div>
+            )}
+
+            {!isPlurality ? (
+              <>
+                <dl className="text-[13px]">
+                  <div className="border-t border-border py-2.5">
+                    <dt className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                      Highest
+                    </dt>
+                    <dd className="mt-0.5">
+                      <span className="text-foreground">
+                        {highest?.name ?? "—"}
+                      </span>
+                      {highest ? (
+                        <span className="ml-2 tabular-nums text-primary">
+                          {formatNumber(highest.shares[group?.id] ?? 0, 1)}%
+                        </span>
+                      ) : null}
+                    </dd>
+                  </div>
+                  <div className="border-t border-border py-2.5">
+                    <dt className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                      Lowest
+                    </dt>
+                    <dd className="mt-0.5">
+                      <span className="text-foreground">
+                        {lowest?.name ?? "—"}
+                      </span>
+                      {lowest ? (
+                        <span className="ml-2 tabular-nums text-primary">
+                          {formatNumber(lowest.shares[group?.id] ?? 0, 1)}%
+                        </span>
+                      ) : null}
+                    </dd>
+                  </div>
+                </dl>
+
+                <div>
+                  <p className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                    Top {level?.kind.toLowerCase() ?? "areas"}
+                  </p>
+                  <ol className="space-y-0 text-[13px]">
+                    {ranked
+                      .slice(0, level?.id === fine?.id && !parentCode ? 12 : 20)
+                      .map((a, i) => (
+                        <li
+                          key={a.code}
+                          className="flex items-baseline justify-between gap-2 border-t border-border/70 py-1.5"
+                        >
+                          <span className="min-w-0 truncate text-foreground/85">
+                            <span className="mr-1.5 font-mono text-[10px] text-muted-foreground/60">
+                              {i + 1}.
+                            </span>
+                            {a.name}
+                          </span>
+                          <span className="shrink-0 tabular-nums text-primary">
+                            {formatNumber(a.shares[group?.id] ?? 0, 1)}%
+                          </span>
+                        </li>
+                      ))}
+                  </ol>
+                </div>
+              </>
+            ) : null}
 
             {loadError ? (
               <p className="text-xs text-destructive">{loadError}</p>

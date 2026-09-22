@@ -8,7 +8,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Census maps — Ethnicity, ancestry, race, and country of birth",
   description:
-    "Interactive census choropleths: US race and Hispanic origin, UK ethnic group, Denmark ancestry, and country of birth across Europe. Same map layout for every country.",
+    "Interactive census choropleths: US race, Brazil colour/race, Canada visible minority, South Africa population group, Iran ethnic map, UK ethnicity, Russia, Denmark ancestry, and European country of birth.",
   alternates: { canonical: "/demographics" },
 };
 
