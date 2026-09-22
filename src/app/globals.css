@@ -345,6 +345,14 @@
   paint-order: stroke fill;
   text-shadow: 0 0 2px #fff, 0 1px 0 #fff;
 }
+.br-map-value-sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 10px;
+  font-weight: 600;
+  opacity: 0.85;
+  text-align: center;
+}
 .br-map-blob-text {
   font-size: 18px;
   font-weight: 700;

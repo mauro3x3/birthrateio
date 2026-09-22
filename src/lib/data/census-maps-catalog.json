@@ -341,7 +341,13 @@
         }
       ],
       "dataUrl": "/data/census/can.json",
-      "fitMaxZoom": 3.8
+      "fitMaxZoom": 4.6,
+      "fitClamp": {
+        "west": -141,
+        "south": 41.5,
+        "east": -52.5,
+        "north": 70
+      }
     },
     {
       "slug": "croatia",
@@ -937,7 +943,13 @@
         }
       ],
       "dataUrl": "/data/census/irn.json",
-      "fitMaxZoom": 5.8
+      "fitMaxZoom": 6.8,
+      "fitClamp": {
+        "west": 44,
+        "south": 25,
+        "east": 63.5,
+        "north": 40
+      }
     },
     {
       "slug": "ireland",

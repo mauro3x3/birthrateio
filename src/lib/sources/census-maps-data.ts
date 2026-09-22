@@ -38,6 +38,8 @@ export type CensusCatalogCountry = {
   levels: CensusLevel[];
   dataUrl: string;
   fitMaxZoom: number;
+  /** Optional framing box so arctic / overseas fragments don’t shrink the map. */
+  fitClamp?: { west: number; south: number; east: number; north: number };
   builtin?: string;
   /** `plurality` = colour provinces by dominant group (not a % choropleth). */
   mapMode?: "share" | "plurality";

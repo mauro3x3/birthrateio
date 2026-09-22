@@ -364,12 +364,14 @@ function ValueLabels({
   featureId,
   formatValue,
   hideIds,
+  labelMode = "value",
 }: {
   geo: FeatureCollection;
   byId: Map<string, RegionChoroplethDatum>;
   featureId: (feature?: Feature) => string | undefined;
   formatValue?: (value: number) => string;
   hideIds?: Set<string>;
+  labelMode?: "value" | "name" | "name-value";
 }) {
   const items = React.useMemo(() => {
     const out: {
@@ -385,7 +387,13 @@ function ValueLabels({
       if (hideIds?.has(id)) continue;
       const pt = labelLngLat(feature);
       if (!pt) continue;
-      const text = mapLabelText(datum.value, formatValue);
+      const valueText = mapLabelText(datum.value, formatValue);
+      const text =
+        labelMode === "name"
+          ? datum.name
+          : labelMode === "name-value"
+            ? `${datum.name}<br/><span class="br-map-value-sub">${valueText}</span>`
+            : valueText;
       out.push({
         id,
         lng: pt[0],
@@ -394,7 +402,7 @@ function ValueLabels({
       });
     }
     return out;
-  }, [byId, featureId, formatValue, geo.features, hideIds]);
+  }, [byId, featureId, formatValue, geo.features, hideIds, labelMode]);
 
   return (
     <>
@@ -708,6 +716,7 @@ export function RegionChoroplethMap({
   oceanColor,
   className,
   showLabels = false,
+  labelMode = "value",
   selectedIds,
   onRegionActivate,
   combineSelection = false,
@@ -749,6 +758,8 @@ export function RegionChoroplethMap({
   className?: string;
   /** Paint values on each region so they can be read without hovering. */
   showLabels?: boolean;
+  /** What to paint when showLabels is on. */
+  labelMode?: "value" | "name" | "name-value";
   /** Region ids currently in a shift-click selection. */
   selectedIds?: string[];
   /** Shift-click to select; plain click to navigate (parent can override). */
@@ -1078,6 +1089,7 @@ export function RegionChoroplethMap({
               featureId={featureId}
               formatValue={formatValue}
               hideIds={blobMode ? selectedSet : undefined}
+              labelMode={labelMode}
             />
           ) : null}
         </MapContainer>
