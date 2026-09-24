@@ -7220,7 +7220,7 @@
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.52
+          "value": 2.33
         },
         {
           "id": "mena-djibouti",
@@ -7695,7 +7695,7 @@
           "id": "africa-egypt-arab-rep",
           "slug": "africa-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.52
+          "value": 2.33
         },
         {
           "id": "africa-djibouti",
@@ -8023,7 +8023,7 @@
           "id": "northamerica-mexico",
           "slug": "northamerica-mexico",
           "name": "Mexico",
-          "value": 1.38
+          "value": 1.23
         },
         {
           "id": "northamerica-canada",
@@ -8617,7 +8617,7 @@
       "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (T\u00fcrkiye). National fills for other countries use BirthGauge\u2019s latest year where compiled, else World Bank WDI.",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mena-prov-tfr.json",
-      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. National fills now use BirthGauge where compiled (Egypt 2.52 in 2026). Egypt\u2019s 2014 DHS published only regional (not governorate) TFR. Use the Countries tab for a national map.",
+      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. National fills now use BirthGauge where compiled (Egypt 2.33 in 2025 (CAPMAS)). Egypt\u2019s 2014 DHS published only regional (not governorate) TFR. Use the Countries tab for a national map.",
       "tab": "Provinces",
       "regions": [
         {
@@ -9218,7 +9218,7 @@
           "id": "mena-egypt-arab-rep",
           "slug": "mena-egypt-arab-rep",
           "name": "Egypt, Arab Rep.",
-          "value": 2.52
+          "value": 2.33
         },
         {
           "id": "mena-djibouti",
@@ -11791,6 +11791,370 @@
       "unit": "children per woman",
       "min": 0.9,
       "max": 2.2
+    },
+    {
+      "id": "irq-tfr-2025",
+      "iso3": "IRQ",
+      "country": "Iraq",
+      "title": "Total fertility rate, Iraq 2025",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "governorate",
+      "year": 2025,
+      "national": 2.74,
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iraq 2025 \u2014 governorate TFR from registered births. National TFR 2.74 (1,026,242 births, +1.3% vs 2024). No data for Kurdish provinces (Dohuk, Erbil, Sulaymaniyah).",
+      "sourceUrl": "https://x.com/BirthGauge",
+      "credit": "Compiled by BirthGauge (@BirthGauge).",
+      "geoUrl": "/geo/maps/irq-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "note": "Kurdish Region governorates are drawn in grey (no published TFR). Southern and holy-city governorates (Karbala, Najaf, Muthanna) are highest; Baghdad and Diyala are among the lowest.",
+      "highlights": [
+        {
+          "name": "Karbala",
+          "value": 3.66
+        },
+        {
+          "name": "Diyala",
+          "value": 2.52
+        }
+      ],
+      "regions": [
+        {
+          "id": "iraq-anbar",
+          "slug": "iraq-anbar",
+          "name": "Anbar",
+          "value": 3.01
+        },
+        {
+          "id": "iraq-karbala",
+          "slug": "iraq-karbala",
+          "name": "Karbala",
+          "value": 3.66
+        },
+        {
+          "id": "iraq-najaf",
+          "slug": "iraq-najaf",
+          "name": "Najaf",
+          "value": 3.49
+        },
+        {
+          "id": "iraq-babil",
+          "slug": "iraq-babil",
+          "name": "Babil",
+          "value": 2.88
+        },
+        {
+          "id": "iraq-baghdad",
+          "slug": "iraq-baghdad",
+          "name": "Baghdad",
+          "value": 2.59
+        },
+        {
+          "id": "iraq-qadisiyah",
+          "slug": "iraq-qadisiyah",
+          "name": "Qadisiyah",
+          "value": 2.68
+        },
+        {
+          "id": "iraq-muthanna",
+          "slug": "iraq-muthanna",
+          "name": "Muthanna",
+          "value": 3.51
+        },
+        {
+          "id": "iraq-dhi-qar",
+          "slug": "iraq-dhi-qar",
+          "name": "Dhi Qar",
+          "value": 2.56
+        },
+        {
+          "id": "iraq-basra",
+          "slug": "iraq-basra",
+          "name": "Basra",
+          "value": 3.37
+        },
+        {
+          "id": "iraq-maysan",
+          "slug": "iraq-maysan",
+          "name": "Maysan",
+          "value": 3.32
+        },
+        {
+          "id": "iraq-wasit",
+          "slug": "iraq-wasit",
+          "name": "Wasit",
+          "value": 2.97
+        },
+        {
+          "id": "iraq-nineveh",
+          "slug": "iraq-nineveh",
+          "name": "Nineveh",
+          "value": 3.13
+        },
+        {
+          "id": "iraq-dohuk",
+          "slug": "iraq-dohuk",
+          "name": "Dohuk",
+          "value": null
+        },
+        {
+          "id": "iraq-saladin",
+          "slug": "iraq-saladin",
+          "name": "Saladin",
+          "value": 2.82
+        },
+        {
+          "id": "iraq-diyala",
+          "slug": "iraq-diyala",
+          "name": "Diyala",
+          "value": 2.52
+        },
+        {
+          "id": "iraq-kirkuk",
+          "slug": "iraq-kirkuk",
+          "name": "Kirkuk",
+          "value": 3.18
+        },
+        {
+          "id": "iraq-erbil",
+          "slug": "iraq-erbil",
+          "name": "Erbil",
+          "value": null
+        },
+        {
+          "id": "iraq-sulaymaniyah",
+          "slug": "iraq-sulaymaniyah",
+          "name": "Sulaymaniyah",
+          "value": null
+        }
+      ],
+      "min": 2.52,
+      "max": 3.66
+    },
+    {
+      "id": "mex-tfr-2024",
+      "iso3": "MEX",
+      "country": "Mexico",
+      "title": "Total fertility rate, Mexico 2024",
+      "metric": "tfr",
+      "unit": "children per woman",
+      "kind": "state",
+      "year": 2024,
+      "national": 1.23,
+      "source": "National TFR 1.23 and Mexico City 0.79 / Baja California 1.04 / Quer\u00e9taro 1.06 from BirthGauge & Institute for Family Studies coverage of INEGI Intercensal Survey 2025. Other states: ENADID 2018 (2013\u201317) TGF scaled to the 2024 national level (bridge national ENADID \u2248 2.07) \u2014 illustrative state pattern until INEGI publishes a full 2024 state TFR table.",
+      "sourceUrl": "https://www.inegi.org.mx/programas/enadid/2018/",
+      "credit": "INEGI Intercensal 2025 / ENADID 2018; pins from BirthGauge (@BirthGauge) & IFS.",
+      "geoUrl": "/geo/maps/mex-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "note": "Mexico City (0.79) is below every U.S. state. National TFR fell from ~1.60 (2020\u201322) to 1.23 (2024). Non-pinned states are scaled ENADID patterns, not a new official state census TFR.",
+      "highlights": [
+        {
+          "name": "Mexico City",
+          "value": 0.79
+        },
+        {
+          "name": "Chiapas",
+          "value": 1.66
+        }
+      ],
+      "regions": [
+        {
+          "id": "mexico-aguascalientes",
+          "slug": "mexico-aguascalientes",
+          "name": "Aguascalientes",
+          "value": 1.38
+        },
+        {
+          "id": "mexico-baja-california",
+          "slug": "mexico-baja-california",
+          "name": "Baja California",
+          "value": 1.04
+        },
+        {
+          "id": "mexico-baja-california-sur",
+          "slug": "mexico-baja-california-sur",
+          "name": "Baja California Sur",
+          "value": 1.25
+        },
+        {
+          "id": "mexico-campeche",
+          "slug": "mexico-campeche",
+          "name": "Campeche",
+          "value": 1.29
+        },
+        {
+          "id": "mexico-chiapas",
+          "slug": "mexico-chiapas",
+          "name": "Chiapas",
+          "value": 1.66
+        },
+        {
+          "id": "mexico-chihuahua",
+          "slug": "mexico-chihuahua",
+          "name": "Chihuahua",
+          "value": 1.31
+        },
+        {
+          "id": "mexico-coahuila",
+          "slug": "mexico-coahuila",
+          "name": "Coahuila",
+          "value": 1.5
+        },
+        {
+          "id": "mexico-colima",
+          "slug": "mexico-colima",
+          "name": "Colima",
+          "value": 1.21
+        },
+        {
+          "id": "mexico-mexico-city",
+          "slug": "mexico-mexico-city",
+          "name": "Mexico City",
+          "value": 0.79
+        },
+        {
+          "id": "mexico-durango",
+          "slug": "mexico-durango",
+          "name": "Durango",
+          "value": 1.38
+        },
+        {
+          "id": "mexico-guanajuato",
+          "slug": "mexico-guanajuato",
+          "name": "Guanajuato",
+          "value": 1.27
+        },
+        {
+          "id": "mexico-guerrero",
+          "slug": "mexico-guerrero",
+          "name": "Guerrero",
+          "value": 1.46
+        },
+        {
+          "id": "mexico-hidalgo",
+          "slug": "mexico-hidalgo",
+          "name": "Hidalgo",
+          "value": 1.25
+        },
+        {
+          "id": "mexico-jalisco",
+          "slug": "mexico-jalisco",
+          "name": "Jalisco",
+          "value": 1.31
+        },
+        {
+          "id": "mexico-mexico-state",
+          "slug": "mexico-mexico-state",
+          "name": "Mexico State",
+          "value": 1.08
+        },
+        {
+          "id": "mexico-michoacan",
+          "slug": "mexico-michoacan",
+          "name": "Michoac\u00e1n",
+          "value": 1.37
+        },
+        {
+          "id": "mexico-morelos",
+          "slug": "mexico-morelos",
+          "name": "Morelos",
+          "value": 1.2
+        },
+        {
+          "id": "mexico-nayarit",
+          "slug": "mexico-nayarit",
+          "name": "Nayarit",
+          "value": 1.34
+        },
+        {
+          "id": "mexico-nuevo-leon",
+          "slug": "mexico-nuevo-leon",
+          "name": "Nuevo Le\u00f3n",
+          "value": 1.19
+        },
+        {
+          "id": "mexico-oaxaca",
+          "slug": "mexico-oaxaca",
+          "name": "Oaxaca",
+          "value": 1.28
+        },
+        {
+          "id": "mexico-puebla",
+          "slug": "mexico-puebla",
+          "name": "Puebla",
+          "value": 1.33
+        },
+        {
+          "id": "mexico-queretaro",
+          "slug": "mexico-queretaro",
+          "name": "Quer\u00e9taro",
+          "value": 1.06
+        },
+        {
+          "id": "mexico-quintana-roo",
+          "slug": "mexico-quintana-roo",
+          "name": "Quintana Roo",
+          "value": 1.19
+        },
+        {
+          "id": "mexico-san-luis-potosi",
+          "slug": "mexico-san-luis-potosi",
+          "name": "San Luis Potos\u00ed",
+          "value": 1.3
+        },
+        {
+          "id": "mexico-sinaloa",
+          "slug": "mexico-sinaloa",
+          "name": "Sinaloa",
+          "value": 1.27
+        },
+        {
+          "id": "mexico-sonora",
+          "slug": "mexico-sonora",
+          "name": "Sonora",
+          "value": 1.25
+        },
+        {
+          "id": "mexico-tabasco",
+          "slug": "mexico-tabasco",
+          "name": "Tabasco",
+          "value": 1.31
+        },
+        {
+          "id": "mexico-tamaulipas",
+          "slug": "mexico-tamaulipas",
+          "name": "Tamaulipas",
+          "value": 1.27
+        },
+        {
+          "id": "mexico-tlaxcala",
+          "slug": "mexico-tlaxcala",
+          "name": "Tlaxcala",
+          "value": 1.28
+        },
+        {
+          "id": "mexico-veracruz",
+          "slug": "mexico-veracruz",
+          "name": "Veracruz",
+          "value": 1.27
+        },
+        {
+          "id": "mexico-yucatan",
+          "slug": "mexico-yucatan",
+          "name": "Yucat\u00e1n",
+          "value": 1.26
+        },
+        {
+          "id": "mexico-zacatecas",
+          "slug": "mexico-zacatecas",
+          "name": "Zacatecas",
+          "value": 1.61
+        }
+      ],
+      "min": 0.79,
+      "max": 1.66
     }
   ]
 }

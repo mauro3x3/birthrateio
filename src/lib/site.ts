@@ -146,6 +146,12 @@ export const navTopics: NavTopic[] = [
           "TFR, population and growth by state, province and prefecture",
       },
       {
+        title: "Historic empires",
+        href: "/maps/historic",
+        description:
+          "Ottoman, Russian, Habsburg, German, British India, Qing — religion and nationality from old censuses",
+      },
+      {
         title: "Census maps",
         href: "/demographics",
         description:

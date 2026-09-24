@@ -1529,7 +1529,7 @@
         }
       ],
       "dataUrl": "/data/census/rus.json",
-      "fitMaxZoom": 4.4
+      "fitMaxZoom": 4.2
     },
     {
       "slug": "slovakia",

@@ -444,6 +444,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "National rates and nowcasts",
       },
       {
+        title: "Historic empire maps",
+        href: "/maps/historic",
+        note: "Ottoman, Russian, Habsburg, German, British India, Qing and more",
+      },
+      {
         title: "States & provinces",
         href: "/states",
         note: "Tables and interactive explorers for the same geographies",
@@ -460,7 +465,32 @@ export const TOPIC_META: TopicMeta[] = [
       },
     ],
     caveats: [
-      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Iran 2025 is a BirthGauge estimate from provincial births and citypopulation.de age structure, not an SCI table. Colombia is DANE Estadísticas Vitales TGF by department (2023–24). Pakistan uses PDHS 2017–18 regions, including FATA as then published. Nigeria is NDHS 2023–24 states; Brazil is IBGE 2024-revision TFT for 2023; Indonesia is BPS SUPAS 2025 (38 provinces). EU, MENA, Caribbean, South America, Southeast Asia, Central America, Central Asia, North America and Oceania country maps use BirthGauge’s latest compiled TFR where it exists, otherwise World Bank WDI. Guyana 1.75 on the South America map is an unofficial 2025 estimate from GRO registered live births (13,132), not a Bureau of Statistics TFR. Venezuela 2.01 is UCAB ENCOVI 2023 (household survey), not INE vital statistics. Nicaragua 2.2 on the Central America map is INIDE’s 2020–2025 TGF (BCN Nicaragua en Cifras 2025), not BirthGauge 2020. El Salvador 1.4 is the 2024 census TGF (BCR/ONEC), not World Bank WDI. The Africa country map prefers recent DHS/MIS national TFR, Congo-Brazzaville EDSC-III 2025 (3.5), and Stats SA 2026 (2.12).",
+      "Each map uses that country's official definition of a region and its own reference year, so colours are not comparable across countries. China 2023 is a BirthGauge estimate, not an NBS provincial TFR table. Iran 2025 is a BirthGauge estimate from provincial births and citypopulation.de age structure, not an SCI table. Colombia is DANE Estadísticas Vitales TGF by department (2023–24). Pakistan uses PDHS 2017–18 regions, including FATA as then published. Nigeria is NDHS 2023–24 states; Brazil is IBGE 2024-revision TFT for 2023; Indonesia is BPS SUPAS 2025 (38 provinces). Iraq 2025 is BirthGauge governorate TFR (no Kurdish Region data). Mexico 2024 pins Mexico City / Baja California / Querétaro from INEGI Intercensal 2025 coverage and scales other states from ENADID 2018. EU, MENA, Caribbean, South America, Southeast Asia, Central America, Central Asia, North America and Oceania country maps use BirthGauge’s latest compiled TFR where it exists, otherwise World Bank WDI. Guyana 1.75 on the South America map is an unofficial 2025 estimate from GRO registered live births (13,132), not a Bureau of Statistics TFR. Venezuela 2.01 is UCAB ENCOVI 2023 (household survey), not INE vital statistics. Nicaragua 2.2 on the Central America map is INIDE’s 2020–2025 TGF (BCN Nicaragua en Cifras 2025), not BirthGauge 2020. El Salvador 1.4 is the 2024 census TGF (BCR/ONEC), not World Bank WDI. The Africa country map prefers recent DHS/MIS national TFR, Congo-Brazzaville EDSC-III 2025 (3.5), and Stats SA 2026 (2.12).",
+    ],
+  },
+  {
+    href: "/maps/historic",
+    title: "Historic empire maps",
+    indicators: [],
+    related: [
+      {
+        title: "Regional maps",
+        href: "/maps",
+        note: "Modern fertility by state and province",
+      },
+      {
+        title: "Census maps",
+        href: "/demographics",
+        note: "Contemporary ethnicity and ancestry choropleths",
+      },
+      {
+        title: "Fertility",
+        href: "/fertility",
+        note: "National rates and nowcasts",
+      },
+    ],
+    caveats: [
+      "Historic layers use period administrative units (uyezds, kreise, crownlands) that do not match today’s borders. Interactive polygons ship as each boundary file is matched to the census tables.",
     ],
   },
   {

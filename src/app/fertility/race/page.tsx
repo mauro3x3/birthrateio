@@ -14,6 +14,7 @@ import {
   TFR_BY_ORIGIN_AUSTRIA,
   IRANIAN_DIASPORA_EXOGAMY,
   AZERBAIJAN_VITAL_2026,
+  EGYPT_VITAL_2025,
   BOLIVIA_INE_PROJECTIONS,
   US_INTERMARRIAGE_PEW,
   JEWISH_INTERMARRIAGE_PEW,
@@ -35,7 +36,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Fertility by race, origin & income",
   description:
-    "U.S. fertility by race since 1980, European NSO mixed marriages and second-generation endogamy, UK ethnic partnerships, MENA consanguinity, Jewish and Iranian inmarriage, Asian co-ethnic marriage, GDP–fertility scatter, and recent national releases.",
+    "U.S. fertility by race since 1980, European NSO mixed marriages and second-generation endogamy, UK ethnic partnerships, MENA consanguinity, Jewish and Iranian inmarriage, Asian co-ethnic marriage, GDP–fertility scatter, Egypt CAPMAS vitals, and recent national releases.",
   alternates: { canonical: "/fertility/race" },
 };
 
@@ -55,6 +56,19 @@ export default async function FertilityByRacePage() {
     natural:
       AZERBAIJAN_VITAL_2026.vitalStats[1]!.naturalIncrease -
       AZERBAIJAN_VITAL_2026.vitalStats[0]!.naturalIncrease,
+  };
+
+  const egyFull = EGYPT_VITAL_2025.vitalStats.slice(0, 2);
+  const egyPartial = EGYPT_VITAL_2025.vitalStats.slice(2, 4);
+  const egyFullDiff = {
+    births: egyFull[1]!.liveBirths - egyFull[0]!.liveBirths,
+    deaths: egyFull[1]!.deaths - egyFull[0]!.deaths,
+    natural: egyFull[1]!.naturalIncrease - egyFull[0]!.naturalIncrease,
+  };
+  const egyPartialDiff = {
+    births: egyPartial[1]!.liveBirths - egyPartial[0]!.liveBirths,
+    deaths: egyPartial[1]!.deaths - egyPartial[0]!.deaths,
+    natural: egyPartial[1]!.naturalIncrease - egyPartial[0]!.naturalIncrease,
   };
 
   const boliviaTfr = BOLIVIA_INE_PROJECTIONS.series.map((s) => ({
@@ -1149,6 +1163,181 @@ export default async function FertilityByRacePage() {
             .{" "}
             <Link href="/country/azerbaijan" className="link-editorial">
               Azerbaijan country page
+            </Link>
+          </p>
+        </section>
+
+        <section>
+          <SectionHeading
+            id="egypt-vitals"
+            title="Egypt — CAPMAS fertility & vitals"
+            description={EGYPT_VITAL_2025.note}
+            tocLabel="Egypt"
+          />
+          <div className="mt-5 grid gap-8 lg:grid-cols-2">
+            <div className="overflow-x-auto">
+              <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                Full year
+              </p>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-[0.7rem] uppercase tracking-wide text-muted-foreground">
+                    <th className="py-2 pr-4">Period</th>
+                    <th className="py-2 pr-4">Live births</th>
+                    <th className="py-2 pr-4">Deaths</th>
+                    <th className="py-2 pr-4">Natural increase</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {egyFull.map((r) => (
+                    <tr key={r.period} className="border-b border-border/60">
+                      <td className="py-2 pr-4">{r.period}</td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.liveBirths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.deaths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.naturalIncrease.toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                  <tr className="border-b border-border font-medium">
+                    <td className="py-2 pr-4">Difference</td>
+                    <td className="py-2 pr-4 tabular-nums text-destructive">
+                      {egyFullDiff.births.toLocaleString()} (
+                      {(
+                        (egyFullDiff.births / egyFull[0]!.liveBirths) *
+                        100
+                      ).toFixed(2)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums">
+                      {egyFullDiff.deaths.toLocaleString()} (
+                      {(
+                        (egyFullDiff.deaths / egyFull[0]!.deaths) *
+                        100
+                      ).toFixed(2)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums text-destructive">
+                      {egyFullDiff.natural.toLocaleString()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div className="overflow-x-auto">
+              <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                January–July
+              </p>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-[0.7rem] uppercase tracking-wide text-muted-foreground">
+                    <th className="py-2 pr-4">Period</th>
+                    <th className="py-2 pr-4">Live births</th>
+                    <th className="py-2 pr-4">Deaths</th>
+                    <th className="py-2 pr-4">Natural increase</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {egyPartial.map((r) => (
+                    <tr key={r.period} className="border-b border-border/60">
+                      <td className="py-2 pr-4">{r.period}</td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.liveBirths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.deaths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.naturalIncrease.toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                  <tr className="border-b border-border font-medium">
+                    <td className="py-2 pr-4">Difference</td>
+                    <td className="py-2 pr-4 tabular-nums">
+                      +{egyPartialDiff.births.toLocaleString()} (
+                      {(
+                        (egyPartialDiff.births / egyPartial[0]!.liveBirths) *
+                        100
+                      ).toFixed(2)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums">
+                      +{egyPartialDiff.deaths.toLocaleString()} (
+                      {(
+                        (egyPartialDiff.deaths / egyPartial[0]!.deaths) *
+                        100
+                      ).toFixed(2)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums">
+                      +{egyPartialDiff.natural.toLocaleString()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 max-w-3xl">
+            <div className="border border-border/80 bg-card/40 px-4 py-3">
+              <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                Births to women under 20
+              </p>
+              <p className="mt-1 text-sm tabular-nums">
+                {EGYPT_VITAL_2025.under20BirthRate[0]!.year}:{" "}
+                {EGYPT_VITAL_2025.under20BirthRate[0]!.perThousandWomen} →{" "}
+                {EGYPT_VITAL_2025.under20BirthRate[1]!.year}:{" "}
+                {EGYPT_VITAL_2025.under20BirthRate[1]!.perThousandWomen} per
+                1,000 (−31%)
+              </p>
+            </div>
+            <div className="border border-border/80 bg-card/40 px-4 py-3">
+              <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                Support contraception before first pregnancy
+              </p>
+              <p className="mt-1 text-sm tabular-nums">
+                Ages 15–29 singles:{" "}
+                {
+                  EGYPT_VITAL_2025.contraceptionSupportBeforeFirstPregnancy[0]!
+                    .pct
+                }
+                % (
+                {
+                  EGYPT_VITAL_2025.contraceptionSupportBeforeFirstPregnancy[0]!
+                    .year
+                }
+                ) →{" "}
+                {
+                  EGYPT_VITAL_2025.contraceptionSupportBeforeFirstPregnancy[1]!
+                    .pct
+                }
+                % (
+                {
+                  EGYPT_VITAL_2025.contraceptionSupportBeforeFirstPregnancy[1]!
+                    .year
+                }
+                )
+              </p>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            Estimated TFR ≈ {EGYPT_VITAL_2025.estimatedTfr} (
+            {EGYPT_VITAL_2025.estimatedTfrYear};{" "}
+            {EGYPT_VITAL_2025.tfrChangePctSince2021}% since 2021). Neighbours:{" "}
+            {EGYPT_VITAL_2025.neighbors
+              .map((n) => `${n.name} ${n.tfr}`)
+              .join(" · ")}
+            .{" "}
+            <Link href="/country/egypt-arab-rep" className="link-editorial">
+              Egypt country page
+            </Link>
+            {" · "}
+            <Link href="/maps/mena" className="link-editorial">
+              MENA map
             </Link>
           </p>
         </section>

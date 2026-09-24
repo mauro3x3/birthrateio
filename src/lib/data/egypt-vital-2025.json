@@ -1,0 +1,50 @@
+{
+  "iso3": "EGY",
+  "slug": "egypt-arab-rep",
+  "country": "Egypt",
+  "note": "CAPMAS vital statistics and fertility indicators compiled from public releases (2025–2026). National TFR fell to about 2.33 in 2025 (−18% since 2021). Under-20 birth rates and contraception attitudes among young singles also moved sharply.",
+  "source": "CAPMAS (Central Agency for Public Mobilization and Statistics) — fertility and vital statistics releases, 2025–2026 (via Ahram / BirthGauge compilations).",
+  "sourceUrl": "https://french.ahram.org.eg/",
+  "estimatedTfr": 2.33,
+  "estimatedTfrYear": 2025,
+  "tfrChangePctSince2021": -18.2,
+  "under20BirthRate": [
+    { "year": 2021, "perThousandWomen": 50.0 },
+    { "year": 2025, "perThousandWomen": 34.6 }
+  ],
+  "contraceptionSupportBeforeFirstPregnancy": [
+    { "year": 2021, "pct": 18 },
+    { "year": 2025, "pct": 28 }
+  ],
+  "neighbors": [
+    { "name": "Jordan", "tfr": 2.6 },
+    { "name": "Tunisia", "tfr": 1.3 },
+    { "name": "Morocco", "tfr": 1.9 }
+  ],
+  "vitalStats": [
+    {
+      "period": "January–December 2024",
+      "liveBirths": 1968396,
+      "deaths": 611421,
+      "naturalIncrease": 1356975
+    },
+    {
+      "period": "January–December 2025",
+      "liveBirths": 1944700,
+      "deaths": 610600,
+      "naturalIncrease": 1334100
+    },
+    {
+      "period": "January–July 2025",
+      "liveBirths": 1093900,
+      "deaths": 357700,
+      "naturalIncrease": 736200
+    },
+    {
+      "period": "January–July 2026",
+      "liveBirths": 1163000,
+      "deaths": 361200,
+      "naturalIncrease": 798800
+    }
+  ]
+}

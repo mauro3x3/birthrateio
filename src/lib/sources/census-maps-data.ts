@@ -1,5 +1,10 @@
 import catalog from "@/lib/data/census-maps-catalog.json";
 import {
+  IRAN_ESTIMATES_DISCLAIMER,
+  IRAN_GROUP_BLURBS,
+  IRAN_PROVINCE_ESTIMATES,
+} from "@/lib/data/iran-ethnic-profiles";
+import {
   UK_CENSUS_META,
   UK_ETHNIC_GROUPS,
   UK_LAD_ETHNICITY,
@@ -54,6 +59,10 @@ export type CensusArea = {
   parent?: string | null;
   /** Dominant group id when mapMode is plurality. */
   plurality?: string;
+  /** True when shares are non-census estimates. */
+  estimate?: boolean;
+  /** Short province-specific note for dig-in. */
+  note?: string;
 };
 
 export type CensusReligion = {
@@ -71,6 +80,10 @@ export type CensusFile = {
   areas: Record<string, Record<string, CensusArea>>;
   mapMode?: "share" | "plurality";
   religion?: CensusReligion;
+  /** Shown when province shares are estimates (e.g. Iran). */
+  estimatesDisclaimer?: string;
+  /** One-liner unique traits keyed by group id. */
+  groupBlurbs?: Record<string, string>;
 };
 
 export const UK_CATALOG: CensusCatalogCountry = {
@@ -149,7 +162,47 @@ export function defaultCensusGroup(groups: CensusGroup[]): string {
 export async function loadCensusFile(url: string): Promise<CensusFile> {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
-  return res.json() as Promise<CensusFile>;
+  const json = (await res.json()) as CensusFile;
+  return enrichCensusFile(json, url);
+}
+
+function enrichCensusFile(file: CensusFile, url: string): CensusFile {
+  if (!url.includes("irn.json")) return file;
+
+  const blurbs: Record<string, string> = {};
+  for (const g of IRAN_GROUP_BLURBS) blurbs[g.id] = g.blurb;
+
+  const byCode = new Map(IRAN_PROVINCE_ESTIMATES.map((p) => [p.code, p]));
+  const areas = { ...file.areas };
+  for (const [levelId, levelMap] of Object.entries(areas)) {
+    const next: Record<string, CensusArea> = {};
+    for (const [code, area] of Object.entries(levelMap)) {
+      const est = byCode.get(code) ?? byCode.get(area.slug);
+      if (!est) {
+        next[code] = area;
+        continue;
+      }
+      // Replace the fake 100%/0% plurality stubs with estimated shares.
+      const shares: Record<string, number> = {};
+      for (const key of Object.keys(area.shares)) shares[key] = 0;
+      for (const [k, v] of Object.entries(est.shares)) shares[k] = v;
+      next[code] = {
+        ...area,
+        population: est.population ?? area.population,
+        shares,
+        estimate: true,
+        note: est.note,
+      };
+    }
+    areas[levelId] = next;
+  }
+
+  return {
+    ...file,
+    areas,
+    estimatesDisclaimer: IRAN_ESTIMATES_DISCLAIMER,
+    groupBlurbs: blurbs,
+  };
 }
 
 function ukLadToArea(row: UkAreaEthnicityRow): CensusArea {

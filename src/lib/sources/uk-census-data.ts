@@ -140,12 +140,120 @@ export function ukPctColor(
 }
 
 /**
- * Quantile class breaks — census maps read cleaner as discrete classes
- * so neighbouring same-bin areas merge instead of shimmering.
+ * Choropleth class breaks.
+ * Quantiles collapse on zero-inflated / right-skewed ethnic shares
+ * (Chechens, Tatars, …) into useless 0–0% bins and one giant top bin.
+ * Prefer Jenks natural breaks; fall back to unique-aware quantiles.
  */
 export function ukPctBreaks(values: number[], classes = 5): number[] {
   const sorted = values.filter(Number.isFinite).sort((a, b) => a - b);
   if (!sorted.length) return [0, 20, 40, 60, 80, 100];
+  const min = sorted[0];
+  const max = sorted[sorted.length - 1];
+  if (max - min < 1e-9) return [min, roundBreak(min + Math.max(0.01, min * 0.01 || 0.01))];
+
+  const unique = uniqueSorted(sorted);
+  const k = Math.min(classes, Math.max(2, unique.length));
+  if (unique.length <= k) {
+    // Fewer unique values than classes — use the unique edges + max.
+    const breaks = [...unique];
+    if (breaks[breaks.length - 1] < max) breaks.push(max);
+    return strictIncrease(breaks.length >= 2 ? breaks : [min, max]);
+  }
+
+  // Jenks is O(n²k); fine for federal subjects / LADs (n ≲ a few thousand).
+  if (sorted.length <= 2500) {
+    return strictIncrease(jenksBreaks(sorted, k));
+  }
+  return strictIncrease(uniqueQuantileBreaks(sorted, k));
+}
+
+function uniqueSorted(sorted: number[]): number[] {
+  const out: number[] = [];
+  for (const v of sorted) {
+    if (!out.length || Math.abs(out[out.length - 1] - v) > 1e-9) out.push(v);
+  }
+  return out;
+}
+
+function roundBreak(v: number): number {
+  if (!Number.isFinite(v)) return 0;
+  if (Math.abs(v) >= 10) return Math.round(v * 10) / 10;
+  if (Math.abs(v) >= 1) return Math.round(v * 100) / 100;
+  return Math.round(v * 1000) / 1000;
+}
+
+function strictIncrease(breaks: number[]): number[] {
+  const out = breaks.map(roundBreak);
+  for (let i = 1; i < out.length; i++) {
+    if (out[i] <= out[i - 1]) {
+      const step =
+        Math.abs(out[i - 1]) >= 1 ? 0.1 : Math.abs(out[i - 1]) >= 0.1 ? 0.01 : 0.001;
+      out[i] = roundBreak(out[i - 1] + step);
+    }
+  }
+  return out;
+}
+
+/** Fisher–Jenks natural breaks (matrix dynamic programming). */
+function jenksBreaks(sorted: number[], classes: number): number[] {
+  const n = sorted.length;
+  const k = Math.max(2, Math.min(classes, n));
+  // lower[j][i] = index of first member of class i ending at index j (1-based)
+  const lower: number[][] = Array.from({ length: n + 1 }, () =>
+    Array(k + 1).fill(0),
+  );
+  const variance: number[][] = Array.from({ length: n + 1 }, () =>
+    Array(k + 1).fill(0),
+  );
+
+  for (let i = 1; i <= k; i++) {
+    lower[1][i] = 1;
+    variance[1][i] = 0;
+    for (let j = 2; j <= n; j++) variance[j][i] = Infinity;
+  }
+
+  for (let l = 2; l <= n; l++) {
+    let sum = 0;
+    let sumSq = 0;
+    let w = 0;
+    for (let m = 1; m <= l; m++) {
+      const i3 = l - m + 1;
+      const val = sorted[i3 - 1];
+      sumSq += val * val;
+      sum += val;
+      w += 1;
+      const varianceVal = sumSq - (sum * sum) / w;
+      const i4 = i3 - 1;
+      if (i4 !== 0) {
+        for (let j = 2; j <= k; j++) {
+          const trial = variance[i4][j - 1] + varianceVal;
+          if (trial < variance[l][j]) {
+            lower[l][j] = i3;
+            variance[l][j] = trial;
+          }
+        }
+      }
+    }
+    lower[l][1] = 1;
+    variance[l][1] = sumSq - (sum * sum) / w;
+  }
+
+  const breaks: number[] = Array(k + 1).fill(0);
+  breaks[k] = sorted[n - 1];
+  breaks[0] = sorted[0];
+  let countNum = k;
+  let dataIndex = n;
+  while (countNum >= 2) {
+    const id = lower[dataIndex][countNum] - 2;
+    breaks[countNum - 1] = sorted[Math.max(0, id)];
+    dataIndex = lower[dataIndex][countNum] - 1;
+    countNum -= 1;
+  }
+  return breaks;
+}
+
+function uniqueQuantileBreaks(sorted: number[], classes: number): number[] {
   const breaks: number[] = [sorted[0]];
   for (let i = 1; i < classes; i++) {
     const idx = Math.min(
@@ -155,10 +263,6 @@ export function ukPctBreaks(values: number[], classes = 5): number[] {
     breaks.push(sorted[idx]);
   }
   breaks.push(sorted[sorted.length - 1]);
-  // Ensure strictly increasing breaks
-  for (let i = 1; i < breaks.length; i++) {
-    if (breaks[i] <= breaks[i - 1]) breaks[i] = breaks[i - 1] + 0.01;
-  }
   return breaks;
 }
 
@@ -184,6 +288,13 @@ export function ukPctDomain(values: number[]): { min: number; max: number } {
   return { min, max: max > min ? max : min + 1 };
 }
 
+function formatPctBreak(v: number): string {
+  if (v >= 10) return v.toFixed(1).replace(/\.0$/, "");
+  if (v >= 1) return v.toFixed(1);
+  if (v >= 0.1) return v.toFixed(1);
+  return v.toFixed(2);
+}
+
 export function ukPctLegendFromBreaks(
   breaks: number[],
 ): { label: string; color: string }[] {
@@ -194,10 +305,7 @@ export function ukPctLegendFromBreaks(
     const hi = breaks[i + 1];
     const mid = (lo + hi) / 2;
     return {
-      label:
-        i === n - 1
-          ? `${lo.toFixed(1)}–${hi.toFixed(1)}%`
-          : `${lo.toFixed(1)}–${hi.toFixed(1)}%`,
+      label: `${formatPctBreak(lo)}–${formatPctBreak(hi)}%`,
       color: ukPctClassColor(mid, breaks),
     };
   });

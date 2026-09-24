@@ -70,8 +70,11 @@ export function CensusMapExplorer({
   );
   const [loadError, setLoadError] = React.useState<string | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
-  const [showLabels, setShowLabels] = React.useState(
-    () => resolved.mapMode === "plurality" || resolved.slug === "canada",
+  const [showNames, setShowNames] = React.useState(
+    () => resolved.slug === "canada" || resolved.mapMode !== "plurality",
+  );
+  const [showGroups, setShowGroups] = React.useState(
+    () => resolved.mapMode === "plurality",
   );
   const [selectedCode, setSelectedCode] = React.useState<string | null>(null);
 
@@ -85,7 +88,8 @@ export function CensusMapExplorer({
     setLevelId(cfg.levels.at(-1)?.id ?? "");
     setParentCode(null);
     setSelectedCode(null);
-    setShowLabels(cfg.mapMode === "plurality" || cfg.slug === "canada");
+    setShowNames(cfg.slug === "canada" || cfg.mapMode !== "plurality");
+    setShowGroups(cfg.mapMode === "plurality");
     setLoadError(null);
     if (cfg.builtin === "uk") {
       setFile(ukCensusAsFile());
@@ -263,7 +267,18 @@ export function CensusMapExplorer({
     () => (panelOpen ? [8, 328] : [8, 8]),
     [panelOpen],
   );
-  const labelMode = isPlurality ? "value-name" : "name-value";
+  const labelMode = isPlurality
+    ? showNames && showGroups
+      ? "value-name"
+      : showGroups
+        ? "value"
+        : "name"
+    : showNames && showGroups
+      ? "name-value"
+      : showGroups
+        ? "value"
+        : "name";
+  const showLabels = showNames || showGroups;
   const selectedIds = React.useMemo(
     () => (selectedCode ? [selectedCode] : []),
     [selectedCode],
@@ -427,23 +442,42 @@ export function CensusMapExplorer({
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Map labels
               </p>
-              <button
-                type="button"
-                role="switch"
-                aria-checked={showLabels}
-                onClick={() => setShowLabels((v) => !v)}
-                className={cn(
-                  "mt-1.5 flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
-                  showLabels
-                    ? "border-foreground bg-foreground text-background"
-                    : "border-input bg-background text-muted-foreground hover:text-foreground",
-                )}
-              >
-                <span>{isPlurality ? "Groups & names" : "Names & values"}</span>
-                <span className="text-[10px] uppercase tracking-[0.14em]">
-                  {showLabels ? "On" : "Off"}
-                </span>
-              </button>
+              <div className="mt-1.5 space-y-1.5">
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={showNames}
+                  onClick={() => setShowNames((v) => !v)}
+                  className={cn(
+                    "flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                    showNames
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-input bg-background text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  <span>Province names</span>
+                  <span className="text-[10px] uppercase tracking-[0.14em]">
+                    {showNames ? "On" : "Off"}
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-checked={showGroups}
+                  onClick={() => setShowGroups((v) => !v)}
+                  className={cn(
+                    "flex h-9 w-full items-center justify-between rounded-sm border px-3 text-sm transition-colors",
+                    showGroups
+                      ? "border-foreground bg-foreground text-background"
+                      : "border-input bg-background text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  <span>{isPlurality ? "Ethnic groups" : "Values"}</span>
+                  <span className="text-[10px] uppercase tracking-[0.14em]">
+                    {showGroups ? "On" : "Off"}
+                  </span>
+                </button>
+              </div>
               <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
                 Click a province on the map to inspect its demographics.
               </p>
@@ -469,31 +503,76 @@ export function CensusMapExplorer({
                   </button>
                 </div>
                 {isPlurality ? (
-                  <div className="mt-3">
-                    <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                      Dominant group
-                    </p>
-                    <p className="mt-1 flex items-center gap-2 text-sm font-medium text-foreground">
-                      <span
-                        className="h-2.5 w-2.5 shrink-0"
-                        style={{
-                          background: digInPluralityGroup?.color ?? "#94a3b8",
-                        }}
-                      />
-                      {digInPluralityGroup?.shortLabel ?? "—"}
-                    </p>
+                  <div className="mt-3 space-y-3">
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                        Dominant group
+                      </p>
+                      <p className="mt-1 flex items-center gap-2 text-sm font-medium text-foreground">
+                        <span
+                          className="h-2.5 w-2.5 shrink-0"
+                          style={{
+                            background: digInPluralityGroup?.color ?? "#94a3b8",
+                          }}
+                        />
+                        {digInPluralityGroup?.shortLabel ?? "—"}
+                      </p>
+                      {file?.groupBlurbs?.[selectedArea.plurality ?? ""] ? (
+                        <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
+                          {file.groupBlurbs[selectedArea.plurality!]}
+                        </p>
+                      ) : null}
+                    </div>
                     {selectedArea.population > 0 ? (
-                      <p className="mt-2 text-[12px] text-muted-foreground">
+                      <p className="text-[12px] text-muted-foreground">
                         Population{" "}
                         <span className="tabular-nums text-foreground">
                           {formatNumber(selectedArea.population, 0)}
                         </span>
+                        <span className="text-muted-foreground/70"> · 2016</span>
                       </p>
                     ) : null}
-                    <p className="mt-2 text-[10px] leading-relaxed text-muted-foreground">
-                      {resolved.name} does not publish provincial ethnicity
-                      percentages — colour is the academic majority
-                      classification only.
+                    <div>
+                      <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                        {selectedArea.estimate
+                          ? "Estimated ethnic shares"
+                          : "Ethnic shares"}
+                      </p>
+                      <ul className="mt-2 max-h-44 space-y-1 overflow-y-auto text-[12px]">
+                        {resolved.groups
+                          .map((g) => ({
+                            g,
+                            pct: selectedArea.shares[g.id] ?? 0,
+                          }))
+                          .filter((row) => row.pct > 0)
+                          .sort((a, b) => b.pct - a.pct)
+                          .map(({ g, pct }) => (
+                            <li
+                              key={g.id}
+                              className="flex items-center justify-between gap-2"
+                            >
+                              <span className="flex min-w-0 items-center gap-1.5 truncate">
+                                <span
+                                  className="h-2 w-2 shrink-0"
+                                  style={{ background: g.color ?? "#94a3b8" }}
+                                />
+                                <span className="truncate">{g.shortLabel}</span>
+                              </span>
+                              <span className="tabular-nums text-muted-foreground">
+                                {formatNumber(pct, pct >= 10 ? 0 : 1)}%
+                              </span>
+                            </li>
+                          ))}
+                      </ul>
+                    </div>
+                    {selectedArea.note ? (
+                      <p className="text-[11px] leading-relaxed text-foreground/80">
+                        {selectedArea.note}
+                      </p>
+                    ) : null}
+                    <p className="text-[10px] leading-relaxed text-muted-foreground">
+                      {file?.estimatesDisclaimer ??
+                        `${resolved.name} does not publish provincial ethnicity percentages — figures are estimates.`}
                     </p>
                   </div>
                 ) : (

@@ -81,6 +81,8 @@ const FEATURED = [
   "COL",
   "IDN",
   "IRN",
+  "IRQ",
+  "MEX",
   "EU",
   "MENA",
   "SAU",
