@@ -943,12 +943,12 @@
         }
       ],
       "dataUrl": "/data/census/irn.json",
-      "fitMaxZoom": 6.8,
+      "fitMaxZoom": 7.25,
       "fitClamp": {
-        "west": 44,
-        "south": 25,
-        "east": 63.5,
-        "north": 40
+        "west": 44.1,
+        "south": 25.1,
+        "east": 63.2,
+        "north": 39.7
       }
     },
     {

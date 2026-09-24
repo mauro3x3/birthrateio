@@ -358,6 +358,28 @@ function mapLabelText(
     : value.toLocaleString("en-US", { maximumFractionDigits: 2 });
 }
 
+/** Trim long admin names so stacked map labels stay readable. */
+function shortenMapLabel(name: string, max = 18): string {
+  if (name.length <= max) return name;
+  const andIdx = name.search(/\s+and\s+/i);
+  if (andIdx > 5 && andIdx <= max + 2) return name.slice(0, andIdx);
+  const dashIdx = name.indexOf("–");
+  if (dashIdx > 5 && dashIdx <= max) return name.slice(0, dashIdx);
+  if (name.includes("-") && name.length > max) {
+    const left = name.split("-")[0]?.trim();
+    if (left && left.length >= 5 && left.length <= max) return left;
+  }
+  return `${name.slice(0, max - 1)}…`;
+}
+
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
 function ValueLabels({
   geo,
   byId,
@@ -371,7 +393,7 @@ function ValueLabels({
   featureId: (feature?: Feature) => string | undefined;
   formatValue?: (value: number) => string;
   hideIds?: Set<string>;
-  labelMode?: "value" | "name" | "name-value";
+  labelMode?: "value" | "name" | "name-value" | "value-name";
 }) {
   const items = React.useMemo(() => {
     const out: {
@@ -388,17 +410,25 @@ function ValueLabels({
       const pt = labelLngLat(feature);
       if (!pt) continue;
       const valueText = mapLabelText(datum.value, formatValue);
+      const shortName = shortenMapLabel(datum.name);
+      const stackClass = "br-map-value-text br-map-value-stack";
       const text =
         labelMode === "name"
-          ? datum.name
+          ? escapeHtml(shortName)
           : labelMode === "name-value"
-            ? `${datum.name}<br/><span class="br-map-value-sub">${valueText}</span>`
-            : valueText;
+            ? `${escapeHtml(shortName)}<br/><span class="br-map-value-sub">${escapeHtml(valueText)}</span>`
+            : labelMode === "value-name"
+              ? `<span class="br-map-value-primary">${escapeHtml(valueText)}</span><br/><span class="br-map-value-sub">${escapeHtml(shortName)}</span>`
+              : escapeHtml(valueText);
+      const className =
+        labelMode === "name-value" || labelMode === "value-name"
+          ? stackClass
+          : "br-map-value-text";
       out.push({
         id,
         lng: pt[0],
         lat: pt[1],
-        html: `<span class="br-map-value-text">${text}</span>`,
+        html: `<span class="${className}">${text}</span>`,
       });
     }
     return out;
@@ -759,7 +789,7 @@ export function RegionChoroplethMap({
   /** Paint values on each region so they can be read without hovering. */
   showLabels?: boolean;
   /** What to paint when showLabels is on. */
-  labelMode?: "value" | "name" | "name-value";
+  labelMode?: "value" | "name" | "name-value" | "value-name";
   /** Region ids currently in a shift-click selection. */
   selectedIds?: string[];
   /** Shift-click to select; plain click to navigate (parent can override). */

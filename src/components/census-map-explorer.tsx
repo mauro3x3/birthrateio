@@ -263,7 +263,7 @@ export function CensusMapExplorer({
     () => (panelOpen ? [8, 328] : [8, 8]),
     [panelOpen],
   );
-  const labelMode = isPlurality ? "name" : "name-value";
+  const labelMode = isPlurality ? "value-name" : "name-value";
   const selectedIds = React.useMemo(
     () => (selectedCode ? [selectedCode] : []),
     [selectedCode],
@@ -337,7 +337,7 @@ export function CensusMapExplorer({
                 : `${areaLabel}: ${group?.shortLabel ?? ""}`
             }
             legendPlacement="bottom-right"
-            revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${selectedCode ?? "none"}-${panelOpen ? "p" : "f"}-${showLabels ? "l" : "n"}-${isPlurality ? "pl" : "sh"}`}
+            revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${isPlurality ? "pl" : "sh"}`}
             filterIds={filterIds}
             adaptiveStroke={areas.length > 80}
             oceanColor={MAP_OCEAN.atlas}
@@ -439,7 +439,7 @@ export function CensusMapExplorer({
                     : "border-input bg-background text-muted-foreground hover:text-foreground",
                 )}
               >
-                <span>{isPlurality ? "Names on map" : "Names & values"}</span>
+                <span>{isPlurality ? "Groups & names" : "Names & values"}</span>
                 <span className="text-[10px] uppercase tracking-[0.14em]">
                   {showLabels ? "On" : "Off"}
                 </span>
