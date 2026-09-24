@@ -39,6 +39,7 @@ yarn-error.log*
 /data/worldpop
 /data/pmtiles
 /.tmp-map-build
+/.tmp-pylib/
 
 # generated population tiles (rebuild with scripts/build-india-population-pmtiles.py)
 /public/tiles/*.pmtiles
