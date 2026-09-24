@@ -1,6 +1,69 @@
 {
   "maps": [
     {
+      "id": "empires-1914-overview",
+      "slug": "empires-1914",
+      "title": "Great powers & empires, 1914",
+      "empire": "World overview",
+      "year": 1914,
+      "metric": "religion-plurality",
+      "kind": "historic-state",
+      "status": "planned",
+      "region": "Overview",
+      "blurb": "Interactive state-level overview on 1914 borders: each polity painted by its overall religious majority. District-level maps (Russian uyezds, Ottoman vilayets, German kreise) are listed below and still need historic census GIS.",
+      "source": "Borders: historical-basemaps world_1914. Plurality coding by birthrate.io.",
+      "sourceUrl": "https://github.com/aourednik/historical-basemaps",
+      "geoUrl": "/geo/historic/empires-1914.json",
+      "groups": [
+        {
+          "id": "orthodox",
+          "shortLabel": "Orthodox",
+          "color": "#4a2c6a"
+        },
+        {
+          "id": "catholic",
+          "shortLabel": "Catholic",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "protestant",
+          "shortLabel": "Protestant",
+          "color": "#5dade2"
+        },
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim",
+          "color": "#27ae60"
+        },
+        {
+          "id": "shia",
+          "shortLabel": "Shiʿa",
+          "color": "#1e8449"
+        },
+        {
+          "id": "hindu",
+          "shortLabel": "Hindu",
+          "color": "#e67e22"
+        },
+        {
+          "id": "buddhist",
+          "shortLabel": "Buddhist",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "mixed",
+          "shortLabel": "Mixed",
+          "color": "#95a5a6"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#bdc3c7"
+        }
+      ],
+      "statusNote": "World overview paused — rendering on full-world historic basemaps was unreliable. Empire-specific maps (starting with Austria-Hungary) are being built instead."
+    },
+    {
       "id": "rus-empire-religion-1897",
       "slug": "russian-empire-1897",
       "title": "Religions in the Russian Empire, 1897",
@@ -8,21 +71,54 @@
       "year": 1897,
       "metric": "religion-plurality",
       "kind": "historic-district",
-      "status": "planned",
+      "status": "live",
       "region": "Eurasia",
-      "blurb": "One census, a dozen faiths: Orthodox majority across the core, with Protestant Baltics, Catholic west, Muslim Volga & Caucasus, Buddhist Kalmyk steppe — Finland was not enumerated.",
+      "blurb": "Interactive 1897 religion map: Orthodox core, Protestant Baltics & Finland, Catholic Poland/Lithuania, Muslim Volga–Caucasus–Central Asia, Buddhist Kalmyk/Buryat steppe — on modern provinces inside the 1914 empire outline.",
       "source": "Russian Empire Census 1897 (religion). Cartographic inspiration: forummapping.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Russian_Empire_Census",
       "groups": [
-        { "id": "orthodox", "shortLabel": "Orthodox", "color": "#4a2c6a" },
-        { "id": "protestant", "shortLabel": "Protestant", "color": "#5dade2" },
-        { "id": "catholic", "shortLabel": "Catholic", "color": "#f4d03f" },
-        { "id": "muslim", "shortLabel": "Muslim", "color": "#27ae60" },
-        { "id": "buddhist", "shortLabel": "Buddhist", "color": "#e67e22" },
-        { "id": "armenian", "shortLabel": "Armenian Apostolic", "color": "#922b21" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#a569bd" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "orthodox",
+          "shortLabel": "Orthodox",
+          "color": "#4a2c6a"
+        },
+        {
+          "id": "protestant",
+          "shortLabel": "Protestant",
+          "color": "#5dade2"
+        },
+        {
+          "id": "catholic",
+          "shortLabel": "Catholic",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim",
+          "color": "#27ae60"
+        },
+        {
+          "id": "buddhist",
+          "shortLabel": "Buddhist",
+          "color": "#e67e22"
+        },
+        {
+          "id": "armenian",
+          "shortLabel": "Armenian Apostolic",
+          "color": "#922b21"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#a569bd"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "geoUrl": "/geo/historic/russian-empire-1897.json"
     },
     {
       "id": "ottoman-millet-1914",
@@ -38,14 +134,43 @@
       "source": "Ottoman official statistics and millet estimates, c. 1881–1914 (vilayet yearbooks / 1914 demographic compilations).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Ottoman_Empire",
       "groups": [
-        { "id": "muslim", "shortLabel": "Muslim", "color": "#1e8449" },
-        { "id": "greek-orthodox", "shortLabel": "Greek Orthodox", "color": "#2874a6" },
-        { "id": "armenian", "shortLabel": "Armenian", "color": "#922b21" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#8e44ad" },
-        { "id": "assyrian", "shortLabel": "Assyrian / Syriac", "color": "#b9770e" },
-        { "id": "other-christian", "shortLabel": "Other Christian", "color": "#5dade2" },
-        { "id": "other", "shortLabel": "Other / mixed", "color": "#95a5a6" }
-      ]
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim",
+          "color": "#1e8449"
+        },
+        {
+          "id": "greek-orthodox",
+          "shortLabel": "Greek Orthodox",
+          "color": "#2874a6"
+        },
+        {
+          "id": "armenian",
+          "shortLabel": "Armenian",
+          "color": "#922b21"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "assyrian",
+          "shortLabel": "Assyrian / Syriac",
+          "color": "#b9770e"
+        },
+        {
+          "id": "other-christian",
+          "shortLabel": "Other Christian",
+          "color": "#5dade2"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other / mixed",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "austria-hungary-nationalities-1910",
@@ -55,22 +180,59 @@
       "year": 1910,
       "metric": "ethnicity-plurality",
       "kind": "historic-district",
-      "status": "planned",
+      "status": "live",
       "region": "Central Europe",
-      "blurb": "A patchwork of German, Hungarian, Czech, Polish, Ukrainian, Romanian, South Slavic and Italian majorities — the census that mapped the Dual Monarchy before 1918.",
+      "blurb": "Interactive Dual Monarchy map: toggle Empire / Austria / Hungary, switch ethnicity · population · density layers, and dig into district group mixes (e.g. Bratislavský). Minority enclaves included — Sudeten, Szekler, Saxon, southern Slovak Hungarian belt.",
       "source": "Austria-Hungary censuses (language / nationality), c. 1910.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Austria-Hungary",
       "groups": [
-        { "id": "german", "shortLabel": "German", "color": "#1a5276" },
-        { "id": "hungarian", "shortLabel": "Hungarian", "color": "#922b21" },
-        { "id": "czech", "shortLabel": "Czech", "color": "#2874a6" },
-        { "id": "polish", "shortLabel": "Polish", "color": "#c0392b" },
-        { "id": "ukrainian", "shortLabel": "Ukrainian / Ruthenian", "color": "#f4d03f" },
-        { "id": "romanian", "shortLabel": "Romanian", "color": "#1e8449" },
-        { "id": "south-slav", "shortLabel": "South Slavic", "color": "#27ae60" },
-        { "id": "italian", "shortLabel": "Italian", "color": "#5dade2" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#1a5276"
+        },
+        {
+          "id": "hungarian",
+          "shortLabel": "Hungarian",
+          "color": "#922b21"
+        },
+        {
+          "id": "czech",
+          "shortLabel": "Czech",
+          "color": "#2874a6"
+        },
+        {
+          "id": "polish",
+          "shortLabel": "Polish",
+          "color": "#c0392b"
+        },
+        {
+          "id": "ukrainian",
+          "shortLabel": "Ukrainian / Ruthenian",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "romanian",
+          "shortLabel": "Romanian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "south-slav",
+          "shortLabel": "South Slavic",
+          "color": "#27ae60"
+        },
+        {
+          "id": "italian",
+          "shortLabel": "Italian",
+          "color": "#5dade2"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "geoUrl": "/geo/historic/austria-hungary-1910.json"
     },
     {
       "id": "german-empire-religion-1910",
@@ -86,11 +248,28 @@
       "source": "German Empire census religion tables, c. 1910.",
       "sourceUrl": "https://en.wikipedia.org/wiki/German_Empire",
       "groups": [
-        { "id": "protestant", "shortLabel": "Protestant", "color": "#5dade2" },
-        { "id": "catholic", "shortLabel": "Catholic", "color": "#f4d03f" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#8e44ad" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "protestant",
+          "shortLabel": "Protestant",
+          "color": "#5dade2"
+        },
+        {
+          "id": "catholic",
+          "shortLabel": "Catholic",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "kingdom-hungary-1910",
@@ -106,15 +285,48 @@
       "source": "Kingdom of Hungary census 1910 (mother tongue / nationality).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Kingdom_of_Hungary",
       "groups": [
-        { "id": "hungarian", "shortLabel": "Hungarian", "color": "#922b21" },
-        { "id": "romanian", "shortLabel": "Romanian", "color": "#1e8449" },
-        { "id": "slovak", "shortLabel": "Slovak", "color": "#2874a6" },
-        { "id": "german", "shortLabel": "German", "color": "#1a5276" },
-        { "id": "serbian", "shortLabel": "Serbian", "color": "#27ae60" },
-        { "id": "ruthenian", "shortLabel": "Ruthenian", "color": "#f4d03f" },
-        { "id": "croatian", "shortLabel": "Croatian", "color": "#5dade2" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "hungarian",
+          "shortLabel": "Hungarian",
+          "color": "#922b21"
+        },
+        {
+          "id": "romanian",
+          "shortLabel": "Romanian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "slovak",
+          "shortLabel": "Slovak",
+          "color": "#2874a6"
+        },
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#1a5276"
+        },
+        {
+          "id": "serbian",
+          "shortLabel": "Serbian",
+          "color": "#27ae60"
+        },
+        {
+          "id": "ruthenian",
+          "shortLabel": "Ruthenian",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "croatian",
+          "shortLabel": "Croatian",
+          "color": "#5dade2"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "british-india-religion-1911",
@@ -130,14 +342,43 @@
       "source": "Census of India 1911 (religion by district).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Census_of_India_prior_to_independence",
       "groups": [
-        { "id": "hindu", "shortLabel": "Hindu", "color": "#e67e22" },
-        { "id": "muslim", "shortLabel": "Muslim", "color": "#1e8449" },
-        { "id": "sikh", "shortLabel": "Sikh", "color": "#f4d03f" },
-        { "id": "christian", "shortLabel": "Christian", "color": "#5dade2" },
-        { "id": "buddhist", "shortLabel": "Buddhist", "color": "#8e44ad" },
-        { "id": "tribal", "shortLabel": "Tribal / Animist", "color": "#a04000" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "hindu",
+          "shortLabel": "Hindu",
+          "color": "#e67e22"
+        },
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim",
+          "color": "#1e8449"
+        },
+        {
+          "id": "sikh",
+          "shortLabel": "Sikh",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "christian",
+          "shortLabel": "Christian",
+          "color": "#5dade2"
+        },
+        {
+          "id": "buddhist",
+          "shortLabel": "Buddhist",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "tribal",
+          "shortLabel": "Tribal / Animist",
+          "color": "#a04000"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "qing-china-ethnicity-1910",
@@ -153,14 +394,43 @@
       "source": "Late Qing gazetteers and early Republican ethnic compilations (illustrative provincial majorities).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Qing_dynasty",
       "groups": [
-        { "id": "han", "shortLabel": "Han", "color": "#922b21" },
-        { "id": "manchu", "shortLabel": "Manchu", "color": "#1a5276" },
-        { "id": "mongol", "shortLabel": "Mongol", "color": "#27ae60" },
-        { "id": "tibetan", "shortLabel": "Tibetan", "color": "#8e44ad" },
-        { "id": "uyghur", "shortLabel": "Uyghur / Turkic", "color": "#1e8449" },
-        { "id": "hui", "shortLabel": "Hui", "color": "#f4d03f" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "han",
+          "shortLabel": "Han",
+          "color": "#922b21"
+        },
+        {
+          "id": "manchu",
+          "shortLabel": "Manchu",
+          "color": "#1a5276"
+        },
+        {
+          "id": "mongol",
+          "shortLabel": "Mongol",
+          "color": "#27ae60"
+        },
+        {
+          "id": "tibetan",
+          "shortLabel": "Tibetan",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "uyghur",
+          "shortLabel": "Uyghur / Turkic",
+          "color": "#1e8449"
+        },
+        {
+          "id": "hui",
+          "shortLabel": "Hui",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "yugoslavia-ethnicity-1931",
@@ -176,16 +446,53 @@
       "source": "Kingdom of Yugoslavia census 1931 (mother tongue / nationality).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Kingdom_of_Yugoslavia",
       "groups": [
-        { "id": "serb", "shortLabel": "Serb", "color": "#1a5276" },
-        { "id": "croat", "shortLabel": "Croat", "color": "#2874a6" },
-        { "id": "slovene", "shortLabel": "Slovene", "color": "#5dade2" },
-        { "id": "muslim", "shortLabel": "Muslim (Bosniak)", "color": "#1e8449" },
-        { "id": "macedonian", "shortLabel": "Macedonian", "color": "#27ae60" },
-        { "id": "albanian", "shortLabel": "Albanian", "color": "#922b21" },
-        { "id": "hungarian", "shortLabel": "Hungarian", "color": "#c0392b" },
-        { "id": "german", "shortLabel": "German", "color": "#f4d03f" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "serb",
+          "shortLabel": "Serb",
+          "color": "#1a5276"
+        },
+        {
+          "id": "croat",
+          "shortLabel": "Croat",
+          "color": "#2874a6"
+        },
+        {
+          "id": "slovene",
+          "shortLabel": "Slovene",
+          "color": "#5dade2"
+        },
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim (Bosniak)",
+          "color": "#1e8449"
+        },
+        {
+          "id": "macedonian",
+          "shortLabel": "Macedonian",
+          "color": "#27ae60"
+        },
+        {
+          "id": "albanian",
+          "shortLabel": "Albanian",
+          "color": "#922b21"
+        },
+        {
+          "id": "hungarian",
+          "shortLabel": "Hungarian",
+          "color": "#c0392b"
+        },
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "poland-1931",
@@ -201,14 +508,43 @@
       "source": "Polish census 1931 (mother tongue).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Second_Polish_Republic",
       "groups": [
-        { "id": "polish", "shortLabel": "Polish", "color": "#c0392b" },
-        { "id": "ukrainian", "shortLabel": "Ukrainian", "color": "#f4d03f" },
-        { "id": "belarusian", "shortLabel": "Belarusian", "color": "#27ae60" },
-        { "id": "yiddish", "shortLabel": "Yiddish / Jewish", "color": "#8e44ad" },
-        { "id": "german", "shortLabel": "German", "color": "#1a5276" },
-        { "id": "lithuanian", "shortLabel": "Lithuanian", "color": "#1e8449" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "polish",
+          "shortLabel": "Polish",
+          "color": "#c0392b"
+        },
+        {
+          "id": "ukrainian",
+          "shortLabel": "Ukrainian",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "belarusian",
+          "shortLabel": "Belarusian",
+          "color": "#27ae60"
+        },
+        {
+          "id": "yiddish",
+          "shortLabel": "Yiddish / Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#1a5276"
+        },
+        {
+          "id": "lithuanian",
+          "shortLabel": "Lithuanian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "greater-romania-1930",
@@ -224,14 +560,43 @@
       "source": "Romanian census 1930 (ethnicity / mother tongue).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Kingdom_of_Romania",
       "groups": [
-        { "id": "romanian", "shortLabel": "Romanian", "color": "#1e8449" },
-        { "id": "hungarian", "shortLabel": "Hungarian", "color": "#922b21" },
-        { "id": "german", "shortLabel": "German", "color": "#1a5276" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#8e44ad" },
-        { "id": "ukrainian", "shortLabel": "Ukrainian", "color": "#f4d03f" },
-        { "id": "bulgarian", "shortLabel": "Bulgarian", "color": "#27ae60" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "romanian",
+          "shortLabel": "Romanian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "hungarian",
+          "shortLabel": "Hungarian",
+          "color": "#922b21"
+        },
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#1a5276"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "ukrainian",
+          "shortLabel": "Ukrainian",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "bulgarian",
+          "shortLabel": "Bulgarian",
+          "color": "#27ae60"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "persian-empire-ethnicity-1900",
@@ -247,15 +612,48 @@
       "source": "Late Qajar gazetteers and early 20th-century ethnographic surveys (approximate).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Qajar_Iran",
       "groups": [
-        { "id": "persian", "shortLabel": "Persian", "color": "#922b21" },
-        { "id": "azerbaijani", "shortLabel": "Azerbaijani", "color": "#1e8449" },
-        { "id": "kurdish", "shortLabel": "Kurdish", "color": "#1a5276" },
-        { "id": "lur", "shortLabel": "Lur / Bakhtiari", "color": "#e67e22" },
-        { "id": "baloch", "shortLabel": "Baloch", "color": "#8e44ad" },
-        { "id": "arab", "shortLabel": "Arab", "color": "#27ae60" },
-        { "id": "turkmen", "shortLabel": "Turkmen", "color": "#5dade2" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "persian",
+          "shortLabel": "Persian",
+          "color": "#922b21"
+        },
+        {
+          "id": "azerbaijani",
+          "shortLabel": "Azerbaijani",
+          "color": "#1e8449"
+        },
+        {
+          "id": "kurdish",
+          "shortLabel": "Kurdish",
+          "color": "#1a5276"
+        },
+        {
+          "id": "lur",
+          "shortLabel": "Lur / Bakhtiari",
+          "color": "#e67e22"
+        },
+        {
+          "id": "baloch",
+          "shortLabel": "Baloch",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "arab",
+          "shortLabel": "Arab",
+          "color": "#27ae60"
+        },
+        {
+          "id": "turkmen",
+          "shortLabel": "Turkmen",
+          "color": "#5dade2"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "dutch-east-indies-1930",
@@ -271,15 +669,48 @@
       "source": "Volkstelling 1930 (Dutch East Indies census).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Dutch_East_Indies",
       "groups": [
-        { "id": "javanese", "shortLabel": "Javanese", "color": "#922b21" },
-        { "id": "sundanese", "shortLabel": "Sundanese", "color": "#e67e22" },
-        { "id": "malay", "shortLabel": "Malay", "color": "#1e8449" },
-        { "id": "madurese", "shortLabel": "Madurese", "color": "#1a5276" },
-        { "id": "minangkabau", "shortLabel": "Minangkabau", "color": "#27ae60" },
-        { "id": "balinese", "shortLabel": "Balinese", "color": "#8e44ad" },
-        { "id": "chinese", "shortLabel": "Chinese", "color": "#c0392b" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "javanese",
+          "shortLabel": "Javanese",
+          "color": "#922b21"
+        },
+        {
+          "id": "sundanese",
+          "shortLabel": "Sundanese",
+          "color": "#e67e22"
+        },
+        {
+          "id": "malay",
+          "shortLabel": "Malay",
+          "color": "#1e8449"
+        },
+        {
+          "id": "madurese",
+          "shortLabel": "Madurese",
+          "color": "#1a5276"
+        },
+        {
+          "id": "minangkabau",
+          "shortLabel": "Minangkabau",
+          "color": "#27ae60"
+        },
+        {
+          "id": "balinese",
+          "shortLabel": "Balinese",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "chinese",
+          "shortLabel": "Chinese",
+          "color": "#c0392b"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "french-algeria-1936",
@@ -295,11 +726,28 @@
       "source": "French Algeria censuses / colonial statistics, mid-1930s.",
       "sourceUrl": "https://en.wikipedia.org/wiki/French_Algeria",
       "groups": [
-        { "id": "muslim", "shortLabel": "Muslim Algerian", "color": "#1e8449" },
-        { "id": "european", "shortLabel": "European", "color": "#2874a6" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#8e44ad" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "muslim",
+          "shortLabel": "Muslim Algerian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "european",
+          "shortLabel": "European",
+          "color": "#2874a6"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "safavid-persia-religion-c1700",
@@ -315,14 +763,43 @@
       "source": "Safavid-era travelogues, Armenian diocesan notes and later reconstructions (schematic).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Safavid_Iran",
       "groups": [
-        { "id": "shia", "shortLabel": "Shiʿa Muslim", "color": "#922b21" },
-        { "id": "sunni", "shortLabel": "Sunni Muslim", "color": "#1e8449" },
-        { "id": "armenian", "shortLabel": "Armenian Christian", "color": "#2874a6" },
-        { "id": "assyrian", "shortLabel": "Assyrian", "color": "#b9770e" },
-        { "id": "jewish", "shortLabel": "Jewish", "color": "#8e44ad" },
-        { "id": "zoroastrian", "shortLabel": "Zoroastrian", "color": "#f4d03f" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "shia",
+          "shortLabel": "Shiʿa Muslim",
+          "color": "#922b21"
+        },
+        {
+          "id": "sunni",
+          "shortLabel": "Sunni Muslim",
+          "color": "#1e8449"
+        },
+        {
+          "id": "armenian",
+          "shortLabel": "Armenian Christian",
+          "color": "#2874a6"
+        },
+        {
+          "id": "assyrian",
+          "shortLabel": "Assyrian",
+          "color": "#b9770e"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
+        },
+        {
+          "id": "zoroastrian",
+          "shortLabel": "Zoroastrian",
+          "color": "#f4d03f"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     },
     {
       "id": "habsburg-monarchy-1780",
@@ -338,15 +815,48 @@
       "source": "Josephinian cadastral / early Habsburg statistical surveys (late 18th century).",
       "sourceUrl": "https://en.wikipedia.org/wiki/Habsburg_monarchy",
       "groups": [
-        { "id": "german", "shortLabel": "German", "color": "#1a5276" },
-        { "id": "czech", "shortLabel": "Czech", "color": "#2874a6" },
-        { "id": "hungarian", "shortLabel": "Hungarian", "color": "#922b21" },
-        { "id": "polish", "shortLabel": "Polish", "color": "#c0392b" },
-        { "id": "romanian", "shortLabel": "Romanian", "color": "#1e8449" },
-        { "id": "south-slav", "shortLabel": "South Slavic", "color": "#27ae60" },
-        { "id": "italian", "shortLabel": "Italian", "color": "#5dade2" },
-        { "id": "other", "shortLabel": "Other", "color": "#95a5a6" }
-      ]
+        {
+          "id": "german",
+          "shortLabel": "German",
+          "color": "#1a5276"
+        },
+        {
+          "id": "czech",
+          "shortLabel": "Czech",
+          "color": "#2874a6"
+        },
+        {
+          "id": "hungarian",
+          "shortLabel": "Hungarian",
+          "color": "#922b21"
+        },
+        {
+          "id": "polish",
+          "shortLabel": "Polish",
+          "color": "#c0392b"
+        },
+        {
+          "id": "romanian",
+          "shortLabel": "Romanian",
+          "color": "#1e8449"
+        },
+        {
+          "id": "south-slav",
+          "shortLabel": "South Slavic",
+          "color": "#27ae60"
+        },
+        {
+          "id": "italian",
+          "shortLabel": "Italian",
+          "color": "#5dade2"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other",
+          "color": "#95a5a6"
+        }
+      ],
+      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
     }
   ]
 }

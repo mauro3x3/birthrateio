@@ -352,7 +352,7 @@ export function CensusMapExplorer({
                 : `${areaLabel}: ${group?.shortLabel ?? ""}`
             }
             legendPlacement="bottom-right"
-            revision={`${resolved.slug}-${level.id}-${group?.id}-${parentCode ?? "all"}-${isPlurality ? "pl" : "sh"}`}
+            revision={`${resolved.slug}-${level.id}-${parentCode ?? "all"}-${isPlurality ? "pl" : "sh"}`}
             filterIds={filterIds}
             adaptiveStroke={areas.length > 80}
             oceanColor={MAP_OCEAN.atlas}

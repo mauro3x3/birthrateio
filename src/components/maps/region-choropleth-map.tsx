@@ -298,7 +298,19 @@ function minDistToRings(lng: number, lat: number, rings: number[][][]): number {
  * Label anchor: geographic middle of the bbox when that point is on land,
  * otherwise the interior point farthest from the coast (Florida, Michigan, etc.).
  */
+type LabelPlacement = {
+  lng: number;
+  lat: number;
+  /** Approximate bbox area in deg² — used to rank label priority. */
+  area: number;
+};
+
 function labelLngLat(feature: Feature): [number, number] | null {
+  const place = labelPlacement(feature);
+  return place ? [place.lng, place.lat] : null;
+}
+
+function labelPlacement(feature: Feature): LabelPlacement | null {
   const poly = largestPolygon(feature);
   const ring = poly?.[0];
   if (!poly || !ring || ring.length < 3) return null;
@@ -312,9 +324,10 @@ function labelLngLat(feature: Feature): [number, number] | null {
     miny = Math.min(miny, y);
     maxy = Math.max(maxy, y);
   }
+  const area = Math.max(0, (maxx - minx) * (maxy - miny));
   const cx = (minx + maxx) / 2;
   const cy = (miny + maxy) / 2;
-  if (pointInPolygon(cx, cy, poly)) return [cx, cy];
+  if (pointInPolygon(cx, cy, poly)) return { lng: cx, lat: cy, area };
 
   const sample = (
     x0: number,
@@ -345,17 +358,29 @@ function labelLngLat(feature: Feature): [number, number] | null {
   const dx = (maxx - minx) / 28;
   const dy = (maxy - miny) / 28;
   const fine = sample(bx - dx, bx + dx, by - dy, by + dy, 10);
-  return fine && fine.d >= coarse.d ? fine.pt : coarse.pt;
+  const pt = fine && fine.d >= coarse.d ? fine.pt : coarse.pt;
+  return { lng: pt[0], lat: pt[1], area };
+}
+
+function rectsOverlap(
+  a: { x: number; y: number; w: number; h: number },
+  b: { x: number; y: number; w: number; h: number },
+): boolean {
+  return !(
+    a.x + a.w < b.x ||
+    b.x + b.w < a.x ||
+    a.y + a.h < b.y ||
+    b.y + b.h < a.y
+  );
 }
 
 function mapLabelText(
   value: number,
   formatValue?: (value: number) => string,
 ): string {
+  if (formatValue) return formatValue(value);
   if (Math.abs(value) >= 10_000) return formatCompact(value);
-  return formatValue
-    ? formatValue(value)
-    : value.toLocaleString("en-US", { maximumFractionDigits: 2 });
+  return value.toLocaleString("en-US", { maximumFractionDigits: 2 });
 }
 
 /** Trim long admin names so stacked map labels stay readable. */
@@ -387,6 +412,7 @@ function ValueLabels({
   formatValue,
   hideIds,
   labelMode = "value",
+  preferIds,
 }: {
   geo: FeatureCollection;
   byId: Map<string, RegionChoroplethDatum>;
@@ -394,24 +420,44 @@ function ValueLabels({
   formatValue?: (value: number) => string;
   hideIds?: Set<string>;
   labelMode?: "value" | "name" | "name-value" | "value-name";
+  /** Always keep these labels when collision-culling (e.g. selection). */
+  preferIds?: Set<string>;
 }) {
-  const items = React.useMemo(() => {
+  const map = useMap();
+  const [viewTick, setViewTick] = React.useState(0);
+
+  React.useEffect(() => {
+    const bump = () => setViewTick((n) => n + 1);
+    map.on("zoomend", bump);
+    map.on("moveend", bump);
+    return () => {
+      map.off("zoomend", bump);
+      map.off("moveend", bump);
+    };
+  }, [map]);
+
+  const candidates = React.useMemo(() => {
     const out: {
       id: string;
       lat: number;
       lng: number;
       html: string;
+      area: number;
+      value: number;
+      prefer: boolean;
+      stack: boolean;
     }[] = [];
     for (const feature of geo.features) {
       const id = featureId(feature);
       const datum = id ? byId.get(id) : undefined;
       if (!id || !datum) continue;
       if (hideIds?.has(id)) continue;
-      const pt = labelLngLat(feature);
-      if (!pt) continue;
+      const place = labelPlacement(feature);
+      if (!place) continue;
       const valueText = mapLabelText(datum.value, formatValue);
       const shortName = shortenMapLabel(datum.name);
-      const stackClass = "br-map-value-text br-map-value-stack";
+      const stack =
+        labelMode === "name-value" || labelMode === "value-name";
       const text =
         labelMode === "name"
           ? escapeHtml(shortName)
@@ -420,19 +466,88 @@ function ValueLabels({
             : labelMode === "value-name"
               ? `<span class="br-map-value-primary">${escapeHtml(valueText)}</span><br/><span class="br-map-value-sub">${escapeHtml(shortName)}</span>`
               : escapeHtml(valueText);
-      const className =
-        labelMode === "name-value" || labelMode === "value-name"
-          ? stackClass
-          : "br-map-value-text";
+      const className = stack
+        ? "br-map-value-text br-map-value-stack"
+        : "br-map-value-text";
       out.push({
         id,
-        lng: pt[0],
-        lat: pt[1],
+        lng: place.lng,
+        lat: place.lat,
         html: `<span class="${className}">${text}</span>`,
+        area: place.area,
+        value: datum.value,
+        prefer: Boolean(preferIds?.has(id)),
+        stack,
       });
     }
     return out;
-  }, [byId, featureId, formatValue, geo.features, hideIds, labelMode]);
+  }, [
+    byId,
+    featureId,
+    formatValue,
+    geo.features,
+    hideIds,
+    labelMode,
+    preferIds,
+  ]);
+
+  const items = React.useMemo(() => {
+    void viewTick;
+    if (candidates.length === 0) return candidates;
+    const zoom = map.getZoom();
+    const maxArea = Math.max(...candidates.map((c) => c.area), 1e-9);
+    const maxVal = Math.max(...candidates.map((c) => Math.abs(c.value)), 1e-9);
+    // Blend size + magnitude so tiny high-share regions (e.g. Chechnya) still
+    // compete with vast empty oblasts when zoomed out.
+    const ranked = [...candidates].sort((a, b) => {
+      if (a.prefer !== b.prefer) return a.prefer ? -1 : 1;
+      const ia =
+        0.55 * (a.area / maxArea) + 0.45 * (Math.abs(a.value) / maxVal);
+      const ib =
+        0.55 * (b.area / maxArea) + 0.45 * (Math.abs(b.value) / maxVal);
+      return ib - ia;
+    });
+
+    const halfW =
+      zoom < 3.5 ? 56 : zoom < 4.5 ? 46 : zoom < 5.5 ? 38 : zoom < 7 ? 30 : 22;
+    const halfHBase =
+      zoom < 3.5 ? 14 : zoom < 4.5 ? 12 : zoom < 5.5 ? 11 : zoom < 7 ? 10 : 9;
+    const taken: { x: number; y: number; w: number; h: number }[] = [];
+    const size = map.getSize();
+    const pad = 8;
+    const out: typeof candidates = [];
+
+    for (const c of ranked) {
+      const pt = map.latLngToContainerPoint(L.latLng(c.lat, c.lng));
+      const halfH = c.stack ? halfHBase * 1.65 : halfHBase;
+      if (
+        pt.x < -halfW ||
+        pt.y < -halfH ||
+        pt.x > size.x + halfW ||
+        pt.y > size.y + halfH
+      ) {
+        continue;
+      }
+      const rect = {
+        x: pt.x - halfW,
+        y: pt.y - halfH,
+        w: halfW * 2,
+        h: halfH * 2,
+      };
+      if (
+        rect.x < pad ||
+        rect.y < pad ||
+        rect.x + rect.w > size.x - pad ||
+        rect.y + rect.h > size.y - pad
+      ) {
+        if (!c.prefer) continue;
+      }
+      if (!c.prefer && taken.some((t) => rectsOverlap(t, rect))) continue;
+      taken.push(rect);
+      out.push(c);
+    }
+    return out;
+  }, [candidates, map, viewTick]);
 
   return (
     <>
@@ -654,10 +769,17 @@ function FitGeo({
           paddingTopLeft: exporting ? [8, padXLeft] : [padY, padXLeft],
           paddingBottomRight: exporting ? [12, 10] : [padBottom, padXRight],
         });
-        if (!exporting) return;
+        // Fill more of the padded viewport — fitBounds alone often leaves
+        // country maps looking too zoomed out once the sidebar padding bites.
         const size = map.getSize();
-        const availW = Math.max(1, size.x - padXLeft - 16);
-        const availH = Math.max(1, size.y - 16);
+        const availW = Math.max(
+          1,
+          size.x - padXLeft - (exporting ? 16 : padXRight),
+        );
+        const availH = Math.max(
+          1,
+          size.y - (exporting ? 16 : padY + padBottom),
+        );
         const span = (bounds: L.LatLngBounds) => {
           const nw = map.latLngToContainerPoint(bounds.getNorthWest());
           const se = map.latLngToContainerPoint(bounds.getSouthEast());
@@ -665,16 +787,18 @@ function FitGeo({
         };
         const fitted = span(b);
         if (fitted.w > 8 && fitted.h > 8) {
-          const scale = Math.min(availW / fitted.w, availH / fitted.h) * 0.96;
+          const fill = exporting ? 0.96 : 0.9;
+          const scale = Math.min(availW / fitted.w, availH / fitted.h) * fill;
+          const zoomCap = exporting ? 10 : Math.max(maxZoom + 1.75, maxZoom);
           if (scale > 1.02) {
-            map.setZoom(Math.min(map.getZoom() + Math.log2(scale), 10), {
+            map.setZoom(Math.min(map.getZoom() + Math.log2(scale), zoomCap), {
               animate: false,
             });
           }
         }
         const placed = span(b);
         const targetX = padXLeft + Math.max(0, (availW - placed.w) / 2);
-        const targetY = Math.max(6, (size.y - placed.h) / 2);
+        const targetY = padY + Math.max(0, (availH - placed.h) / 2);
         map.panBy([placed.nw.x - targetX, placed.nw.y - targetY], {
           animate: false,
         });
@@ -965,10 +1089,36 @@ export function RegionChoroplethMap({
     const layer = geoJsonRef.current;
     if (!layer) return;
     layer.eachLayer((l) => {
-      const path = l as L.Path & { feature?: Feature };
-      if (path.feature && path.setStyle) path.setStyle(style(path.feature));
+      const path = l as L.Path & {
+        feature?: Feature;
+        setTooltipContent?: (html: string) => void;
+        getTooltip?: () => L.Tooltip | undefined;
+      };
+      if (!path.feature || !path.setStyle) return;
+      path.setStyle(style(path.feature));
+      const id = featureId(path.feature);
+      const datum = id ? byId.get(id) : undefined;
+      const name =
+        datum?.name ??
+        ((path.feature.properties as { name?: string } | null)?.name ??
+          "Unknown");
+      const valueText =
+        datum !== undefined
+          ? formatValue
+            ? formatValue(datum.value)
+            : `${datum.value.toLocaleString("en-US", {
+                maximumFractionDigits: decimals,
+                minimumFractionDigits: Math.min(decimals, 1),
+              })}${unit ? ` ${unit}` : ""}`
+          : "No data";
+      const html = `<div class="br-map-tip"><span class="br-map-tip-name">${name}</span><span class="br-map-tip-val">${valueText}</span></div>`;
+      if (path.setTooltipContent) {
+        path.setTooltipContent(html);
+      } else if (path.getTooltip?.()) {
+        path.getTooltip()?.setContent(html);
+      }
     });
-  }, [style]);
+  }, [style, byId, featureId, formatValue, decimals, unit]);
 
   const onEach = React.useCallback(
     (feature: Feature, layer: Layer) => {
@@ -1119,6 +1269,7 @@ export function RegionChoroplethMap({
               featureId={featureId}
               formatValue={formatValue}
               hideIds={blobMode ? selectedSet : undefined}
+              preferIds={selectedSet.size > 0 ? selectedSet : undefined}
               labelMode={labelMode}
             />
           ) : null}

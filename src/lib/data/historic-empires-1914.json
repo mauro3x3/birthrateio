@@ -1,0 +1,420 @@
+{
+  "id": "empires-1914-overview",
+  "slug": "empires-1914",
+  "title": "Great powers & empires, 1914",
+  "year": 1914,
+  "mapMode": "plurality",
+  "note": "State-level overview only: each polity is painted by its overall religious majority, not by district. Uyezd / vilayet / kreis layers still need historic census GIS.",
+  "source": "Borders: historical-basemaps (aourednik) world_1914. Plurality colors: birthrate.io overview coding from period majorities.",
+  "sourceUrl": "https://github.com/aourednik/historical-basemaps",
+  "geoUrl": "/geo/historic/empires-1914.json",
+  "groups": [
+    {
+      "id": "orthodox",
+      "shortLabel": "Christian (Orthodox)",
+      "color": "#4a2c6a"
+    },
+    {
+      "id": "catholic",
+      "shortLabel": "Christian (Catholic)",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "protestant",
+      "shortLabel": "Christian (Protestant)",
+      "color": "#5dade2"
+    },
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim (Sunni-majority)",
+      "color": "#27ae60"
+    },
+    {
+      "id": "shia",
+      "shortLabel": "Muslim (Shi\u02bfa-majority)",
+      "color": "#1e8449"
+    },
+    {
+      "id": "hindu",
+      "shortLabel": "Hindu",
+      "color": "#e67e22"
+    },
+    {
+      "id": "buddhist",
+      "shortLabel": "Buddhist",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "mixed",
+      "shortLabel": "Mixed / confessional",
+      "color": "#95a5a6"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other / colonial",
+      "color": "#bdc3c7"
+    }
+  ],
+  "areas": [
+    {
+      "code": "empire-luxembourg",
+      "slug": "empire-luxembourg",
+      "name": "Luxembourg",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-switzerland",
+      "slug": "empire-switzerland",
+      "name": "Switzerland",
+      "plurality": "mixed",
+      "population": 0,
+      "shares": {
+        "mixed": 1.0
+      }
+    },
+    {
+      "code": "empire-united-kingdom-of-great-britain-and-ireland",
+      "slug": "empire-united-kingdom-of-great-britain-and-ireland",
+      "name": "United Kingdom of Great Britain and Ireland",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-belgium",
+      "slug": "empire-belgium",
+      "name": "Belgium",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-spain",
+      "slug": "empire-spain",
+      "name": "Spain",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-montenegro",
+      "slug": "empire-montenegro",
+      "name": "Montenegro",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-albania",
+      "slug": "empire-albania",
+      "name": "Albania",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-portugal",
+      "slug": "empire-portugal",
+      "name": "Portugal",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-persia",
+      "slug": "empire-persia",
+      "name": "Persia",
+      "plurality": "shia",
+      "population": 0,
+      "shares": {
+        "shia": 1.0
+      }
+    },
+    {
+      "code": "empire-afghanistan",
+      "slug": "empire-afghanistan",
+      "name": "Afghanistan",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-netherlands",
+      "slug": "empire-netherlands",
+      "name": "Netherlands",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-nepal",
+      "slug": "empire-nepal",
+      "name": "Nepal",
+      "plurality": "hindu",
+      "population": 0,
+      "shares": {
+        "hindu": 1.0
+      }
+    },
+    {
+      "code": "empire-norway",
+      "slug": "empire-norway",
+      "name": "Norway",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-finland",
+      "slug": "empire-finland",
+      "name": "Finland",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-serbia",
+      "slug": "empire-serbia",
+      "name": "Serbia",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-romania",
+      "slug": "empire-romania",
+      "name": "Romania",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-austro-hungarian-empire",
+      "slug": "empire-austro-hungarian-empire",
+      "name": "Austro-Hungarian Empire",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-french-indochina",
+      "slug": "empire-french-indochina",
+      "name": "French Indochina",
+      "plurality": "other",
+      "population": 0,
+      "shares": {
+        "other": 1.0
+      }
+    },
+    {
+      "code": "empire-algeria",
+      "slug": "empire-algeria",
+      "name": "Algeria",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-anglo-egyptian-sudan",
+      "slug": "empire-anglo-egyptian-sudan",
+      "name": "Anglo-Egyptian Sudan",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-egypt",
+      "slug": "empire-egypt",
+      "name": "Egypt",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-british-somaliland",
+      "slug": "empire-british-somaliland",
+      "name": "British Somaliland",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-france",
+      "slug": "empire-france",
+      "name": "France",
+      "plurality": "catholic",
+      "population": 0,
+      "shares": {
+        "catholic": 1.0
+      }
+    },
+    {
+      "code": "empire-arabia-nejd",
+      "slug": "empire-arabia-nejd",
+      "name": "Arabia (Nejd)",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-sakhalin-ru",
+      "slug": "empire-sakhalin-ru",
+      "name": "Sakhalin (RU)",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-ottoman-empire",
+      "slug": "empire-ottoman-empire",
+      "name": "Ottoman Empire",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-sweden",
+      "slug": "empire-sweden",
+      "name": "Sweden",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-denmark",
+      "slug": "empire-denmark",
+      "name": "Denmark",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    },
+    {
+      "code": "empire-british-protectorate",
+      "slug": "empire-british-protectorate",
+      "name": "British Protectorate",
+      "plurality": "other",
+      "population": 0,
+      "shares": {
+        "other": 1.0
+      }
+    },
+    {
+      "code": "empire-arabia-nejd",
+      "slug": "empire-arabia-nejd",
+      "name": "Arabia (Nejd)",
+      "plurality": "muslim",
+      "population": 0,
+      "shares": {
+        "muslim": 1.0
+      }
+    },
+    {
+      "code": "empire-greece",
+      "slug": "empire-greece",
+      "name": "Greece",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-british-raj",
+      "slug": "empire-british-raj",
+      "name": "British Raj",
+      "plurality": "hindu",
+      "population": 0,
+      "shares": {
+        "hindu": 1.0
+      }
+    },
+    {
+      "code": "empire-russian-empire",
+      "slug": "empire-russian-empire",
+      "name": "Russian Empire",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-russian-empire",
+      "slug": "empire-russian-empire",
+      "name": "Russian Empire",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-bulgaria",
+      "slug": "empire-bulgaria",
+      "name": "Bulgaria",
+      "plurality": "orthodox",
+      "population": 0,
+      "shares": {
+        "orthodox": 1.0
+      }
+    },
+    {
+      "code": "empire-german-empire",
+      "slug": "empire-german-empire",
+      "name": "German Empire",
+      "plurality": "protestant",
+      "population": 0,
+      "shares": {
+        "protestant": 1.0
+      }
+    }
+  ]
+}

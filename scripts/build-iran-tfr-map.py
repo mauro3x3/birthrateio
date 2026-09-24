@@ -84,7 +84,7 @@ def main() -> None:
         source="BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 — provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
         sourceUrl="https://x.com/BirthGauge/status/2090510597460795531",
         credit="Provincial estimates compiled by BirthGauge (@BirthGauge).",
-        geoUrl=more.write_geo("irn-tfr", out_feats, max_pts=80),
+        geoUrl=more.write_geo("irn-tfr", out_feats, max_pts=160),
         scale="plasma",
         labelValues=True,
         highlights=[

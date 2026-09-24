@@ -12,13 +12,14 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Historic empire maps — Religion, nationality, and old borders",
   description:
-    "Demographic maps of vanished states: Ottoman millets, Russian Empire 1897 religions, Austria-Hungary and Kingdom of Hungary nationalities, German Empire faith, British India, Qing China, Yugoslavia, Greater Romania, and more.",
+    "Interactive Austria-Hungary nationalities & religion, Russian Empire 1897 religions, and planned Ottoman, German, British India district maps.",
   alternates: { canonical: "/maps/historic" },
 };
 
 function MapCard({ m }: { m: HistoricMapEntry }) {
-  return (
-    <li className="border border-border bg-card p-5">
+  const live = m.status === "live";
+  const inner = (
+    <>
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
@@ -31,17 +32,22 @@ function MapCard({ m }: { m: HistoricMapEntry }) {
         <span
           className={cn(
             "shrink-0 rounded-sm px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wide",
-            m.status === "live"
+            live
               ? "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300"
               : "bg-muted text-muted-foreground",
           )}
         >
-          {m.status === "live" ? "Live" : "Coming"}
+          {live ? "Live" : "Coming"}
         </span>
       </div>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
         {m.blurb}
       </p>
+      {!live && m.statusNote ? (
+        <p className="mt-3 border-l-2 border-border pl-3 text-xs leading-relaxed text-muted-foreground">
+          {m.statusNote}
+        </p>
+      ) : null}
       {m.groups && m.groups.length > 0 ? (
         <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-2">
           {m.groups.map((g) => (
@@ -60,38 +66,80 @@ function MapCard({ m }: { m: HistoricMapEntry }) {
         </ul>
       ) : null}
       <p className="mt-4 text-xs text-muted-foreground">
-        Source:{" "}
-        <a
-          href={m.sourceUrl}
-          className="link-editorial"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {m.source}
-        </a>
+        {live ? (
+          <span className="font-medium text-primary">Open interactive map →</span>
+        ) : (
+          <>
+            Source:{" "}
+            <a
+              href={m.sourceUrl}
+              className="link-editorial"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {m.source}
+            </a>
+          </>
+        )}
       </p>
-    </li>
+    </>
   );
+
+  if (live) {
+    return (
+      <li>
+        <Link
+          href={`/maps/historic/${m.slug}`}
+          className="block border border-border bg-card p-5 transition-colors hover:border-foreground/30"
+        >
+          {inner}
+        </Link>
+      </li>
+    );
+  }
+
+  return <li className="border border-border bg-card p-5 opacity-95">{inner}</li>;
 }
 
 export default function HistoricMapsHubPage() {
   const sections = historicMapsByRegion();
+  const liveCount = sections.reduce(
+    (n, s) => n + s.maps.filter((m) => m.status === "live").length,
+    0,
+  );
 
   return (
     <TopicShell
       title="Historic empire maps"
-      description="Censuses and ethnographic surveys inside borders that no longer exist — Ottoman millets, Russian and German empires, Austria-Hungary, British India, Qing China, and successor kingdoms — same atlas style as our modern fertility maps."
+      description="Censuses and ethnographic surveys inside borders that no longer exist — Ottoman millets, Russian and German empires, Austria-Hungary, British India, Qing China, and successor kingdoms."
       path="/maps/historic"
     >
       <section className="space-y-10">
-        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          Modern choropleths stop at today’s states. These layers dig through
-          older statistical maps — vilayets, uyezds, kreise, megyék, districts —
-          so you can see how faith, language and nationality were distributed
-          when the Ottoman, Romanov, Habsburg and Hohenzollern empires still
-          stood. Interactive polygons ship as each historic boundary file is
-          matched; legends and sources are live now.
-        </p>
+        <div className="max-w-2xl space-y-3 text-sm leading-relaxed text-muted-foreground">
+          <p>
+            The cards marked <span className="font-medium text-foreground">Coming</span>{" "}
+            are not broken links — they are a roadmap. Interactive district maps need
+            historic administrative polygons (uyezds, vilayets, kreise, megyék) matched
+            to period census tables. Using today’s oblasts or NUTS units would draw the
+            wrong borders, so we did not fake them.
+          </p>
+          <p>
+            {liveCount > 0 ? (
+              <>
+                Start with the live{" "}
+                <Link
+                  href="/maps/historic/austria-hungary-1910"
+                  className="link-editorial font-medium"
+                >
+                  Austria-Hungary 1910 nationalities
+                </Link>{" "}
+                map — empire-scoped crownlands painted by census language
+                majority. More Dual Monarchy detail and other empires follow as
+                historic GIS is matched.
+              </>
+            ) : null}
+          </p>
+        </div>
 
         {sections.map(({ region, maps }) => (
           <div key={region}>
@@ -110,16 +158,8 @@ export default function HistoricMapsHubPage() {
           Looking for today’s fertility by province? See{" "}
           <Link href="/maps" className="link-editorial font-medium">
             regional maps
-          </Link>{" "}
-          — including{" "}
-          <Link href="/maps/irq" className="link-editorial">
-            Iraq
           </Link>
-          ,{" "}
-          <Link href="/maps/mex" className="link-editorial">
-            Mexico
-          </Link>
-          , and MENA.
+          .
         </p>
       </section>
     </TopicShell>

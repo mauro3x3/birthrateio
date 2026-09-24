@@ -1,0 +1,5911 @@
+{
+  "id": "rus-empire-religion-1897",
+  "slug": "russian-empire-1897",
+  "title": "Religions in the Russian Empire, 1897",
+  "year": 1897,
+  "mapMode": "plurality",
+  "primaryMetric": "religion",
+  "note": "Empire-scoped map on modern provinces inside the 1914 Russian outline, painted by approximate 1897 religion majority. Finland (Grand Duchy) included though not in the 1897 census. Unit mixes are illustrative \u2014 not official uyezd tables.",
+  "source": "Russian Empire Census 1897 (religion) for empire totals and regional majorities. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Russian Empire 1914.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Russian_Empire_Census",
+  "geoUrl": "/geo/historic/russian-empire-1897.json",
+  "groups": [
+    {
+      "id": "orthodox",
+      "shortLabel": "Orthodox",
+      "color": "#4a2c6a"
+    },
+    {
+      "id": "protestant",
+      "shortLabel": "Protestant",
+      "color": "#5dade2"
+    },
+    {
+      "id": "catholic",
+      "shortLabel": "Catholic",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim",
+      "color": "#27ae60"
+    },
+    {
+      "id": "buddhist",
+      "shortLabel": "Buddhist",
+      "color": "#e67e22"
+    },
+    {
+      "id": "armenian",
+      "shortLabel": "Armenian Apostolic",
+      "color": "#922b21"
+    },
+    {
+      "id": "jewish",
+      "shortLabel": "Jewish",
+      "color": "#a569bd"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "nationalShares": {
+    "orthodox": 0.694,
+    "muslim": 0.111,
+    "catholic": 0.091,
+    "jewish": 0.042,
+    "protestant": 0.029,
+    "armenian": 0.009,
+    "buddhist": 0.004,
+    "other": 0.02
+  },
+  "totalPopulation": 125324217,
+  "areas": [
+    {
+      "code": "ru-ukr-chernihiv",
+      "slug": "ru-ukr-chernihiv",
+      "name": "Chernihiv",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 31696.8,
+      "density": 19.5,
+      "population": 618088,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-blr-gomel",
+      "slug": "ru-blr-gomel",
+      "name": "Gomel",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 40671.3,
+      "density": 19.5,
+      "population": 793090,
+      "shares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-volyn",
+      "slug": "ru-ukr-volyn",
+      "name": "Volyn",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 19734.3,
+      "density": 19.5,
+      "population": 384819,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-blr-brest",
+      "slug": "ru-blr-brest",
+      "name": "Brest",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 32906.3,
+      "density": 19.5,
+      "population": 641673,
+      "shares": {
+        "catholic": 0.42,
+        "orthodox": 0.4,
+        "jewish": 0.14,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.42,
+        "orthodox": 0.4,
+        "jewish": 0.14,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-ukr-rivne",
+      "slug": "ru-ukr-rivne",
+      "name": "Rivne",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 20271.3,
+      "density": 19.5,
+      "population": 395290,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-zhytomyr",
+      "slug": "ru-ukr-zhytomyr",
+      "name": "Zhytomyr",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 29662.4,
+      "density": 19.5,
+      "population": 578417,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-kiev",
+      "slug": "ru-ukr-kiev",
+      "name": "Kiev",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 27034.0,
+      "density": 501.5,
+      "population": 13557551,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-uzb-ferghana",
+      "slug": "ru-uzb-ferghana",
+      "name": "Ferghana",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 7262.8,
+      "density": 5.0,
+      "population": 36314,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-east-kazakhstan",
+      "slug": "ru-kaz-east-kazakhstan",
+      "name": "East Kazakhstan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 279643.9,
+      "density": 2.2,
+      "population": 615217,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-almaty",
+      "slug": "ru-kaz-almaty",
+      "name": "Almaty",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 222014.6,
+      "density": 2.2,
+      "population": 488432,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-tjk-leninabad",
+      "slug": "ru-tjk-leninabad",
+      "name": "Leninabad",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TJK",
+      "areaKm2": 25730.9,
+      "density": 5.0,
+      "population": 128654,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-blr-vitebsk",
+      "slug": "ru-blr-vitebsk",
+      "name": "Vitebsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 39805.2,
+      "density": 19.5,
+      "population": 776201,
+      "shares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ltu-utenos",
+      "slug": "ru-ltu-utenos",
+      "name": "Utenos",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 7057.1,
+      "density": 7.0,
+      "population": 49400,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-ltu-vilniaus",
+      "slug": "ru-ltu-vilniaus",
+      "name": "Vilniaus",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 9725.4,
+      "density": 7.0,
+      "population": 68078,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-blr-grodno",
+      "slug": "ru-blr-grodno",
+      "name": "Grodno",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 25160.7,
+      "density": 19.5,
+      "population": 490634,
+      "shares": {
+        "catholic": 0.42,
+        "orthodox": 0.4,
+        "jewish": 0.14,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.42,
+        "orthodox": 0.4,
+        "jewish": 0.14,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-ltu-alytaus",
+      "slug": "ru-ltu-alytaus",
+      "name": "Alytaus",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 5681.0,
+      "density": 7.0,
+      "population": 39767,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus-gorno-altay",
+      "slug": "ru-rus-gorno-altay",
+      "name": "Gorno-Altay",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 92779.9,
+      "density": 6.1,
+      "population": 565957,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-est-viljandi",
+      "slug": "ru-est-viljandi",
+      "name": "Viljandi",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 3645.9,
+      "density": 7.0,
+      "population": 25521,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-parnu",
+      "slug": "ru-est-parnu",
+      "name": "P\u00e4rnu",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 4895.3,
+      "density": 7.0,
+      "population": 34267,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-valga",
+      "slug": "ru-est-valga",
+      "name": "Valga",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2059.7,
+      "density": 7.0,
+      "population": 14418,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-voru",
+      "slug": "ru-est-voru",
+      "name": "V\u00f5ru",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2444.0,
+      "density": 7.0,
+      "population": 17108,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus-pskov",
+      "slug": "ru-rus-pskov",
+      "name": "Pskov",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 55798.0,
+      "density": 6.1,
+      "population": 340368,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ltu-panevezio",
+      "slug": "ru-ltu-panevezio",
+      "name": "Panevezio",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 7808.7,
+      "density": 7.0,
+      "population": 54661,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-ltu-telsiai",
+      "slug": "ru-ltu-telsiai",
+      "name": "Tel\u0161iai",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 3957.4,
+      "density": 7.0,
+      "population": 27702,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-ltu-klaipedos",
+      "slug": "ru-ltu-klaipedos",
+      "name": "Klaipedos",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 4495.2,
+      "density": 7.0,
+      "population": 31466,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-ltu-siauliai",
+      "slug": "ru-ltu-siauliai",
+      "name": "\u0160iauliai",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 8535.9,
+      "density": 7.0,
+      "population": 59751,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-fin-lapland",
+      "slug": "ru-fin-lapland",
+      "name": "Lapland",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 3413.8,
+      "density": 7.0,
+      "population": 23897,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-rus-krasnodar",
+      "slug": "ru-rus-krasnodar",
+      "name": "Krasnodar",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 74718.8,
+      "density": 6.1,
+      "population": 455785,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-geo-abkhazia",
+      "slug": "ru-geo-abkhazia",
+      "name": "Abkhazia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 2507.0,
+      "density": 5.6,
+      "population": 14039,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-karachay-cherkess",
+      "slug": "ru-rus-karachay-cherkess",
+      "name": "Karachay-Cherkess",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 14548.4,
+      "density": 6.1,
+      "population": 88745,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-rus-kabardin-balkar",
+      "slug": "ru-rus-kabardin-balkar",
+      "name": "Kabardin-Balkar",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 12631.4,
+      "density": 6.1,
+      "population": 77052,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-geo-samegrelo-zemo-svaneti",
+      "slug": "ru-geo-samegrelo-zemo-svaneti",
+      "name": "Samegrelo-Zemo Svaneti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 1217.8,
+      "density": 5.6,
+      "population": 6820,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-north-ossetia",
+      "slug": "ru-rus-north-ossetia",
+      "name": "North Ossetia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 7888.9,
+      "density": 6.1,
+      "population": 48122,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-geo-shida-kartli",
+      "slug": "ru-geo-shida-kartli",
+      "name": "Shida Kartli",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 605.5,
+      "density": 5.6,
+      "population": 3391,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-geo-racha-lechkhumi-kvemo-svaneti",
+      "slug": "ru-geo-racha-lechkhumi-kvemo-svaneti",
+      "name": "Racha-Lechkhumi-Kvemo Svaneti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 828.9,
+      "density": 5.6,
+      "population": 4642,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-ingush",
+      "slug": "ru-rus-ingush",
+      "name": "Ingush",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 3252.6,
+      "density": 6.1,
+      "population": 19841,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-geo-mtskheta-mtianeti",
+      "slug": "ru-geo-mtskheta-mtianeti",
+      "name": "Mtskheta-Mtianeti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 1441.7,
+      "density": 5.6,
+      "population": 8074,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-chechnya",
+      "slug": "ru-rus-chechnya",
+      "name": "Chechnya",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 16235.4,
+      "density": 6.1,
+      "population": 99036,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-geo-kakheti",
+      "slug": "ru-geo-kakheti",
+      "name": "Kakheti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "GEO",
+      "areaKm2": 1249.7,
+      "density": 5.6,
+      "population": 6998,
+      "shares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      },
+      "religionShares": {
+        "orthodox": 0.85,
+        "armenian": 0.08,
+        "muslim": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-dagestan",
+      "slug": "ru-rus-dagestan",
+      "name": "Dagestan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 50173.2,
+      "density": 6.1,
+      "population": 306057,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-kgz-ysyk-kol",
+      "slug": "ru-kgz-ysyk-kol",
+      "name": "Ysyk-K\u00f6l",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 42390.2,
+      "density": 5.0,
+      "population": 211951,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kgz-naryn",
+      "slug": "ru-kgz-naryn",
+      "name": "Naryn",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 45558.7,
+      "density": 5.0,
+      "population": 227794,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kgz-osh",
+      "slug": "ru-kgz-osh",
+      "name": "Osh",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 29040.6,
+      "density": 5.0,
+      "population": 145203,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-zhambyl",
+      "slug": "ru-kaz-zhambyl",
+      "name": "Zhambyl",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 140088.4,
+      "density": 2.2,
+      "population": 308194,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kgz-chuy",
+      "slug": "ru-kgz-chuy",
+      "name": "Chuy",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 19630.1,
+      "density": 5.0,
+      "population": 98150,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kgz-talas",
+      "slug": "ru-kgz-talas",
+      "name": "Talas",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 11514.3,
+      "density": 5.0,
+      "population": 57572,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-south-kazakhstan",
+      "slug": "ru-kaz-south-kazakhstan",
+      "name": "South Kazakhstan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 115568.3,
+      "density": 2.2,
+      "population": 254250,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kgz-jalal-abad",
+      "slug": "ru-kgz-jalal-abad",
+      "name": "Jalal-Abad",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 33859.6,
+      "density": 5.0,
+      "population": 169298,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-tashkent",
+      "slug": "ru-uzb-tashkent",
+      "name": "Tashkent",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 15008.9,
+      "density": 5.0,
+      "population": 75044,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-namangan",
+      "slug": "ru-uzb-namangan",
+      "name": "Namangan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 7571.2,
+      "density": 5.0,
+      "population": 37856,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-andijon",
+      "slug": "ru-uzb-andijon",
+      "name": "Andijon",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 4268.2,
+      "density": 5.0,
+      "population": 21341,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kgz-batken",
+      "slug": "ru-kgz-batken",
+      "name": "Batken",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 16919.5,
+      "density": 5.0,
+      "population": 84598,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-silesian",
+      "slug": "ru-pol-silesian",
+      "name": "Silesian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 7725.3,
+      "density": 19.5,
+      "population": 150643,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-lesser-poland",
+      "slug": "ru-pol-lesser-poland",
+      "name": "Lesser Poland",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 3689.7,
+      "density": 19.5,
+      "population": 71949,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-subcarpathian",
+      "slug": "ru-pol-subcarpathian",
+      "name": "Subcarpathian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 2659.9,
+      "density": 19.5,
+      "population": 51868,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-lower-silesian",
+      "slug": "ru-pol-lower-silesian",
+      "name": "Lower Silesian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 19676.1,
+      "density": 19.5,
+      "population": 383684,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-opole",
+      "slug": "ru-pol-opole",
+      "name": "Opole",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 1666.8,
+      "density": 19.5,
+      "population": 32503,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-tjk-tadzhikistan-territories",
+      "slug": "ru-tjk-tadzhikistan-territories",
+      "name": "Tadzhikistan Territories",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TJK",
+      "areaKm2": 28717.1,
+      "density": 5.0,
+      "population": 143586,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tjk-gorno-badakhshan",
+      "slug": "ru-tjk-gorno-badakhshan",
+      "name": "Gorno-Badakhshan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TJK",
+      "areaKm2": 63653.5,
+      "density": 5.0,
+      "population": 318268,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-ukr-transcarpathia",
+      "slug": "ru-ukr-transcarpathia",
+      "name": "Transcarpathia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 12974.7,
+      "density": 19.5,
+      "population": 253007,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ltu-marijampoles",
+      "slug": "ru-ltu-marijampoles",
+      "name": "Marijampoles",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 4765.6,
+      "density": 7.0,
+      "population": 33359,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-pol-podlachian",
+      "slug": "ru-pol-podlachian",
+      "name": "Podlachian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 20730.8,
+      "density": 19.5,
+      "population": 404251,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-warmian-masurian",
+      "slug": "ru-pol-warmian-masurian",
+      "name": "Warmian-Masurian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 3028.8,
+      "density": 19.5,
+      "population": 59062,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-rus-murmansk",
+      "slug": "ru-rus-murmansk",
+      "name": "Murmansk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 141828.5,
+      "density": 0.6,
+      "population": 85097,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-karelia",
+      "slug": "ru-rus-karelia",
+      "name": "Karelia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 172625.3,
+      "density": 6.1,
+      "population": 1053014,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-fin-northern-ostrobothnia",
+      "slug": "ru-fin-northern-ostrobothnia",
+      "name": "Northern Ostrobothnia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 1148.9,
+      "density": 7.0,
+      "population": 8042,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-kainuu",
+      "slug": "ru-fin-kainuu",
+      "name": "Kainuu",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 2403.8,
+      "density": 7.0,
+      "population": 16827,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-north-karelia",
+      "slug": "ru-fin-north-karelia",
+      "name": "North Karelia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 2896.7,
+      "density": 7.0,
+      "population": 20277,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-south-karelia",
+      "slug": "ru-fin-south-karelia",
+      "name": "South Karelia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 338.0,
+      "density": 7.0,
+      "population": 2366,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-rus-leningrad",
+      "slug": "ru-rus-leningrad",
+      "name": "Leningrad",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 82235.4,
+      "density": 6.1,
+      "population": 501636,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-fin-kymenlaakso",
+      "slug": "ru-fin-kymenlaakso",
+      "name": "Kymenlaakso",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 5494.5,
+      "density": 7.0,
+      "population": 38462,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-aze-balak-n",
+      "slug": "ru-aze-balak-n",
+      "name": "Balak\u0259n",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 230.7,
+      "density": 5.0,
+      "population": 1154,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-zaqatala",
+      "slug": "ru-aze-zaqatala",
+      "name": "Zaqatala",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 394.8,
+      "density": 5.0,
+      "population": 1974,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-xacmaz",
+      "slug": "ru-aze-xacmaz",
+      "name": "Xa\u00e7maz",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 533.1,
+      "density": 5.0,
+      "population": 2666,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-qusar",
+      "slug": "ru-aze-qusar",
+      "name": "Qusar",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 1192.3,
+      "density": 5.0,
+      "population": 5962,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-oguz",
+      "slug": "ru-aze-oguz",
+      "name": "O\u011fuz",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 345.3,
+      "density": 5.0,
+      "population": 1726,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-s-ki",
+      "slug": "ru-aze-s-ki",
+      "name": "\u015e\u0259ki",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 232.2,
+      "density": 5.0,
+      "population": 1161,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-qax",
+      "slug": "ru-aze-qax",
+      "name": "Qax",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 131.0,
+      "density": 5.0,
+      "population": 655,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-aze-q-b-l",
+      "slug": "ru-aze-q-b-l",
+      "name": "Q\u0259b\u0259l\u0259",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 318.9,
+      "density": 5.0,
+      "population": 1594,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-pol-lubusz",
+      "slug": "ru-pol-lubusz",
+      "name": "Lubusz",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 13894.8,
+      "density": 19.5,
+      "population": 270949,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-west-pomeranian",
+      "slug": "ru-pol-west-pomeranian",
+      "name": "West Pomeranian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 23667.5,
+      "density": 19.5,
+      "population": 461516,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-ukr-odessa",
+      "slug": "ru-ukr-odessa",
+      "name": "Odessa",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 21581.7,
+      "density": 19.5,
+      "population": 420843,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-mda-ocnita",
+      "slug": "ru-mda-ocnita",
+      "name": "Ocni\u0163a",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 230.3,
+      "density": 19.5,
+      "population": 4491,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-ukr-vinnytsya",
+      "slug": "ru-ukr-vinnytsya",
+      "name": "Vinnytsya",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 26574.8,
+      "density": 19.5,
+      "population": 518209,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-mda-donduseni",
+      "slug": "ru-mda-donduseni",
+      "name": "Donduseni",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 376.1,
+      "density": 19.5,
+      "population": 7334,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-soroca",
+      "slug": "ru-mda-soroca",
+      "name": "Soroca",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 723.0,
+      "density": 19.5,
+      "population": 14098,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-camenca",
+      "slug": "ru-mda-camenca",
+      "name": "Camenca",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 677.8,
+      "density": 19.5,
+      "population": 13217,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-rezina",
+      "slug": "ru-mda-rezina",
+      "name": "Rezina",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 715.5,
+      "density": 19.5,
+      "population": 13952,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-stinga-nistrului",
+      "slug": "ru-mda-stinga-nistrului",
+      "name": "St\u00eeng\u0103 Nistrului",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 603.3,
+      "density": 19.5,
+      "population": 11764,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-grigoriopol",
+      "slug": "ru-mda-grigoriopol",
+      "name": "Grigoriopol",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 684.2,
+      "density": 19.5,
+      "population": 13342,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-bender",
+      "slug": "ru-mda-bender",
+      "name": "Bender",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 912.5,
+      "density": 19.5,
+      "population": 17794,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-stefan-voda",
+      "slug": "ru-mda-stefan-voda",
+      "name": "\u0218tefan Vod\u0103",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 923.4,
+      "density": 19.5,
+      "population": 18006,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-causeni",
+      "slug": "ru-mda-causeni",
+      "name": "Causeni",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 318.4,
+      "density": 19.5,
+      "population": 6209,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-pol-lublin",
+      "slug": "ru-pol-lublin",
+      "name": "Lublin",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 24595.9,
+      "density": 19.5,
+      "population": 479620,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-rus-kaliningrad",
+      "slug": "ru-rus-kaliningrad",
+      "name": "Kaliningrad",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 1242.5,
+      "density": 6.1,
+      "population": 7579,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ltu-taurages",
+      "slug": "ru-ltu-taurages",
+      "name": "Taurages",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 3759.7,
+      "density": 7.0,
+      "population": 26318,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus-smolensk",
+      "slug": "ru-rus-smolensk",
+      "name": "Smolensk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 50256.0,
+      "density": 6.1,
+      "population": 306562,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-blr-mogilev",
+      "slug": "ru-blr-mogilev",
+      "name": "Mogilev",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 28766.4,
+      "density": 19.5,
+      "population": 560945,
+      "shares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-bryansk",
+      "slug": "ru-rus-bryansk",
+      "name": "Bryansk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 35124.1,
+      "density": 6.1,
+      "population": 214257,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-sumy",
+      "slug": "ru-ukr-sumy",
+      "name": "Sumy",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 23435.6,
+      "density": 19.5,
+      "population": 456994,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kursk",
+      "slug": "ru-rus-kursk",
+      "name": "Kursk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 30096.9,
+      "density": 6.1,
+      "population": 183591,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-belgorod",
+      "slug": "ru-rus-belgorod",
+      "name": "Belgorod",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 27692.2,
+      "density": 6.1,
+      "population": 168922,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-kharkiv",
+      "slug": "ru-ukr-kharkiv",
+      "name": "Kharkiv",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 31324.6,
+      "density": 19.5,
+      "population": 610830,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-luhans-k",
+      "slug": "ru-ukr-luhans-k",
+      "name": "Luhans'k",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 26275.3,
+      "density": 19.5,
+      "population": 512368,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-voronezh",
+      "slug": "ru-rus-voronezh",
+      "name": "Voronezh",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 52082.8,
+      "density": 6.1,
+      "population": 317705,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-rostov",
+      "slug": "ru-rus-rostov",
+      "name": "Rostov",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 101390.9,
+      "density": 6.1,
+      "population": 618484,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-donets-k",
+      "slug": "ru-ukr-donets-k",
+      "name": "Donets'k",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 26572.6,
+      "density": 19.5,
+      "population": 518166,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-buryat",
+      "slug": "ru-rus-buryat",
+      "name": "Buryat",
+      "plurality": "buddhist",
+      "religion": "buddhist",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 352582.2,
+      "density": 1.1,
+      "population": 387840,
+      "shares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      },
+      "religionShares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      }
+    },
+    {
+      "code": "ru-rus-tuva",
+      "slug": "ru-rus-tuva",
+      "name": "Tuva",
+      "plurality": "buddhist",
+      "religion": "buddhist",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 168936.6,
+      "density": 1.1,
+      "population": 185830,
+      "shares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      },
+      "religionShares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      }
+    },
+    {
+      "code": "ru-rus-chita",
+      "slug": "ru-rus-chita",
+      "name": "Chita",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 431816.7,
+      "density": 6.1,
+      "population": 2634082,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-amur",
+      "slug": "ru-rus-amur",
+      "name": "Amur",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 360376.7,
+      "density": 6.1,
+      "population": 2198298,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-yevrey",
+      "slug": "ru-rus-yevrey",
+      "name": "Yevrey",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 35902.1,
+      "density": 6.1,
+      "population": 219003,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-khabarovsk",
+      "slug": "ru-rus-khabarovsk",
+      "name": "Khabarovsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 780067.9,
+      "density": 6.1,
+      "population": 4758414,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-primor-ye",
+      "slug": "ru-rus-primor-ye",
+      "name": "Primor'ye",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 165240.6,
+      "density": 6.1,
+      "population": 1007968,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-uzb-sirdaryo",
+      "slug": "ru-uzb-sirdaryo",
+      "name": "Sirdaryo",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 4839.4,
+      "density": 5.0,
+      "population": 24197,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-jizzakh",
+      "slug": "ru-uzb-jizzakh",
+      "name": "Jizzakh",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 20911.5,
+      "density": 5.0,
+      "population": 104558,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-samarkand",
+      "slug": "ru-uzb-samarkand",
+      "name": "Samarkand",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 16525.8,
+      "density": 5.0,
+      "population": 82629,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-kashkadarya",
+      "slug": "ru-uzb-kashkadarya",
+      "name": "Kashkadarya",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 29120.8,
+      "density": 5.0,
+      "population": 145604,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-surkhandarya",
+      "slug": "ru-uzb-surkhandarya",
+      "name": "Surkhandarya",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 19440.6,
+      "density": 5.0,
+      "population": 97203,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tjk-khatlon",
+      "slug": "ru-tjk-khatlon",
+      "name": "Khatlon",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TJK",
+      "areaKm2": 24102.1,
+      "density": 5.0,
+      "population": 120510,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tkm-chardzhou",
+      "slug": "ru-tkm-chardzhou",
+      "name": "Chardzhou",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TKM",
+      "areaKm2": 93579.6,
+      "density": 5.0,
+      "population": 467898,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tkm-mary",
+      "slug": "ru-tkm-mary",
+      "name": "Mary",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TKM",
+      "areaKm2": 85363.3,
+      "density": 5.0,
+      "population": 426816,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tkm-ahal",
+      "slug": "ru-tkm-ahal",
+      "name": "Ahal",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TKM",
+      "areaKm2": 100649.4,
+      "density": 5.0,
+      "population": 503247,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-pomeranian",
+      "slug": "ru-pol-pomeranian",
+      "name": "Pomeranian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 18658.9,
+      "density": 19.5,
+      "population": 363849,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-tkm-balkan",
+      "slug": "ru-tkm-balkan",
+      "name": "Balkan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TKM",
+      "areaKm2": 118573.8,
+      "density": 5.0,
+      "population": 592869,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-mangghystau",
+      "slug": "ru-kaz-mangghystau",
+      "name": "Mangghystau",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 164787.6,
+      "density": 2.2,
+      "population": 362533,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-qyzylorda",
+      "slug": "ru-kaz-qyzylorda",
+      "name": "Qyzylorda",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 223416.2,
+      "density": 2.2,
+      "population": 491516,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-uzb-karakalpakstan",
+      "slug": "ru-uzb-karakalpakstan",
+      "name": "Karakalpakstan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 165394.0,
+      "density": 5.0,
+      "population": 826970,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-aqtobe",
+      "slug": "ru-kaz-aqtobe",
+      "name": "Aqt\u00f6be",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 301729.6,
+      "density": 2.2,
+      "population": 663805,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-uzb-navoi",
+      "slug": "ru-uzb-navoi",
+      "name": "Navoi",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 110043.9,
+      "density": 5.0,
+      "population": 550220,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-tkm-tashauz",
+      "slug": "ru-tkm-tashauz",
+      "name": "Tashauz",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TKM",
+      "areaKm2": 73150.8,
+      "density": 5.0,
+      "population": 365754,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-khorezm",
+      "slug": "ru-uzb-khorezm",
+      "name": "Khorezm",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 7011.5,
+      "density": 5.0,
+      "population": 35058,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-uzb-bukhoro",
+      "slug": "ru-uzb-bukhoro",
+      "name": "Bukhoro",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 40300.1,
+      "density": 5.0,
+      "population": 201500,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-north-kazakhstan",
+      "slug": "ru-kaz-north-kazakhstan",
+      "name": "North Kazakhstan",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 98437.4,
+      "density": 2.2,
+      "population": 216562,
+      "shares": {
+        "orthodox": 0.48,
+        "muslim": 0.45,
+        "other": 0.07
+      },
+      "religionShares": {
+        "orthodox": 0.48,
+        "muslim": 0.45,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ru-rus-tyumen",
+      "slug": "ru-rus-tyumen",
+      "name": "Tyumen'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 159377.5,
+      "density": 6.1,
+      "population": 972203,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kurgan",
+      "slug": "ru-rus-kurgan",
+      "name": "Kurgan",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 72074.3,
+      "density": 6.1,
+      "population": 439653,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-omsk",
+      "slug": "ru-rus-omsk",
+      "name": "Omsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 141106.8,
+      "density": 6.1,
+      "population": 860751,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-qostanay",
+      "slug": "ru-kaz-qostanay",
+      "name": "Qostanay",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 200548.7,
+      "density": 2.2,
+      "population": 441207,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-pavlodar",
+      "slug": "ru-kaz-pavlodar",
+      "name": "Pavlodar",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 123878.8,
+      "density": 2.2,
+      "population": 272533,
+      "shares": {
+        "orthodox": 0.48,
+        "muslim": 0.45,
+        "other": 0.07
+      },
+      "religionShares": {
+        "orthodox": 0.48,
+        "muslim": 0.45,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ru-rus-novosibirsk",
+      "slug": "ru-rus-novosibirsk",
+      "name": "Novosibirsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 177438.8,
+      "density": 6.1,
+      "population": 1082377,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-chelyabinsk",
+      "slug": "ru-rus-chelyabinsk",
+      "name": "Chelyabinsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 88475.4,
+      "density": 6.1,
+      "population": 539700,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-altay",
+      "slug": "ru-rus-altay",
+      "name": "Altay",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 171269.7,
+      "density": 6.1,
+      "population": 1044745,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-orenburg",
+      "slug": "ru-rus-orenburg",
+      "name": "Orenburg",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 124853.3,
+      "density": 6.1,
+      "population": 761605,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-west-kazakhstan",
+      "slug": "ru-kaz-west-kazakhstan",
+      "name": "West Kazakhstan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 153900.6,
+      "density": 2.2,
+      "population": 338581,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-saratov",
+      "slug": "ru-rus-saratov",
+      "name": "Saratov",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 101924.3,
+      "density": 6.1,
+      "population": 621738,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-astrakhan",
+      "slug": "ru-rus-astrakhan",
+      "name": "Astrakhan'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 45955.2,
+      "density": 6.1,
+      "population": 280327,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-volgograd",
+      "slug": "ru-rus-volgograd",
+      "name": "Volgograd",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 113056.4,
+      "density": 6.1,
+      "population": 689644,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-atyrau",
+      "slug": "ru-kaz-atyrau",
+      "name": "Atyrau",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 112213.2,
+      "density": 2.2,
+      "population": 246869,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-est-ida-viru",
+      "slug": "ru-est-ida-viru",
+      "name": "Ida-Viru",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 3930.4,
+      "density": 7.0,
+      "population": 27513,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-polva",
+      "slug": "ru-est-polva",
+      "name": "P\u00f5lva",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2205.6,
+      "density": 7.0,
+      "population": 15439,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-tartu",
+      "slug": "ru-est-tartu",
+      "name": "Tartu",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 3715.9,
+      "density": 7.0,
+      "population": 26011,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-jogeva",
+      "slug": "ru-est-jogeva",
+      "name": "J\u00f5geva",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2919.2,
+      "density": 7.0,
+      "population": 20434,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus-crimea",
+      "slug": "ru-rus-crimea",
+      "name": "Crimea",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 26398.7,
+      "density": 6.1,
+      "population": 161032,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-ukr-kherson",
+      "slug": "ru-ukr-kherson",
+      "name": "Kherson",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 25327.7,
+      "density": 19.5,
+      "population": 493890,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-maga-buryatdan",
+      "slug": "ru-rus-maga-buryatdan",
+      "name": "Maga Buryatdan",
+      "plurality": "buddhist",
+      "religion": "buddhist",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 461650.5,
+      "density": 1.1,
+      "population": 507816,
+      "shares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      },
+      "religionShares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      }
+    },
+    {
+      "code": "ru-rus-sakhalin",
+      "slug": "ru-rus-sakhalin",
+      "name": "Sakhalin",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 85924.6,
+      "density": 6.1,
+      "population": 524140,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-zaporizhzhya",
+      "slug": "ru-ukr-zaporizhzhya",
+      "name": "Zaporizhzhya",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 27038.0,
+      "density": 19.5,
+      "population": 527241,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-sevastopol",
+      "slug": "ru-rus-sevastopol",
+      "name": "Sevastopol",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 739.8,
+      "density": 6.1,
+      "population": 4513,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-ukr-mykolayiv",
+      "slug": "ru-ukr-mykolayiv",
+      "name": "Mykolayiv",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 23424.9,
+      "density": 19.5,
+      "population": 456786,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-chukchi-autonomous-okrug",
+      "slug": "ru-rus-chukchi-autonomous-okrug",
+      "name": "Chukchi Autonomous Okrug",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 590989.1,
+      "density": 6.1,
+      "population": 3605034,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-yamal-nenets",
+      "slug": "ru-rus-yamal-nenets",
+      "name": "Yamal-Nenets",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 678289.6,
+      "density": 6.1,
+      "population": 4137567,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-nenets",
+      "slug": "ru-rus-nenets",
+      "name": "Nenets",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 167322.8,
+      "density": 6.1,
+      "population": 1020669,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-sakha-yakutia",
+      "slug": "ru-rus-sakha-yakutia",
+      "name": "Sakha (Yakutia)",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 3018140.4,
+      "density": 0.6,
+      "population": 1810884,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-est-laane",
+      "slug": "ru-est-laane",
+      "name": "L\u00e4\u00e4ne",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2343.1,
+      "density": 7.0,
+      "population": 16402,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-harju",
+      "slug": "ru-est-harju",
+      "name": "Harju",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 4406.5,
+      "density": 7.0,
+      "population": 30846,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-laane-viru",
+      "slug": "ru-est-laane-viru",
+      "name": "L\u00e4\u00e4ne-Viru",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 3462.2,
+      "density": 7.0,
+      "population": 24235,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus-city-of-st-petersburg",
+      "slug": "ru-rus-city-of-st-petersburg",
+      "name": "City of St. Petersburg",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 2043.9,
+      "density": 501.5,
+      "population": 1025016,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-fin-uusimaa",
+      "slug": "ru-fin-uusimaa",
+      "name": "Uusimaa",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 9009.5,
+      "density": 7.0,
+      "population": 63066,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-ostrobothnia",
+      "slug": "ru-fin-ostrobothnia",
+      "name": "Ostrobothnia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 7273.2,
+      "density": 7.0,
+      "population": 50912,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-central-ostrobothnia",
+      "slug": "ru-fin-central-ostrobothnia",
+      "name": "Central Ostrobothnia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 5305.2,
+      "density": 7.0,
+      "population": 37136,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-rus-arkhangel-sk",
+      "slug": "ru-rus-arkhangel-sk",
+      "name": "Arkhangel'sk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 385710.9,
+      "density": 6.1,
+      "population": 2352836,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-krasnoyarsk",
+      "slug": "ru-rus-krasnoyarsk",
+      "name": "Krasnoyarsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 2287025.7,
+      "density": 6.1,
+      "population": 13950857,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kalmyk",
+      "slug": "ru-rus-kalmyk",
+      "name": "Kalmyk",
+      "plurality": "buddhist",
+      "religion": "buddhist",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 73466.4,
+      "density": 1.1,
+      "population": 80813,
+      "shares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      },
+      "religionShares": {
+        "buddhist": 0.48,
+        "orthodox": 0.4,
+        "other": 0.12
+      }
+    },
+    {
+      "code": "ru-rus-kamchatka",
+      "slug": "ru-rus-kamchatka",
+      "name": "Kamchatka",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 458236.6,
+      "density": 0.6,
+      "population": 274942,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-est-saare",
+      "slug": "ru-est-saare",
+      "name": "Saare",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 50.2,
+      "density": 7.0,
+      "population": 351,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-hiiu",
+      "slug": "ru-est-hiiu",
+      "name": "Hiiu",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 1051.0,
+      "density": 7.0,
+      "population": 7357,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-rus",
+      "slug": "ru-rus",
+      "name": "",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 2.4,
+      "density": 6.1,
+      "population": 15,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-poltava",
+      "slug": "ru-ukr-poltava",
+      "name": "Poltava",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 28335.4,
+      "density": 19.5,
+      "population": 552540,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-khmel-nyts-kyy",
+      "slug": "ru-ukr-khmel-nyts-kyy",
+      "name": "Khmel'nyts'kyy",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 20417.3,
+      "density": 19.5,
+      "population": 398137,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-dnipropetrovs-k",
+      "slug": "ru-ukr-dnipropetrovs-k",
+      "name": "Dnipropetrovs'k",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 31790.0,
+      "density": 19.5,
+      "population": 619905,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-cherkasy",
+      "slug": "ru-ukr-cherkasy",
+      "name": "Cherkasy",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 21183.4,
+      "density": 19.5,
+      "population": 413076,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-kirovohrad",
+      "slug": "ru-ukr-kirovohrad",
+      "name": "Kirovohrad",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 24469.0,
+      "density": 19.5,
+      "population": 477146,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-mda-criuleni",
+      "slug": "ru-mda-criuleni",
+      "name": "Criuleni",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 395.3,
+      "density": 19.5,
+      "population": 7708,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-anenii-noi",
+      "slug": "ru-mda-anenii-noi",
+      "name": "Anenii Noi",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 480.5,
+      "density": 19.5,
+      "population": 9370,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-orhei",
+      "slug": "ru-mda-orhei",
+      "name": "Orhei",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 320.5,
+      "density": 19.5,
+      "population": 6250,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-transnistria",
+      "slug": "ru-mda-transnistria",
+      "name": "Transnistria",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 13.5,
+      "density": 19.5,
+      "population": 263,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-soldanesti",
+      "slug": "ru-mda-soldanesti",
+      "name": "\u015eold\u0103ne\u015fti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 353.4,
+      "density": 19.5,
+      "population": 6891,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-floresti",
+      "slug": "ru-mda-floresti",
+      "name": "Flore\u015fti",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 105.7,
+      "density": 19.5,
+      "population": 2061,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-mda-rezina",
+      "slug": "ru-mda-rezina",
+      "name": "Rezina",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 437.6,
+      "density": 19.5,
+      "population": 8533,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-ltu-kauno",
+      "slug": "ru-ltu-kauno",
+      "name": "Kauno",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "LTU",
+      "areaKm2": 8134.1,
+      "density": 7.0,
+      "population": 56939,
+      "shares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.76,
+        "jewish": 0.12,
+        "orthodox": 0.07,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-mda-drochia",
+      "slug": "ru-mda-drochia",
+      "name": "Drochia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "MDA",
+      "areaKm2": 67.0,
+      "density": 19.5,
+      "population": 1306,
+      "shares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.82,
+        "jewish": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ru-kgz-bishkek",
+      "slug": "ru-kgz-bishkek",
+      "name": "Bishkek",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KGZ",
+      "areaKm2": 121.6,
+      "density": 5.0,
+      "population": 608,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-est-rapla",
+      "slug": "ru-est-rapla",
+      "name": "Rapla",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2917.1,
+      "density": 7.0,
+      "population": 20420,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-est-jarva",
+      "slug": "ru-est-jarva",
+      "name": "J\u00e4rva",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "EST",
+      "areaKm2": 2553.8,
+      "density": 7.0,
+      "population": 17877,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ru-blr-minsk",
+      "slug": "ru-blr-minsk",
+      "name": "Minsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 39304.1,
+      "density": 19.5,
+      "population": 766430,
+      "shares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-aze-quba",
+      "slug": "ru-aze-quba",
+      "name": "Quba",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "AZE",
+      "areaKm2": 370.1,
+      "density": 5.0,
+      "population": 1850,
+      "shares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      },
+      "religionShares": {
+        "muslim": 0.82,
+        "armenian": 0.1,
+        "orthodox": 0.05,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ru-rus-bashkortostan",
+      "slug": "ru-rus-bashkortostan",
+      "name": "Bashkortostan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 142691.0,
+      "density": 6.1,
+      "population": 870415,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-rus-sverdlovsk",
+      "slug": "ru-rus-sverdlovsk",
+      "name": "Sverdlovsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 194053.5,
+      "density": 6.1,
+      "population": 1183726,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-khanty-mansiy",
+      "slug": "ru-rus-khanty-mansiy",
+      "name": "Khanty-Mansiy",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 531823.0,
+      "density": 6.1,
+      "population": 3244120,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-lipetsk",
+      "slug": "ru-rus-lipetsk",
+      "name": "Lipetsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 24286.3,
+      "density": 6.1,
+      "population": 148146,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-tambov",
+      "slug": "ru-rus-tambov",
+      "name": "Tambov",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 34441.2,
+      "density": 6.1,
+      "population": 210091,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-tomsk",
+      "slug": "ru-rus-tomsk",
+      "name": "Tomsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 313912.3,
+      "density": 6.1,
+      "population": 1914865,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-tatarstan",
+      "slug": "ru-rus-tatarstan",
+      "name": "Tatarstan",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 67714.2,
+      "density": 6.1,
+      "population": 413057,
+      "shares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.55,
+        "orthodox": 0.35,
+        "other": 0.1
+      }
+    },
+    {
+      "code": "ru-rus-ul-yanovsk",
+      "slug": "ru-rus-ul-yanovsk",
+      "name": "Ul'yanovsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 37143.8,
+      "density": 6.1,
+      "population": 226577,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-penza",
+      "slug": "ru-rus-penza",
+      "name": "Penza",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 43322.6,
+      "density": 6.1,
+      "population": 264268,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kemerovo",
+      "slug": "ru-rus-kemerovo",
+      "name": "Kemerovo",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 95016.2,
+      "density": 6.1,
+      "population": 579599,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-orel",
+      "slug": "ru-rus-orel",
+      "name": "Orel",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 24733.1,
+      "density": 6.1,
+      "population": 150872,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-irkutsk",
+      "slug": "ru-rus-irkutsk",
+      "name": "Irkutsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 772442.0,
+      "density": 6.1,
+      "population": 4711896,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-khakass",
+      "slug": "ru-rus-khakass",
+      "name": "Khakass",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 59400.9,
+      "density": 6.1,
+      "population": 362345,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-mordovia",
+      "slug": "ru-rus-mordovia",
+      "name": "Mordovia",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 25854.8,
+      "density": 6.1,
+      "population": 157714,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kaluga",
+      "slug": "ru-rus-kaluga",
+      "name": "Kaluga",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 29357.5,
+      "density": 6.1,
+      "population": 179081,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kostroma",
+      "slug": "ru-rus-kostroma",
+      "name": "Kostroma",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 59902.8,
+      "density": 6.1,
+      "population": 365407,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-yaroslavl",
+      "slug": "ru-rus-yaroslavl",
+      "name": "Yaroslavl'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 35899.1,
+      "density": 6.1,
+      "population": 218985,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-vladimir",
+      "slug": "ru-rus-vladimir",
+      "name": "Vladimir",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 29378.1,
+      "density": 6.1,
+      "population": 179206,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-ryazan",
+      "slug": "ru-rus-ryazan",
+      "name": "Ryazan'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 39508.6,
+      "density": 6.1,
+      "population": 241002,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-ivanovo",
+      "slug": "ru-rus-ivanovo",
+      "name": "Ivanovo",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 23591.7,
+      "density": 6.1,
+      "population": 143909,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-nizhegorod",
+      "slug": "ru-rus-nizhegorod",
+      "name": "Nizhegorod",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 74939.4,
+      "density": 6.1,
+      "population": 457130,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-tula",
+      "slug": "ru-rus-tula",
+      "name": "Tula",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 25404.5,
+      "density": 6.1,
+      "population": 154967,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-chuvash",
+      "slug": "ru-rus-chuvash",
+      "name": "Chuvash",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 18356.3,
+      "density": 6.1,
+      "population": 111973,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-vologda",
+      "slug": "ru-rus-vologda",
+      "name": "Vologda",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 145381.6,
+      "density": 6.1,
+      "population": 886828,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-novgorod",
+      "slug": "ru-rus-novgorod",
+      "name": "Novgorod",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 54943.5,
+      "density": 6.1,
+      "population": 335155,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-tver",
+      "slug": "ru-rus-tver",
+      "name": "Tver'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 84545.2,
+      "density": 6.1,
+      "population": 515726,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-moskovskaya",
+      "slug": "ru-rus-moskovskaya",
+      "name": "Moskovskaya",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 43893.1,
+      "density": 6.1,
+      "population": 267748,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-moskva",
+      "slug": "ru-rus-moskva",
+      "name": "Moskva",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 2804.6,
+      "density": 501.5,
+      "population": 1406507,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-mariy-el",
+      "slug": "ru-rus-mariy-el",
+      "name": "Mariy-El",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 23417.4,
+      "density": 6.1,
+      "population": 142846,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-kirov",
+      "slug": "ru-rus-kirov",
+      "name": "Kirov",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 119916.1,
+      "density": 6.1,
+      "population": 731488,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-udmurt",
+      "slug": "ru-rus-udmurt",
+      "name": "Udmurt",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 41873.4,
+      "density": 6.1,
+      "population": 255428,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-komi",
+      "slug": "ru-rus-komi",
+      "name": "Komi",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 415939.0,
+      "density": 6.1,
+      "population": 2537228,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-perm",
+      "slug": "ru-rus-perm",
+      "name": "Perm'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 160914.5,
+      "density": 6.1,
+      "population": 981578,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-samara",
+      "slug": "ru-rus-samara",
+      "name": "Samara",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 53115.3,
+      "density": 6.1,
+      "population": 324003,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-stavropol",
+      "slug": "ru-rus-stavropol",
+      "name": "Stavropol'",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 66734.1,
+      "density": 6.1,
+      "population": 407078,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-rus-adygey",
+      "slug": "ru-rus-adygey",
+      "name": "Adygey",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "RUS",
+      "areaKm2": 8060.7,
+      "density": 6.1,
+      "population": 49170,
+      "shares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.88,
+        "muslim": 0.04,
+        "protestant": 0.02,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-pol-masovian",
+      "slug": "ru-pol-masovian",
+      "name": "Masovian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 35113.7,
+      "density": 19.5,
+      "population": 684717,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-odz",
+      "slug": "ru-pol-odz",
+      "name": "\u0141\u00f3d\u017a",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 18520.0,
+      "density": 19.5,
+      "population": 361140,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-kuyavian-pomeranian",
+      "slug": "ru-pol-kuyavian-pomeranian",
+      "name": "Kuyavian-Pomeranian",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 7357.1,
+      "density": 19.5,
+      "population": 143463,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-greater-poland",
+      "slug": "ru-pol-greater-poland",
+      "name": "Greater Poland",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 6574.9,
+      "density": 19.5,
+      "population": 128211,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-pol-swietokrzyskie",
+      "slug": "ru-pol-swietokrzyskie",
+      "name": "\u015awi\u0119tokrzyskie",
+      "plurality": "catholic",
+      "religion": "catholic",
+      "nationality": null,
+      "adm0": "POL",
+      "areaKm2": 11080.0,
+      "density": 19.5,
+      "population": 216060,
+      "shares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.74,
+        "jewish": 0.14,
+        "orthodox": 0.08,
+        "protestant": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-aqmola",
+      "slug": "ru-kaz-aqmola",
+      "name": "Aqmola",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 146221.2,
+      "density": 2.2,
+      "population": 321687,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-qaraghandy",
+      "slug": "ru-kaz-qaraghandy",
+      "name": "Qaraghandy",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 429603.0,
+      "density": 2.2,
+      "population": 945127,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-fin-northern-savonia",
+      "slug": "ru-fin-northern-savonia",
+      "name": "Northern Savonia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 19764.0,
+      "density": 7.0,
+      "population": 138348,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-southern-savonia",
+      "slug": "ru-fin-southern-savonia",
+      "name": "Southern Savonia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 19131.7,
+      "density": 7.0,
+      "population": 133922,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-central-finland",
+      "slug": "ru-fin-central-finland",
+      "name": "Central Finland",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 19305.1,
+      "density": 7.0,
+      "population": 135136,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-southern-ostrobothnia",
+      "slug": "ru-fin-southern-ostrobothnia",
+      "name": "Southern Ostrobothnia",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 13899.2,
+      "density": 7.0,
+      "population": 97294,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-fin-paijat-hame",
+      "slug": "ru-fin-paijat-hame",
+      "name": "P\u00e4ij\u00e4t-H\u00e4me",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "FIN",
+      "areaKm2": 5986.8,
+      "density": 7.0,
+      "population": 41908,
+      "shares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      },
+      "religionShares": {
+        "protestant": 0.98,
+        "orthodox": 0.015,
+        "other": 0.005
+      }
+    },
+    {
+      "code": "ru-blr-city-of-minsk",
+      "slug": "ru-blr-city-of-minsk",
+      "name": "City of Minsk",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "BLR",
+      "areaKm2": 607.1,
+      "density": 19.5,
+      "population": 11838,
+      "shares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.7,
+        "catholic": 0.12,
+        "jewish": 0.12,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-ukr-kiev-city",
+      "slug": "ru-ukr-kiev-city",
+      "name": "Kiev City",
+      "plurality": "orthodox",
+      "religion": "orthodox",
+      "nationality": null,
+      "adm0": "UKR",
+      "areaKm2": 1648.2,
+      "density": 501.5,
+      "population": 826572,
+      "shares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "jewish": 0.1,
+        "catholic": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-uzb-tashkent",
+      "slug": "ru-uzb-tashkent",
+      "name": "Tashkent",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "UZB",
+      "areaKm2": 237.6,
+      "density": 5.0,
+      "population": 1188,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-kaz-almaty-city",
+      "slug": "ru-kaz-almaty-city",
+      "name": "Almaty City",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 279.8,
+      "density": 2.2,
+      "population": 616,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-kaz-astana",
+      "slug": "ru-kaz-astana",
+      "name": "Astana",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "KAZ",
+      "areaKm2": 583.1,
+      "density": 2.2,
+      "population": 1283,
+      "shares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.72,
+        "orthodox": 0.22,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ru-tjk-dushanbe",
+      "slug": "ru-tjk-dushanbe",
+      "name": "Dushanbe",
+      "plurality": "muslim",
+      "religion": "muslim",
+      "nationality": null,
+      "adm0": "TJK",
+      "areaKm2": 125.8,
+      "density": 5.0,
+      "population": 629,
+      "shares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "muslim": 0.9,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ru-courland-livonia-latvia",
+      "slug": "ru-courland-livonia-latvia",
+      "name": "Courland\u2013Livonia (Latvia)",
+      "plurality": "protestant",
+      "religion": "protestant",
+      "nationality": null,
+      "adm0": "LVA",
+      "areaKm2": 64537.6,
+      "density": 7.0,
+      "population": 451763,
+      "shares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "protestant": 0.78,
+        "orthodox": 0.12,
+        "catholic": 0.05,
+        "other": 0.05
+      }
+    }
+  ]
+}

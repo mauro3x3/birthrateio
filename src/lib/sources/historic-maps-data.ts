@@ -19,6 +19,9 @@ export type HistoricMapEntry = {
   blurb: string;
   source: string;
   sourceUrl: string;
+  geoUrl?: string;
+  /** Why a planned map is not interactive yet. */
+  statusNote?: string;
   groups?: HistoricMapGroup[];
 };
 
@@ -33,6 +36,7 @@ export const HISTORIC_MAPS = [...(catalog as HistoricCatalog).maps].sort(
 );
 
 const REGION_ORDER = [
+  "Overview",
   "Near East & Balkans",
   "Central Europe",
   "Eurasia",

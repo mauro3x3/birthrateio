@@ -943,13 +943,7 @@
         }
       ],
       "dataUrl": "/data/census/irn.json",
-      "fitMaxZoom": 7.25,
-      "fitClamp": {
-        "west": 44.1,
-        "south": 25.1,
-        "east": 63.2,
-        "north": 39.7
-      }
+      "fitMaxZoom": 5.8
     },
     {
       "slug": "ireland",

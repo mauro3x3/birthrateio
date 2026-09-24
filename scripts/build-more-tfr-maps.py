@@ -483,6 +483,30 @@ ALIASES_BY_ISO = {
 }
 
 
+def _geom_bbox_area(feat: dict) -> float:
+    coords = (feat.get("geometry") or {}).get("coordinates")
+    if not coords:
+        return 0.0
+    pts: list[tuple[float, float]] = []
+
+    def walk(c):
+        if isinstance(c[0], (int, float)):
+            pts.append((float(c[0]), float(c[1])))
+            return
+        for x in c:
+            walk(x)
+
+    try:
+        walk(coords)
+    except Exception:
+        return 0.0
+    if not pts:
+        return 0.0
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    return max(0.0, (max(xs) - min(xs)) * (max(ys) - min(ys)))
+
+
 def match_admin1(iso3: str, table: dict[str, float], feats: list[dict], prefix: str):
     aliases = {**ALIASES_COMMON, **ALIASES_BY_ISO.get(iso3, {})}
     by_norm: dict[str, dict] = {}
@@ -494,11 +518,19 @@ def match_admin1(iso3: str, table: dict[str, float], feats: list[dict], prefix: 
             continue
         keyed = True
         name = admin1_name(feat)
-        by_norm[bsm.norm_name(name)] = feat
+        key = bsm.norm_name(name)
+        prev = by_norm.get(key)
+        # geoBoundaries sometimes ships duplicate names (e.g. Iran Mazandaran
+        # has a tiny leftover polygon). Keep the larger footprint.
+        if prev is None or _geom_bbox_area(feat) > _geom_bbox_area(prev):
+            by_norm[key] = feat
     if not keyed:
         for feat in feats:
             name = admin1_name(feat)
-            by_norm[bsm.norm_name(name)] = feat
+            key = bsm.norm_name(name)
+            prev = by_norm.get(key)
+            if prev is None or _geom_bbox_area(feat) > _geom_bbox_area(prev):
+                by_norm[key] = feat
 
     out_feats = []
     regions = []

@@ -7,7 +7,7 @@ import {
   type RegionalShareSet,
 } from "@/lib/regional-shares";
 
-export type MapMetricId = "tfr" | "population" | "pop-growth" | "gfr";
+export type MapMetricId = "tfr" | "population" | "pop-growth" | "gfr" | "religion";
 
 export type CountryMapRegion = {
   id: string;

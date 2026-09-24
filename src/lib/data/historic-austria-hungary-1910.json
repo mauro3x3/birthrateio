@@ -1,0 +1,3349 @@
+{
+  "id": "austria-hungary-nationalities-1910",
+  "slug": "austria-hungary-1910",
+  "title": "Nationalities in Austria-Hungary, 1910",
+  "year": 1910,
+  "mapMode": "plurality",
+  "note": "Empire-scoped Dual Monarchy map. Toggle Austria vs Hungary, ethnicity vs religion vs population/density. Unit ethnic and religious shares are illustrative profiles, not official county tables.",
+  "source": "1910 Austrian & Hungarian censuses (mother tongue / nationality / religion) for empire totals and majorities. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Austro-Hungarian Empire 1914. Population density scaled to period empire total.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Austria-Hungary",
+  "geoUrl": "/geo/historic/austria-hungary-1910.json",
+  "groups": [
+    {
+      "id": "german",
+      "shortLabel": "German",
+      "color": "#c0392b"
+    },
+    {
+      "id": "hungarian",
+      "shortLabel": "Hungarian",
+      "color": "#e67e22"
+    },
+    {
+      "id": "czech",
+      "shortLabel": "Czech",
+      "color": "#5dade2"
+    },
+    {
+      "id": "slovak",
+      "shortLabel": "Slovak",
+      "color": "#1e8449"
+    },
+    {
+      "id": "polish",
+      "shortLabel": "Polish",
+      "color": "#6c3483"
+    },
+    {
+      "id": "ruthenian",
+      "shortLabel": "Ruthenian / Ukrainian",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "romanian",
+      "shortLabel": "Romanian",
+      "color": "#196f3d"
+    },
+    {
+      "id": "serbo-croat",
+      "shortLabel": "Serbo-Croatian",
+      "color": "#d4ac0d"
+    },
+    {
+      "id": "slovene",
+      "shortLabel": "Slovene",
+      "color": "#7d3c98"
+    },
+    {
+      "id": "italian",
+      "shortLabel": "Italian",
+      "color": "#48c9b0"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "religionGroups": [
+    {
+      "id": "catholic",
+      "shortLabel": "Catholic",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "orthodox",
+      "shortLabel": "Orthodox",
+      "color": "#4a2c6a"
+    },
+    {
+      "id": "protestant",
+      "shortLabel": "Protestant",
+      "color": "#5dade2"
+    },
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim",
+      "color": "#27ae60"
+    },
+    {
+      "id": "jewish",
+      "shortLabel": "Jewish",
+      "color": "#a569bd"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "primaryMetric": "nationality",
+  "nationalShares": {
+    "german": 0.2336,
+    "hungarian": 0.1957,
+    "czech": 0.1254,
+    "serbo-croat": 0.1094,
+    "polish": 0.0968,
+    "ruthenian": 0.0778,
+    "romanian": 0.0627,
+    "slovak": 0.0383,
+    "slovene": 0.0244,
+    "italian": 0.015,
+    "other": 0.0209
+  },
+  "nationalReligionShares": {
+    "catholic": 0.66,
+    "protestant": 0.09,
+    "orthodox": 0.14,
+    "muslim": 0.025,
+    "jewish": 0.045,
+    "other": 0.04
+  },
+  "halfTotals": {
+    "cisleithania": 29021595,
+    "transleithania": 19365842,
+    "bosnia": 3004352
+  },
+  "totalPopulation": 51391789,
+  "areas": [
+    {
+      "code": "ah-cze-ustecky",
+      "slug": "ah-cze-ustecky",
+      "name": "\u00dasteck\u00fd (Sudeten / Silesia)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 5322.0,
+      "density": 106.0,
+      "population": 564132,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-liberecky",
+      "slug": "ah-cze-liberecky",
+      "name": "Libereck\u00fd (Sudeten / Silesia)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 3187.9,
+      "density": 106.0,
+      "population": 337917,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-karlovarsky",
+      "slug": "ah-cze-karlovarsky",
+      "name": "Karlovarsk\u00fd (Sudeten / Silesia)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 3249.6,
+      "density": 106.0,
+      "population": 344458,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-plzensky",
+      "slug": "ah-cze-plzensky",
+      "name": "Plze\u0148sk\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 7841.7,
+      "density": 125.3,
+      "population": 982565,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-jihocesky",
+      "slug": "ah-cze-jihocesky",
+      "name": "Jiho\u010desk\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 9975.8,
+      "density": 125.3,
+      "population": 1249968,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-rou-satu-mare",
+      "slug": "ah-rou-satu-mare",
+      "name": "Satu Mare",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 4689.1,
+      "density": 53.0,
+      "population": 248522,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-hun-szabolcs-szatmar-bereg",
+      "slug": "ah-hun-szabolcs-szatmar-bereg",
+      "name": "Szabolcs-Szatm\u00e1r-Bereg",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 5393.8,
+      "density": 81.9,
+      "population": 441752,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "protestant": 0.58,
+        "catholic": 0.32,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-arad",
+      "slug": "ah-rou-arad",
+      "name": "Arad",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 7820.0,
+      "density": 53.0,
+      "population": 414460,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-hun-bekes",
+      "slug": "ah-hun-bekes",
+      "name": "B\u00e9k\u00e9s",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 5370.1,
+      "density": 81.9,
+      "population": 439811,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "protestant": 0.58,
+        "catholic": 0.32,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-bihor",
+      "slug": "ah-rou-bihor",
+      "name": "Bihor",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 7593.4,
+      "density": 53.0,
+      "population": 402450,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-hun-hajdu-bihar",
+      "slug": "ah-hun-hajdu-bihar",
+      "name": "Hajd\u00fa-Bihar",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 5532.8,
+      "density": 81.9,
+      "population": 453136,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "protestant": 0.58,
+        "catholic": 0.32,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-csongrad",
+      "slug": "ah-hun-csongrad",
+      "name": "Csongr\u00e1d",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3429.7,
+      "density": 81.9,
+      "population": 280892,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-timis",
+      "slug": "ah-rou-timis",
+      "name": "Timis",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 8832.1,
+      "density": 53.0,
+      "population": 468101,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-svk-zilinsky",
+      "slug": "ah-svk-zilinsky",
+      "name": "\u017dilinsk\u00fd",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 6630.4,
+      "density": 67.5,
+      "population": 447552,
+      "shares": {
+        "slovak": 0.68,
+        "hungarian": 0.18,
+        "german": 0.08,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-pol-silesian",
+      "slug": "ah-pol-silesian",
+      "name": "Silesian",
+      "plurality": "polish",
+      "nationality": "polish",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "POL",
+      "areaKm2": 4943.1,
+      "density": 86.7,
+      "population": 428567,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-pol-lesser-poland",
+      "slug": "ah-pol-lesser-poland",
+      "name": "Lesser Poland",
+      "plurality": "polish",
+      "nationality": "polish",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "POL",
+      "areaKm2": 14886.1,
+      "density": 86.7,
+      "population": 1290625,
+      "shares": {
+        "polish": 0.72,
+        "ruthenian": 0.18,
+        "german": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-svk-presov",
+      "slug": "ah-svk-presov",
+      "name": "Pre\u0161ov",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 8702.9,
+      "density": 67.5,
+      "population": 587446,
+      "shares": {
+        "slovak": 0.68,
+        "hungarian": 0.18,
+        "german": 0.08,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-pol-subcarpathian",
+      "slug": "ah-pol-subcarpathian",
+      "name": "Subcarpathian",
+      "plurality": "ruthenian",
+      "nationality": "ruthenian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "POL",
+      "areaKm2": 17937.4,
+      "density": 67.5,
+      "population": 1210774,
+      "shares": {
+        "ruthenian": 0.66,
+        "polish": 0.18,
+        "romanian": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "orthodox": 0.22,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-pol-lower-silesian",
+      "slug": "ah-pol-lower-silesian",
+      "name": "Lower Silesian",
+      "plurality": "polish",
+      "nationality": "polish",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "POL",
+      "areaKm2": 4047.5,
+      "density": 86.7,
+      "population": 350918,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-kralovehradecky",
+      "slug": "ah-cze-kralovehradecky",
+      "name": "Kr\u00e1lov\u00e9hradeck\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 4760.0,
+      "density": 125.3,
+      "population": 596428,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-olomoucky",
+      "slug": "ah-cze-olomoucky",
+      "name": "Olomouck\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 4959.6,
+      "density": 125.3,
+      "population": 621438,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-pardubicky",
+      "slug": "ah-cze-pardubicky",
+      "name": "Pardubick\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 4376.4,
+      "density": 125.3,
+      "population": 548363,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-moravskoslezsky",
+      "slug": "ah-cze-moravskoslezsky",
+      "name": "Moravskoslezsk\u00fd (Sudeten / Silesia)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 5588.7,
+      "density": 106.0,
+      "population": 592402,
+      "shares": {
+        "german": 0.7,
+        "czech": 0.24,
+        "polish": 0.04,
+        "other": 0.02
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-ukr-transcarpathia",
+      "slug": "ah-ukr-transcarpathia",
+      "name": "Transcarpathia",
+      "plurality": "ruthenian",
+      "nationality": "ruthenian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "UKR",
+      "areaKm2": 12961.0,
+      "density": 67.5,
+      "population": 874868,
+      "shares": {
+        "ruthenian": 0.66,
+        "polish": 0.18,
+        "romanian": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "orthodox": 0.22,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-svk-kosicky",
+      "slug": "ah-svk-kosicky",
+      "name": "Ko\u0161ick\u00fd",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 6783.3,
+      "density": 67.5,
+      "population": 457873,
+      "shares": {
+        "slovak": 0.68,
+        "hungarian": 0.18,
+        "german": 0.08,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-niederosterreich",
+      "slug": "ah-aut-niederosterreich",
+      "name": "Nieder\u00f6sterreich",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 19072.4,
+      "density": 91.6,
+      "population": 1747032,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-jihomoravsky",
+      "slug": "ah-cze-jihomoravsky",
+      "name": "Jihomoravsk\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 7057.1,
+      "density": 125.3,
+      "population": 884255,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-oberosterreich",
+      "slug": "ah-aut-oberosterreich",
+      "name": "Ober\u00f6sterreich",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 11855.4,
+      "density": 91.6,
+      "population": 1085955,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hun-gyor-moson-sopron",
+      "slug": "ah-hun-gyor-moson-sopron",
+      "name": "Gyor-Moson-Sopron",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3817.1,
+      "density": 81.9,
+      "population": 312620,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-aut-burgenland",
+      "slug": "ah-aut-burgenland",
+      "name": "Burgenland",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "AUT",
+      "areaKm2": 3962.9,
+      "density": 81.9,
+      "population": 324562,
+      "shares": {
+        "german": 0.55,
+        "hungarian": 0.25,
+        "serbo-croat": 0.12,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-sopron",
+      "slug": "ah-hun-sopron",
+      "name": "Sopron",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 187.7,
+      "density": 81.9,
+      "population": 15373,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-vas",
+      "slug": "ah-hun-vas",
+      "name": "Vas",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3318.9,
+      "density": 81.9,
+      "population": 271818,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-ita-bozen",
+      "slug": "ah-ita-bozen",
+      "name": "Bozen",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "ITA",
+      "areaKm2": 6927.7,
+      "density": 77.1,
+      "population": 534126,
+      "shares": {
+        "german": 0.82,
+        "italian": 0.12,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-vorarlberg",
+      "slug": "ah-aut-vorarlberg",
+      "name": "Vorarlberg",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 2619.2,
+      "density": 91.6,
+      "population": 239919,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-tirol",
+      "slug": "ah-aut-tirol",
+      "name": "Tirol",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 12746.2,
+      "density": 91.6,
+      "population": 1167552,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-srb-severno-backi",
+      "slug": "ah-srb-severno-backi",
+      "name": "Severno-Backi (Ba\u010dka)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SRB",
+      "areaKm2": 1647.0,
+      "density": 81.9,
+      "population": 134889,
+      "shares": {
+        "hungarian": 0.48,
+        "serbo-croat": 0.28,
+        "german": 0.18,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-bacs-kiskun",
+      "slug": "ah-hun-bacs-kiskun",
+      "name": "B\u00e1cs-Kiskun",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 8149.6,
+      "density": 81.9,
+      "population": 667452,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-srb-zapadno-backi",
+      "slug": "ah-srb-zapadno-backi",
+      "name": "Zapadno-Backi (Ba\u010dka)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SRB",
+      "areaKm2": 2358.4,
+      "density": 81.9,
+      "population": 193153,
+      "shares": {
+        "hungarian": 0.48,
+        "serbo-croat": 0.28,
+        "german": 0.18,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-srb-severno-banatski",
+      "slug": "ah-srb-severno-banatski",
+      "name": "Severno-Banatski",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "SRB",
+      "areaKm2": 2264.4,
+      "density": 57.8,
+      "population": 130882,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.55,
+        "catholic": 0.28,
+        "protestant": 0.1,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ah-hun-szeged",
+      "slug": "ah-hun-szeged",
+      "name": "Szeged",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 246.9,
+      "density": 81.9,
+      "population": 20221,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-zala",
+      "slug": "ah-hun-zala",
+      "name": "Zala",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3090.1,
+      "density": 81.9,
+      "population": 253079,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hrv-medimurska",
+      "slug": "ah-hrv-medimurska",
+      "name": "Medimurska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 816.4,
+      "density": 57.8,
+      "population": 47188,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hun-somogy",
+      "slug": "ah-hun-somogy",
+      "name": "Somogy",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 5830.7,
+      "density": 81.9,
+      "population": 477534,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hrv-viroviticko-podravska",
+      "slug": "ah-hrv-viroviticko-podravska",
+      "name": "Viroviticko-Podravska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 2075.4,
+      "density": 57.8,
+      "population": 119958,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-koprivnicko-krizevacka",
+      "slug": "ah-hrv-koprivnicko-krizevacka",
+      "name": "Koprivni\u010dko-Kri\u017eeva\u010dka",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 1679.3,
+      "density": 57.8,
+      "population": 97064,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hun-baranya",
+      "slug": "ah-hun-baranya",
+      "name": "Baranya",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 4345.8,
+      "density": 81.9,
+      "population": 355921,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hrv-osjecko-baranjska",
+      "slug": "ah-hrv-osjecko-baranjska",
+      "name": "Osjecko-Baranjska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 3591.4,
+      "density": 57.8,
+      "population": 207583,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-istarska",
+      "slug": "ah-hrv-istarska",
+      "name": "Istarska",
+      "plurality": "italian",
+      "nationality": "italian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 2775.5,
+      "density": 96.4,
+      "population": 267558,
+      "shares": {
+        "italian": 0.62,
+        "serbo-croat": 0.22,
+        "slovene": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-salzburg",
+      "slug": "ah-aut-salzburg",
+      "name": "Salzburg",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 7214.6,
+      "density": 91.6,
+      "population": 660857,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-aut-karnten",
+      "slug": "ah-aut-karnten",
+      "name": "K\u00e4rnten",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 9633.6,
+      "density": 91.6,
+      "population": 882438,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-ita-gorizia",
+      "slug": "ah-ita-gorizia",
+      "name": "Gorizia",
+      "plurality": "italian",
+      "nationality": "italian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "ITA",
+      "areaKm2": 336.4,
+      "density": 96.4,
+      "population": 32429,
+      "shares": {
+        "italian": 0.62,
+        "serbo-croat": 0.22,
+        "slovene": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-ita-trieste",
+      "slug": "ah-ita-trieste",
+      "name": "Trieste",
+      "plurality": "italian",
+      "nationality": "italian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "ITA",
+      "areaKm2": 182.5,
+      "density": 96.4,
+      "population": 17593,
+      "shares": {
+        "italian": 0.62,
+        "serbo-croat": 0.22,
+        "slovene": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hrv-dubrovacko-neretvanska",
+      "slug": "ah-hrv-dubrovacko-neretvanska",
+      "name": "Dubrovacko-Neretvanska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 995.3,
+      "density": 57.8,
+      "population": 57528,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-aut-steiermark",
+      "slug": "ah-aut-steiermark",
+      "name": "Steiermark",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 16411.3,
+      "density": 91.6,
+      "population": 1503275,
+      "shares": {
+        "german": 0.92,
+        "czech": 0.03,
+        "slovene": 0.02,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hrv-sisacko-moslavacka",
+      "slug": "ah-hrv-sisacko-moslavacka",
+      "name": "Sisacko-Moslavacka",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 5079.6,
+      "density": 57.8,
+      "population": 293601,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-brodsko-posavska",
+      "slug": "ah-hrv-brodsko-posavska",
+      "name": "Brodsko-Posavska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 1850.0,
+      "density": 57.8,
+      "population": 106930,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-karlovacka",
+      "slug": "ah-hrv-karlovacka",
+      "name": "Karlovacka",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 3297.0,
+      "density": 57.8,
+      "population": 190567,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-zadarska",
+      "slug": "ah-hrv-zadarska",
+      "name": "Zadarska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 5931.8,
+      "density": 57.8,
+      "population": 342858,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-vukovarsko-srijemska",
+      "slug": "ah-hrv-vukovarsko-srijemska",
+      "name": "Vukovarsko-Srijemska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 2324.2,
+      "density": 57.8,
+      "population": 134339,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-splitsko-dalmatinska",
+      "slug": "ah-hrv-splitsko-dalmatinska",
+      "name": "Splitsko-Dalmatinska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 3707.5,
+      "density": 57.8,
+      "population": 214294,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-srb-sremski",
+      "slug": "ah-srb-sremski",
+      "name": "Sremski",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "SRB",
+      "areaKm2": 1509.9,
+      "density": 57.8,
+      "population": 87272,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.55,
+        "catholic": 0.28,
+        "protestant": 0.1,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ah-svk-bratislavsky",
+      "slug": "ah-svk-bratislavsky",
+      "name": "Bratislavsk\u00fd",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 2097.0,
+      "density": 67.5,
+      "population": 141548,
+      "shares": {
+        "slovak": 0.36,
+        "hungarian": 0.34,
+        "german": 0.24,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-svk-trnavsky",
+      "slug": "ah-svk-trnavsky",
+      "name": "Trnavsk\u00fd (Hungarian belt)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 4093.4,
+      "density": 81.9,
+      "population": 335249,
+      "shares": {
+        "hungarian": 0.56,
+        "slovak": 0.34,
+        "german": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-svk-trenciansky",
+      "slug": "ah-svk-trenciansky",
+      "name": "Trenciansky",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 4509.6,
+      "density": 67.5,
+      "population": 304398,
+      "shares": {
+        "slovak": 0.68,
+        "hungarian": 0.18,
+        "german": 0.08,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-zlinsky",
+      "slug": "ah-cze-zlinsky",
+      "name": "Zl\u00ednsk\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 3950.4,
+      "density": 125.3,
+      "population": 494985,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hun-borsod-abauj-zemplen",
+      "slug": "ah-hun-borsod-abauj-zemplen",
+      "name": "Borsod-Aba\u00faj-Zempl\u00e9n",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 6746.1,
+      "density": 81.9,
+      "population": 552506,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-svk-banskobystricky",
+      "slug": "ah-svk-banskobystricky",
+      "name": "Banskobystrick\u00fd",
+      "plurality": "slovak",
+      "nationality": "slovak",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 9446.3,
+      "density": 67.5,
+      "population": 637625,
+      "shares": {
+        "slovak": 0.68,
+        "hungarian": 0.18,
+        "german": 0.08,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hun-nograd",
+      "slug": "ah-hun-nograd",
+      "name": "N\u00f3gr\u00e1d",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 2369.1,
+      "density": 81.9,
+      "population": 194029,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-salgotarjan",
+      "slug": "ah-hun-salgotarjan",
+      "name": "Salg\u00f3tarj\u00e1n",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 116.2,
+      "density": 81.9,
+      "population": 9517,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-svk-nitriansky",
+      "slug": "ah-svk-nitriansky",
+      "name": "Nitriansky (Hungarian belt)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "SVK",
+      "areaKm2": 6181.8,
+      "density": 81.9,
+      "population": 506289,
+      "shares": {
+        "hungarian": 0.56,
+        "slovak": 0.34,
+        "german": 0.06,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-komarom-esztergom",
+      "slug": "ah-hun-komarom-esztergom",
+      "name": "Kom\u00e1rom-Esztergom",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 2256.5,
+      "density": 81.9,
+      "population": 184807,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-pest",
+      "slug": "ah-hun-pest",
+      "name": "Pest",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 6285.8,
+      "density": 81.9,
+      "population": 514807,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-srb-srednje-banatski",
+      "slug": "ah-srb-srednje-banatski",
+      "name": "Srednje-Banatski",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "SRB",
+      "areaKm2": 3124.0,
+      "density": 57.8,
+      "population": 180567,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.55,
+        "catholic": 0.28,
+        "protestant": 0.1,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ah-rou-caras-severin",
+      "slug": "ah-rou-caras-severin",
+      "name": "Caras-Severin",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 7714.4,
+      "density": 53.0,
+      "population": 408863,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-ukr-chernivtsi",
+      "slug": "ah-ukr-chernivtsi",
+      "name": "Chernivtsi",
+      "plurality": "ruthenian",
+      "nationality": "ruthenian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "UKR",
+      "areaKm2": 6131.7,
+      "density": 67.5,
+      "population": 413890,
+      "shares": {
+        "ruthenian": 0.66,
+        "polish": 0.18,
+        "romanian": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "orthodox": 0.22,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-suceava",
+      "slug": "ah-rou-suceava",
+      "name": "Suceava",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 8072.1,
+      "density": 53.0,
+      "population": 427821,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-maramures",
+      "slug": "ah-rou-maramures",
+      "name": "Maramures",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 6431.8,
+      "density": 53.0,
+      "population": 340885,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-ukr-ivano-frankivs-k",
+      "slug": "ah-ukr-ivano-frankivs-k",
+      "name": "Ivano-Frankivs'k",
+      "plurality": "ruthenian",
+      "nationality": "ruthenian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "UKR",
+      "areaKm2": 13885.9,
+      "density": 67.5,
+      "population": 937298,
+      "shares": {
+        "ruthenian": 0.66,
+        "polish": 0.18,
+        "romanian": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "orthodox": 0.22,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-ukr-l-viv",
+      "slug": "ah-ukr-l-viv",
+      "name": "L'viv",
+      "plurality": "polish",
+      "nationality": "polish",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "UKR",
+      "areaKm2": 21843.1,
+      "density": 86.7,
+      "population": 1893797,
+      "shares": {
+        "polish": 0.72,
+        "ruthenian": 0.18,
+        "german": 0.05,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hrv-varazdinska",
+      "slug": "ah-hrv-varazdinska",
+      "name": "Vara\u017edinska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 1193.4,
+      "density": 57.8,
+      "population": 68979,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-krapinsko-zagorska",
+      "slug": "ah-hrv-krapinsko-zagorska",
+      "name": "Krapinsko-Zagorska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 1255.7,
+      "density": 57.8,
+      "population": 72579,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-zagrebacka",
+      "slug": "ah-hrv-zagrebacka",
+      "name": "Zagrebacka",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 2672.8,
+      "density": 57.8,
+      "population": 154488,
+      "shares": {
+        "hungarian": 0.48,
+        "serbo-croat": 0.28,
+        "german": 0.18,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.55,
+        "catholic": 0.28,
+        "protestant": 0.1,
+        "other": 0.07
+      }
+    },
+    {
+      "code": "ah-hrv-primorsko-goranska",
+      "slug": "ah-hrv-primorsko-goranska",
+      "name": "Primorsko-Goranska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 2741.2,
+      "density": 57.8,
+      "population": 158441,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.82,
+        "orthodox": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-sibensko-kninska",
+      "slug": "ah-hrv-sibensko-kninska",
+      "name": "\u0160ibensko-Kninska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 1728.1,
+      "density": 57.8,
+      "population": 99884,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-licko-senjska",
+      "slug": "ah-hrv-licko-senjska",
+      "name": "Licko-Senjska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "HRV",
+      "areaKm2": 3744.1,
+      "density": 57.8,
+      "population": 216409,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-ukr-ternopil",
+      "slug": "ah-ukr-ternopil",
+      "name": "Ternopil'",
+      "plurality": "ruthenian",
+      "nationality": "ruthenian",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "UKR",
+      "areaKm2": 12210.9,
+      "density": 67.5,
+      "population": 824236,
+      "shares": {
+        "ruthenian": 0.66,
+        "polish": 0.18,
+        "romanian": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "orthodox": 0.22,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-cluj",
+      "slug": "ah-rou-cluj",
+      "name": "Cluj",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 6615.5,
+      "density": 53.0,
+      "population": 350622,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-bistrita-nasaud",
+      "slug": "ah-rou-bistrita-nasaud",
+      "name": "Bistrita-Nasaud",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 5261.6,
+      "density": 53.0,
+      "population": 278865,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-salaj",
+      "slug": "ah-rou-salaj",
+      "name": "Salaj",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 3873.6,
+      "density": 53.0,
+      "population": 205301,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-hunedoara",
+      "slug": "ah-rou-hunedoara",
+      "name": "Hunedoara",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 3537.2,
+      "density": 53.0,
+      "population": 187472,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-rou-covasna",
+      "slug": "ah-rou-covasna",
+      "name": "Covasna (Szeklerland)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 265.4,
+      "density": 81.9,
+      "population": 21736,
+      "shares": {
+        "hungarian": 0.84,
+        "romanian": 0.11,
+        "german": 0.03,
+        "other": 0.02
+      },
+      "religionShares": {
+        "protestant": 0.72,
+        "catholic": 0.18,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-brasov",
+      "slug": "ah-rou-brasov",
+      "name": "Brasov (Saxon)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 2285.3,
+      "density": 77.1,
+      "population": 176197,
+      "shares": {
+        "german": 0.46,
+        "romanian": 0.34,
+        "hungarian": 0.16,
+        "other": 0.04
+      },
+      "religionShares": {
+        "protestant": 0.55,
+        "orthodox": 0.28,
+        "catholic": 0.12,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ah-rou-sibiu",
+      "slug": "ah-rou-sibiu",
+      "name": "Sibiu (Saxon)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 2532.0,
+      "density": 77.1,
+      "population": 195217,
+      "shares": {
+        "german": 0.46,
+        "romanian": 0.34,
+        "hungarian": 0.16,
+        "other": 0.04
+      },
+      "religionShares": {
+        "protestant": 0.55,
+        "orthodox": 0.28,
+        "catholic": 0.12,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ah-rou-mures",
+      "slug": "ah-rou-mures",
+      "name": "Mures (Szeklerland)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 6531.9,
+      "density": 81.9,
+      "population": 534963,
+      "shares": {
+        "hungarian": 0.84,
+        "romanian": 0.11,
+        "german": 0.03,
+        "other": 0.02
+      },
+      "religionShares": {
+        "protestant": 0.72,
+        "catholic": 0.18,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-harghita",
+      "slug": "ah-rou-harghita",
+      "name": "Harghita (Szeklerland)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 5186.1,
+      "density": 81.9,
+      "population": 424742,
+      "shares": {
+        "hungarian": 0.84,
+        "romanian": 0.11,
+        "german": 0.03,
+        "other": 0.02
+      },
+      "religionShares": {
+        "protestant": 0.72,
+        "catholic": 0.18,
+        "orthodox": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-rou-alba",
+      "slug": "ah-rou-alba",
+      "name": "Alba",
+      "plurality": "romanian",
+      "nationality": "romanian",
+      "religion": "orthodox",
+      "half": "transleithania",
+      "adm0": "ROU",
+      "areaKm2": 5606.4,
+      "density": 53.0,
+      "population": 297139,
+      "shares": {
+        "romanian": 0.62,
+        "hungarian": 0.22,
+        "german": 0.1,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.78,
+        "catholic": 0.08,
+        "protestant": 0.08,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ah-hrv-bjelovarsko-bilogorska",
+      "slug": "ah-hrv-bjelovarsko-bilogorska",
+      "name": "Bjelovarsko-bilogorska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 2657.7,
+      "density": 57.8,
+      "population": 153615,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-grad-zagreb",
+      "slug": "ah-hrv-grad-zagreb",
+      "name": "Grad Zagreb",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 706.5,
+      "density": 57.8,
+      "population": 40836,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-hrv-brodsko-posavska",
+      "slug": "ah-hrv-brodsko-posavska",
+      "name": "Brodsko-Posavska",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HRV",
+      "areaKm2": 2365.8,
+      "density": 57.8,
+      "population": 136743,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.7,
+        "orthodox": 0.22,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ah-aut-wien",
+      "slug": "ah-aut-wien",
+      "name": "Wien",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "AUT",
+      "areaKm2": 413.4,
+      "density": 2120.2,
+      "population": 876491,
+      "shares": {
+        "german": 0.88,
+        "czech": 0.07,
+        "other": 0.05
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hun-jasz-nagykun-szolnok",
+      "slug": "ah-hun-jasz-nagykun-szolnok",
+      "name": "J\u00e1sz-Nagykun-Szolnok",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 5224.9,
+      "density": 81.9,
+      "population": 427919,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-fejer",
+      "slug": "ah-hun-fejer",
+      "name": "Fej\u00e9r",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3943.3,
+      "density": 81.9,
+      "population": 322956,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-veszprem",
+      "slug": "ah-hun-veszprem",
+      "name": "Veszpr\u00e9m",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 4802.0,
+      "density": 81.9,
+      "population": 393284,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-tolna",
+      "slug": "ah-hun-tolna",
+      "name": "Tolna",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3508.5,
+      "density": 81.9,
+      "population": 287346,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-szolnok",
+      "slug": "ah-hun-szolnok",
+      "name": "Szolnok",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 324.1,
+      "density": 81.9,
+      "population": 26544,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-erd",
+      "slug": "ah-hun-erd",
+      "name": "\u00c9rd",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 108.0,
+      "density": 81.9,
+      "population": 8845,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-heves",
+      "slug": "ah-hun-heves",
+      "name": "Heves",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 3337.7,
+      "density": 81.9,
+      "population": 273358,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-eger",
+      "slug": "ah-hun-eger",
+      "name": "Eger",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 195.8,
+      "density": 81.9,
+      "population": 16036,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-miskolc",
+      "slug": "ah-hun-miskolc",
+      "name": "Miskolc",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 441.6,
+      "density": 81.9,
+      "population": 36167,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-hodmezovasarhely",
+      "slug": "ah-hun-hodmezovasarhely",
+      "name": "H\u00f3dmez\u00f4v\u00e1s\u00e1rhely",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 733.4,
+      "density": 81.9,
+      "population": 60065,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-dunaujvaros",
+      "slug": "ah-hun-dunaujvaros",
+      "name": "Duna\u00fajv\u00e1ros",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 132.0,
+      "density": 81.9,
+      "population": 10811,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-kecskemet",
+      "slug": "ah-hun-kecskemet",
+      "name": "Kecskem\u00e9t",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 248.1,
+      "density": 81.9,
+      "population": 20319,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-tatabanya",
+      "slug": "ah-hun-tatabanya",
+      "name": "Tatab\u00e1nya",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 94.0,
+      "density": 81.9,
+      "population": 7699,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-cze-vysocina",
+      "slug": "ah-cze-vysocina",
+      "name": "Vyso\u010dina",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 6961.9,
+      "density": 125.3,
+      "population": 872326,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-stredocesky",
+      "slug": "ah-cze-stredocesky",
+      "name": "St\u0159edo\u010desk\u00fd",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 10900.9,
+      "density": 125.3,
+      "population": 1365883,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-cze-prague",
+      "slug": "ah-cze-prague",
+      "name": "Prague",
+      "plurality": "czech",
+      "nationality": "czech",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "CZE",
+      "areaKm2": 494.1,
+      "density": 125.3,
+      "population": 61911,
+      "shares": {
+        "czech": 0.76,
+        "german": 0.2,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-hun-gyor",
+      "slug": "ah-hun-gyor",
+      "name": "Gy\u00f4r",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 234.0,
+      "density": 81.9,
+      "population": 19165,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-szombathely",
+      "slug": "ah-hun-szombathely",
+      "name": "Szombathely",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 143.0,
+      "density": 81.9,
+      "population": 11712,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-zalaegerszeg",
+      "slug": "ah-hun-zalaegerszeg",
+      "name": "Zalaegerszeg",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 108.2,
+      "density": 81.9,
+      "population": 8862,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-nagykanizsa",
+      "slug": "ah-hun-nagykanizsa",
+      "name": "Nagykanizsa",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 157.8,
+      "density": 81.9,
+      "population": 12924,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-veszprem",
+      "slug": "ah-hun-veszprem",
+      "name": "Veszpr\u00e9m",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 222.1,
+      "density": 81.9,
+      "population": 18190,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-kaposvar",
+      "slug": "ah-hun-kaposvar",
+      "name": "Kaposv\u00e1r",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 198.5,
+      "density": 81.9,
+      "population": 16257,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-pecs",
+      "slug": "ah-hun-pecs",
+      "name": "P\u00e9cs",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 241.7,
+      "density": 81.9,
+      "population": 19795,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-szekszard",
+      "slug": "ah-hun-szekszard",
+      "name": "Szeksz\u00e1rd",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 113.6,
+      "density": 81.9,
+      "population": 9304,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-szekesfehervar",
+      "slug": "ah-hun-szekesfehervar",
+      "name": "Sz\u00e9kesfeh\u00e9rv\u00e1r",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 295.0,
+      "density": 81.9,
+      "population": 24160,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-bekescsaba",
+      "slug": "ah-hun-bekescsaba",
+      "name": "B\u00e9k\u00e9scsaba",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 271.7,
+      "density": 81.9,
+      "population": 22252,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "protestant": 0.58,
+        "catholic": 0.32,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-debrecen",
+      "slug": "ah-hun-debrecen",
+      "name": "Debrecen",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "protestant",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 751.5,
+      "density": 81.9,
+      "population": 61548,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "protestant": 0.58,
+        "catholic": 0.32,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-hun-nyiregyhaza",
+      "slug": "ah-hun-nyiregyhaza",
+      "name": "Ny\u00edregyh\u00e1za",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "half": "transleithania",
+      "adm0": "HUN",
+      "areaKm2": 342.3,
+      "density": 81.9,
+      "population": 28034,
+      "shares": {
+        "hungarian": 0.82,
+        "german": 0.08,
+        "slovak": 0.04,
+        "other": 0.06
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.28,
+        "jewish": 0.06,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ah-carniola",
+      "slug": "ah-carniola",
+      "name": "Carniola",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "half": "cisleithania",
+      "adm0": "SVN",
+      "areaKm2": 20364.8,
+      "density": 62.6,
+      "population": 1274836,
+      "shares": {
+        "slovene": 0.86,
+        "german": 0.08,
+        "italian": 0.03,
+        "other": 0.03
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "protestant": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ah-bosnia-and-herzegovina",
+      "slug": "ah-bosnia-and-herzegovina",
+      "name": "Bosnia and Herzegovina",
+      "plurality": "serbo-croat",
+      "nationality": "serbo-croat",
+      "religion": "orthodox",
+      "half": "bosnia",
+      "adm0": "BIH",
+      "areaKm2": 51978.4,
+      "density": 57.8,
+      "population": 3004352,
+      "shares": {
+        "serbo-croat": 0.82,
+        "german": 0.06,
+        "hungarian": 0.06,
+        "other": 0.06
+      },
+      "religionShares": {
+        "orthodox": 0.43,
+        "muslim": 0.32,
+        "catholic": 0.23,
+        "other": 0.02
+      }
+    }
+  ]
+}

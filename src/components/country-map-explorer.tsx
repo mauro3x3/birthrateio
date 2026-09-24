@@ -19,6 +19,7 @@ import {
   tidyCountryName,
 } from "@/lib/regional-shares";
 import { RegionSharePies } from "@/components/region-share-pies";
+import { religionMapFor } from "@/lib/religion-maps";
 import { formatNumber, formatCompact, cn } from "@/lib/utils";
 
 type MapComponent = typeof import("@/components/maps/region-choropleth-map").RegionChoroplethMap;
@@ -28,6 +29,7 @@ const METRIC_ORDER: MapMetricId[] = [
   "population",
   "pop-growth",
   "gfr",
+  "religion",
 ];
 
 /** Default camera ignores overseas islands / Siberia so Download image frames the continent. */
@@ -37,6 +39,9 @@ const MAP_FIT_CLAMP: Partial<
   EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
   AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
   COL: { west: -79.15, south: -4.35, east: -66.8, north: 12.55 },
+  BRA: { west: -74.2, south: -34.0, east: -34.6, north: 5.4 },
+  YEM: { west: 42.4, south: 12.1, east: 54.7, north: 19.1 },
+  IRQ: { west: 38.7, south: 28.9, east: 48.7, north: 37.5 },
 };
 
 function metricOf(
@@ -125,13 +130,24 @@ export function CountryMapExplorer({
 
   const country =
     atlas.find((c) => c.iso3 === iso3) ?? atlas[0];
+  const religionPack = React.useMemo(
+    () => religionMapFor(country.iso3),
+    [country.iso3],
+  );
+  const religionMode = metricId === "religion" && religionPack != null;
   const tabs = displayTabsFor(country);
   const activeTab = tabs?.find((t) => t.id === tabId) ?? tabs?.[0];
   const shareMode = activeTab?.kind === "shares" && country.shares != null;
   const viewMetrics = shareMode ? [] : (activeTab?.metrics ?? country.metrics);
-  const geoUrl = shareMode ? "" : (activeTab?.geoUrl ?? country.geoUrl);
+  const geoUrl = religionMode
+    ? religionPack.geoUrl
+    : shareMode
+      ? ""
+      : (activeTab?.geoUrl ?? country.geoUrl);
   const kind = activeTab?.kind ?? country.kind;
-  const note = activeTab?.note ?? country.note;
+  const note = religionMode
+    ? religionPack.note
+    : (activeTab?.note ?? country.note);
 
   React.useEffect(() => {
     setSelectedIds([]);
@@ -150,13 +166,16 @@ export function CountryMapExplorer({
   }, [country.iso3, kind]);
 
   React.useEffect(() => {
+    if (metricId === "religion" && religionPack) return;
     const available = viewMetrics.map((m) => m.id);
     if (!available.includes(metricId)) {
       setMetricId(available[0] ?? "tfr");
     }
-  }, [country, viewMetrics, metricId]);
+  }, [country, viewMetrics, metricId, religionPack]);
 
-  const metric = metricOf(viewMetrics, metricId) ?? viewMetrics[0];
+  const metric = religionMode
+    ? undefined
+    : (metricOf(viewMetrics, metricId) ?? viewMetrics[0]);
   const variant =
     metric?.variants?.find((v) => v.id === variantId) ?? metric?.variants?.[0];
   const valuesByYear = variant?.valuesByYear ?? metric?.valuesByYear;
@@ -191,26 +210,56 @@ export function CountryMapExplorer({
     [values, metric?.scale, metric?.mid],
   );
 
-  const mapData = React.useMemo(
-    () =>
-      regions
-        .filter((r) => r.value != null)
-        .map((r) => ({
-          id: r.id,
-          slug: r.slug,
-          name: r.name,
-          value: r.value as number,
-        })),
-    [regions],
+  const mapData = React.useMemo(() => {
+    if (religionMode && religionPack) {
+      return religionPack.areas.map((a, i) => ({
+        id: a.id,
+        slug: a.slug,
+        name: a.name,
+        value: i + 1,
+      }));
+    }
+    return regions
+      .filter((r) => r.value != null)
+      .map((r) => ({
+        id: r.id,
+        slug: r.slug,
+        name: r.name,
+        value: r.value as number,
+      }));
+  }, [regions, religionMode, religionPack]);
+
+  const religionGroupById = React.useMemo(() => {
+    type G = { id: string; shortLabel: string; color: string };
+    if (!religionPack) return new Map<string, G>();
+    return new Map(religionPack.groups.map((g) => [g.id, g]));
+  }, [religionPack]);
+
+  const religionFillForId = React.useCallback(
+    (id: string) => {
+      if (!religionPack) return undefined;
+      const area =
+        religionPack.areas.find((a) => a.id === id || a.slug === id) ??
+        null;
+      if (!area) return undefined;
+      return religionGroupById.get(area.plurality)?.color;
+    },
+    [religionPack, religionGroupById],
   );
 
-  const ranked = React.useMemo(
-    () =>
-      [...regions]
-        .filter((r) => r.value != null)
-        .sort((a, b) => (b.value ?? 0) - (a.value ?? 0)),
-    [regions],
-  );
+  const ranked = React.useMemo(() => {
+    if (religionMode && religionPack) {
+      return religionPack.areas.map((a, i) => ({
+        id: a.id,
+        slug: a.slug,
+        name: a.name,
+        value: i + 1,
+      }));
+    }
+    return [...regions]
+      .filter((r) => r.value != null)
+      .sort((a, b) => (b.value ?? 0) - (a.value ?? 0));
+  }, [regions, religionMode, religionPack]);
 
   const shareRows = React.useMemo(() => {
     if (!country.shares) return [];
@@ -236,16 +285,28 @@ export function CountryMapExplorer({
     [scale],
   );
 
-  const legend = scale.legend.map((s) => ({
-    label:
-      metric?.id === "population"
-        ? formatNumber(s.value, 0)
-        : formatNumber(s.value, metric?.decimals ?? 2),
-    color: s.color,
-  }));
+  const legend = religionMode && religionPack
+    ? religionPack.groups.map((g) => ({
+        label: g.shortLabel,
+        color: g.color,
+      }))
+    : scale.legend.map((s) => ({
+        label:
+          metric?.id === "population"
+            ? formatNumber(s.value, 0)
+            : formatNumber(s.value, metric?.decimals ?? 2),
+        color: s.color,
+      }));
 
   const formatValue = React.useCallback(
     (v: number) => {
+      if (religionMode && religionPack) {
+        const area = religionPack.areas[Math.round(v) - 1];
+        if (!area) return "";
+        return (
+          religionGroupById.get(area.plurality)?.shortLabel ?? area.plurality
+        );
+      }
       if (!metric) return String(v);
       if (metric.id === "pop-growth") {
         return `${v > 0 ? "+" : ""}${formatNumber(v, 1)}%`;
@@ -253,7 +314,7 @@ export function CountryMapExplorer({
       if (metric.id === "population") return formatNumber(v, 0);
       return formatNumber(v, metric.decimals);
     },
-    [metric],
+    [metric, religionMode, religionPack, religionGroupById],
   );
 
   const selectedRegions = React.useMemo(() => {
@@ -378,7 +439,7 @@ export function CountryMapExplorer({
                   SOUTHAMERICA: 2.9,
                   MENA: 3.2,
                   SAU: 5.8,
-                  YEM: 5.6,
+                  YEM: 6.8,
                   JOR: 6.4,
                   CARIBBEAN: 4.8,
                   SEASIA: 3.4,
@@ -386,10 +447,11 @@ export function CountryMapExplorer({
                   CENTRALASIA: 4.0,
                   NORTHAMERICA: 2.7,
                   OCEANIA: 2.35,
-                  BRA: 4.0,
-                  COL: 5.2,
+                  BRA: 5.2,
+                  COL: 6.4,
                   IDN: 4.2,
-                  IRN: 5.4,
+                  IRN: 5.8,
+                  IRQ: 6.6,
                   NGA: 5.3,
                   KEN: 5.8,
                   AGO: 5.2,
@@ -412,17 +474,22 @@ export function CountryMapExplorer({
               fitPaddingTopLeft={fitPaddingTopLeft}
               fitPaddingBottomRight={[40, 8]}
               fitClamp={MAP_FIT_CLAMP[country.iso3] ?? null}
-              navigate={Boolean(country.hrefPrefix)}
+              navigate={Boolean(country.hrefPrefix) && !religionMode}
               hrefPrefix={country.hrefPrefix ?? "/state"}
               legend={legend}
-              legendTitle={metric?.label ?? country.country}
+              legendTitle={
+                religionMode
+                  ? "Religion majority"
+                  : (metric?.label ?? country.country)
+              }
               legendPlacement="bottom-right"
               formatValue={formatValue}
-              revision={`${country.iso3}-${geoUrl}-${metric?.id}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}`}
+              fillForId={religionMode ? religionFillForId : undefined}
+              revision={`${country.iso3}-${geoUrl}-${metric?.id ?? metricId}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}`}
               oceanColor={MAP_OCEAN.atlas}
               variant="light"
               adaptiveStroke={country.iso3 !== "USA"}
-              showLabels={showValues}
+              showLabels={religionMode ? false : showValues}
               selectedIds={selectedIds}
               onRegionActivate={onRegionActivate}
               combineSelection={combineSelection}
@@ -581,12 +648,18 @@ export function CountryMapExplorer({
               </div>
             )}
 
-            {(shareMode ? shareTotal > 0 : national != null && metric) && (
+            {(shareMode
+              ? shareTotal > 0
+              : religionMode
+                ? true
+                : national != null && metric) && (
               <div className="br-map-share-tfr">
                 <p className="br-map-share-tfr-value font-serif text-4xl font-semibold tabular-nums tracking-tight">
                   {shareMode
                     ? formatCompact(shareTotal)
-                    : formatValue(national as number)}
+                    : religionMode
+                      ? religionPack?.year
+                      : formatValue(national as number)}
                 </p>
                 <p className="br-map-share-tfr-label mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   {shareMode
@@ -595,7 +668,9 @@ export function CountryMapExplorer({
                           ? "Estimated births"
                           : "Population"
                       }`
-                    : `${country.country} · ${metric?.label}`}
+                    : religionMode
+                      ? `${country.country} · Religion majority`
+                      : `${country.country} · ${metric?.label}`}
                 </p>
               </div>
             )}
@@ -636,7 +711,8 @@ export function CountryMapExplorer({
                 <>
               {METRIC_ORDER.map((id) => {
                 const m = metricOf(viewMetrics, id);
-                const locked = !m;
+                const religionOk = id === "religion" && religionPack != null;
+                const locked = id === "religion" ? !religionOk : !m;
                 const label =
                   id === "tfr"
                     ? "Total fertility rate"
@@ -644,16 +720,28 @@ export function CountryMapExplorer({
                       ? "Population"
                       : id === "pop-growth"
                         ? "Population change"
-                        : "General fertility rate";
+                        : id === "religion"
+                          ? "Religion"
+                          : "General fertility rate";
+                const active =
+                  id === "religion"
+                    ? religionMode
+                    : Boolean(m && id === metric?.id);
                 return (
                   <button
                     key={id}
                     type="button"
                     disabled={locked}
-                    onClick={() => m && setMetricId(id)}
+                    onClick={() => {
+                      if (id === "religion" && religionPack) {
+                        setMetricId("religion");
+                        return;
+                      }
+                      if (m) setMetricId(id);
+                    }}
                     className={cn(
                       "flex w-full items-center justify-between rounded-sm px-2.5 py-2 text-left text-sm transition-colors",
-                      m && id === metric?.id
+                      active
                         ? "bg-foreground text-background"
                         : locked
                           ? "cursor-not-allowed text-muted-foreground/45"
@@ -670,8 +758,9 @@ export function CountryMapExplorer({
                 );
               })}
               <p className="pt-1 text-[11px] leading-relaxed text-muted-foreground">
-                Migration is not published as a comparable provincial series for
-                these maps yet.
+                {religionMode && religionPack
+                  ? religionPack.note
+                  : "Migration is not published as a comparable provincial series for these maps yet."}
               </p>
                 </>
               )}
@@ -826,7 +915,7 @@ export function CountryMapExplorer({
               </p>
             )}
 
-            {panelRows.length > 0 && (
+            {panelRows.length > 0 && !religionMode && (
               <>
                 <dl className="text-[13px]">
                   <div className="border-t border-border py-2.5">
@@ -890,6 +979,45 @@ export function CountryMapExplorer({
                 </div>
               </>
             )}
+            {religionMode && religionPack ? (
+              <div>
+                <p className="mb-1.5 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  Governorates
+                </p>
+                <ul className="text-[13px]">
+                  {religionPack.areas.map((a) => (
+                    <li
+                      key={a.id}
+                      className="flex items-baseline justify-between gap-2 border-t border-border/70 py-1.5"
+                    >
+                      <span className="min-w-0 truncate">{a.name}</span>
+                      <span className="flex shrink-0 items-center gap-1.5 tabular-nums text-primary">
+                        <span
+                          className="inline-block h-2.5 w-2.5 rounded-sm border border-black/10"
+                          style={{
+                            background:
+                              religionGroupById.get(a.plurality)?.color,
+                          }}
+                        />
+                        {religionGroupById.get(a.plurality)?.shortLabel ??
+                          a.plurality}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+                  Source:{" "}
+                  <a
+                    href={religionPack.sourceUrl}
+                    className="link-editorial"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {religionPack.source}
+                  </a>
+                </p>
+              </div>
+            ) : null}
 
             {shareMode ? (
               <p className="text-[11px] leading-relaxed text-muted-foreground">

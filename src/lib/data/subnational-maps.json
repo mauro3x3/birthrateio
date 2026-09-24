@@ -11115,224 +11115,6 @@
       "max": 2.79
     },
     {
-      "id": "irn-tfr",
-      "iso3": "IRN",
-      "country": "Iran",
-      "title": "Total fertility rate, Iran 2025",
-      "kind": "province",
-      "year": 2025,
-      "national": 1.47,
-      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 \u2014 provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
-      "sourceUrl": "https://x.com/BirthGauge/status/2090510597460795531",
-      "credit": "Provincial estimates compiled by BirthGauge (@BirthGauge).",
-      "geoUrl": "/geo/maps/irn-tfr.json",
-      "scale": "plasma",
-      "labelValues": true,
-      "highlights": [
-        {
-          "name": "Alborz",
-          "value": 0.88
-        },
-        {
-          "name": "Sistan and Baluchestan",
-          "value": 3.34
-        }
-      ],
-      "note": "Statistical Centre of Iran has not published a provincial TFR table for 2025. These are BirthGauge estimates from provincial birth counts and citypopulation.de age structure. The Tehran metropolitan area (Tehran + Alborz) is 1.02. Not official SCI TFR.",
-      "regions": [
-        {
-          "id": "iran-west-azerbaijan",
-          "slug": "iran-west-azerbaijan",
-          "name": "West Azerbaijan",
-          "value": 1.65
-        },
-        {
-          "id": "iran-east-azerbaijan",
-          "slug": "iran-east-azerbaijan",
-          "name": "East Azerbaijan",
-          "value": 1.36
-        },
-        {
-          "id": "iran-ardabil",
-          "slug": "iran-ardabil",
-          "name": "Ardabil",
-          "value": 1.42
-        },
-        {
-          "id": "iran-gilan",
-          "slug": "iran-gilan",
-          "name": "Gilan",
-          "value": 0.91
-        },
-        {
-          "id": "iran-mazandaran",
-          "slug": "iran-mazandaran",
-          "name": "Mazandaran",
-          "value": 0.92
-        },
-        {
-          "id": "iran-golestan",
-          "slug": "iran-golestan",
-          "name": "Golestan",
-          "value": 1.83
-        },
-        {
-          "id": "iran-north-khorasan",
-          "slug": "iran-north-khorasan",
-          "name": "North Khorasan",
-          "value": 1.8
-        },
-        {
-          "id": "iran-razavi-khorasan",
-          "slug": "iran-razavi-khorasan",
-          "name": "Razavi Khorasan",
-          "value": 1.76
-        },
-        {
-          "id": "iran-south-khorasan",
-          "slug": "iran-south-khorasan",
-          "name": "South Khorasan",
-          "value": 2.23
-        },
-        {
-          "id": "iran-sistan-and-baluchestan",
-          "slug": "iran-sistan-and-baluchestan",
-          "name": "Sistan and Baluchestan",
-          "value": 3.34
-        },
-        {
-          "id": "iran-hormozgan",
-          "slug": "iran-hormozgan",
-          "name": "Hormozgan",
-          "value": 1.82
-        },
-        {
-          "id": "iran-kerman",
-          "slug": "iran-kerman",
-          "name": "Kerman",
-          "value": 1.58
-        },
-        {
-          "id": "iran-yazd",
-          "slug": "iran-yazd",
-          "name": "Yazd",
-          "value": 1.72
-        },
-        {
-          "id": "iran-isfahan",
-          "slug": "iran-isfahan",
-          "name": "Isfahan",
-          "value": 1.17
-        },
-        {
-          "id": "iran-fars",
-          "slug": "iran-fars",
-          "name": "Fars",
-          "value": 1.27
-        },
-        {
-          "id": "iran-bushehr",
-          "slug": "iran-bushehr",
-          "name": "Bushehr",
-          "value": 1.21
-        },
-        {
-          "id": "iran-kohgiluyeh-and-boyer-ahmad",
-          "slug": "iran-kohgiluyeh-and-boyer-ahmad",
-          "name": "Kohgiluyeh and Boyer-Ahmad",
-          "value": 1.49
-        },
-        {
-          "id": "iran-chaharmahal-and-bakhtiari",
-          "slug": "iran-chaharmahal-and-bakhtiari",
-          "name": "Chaharmahal and Bakhtiari",
-          "value": 1.69
-        },
-        {
-          "id": "iran-khuzestan",
-          "slug": "iran-khuzestan",
-          "name": "Khuzestan",
-          "value": 2.14
-        },
-        {
-          "id": "iran-ilam",
-          "slug": "iran-ilam",
-          "name": "Ilam",
-          "value": 1.34
-        },
-        {
-          "id": "iran-lorestan",
-          "slug": "iran-lorestan",
-          "name": "Lorestan",
-          "value": 1.62
-        },
-        {
-          "id": "iran-kermanshah",
-          "slug": "iran-kermanshah",
-          "name": "Kermanshah",
-          "value": 1.39
-        },
-        {
-          "id": "iran-kurdistan",
-          "slug": "iran-kurdistan",
-          "name": "Kurdistan",
-          "value": 1.43
-        },
-        {
-          "id": "iran-hamadan",
-          "slug": "iran-hamadan",
-          "name": "Hamadan",
-          "value": 1.54
-        },
-        {
-          "id": "iran-markazi",
-          "slug": "iran-markazi",
-          "name": "Markazi",
-          "value": 1.07
-        },
-        {
-          "id": "iran-qom",
-          "slug": "iran-qom",
-          "name": "Qom",
-          "value": 1.53
-        },
-        {
-          "id": "iran-tehran",
-          "slug": "iran-tehran",
-          "name": "Tehran",
-          "value": 1.05
-        },
-        {
-          "id": "iran-alborz",
-          "slug": "iran-alborz",
-          "name": "Alborz",
-          "value": 0.88
-        },
-        {
-          "id": "iran-qazvin",
-          "slug": "iran-qazvin",
-          "name": "Qazvin",
-          "value": 1.25
-        },
-        {
-          "id": "iran-zanjan",
-          "slug": "iran-zanjan",
-          "name": "Zanjan",
-          "value": 1.56
-        },
-        {
-          "id": "iran-semnan",
-          "slug": "iran-semnan",
-          "name": "Semnan",
-          "value": 1.0
-        }
-      ],
-      "metric": "tfr",
-      "unit": "children per woman",
-      "min": 0.88,
-      "max": 3.34
-    },
-    {
       "iso3": "COL",
       "country": "Colombia",
       "kind": "department",
@@ -12155,6 +11937,224 @@
       ],
       "min": 0.79,
       "max": 1.66
+    },
+    {
+      "id": "irn-tfr",
+      "iso3": "IRN",
+      "country": "Iran",
+      "title": "Total fertility rate, Iran 2025",
+      "kind": "province",
+      "year": 2025,
+      "national": 1.47,
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 \u2014 provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
+      "sourceUrl": "https://x.com/BirthGauge/status/2090510597460795531",
+      "credit": "Provincial estimates compiled by BirthGauge (@BirthGauge).",
+      "geoUrl": "/geo/maps/irn-tfr.json",
+      "scale": "plasma",
+      "labelValues": true,
+      "highlights": [
+        {
+          "name": "Alborz",
+          "value": 0.88
+        },
+        {
+          "name": "Sistan and Baluchestan",
+          "value": 3.34
+        }
+      ],
+      "note": "Statistical Centre of Iran has not published a provincial TFR table for 2025. These are BirthGauge estimates from provincial birth counts and citypopulation.de age structure. The Tehran metropolitan area (Tehran + Alborz) is 1.02. Not official SCI TFR.",
+      "regions": [
+        {
+          "id": "iran-west-azerbaijan",
+          "slug": "iran-west-azerbaijan",
+          "name": "West Azerbaijan",
+          "value": 1.65
+        },
+        {
+          "id": "iran-east-azerbaijan",
+          "slug": "iran-east-azerbaijan",
+          "name": "East Azerbaijan",
+          "value": 1.36
+        },
+        {
+          "id": "iran-ardabil",
+          "slug": "iran-ardabil",
+          "name": "Ardabil",
+          "value": 1.42
+        },
+        {
+          "id": "iran-gilan",
+          "slug": "iran-gilan",
+          "name": "Gilan",
+          "value": 0.91
+        },
+        {
+          "id": "iran-mazandaran",
+          "slug": "iran-mazandaran",
+          "name": "Mazandaran",
+          "value": 0.92
+        },
+        {
+          "id": "iran-golestan",
+          "slug": "iran-golestan",
+          "name": "Golestan",
+          "value": 1.83
+        },
+        {
+          "id": "iran-north-khorasan",
+          "slug": "iran-north-khorasan",
+          "name": "North Khorasan",
+          "value": 1.8
+        },
+        {
+          "id": "iran-razavi-khorasan",
+          "slug": "iran-razavi-khorasan",
+          "name": "Razavi Khorasan",
+          "value": 1.76
+        },
+        {
+          "id": "iran-south-khorasan",
+          "slug": "iran-south-khorasan",
+          "name": "South Khorasan",
+          "value": 2.23
+        },
+        {
+          "id": "iran-sistan-and-baluchestan",
+          "slug": "iran-sistan-and-baluchestan",
+          "name": "Sistan and Baluchestan",
+          "value": 3.34
+        },
+        {
+          "id": "iran-hormozgan",
+          "slug": "iran-hormozgan",
+          "name": "Hormozgan",
+          "value": 1.82
+        },
+        {
+          "id": "iran-kerman",
+          "slug": "iran-kerman",
+          "name": "Kerman",
+          "value": 1.58
+        },
+        {
+          "id": "iran-yazd",
+          "slug": "iran-yazd",
+          "name": "Yazd",
+          "value": 1.72
+        },
+        {
+          "id": "iran-isfahan",
+          "slug": "iran-isfahan",
+          "name": "Isfahan",
+          "value": 1.17
+        },
+        {
+          "id": "iran-fars",
+          "slug": "iran-fars",
+          "name": "Fars",
+          "value": 1.27
+        },
+        {
+          "id": "iran-bushehr",
+          "slug": "iran-bushehr",
+          "name": "Bushehr",
+          "value": 1.21
+        },
+        {
+          "id": "iran-kohgiluyeh-and-boyer-ahmad",
+          "slug": "iran-kohgiluyeh-and-boyer-ahmad",
+          "name": "Kohgiluyeh and Boyer-Ahmad",
+          "value": 1.49
+        },
+        {
+          "id": "iran-chaharmahal-and-bakhtiari",
+          "slug": "iran-chaharmahal-and-bakhtiari",
+          "name": "Chaharmahal and Bakhtiari",
+          "value": 1.69
+        },
+        {
+          "id": "iran-khuzestan",
+          "slug": "iran-khuzestan",
+          "name": "Khuzestan",
+          "value": 2.14
+        },
+        {
+          "id": "iran-ilam",
+          "slug": "iran-ilam",
+          "name": "Ilam",
+          "value": 1.34
+        },
+        {
+          "id": "iran-lorestan",
+          "slug": "iran-lorestan",
+          "name": "Lorestan",
+          "value": 1.62
+        },
+        {
+          "id": "iran-kermanshah",
+          "slug": "iran-kermanshah",
+          "name": "Kermanshah",
+          "value": 1.39
+        },
+        {
+          "id": "iran-kurdistan",
+          "slug": "iran-kurdistan",
+          "name": "Kurdistan",
+          "value": 1.43
+        },
+        {
+          "id": "iran-hamadan",
+          "slug": "iran-hamadan",
+          "name": "Hamadan",
+          "value": 1.54
+        },
+        {
+          "id": "iran-markazi",
+          "slug": "iran-markazi",
+          "name": "Markazi",
+          "value": 1.07
+        },
+        {
+          "id": "iran-qom",
+          "slug": "iran-qom",
+          "name": "Qom",
+          "value": 1.53
+        },
+        {
+          "id": "iran-tehran",
+          "slug": "iran-tehran",
+          "name": "Tehran",
+          "value": 1.05
+        },
+        {
+          "id": "iran-alborz",
+          "slug": "iran-alborz",
+          "name": "Alborz",
+          "value": 0.88
+        },
+        {
+          "id": "iran-qazvin",
+          "slug": "iran-qazvin",
+          "name": "Qazvin",
+          "value": 1.25
+        },
+        {
+          "id": "iran-zanjan",
+          "slug": "iran-zanjan",
+          "name": "Zanjan",
+          "value": 1.56
+        },
+        {
+          "id": "iran-semnan",
+          "slug": "iran-semnan",
+          "name": "Semnan",
+          "value": 1.0
+        }
+      ],
+      "metric": "tfr",
+      "unit": "children per woman",
+      "min": 0.88,
+      "max": 3.34
     }
   ]
 }
