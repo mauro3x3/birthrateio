@@ -485,7 +485,7 @@ export function CountryMapExplorer({
               legendPlacement="bottom-right"
               formatValue={formatValue}
               fillForId={religionMode ? religionFillForId : undefined}
-              revision={`${country.iso3}-${geoUrl}-${metric?.id ?? metricId}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}`}
+              revision={`${country.iso3}-${geoUrl}-${metric?.id ?? metricId}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}-${showValues ? "v" : "h"}`}
               oceanColor={MAP_OCEAN.atlas}
               variant="light"
               adaptiveStroke={country.iso3 !== "USA"}

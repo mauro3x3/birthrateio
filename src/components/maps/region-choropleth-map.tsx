@@ -436,6 +436,23 @@ function ValueLabels({
     };
   }, [map]);
 
+  // After country/geo swaps, fitBounds + invalidateSize finish a beat later —
+  // without a delayed recount almost every label is culled against a stale size.
+  React.useEffect(() => {
+    setViewTick((n) => n + 1);
+    const t1 = window.setTimeout(() => setViewTick((n) => n + 1), 80);
+    const t2 = window.setTimeout(() => setViewTick((n) => n + 1), 280);
+    const t3 = window.setTimeout(() => {
+      map.invalidateSize();
+      setViewTick((n) => n + 1);
+    }, 520);
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.clearTimeout(t3);
+    };
+  }, [map, geo.features, byId, labelMode]);
+
   const candidates = React.useMemo(() => {
     const out: {
       id: string;
@@ -1264,6 +1281,7 @@ export function RegionChoroplethMap({
           ) : null}
           {showLabels ? (
             <ValueLabels
+              key={`labels-${revision ?? "x"}-${(displayGeo as FeatureCollection)?.features?.length ?? 0}`}
               geo={displayGeo as FeatureCollection}
               byId={byId}
               featureId={featureId}

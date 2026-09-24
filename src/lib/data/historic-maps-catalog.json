@@ -73,7 +73,7 @@
       "kind": "historic-district",
       "status": "live",
       "region": "Eurasia",
-      "blurb": "Interactive 1897 religion map: Orthodox core, Protestant Baltics & Finland, Catholic Poland/Lithuania, Muslim Volga–Caucasus–Central Asia, Buddhist Kalmyk/Buryat steppe — on modern provinces inside the 1914 empire outline.",
+      "blurb": "Interactive 1897 religion map: Orthodox core, Protestant Baltics, Catholic Congress Poland, Muslim Volga–Caucasus–Central Asia, Buddhist Kalmyk/Buryat steppe — modern provinces inside the 1914 outline (Finland omitted; no Prussian/Habsburg Poland).",
       "source": "Russian Empire Census 1897 (religion). Cartographic inspiration: forummapping.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Russian_Empire_Census",
       "groups": [

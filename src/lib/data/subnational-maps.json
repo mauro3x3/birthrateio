@@ -233,7 +233,7 @@
       "kind": "prefecture",
       "year": 2024,
       "national": 1.15,
-      "source": "Ministry of Health, Labour and Welfare, Vital Statistics of Japan 2024 (final) \u2014 total fertility rate by prefecture.",
+      "source": "Ministry of Health, Labour and Welfare, Vital Statistics of Japan 2024 (final) — total fertility rate by prefecture.",
       "sourceUrl": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei24/index.html",
       "credit": null,
       "geoUrl": "/geo/maps/jpn-tfr.json",
@@ -536,7 +536,7 @@
       "kind": "province",
       "year": 2024,
       "national": 0.75,
-      "source": "Statistics Korea (KOSTAT) / KOSIS population trends survey \u2014 2024 total fertility rate by province and metropolitan city.",
+      "source": "Statistics Korea (KOSTAT) / KOSIS population trends survey — 2024 total fertility rate by province and metropolitan city.",
       "sourceUrl": "https://kosis.kr",
       "credit": null,
       "geoUrl": "/geo/maps/kor-tfr.json",
@@ -659,7 +659,7 @@
       "kind": "state",
       "year": 2023,
       "national": 1.62,
-      "source": "NCHS National Vital Statistics Reports \u2014 Births: Final Data for 2023, Table 8 (TFR).",
+      "source": "NCHS National Vital Statistics Reports — Births: Final Data for 2023, Table 8 (TFR).",
       "sourceUrl": "https://www.cdc.gov/nchs/data/nvsr/nvsr74/nvsr74-1.pdf",
       "credit": null,
       "geoUrl": "/geo/maps/usa-tfr.json",
@@ -986,7 +986,7 @@
       "kind": "state",
       "year": 2023,
       "national": 1.5,
-      "source": "Australian Bureau of Statistics, Births, Australia, 2023 \u2014 total fertility rate by state and territory.",
+      "source": "Australian Bureau of Statistics, Births, Australia, 2023 — total fertility rate by state and territory.",
       "sourceUrl": "https://www.abs.gov.au/statistics/people/population/births-australia/2023",
       "credit": null,
       "geoUrl": "/geo/maps/aus-tfr.json",
@@ -1126,7 +1126,7 @@
       "kind": "province",
       "year": 2024,
       "national": 1.25,
-      "source": "Statistics Canada, The Daily, 24 September 2025 \u2014 total fertility rate 2024 by province and territory. Newfoundland and Labrador, New Brunswick and Yukon use 2023 (table 13-10-0418) where 2024 was not itemised in the Daily.",
+      "source": "Statistics Canada, The Daily, 24 September 2025 — total fertility rate 2024 by province and territory. Newfoundland and Labrador, New Brunswick and Yukon use 2023 (table 13-10-0418) where 2024 was not itemised in the Daily.",
       "sourceUrl": "https://www150.statcan.gc.ca/n1/daily-quotidien/250924/dq250924d-eng.htm",
       "credit": null,
       "geoUrl": "/geo/maps/can-tfr.json",
@@ -1225,7 +1225,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.18,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/ita-tfr.json",
@@ -1283,7 +1283,7 @@
         {
           "id": "ita-itc2",
           "slug": "ita-itc2",
-          "name": "Valle d\u2019Aosta/Vall\u00e9e d\u2019Aoste",
+          "name": "Valle d’Aosta/Vallée d’Aoste",
           "value": 1.05
         },
         {
@@ -1372,7 +1372,7 @@
       "kind": "autonomous community",
       "year": 2024,
       "national": 1.1,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/esp-tfr.json",
@@ -1400,7 +1400,7 @@
         {
           "id": "esp-es21",
           "slug": "esp-es21",
-          "name": "Pa\u00eds Vasco",
+          "name": "País Vasco",
           "value": 1.1
         },
         {
@@ -1418,7 +1418,7 @@
         {
           "id": "esp-es24",
           "slug": "esp-es24",
-          "name": "Arag\u00f3n",
+          "name": "Aragón",
           "value": 1.15
         },
         {
@@ -1430,7 +1430,7 @@
         {
           "id": "esp-es41",
           "slug": "esp-es41",
-          "name": "Castilla y Le\u00f3n",
+          "name": "Castilla y León",
           "value": 1.06
         },
         {
@@ -1448,7 +1448,7 @@
         {
           "id": "esp-es51",
           "slug": "esp-es51",
-          "name": "Catalu\u00f1a",
+          "name": "Cataluña",
           "value": 1.08
         },
         {
@@ -1466,13 +1466,13 @@
         {
           "id": "esp-es61",
           "slug": "esp-es61",
-          "name": "Andaluc\u00eda",
+          "name": "Andalucía",
           "value": 1.17
         },
         {
           "id": "esp-es62",
           "slug": "esp-es62",
-          "name": "Regi\u00f3n de Murcia",
+          "name": "Región de Murcia",
           "value": 1.32
         },
         {
@@ -1507,7 +1507,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.61,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/fra-tfr.json",
@@ -1559,7 +1559,7 @@
         {
           "id": "fra-frl0",
           "slug": "fra-frl0",
-          "name": "Provence-Alpes-C\u00f4te d\u2019Azur",
+          "name": "Provence-Alpes-Côte d’Azur",
           "value": 1.65
         },
         {
@@ -1571,7 +1571,7 @@
         {
           "id": "fra-frb0",
           "slug": "fra-frb0",
-          "name": "Centre \u2014 Val de Loire",
+          "name": "Centre — Val de Loire",
           "value": 1.66
         },
         {
@@ -1583,7 +1583,7 @@
         {
           "id": "fra-frc2",
           "slug": "fra-frc2",
-          "name": "Franche-Comt\u00e9",
+          "name": "Franche-Comté",
           "value": 1.55
         },
         {
@@ -1631,7 +1631,7 @@
         {
           "id": "fra-frj2",
           "slug": "fra-frj2",
-          "name": "Midi-Pyr\u00e9n\u00e9es",
+          "name": "Midi-Pyrénées",
           "value": 1.42
         },
         {
@@ -1643,7 +1643,7 @@
         {
           "id": "fra-frk2",
           "slug": "fra-frk2",
-          "name": "Rh\u00f4ne-Alpes",
+          "name": "Rhône-Alpes",
           "value": 1.59
         }
       ],
@@ -1653,66 +1653,66 @@
     {
       "id": "tur-tfr",
       "iso3": "TUR",
-      "country": "T\u00fcrkiye",
-      "title": "Total fertility rate, T\u00fcrkiye 2024",
+      "country": "Türkiye",
+      "title": "Total fertility rate, Türkiye 2024",
       "metric": "tfr",
       "unit": "children per woman",
       "kind": "region",
       "year": 2024,
       "national": 1.49,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
-      "geoUrl": "/geo/maps/tur-tfr.json",
+      "geoUrl": "/geo/maps/tur-tfr.json?v=seal",
       "scale": "plasma",
       "labelValues": true,
       "regions": [
         {
           "id": "tur-tr10",
           "slug": "tur-tr10",
-          "name": "\u0130stanbul",
+          "name": "İstanbul",
           "value": 1.2
         },
         {
           "id": "tur-tr21",
           "slug": "tur-tr21",
-          "name": "Tekirda\u011f, Edirne, K\u0131rklareli",
+          "name": "Tekirdağ, Edirne, Kırklareli",
           "value": 1.34
         },
         {
           "id": "tur-tr22",
           "slug": "tur-tr22",
-          "name": "Bal\u0131kesir, \u00c7anakkale",
+          "name": "Balıkesir, Çanakkale",
           "value": 1.29
         },
         {
           "id": "tur-tr31",
           "slug": "tur-tr31",
-          "name": "\u0130zmir",
+          "name": "İzmir",
           "value": 1.17
         },
         {
           "id": "tur-tr32",
           "slug": "tur-tr32",
-          "name": "Ayd\u0131n, Denizli, Mu\u011fla",
+          "name": "Aydın, Denizli, Muğla",
           "value": 1.32
         },
         {
           "id": "tur-tr33",
           "slug": "tur-tr33",
-          "name": "Manisa, Afyonkarahisar, K\u00fctahya, U\u015fak",
+          "name": "Manisa, Afyonkarahisar, Kütahya, Uşak",
           "value": 1.4
         },
         {
           "id": "tur-tr41",
           "slug": "tur-tr41",
-          "name": "Bursa, Eski\u015fehir, Bilecik",
+          "name": "Bursa, Eskişehir, Bilecik",
           "value": 1.32
         },
         {
           "id": "tur-tr42",
           "slug": "tur-tr42",
-          "name": "Kocaeli, Sakarya, D\u00fczce, Bolu, Yalova",
+          "name": "Kocaeli, Sakarya, Düzce, Bolu, Yalova",
           "value": 1.41
         },
         {
@@ -1742,13 +1742,13 @@
         {
           "id": "tur-tr63",
           "slug": "tur-tr63",
-          "name": "Hatay, Kahramanmara\u015f, Osmaniye",
+          "name": "Hatay, Kahramanmaraş, Osmaniye",
           "value": 1.81
         },
         {
           "id": "tur-tr71",
           "slug": "tur-tr71",
-          "name": "K\u0131r\u0131kkale, Aksaray, Ni\u011fde, Nev\u015fehir, K\u0131r\u015fehir",
+          "name": "Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir",
           "value": 1.38
         },
         {
@@ -1760,25 +1760,25 @@
         {
           "id": "tur-tr81",
           "slug": "tur-tr81",
-          "name": "Zonguldak, Karab\u00fck, Bart\u0131n",
+          "name": "Zonguldak, Karabük, Bartın",
           "value": 1.12
         },
         {
           "id": "tur-tr82",
           "slug": "tur-tr82",
-          "name": "Kastamonu, \u00c7ank\u0131r\u0131, Sinop",
+          "name": "Kastamonu, Çankırı, Sinop",
           "value": 1.29
         },
         {
           "id": "tur-tr83",
           "slug": "tur-tr83",
-          "name": "Samsun, Tokat, \u00c7orum, Amasya",
+          "name": "Samsun, Tokat, Çorum, Amasya",
           "value": 1.3
         },
         {
           "id": "tur-tr90",
           "slug": "tur-tr90",
-          "name": "Trabzon, Ordu, Giresun, Rize, Artvin, G\u00fcm\u00fc\u015fhane",
+          "name": "Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane",
           "value": 1.28
         },
         {
@@ -1790,37 +1790,37 @@
         {
           "id": "tur-tra2",
           "slug": "tur-tra2",
-          "name": "A\u011fr\u0131, Kars, I\u011fd\u0131r, Ardahan",
+          "name": "Ağrı, Kars, Iğdır, Ardahan",
           "value": 1.87
         },
         {
           "id": "tur-trb1",
           "slug": "tur-trb1",
-          "name": "Malatya, Elaz\u0131\u011f, Bing\u00f6l, Tunceli",
+          "name": "Malatya, Elazığ, Bingöl, Tunceli",
           "value": 1.46
         },
         {
           "id": "tur-trb2",
           "slug": "tur-trb2",
-          "name": "Van, Mu\u015f, Bitlis, Hakkari",
+          "name": "Van, Muş, Bitlis, Hakkari",
           "value": 2.03
         },
         {
           "id": "tur-trc1",
           "slug": "tur-trc1",
-          "name": "Gaziantep, Ad\u0131yaman, Kilis",
+          "name": "Gaziantep, Adıyaman, Kilis",
           "value": 2.08
         },
         {
           "id": "tur-trc2",
           "slug": "tur-trc2",
-          "name": "\u015eanl\u0131urfa, Diyarbak\u0131r",
+          "name": "Şanlıurfa, Diyarbakır",
           "value": 2.79
         },
         {
           "id": "tur-trc3",
           "slug": "tur-trc3",
-          "name": "Mardin, Batman, \u015e\u0131rnak, Siirt",
+          "name": "Mardin, Batman, Şırnak, Siirt",
           "value": 2.32
         }
       ],
@@ -1837,7 +1837,7 @@
       "kind": "Land",
       "year": 2024,
       "national": 1.32,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/aut-tfr.json",
@@ -1853,7 +1853,7 @@
         {
           "id": "aut-at12",
           "slug": "aut-at12",
-          "name": "Nieder\u00f6sterreich",
+          "name": "Niederösterreich",
           "value": 1.37
         },
         {
@@ -1865,7 +1865,7 @@
         {
           "id": "aut-at21",
           "slug": "aut-at21",
-          "name": "K\u00e4rnten",
+          "name": "Kärnten",
           "value": 1.3
         },
         {
@@ -1877,7 +1877,7 @@
         {
           "id": "aut-at31",
           "slug": "aut-at31",
-          "name": "Ober\u00f6sterreich",
+          "name": "Oberösterreich",
           "value": 1.46
         },
         {
@@ -1912,7 +1912,7 @@
       "kind": "province",
       "year": 2024,
       "national": 1.45,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/bel-tfr.json",
@@ -1922,7 +1922,7 @@
         {
           "id": "bel-be10",
           "slug": "bel-be10",
-          "name": "R\u00e9gion de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",
+          "name": "Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",
           "value": 1.36
         },
         {
@@ -1970,7 +1970,7 @@
         {
           "id": "bel-be33",
           "slug": "bel-be33",
-          "name": "Prov. Li\u00e8ge",
+          "name": "Prov. Liège",
           "value": 1.42
         },
         {
@@ -1999,7 +1999,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.71,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/bgr-tfr.json",
@@ -2009,37 +2009,37 @@
         {
           "id": "bgr-bg31",
           "slug": "bgr-bg31",
-          "name": "\u0421\u0435\u0432\u0435\u0440\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "name": "Северозападен",
           "value": 1.9
         },
         {
           "id": "bgr-bg32",
           "slug": "bgr-bg32",
-          "name": "\u0421\u0435\u0432\u0435\u0440\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "name": "Северен централен",
           "value": 1.61
         },
         {
           "id": "bgr-bg33",
           "slug": "bgr-bg33",
-          "name": "\u0421\u0435\u0432\u0435\u0440\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "name": "Североизточен",
           "value": 1.62
         },
         {
           "id": "bgr-bg34",
           "slug": "bgr-bg34",
-          "name": "\u042e\u0433\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "name": "Югоизточен",
           "value": 2.02
         },
         {
           "id": "bgr-bg41",
           "slug": "bgr-bg41",
-          "name": "\u042e\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "name": "Югозападен",
           "value": 1.55
         },
         {
           "id": "bgr-bg42",
           "slug": "bgr-bg42",
-          "name": "\u042e\u0436\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "name": "Южен централен",
           "value": 1.74
         }
       ],
@@ -2056,7 +2056,7 @@
       "kind": "province",
       "year": 2020,
       "national": 1.3,
-      "source": "China 7th National Population Census (2020) \u2014 provincial total fertility rates, National Bureau of Statistics.",
+      "source": "China 7th National Population Census (2020) — provincial total fertility rates, National Bureau of Statistics.",
       "sourceUrl": "https://www.stats.gov.cn",
       "credit": null,
       "geoUrl": "/geo/maps/chn-tfr.json",
@@ -2264,7 +2264,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.46,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/hrv-tfr.json",
@@ -2309,7 +2309,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.36,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/cze-tfr.json",
@@ -2325,37 +2325,37 @@
         {
           "id": "cze-cz02",
           "slug": "cze-cz02",
-          "name": "St\u0159edn\u00ed \u010cechy",
+          "name": "Střední Čechy",
           "value": 1.35
         },
         {
           "id": "cze-cz03",
           "slug": "cze-cz03",
-          "name": "Jihoz\u00e1pad",
+          "name": "Jihozápad",
           "value": 1.37
         },
         {
           "id": "cze-cz04",
           "slug": "cze-cz04",
-          "name": "Severoz\u00e1pad",
+          "name": "Severozápad",
           "value": 1.33
         },
         {
           "id": "cze-cz05",
           "slug": "cze-cz05",
-          "name": "Severov\u00fdchod",
+          "name": "Severovýchod",
           "value": 1.38
         },
         {
           "id": "cze-cz06",
           "slug": "cze-cz06",
-          "name": "Jihov\u00fdchod",
+          "name": "Jihovýchod",
           "value": 1.41
         },
         {
           "id": "cze-cz07",
           "slug": "cze-cz07",
-          "name": "St\u0159edn\u00ed Morava",
+          "name": "Střední Morava",
           "value": 1.44
         },
         {
@@ -2378,7 +2378,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.47,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/dnk-tfr.json",
@@ -2394,7 +2394,7 @@
         {
           "id": "dnk-dk02",
           "slug": "dnk-dk02",
-          "name": "Sj\u00e6lland",
+          "name": "Sjælland",
           "value": 1.54
         },
         {
@@ -2429,7 +2429,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.26,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/fin-tfr.json",
@@ -2439,7 +2439,7 @@
         {
           "id": "fin-fi19",
           "slug": "fin-fi19",
-          "name": "L\u00e4nsi-Suomi",
+          "name": "Länsi-Suomi",
           "value": 1.28
         },
         {
@@ -2451,19 +2451,19 @@
         {
           "id": "fin-fi1d",
           "slug": "fin-fi1d",
-          "name": "Pohjois- ja It\u00e4-Suomi",
+          "name": "Pohjois- ja Itä-Suomi",
           "value": 1.32
         },
         {
           "id": "fin-fi20",
           "slug": "fin-fi20",
-          "name": "\u00c5land",
+          "name": "Åland",
           "value": 1.29
         },
         {
           "id": "fin-fi1c",
           "slug": "fin-fi1c",
-          "name": "Etel\u00e4-Suomi",
+          "name": "Etelä-Suomi",
           "value": 1.18
         }
       ],
@@ -2480,7 +2480,7 @@
       "kind": "Land",
       "year": 2024,
       "national": 1.35,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 1 region (L\u00e4nder).",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 1 region (Länder).",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/deu-tfr.json",
@@ -2490,7 +2490,7 @@
         {
           "id": "germany-baden-wurttemberg",
           "slug": "germany-baden-wurttemberg",
-          "name": "Baden-W\u00fcrttemberg",
+          "name": "Baden-Württemberg",
           "value": 1.394
         },
         {
@@ -2597,7 +2597,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.24,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/grc-tfr.json",
@@ -2607,79 +2607,79 @@
         {
           "id": "grc-el51",
           "slug": "grc-el51",
-          "name": "A\u03bd\u03b1\u03c4\u03bf\u03bb\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1, \u0398\u03c1\u03ac\u03ba\u03b7",
+          "name": "Aνατολική Μακεδονία, Θράκη",
           "value": 1.28
         },
         {
           "id": "grc-el52",
           "slug": "grc-el52",
-          "name": "\u039a\u03b5\u03bd\u03c4\u03c1\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "name": "Κεντρική Μακεδονία",
           "value": 1.18
         },
         {
           "id": "grc-el53",
           "slug": "grc-el53",
-          "name": "\u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "name": "Δυτική Μακεδονία",
           "value": 1.16
         },
         {
           "id": "grc-el54",
           "slug": "grc-el54",
-          "name": "\u0389\u03c0\u03b5\u03b9\u03c1\u03bf\u03c2",
+          "name": "Ήπειρος",
           "value": 1.17
         },
         {
           "id": "grc-el61",
           "slug": "grc-el61",
-          "name": "\u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03af\u03b1",
+          "name": "Θεσσαλία",
           "value": 1.28
         },
         {
           "id": "grc-el62",
           "slug": "grc-el62",
-          "name": "\u0399\u03cc\u03bd\u03b9\u03b1 \u039d\u03b7\u03c3\u03b9\u03ac",
+          "name": "Ιόνια Νησιά",
           "value": 1.49
         },
         {
           "id": "grc-el63",
           "slug": "grc-el63",
-          "name": "\u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "name": "Δυτική Ελλάδα",
           "value": 1.31
         },
         {
           "id": "grc-el64",
           "slug": "grc-el64",
-          "name": "\u03a3\u03c4\u03b5\u03c1\u03b5\u03ac \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "name": "Στερεά Ελλάδα",
           "value": 1.22
         },
         {
           "id": "grc-el65",
           "slug": "grc-el65",
-          "name": "\u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2",
+          "name": "Πελοπόννησος",
           "value": 1.36
         },
         {
           "id": "grc-el30",
           "slug": "grc-el30",
-          "name": "A\u03c4\u03c4\u03b9\u03ba\u03ae",
+          "name": "Aττική",
           "value": 1.13
         },
         {
           "id": "grc-el41",
           "slug": "grc-el41",
-          "name": "\u0392\u03cc\u03c1\u03b5\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "name": "Βόρειο Αιγαίο",
           "value": 1.42
         },
         {
           "id": "grc-el42",
           "slug": "grc-el42",
-          "name": "\u039d\u03cc\u03c4\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "name": "Νότιο Αιγαίο",
           "value": 1.69
         },
         {
           "id": "grc-el43",
           "slug": "grc-el43",
-          "name": "\u039a\u03c1\u03ae\u03c4\u03b7",
+          "name": "Κρήτη",
           "value": 1.5
         }
       ],
@@ -2696,7 +2696,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.41,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/hun-tfr.json",
@@ -2718,37 +2718,37 @@
         {
           "id": "hun-hu21",
           "slug": "hun-hu21",
-          "name": "K\u00f6z\u00e9p-Dun\u00e1nt\u00fal",
+          "name": "Közép-Dunántúl",
           "value": 1.42
         },
         {
           "id": "hun-hu22",
           "slug": "hun-hu22",
-          "name": "Nyugat-Dun\u00e1nt\u00fal",
+          "name": "Nyugat-Dunántúl",
           "value": 1.37
         },
         {
           "id": "hun-hu23",
           "slug": "hun-hu23",
-          "name": "D\u00e9l-Dun\u00e1nt\u00fal",
+          "name": "Dél-Dunántúl",
           "value": 1.38
         },
         {
           "id": "hun-hu31",
           "slug": "hun-hu31",
-          "name": "\u00c9szak-Magyarorsz\u00e1g",
+          "name": "Észak-Magyarország",
           "value": 1.67
         },
         {
           "id": "hun-hu32",
           "slug": "hun-hu32",
-          "name": "\u00c9szak-Alf\u00f6ld",
+          "name": "Észak-Alföld",
           "value": 1.62
         },
         {
           "id": "hun-hu33",
           "slug": "hun-hu33",
-          "name": "D\u00e9l-Alf\u00f6ld",
+          "name": "Dél-Alföld",
           "value": 1.42
         }
       ],
@@ -2765,7 +2765,7 @@
       "kind": "state",
       "year": 2021,
       "national": 2.0,
-      "source": "NFHS-5 (2019\u201321) total fertility rate by State/Union Territory, Ministry of Health and Family Welfare.",
+      "source": "NFHS-5 (2019–21) total fertility rate by State/Union Territory, Ministry of Health and Family Welfare.",
       "sourceUrl": "https://www.mohfw.gov.in",
       "credit": null,
       "geoUrl": "/geo/maps/ind-tfr.json",
@@ -3002,13 +3002,13 @@
       "kind": "province",
       "year": 2018,
       "national": 3.6,
-      "source": "NIPS/ICF, Pakistan Demographic and Health Survey 2017\u201318, Table 5.2 \u2014 total fertility rate (women 15\u201349) by region, 1\u201336 months before interview.",
+      "source": "NIPS/ICF, Pakistan Demographic and Health Survey 2017–18, Table 5.2 — total fertility rate (women 15–49) by region, 1–36 months before interview.",
       "sourceUrl": "https://dhsprogram.com/pubs/pdf/FR354/FR354.pdf",
       "credit": null,
       "geoUrl": "/geo/maps/pak-tfr.json",
       "scale": "plasma",
       "labelValues": true,
-      "note": "The PDHS national TFR (3.6) excludes Azad Jammu and Kashmir and Gilgit Baltistan; those regions are still drawn. FATA is shown as published in 2017\u201318; it was later merged into Khyber Pakhtunkhwa.",
+      "note": "The PDHS national TFR (3.6) excludes Azad Jammu and Kashmir and Gilgit Baltistan; those regions are still drawn. FATA is shown as published in 2017–18; it was later merged into Khyber Pakhtunkhwa.",
       "regions": [
         {
           "id": "pakistan-gilgit-baltistan",
@@ -3072,7 +3072,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.47,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/irl-tfr.json",
@@ -3111,7 +3111,7 @@
       "kind": "province",
       "year": 2024,
       "national": 1.43,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/nld-tfr.json",
@@ -3204,7 +3204,7 @@
       "kind": "voivodeship",
       "year": 2024,
       "national": 1.14,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/pol-tfr.json",
@@ -3214,13 +3214,13 @@
         {
           "id": "pol-pl21",
           "slug": "pol-pl21",
-          "name": "Ma\u0142opolskie",
+          "name": "Małopolskie",
           "value": 1.2
         },
         {
           "id": "pol-pl22",
           "slug": "pol-pl22",
-          "name": "\u015al\u0105skie",
+          "name": "Śląskie",
           "value": 1.07
         },
         {
@@ -3244,7 +3244,7 @@
         {
           "id": "pol-pl51",
           "slug": "pol-pl51",
-          "name": "Dolno\u015bl\u0105skie",
+          "name": "Dolnośląskie",
           "value": 1.04
         },
         {
@@ -3262,7 +3262,7 @@
         {
           "id": "pol-pl62",
           "slug": "pol-pl62",
-          "name": "Warmi\u0144sko-mazurskie",
+          "name": "Warmińsko-mazurskie",
           "value": 1.11
         },
         {
@@ -3274,13 +3274,13 @@
         {
           "id": "pol-pl71",
           "slug": "pol-pl71",
-          "name": "\u0141\u00f3dzkie",
+          "name": "Łódzkie",
           "value": 1.12
         },
         {
           "id": "pol-pl72",
           "slug": "pol-pl72",
-          "name": "\u015awi\u0119tokrzyskie",
+          "name": "Świętokrzyskie",
           "value": 1.06
         },
         {
@@ -3304,7 +3304,7 @@
         {
           "id": "pol-pl91",
           "slug": "pol-pl91",
-          "name": "Warszawski sto\u0142eczny",
+          "name": "Warszawski stołeczny",
           "value": 1.09
         },
         {
@@ -3327,7 +3327,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.4,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/prt-tfr.json",
@@ -3361,7 +3361,7 @@
         {
           "id": "prt-pt1b",
           "slug": "prt-pt1b",
-          "name": "Pen\u00ednsula de Set\u00fabal",
+          "name": "Península de Setúbal",
           "value": 1.69
         },
         {
@@ -3379,13 +3379,13 @@
         {
           "id": "prt-pt20",
           "slug": "prt-pt20",
-          "name": "Regi\u00e3o Aut\u00f3noma dos A\u00e7ores",
+          "name": "Região Autónoma dos Açores",
           "value": 1.22
         },
         {
           "id": "prt-pt30",
           "slug": "prt-pt30",
-          "name": "Regi\u00e3o Aut\u00f3noma da Madeira",
+          "name": "Região Autónoma da Madeira",
           "value": 1.25
         }
       ],
@@ -3402,7 +3402,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.38,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/rou-tfr.json",
@@ -3442,7 +3442,7 @@
         {
           "id": "rou-ro32",
           "slug": "rou-ro32",
-          "name": "Bucure\u015fti-Ilfov",
+          "name": "Bucureşti-Ilfov",
           "value": 1.19
         },
         {
@@ -3769,7 +3769,7 @@
         {
           "id": "russia-north-ossetia",
           "slug": "russia-north-ossetia",
-          "name": "North Ossetia\u2013Alania",
+          "name": "North Ossetia–Alania",
           "value": 1.55
         },
         {
@@ -4002,7 +4002,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.45,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/svk-tfr.json",
@@ -4012,25 +4012,25 @@
         {
           "id": "svk-sk01",
           "slug": "svk-sk01",
-          "name": "Bratislavsk\u00fd kraj",
+          "name": "Bratislavský kraj",
           "value": 1.3
         },
         {
           "id": "svk-sk02",
           "slug": "svk-sk02",
-          "name": "Z\u00e1padn\u00e9 Slovensko",
+          "name": "Západné Slovensko",
           "value": 1.24
         },
         {
           "id": "svk-sk03",
           "slug": "svk-sk03",
-          "name": "Stredn\u00e9 Slovensko",
+          "name": "Stredné Slovensko",
           "value": 1.34
         },
         {
           "id": "svk-sk04",
           "slug": "svk-sk04",
-          "name": "V\u00fdchodn\u00e9 Slovensko",
+          "name": "Východné Slovensko",
           "value": 1.76
         }
       ],
@@ -4047,7 +4047,7 @@
       "kind": "region",
       "year": 2024,
       "national": 1.44,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region.",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region.",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "credit": null,
       "geoUrl": "/geo/maps/swe-tfr.json",
@@ -4063,7 +4063,7 @@
         {
           "id": "swe-se33",
           "slug": "swe-se33",
-          "name": "\u00d6vre Norrland",
+          "name": "Övre Norrland",
           "value": 1.36
         },
         {
@@ -4075,13 +4075,13 @@
         {
           "id": "swe-se12",
           "slug": "swe-se12",
-          "name": "\u00d6stra Mellansverige",
+          "name": "Östra Mellansverige",
           "value": 1.42
         },
         {
           "id": "swe-se21",
           "slug": "swe-se21",
-          "name": "Sm\u00e5land med \u00f6arna",
+          "name": "Småland med öarna",
           "value": 1.54
         },
         {
@@ -4093,7 +4093,7 @@
         {
           "id": "swe-se23",
           "slug": "swe-se23",
-          "name": "V\u00e4stsverige",
+          "name": "Västsverige",
           "value": 1.47
         },
         {
@@ -4114,7 +4114,7 @@
       "kind": "state",
       "year": 2024,
       "national": 1.48,
-      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Brazil 2024 \u2014 state TFR from registered live births and IBGE women of childbearing age. National TFR 1.48.",
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Brazil 2024 — state TFR from registered live births and IBGE women of childbearing age. National TFR 1.48.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/bra-tfr.json",
       "note": "2024 state TFR compiled by BirthGauge from births and the IBGE childbearing-age population. The IBGE 2024 population-projection TFT (1.57) is a 2023 estimate and is not used here.",
@@ -4122,7 +4122,7 @@
         {
           "id": "brazil-rondonia",
           "slug": "brazil-rondonia",
-          "name": "Rond\u00f4nia",
+          "name": "Rondônia",
           "value": 1.58
         },
         {
@@ -4146,13 +4146,13 @@
         {
           "id": "brazil-para",
           "slug": "brazil-para",
-          "name": "Par\u00e1",
+          "name": "Pará",
           "value": 1.63
         },
         {
           "id": "brazil-amapa",
           "slug": "brazil-amapa",
-          "name": "Amap\u00e1",
+          "name": "Amapá",
           "value": 1.8
         },
         {
@@ -4164,19 +4164,19 @@
         {
           "id": "brazil-maranhao",
           "slug": "brazil-maranhao",
-          "name": "Maranh\u00e3o",
+          "name": "Maranhão",
           "value": 1.59
         },
         {
           "id": "brazil-piaui",
           "slug": "brazil-piaui",
-          "name": "Piau\u00ed",
+          "name": "Piauí",
           "value": 1.52
         },
         {
           "id": "brazil-ceara",
           "slug": "brazil-ceara",
-          "name": "Cear\u00e1",
+          "name": "Ceará",
           "value": 1.43
         },
         {
@@ -4188,7 +4188,7 @@
         {
           "id": "brazil-paraiba",
           "slug": "brazil-paraiba",
-          "name": "Para\u00edba",
+          "name": "Paraíba",
           "value": 1.55
         },
         {
@@ -4224,7 +4224,7 @@
         {
           "id": "brazil-espirito-santo",
           "slug": "brazil-espirito-santo",
-          "name": "Esp\u00edrito Santo",
+          "name": "Espírito Santo",
           "value": 1.65
         },
         {
@@ -4236,13 +4236,13 @@
         {
           "id": "brazil-sao-paulo",
           "slug": "brazil-sao-paulo",
-          "name": "S\u00e3o Paulo",
+          "name": "São Paulo",
           "value": 1.4
         },
         {
           "id": "brazil-parana",
           "slug": "brazil-parana",
-          "name": "Paran\u00e1",
+          "name": "Paraná",
           "value": 1.5
         },
         {
@@ -4272,7 +4272,7 @@
         {
           "id": "brazil-goias",
           "slug": "brazil-goias",
-          "name": "Goi\u00e1s",
+          "name": "Goiás",
           "value": 1.56
         },
         {
@@ -4298,7 +4298,7 @@
       "kind": "province",
       "year": 2025,
       "national": 2.13,
-      "source": "BPS-Statistics Indonesia, Berita Resmi Statistik No. 51/05/Th. XXIX, 5 May 2026 \u2014 Lampiran 2, Angka Kelahiran Total (TFR) menurut provinsi, Hasil SUPAS 2025.",
+      "source": "BPS-Statistics Indonesia, Berita Resmi Statistik No. 51/05/Th. XXIX, 5 May 2026 — Lampiran 2, Angka Kelahiran Total (TFR) menurut provinsi, Hasil SUPAS 2025.",
       "sourceUrl": "https://www.bps.go.id/id/pressrelease/2026/05/05/2645/supas-2025--angka-kelahiran-total--tfr--sebesar-2-13---angka-kematian-bayi--imr--sebesar-14-12--dan-persentase-lansia-mencapai-11-97-persen-.html",
       "geoUrl": "/geo/maps/idn-tfr.json",
       "note": "SUPAS 2025 TFR for 38 provinces, including the 2022 Papua splits. National TFR 2.13.",
@@ -4548,10 +4548,10 @@
       "kind": "state",
       "year": 2024,
       "national": 4.8,
-      "source": "NPC/ICF, Nigeria Demographic and Health Survey 2023\u201324 \u2014 total fertility rate by state (STATcompiler FE_FRTR_W_TFR).",
+      "source": "NPC/ICF, Nigeria Demographic and Health Survey 2023–24 — total fertility rate by state (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/nga-tfr.json",
-      "note": "NDHS 2023\u201324 TFR for the three years before interview. Zone totals are omitted; states and FCT are drawn.",
+      "note": "NDHS 2023–24 TFR for the three years before interview. Zone totals are omitted; states and FCT are drawn.",
       "regions": [
         {
           "id": "nigeria-abuja-federal-capital-territory",
@@ -4792,7 +4792,7 @@
       "kind": "county",
       "year": 2022,
       "national": 3.4,
-      "source": "KNBS/ICF, Kenya Demographic and Health Survey 2022 \u2014 total fertility rate by county (STATcompiler FE_FRTR_W_TFR).",
+      "source": "KNBS/ICF, Kenya Demographic and Health Survey 2022 — total fertility rate by county (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/ken-tfr.json",
       "note": "KDHS 2022 TFR for the three years before interview. Former provinces are omitted; the 47 counties are drawn.",
@@ -5096,7 +5096,7 @@
       "kind": "region",
       "year": 2022,
       "national": 1.9,
-      "source": "PSA/ICF, Philippines National Demographic and Health Survey 2022 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "PSA/ICF, Philippines National Demographic and Health Survey 2022 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/phl-tfr.json",
       "note": "NDHS 2022 TFR for the three years before interview. Island-group totals are omitted.",
@@ -5220,7 +5220,7 @@
       "kind": "province",
       "year": 2016,
       "national": 2.6,
-      "source": "Stats SA/NDOH/SAMRC/ICF, South Africa Demographic and Health Survey 2016 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "Stats SA/NDOH/SAMRC/ICF, South Africa Demographic and Health Survey 2016 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/zaf-tfr.json",
       "note": "SADHS 2016 TFR for the three years before interview. Northern Province is Limpopo.",
@@ -5296,7 +5296,7 @@
       "kind": "governorate",
       "year": 2023,
       "national": 2.6,
-      "source": "DOS/ICF, Jordan Population and Family Health Survey 2023 \u2014 total fertility rate by governorate (STATcompiler FE_FRTR_W_TFR).",
+      "source": "DOS/ICF, Jordan Population and Family Health Survey 2023 — total fertility rate by governorate (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/jor-tfr.json",
       "note": "JPFHS 2023 TFR for the three years before interview. Region totals are omitted.",
@@ -5390,10 +5390,10 @@
       "kind": "province",
       "year": 2023,
       "national": 4.8,
-      "source": "INE/ICF, Angola Demographic and Health Survey 2023\u201324 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "INE/ICF, Angola Demographic and Health Survey 2023–24 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/ago-tfr.json",
-      "note": "ANDHS 2023\u201324 TFR for the three years before interview.",
+      "note": "ANDHS 2023–24 TFR for the three years before interview.",
       "regions": [
         {
           "id": "angola-cabinda",
@@ -5410,7 +5410,7 @@
         {
           "id": "angola-uige",
           "slug": "angola-uige",
-          "name": "U\u00edge",
+          "name": "Uíge",
           "value": 6.1
         },
         {
@@ -5458,7 +5458,7 @@
         {
           "id": "angola-bie",
           "slug": "angola-bie",
-          "name": "Bi\u00e9",
+          "name": "Bié",
           "value": 5.8
         },
         {
@@ -5482,7 +5482,7 @@
         {
           "id": "angola-huila",
           "slug": "angola-huila",
-          "name": "Hu\u00edla",
+          "name": "Huíla",
           "value": 5.1
         },
         {
@@ -5520,7 +5520,7 @@
       "kind": "province",
       "year": 2022,
       "national": 2.1,
-      "source": "MOHP/ICF, Nepal Demographic and Health Survey 2022 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "MOHP/ICF, Nepal Demographic and Health Survey 2022 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/npl-tfr.json",
       "note": "NDHS 2022 TFR for the three years before interview. Koshi and Madhesh are the official names of former Provinces 1 and 2.",
@@ -5584,7 +5584,7 @@
       "kind": "region",
       "year": 2022,
       "national": 3.9,
-      "source": "GSS/ICF, Ghana Demographic and Health Survey 2022 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "GSS/ICF, Ghana Demographic and Health Survey 2022 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/gha-tfr.json",
       "note": "GDHS 2022 TFR for the three years before interview.",
@@ -5708,7 +5708,7 @@
       "kind": "region",
       "year": 2022,
       "national": 4.8,
-      "source": "NBS/OCGS/ICF, Tanzania Demographic and Health Survey 2022 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "NBS/OCGS/ICF, Tanzania Demographic and Health Survey 2022 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/tza-tfr.json",
       "note": "TDHS 2022 TFR for the three years before interview. Zone totals are omitted. Songwe (split from Mbeya in 2016) is omitted if the vintage geography has no Songwe polygon.",
@@ -5910,7 +5910,7 @@
       "kind": "division",
       "year": 2022,
       "national": 2.3,
-      "source": "NIPORT/ICF, Bangladesh Demographic and Health Survey 2022 \u2014 total fertility rate by division (STATcompiler FE_FRTR_W_TFR).",
+      "source": "NIPORT/ICF, Bangladesh Demographic and Health Survey 2022 — total fertility rate by division (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/bgd-tfr.json",
       "note": "BDHS 2022 TFR for the three years before interview.",
@@ -5980,7 +5980,7 @@
       "kind": "province",
       "year": 2024,
       "national": 4.0,
-      "source": "Zambia Statistics Agency/ICF, Zambia Demographic and Health Survey 2024 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "Zambia Statistics Agency/ICF, Zambia Demographic and Health Survey 2024 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/zmb-tfr.json",
       "note": "ZDHS 2024 TFR for the three years before interview.",
@@ -6062,7 +6062,7 @@
       "kind": "district",
       "year": 2024,
       "national": 3.7,
-      "source": "NSO/ICF, Malawi Demographic and Health Survey 2024 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "NSO/ICF, Malawi Demographic and Health Survey 2024 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mwi-tfr.json",
       "note": "MDHS 2024 TFR for the three years before interview. Districts; city splits that are not on this vintage geography are omitted.",
@@ -6288,10 +6288,10 @@
       "kind": "region",
       "year": 2023,
       "national": 6.0,
-      "source": "INSTAT/ICF, Mali Demographic and Health Survey 2023\u201324 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "INSTAT/ICF, Mali Demographic and Health Survey 2023–24 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mli-tfr.json",
-      "note": "MDHS 2023\u201324 TFR for the three years before interview.",
+      "note": "MDHS 2023–24 TFR for the three years before interview.",
       "regions": [
         {
           "id": "mali-kayes",
@@ -6364,7 +6364,7 @@
       "kind": "region",
       "year": 2023,
       "national": 4.0,
-      "source": "ANSD/ICF, Senegal Continuous Demographic and Health Survey 2023 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "ANSD/ICF, Senegal Continuous Demographic and Health Survey 2023 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/sen-tfr.json",
       "note": "Senegal DHS 2023 TFR for the three years before interview.",
@@ -6488,10 +6488,10 @@
       "kind": "province",
       "year": 2022,
       "national": 4.9,
-      "source": "INE/ICF, Mozambique Demographic and Health Survey 2022\u201323 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "INE/ICF, Mozambique Demographic and Health Survey 2022–23 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/moz-tfr.json",
-      "note": "IMASIDA/DHS 2022\u201323 TFR for the three years before interview.",
+      "note": "IMASIDA/DHS 2022–23 TFR for the three years before interview.",
       "regions": [
         {
           "id": "mozambique-niassa",
@@ -6514,7 +6514,7 @@
         {
           "id": "mozambique-zambezia",
           "slug": "mozambique-zambezia",
-          "name": "Zamb\u00e9zia",
+          "name": "Zambézia",
           "value": 5.1
         },
         {
@@ -6576,10 +6576,10 @@
       "kind": "province",
       "year": 2021,
       "national": 2.7,
-      "source": "NIS/ICF, Cambodia Demographic and Health Survey 2021\u201322 \u2014 total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
+      "source": "NIS/ICF, Cambodia Demographic and Health Survey 2021–22 — total fertility rate by province (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/khm-tfr.json",
-      "note": "CDHS 2021\u201322 TFR for the three years before interview. Domain totals are omitted.",
+      "note": "CDHS 2021–22 TFR for the three years before interview. Domain totals are omitted.",
       "regions": [
         {
           "id": "cambodia-bantey-meanchey",
@@ -6754,7 +6754,7 @@
       "kind": "region",
       "year": 2021,
       "national": 4.4,
-      "source": "INSD/ICF, Burkina Faso Demographic and Health Survey 2021 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "INSD/ICF, Burkina Faso Demographic and Health Survey 2021 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/bfa-tfr.json",
       "note": "EMDS 2021 TFR for the three years before interview. Ouagadougou is published separately from Centre and is not a distinct polygon on this vintage geography.",
@@ -6854,7 +6854,7 @@
       "kind": "region",
       "year": 2023,
       "national": 3.5,
-      "source": "SA/ICF, Tajikistan Demographic and Health Survey 2023 \u2014 total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
+      "source": "SA/ICF, Tajikistan Demographic and Health Survey 2023 — total fertility rate by region (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/tjk-tfr.json",
       "note": "TjDHS 2023 TFR for the three years before interview.",
@@ -6906,10 +6906,10 @@
       "kind": "country",
       "year": 2026,
       "national": 1.34,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/eu-tfr.json",
-      "note": "EU member states. National TFR is BirthGauge\u2019s latest compiled year (up to 2026), from national statistical offices. Open the Provinces tab for Eurostat NUTS 2 regions across the EU, EFTA, the UK (ONS/NRS/NISRA 2024), T\u00fcrkiye and the Western Balkans. Overseas fragments of France can pull this frame; zoom in if needed.",
+      "note": "EU member states. National TFR is BirthGauge’s latest compiled year (up to 2026), from national statistical offices. Open the Provinces tab for Eurostat NUTS 2 regions across the EU, EFTA, the UK (ONS/NRS/NISRA 2024), Türkiye and the Western Balkans. Overseas fragments of France can pull this frame; zoom in if needed.",
       "tab": "Countries",
       "regions": [
         {
@@ -7091,10 +7091,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/mena-tfr.json",
-      "note": "National TFR, mixed vintage. 13 countries use BirthGauge\u2019s latest compiled year (up to 2026). 11 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 13 countries use BirthGauge’s latest compiled year (up to 2026). 11 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "mena-yemen-rep",
@@ -7258,10 +7258,10 @@
       "kind": "country",
       "year": 2025,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2025 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2025 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/caribbean-tfr.json",
-      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2025). 10 countries remain World Bank WDI (no BirthGauge series). Cuba 1.12 and Puerto Rico 0.85 are 2025; Jamaica 1.51 is 2025 (corrected for uncounted emigration); Dominican Republic 1.95 is 2024. Haiti is still World Bank (2.62) \u2014 BirthGauge has not published a Haiti TFR.",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge’s latest compiled year (up to 2025). 10 countries remain World Bank WDI (no BirthGauge series). Cuba 1.12 and Puerto Rico 0.85 are 2025; Jamaica 1.51 is 2025 (corrected for uncounted emigration); Dominican Republic 1.95 is 2024. Haiti is still World Bank (2.62) — BirthGauge has not published a Haiti TFR.",
       "regions": [
         {
           "id": "caribbean-puerto-rico-us",
@@ -7364,10 +7364,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Venezuela 2.01 is UCAB ENCOVI 2023 (household survey), not INE vital statistics. Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132), not a published age-specific TFR.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Venezuela 2.01 is UCAB ENCOVI 2023 (household survey), not INE vital statistics. Guyana 1.75 is an unofficial 2025 TFR estimate from Bureau of Statistics GRO registered live births (13,132), not a published age-specific TFR.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/southamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 10 countries use BirthGauge\u2019s latest compiled year (up to 2026). Venezuela 2.01 is UCAB ENCOVI 2023: INE has not published complete vital statistics since about 2019, so the old BirthGauge 2.23 (2020) is not a current official TFR. UN WPP still models ~2.08; there is no sourced national TFR of 1.5. Guyana 1.75 is an unofficial 2025 estimate from GRO registered live births (13,132 in 2025; 12,832 in 2024).",
+      "note": "National TFR, mixed vintage. 10 countries use BirthGauge’s latest compiled year (up to 2026). Venezuela 2.01 is UCAB ENCOVI 2023: INE has not published complete vital statistics since about 2019, so the old BirthGauge 2.23 (2020) is not a current official TFR. UN WPP still models ~2.08; there is no sourced national TFR of 1.5. Guyana 1.75 is an unofficial 2025 estimate from GRO registered live births (13,132 in 2025; 12,832 in 2024).",
       "regions": [
         {
           "id": "southamerica-venezuela-rb",
@@ -7461,7 +7461,7 @@
       "source": "DHS STATcompiler FE_FRTR_W_TFR (latest survey since 2020), Congo DHS 2025 Key Indicators Report (PR167, ISF 3.5), Statistics South Africa TFR 2026 (2.12), BirthGauge for Egypt, Tunisia, Algeria and Mauritius, otherwise World Bank WDI.",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/africa-tfr.json",
-      "note": "Mixed vintage. 23 countries use a 2020\u201325 DHS/MIS national TFR, Congo-Brazzaville is EDSC-III 2025 (3.5), South Africa is Stats SA 2026 (2.12), 4 countries use BirthGauge (Egypt, Tunisia, Algeria, Mauritius), 25 remain World Bank WDI. DHS TFR is for the three years before interview, not a single calendar year.",
+      "note": "Mixed vintage. 23 countries use a 2020–25 DHS/MIS national TFR, Congo-Brazzaville is EDSC-III 2025 (3.5), South Africa is Stats SA 2026 (2.12), 4 countries use BirthGauge (Egypt, Tunisia, Algeria, Mauritius), 25 remain World Bank WDI. DHS TFR is for the three years before interview, not a single calendar year.",
       "regions": [
         {
           "id": "africa-zimbabwe",
@@ -7804,10 +7804,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/seasia-tfr.json",
-      "note": "National TFR, mixed vintage. 5 countries use BirthGauge\u2019s latest compiled year (up to 2026). 6 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 5 countries use BirthGauge’s latest compiled year (up to 2026). 6 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "seasia-viet-nam",
@@ -7892,10 +7892,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Nicaragua 2.2 is INIDE 2020\u20132025 (BCN Nicaragua en Cifras 2025). El Salvador 1.4 is the 2024 population census TGF (BCR/ONEC).",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Nicaragua 2.2 is INIDE 2020–2025 (BCN Nicaragua en Cifras 2025). El Salvador 1.4 is the 2024 population census TGF (BCR/ONEC).",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/centralamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 5 countries use BirthGauge\u2019s latest compiled year (up to 2026). Nicaragua 2.2 is INIDE\u2019s 2020\u20132025 TGF (Banco Central, Nicaragua en Cifras 2025), not BirthGauge\u2019s 2020 figure (2.13). El Salvador 1.4 is the 2024 census TGF (BCR/ONEC), not World Bank WDI 1.77.",
+      "note": "National TFR, mixed vintage. 5 countries use BirthGauge’s latest compiled year (up to 2026). Nicaragua 2.2 is INIDE’s 2020–2025 TGF (Banco Central, Nicaragua en Cifras 2025), not BirthGauge’s 2020 figure (2.13). El Salvador 1.4 is the 2024 census TGF (BCR/ONEC), not World Bank WDI 1.77.",
       "regions": [
         {
           "id": "centralamerica-panama",
@@ -7943,7 +7943,7 @@
       "labelValues": true,
       "metric": "tfr",
       "unit": "children per woman",
-      "credit": "BirthGauge for 5 countries; Nicaragua is INIDE 2020\u20132025 (BCN Nicaragua en Cifras 2025); El Salvador is the 2024 census (BCR/ONEC).",
+      "credit": "BirthGauge for 5 countries; Nicaragua is INIDE 2020–2025 (BCN Nicaragua en Cifras 2025); El Salvador is the 2024 census (BCR/ONEC).",
       "scale": "plasma",
       "min": 1.11,
       "max": 2.2
@@ -7956,10 +7956,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/centralasia-tfr.json",
-      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge’s latest compiled year (up to 2026). 1 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "centralasia-uzbekistan",
@@ -8008,10 +8008,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/northamerica-tfr.json",
-      "note": "National TFR, mixed vintage. 3 countries use BirthGauge\u2019s latest compiled year (up to 2026). Every country on this map has a BirthGauge figure.",
+      "note": "National TFR, mixed vintage. 3 countries use BirthGauge’s latest compiled year (up to 2026). Every country on this map has a BirthGauge figure.",
       "regions": [
         {
           "id": "northamerica-united-states",
@@ -8048,10 +8048,10 @@
       "kind": "country",
       "year": 2026,
       "national": null,
-      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 \u2014 latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
+      "source": "BirthGauge, Data on Births and the Total Fertility Rate (TFR) 2026 — latest compiled year from national statistical offices. Countries without a BirthGauge series stay on World Bank WDI SP.DYN.TFRT.IN.",
       "sourceUrl": "https://x.com/BirthGauge",
       "geoUrl": "/geo/maps/oceania-tfr.json",
-      "note": "National TFR, mixed vintage. 4 countries use BirthGauge\u2019s latest compiled year (up to 2026). 12 countries remain World Bank WDI (no BirthGauge series).",
+      "note": "National TFR, mixed vintage. 4 countries use BirthGauge’s latest compiled year (up to 2026). 12 countries remain World Bank WDI (no BirthGauge series).",
       "regions": [
         {
           "id": "oceania-vanuatu",
@@ -8166,10 +8166,10 @@
       "kind": "region",
       "year": 2022,
       "national": 2.14,
-      "source": "GASTAT, Saudi Census 2022 / Household Health Survey 2022 \u2014 total fertility rate by administrative region for all women and for Saudi women. National 2024 from GASTAT Population Estimates Statistics 2024: all residents 2.0, Saudi women 2.7, non-Saudi women 0.8. The 2022 regional table is the last published TFR by administrative region.",
+      "source": "GASTAT, Saudi Census 2022 / Household Health Survey 2022 — total fertility rate by administrative region for all women and for Saudi women. National 2024 from GASTAT Population Estimates Statistics 2024: all residents 2.0, Saudi women 2.7, non-Saudi women 0.8. The 2022 regional table is the last published TFR by administrative region.",
       "sourceUrl": "https://www.stats.gov.sa/documents/20117/2435273/Population+Estimates+Statistics+2024+EN.pdf/9b71e303-5fd9-19cb-9913-850a9d521639",
       "geoUrl": "/geo/maps/sau-tfr.json",
-      "note": "The map is Census 2022 TFR by the 13 administrative regions \u2014 GASTAT has not republished a regional table since. National totals from Population Estimates 2024 are 2.0 (all residents), 2.7 (Saudi women) and 0.8 (non-Saudi). Toggle between all residents (2022 national 2.14) and Saudi women only (2.80). Non-Saudi TFR is much lower in every region; most non-Saudis are working-age migrants rather than a settled immigrant population.",
+      "note": "The map is Census 2022 TFR by the 13 administrative regions — GASTAT has not republished a regional table since. National totals from Population Estimates 2024 are 2.0 (all residents), 2.7 (Saudi women) and 0.8 (non-Saudi). Toggle between all residents (2022 national 2.14) and Saudi women only (2.80). Non-Saudi TFR is much lower in every region; most non-Saudis are working-age migrants rather than a settled immigrant population.",
       "tab": "All residents",
       "regions": [
         {
@@ -8268,10 +8268,10 @@
       "kind": "region",
       "year": 2022,
       "national": 2.8,
-      "source": "GASTAT, Saudi Census 2022 / Household Health Survey 2022 \u2014 total fertility rate by administrative region for all women and for Saudi women. National 2024 from GASTAT Population Estimates Statistics 2024: all residents 2.0, Saudi women 2.7, non-Saudi women 0.8. The 2022 regional table is the last published TFR by administrative region.",
+      "source": "GASTAT, Saudi Census 2022 / Household Health Survey 2022 — total fertility rate by administrative region for all women and for Saudi women. National 2024 from GASTAT Population Estimates Statistics 2024: all residents 2.0, Saudi women 2.7, non-Saudi women 0.8. The 2022 regional table is the last published TFR by administrative region.",
       "sourceUrl": "https://www.stats.gov.sa/documents/20117/2435273/Population+Estimates+Statistics+2024+EN.pdf/9b71e303-5fd9-19cb-9913-850a9d521639",
       "geoUrl": "/geo/maps/sau-tfr.json",
-      "note": "The map is Census 2022 TFR by the 13 administrative regions \u2014 GASTAT has not republished a regional table since. National totals from Population Estimates 2024 are 2.0 (all residents), 2.7 (Saudi women) and 0.8 (non-Saudi). Toggle between all residents (2022 national 2.14) and Saudi women only (2.80). Non-Saudi TFR is much lower in every region; most non-Saudis are working-age migrants rather than a settled immigrant population.",
+      "note": "The map is Census 2022 TFR by the 13 administrative regions — GASTAT has not republished a regional table since. National totals from Population Estimates 2024 are 2.0 (all residents), 2.7 (Saudi women) and 0.8 (non-Saudi). Toggle between all residents (2022 national 2.14) and Saudi women only (2.80). Non-Saudi TFR is much lower in every region; most non-Saudis are working-age migrants rather than a settled immigrant population.",
       "tab": "Saudi women",
       "regions": [
         {
@@ -8370,10 +8370,10 @@
       "kind": "region",
       "year": 2024,
       "national": 1.97,
-      "source": "Haut-Commissariat au Plan, Recensement G\u00e9n\u00e9ral de la Population et de l\u2019Habitat 2024 \u2014 indice synth\u00e9tique de f\u00e9condit\u00e9 by region (Figure 4 of the December 2024 results note). National ISF 1.97.",
+      "source": "Haut-Commissariat au Plan, Recensement Général de la Population et de l’Habitat 2024 — indice synthétique de fécondité by region (Figure 4 of the December 2024 results note). National ISF 1.97.",
       "sourceUrl": "https://www.hcp.ma/file/242665/",
       "geoUrl": "/geo/maps/mar-tfr.json",
-      "note": "RGPH 2024 synthetic fertility index (ISF) for Morocco\u2019s 12 regions. National ISF is 1.97, below replacement. Urban 1.77, rural 2.37.",
+      "note": "RGPH 2024 synthetic fertility index (ISF) for Morocco’s 12 regions. National ISF is 1.97, below replacement. Urban 1.77, rural 2.37.",
       "regions": [
         {
           "id": "morocco-oriental",
@@ -8402,13 +8402,13 @@
         {
           "id": "morocco-rabat-sale-kenitra",
           "slug": "morocco-rabat-sale-kenitra",
-          "name": "Rabat-Sal\u00e9-Kenitra",
+          "name": "Rabat-Salé-Kenitra",
           "value": 1.91
         },
         {
           "id": "morocco-beni-mellal-khenifra",
           "slug": "morocco-beni-mellal-khenifra",
-          "name": "B\u00e9ni Mellal-Kh\u00e9nifra",
+          "name": "Béni Mellal-Khénifra",
           "value": 1.95
         },
         {
@@ -8432,7 +8432,7 @@
         {
           "id": "morocco-laayoune-sakia-el-hamra",
           "slug": "morocco-laayoune-sakia-el-hamra",
-          "name": "La\u00e2youne-Sakia El Hamra",
+          "name": "Laâyoune-Sakia El Hamra",
           "value": 2.17
         },
         {
@@ -8444,7 +8444,7 @@
         {
           "id": "morocco-draa-tafilalet",
           "slug": "morocco-draa-tafilalet",
-          "name": "Dr\u00e2a-Tafilalet",
+          "name": "Drâa-Tafilalet",
           "value": 2.35
         }
       ],
@@ -8465,7 +8465,7 @@
       "kind": "governorate",
       "year": 2013,
       "national": 4.4,
-      "source": "MOPHP/ICF, Yemen National Health and Demographic Survey 2013 \u2014 total fertility rate by governorate (STATcompiler FE_FRTR_W_TFR).",
+      "source": "MOPHP/ICF, Yemen National Health and Demographic Survey 2013 — total fertility rate by governorate (STATcompiler FE_FRTR_W_TFR).",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/yem-tfr.json",
       "note": "YNHDS 2013 TFR for the three years before interview. Later conflict-period estimates are not a governorate TFR table we can redistribute.",
@@ -8485,7 +8485,7 @@
         {
           "id": "yemen-san-a",
           "slug": "yemen-san-a",
-          "name": "San\u02bfa\u02be",
+          "name": "Sanʿaʾ",
           "value": 3.1
         },
         {
@@ -8545,13 +8545,13 @@
         {
           "id": "yemen-san-a-governorate",
           "slug": "yemen-san-a-governorate",
-          "name": "San\u02bfa\u02be Governorate",
+          "name": "Sanʿaʾ Governorate",
           "value": 4.9
         },
         {
           "id": "yemen-adan-governorate",
           "slug": "yemen-adan-governorate",
-          "name": "\u2018Adan Governorate",
+          "name": "‘Adan Governorate",
           "value": 2.9
         },
         {
@@ -8614,514 +8614,514 @@
       "kind": "province",
       "year": 2022,
       "national": null,
-      "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (T\u00fcrkiye). National fills for other countries use BirthGauge\u2019s latest year where compiled, else World Bank WDI.",
+      "source": "Provincial TFR where published: GASTAT Census 2022 (Saudi Arabia), HCP RGPH 2024 (Morocco), Jordan PFHS 2023, Yemen NHS 2013, Eurostat NUTS-2 2024 (Türkiye). National fills for other countries use BirthGauge’s latest year where compiled, else World Bank WDI.",
       "sourceUrl": "https://www.statcompiler.com/en/",
       "geoUrl": "/geo/maps/mena-prov-tfr.json",
-      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and T\u00fcrkiye; every other polygon is a national TFR so the map is not empty. National fills now use BirthGauge where compiled (Egypt 2.33 in 2025 (CAPMAS)). Egypt\u2019s 2014 DHS published only regional (not governorate) TFR. Use the Countries tab for a national map.",
+      "note": "Not one vintage. Provinces are drawn for Saudi Arabia (Census 2022), Morocco (RGPH 2024), Jordan, Yemen and Türkiye; every other polygon is a national TFR so the map is not empty. National fills now use BirthGauge where compiled (Egypt 2.33 in 2025 (CAPMAS)). Egypt’s 2014 DHS published only regional (not governorate) TFR. Use the Countries tab for a national map.",
       "tab": "Provinces",
       "regions": [
         {
           "id": "mena-sau-al-jawf-region",
           "slug": "mena-sau-al-jawf-region",
-          "name": "Saudi Arabia \u00b7 Al Jawf Region",
+          "name": "Saudi Arabia · Al Jawf Region",
           "value": 3.62
         },
         {
           "id": "mena-sau-northern-borders-region",
           "slug": "mena-sau-northern-borders-region",
-          "name": "Saudi Arabia \u00b7 Northern Borders Region",
+          "name": "Saudi Arabia · Northern Borders Region",
           "value": 3.17
         },
         {
           "id": "mena-sau-najran-region",
           "slug": "mena-sau-najran-region",
-          "name": "Saudi Arabia \u00b7 Najran Region",
+          "name": "Saudi Arabia · Najran Region",
           "value": 3.11
         },
         {
           "id": "mena-sau-tabuk-region",
           "slug": "mena-sau-tabuk-region",
-          "name": "Saudi Arabia \u00b7 Tabuk Region",
+          "name": "Saudi Arabia · Tabuk Region",
           "value": 2.71
         },
         {
           "id": "mena-sau-hayel-region",
           "slug": "mena-sau-hayel-region",
-          "name": "Saudi Arabia \u00b7 Hayel Region",
+          "name": "Saudi Arabia · Hayel Region",
           "value": 2.51
         },
         {
           "id": "mena-sau-al-madinah-region",
           "slug": "mena-sau-al-madinah-region",
-          "name": "Saudi Arabia \u00b7 Al Madinah Region",
+          "name": "Saudi Arabia · Al Madinah Region",
           "value": 2.48
         },
         {
           "id": "mena-sau-asir-region",
           "slug": "mena-sau-asir-region",
-          "name": "Saudi Arabia \u00b7 'Asir Region",
+          "name": "Saudi Arabia · 'Asir Region",
           "value": 2.46
         },
         {
           "id": "mena-sau-jazan-region",
           "slug": "mena-sau-jazan-region",
-          "name": "Saudi Arabia \u00b7 Jazan Region",
+          "name": "Saudi Arabia · Jazan Region",
           "value": 2.37
         },
         {
           "id": "mena-sau-al-bahah-region",
           "slug": "mena-sau-al-bahah-region",
-          "name": "Saudi Arabia \u00b7 Al Bahah Region",
+          "name": "Saudi Arabia · Al Bahah Region",
           "value": 2.31
         },
         {
           "id": "mena-sau-al-qassim-region",
           "slug": "mena-sau-al-qassim-region",
-          "name": "Saudi Arabia \u00b7 Al-Qassim Region",
+          "name": "Saudi Arabia · Al-Qassim Region",
           "value": 2.28
         },
         {
           "id": "mena-sau-eastern-region",
           "slug": "mena-sau-eastern-region",
-          "name": "Saudi Arabia \u00b7 Eastern Region",
+          "name": "Saudi Arabia · Eastern Region",
           "value": 2.27
         },
         {
           "id": "mena-sau-riyadh-region",
           "slug": "mena-sau-riyadh-region",
-          "name": "Saudi Arabia \u00b7 Riyadh Region",
+          "name": "Saudi Arabia · Riyadh Region",
           "value": 1.88
         },
         {
           "id": "mena-sau-makkah-region",
           "slug": "mena-sau-makkah-region",
-          "name": "Saudi Arabia \u00b7 Makkah Region",
+          "name": "Saudi Arabia · Makkah Region",
           "value": 1.79
         },
         {
           "id": "mena-mar-oriental",
           "slug": "mena-mar-oriental",
-          "name": "Morocco \u00b7 Oriental",
+          "name": "Morocco · Oriental",
           "value": 1.73
         },
         {
           "id": "mena-mar-souss-massa",
           "slug": "mena-mar-souss-massa",
-          "name": "Morocco \u00b7 Souss-Massa",
+          "name": "Morocco · Souss-Massa",
           "value": 1.86
         },
         {
           "id": "mena-mar-guelmim-oued-noun",
           "slug": "mena-mar-guelmim-oued-noun",
-          "name": "Morocco \u00b7 Guelmim-Oued Noun",
+          "name": "Morocco · Guelmim-Oued Noun",
           "value": 1.89
         },
         {
           "id": "mena-mar-casablanca-settat",
           "slug": "mena-mar-casablanca-settat",
-          "name": "Morocco \u00b7 Casablanca-Settat",
+          "name": "Morocco · Casablanca-Settat",
           "value": 1.9
         },
         {
           "id": "mena-mar-rabat-sale-kenitra",
           "slug": "mena-mar-rabat-sale-kenitra",
-          "name": "Morocco \u00b7 Rabat-Sal\u00e9-Kenitra",
+          "name": "Morocco · Rabat-Salé-Kenitra",
           "value": 1.91
         },
         {
           "id": "mena-mar-beni-mellal-khenifra",
           "slug": "mena-mar-beni-mellal-khenifra",
-          "name": "Morocco \u00b7 B\u00e9ni Mellal-Kh\u00e9nifra",
+          "name": "Morocco · Béni Mellal-Khénifra",
           "value": 1.95
         },
         {
           "id": "mena-mar-tangier-tetouan-al-hoceima",
           "slug": "mena-mar-tangier-tetouan-al-hoceima",
-          "name": "Morocco \u00b7 Tangier-Tetouan-Al Hoceima",
+          "name": "Morocco · Tangier-Tetouan-Al Hoceima",
           "value": 2.01
         },
         {
           "id": "mena-mar-fez-meknes",
           "slug": "mena-mar-fez-meknes",
-          "name": "Morocco \u00b7 Fez-Meknes",
+          "name": "Morocco · Fez-Meknes",
           "value": 2.02
         },
         {
           "id": "mena-mar-marrakech-safi",
           "slug": "mena-mar-marrakech-safi",
-          "name": "Morocco \u00b7 Marrakech-Safi",
+          "name": "Morocco · Marrakech-Safi",
           "value": 2.13
         },
         {
           "id": "mena-mar-laayoune-sakia-el-hamra",
           "slug": "mena-mar-laayoune-sakia-el-hamra",
-          "name": "Morocco \u00b7 La\u00e2youne-Sakia El Hamra",
+          "name": "Morocco · Laâyoune-Sakia El Hamra",
           "value": 2.17
         },
         {
           "id": "mena-mar-dakhla-oued-ed-dahab",
           "slug": "mena-mar-dakhla-oued-ed-dahab",
-          "name": "Morocco \u00b7 Dakhla-Oued Ed-Dahab",
+          "name": "Morocco · Dakhla-Oued Ed-Dahab",
           "value": 2.25
         },
         {
           "id": "mena-mar-draa-tafilalet",
           "slug": "mena-mar-draa-tafilalet",
-          "name": "Morocco \u00b7 Dr\u00e2a-Tafilalet",
+          "name": "Morocco · Drâa-Tafilalet",
           "value": 2.35
         },
         {
           "id": "mena-yem-ibb-governorate",
           "slug": "mena-yem-ibb-governorate",
-          "name": "Yemen \u00b7 Ibb Governorate",
+          "name": "Yemen · Ibb Governorate",
           "value": 4.8
         },
         {
           "id": "mena-yem-abyan-governorate",
           "slug": "mena-yem-abyan-governorate",
-          "name": "Yemen \u00b7 Abyan Governorate",
+          "name": "Yemen · Abyan Governorate",
           "value": 4.0
         },
         {
           "id": "mena-yem-san-a",
           "slug": "mena-yem-san-a",
-          "name": "Yemen \u00b7 San\u02bfa\u02be",
+          "name": "Yemen · Sanʿaʾ",
           "value": 3.1
         },
         {
           "id": "mena-yem-al-bayda-governorate",
           "slug": "mena-yem-al-bayda-governorate",
-          "name": "Yemen \u00b7 Al Bayda' Governorate",
+          "name": "Yemen · Al Bayda' Governorate",
           "value": 3.9
         },
         {
           "id": "mena-yem-ta-izz-governorate",
           "slug": "mena-yem-ta-izz-governorate",
-          "name": "Yemen \u00b7 Ta'izz Governorate",
+          "name": "Yemen · Ta'izz Governorate",
           "value": 4.0
         },
         {
           "id": "mena-yem-al-jawf-governorate",
           "slug": "mena-yem-al-jawf-governorate",
-          "name": "Yemen \u00b7 Al Jawf Governorate",
+          "name": "Yemen · Al Jawf Governorate",
           "value": 5.8
         },
         {
           "id": "mena-yem-hajjah-governorate",
           "slug": "mena-yem-hajjah-governorate",
-          "name": "Yemen \u00b7 Hajjah Governorate",
+          "name": "Yemen · Hajjah Governorate",
           "value": 5.5
         },
         {
           "id": "mena-yem-al-hudaydah-governorate",
           "slug": "mena-yem-al-hudaydah-governorate",
-          "name": "Yemen \u00b7 Al Hudaydah Governorate",
+          "name": "Yemen · Al Hudaydah Governorate",
           "value": 4.4
         },
         {
           "id": "mena-yem-hadhramaut",
           "slug": "mena-yem-hadhramaut",
-          "name": "Yemen \u00b7 Hadhramaut",
+          "name": "Yemen · Hadhramaut",
           "value": 3.4
         },
         {
           "id": "mena-yem-dhamar-governorate",
           "slug": "mena-yem-dhamar-governorate",
-          "name": "Yemen \u00b7 Dhamar Governorate",
+          "name": "Yemen · Dhamar Governorate",
           "value": 6.2
         },
         {
           "id": "mena-yem-shabwah-governorate",
           "slug": "mena-yem-shabwah-governorate",
-          "name": "Yemen \u00b7 Shabwah Governorate",
+          "name": "Yemen · Shabwah Governorate",
           "value": 4.0
         },
         {
           "id": "mena-yem-sa-dah-governorate",
           "slug": "mena-yem-sa-dah-governorate",
-          "name": "Yemen \u00b7 Sa'dah Governorate",
+          "name": "Yemen · Sa'dah Governorate",
           "value": 4.0
         },
         {
           "id": "mena-yem-san-a-governorate",
           "slug": "mena-yem-san-a-governorate",
-          "name": "Yemen \u00b7 San\u02bfa\u02be Governorate",
+          "name": "Yemen · Sanʿaʾ Governorate",
           "value": 4.9
         },
         {
           "id": "mena-yem-adan-governorate",
           "slug": "mena-yem-adan-governorate",
-          "name": "Yemen \u00b7 \u2018Adan Governorate",
+          "name": "Yemen · ‘Adan Governorate",
           "value": 2.9
         },
         {
           "id": "mena-yem-lahij-governorate",
           "slug": "mena-yem-lahij-governorate",
-          "name": "Yemen \u00b7 Lahij Governorate",
+          "name": "Yemen · Lahij Governorate",
           "value": 4.5
         },
         {
           "id": "mena-yem-ma-rib-governorate",
           "slug": "mena-yem-ma-rib-governorate",
-          "name": "Yemen \u00b7 Ma'rib Governorate",
+          "name": "Yemen · Ma'rib Governorate",
           "value": 4.7
         },
         {
           "id": "mena-yem-al-mahwit-governorate",
           "slug": "mena-yem-al-mahwit-governorate",
-          "name": "Yemen \u00b7 Al Mahwit Governorate",
+          "name": "Yemen · Al Mahwit Governorate",
           "value": 5.8
         },
         {
           "id": "mena-yem-al-mahrah-governorate",
           "slug": "mena-yem-al-mahrah-governorate",
-          "name": "Yemen \u00b7 Al Mahrah Governorate",
+          "name": "Yemen · Al Mahrah Governorate",
           "value": 4.3
         },
         {
           "id": "mena-yem-amran-governorate",
           "slug": "mena-yem-amran-governorate",
-          "name": "Yemen \u00b7 'Amran Governorate",
+          "name": "Yemen · 'Amran Governorate",
           "value": 6.1
         },
         {
           "id": "mena-yem-ad-dali-governorate",
           "slug": "mena-yem-ad-dali-governorate",
-          "name": "Yemen \u00b7 Ad Dali' Governorate",
+          "name": "Yemen · Ad Dali' Governorate",
           "value": 4.5
         },
         {
           "id": "mena-yem-raymah-governorate",
           "slug": "mena-yem-raymah-governorate",
-          "name": "Yemen \u00b7 Raymah Governorate",
+          "name": "Yemen · Raymah Governorate",
           "value": 5.9
         },
         {
           "id": "mena-jor-amman",
           "slug": "mena-jor-amman",
-          "name": "Jordan \u00b7 Amman",
+          "name": "Jordan · Amman",
           "value": 2.4
         },
         {
           "id": "mena-jor-balqa",
           "slug": "mena-jor-balqa",
-          "name": "Jordan \u00b7 Balqa",
+          "name": "Jordan · Balqa",
           "value": 2.0
         },
         {
           "id": "mena-jor-zarqa",
           "slug": "mena-jor-zarqa",
-          "name": "Jordan \u00b7 Zarqa",
+          "name": "Jordan · Zarqa",
           "value": 3.0
         },
         {
           "id": "mena-jor-madaba",
           "slug": "mena-jor-madaba",
-          "name": "Jordan \u00b7 Madaba",
+          "name": "Jordan · Madaba",
           "value": 2.2
         },
         {
           "id": "mena-jor-irbid",
           "slug": "mena-jor-irbid",
-          "name": "Jordan \u00b7 Irbid",
+          "name": "Jordan · Irbid",
           "value": 2.9
         },
         {
           "id": "mena-jor-mafraq",
           "slug": "mena-jor-mafraq",
-          "name": "Jordan \u00b7 Mafraq",
+          "name": "Jordan · Mafraq",
           "value": 3.1
         },
         {
           "id": "mena-jor-jerash",
           "slug": "mena-jor-jerash",
-          "name": "Jordan \u00b7 Jerash",
+          "name": "Jordan · Jerash",
           "value": 3.0
         },
         {
           "id": "mena-jor-ajloun",
           "slug": "mena-jor-ajloun",
-          "name": "Jordan \u00b7 Ajloun",
+          "name": "Jordan · Ajloun",
           "value": 3.1
         },
         {
           "id": "mena-jor-karak",
           "slug": "mena-jor-karak",
-          "name": "Jordan \u00b7 Karak",
+          "name": "Jordan · Karak",
           "value": 2.3
         },
         {
           "id": "mena-jor-tafilah",
           "slug": "mena-jor-tafilah",
-          "name": "Jordan \u00b7 Tafilah",
+          "name": "Jordan · Tafilah",
           "value": 2.4
         },
         {
           "id": "mena-jor-ma-an",
           "slug": "mena-jor-ma-an",
-          "name": "Jordan \u00b7 Ma'an",
+          "name": "Jordan · Ma'an",
           "value": 2.4
         },
         {
           "id": "mena-jor-aqaba",
           "slug": "mena-jor-aqaba",
-          "name": "Jordan \u00b7 Aqaba",
+          "name": "Jordan · Aqaba",
           "value": 1.9
         },
         {
           "id": "mena-tur-istanbul",
           "slug": "mena-tur-istanbul",
-          "name": "T\u00fcrkiye \u00b7 \u0130stanbul",
+          "name": "Türkiye · İstanbul",
           "value": 1.2
         },
         {
           "id": "mena-tur-tekirdag-edirne-k-rklareli",
           "slug": "mena-tur-tekirdag-edirne-k-rklareli",
-          "name": "T\u00fcrkiye \u00b7 Tekirda\u011f, Edirne, K\u0131rklareli",
+          "name": "Türkiye · Tekirdağ, Edirne, Kırklareli",
           "value": 1.34
         },
         {
           "id": "mena-tur-bal-kesir-canakkale",
           "slug": "mena-tur-bal-kesir-canakkale",
-          "name": "T\u00fcrkiye \u00b7 Bal\u0131kesir, \u00c7anakkale",
+          "name": "Türkiye · Balıkesir, Çanakkale",
           "value": 1.29
         },
         {
           "id": "mena-tur-izmir",
           "slug": "mena-tur-izmir",
-          "name": "T\u00fcrkiye \u00b7 \u0130zmir",
+          "name": "Türkiye · İzmir",
           "value": 1.17
         },
         {
           "id": "mena-tur-ayd-n-denizli-mugla",
           "slug": "mena-tur-ayd-n-denizli-mugla",
-          "name": "T\u00fcrkiye \u00b7 Ayd\u0131n, Denizli, Mu\u011fla",
+          "name": "Türkiye · Aydın, Denizli, Muğla",
           "value": 1.32
         },
         {
           "id": "mena-tur-manisa-afyonkarahisar-kutahya-usak",
           "slug": "mena-tur-manisa-afyonkarahisar-kutahya-usak",
-          "name": "T\u00fcrkiye \u00b7 Manisa, Afyonkarahisar, K\u00fctahya, U\u015fak",
+          "name": "Türkiye · Manisa, Afyonkarahisar, Kütahya, Uşak",
           "value": 1.4
         },
         {
           "id": "mena-tur-bursa-eskisehir-bilecik",
           "slug": "mena-tur-bursa-eskisehir-bilecik",
-          "name": "T\u00fcrkiye \u00b7 Bursa, Eski\u015fehir, Bilecik",
+          "name": "Türkiye · Bursa, Eskişehir, Bilecik",
           "value": 1.32
         },
         {
           "id": "mena-tur-kocaeli-sakarya-duzce-bolu-yalova",
           "slug": "mena-tur-kocaeli-sakarya-duzce-bolu-yalova",
-          "name": "T\u00fcrkiye \u00b7 Kocaeli, Sakarya, D\u00fczce, Bolu, Yalova",
+          "name": "Türkiye · Kocaeli, Sakarya, Düzce, Bolu, Yalova",
           "value": 1.41
         },
         {
           "id": "mena-tur-ankara",
           "slug": "mena-tur-ankara",
-          "name": "T\u00fcrkiye \u00b7 Ankara",
+          "name": "Türkiye · Ankara",
           "value": 1.16
         },
         {
           "id": "mena-tur-konya-karaman",
           "slug": "mena-tur-konya-karaman",
-          "name": "T\u00fcrkiye \u00b7 Konya, Karaman",
+          "name": "Türkiye · Konya, Karaman",
           "value": 1.58
         },
         {
           "id": "mena-tur-antalya-isparta-burdur",
           "slug": "mena-tur-antalya-isparta-burdur",
-          "name": "T\u00fcrkiye \u00b7 Antalya, Isparta, Burdur",
+          "name": "Türkiye · Antalya, Isparta, Burdur",
           "value": 1.26
         },
         {
           "id": "mena-tur-adana-mersin",
           "slug": "mena-tur-adana-mersin",
-          "name": "T\u00fcrkiye \u00b7 Adana, Mersin",
+          "name": "Türkiye · Adana, Mersin",
           "value": 1.59
         },
         {
           "id": "mena-tur-hatay-kahramanmaras-osmaniye",
           "slug": "mena-tur-hatay-kahramanmaras-osmaniye",
-          "name": "T\u00fcrkiye \u00b7 Hatay, Kahramanmara\u015f, Osmaniye",
+          "name": "Türkiye · Hatay, Kahramanmaraş, Osmaniye",
           "value": 1.81
         },
         {
           "id": "mena-tur-k-r-kkale-aksaray-nigde-nevsehir-k-rsehir",
           "slug": "mena-tur-k-r-kkale-aksaray-nigde-nevsehir-k-rsehir",
-          "name": "T\u00fcrkiye \u00b7 K\u0131r\u0131kkale, Aksaray, Ni\u011fde, Nev\u015fehir, K\u0131r\u015fehir",
+          "name": "Türkiye · Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir",
           "value": 1.38
         },
         {
           "id": "mena-tur-kayseri-sivas-yozgat",
           "slug": "mena-tur-kayseri-sivas-yozgat",
-          "name": "T\u00fcrkiye \u00b7 Kayseri, Sivas, Yozgat",
+          "name": "Türkiye · Kayseri, Sivas, Yozgat",
           "value": 1.41
         },
         {
           "id": "mena-tur-zonguldak-karabuk-bart-n",
           "slug": "mena-tur-zonguldak-karabuk-bart-n",
-          "name": "T\u00fcrkiye \u00b7 Zonguldak, Karab\u00fck, Bart\u0131n",
+          "name": "Türkiye · Zonguldak, Karabük, Bartın",
           "value": 1.12
         },
         {
           "id": "mena-tur-kastamonu-cank-r-sinop",
           "slug": "mena-tur-kastamonu-cank-r-sinop",
-          "name": "T\u00fcrkiye \u00b7 Kastamonu, \u00c7ank\u0131r\u0131, Sinop",
+          "name": "Türkiye · Kastamonu, Çankırı, Sinop",
           "value": 1.29
         },
         {
           "id": "mena-tur-samsun-tokat-corum-amasya",
           "slug": "mena-tur-samsun-tokat-corum-amasya",
-          "name": "T\u00fcrkiye \u00b7 Samsun, Tokat, \u00c7orum, Amasya",
+          "name": "Türkiye · Samsun, Tokat, Çorum, Amasya",
           "value": 1.3
         },
         {
           "id": "mena-tur-trabzon-ordu-giresun-rize-artvin-gumushane",
           "slug": "mena-tur-trabzon-ordu-giresun-rize-artvin-gumushane",
-          "name": "T\u00fcrkiye \u00b7 Trabzon, Ordu, Giresun, Rize, Artvin, G\u00fcm\u00fc\u015fhane",
+          "name": "Türkiye · Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane",
           "value": 1.28
         },
         {
           "id": "mena-tur-erzurum-erzincan-bayburt",
           "slug": "mena-tur-erzurum-erzincan-bayburt",
-          "name": "T\u00fcrkiye \u00b7 Erzurum, Erzincan, Bayburt",
+          "name": "Türkiye · Erzurum, Erzincan, Bayburt",
           "value": 1.45
         },
         {
           "id": "mena-tur-agr-kars-igd-r-ardahan",
           "slug": "mena-tur-agr-kars-igd-r-ardahan",
-          "name": "T\u00fcrkiye \u00b7 A\u011fr\u0131, Kars, I\u011fd\u0131r, Ardahan",
+          "name": "Türkiye · Ağrı, Kars, Iğdır, Ardahan",
           "value": 1.87
         },
         {
           "id": "mena-tur-malatya-elaz-g-bingol-tunceli",
           "slug": "mena-tur-malatya-elaz-g-bingol-tunceli",
-          "name": "T\u00fcrkiye \u00b7 Malatya, Elaz\u0131\u011f, Bing\u00f6l, Tunceli",
+          "name": "Türkiye · Malatya, Elazığ, Bingöl, Tunceli",
           "value": 1.46
         },
         {
           "id": "mena-tur-van-mus-bitlis-hakkari",
           "slug": "mena-tur-van-mus-bitlis-hakkari",
-          "name": "T\u00fcrkiye \u00b7 Van, Mu\u015f, Bitlis, Hakkari",
+          "name": "Türkiye · Van, Muş, Bitlis, Hakkari",
           "value": 2.03
         },
         {
           "id": "mena-tur-gaziantep-ad-yaman-kilis",
           "slug": "mena-tur-gaziantep-ad-yaman-kilis",
-          "name": "T\u00fcrkiye \u00b7 Gaziantep, Ad\u0131yaman, Kilis",
+          "name": "Türkiye · Gaziantep, Adıyaman, Kilis",
           "value": 2.08
         },
         {
           "id": "mena-tur-sanl-urfa-diyarbak-r",
           "slug": "mena-tur-sanl-urfa-diyarbak-r",
-          "name": "T\u00fcrkiye \u00b7 \u015eanl\u0131urfa, Diyarbak\u0131r",
+          "name": "Türkiye · Şanlıurfa, Diyarbakır",
           "value": 2.79
         },
         {
           "id": "mena-tur-mardin-batman-s-rnak-siirt",
           "slug": "mena-tur-mardin-batman-s-rnak-siirt",
-          "name": "T\u00fcrkiye \u00b7 Mardin, Batman, \u015e\u0131rnak, Siirt",
+          "name": "Türkiye · Mardin, Batman, Şırnak, Siirt",
           "value": 2.32
         },
         {
@@ -9256,10 +9256,10 @@
       "kind": "province",
       "year": 2024,
       "national": null,
-      "source": "Eurostat demo_r_find3 \u2014 total fertility rate by NUTS 2 region, latest year. United Kingdom 2024: ONS Births in England and Wales birth registrations Table 1 (ITL 1 and Wales); National Records of Scotland Births Time Series Table 8; NISRA Registrar General Annual Report 2024 Table 3.13 (TFR from age-specific rates). National World Bank WDI SP.DYN.TFRT.IN for Bosnia and Herzegovina, Ukraine, Belarus, Moldova and European Russia. Kosovo 2024 TFR from the Kosovo Agency of Statistics vital statistics series (1.95).",
+      "source": "Eurostat demo_r_find3 — total fertility rate by NUTS 2 region, latest year. United Kingdom 2024: ONS Births in England and Wales birth registrations Table 1 (ITL 1 and Wales); National Records of Scotland Births Time Series Table 8; NISRA Registrar General Annual Report 2024 Table 3.13 (TFR from age-specific rates). National World Bank WDI SP.DYN.TFRT.IN for Bosnia and Herzegovina, Ukraine, Belarus, Moldova and European Russia. Kosovo 2024 TFR from the Kosovo Agency of Statistics vital statistics series (1.95).",
       "sourceUrl": "https://ec.europa.eu/eurostat/databrowser/view/demo_r_find3",
       "geoUrl": "/geo/maps/eu-prov-tfr.json",
-      "note": "Eurostat NUTS 2 total fertility rate, latest year per region (almost all 2024). United Kingdom is ITL 1 / countries for 2024: ONS birth registrations for England and Wales, National Records of Scotland, and NISRA age-specific rates for Northern Ireland. Eurostat stopped UK NUTS-2 TFR after 2018. French outermost regions, the Azores, Madeira and the Canaries are on the layer but the default frame is continental Europe. Bosnia, Ukraine, Belarus, Moldova and European Russia (west of 60\u00b0E) have no NUTS-2 TFR \u2014 those polygons are national World Bank TFR on GISCO 10m outlines. Kosovo is GISCO NUTS XK00 with the 2024 ASK total fertility rate (1.95). Siberia is clipped so it does not pull the map. Use the Countries tab for EU member states as single polygons.",
+      "note": "Eurostat NUTS 2 total fertility rate, latest year per region (almost all 2024). United Kingdom is ITL 1 / countries for 2024: ONS birth registrations for England and Wales, National Records of Scotland, and NISRA age-specific rates for Northern Ireland. Eurostat stopped UK NUTS-2 TFR after 2018. French outermost regions, the Azores, Madeira and the Canaries are on the layer but the default frame is continental Europe. Bosnia, Ukraine, Belarus, Moldova and European Russia (west of 60°E) have no NUTS-2 TFR — those polygons are national World Bank TFR on GISCO 10m outlines. Kosovo is GISCO NUTS XK00 with the 2024 ASK total fertility rate (1.95). Siberia is clipped so it does not pull the map. Use the Countries tab for EU member states as single polygons.",
       "tab": "Provinces",
       "regions": [
         {
@@ -9301,1807 +9301,1807 @@
         {
           "id": "eu-be10",
           "slug": "eu-be10",
-          "name": "Belgium \u00b7 R\u00e9gion de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",
+          "name": "Belgium · Région de Bruxelles-Capitale/ Brussels Hoofdstedelijk Gewest",
           "value": 1.36
         },
         {
           "id": "eu-be21",
           "slug": "eu-be21",
-          "name": "Belgium \u00b7 Prov. Antwerpen",
+          "name": "Belgium · Prov. Antwerpen",
           "value": 1.55
         },
         {
           "id": "eu-be22",
           "slug": "eu-be22",
-          "name": "Belgium \u00b7 Prov. Limburg (BE)",
+          "name": "Belgium · Prov. Limburg (BE)",
           "value": 1.4
         },
         {
           "id": "eu-be23",
           "slug": "eu-be23",
-          "name": "Belgium \u00b7 Prov. Oost-Vlaanderen",
+          "name": "Belgium · Prov. Oost-Vlaanderen",
           "value": 1.45
         },
         {
           "id": "eu-be24",
           "slug": "eu-be24",
-          "name": "Belgium \u00b7 Prov. Vlaams-Brabant",
+          "name": "Belgium · Prov. Vlaams-Brabant",
           "value": 1.46
         },
         {
           "id": "eu-be25",
           "slug": "eu-be25",
-          "name": "Belgium \u00b7 Prov. West-Vlaanderen",
+          "name": "Belgium · Prov. West-Vlaanderen",
           "value": 1.5
         },
         {
           "id": "eu-be31",
           "slug": "eu-be31",
-          "name": "Belgium \u00b7 Prov. Brabant wallon",
+          "name": "Belgium · Prov. Brabant wallon",
           "value": 1.33
         },
         {
           "id": "eu-be32",
           "slug": "eu-be32",
-          "name": "Belgium \u00b7 Prov. Hainaut",
+          "name": "Belgium · Prov. Hainaut",
           "value": 1.48
         },
         {
           "id": "eu-be33",
           "slug": "eu-be33",
-          "name": "Belgium \u00b7 Prov. Li\u00e8ge",
+          "name": "Belgium · Prov. Liège",
           "value": 1.42
         },
         {
           "id": "eu-be34",
           "slug": "eu-be34",
-          "name": "Belgium \u00b7 Prov. Luxembourg (BE)",
+          "name": "Belgium · Prov. Luxembourg (BE)",
           "value": 1.51
         },
         {
           "id": "eu-be35",
           "slug": "eu-be35",
-          "name": "Belgium \u00b7 Prov. Namur",
+          "name": "Belgium · Prov. Namur",
           "value": 1.37
         },
         {
           "id": "eu-bg31",
           "slug": "eu-bg31",
-          "name": "Bulgaria \u00b7 \u0421\u0435\u0432\u0435\u0440\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "name": "Bulgaria · Северозападен",
           "value": 1.9
         },
         {
           "id": "eu-bg32",
           "slug": "eu-bg32",
-          "name": "Bulgaria \u00b7 \u0421\u0435\u0432\u0435\u0440\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "name": "Bulgaria · Северен централен",
           "value": 1.61
         },
         {
           "id": "eu-bg33",
           "slug": "eu-bg33",
-          "name": "Bulgaria \u00b7 \u0421\u0435\u0432\u0435\u0440\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "name": "Bulgaria · Североизточен",
           "value": 1.62
         },
         {
           "id": "eu-bg34",
           "slug": "eu-bg34",
-          "name": "Bulgaria \u00b7 \u042e\u0433\u043e\u0438\u0437\u0442\u043e\u0447\u0435\u043d",
+          "name": "Bulgaria · Югоизточен",
           "value": 2.02
         },
         {
           "id": "eu-bg41",
           "slug": "eu-bg41",
-          "name": "Bulgaria \u00b7 \u042e\u0433\u043e\u0437\u0430\u043f\u0430\u0434\u0435\u043d",
+          "name": "Bulgaria · Югозападен",
           "value": 1.55
         },
         {
           "id": "eu-bg42",
           "slug": "eu-bg42",
-          "name": "Bulgaria \u00b7 \u042e\u0436\u0435\u043d \u0446\u0435\u043d\u0442\u0440\u0430\u043b\u0435\u043d",
+          "name": "Bulgaria · Южен централен",
           "value": 1.74
         },
         {
           "id": "eu-cz01",
           "slug": "eu-cz01",
-          "name": "Czechia \u00b7 Praha",
+          "name": "Czechia · Praha",
           "value": 1.26
         },
         {
           "id": "eu-cz02",
           "slug": "eu-cz02",
-          "name": "Czechia \u00b7 St\u0159edn\u00ed \u010cechy",
+          "name": "Czechia · Střední Čechy",
           "value": 1.35
         },
         {
           "id": "eu-cz03",
           "slug": "eu-cz03",
-          "name": "Czechia \u00b7 Jihoz\u00e1pad",
+          "name": "Czechia · Jihozápad",
           "value": 1.37
         },
         {
           "id": "eu-cz04",
           "slug": "eu-cz04",
-          "name": "Czechia \u00b7 Severoz\u00e1pad",
+          "name": "Czechia · Severozápad",
           "value": 1.33
         },
         {
           "id": "eu-cz05",
           "slug": "eu-cz05",
-          "name": "Czechia \u00b7 Severov\u00fdchod",
+          "name": "Czechia · Severovýchod",
           "value": 1.38
         },
         {
           "id": "eu-cz06",
           "slug": "eu-cz06",
-          "name": "Czechia \u00b7 Jihov\u00fdchod",
+          "name": "Czechia · Jihovýchod",
           "value": 1.41
         },
         {
           "id": "eu-cz07",
           "slug": "eu-cz07",
-          "name": "Czechia \u00b7 St\u0159edn\u00ed Morava",
+          "name": "Czechia · Střední Morava",
           "value": 1.44
         },
         {
           "id": "eu-cz08",
           "slug": "eu-cz08",
-          "name": "Czechia \u00b7 Moravskoslezsko",
+          "name": "Czechia · Moravskoslezsko",
           "value": 1.33
         },
         {
           "id": "eu-dk01",
           "slug": "eu-dk01",
-          "name": "Denmark \u00b7 Hovedstaden",
+          "name": "Denmark · Hovedstaden",
           "value": 1.41
         },
         {
           "id": "eu-dk02",
           "slug": "eu-dk02",
-          "name": "Denmark \u00b7 Sj\u00e6lland",
+          "name": "Denmark · Sjælland",
           "value": 1.54
         },
         {
           "id": "eu-dk03",
           "slug": "eu-dk03",
-          "name": "Denmark \u00b7 Syddanmark",
+          "name": "Denmark · Syddanmark",
           "value": 1.53
         },
         {
           "id": "eu-dk04",
           "slug": "eu-dk04",
-          "name": "Denmark \u00b7 Midtjylland",
+          "name": "Denmark · Midtjylland",
           "value": 1.54
         },
         {
           "id": "eu-dk05",
           "slug": "eu-dk05",
-          "name": "Denmark \u00b7 Nordjylland",
+          "name": "Denmark · Nordjylland",
           "value": 1.48
         },
         {
           "id": "eu-de11",
           "slug": "eu-de11",
-          "name": "Germany \u00b7 Stuttgart",
+          "name": "Germany · Stuttgart",
           "value": 1.43
         },
         {
           "id": "eu-de12",
           "slug": "eu-de12",
-          "name": "Germany \u00b7 Karlsruhe",
+          "name": "Germany · Karlsruhe",
           "value": 1.33
         },
         {
           "id": "eu-de13",
           "slug": "eu-de13",
-          "name": "Germany \u00b7 Freiburg",
+          "name": "Germany · Freiburg",
           "value": 1.4
         },
         {
           "id": "eu-de14",
           "slug": "eu-de14",
-          "name": "Germany \u00b7 T\u00fcbingen",
+          "name": "Germany · Tübingen",
           "value": 1.44
         },
         {
           "id": "eu-de21",
           "slug": "eu-de21",
-          "name": "Germany \u00b7 Oberbayern",
+          "name": "Germany · Oberbayern",
           "value": 1.35
         },
         {
           "id": "eu-de22",
           "slug": "eu-de22",
-          "name": "Germany \u00b7 Niederbayern",
+          "name": "Germany · Niederbayern",
           "value": 1.46
         },
         {
           "id": "eu-de23",
           "slug": "eu-de23",
-          "name": "Germany \u00b7 Oberpfalz",
+          "name": "Germany · Oberpfalz",
           "value": 1.46
         },
         {
           "id": "eu-de24",
           "slug": "eu-de24",
-          "name": "Germany \u00b7 Oberfranken",
+          "name": "Germany · Oberfranken",
           "value": 1.36
         },
         {
           "id": "eu-de25",
           "slug": "eu-de25",
-          "name": "Germany \u00b7 Mittelfranken",
+          "name": "Germany · Mittelfranken",
           "value": 1.38
         },
         {
           "id": "eu-de26",
           "slug": "eu-de26",
-          "name": "Germany \u00b7 Unterfranken",
+          "name": "Germany · Unterfranken",
           "value": 1.39
         },
         {
           "id": "eu-de27",
           "slug": "eu-de27",
-          "name": "Germany \u00b7 Schwaben",
+          "name": "Germany · Schwaben",
           "value": 1.48
         },
         {
           "id": "eu-de30",
           "slug": "eu-de30",
-          "name": "Germany \u00b7 Berlin",
+          "name": "Germany · Berlin",
           "value": 1.22
         },
         {
           "id": "eu-de40",
           "slug": "eu-de40",
-          "name": "Germany \u00b7 Brandenburg",
+          "name": "Germany · Brandenburg",
           "value": 1.32
         },
         {
           "id": "eu-de50",
           "slug": "eu-de50",
-          "name": "Germany \u00b7 Bremen",
+          "name": "Germany · Bremen",
           "value": 1.35
         },
         {
           "id": "eu-de60",
           "slug": "eu-de60",
-          "name": "Germany \u00b7 Hamburg",
+          "name": "Germany · Hamburg",
           "value": 1.24
         },
         {
           "id": "eu-de71",
           "slug": "eu-de71",
-          "name": "Germany \u00b7 Darmstadt",
+          "name": "Germany · Darmstadt",
           "value": 1.37
         },
         {
           "id": "eu-de72",
           "slug": "eu-de72",
-          "name": "Germany \u00b7 Gie\u00dfen",
+          "name": "Germany · Gießen",
           "value": 1.35
         },
         {
           "id": "eu-de73",
           "slug": "eu-de73",
-          "name": "Germany \u00b7 Kassel",
+          "name": "Germany · Kassel",
           "value": 1.42
         },
         {
           "id": "eu-de80",
           "slug": "eu-de80",
-          "name": "Germany \u00b7 Mecklenburg-Vorpommern",
+          "name": "Germany · Mecklenburg-Vorpommern",
           "value": 1.28
         },
         {
           "id": "eu-de91",
           "slug": "eu-de91",
-          "name": "Germany \u00b7 Braunschweig",
+          "name": "Germany · Braunschweig",
           "value": 1.36
         },
         {
           "id": "eu-de92",
           "slug": "eu-de92",
-          "name": "Germany \u00b7 Hannover",
+          "name": "Germany · Hannover",
           "value": 1.39
         },
         {
           "id": "eu-de93",
           "slug": "eu-de93",
-          "name": "Germany \u00b7 L\u00fcneburg",
+          "name": "Germany · Lüneburg",
           "value": 1.49
         },
         {
           "id": "eu-de94",
           "slug": "eu-de94",
-          "name": "Germany \u00b7 Weser-Ems",
+          "name": "Germany · Weser-Ems",
           "value": 1.46
         },
         {
           "id": "eu-dea1",
           "slug": "eu-dea1",
-          "name": "Germany \u00b7 D\u00fcsseldorf",
+          "name": "Germany · Düsseldorf",
           "value": 1.37
         },
         {
           "id": "eu-dea2",
           "slug": "eu-dea2",
-          "name": "Germany \u00b7 K\u00f6ln",
+          "name": "Germany · Köln",
           "value": 1.31
         },
         {
           "id": "eu-dea3",
           "slug": "eu-dea3",
-          "name": "Germany \u00b7 M\u00fcnster",
+          "name": "Germany · Münster",
           "value": 1.47
         },
         {
           "id": "eu-dea4",
           "slug": "eu-dea4",
-          "name": "Germany \u00b7 Detmold",
+          "name": "Germany · Detmold",
           "value": 1.5
         },
         {
           "id": "eu-dea5",
           "slug": "eu-dea5",
-          "name": "Germany \u00b7 Arnsberg",
+          "name": "Germany · Arnsberg",
           "value": 1.41
         },
         {
           "id": "eu-deb1",
           "slug": "eu-deb1",
-          "name": "Germany \u00b7 Koblenz",
+          "name": "Germany · Koblenz",
           "value": 1.41
         },
         {
           "id": "eu-deb2",
           "slug": "eu-deb2",
-          "name": "Germany \u00b7 Trier",
+          "name": "Germany · Trier",
           "value": 1.32
         },
         {
           "id": "eu-deb3",
           "slug": "eu-deb3",
-          "name": "Germany \u00b7 Rheinhessen-Pfalz",
+          "name": "Germany · Rheinhessen-Pfalz",
           "value": 1.43
         },
         {
           "id": "eu-dec0",
           "slug": "eu-dec0",
-          "name": "Germany \u00b7 Saarland",
+          "name": "Germany · Saarland",
           "value": 1.32
         },
         {
           "id": "eu-ded2",
           "slug": "eu-ded2",
-          "name": "Germany \u00b7 Dresden",
+          "name": "Germany · Dresden",
           "value": 1.23
         },
         {
           "id": "eu-ded4",
           "slug": "eu-ded4",
-          "name": "Germany \u00b7 Chemnitz",
+          "name": "Germany · Chemnitz",
           "value": 1.38
         },
         {
           "id": "eu-ded5",
           "slug": "eu-ded5",
-          "name": "Germany \u00b7 Leipzig",
+          "name": "Germany · Leipzig",
           "value": 1.07
         },
         {
           "id": "eu-dee0",
           "slug": "eu-dee0",
-          "name": "Germany \u00b7 Sachsen-Anhalt",
+          "name": "Germany · Sachsen-Anhalt",
           "value": 1.29
         },
         {
           "id": "eu-def0",
           "slug": "eu-def0",
-          "name": "Germany \u00b7 Schleswig-Holstein",
+          "name": "Germany · Schleswig-Holstein",
           "value": 1.32
         },
         {
           "id": "eu-deg0",
           "slug": "eu-deg0",
-          "name": "Germany \u00b7 Th\u00fcringen",
+          "name": "Germany · Thüringen",
           "value": 1.23
         },
         {
           "id": "eu-ee00",
           "slug": "eu-ee00",
-          "name": "Estonia \u00b7 Eesti",
+          "name": "Estonia · Eesti",
           "value": 1.17
         },
         {
           "id": "eu-ie04",
           "slug": "eu-ie04",
-          "name": "Ireland \u00b7 Northern and Western",
+          "name": "Ireland · Northern and Western",
           "value": 1.62
         },
         {
           "id": "eu-ie05",
           "slug": "eu-ie05",
-          "name": "Ireland \u00b7 Southern",
+          "name": "Ireland · Southern",
           "value": 1.5
         },
         {
           "id": "eu-ie06",
           "slug": "eu-ie06",
-          "name": "Ireland \u00b7 Eastern and Midland",
+          "name": "Ireland · Eastern and Midland",
           "value": 1.41
         },
         {
           "id": "eu-el30",
           "slug": "eu-el30",
-          "name": "Greece \u00b7 A\u03c4\u03c4\u03b9\u03ba\u03ae",
+          "name": "Greece · Aττική",
           "value": 1.13
         },
         {
           "id": "eu-el41",
           "slug": "eu-el41",
-          "name": "Greece \u00b7 \u0392\u03cc\u03c1\u03b5\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "name": "Greece · Βόρειο Αιγαίο",
           "value": 1.42
         },
         {
           "id": "eu-el42",
           "slug": "eu-el42",
-          "name": "Greece \u00b7 \u039d\u03cc\u03c4\u03b9\u03bf \u0391\u03b9\u03b3\u03b1\u03af\u03bf",
+          "name": "Greece · Νότιο Αιγαίο",
           "value": 1.69
         },
         {
           "id": "eu-el43",
           "slug": "eu-el43",
-          "name": "Greece \u00b7 \u039a\u03c1\u03ae\u03c4\u03b7",
+          "name": "Greece · Κρήτη",
           "value": 1.5
         },
         {
           "id": "eu-el51",
           "slug": "eu-el51",
-          "name": "Greece \u00b7 A\u03bd\u03b1\u03c4\u03bf\u03bb\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1, \u0398\u03c1\u03ac\u03ba\u03b7",
+          "name": "Greece · Aνατολική Μακεδονία, Θράκη",
           "value": 1.28
         },
         {
           "id": "eu-el52",
           "slug": "eu-el52",
-          "name": "Greece \u00b7 \u039a\u03b5\u03bd\u03c4\u03c1\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "name": "Greece · Κεντρική Μακεδονία",
           "value": 1.18
         },
         {
           "id": "eu-el53",
           "slug": "eu-el53",
-          "name": "Greece \u00b7 \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u039c\u03b1\u03ba\u03b5\u03b4\u03bf\u03bd\u03af\u03b1",
+          "name": "Greece · Δυτική Μακεδονία",
           "value": 1.16
         },
         {
           "id": "eu-el54",
           "slug": "eu-el54",
-          "name": "Greece \u00b7 \u0389\u03c0\u03b5\u03b9\u03c1\u03bf\u03c2",
+          "name": "Greece · Ήπειρος",
           "value": 1.17
         },
         {
           "id": "eu-el61",
           "slug": "eu-el61",
-          "name": "Greece \u00b7 \u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03af\u03b1",
+          "name": "Greece · Θεσσαλία",
           "value": 1.28
         },
         {
           "id": "eu-el62",
           "slug": "eu-el62",
-          "name": "Greece \u00b7 \u0399\u03cc\u03bd\u03b9\u03b1 \u039d\u03b7\u03c3\u03b9\u03ac",
+          "name": "Greece · Ιόνια Νησιά",
           "value": 1.49
         },
         {
           "id": "eu-el63",
           "slug": "eu-el63",
-          "name": "Greece \u00b7 \u0394\u03c5\u03c4\u03b9\u03ba\u03ae \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "name": "Greece · Δυτική Ελλάδα",
           "value": 1.31
         },
         {
           "id": "eu-el64",
           "slug": "eu-el64",
-          "name": "Greece \u00b7 \u03a3\u03c4\u03b5\u03c1\u03b5\u03ac \u0395\u03bb\u03bb\u03ac\u03b4\u03b1",
+          "name": "Greece · Στερεά Ελλάδα",
           "value": 1.22
         },
         {
           "id": "eu-el65",
           "slug": "eu-el65",
-          "name": "Greece \u00b7 \u03a0\u03b5\u03bb\u03bf\u03c0\u03cc\u03bd\u03bd\u03b7\u03c3\u03bf\u03c2",
+          "name": "Greece · Πελοπόννησος",
           "value": 1.36
         },
         {
           "id": "eu-es11",
           "slug": "eu-es11",
-          "name": "Spain \u00b7 Galicia",
+          "name": "Spain · Galicia",
           "value": 0.95
         },
         {
           "id": "eu-es12",
           "slug": "eu-es12",
-          "name": "Spain \u00b7 Principado de Asturias",
+          "name": "Spain · Principado de Asturias",
           "value": 0.94
         },
         {
           "id": "eu-es13",
           "slug": "eu-es13",
-          "name": "Spain \u00b7 Cantabria",
+          "name": "Spain · Cantabria",
           "value": 0.99
         },
         {
           "id": "eu-es21",
           "slug": "eu-es21",
-          "name": "Spain \u00b7 Pa\u00eds Vasco",
+          "name": "Spain · País Vasco",
           "value": 1.1
         },
         {
           "id": "eu-es22",
           "slug": "eu-es22",
-          "name": "Spain \u00b7 Comunidad Foral de Navarra",
+          "name": "Spain · Comunidad Foral de Navarra",
           "value": 1.2
         },
         {
           "id": "eu-es23",
           "slug": "eu-es23",
-          "name": "Spain \u00b7 La Rioja",
+          "name": "Spain · La Rioja",
           "value": 1.16
         },
         {
           "id": "eu-es24",
           "slug": "eu-es24",
-          "name": "Spain \u00b7 Arag\u00f3n",
+          "name": "Spain · Aragón",
           "value": 1.15
         },
         {
           "id": "eu-es30",
           "slug": "eu-es30",
-          "name": "Spain \u00b7 Comunidad de Madrid",
+          "name": "Spain · Comunidad de Madrid",
           "value": 1.09
         },
         {
           "id": "eu-es41",
           "slug": "eu-es41",
-          "name": "Spain \u00b7 Castilla y Le\u00f3n",
+          "name": "Spain · Castilla y León",
           "value": 1.06
         },
         {
           "id": "eu-es42",
           "slug": "eu-es42",
-          "name": "Spain \u00b7 Castilla-La Mancha",
+          "name": "Spain · Castilla-La Mancha",
           "value": 1.19
         },
         {
           "id": "eu-es43",
           "slug": "eu-es43",
-          "name": "Spain \u00b7 Extremadura",
+          "name": "Spain · Extremadura",
           "value": 1.13
         },
         {
           "id": "eu-es51",
           "slug": "eu-es51",
-          "name": "Spain \u00b7 Catalu\u00f1a",
+          "name": "Spain · Cataluña",
           "value": 1.08
         },
         {
           "id": "eu-es52",
           "slug": "eu-es52",
-          "name": "Spain \u00b7 Comunitat Valenciana ",
+          "name": "Spain · Comunitat Valenciana ",
           "value": 1.13
         },
         {
           "id": "eu-es53",
           "slug": "eu-es53",
-          "name": "Spain \u00b7 Illes Balears",
+          "name": "Spain · Illes Balears",
           "value": 1.08
         },
         {
           "id": "eu-es61",
           "slug": "eu-es61",
-          "name": "Spain \u00b7 Andaluc\u00eda",
+          "name": "Spain · Andalucía",
           "value": 1.17
         },
         {
           "id": "eu-es62",
           "slug": "eu-es62",
-          "name": "Spain \u00b7 Regi\u00f3n de Murcia",
+          "name": "Spain · Región de Murcia",
           "value": 1.32
         },
         {
           "id": "eu-es63",
           "slug": "eu-es63",
-          "name": "Spain \u00b7 Ciudad de Ceuta",
+          "name": "Spain · Ciudad de Ceuta",
           "value": 1.25
         },
         {
           "id": "eu-es64",
           "slug": "eu-es64",
-          "name": "Spain \u00b7 Ciudad de Melilla",
+          "name": "Spain · Ciudad de Melilla",
           "value": 1.36
         },
         {
           "id": "eu-es70",
           "slug": "eu-es70",
-          "name": "Spain \u00b7 Canarias",
+          "name": "Spain · Canarias",
           "value": 0.82
         },
         {
           "id": "eu-fr10",
           "slug": "eu-fr10",
-          "name": "France \u00b7 Ile-de-France",
+          "name": "France · Ile-de-France",
           "value": 1.69
         },
         {
           "id": "eu-frb0",
           "slug": "eu-frb0",
-          "name": "France \u00b7 Centre \u2014 Val de Loire",
+          "name": "France · Centre — Val de Loire",
           "value": 1.66
         },
         {
           "id": "eu-frc1",
           "slug": "eu-frc1",
-          "name": "France \u00b7 Bourgogne",
+          "name": "France · Bourgogne",
           "value": 1.49
         },
         {
           "id": "eu-frc2",
           "slug": "eu-frc2",
-          "name": "France \u00b7 Franche-Comt\u00e9",
+          "name": "France · Franche-Comté",
           "value": 1.55
         },
         {
           "id": "eu-frd1",
           "slug": "eu-frd1",
-          "name": "France \u00b7 Basse-Normandie ",
+          "name": "France · Basse-Normandie ",
           "value": 1.54
         },
         {
           "id": "eu-frd2",
           "slug": "eu-frd2",
-          "name": "France \u00b7 Haute-Normandie ",
+          "name": "France · Haute-Normandie ",
           "value": 1.65
         },
         {
           "id": "eu-fre1",
           "slug": "eu-fre1",
-          "name": "France \u00b7 Nord-Pas de Calais",
+          "name": "France · Nord-Pas de Calais",
           "value": 1.62
         },
         {
           "id": "eu-fre2",
           "slug": "eu-fre2",
-          "name": "France \u00b7 Picardie",
+          "name": "France · Picardie",
           "value": 1.68
         },
         {
           "id": "eu-frf1",
           "slug": "eu-frf1",
-          "name": "France \u00b7 Alsace",
+          "name": "France · Alsace",
           "value": 1.44
         },
         {
           "id": "eu-frf2",
           "slug": "eu-frf2",
-          "name": "France \u00b7 Champagne-Ardenne",
+          "name": "France · Champagne-Ardenne",
           "value": 1.54
         },
         {
           "id": "eu-frf3",
           "slug": "eu-frf3",
-          "name": "France \u00b7 Lorraine",
+          "name": "France · Lorraine",
           "value": 1.4
         },
         {
           "id": "eu-frg0",
           "slug": "eu-frg0",
-          "name": "France \u00b7 Pays de la Loire",
+          "name": "France · Pays de la Loire",
           "value": 1.6
         },
         {
           "id": "eu-frh0",
           "slug": "eu-frh0",
-          "name": "France \u00b7 Bretagne",
+          "name": "France · Bretagne",
           "value": 1.52
         },
         {
           "id": "eu-fri1",
           "slug": "eu-fri1",
-          "name": "France \u00b7 Aquitaine",
+          "name": "France · Aquitaine",
           "value": 1.41
         },
         {
           "id": "eu-fri2",
           "slug": "eu-fri2",
-          "name": "France \u00b7 Limousin",
+          "name": "France · Limousin",
           "value": 1.46
         },
         {
           "id": "eu-fri3",
           "slug": "eu-fri3",
-          "name": "France \u00b7 Poitou-Charentes",
+          "name": "France · Poitou-Charentes",
           "value": 1.5
         },
         {
           "id": "eu-frj1",
           "slug": "eu-frj1",
-          "name": "France \u00b7 Languedoc-Roussillon",
+          "name": "France · Languedoc-Roussillon",
           "value": 1.5
         },
         {
           "id": "eu-frj2",
           "slug": "eu-frj2",
-          "name": "France \u00b7 Midi-Pyr\u00e9n\u00e9es",
+          "name": "France · Midi-Pyrénées",
           "value": 1.42
         },
         {
           "id": "eu-frk1",
           "slug": "eu-frk1",
-          "name": "France \u00b7 Auvergne",
+          "name": "France · Auvergne",
           "value": 1.5
         },
         {
           "id": "eu-frk2",
           "slug": "eu-frk2",
-          "name": "France \u00b7 Rh\u00f4ne-Alpes",
+          "name": "France · Rhône-Alpes",
           "value": 1.59
         },
         {
           "id": "eu-frl0",
           "slug": "eu-frl0",
-          "name": "France \u00b7 Provence-Alpes-C\u00f4te d\u2019Azur",
+          "name": "France · Provence-Alpes-Côte d’Azur",
           "value": 1.65
         },
         {
           "id": "eu-frm0",
           "slug": "eu-frm0",
-          "name": "France \u00b7 Corse",
+          "name": "France · Corse",
           "value": 1.21
         },
         {
           "id": "eu-hr02",
           "slug": "eu-hr02",
-          "name": "Croatia \u00b7 Panonska Hrvatska",
+          "name": "Croatia · Panonska Hrvatska",
           "value": 1.59
         },
         {
           "id": "eu-hr03",
           "slug": "eu-hr03",
-          "name": "Croatia \u00b7 Jadranska Hrvatska",
+          "name": "Croatia · Jadranska Hrvatska",
           "value": 1.43
         },
         {
           "id": "eu-hr05",
           "slug": "eu-hr05",
-          "name": "Croatia \u00b7 Grad Zagreb",
+          "name": "Croatia · Grad Zagreb",
           "value": 1.33
         },
         {
           "id": "eu-hr06",
           "slug": "eu-hr06",
-          "name": "Croatia \u00b7 Sjeverna Hrvatska",
+          "name": "Croatia · Sjeverna Hrvatska",
           "value": 1.49
         },
         {
           "id": "eu-itc1",
           "slug": "eu-itc1",
-          "name": "Italy \u00b7 Piemonte",
+          "name": "Italy · Piemonte",
           "value": 1.14
         },
         {
           "id": "eu-itc2",
           "slug": "eu-itc2",
-          "name": "Italy \u00b7 Valle d\u2019Aosta/Vall\u00e9e d\u2019Aoste",
+          "name": "Italy · Valle d’Aosta/Vallée d’Aoste",
           "value": 1.05
         },
         {
           "id": "eu-itc3",
           "slug": "eu-itc3",
-          "name": "Italy \u00b7 Liguria",
+          "name": "Italy · Liguria",
           "value": 1.17
         },
         {
           "id": "eu-itc4",
           "slug": "eu-itc4",
-          "name": "Italy \u00b7 Lombardia",
+          "name": "Italy · Lombardia",
           "value": 1.19
         },
         {
           "id": "eu-itf1",
           "slug": "eu-itf1",
-          "name": "Italy \u00b7 Abruzzo",
+          "name": "Italy · Abruzzo",
           "value": 1.12
         },
         {
           "id": "eu-itf2",
           "slug": "eu-itf2",
-          "name": "Italy \u00b7 Molise",
+          "name": "Italy · Molise",
           "value": 1.05
         },
         {
           "id": "eu-itf3",
           "slug": "eu-itf3",
-          "name": "Italy \u00b7 Campania",
+          "name": "Italy · Campania",
           "value": 1.26
         },
         {
           "id": "eu-itf4",
           "slug": "eu-itf4",
-          "name": "Italy \u00b7 Puglia",
+          "name": "Italy · Puglia",
           "value": 1.16
         },
         {
           "id": "eu-itf5",
           "slug": "eu-itf5",
-          "name": "Italy \u00b7 Basilicata",
+          "name": "Italy · Basilicata",
           "value": 1.09
         },
         {
           "id": "eu-itf6",
           "slug": "eu-itf6",
-          "name": "Italy \u00b7 Calabria",
+          "name": "Italy · Calabria",
           "value": 1.25
         },
         {
           "id": "eu-itg1",
           "slug": "eu-itg1",
-          "name": "Italy \u00b7 Sicilia",
+          "name": "Italy · Sicilia",
           "value": 1.27
         },
         {
           "id": "eu-itg2",
           "slug": "eu-itg2",
-          "name": "Italy \u00b7 Sardegna",
+          "name": "Italy · Sardegna",
           "value": 0.91
         },
         {
           "id": "eu-ith1",
           "slug": "eu-ith1",
-          "name": "Italy \u00b7 Provincia Autonoma di Bolzano/Bozen",
+          "name": "Italy · Provincia Autonoma di Bolzano/Bozen",
           "value": 1.51
         },
         {
           "id": "eu-ith2",
           "slug": "eu-ith2",
-          "name": "Italy \u00b7 Provincia Autonoma di Trento",
+          "name": "Italy · Provincia Autonoma di Trento",
           "value": 1.27
         },
         {
           "id": "eu-ith3",
           "slug": "eu-ith3",
-          "name": "Italy \u00b7 Veneto",
+          "name": "Italy · Veneto",
           "value": 1.2
         },
         {
           "id": "eu-ith4",
           "slug": "eu-ith4",
-          "name": "Italy \u00b7 Friuli-Venezia Giulia",
+          "name": "Italy · Friuli-Venezia Giulia",
           "value": 1.19
         },
         {
           "id": "eu-ith5",
           "slug": "eu-ith5",
-          "name": "Italy \u00b7 Emilia-Romagna",
+          "name": "Italy · Emilia-Romagna",
           "value": 1.19
         },
         {
           "id": "eu-iti1",
           "slug": "eu-iti1",
-          "name": "Italy \u00b7 Toscana",
+          "name": "Italy · Toscana",
           "value": 1.12
         },
         {
           "id": "eu-iti2",
           "slug": "eu-iti2",
-          "name": "Italy \u00b7 Umbria",
+          "name": "Italy · Umbria",
           "value": 1.11
         },
         {
           "id": "eu-iti3",
           "slug": "eu-iti3",
-          "name": "Italy \u00b7 Marche",
+          "name": "Italy · Marche",
           "value": 1.11
         },
         {
           "id": "eu-iti4",
           "slug": "eu-iti4",
-          "name": "Italy \u00b7 Lazio",
+          "name": "Italy · Lazio",
           "value": 1.1
         },
         {
           "id": "eu-cy00",
           "slug": "eu-cy00",
-          "name": "Cyprus \u00b7 \u039a\u03cd\u03c0\u03c1\u03bf\u03c2",
+          "name": "Cyprus · Κύπρος",
           "value": 1.39
         },
         {
           "id": "eu-lv00",
           "slug": "eu-lv00",
-          "name": "Latvia \u00b7 Latvija",
+          "name": "Latvia · Latvija",
           "value": 1.23
         },
         {
           "id": "eu-lt01",
           "slug": "eu-lt01",
-          "name": "Lithuania \u00b7 Sostin\u0117s regionas",
+          "name": "Lithuania · Sostinės regionas",
           "value": 1.1
         },
         {
           "id": "eu-lt02",
           "slug": "eu-lt02",
-          "name": "Lithuania \u00b7 Vidurio ir vakar\u0173 Lietuvos regionas ",
+          "name": "Lithuania · Vidurio ir vakarų Lietuvos regionas ",
           "value": 1.11
         },
         {
           "id": "eu-lu00",
           "slug": "eu-lu00",
-          "name": "Luxembourg \u00b7 Luxembourg",
+          "name": "Luxembourg · Luxembourg",
           "value": 1.26
         },
         {
           "id": "eu-hu11",
           "slug": "eu-hu11",
-          "name": "Hungary \u00b7 Budapest",
+          "name": "Hungary · Budapest",
           "value": 1.07
         },
         {
           "id": "eu-hu12",
           "slug": "eu-hu12",
-          "name": "Hungary \u00b7 Pest",
+          "name": "Hungary · Pest",
           "value": 1.44
         },
         {
           "id": "eu-hu21",
           "slug": "eu-hu21",
-          "name": "Hungary \u00b7 K\u00f6z\u00e9p-Dun\u00e1nt\u00fal",
+          "name": "Hungary · Közép-Dunántúl",
           "value": 1.42
         },
         {
           "id": "eu-hu22",
           "slug": "eu-hu22",
-          "name": "Hungary \u00b7 Nyugat-Dun\u00e1nt\u00fal",
+          "name": "Hungary · Nyugat-Dunántúl",
           "value": 1.37
         },
         {
           "id": "eu-hu23",
           "slug": "eu-hu23",
-          "name": "Hungary \u00b7 D\u00e9l-Dun\u00e1nt\u00fal",
+          "name": "Hungary · Dél-Dunántúl",
           "value": 1.38
         },
         {
           "id": "eu-hu31",
           "slug": "eu-hu31",
-          "name": "Hungary \u00b7 \u00c9szak-Magyarorsz\u00e1g",
+          "name": "Hungary · Észak-Magyarország",
           "value": 1.67
         },
         {
           "id": "eu-hu32",
           "slug": "eu-hu32",
-          "name": "Hungary \u00b7 \u00c9szak-Alf\u00f6ld",
+          "name": "Hungary · Észak-Alföld",
           "value": 1.62
         },
         {
           "id": "eu-hu33",
           "slug": "eu-hu33",
-          "name": "Hungary \u00b7 D\u00e9l-Alf\u00f6ld",
+          "name": "Hungary · Dél-Alföld",
           "value": 1.42
         },
         {
           "id": "eu-mt00",
           "slug": "eu-mt00",
-          "name": "Malta \u00b7 Malta",
+          "name": "Malta · Malta",
           "value": 1.02
         },
         {
           "id": "eu-nl11",
           "slug": "eu-nl11",
-          "name": "Netherlands \u00b7 Groningen",
+          "name": "Netherlands · Groningen",
           "value": 1.24
         },
         {
           "id": "eu-nl12",
           "slug": "eu-nl12",
-          "name": "Netherlands \u00b7 Friesland (NL)",
+          "name": "Netherlands · Friesland (NL)",
           "value": 1.57
         },
         {
           "id": "eu-nl13",
           "slug": "eu-nl13",
-          "name": "Netherlands \u00b7 Drenthe",
+          "name": "Netherlands · Drenthe",
           "value": 1.59
         },
         {
           "id": "eu-nl21",
           "slug": "eu-nl21",
-          "name": "Netherlands \u00b7 Overijssel",
+          "name": "Netherlands · Overijssel",
           "value": 1.57
         },
         {
           "id": "eu-nl22",
           "slug": "eu-nl22",
-          "name": "Netherlands \u00b7 Gelderland",
+          "name": "Netherlands · Gelderland",
           "value": 1.51
         },
         {
           "id": "eu-nl23",
           "slug": "eu-nl23",
-          "name": "Netherlands \u00b7 Flevoland",
+          "name": "Netherlands · Flevoland",
           "value": 1.58
         },
         {
           "id": "eu-nl32",
           "slug": "eu-nl32",
-          "name": "Netherlands \u00b7 Noord-Holland",
+          "name": "Netherlands · Noord-Holland",
           "value": 1.31
         },
         {
           "id": "eu-nl34",
           "slug": "eu-nl34",
-          "name": "Netherlands \u00b7 Zeeland",
+          "name": "Netherlands · Zeeland",
           "value": 1.6
         },
         {
           "id": "eu-nl35",
           "slug": "eu-nl35",
-          "name": "Netherlands \u00b7 Utrecht",
+          "name": "Netherlands · Utrecht",
           "value": 1.47
         },
         {
           "id": "eu-nl36",
           "slug": "eu-nl36",
-          "name": "Netherlands \u00b7 Zuid-Holland",
+          "name": "Netherlands · Zuid-Holland",
           "value": 1.42
         },
         {
           "id": "eu-nl41",
           "slug": "eu-nl41",
-          "name": "Netherlands \u00b7 Noord-Brabant",
+          "name": "Netherlands · Noord-Brabant",
           "value": 1.44
         },
         {
           "id": "eu-nl42",
           "slug": "eu-nl42",
-          "name": "Netherlands \u00b7 Limburg (NL)",
+          "name": "Netherlands · Limburg (NL)",
           "value": 1.35
         },
         {
           "id": "eu-at11",
           "slug": "eu-at11",
-          "name": "Austria \u00b7 Burgenland",
+          "name": "Austria · Burgenland",
           "value": 1.21
         },
         {
           "id": "eu-at12",
           "slug": "eu-at12",
-          "name": "Austria \u00b7 Nieder\u00f6sterreich",
+          "name": "Austria · Niederösterreich",
           "value": 1.37
         },
         {
           "id": "eu-at13",
           "slug": "eu-at13",
-          "name": "Austria \u00b7 Wien",
+          "name": "Austria · Wien",
           "value": 1.23
         },
         {
           "id": "eu-at21",
           "slug": "eu-at21",
-          "name": "Austria \u00b7 K\u00e4rnten",
+          "name": "Austria · Kärnten",
           "value": 1.3
         },
         {
           "id": "eu-at22",
           "slug": "eu-at22",
-          "name": "Austria \u00b7 Steiermark",
+          "name": "Austria · Steiermark",
           "value": 1.29
         },
         {
           "id": "eu-at31",
           "slug": "eu-at31",
-          "name": "Austria \u00b7 Ober\u00f6sterreich",
+          "name": "Austria · Oberösterreich",
           "value": 1.46
         },
         {
           "id": "eu-at32",
           "slug": "eu-at32",
-          "name": "Austria \u00b7 Salzburg",
+          "name": "Austria · Salzburg",
           "value": 1.33
         },
         {
           "id": "eu-at33",
           "slug": "eu-at33",
-          "name": "Austria \u00b7 Tirol",
+          "name": "Austria · Tirol",
           "value": 1.31
         },
         {
           "id": "eu-at34",
           "slug": "eu-at34",
-          "name": "Austria \u00b7 Vorarlberg",
+          "name": "Austria · Vorarlberg",
           "value": 1.45
         },
         {
           "id": "eu-pl21",
           "slug": "eu-pl21",
-          "name": "Poland \u00b7 Ma\u0142opolskie",
+          "name": "Poland · Małopolskie",
           "value": 1.2
         },
         {
           "id": "eu-pl22",
           "slug": "eu-pl22",
-          "name": "Poland \u00b7 \u015al\u0105skie",
+          "name": "Poland · Śląskie",
           "value": 1.07
         },
         {
           "id": "eu-pl41",
           "slug": "eu-pl41",
-          "name": "Poland \u00b7 Wielkopolskie",
+          "name": "Poland · Wielkopolskie",
           "value": 1.19
         },
         {
           "id": "eu-pl42",
           "slug": "eu-pl42",
-          "name": "Poland \u00b7 Zachodniopomorskie",
+          "name": "Poland · Zachodniopomorskie",
           "value": 1.07
         },
         {
           "id": "eu-pl43",
           "slug": "eu-pl43",
-          "name": "Poland \u00b7 Lubuskie",
+          "name": "Poland · Lubuskie",
           "value": 1.1
         },
         {
           "id": "eu-pl51",
           "slug": "eu-pl51",
-          "name": "Poland \u00b7 Dolno\u015bl\u0105skie",
+          "name": "Poland · Dolnośląskie",
           "value": 1.04
         },
         {
           "id": "eu-pl52",
           "slug": "eu-pl52",
-          "name": "Poland \u00b7 Opolskie",
+          "name": "Poland · Opolskie",
           "value": 1.08
         },
         {
           "id": "eu-pl61",
           "slug": "eu-pl61",
-          "name": "Poland \u00b7 Kujawsko-pomorskie",
+          "name": "Poland · Kujawsko-pomorskie",
           "value": 1.09
         },
         {
           "id": "eu-pl62",
           "slug": "eu-pl62",
-          "name": "Poland \u00b7 Warmi\u0144sko-mazurskie",
+          "name": "Poland · Warmińsko-mazurskie",
           "value": 1.11
         },
         {
           "id": "eu-pl63",
           "slug": "eu-pl63",
-          "name": "Poland \u00b7 Pomorskie",
+          "name": "Poland · Pomorskie",
           "value": 1.19
         },
         {
           "id": "eu-pl71",
           "slug": "eu-pl71",
-          "name": "Poland \u00b7 \u0141\u00f3dzkie",
+          "name": "Poland · Łódzkie",
           "value": 1.12
         },
         {
           "id": "eu-pl72",
           "slug": "eu-pl72",
-          "name": "Poland \u00b7 \u015awi\u0119tokrzyskie",
+          "name": "Poland · Świętokrzyskie",
           "value": 1.06
         },
         {
           "id": "eu-pl81",
           "slug": "eu-pl81",
-          "name": "Poland \u00b7 Lubelskie",
+          "name": "Poland · Lubelskie",
           "value": 1.13
         },
         {
           "id": "eu-pl82",
           "slug": "eu-pl82",
-          "name": "Poland \u00b7 Podkarpackie",
+          "name": "Poland · Podkarpackie",
           "value": 1.19
         },
         {
           "id": "eu-pl84",
           "slug": "eu-pl84",
-          "name": "Poland \u00b7 Podlaskie",
+          "name": "Poland · Podlaskie",
           "value": 1.2
         },
         {
           "id": "eu-pl91",
           "slug": "eu-pl91",
-          "name": "Poland \u00b7 Warszawski sto\u0142eczny",
+          "name": "Poland · Warszawski stołeczny",
           "value": 1.09
         },
         {
           "id": "eu-pl92",
           "slug": "eu-pl92",
-          "name": "Poland \u00b7 Mazowiecki regionalny",
+          "name": "Poland · Mazowiecki regionalny",
           "value": 1.31
         },
         {
           "id": "eu-pt11",
           "slug": "eu-pt11",
-          "name": "Portugal \u00b7 Norte",
+          "name": "Portugal · Norte",
           "value": 1.21
         },
         {
           "id": "eu-pt15",
           "slug": "eu-pt15",
-          "name": "Portugal \u00b7 Algarve",
+          "name": "Portugal · Algarve",
           "value": 1.64
         },
         {
           "id": "eu-pt19",
           "slug": "eu-pt19",
-          "name": "Portugal \u00b7 Centro (PT)",
+          "name": "Portugal · Centro (PT)",
           "value": 1.31
         },
         {
           "id": "eu-pt1a",
           "slug": "eu-pt1a",
-          "name": "Portugal \u00b7 Grande Lisboa",
+          "name": "Portugal · Grande Lisboa",
           "value": 1.65
         },
         {
           "id": "eu-pt1b",
           "slug": "eu-pt1b",
-          "name": "Portugal \u00b7 Pen\u00ednsula de Set\u00fabal",
+          "name": "Portugal · Península de Setúbal",
           "value": 1.69
         },
         {
           "id": "eu-pt1c",
           "slug": "eu-pt1c",
-          "name": "Portugal \u00b7 Alentejo",
+          "name": "Portugal · Alentejo",
           "value": 1.5
         },
         {
           "id": "eu-pt1d",
           "slug": "eu-pt1d",
-          "name": "Portugal \u00b7 Oeste e Vale do Tejo",
+          "name": "Portugal · Oeste e Vale do Tejo",
           "value": 1.42
         },
         {
           "id": "eu-pt20",
           "slug": "eu-pt20",
-          "name": "Portugal \u00b7 Regi\u00e3o Aut\u00f3noma dos A\u00e7ores",
+          "name": "Portugal · Região Autónoma dos Açores",
           "value": 1.22
         },
         {
           "id": "eu-pt30",
           "slug": "eu-pt30",
-          "name": "Portugal \u00b7 Regi\u00e3o Aut\u00f3noma da Madeira",
+          "name": "Portugal · Região Autónoma da Madeira",
           "value": 1.25
         },
         {
           "id": "eu-ro11",
           "slug": "eu-ro11",
-          "name": "Romania \u00b7 Nord-Vest",
+          "name": "Romania · Nord-Vest",
           "value": 1.41
         },
         {
           "id": "eu-ro12",
           "slug": "eu-ro12",
-          "name": "Romania \u00b7 Centru",
+          "name": "Romania · Centru",
           "value": 1.52
         },
         {
           "id": "eu-ro21",
           "slug": "eu-ro21",
-          "name": "Romania \u00b7 Nord-Est",
+          "name": "Romania · Nord-Est",
           "value": 1.49
         },
         {
           "id": "eu-ro22",
           "slug": "eu-ro22",
-          "name": "Romania \u00b7 Sud-Est",
+          "name": "Romania · Sud-Est",
           "value": 1.4
         },
         {
           "id": "eu-ro31",
           "slug": "eu-ro31",
-          "name": "Romania \u00b7 Sud-Muntenia",
+          "name": "Romania · Sud-Muntenia",
           "value": 1.35
         },
         {
           "id": "eu-ro32",
           "slug": "eu-ro32",
-          "name": "Romania \u00b7 Bucure\u015fti-Ilfov",
+          "name": "Romania · Bucureşti-Ilfov",
           "value": 1.19
         },
         {
           "id": "eu-ro41",
           "slug": "eu-ro41",
-          "name": "Romania \u00b7 Sud-Vest Oltenia",
+          "name": "Romania · Sud-Vest Oltenia",
           "value": 1.26
         },
         {
           "id": "eu-ro42",
           "slug": "eu-ro42",
-          "name": "Romania \u00b7 Vest",
+          "name": "Romania · Vest",
           "value": 1.32
         },
         {
           "id": "eu-si03",
           "slug": "eu-si03",
-          "name": "Slovenia \u00b7 Vzhodna Slovenija",
+          "name": "Slovenia · Vzhodna Slovenija",
           "value": 1.59
         },
         {
           "id": "eu-si04",
           "slug": "eu-si04",
-          "name": "Slovenia \u00b7 Zahodna Slovenija",
+          "name": "Slovenia · Zahodna Slovenija",
           "value": 1.46
         },
         {
           "id": "eu-sk01",
           "slug": "eu-sk01",
-          "name": "Slovakia \u00b7 Bratislavsk\u00fd kraj",
+          "name": "Slovakia · Bratislavský kraj",
           "value": 1.3
         },
         {
           "id": "eu-sk02",
           "slug": "eu-sk02",
-          "name": "Slovakia \u00b7 Z\u00e1padn\u00e9 Slovensko",
+          "name": "Slovakia · Západné Slovensko",
           "value": 1.24
         },
         {
           "id": "eu-sk03",
           "slug": "eu-sk03",
-          "name": "Slovakia \u00b7 Stredn\u00e9 Slovensko",
+          "name": "Slovakia · Stredné Slovensko",
           "value": 1.34
         },
         {
           "id": "eu-sk04",
           "slug": "eu-sk04",
-          "name": "Slovakia \u00b7 V\u00fdchodn\u00e9 Slovensko",
+          "name": "Slovakia · Východné Slovensko",
           "value": 1.76
         },
         {
           "id": "eu-fi19",
           "slug": "eu-fi19",
-          "name": "Finland \u00b7 L\u00e4nsi-Suomi",
+          "name": "Finland · Länsi-Suomi",
           "value": 1.28
         },
         {
           "id": "eu-fi1b",
           "slug": "eu-fi1b",
-          "name": "Finland \u00b7 Helsinki-Uusimaa",
+          "name": "Finland · Helsinki-Uusimaa",
           "value": 1.24
         },
         {
           "id": "eu-fi1c",
           "slug": "eu-fi1c",
-          "name": "Finland \u00b7 Etel\u00e4-Suomi",
+          "name": "Finland · Etelä-Suomi",
           "value": 1.18
         },
         {
           "id": "eu-fi1d",
           "slug": "eu-fi1d",
-          "name": "Finland \u00b7 Pohjois- ja It\u00e4-Suomi",
+          "name": "Finland · Pohjois- ja Itä-Suomi",
           "value": 1.32
         },
         {
           "id": "eu-fi20",
           "slug": "eu-fi20",
-          "name": "Finland \u00b7 \u00c5land",
+          "name": "Finland · Åland",
           "value": 1.29
         },
         {
           "id": "eu-se11",
           "slug": "eu-se11",
-          "name": "Sweden \u00b7 Stockholm",
+          "name": "Sweden · Stockholm",
           "value": 1.41
         },
         {
           "id": "eu-se12",
           "slug": "eu-se12",
-          "name": "Sweden \u00b7 \u00d6stra Mellansverige",
+          "name": "Sweden · Östra Mellansverige",
           "value": 1.42
         },
         {
           "id": "eu-se21",
           "slug": "eu-se21",
-          "name": "Sweden \u00b7 Sm\u00e5land med \u00f6arna",
+          "name": "Sweden · Småland med öarna",
           "value": 1.54
         },
         {
           "id": "eu-se22",
           "slug": "eu-se22",
-          "name": "Sweden \u00b7 Sydsverige",
+          "name": "Sweden · Sydsverige",
           "value": 1.44
         },
         {
           "id": "eu-se23",
           "slug": "eu-se23",
-          "name": "Sweden \u00b7 V\u00e4stsverige",
+          "name": "Sweden · Västsverige",
           "value": 1.47
         },
         {
           "id": "eu-se31",
           "slug": "eu-se31",
-          "name": "Sweden \u00b7 Norra Mellansverige",
+          "name": "Sweden · Norra Mellansverige",
           "value": 1.46
         },
         {
           "id": "eu-se32",
           "slug": "eu-se32",
-          "name": "Sweden \u00b7 Mellersta Norrland",
+          "name": "Sweden · Mellersta Norrland",
           "value": 1.42
         },
         {
           "id": "eu-se33",
           "slug": "eu-se33",
-          "name": "Sweden \u00b7 \u00d6vre Norrland",
+          "name": "Sweden · Övre Norrland",
           "value": 1.36
         },
         {
           "id": "eu-is00",
           "slug": "eu-is00",
-          "name": "Iceland \u00b7 \u00cdsland",
+          "name": "Iceland · Ísland",
           "value": 1.57
         },
         {
           "id": "eu-li00",
           "slug": "eu-li00",
-          "name": "Liechtenstein \u00b7 Liechtenstein",
+          "name": "Liechtenstein · Liechtenstein",
           "value": 1.37
         },
         {
           "id": "eu-no02",
           "slug": "eu-no02",
-          "name": "Norway \u00b7 Innlandet",
+          "name": "Norway · Innlandet",
           "value": 1.4
         },
         {
           "id": "eu-no06",
           "slug": "eu-no06",
-          "name": "Norway \u00b7 Tr\u00f8ndelag/Tr\u00f6\u00f6ndelage",
+          "name": "Norway · Trøndelag/Trööndelage",
           "value": 1.43
         },
         {
           "id": "eu-no07",
           "slug": "eu-no07",
-          "name": "Norway \u00b7 Nord-Norge",
+          "name": "Norway · Nord-Norge",
           "value": 1.41
         },
         {
           "id": "eu-no08",
           "slug": "eu-no08",
-          "name": "Norway \u00b7 Oslo og Viken",
+          "name": "Norway · Oslo og Viken",
           "value": 1.4
         },
         {
           "id": "eu-no09",
           "slug": "eu-no09",
-          "name": "Norway \u00b7 Agder og S\u00f8r-\u00d8stlandet",
+          "name": "Norway · Agder og Sør-Østlandet",
           "value": 1.48
         },
         {
           "id": "eu-no0a",
           "slug": "eu-no0a",
-          "name": "Norway \u00b7 Vestlandet",
+          "name": "Norway · Vestlandet",
           "value": 1.55
         },
         {
           "id": "eu-ch01",
           "slug": "eu-ch01",
-          "name": "Switzerland \u00b7 R\u00e9gion l\u00e9manique",
+          "name": "Switzerland · Région lémanique",
           "value": 1.25
         },
         {
           "id": "eu-ch02",
           "slug": "eu-ch02",
-          "name": "Switzerland \u00b7 Espace Mittelland",
+          "name": "Switzerland · Espace Mittelland",
           "value": 1.31
         },
         {
           "id": "eu-ch03",
           "slug": "eu-ch03",
-          "name": "Switzerland \u00b7 Nordwestschweiz",
+          "name": "Switzerland · Nordwestschweiz",
           "value": 1.32
         },
         {
           "id": "eu-ch04",
           "slug": "eu-ch04",
-          "name": "Switzerland \u00b7 Z\u00fcrich",
+          "name": "Switzerland · Zürich",
           "value": 1.24
         },
         {
           "id": "eu-ch05",
           "slug": "eu-ch05",
-          "name": "Switzerland \u00b7 Ostschweiz",
+          "name": "Switzerland · Ostschweiz",
           "value": 1.37
         },
         {
           "id": "eu-ch06",
           "slug": "eu-ch06",
-          "name": "Switzerland \u00b7 Zentralschweiz",
+          "name": "Switzerland · Zentralschweiz",
           "value": 1.38
         },
         {
           "id": "eu-ch07",
           "slug": "eu-ch07",
-          "name": "Switzerland \u00b7 Ticino",
+          "name": "Switzerland · Ticino",
           "value": 1.16
         },
         {
           "id": "eu-me00",
           "slug": "eu-me00",
-          "name": "Montenegro \u00b7 \u0426\u0440\u043d\u0430 \u0413\u043e\u0440\u0430",
+          "name": "Montenegro · Црна Гора",
           "value": 1.75
         },
         {
           "id": "eu-mk00",
           "slug": "eu-mk00",
-          "name": "North Macedonia \u00b7 \u0421\u0435\u0432\u0435\u0440\u043d\u0430 \u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u0458\u0430",
+          "name": "North Macedonia · Северна Македонија",
           "value": 1.44
         },
         {
           "id": "eu-al01",
           "slug": "eu-al01",
-          "name": "Albania \u00b7 Veri",
+          "name": "Albania · Veri",
           "value": 1.88
         },
         {
           "id": "eu-al02",
           "slug": "eu-al02",
-          "name": "Albania \u00b7 Qender",
+          "name": "Albania · Qender",
           "value": 1.58
         },
         {
           "id": "eu-al03",
           "slug": "eu-al03",
-          "name": "Albania \u00b7 Jug",
+          "name": "Albania · Jug",
           "value": 1.55
         },
         {
           "id": "eu-rs11",
           "slug": "eu-rs11",
-          "name": "Serbia \u00b7 \u0411\u0435\u043e\u0433\u0440\u0430\u0434\u0441\u043a\u0438 \u0440\u0435\u0433\u0438\u043e\u043d",
+          "name": "Serbia · Београдски регион",
           "value": 1.59
         },
         {
           "id": "eu-rs12",
           "slug": "eu-rs12",
-          "name": "Serbia \u00b7 \u0420\u0435\u0433\u0438\u043e\u043d \u0412\u043e\u0458\u0432\u043e\u0434\u0438\u043d\u0435",
+          "name": "Serbia · Регион Војводине",
           "value": 1.66
         },
         {
           "id": "eu-rs21",
           "slug": "eu-rs21",
-          "name": "Serbia \u00b7 \u0420\u0435\u0433\u0438\u043e\u043d \u0428\u0443\u043c\u0430\u0434\u0438\u0458\u0435 \u0438 \u0417\u0430\u043f\u0430\u0434\u043d\u0435 \u0421\u0440\u0431\u0438\u0458\u0435",
+          "name": "Serbia · Регион Шумадије и Западне Србије",
           "value": 1.67
         },
         {
           "id": "eu-rs22",
           "slug": "eu-rs22",
-          "name": "Serbia \u00b7 \u0420\u0435\u0433\u0438\u043e\u043d \u0408\u0443\u0436\u043d\u0435 \u0438 \u0418\u0441\u0442\u043e\u0447\u043d\u0435 \u0421\u0440\u0431\u0438\u0458\u0435",
+          "name": "Serbia · Регион Јужне и Источне Србије",
           "value": 1.59
         },
         {
           "id": "eu-tr10",
           "slug": "eu-tr10",
-          "name": "T\u00fcrkiye \u00b7 \u0130stanbul",
+          "name": "Türkiye · İstanbul",
           "value": 1.2
         },
         {
           "id": "eu-tr21",
           "slug": "eu-tr21",
-          "name": "T\u00fcrkiye \u00b7 Tekirda\u011f, Edirne, K\u0131rklareli",
+          "name": "Türkiye · Tekirdağ, Edirne, Kırklareli",
           "value": 1.34
         },
         {
           "id": "eu-tr22",
           "slug": "eu-tr22",
-          "name": "T\u00fcrkiye \u00b7 Bal\u0131kesir, \u00c7anakkale",
+          "name": "Türkiye · Balıkesir, Çanakkale",
           "value": 1.29
         },
         {
           "id": "eu-tr31",
           "slug": "eu-tr31",
-          "name": "T\u00fcrkiye \u00b7 \u0130zmir",
+          "name": "Türkiye · İzmir",
           "value": 1.17
         },
         {
           "id": "eu-tr32",
           "slug": "eu-tr32",
-          "name": "T\u00fcrkiye \u00b7 Ayd\u0131n, Denizli, Mu\u011fla",
+          "name": "Türkiye · Aydın, Denizli, Muğla",
           "value": 1.32
         },
         {
           "id": "eu-tr33",
           "slug": "eu-tr33",
-          "name": "T\u00fcrkiye \u00b7 Manisa, Afyonkarahisar, K\u00fctahya, U\u015fak",
+          "name": "Türkiye · Manisa, Afyonkarahisar, Kütahya, Uşak",
           "value": 1.4
         },
         {
           "id": "eu-tr41",
           "slug": "eu-tr41",
-          "name": "T\u00fcrkiye \u00b7 Bursa, Eski\u015fehir, Bilecik",
+          "name": "Türkiye · Bursa, Eskişehir, Bilecik",
           "value": 1.32
         },
         {
           "id": "eu-tr42",
           "slug": "eu-tr42",
-          "name": "T\u00fcrkiye \u00b7 Kocaeli, Sakarya, D\u00fczce, Bolu, Yalova",
+          "name": "Türkiye · Kocaeli, Sakarya, Düzce, Bolu, Yalova",
           "value": 1.41
         },
         {
           "id": "eu-tr51",
           "slug": "eu-tr51",
-          "name": "T\u00fcrkiye \u00b7 Ankara",
+          "name": "Türkiye · Ankara",
           "value": 1.16
         },
         {
           "id": "eu-tr52",
           "slug": "eu-tr52",
-          "name": "T\u00fcrkiye \u00b7 Konya, Karaman",
+          "name": "Türkiye · Konya, Karaman",
           "value": 1.58
         },
         {
           "id": "eu-tr61",
           "slug": "eu-tr61",
-          "name": "T\u00fcrkiye \u00b7 Antalya, Isparta, Burdur",
+          "name": "Türkiye · Antalya, Isparta, Burdur",
           "value": 1.26
         },
         {
           "id": "eu-tr62",
           "slug": "eu-tr62",
-          "name": "T\u00fcrkiye \u00b7 Adana, Mersin",
+          "name": "Türkiye · Adana, Mersin",
           "value": 1.59
         },
         {
           "id": "eu-tr63",
           "slug": "eu-tr63",
-          "name": "T\u00fcrkiye \u00b7 Hatay, Kahramanmara\u015f, Osmaniye",
+          "name": "Türkiye · Hatay, Kahramanmaraş, Osmaniye",
           "value": 1.81
         },
         {
           "id": "eu-tr71",
           "slug": "eu-tr71",
-          "name": "T\u00fcrkiye \u00b7 K\u0131r\u0131kkale, Aksaray, Ni\u011fde, Nev\u015fehir, K\u0131r\u015fehir",
+          "name": "Türkiye · Kırıkkale, Aksaray, Niğde, Nevşehir, Kırşehir",
           "value": 1.38
         },
         {
           "id": "eu-tr72",
           "slug": "eu-tr72",
-          "name": "T\u00fcrkiye \u00b7 Kayseri, Sivas, Yozgat",
+          "name": "Türkiye · Kayseri, Sivas, Yozgat",
           "value": 1.41
         },
         {
           "id": "eu-tr81",
           "slug": "eu-tr81",
-          "name": "T\u00fcrkiye \u00b7 Zonguldak, Karab\u00fck, Bart\u0131n",
+          "name": "Türkiye · Zonguldak, Karabük, Bartın",
           "value": 1.12
         },
         {
           "id": "eu-tr82",
           "slug": "eu-tr82",
-          "name": "T\u00fcrkiye \u00b7 Kastamonu, \u00c7ank\u0131r\u0131, Sinop",
+          "name": "Türkiye · Kastamonu, Çankırı, Sinop",
           "value": 1.29
         },
         {
           "id": "eu-tr83",
           "slug": "eu-tr83",
-          "name": "T\u00fcrkiye \u00b7 Samsun, Tokat, \u00c7orum, Amasya",
+          "name": "Türkiye · Samsun, Tokat, Çorum, Amasya",
           "value": 1.3
         },
         {
           "id": "eu-tr90",
           "slug": "eu-tr90",
-          "name": "T\u00fcrkiye \u00b7 Trabzon, Ordu, Giresun, Rize, Artvin, G\u00fcm\u00fc\u015fhane",
+          "name": "Türkiye · Trabzon, Ordu, Giresun, Rize, Artvin, Gümüşhane",
           "value": 1.28
         },
         {
           "id": "eu-tra1",
           "slug": "eu-tra1",
-          "name": "T\u00fcrkiye \u00b7 Erzurum, Erzincan, Bayburt",
+          "name": "Türkiye · Erzurum, Erzincan, Bayburt",
           "value": 1.45
         },
         {
           "id": "eu-tra2",
           "slug": "eu-tra2",
-          "name": "T\u00fcrkiye \u00b7 A\u011fr\u0131, Kars, I\u011fd\u0131r, Ardahan",
+          "name": "Türkiye · Ağrı, Kars, Iğdır, Ardahan",
           "value": 1.87
         },
         {
           "id": "eu-trb1",
           "slug": "eu-trb1",
-          "name": "T\u00fcrkiye \u00b7 Malatya, Elaz\u0131\u011f, Bing\u00f6l, Tunceli",
+          "name": "Türkiye · Malatya, Elazığ, Bingöl, Tunceli",
           "value": 1.46
         },
         {
           "id": "eu-trb2",
           "slug": "eu-trb2",
-          "name": "T\u00fcrkiye \u00b7 Van, Mu\u015f, Bitlis, Hakkari",
+          "name": "Türkiye · Van, Muş, Bitlis, Hakkari",
           "value": 2.03
         },
         {
           "id": "eu-trc1",
           "slug": "eu-trc1",
-          "name": "T\u00fcrkiye \u00b7 Gaziantep, Ad\u0131yaman, Kilis",
+          "name": "Türkiye · Gaziantep, Adıyaman, Kilis",
           "value": 2.08
         },
         {
           "id": "eu-trc2",
           "slug": "eu-trc2",
-          "name": "T\u00fcrkiye \u00b7 \u015eanl\u0131urfa, Diyarbak\u0131r",
+          "name": "Türkiye · Şanlıurfa, Diyarbakır",
           "value": 2.79
         },
         {
           "id": "eu-trc3",
           "slug": "eu-trc3",
-          "name": "T\u00fcrkiye \u00b7 Mardin, Batman, \u015e\u0131rnak, Siirt",
+          "name": "Türkiye · Mardin, Batman, Şırnak, Siirt",
           "value": 2.32
         },
         {
           "id": "eu-ukk",
           "slug": "eu-ukk",
-          "name": "United Kingdom \u00b7 South West",
+          "name": "United Kingdom · South West",
           "value": 1.31
         },
         {
           "id": "eu-ukl",
           "slug": "eu-ukl",
-          "name": "United Kingdom \u00b7 Wales",
+          "name": "United Kingdom · Wales",
           "value": 1.35
         },
         {
           "id": "eu-ukn",
           "slug": "eu-ukn",
-          "name": "United Kingdom \u00b7 Northern Ireland",
+          "name": "United Kingdom · Northern Ireland",
           "value": 1.6
         },
         {
           "id": "eu-ukc",
           "slug": "eu-ukc",
-          "name": "United Kingdom \u00b7 North East",
+          "name": "United Kingdom · North East",
           "value": 1.37
         },
         {
           "id": "eu-ukd",
           "slug": "eu-ukd",
-          "name": "United Kingdom \u00b7 North West",
+          "name": "United Kingdom · North West",
           "value": 1.44
         },
         {
           "id": "eu-uke",
           "slug": "eu-uke",
-          "name": "United Kingdom \u00b7 Yorkshire and the Humber",
+          "name": "United Kingdom · Yorkshire and the Humber",
           "value": 1.45
         },
         {
           "id": "eu-ukf",
           "slug": "eu-ukf",
-          "name": "United Kingdom \u00b7 East Midlands",
+          "name": "United Kingdom · East Midlands",
           "value": 1.4
         },
         {
           "id": "eu-ukg",
           "slug": "eu-ukg",
-          "name": "United Kingdom \u00b7 West Midlands",
+          "name": "United Kingdom · West Midlands",
           "value": 1.59
         },
         {
           "id": "eu-ukh",
           "slug": "eu-ukh",
-          "name": "United Kingdom \u00b7 East of England",
+          "name": "United Kingdom · East of England",
           "value": 1.5
         },
         {
           "id": "eu-uki",
           "slug": "eu-uki",
-          "name": "United Kingdom \u00b7 London",
+          "name": "United Kingdom · London",
           "value": 1.35
         },
         {
           "id": "eu-ukj",
           "slug": "eu-ukj",
-          "name": "United Kingdom \u00b7 South East",
+          "name": "United Kingdom · South East",
           "value": 1.43
         },
         {
           "id": "eu-ukm",
           "slug": "eu-ukm",
-          "name": "United Kingdom \u00b7 Scotland",
+          "name": "United Kingdom · Scotland",
           "value": 1.25
         }
       ],
@@ -11119,23 +11119,23 @@
       "country": "Colombia",
       "kind": "department",
       "sourceUrl": "https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/nacimientos-y-defunciones/nacimientos/nacimientos-2024",
-      "credit": "DANE, Estad\u00edsticas Vitales.",
+      "credit": "DANE, Estadísticas Vitales.",
       "geoUrl": "/geo/maps/col-tfr.json",
       "scale": "plasma",
       "labelValues": true,
-      "note": "DANE Estad\u00edsticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andr\u00e9s is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
+      "note": "DANE Estadísticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andrés is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
       "id": "col-tfr-2024",
       "title": "Total fertility rate, Colombia 2024",
       "year": 2024,
       "national": 1.1,
-      "source": "DANE, Estad\u00edsticas Vitales \u2014 tasa global de fecundidad by department of mother's residence, 2024 (Tabla 1 in the Feb 2026 vital-statistics bulletin). National TGF 1.1.",
+      "source": "DANE, Estadísticas Vitales — tasa global de fecundidad by department of mother's residence, 2024 (Tabla 1 in the Feb 2026 vital-statistics bulletin). National TGF 1.1.",
       "highlights": [
         {
           "name": "Caldas",
           "value": 0.7
         },
         {
-          "name": "Vaup\u00e9s",
+          "name": "Vaupés",
           "value": 2.0
         }
       ],
@@ -11161,25 +11161,25 @@
         {
           "id": "colombia-atlantico",
           "slug": "colombia-atlantico",
-          "name": "Atl\u00e1ntico",
+          "name": "Atlántico",
           "value": 1.1
         },
         {
           "id": "colombia-bogota-capital-district",
           "slug": "colombia-bogota-capital-district",
-          "name": "Bogot\u00e1",
+          "name": "Bogotá",
           "value": 0.8
         },
         {
           "id": "colombia-bolivar",
           "slug": "colombia-bolivar",
-          "name": "Bol\u00edvar",
+          "name": "Bolívar",
           "value": 1.4
         },
         {
           "id": "colombia-boyaca",
           "slug": "colombia-boyaca",
-          "name": "Boyac\u00e1",
+          "name": "Boyacá",
           "value": 1.1
         },
         {
@@ -11191,7 +11191,7 @@
         {
           "id": "colombia-caqueta",
           "slug": "colombia-caqueta",
-          "name": "Caquet\u00e1",
+          "name": "Caquetá",
           "value": 1.3
         },
         {
@@ -11215,13 +11215,13 @@
         {
           "id": "colombia-choco",
           "slug": "colombia-choco",
-          "name": "Choc\u00f3",
+          "name": "Chocó",
           "value": 1.2
         },
         {
           "id": "colombia-cordoba",
           "slug": "colombia-cordoba",
-          "name": "C\u00f3rdoba",
+          "name": "Córdoba",
           "value": 1.1
         },
         {
@@ -11233,7 +11233,7 @@
         {
           "id": "colombia-guainia",
           "slug": "colombia-guainia",
-          "name": "Guain\u00eda",
+          "name": "Guainía",
           "value": 1.6
         },
         {
@@ -11269,7 +11269,7 @@
         {
           "id": "colombia-narino",
           "slug": "colombia-narino",
-          "name": "Nari\u00f1o",
+          "name": "Nariño",
           "value": 0.8
         },
         {
@@ -11287,7 +11287,7 @@
         {
           "id": "colombia-quindio",
           "slug": "colombia-quindio",
-          "name": "Quind\u00edo",
+          "name": "Quindío",
           "value": 0.9
         },
         {
@@ -11299,7 +11299,7 @@
         {
           "id": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
           "slug": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
-          "name": "San Andr\u00e9s y Providencia",
+          "name": "San Andrés y Providencia",
           "value": 1.3
         },
         {
@@ -11329,7 +11329,7 @@
         {
           "id": "colombia-vaupes",
           "slug": "colombia-vaupes",
-          "name": "Vaup\u00e9s",
+          "name": "Vaupés",
           "value": 2.0
         },
         {
@@ -11349,19 +11349,19 @@
       "country": "Colombia",
       "kind": "department",
       "sourceUrl": "https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/nacimientos-y-defunciones/nacimientos/nacimientos-2024",
-      "credit": "DANE, Estad\u00edsticas Vitales.",
+      "credit": "DANE, Estadísticas Vitales.",
       "geoUrl": "/geo/maps/col-tfr.json",
       "scale": "plasma",
       "labelValues": true,
-      "note": "DANE Estad\u00edsticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andr\u00e9s is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
+      "note": "DANE Estadísticas Vitales, tasa global de fecundidad by the mother's department of residence, published to one decimal. 2023 national TGF is 1.2; 2024 is 1.1. San Andrés is drawn; the map frames the mainland. Two-decimal maps circulating on social media are not the published TGF table.",
       "id": "col-tfr-2023",
       "title": "Total fertility rate, Colombia 2023",
       "year": 2023,
       "national": 1.2,
-      "source": "DANE, Estad\u00edsticas Vitales \u2014 tasa global de fecundidad by department of mother's residence, 2023 (Tabla 2 in the 19 Dec 2024 births bulletin). National TGF 1.2.",
+      "source": "DANE, Estadísticas Vitales — tasa global de fecundidad by department of mother's residence, 2023 (Tabla 2 in the 19 Dec 2024 births bulletin). National TGF 1.2.",
       "highlights": [
         {
-          "name": "Bogot\u00e1",
+          "name": "Bogotá",
           "value": 0.9
         },
         {
@@ -11391,25 +11391,25 @@
         {
           "id": "colombia-atlantico",
           "slug": "colombia-atlantico",
-          "name": "Atl\u00e1ntico",
+          "name": "Atlántico",
           "value": 1.4
         },
         {
           "id": "colombia-bogota-capital-district",
           "slug": "colombia-bogota-capital-district",
-          "name": "Bogot\u00e1",
+          "name": "Bogotá",
           "value": 0.9
         },
         {
           "id": "colombia-bolivar",
           "slug": "colombia-bolivar",
-          "name": "Bol\u00edvar",
+          "name": "Bolívar",
           "value": 1.6
         },
         {
           "id": "colombia-boyaca",
           "slug": "colombia-boyaca",
-          "name": "Boyac\u00e1",
+          "name": "Boyacá",
           "value": 1.2
         },
         {
@@ -11421,7 +11421,7 @@
         {
           "id": "colombia-caqueta",
           "slug": "colombia-caqueta",
-          "name": "Caquet\u00e1",
+          "name": "Caquetá",
           "value": 1.5
         },
         {
@@ -11445,13 +11445,13 @@
         {
           "id": "colombia-choco",
           "slug": "colombia-choco",
-          "name": "Choc\u00f3",
+          "name": "Chocó",
           "value": 1.3
         },
         {
           "id": "colombia-cordoba",
           "slug": "colombia-cordoba",
-          "name": "C\u00f3rdoba",
+          "name": "Córdoba",
           "value": 1.4
         },
         {
@@ -11463,7 +11463,7 @@
         {
           "id": "colombia-guainia",
           "slug": "colombia-guainia",
-          "name": "Guain\u00eda",
+          "name": "Guainía",
           "value": 1.6
         },
         {
@@ -11499,7 +11499,7 @@
         {
           "id": "colombia-narino",
           "slug": "colombia-narino",
-          "name": "Nari\u00f1o",
+          "name": "Nariño",
           "value": 0.9
         },
         {
@@ -11517,7 +11517,7 @@
         {
           "id": "colombia-quindio",
           "slug": "colombia-quindio",
-          "name": "Quind\u00edo",
+          "name": "Quindío",
           "value": 1.0
         },
         {
@@ -11529,7 +11529,7 @@
         {
           "id": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
           "slug": "colombia-archipielago-de-san-andres-providencia-y-santa-catalina",
-          "name": "San Andr\u00e9s y Providencia",
+          "name": "San Andrés y Providencia",
           "value": 1.3
         },
         {
@@ -11559,7 +11559,7 @@
         {
           "id": "colombia-vaupes",
           "slug": "colombia-vaupes",
-          "name": "Vaup\u00e9s",
+          "name": "Vaupés",
           "value": 2.1
         },
         {
@@ -11584,7 +11584,7 @@
       "kind": "governorate",
       "year": 2025,
       "national": 2.74,
-      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iraq 2025 \u2014 governorate TFR from registered births. National TFR 2.74 (1,026,242 births, +1.3% vs 2024). No data for Kurdish provinces (Dohuk, Erbil, Sulaymaniyah).",
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iraq 2025 — governorate TFR from registered births. National TFR 2.74 (1,026,242 births, +1.3% vs 2024). No data for Kurdish provinces (Dohuk, Erbil, Sulaymaniyah).",
       "sourceUrl": "https://x.com/BirthGauge",
       "credit": "Compiled by BirthGauge (@BirthGauge).",
       "geoUrl": "/geo/maps/irq-tfr.json",
@@ -11724,13 +11724,13 @@
       "kind": "state",
       "year": 2024,
       "national": 1.23,
-      "source": "National TFR 1.23 and Mexico City 0.79 / Baja California 1.04 / Quer\u00e9taro 1.06 from BirthGauge & Institute for Family Studies coverage of INEGI Intercensal Survey 2025. Other states: ENADID 2018 (2013\u201317) TGF scaled to the 2024 national level (bridge national ENADID \u2248 2.07) \u2014 illustrative state pattern until INEGI publishes a full 2024 state TFR table.",
+      "source": "National TFR 1.23 and Mexico City 0.79 / Baja California 1.04 / Querétaro 1.06 from BirthGauge & Institute for Family Studies coverage of INEGI Intercensal Survey 2025. Other states: ENADID 2018 (2013–17) TGF scaled to the 2024 national level (bridge national ENADID ≈ 2.07) — illustrative state pattern until INEGI publishes a full 2024 state TFR table.",
       "sourceUrl": "https://www.inegi.org.mx/programas/enadid/2018/",
       "credit": "INEGI Intercensal 2025 / ENADID 2018; pins from BirthGauge (@BirthGauge) & IFS.",
       "geoUrl": "/geo/maps/mex-tfr.json",
       "scale": "plasma",
       "labelValues": true,
-      "note": "Mexico City (0.79) is below every U.S. state. National TFR fell from ~1.60 (2020\u201322) to 1.23 (2024). Non-pinned states are scaled ENADID patterns, not a new official state census TFR.",
+      "note": "Mexico City (0.79) is below every U.S. state. National TFR fell from ~1.60 (2020–22) to 1.23 (2024). Non-pinned states are scaled ENADID patterns, not a new official state census TFR.",
       "highlights": [
         {
           "name": "Mexico City",
@@ -11835,7 +11835,7 @@
         {
           "id": "mexico-michoacan",
           "slug": "mexico-michoacan",
-          "name": "Michoac\u00e1n",
+          "name": "Michoacán",
           "value": 1.37
         },
         {
@@ -11853,7 +11853,7 @@
         {
           "id": "mexico-nuevo-leon",
           "slug": "mexico-nuevo-leon",
-          "name": "Nuevo Le\u00f3n",
+          "name": "Nuevo León",
           "value": 1.19
         },
         {
@@ -11871,7 +11871,7 @@
         {
           "id": "mexico-queretaro",
           "slug": "mexico-queretaro",
-          "name": "Quer\u00e9taro",
+          "name": "Querétaro",
           "value": 1.06
         },
         {
@@ -11883,7 +11883,7 @@
         {
           "id": "mexico-san-luis-potosi",
           "slug": "mexico-san-luis-potosi",
-          "name": "San Luis Potos\u00ed",
+          "name": "San Luis Potosí",
           "value": 1.3
         },
         {
@@ -11925,7 +11925,7 @@
         {
           "id": "mexico-yucatan",
           "slug": "mexico-yucatan",
-          "name": "Yucat\u00e1n",
+          "name": "Yucatán",
           "value": 1.26
         },
         {
@@ -11946,7 +11946,7 @@
       "kind": "province",
       "year": 2025,
       "national": 1.47,
-      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 \u2014 provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
+      "source": "BirthGauge, Total Fertility Rate (Children per Woman), Iran 2025 — provincial TFR estimated from registered births by province and the age structure on citypopulation.de. National TFR 1.47.",
       "sourceUrl": "https://x.com/BirthGauge/status/2090510597460795531",
       "credit": "Provincial estimates compiled by BirthGauge (@BirthGauge).",
       "geoUrl": "/geo/maps/irn-tfr.json",

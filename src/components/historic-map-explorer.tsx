@@ -4,7 +4,7 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { HistoricMapEntry } from "@/lib/sources/historic-maps-data";
-import { buildClassedScale } from "@/lib/color-scale";
+import { buildClassedScale, buildLogClassedScale } from "@/lib/color-scale";
 import { MAP_OCEAN } from "@/lib/map-path-style";
 import { cn, formatCompact, formatNumber } from "@/lib/utils";
 
@@ -238,7 +238,7 @@ export function HistoricMapExplorer({
   }, [scopedAreas]);
 
   const densityScale = React.useMemo(() => {
-    return buildClassedScale(
+    return buildLogClassedScale(
       scopedAreas
         .map((a) => a.density ?? 0)
         .filter((v) => Number.isFinite(v) && v > 0),
@@ -313,7 +313,7 @@ export function HistoricMapExplorer({
         ? `${pack.year} religion`
         : metric === "population"
           ? "Population (quintiles)"
-          : "People / km² (quintiles)";
+          : "People / km² (log bins)";
 
   const formatValue = React.useCallback(
     (v: number) => {
@@ -767,8 +767,8 @@ export function HistoricMapExplorer({
               </p>
               <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                 {metric === "population"
-                  ? "Five equal-count classes (light → dark wine). Numbers toggle on by default. Totals scaled to ~51.4 million empire-wide."
-                  : "Five equal-count density classes (people/km²). Cities and industrial belts fall in the darkest bin."}
+                  ? "Five equal-count classes (light → dark wine). Numbers toggle on by default. Totals scaled to empire population."
+                  : "Log-spaced density classes (people/km²) so steppe vs cities stay distinct. Darker = denser."}
                 {scopePop ? (
                   <>
                     {" "}

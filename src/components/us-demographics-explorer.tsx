@@ -5,11 +5,11 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import {
   US_DEMOGRAPHICS_META,
-  US_PCT_LEGEND,
   US_RACE_GROUPS,
   US_STATE_RACE,
   getUsRaceGroup,
-  usPctColor,
+  usPctBinsForValues,
+  usPctColorFromBins,
   type UsRaceGroupId,
 } from "@/lib/sources/us-demographics-data";
 import { formatCompact, formatNumber } from "@/lib/utils";
@@ -61,9 +61,19 @@ export function UsDemographicsExplorer({
   const highest = ranked[0];
   const lowest = ranked[ranked.length - 1];
 
+  const pctBins = React.useMemo(
+    () => usPctBinsForValues(US_STATE_RACE.map((s) => s.shares[groupId])),
+    [groupId],
+  );
+
+  const colorFor = React.useCallback(
+    (v: number) => usPctColorFromBins(v, pctBins),
+    [pctBins],
+  );
+
   const legend = React.useMemo(
-    () => US_PCT_LEGEND.map((b) => ({ label: b.label, color: b.color })),
-    [],
+    () => pctBins.map((b) => ({ label: b.label, color: b.color })),
+    [pctBins],
   );
 
   return (
@@ -117,7 +127,7 @@ export function UsDemographicsExplorer({
           <RegionChoroplethMap
             geoUrl="/geo/us-states.json"
             data={mapData}
-            colorFor={usPctColor}
+            colorFor={colorFor}
             unit="%"
             decimals={1}
             height={520}

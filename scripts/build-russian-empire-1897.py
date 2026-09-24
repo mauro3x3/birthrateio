@@ -46,7 +46,7 @@ KEEP = {
     "LTU",
     "LVA",
     "EST",
-    "FIN",
+    # FIN excluded — Grand Duchy not in 1897 census; omit for clarity
     "MDA",
     "GEO",
     "ARM",
@@ -56,7 +56,22 @@ KEEP = {
     "TKM",
     "KGZ",
     "TJK",
-    "MNG",  # fringe
+}
+
+# Congress Poland only (Russian partition). Prussian / Galician Poland excluded.
+POL_CONGRESS = {
+    "masovian",
+    "mazowieckie",
+    "łódź",
+    "lodz",
+    "łódzkie",
+    "lodzkie",
+    "lublin",
+    "lubelskie",
+    "świętokrzyskie",
+    "swietokrzyskie",
+    "podlachian",
+    "podlaskie",
 }
 
 
@@ -105,11 +120,12 @@ def classify(a3: str, name: str) -> tuple[str, str, dict[str, float]] | None:
     if a3 == "LTU":
         return (n, "catholic", normalize_shares({"catholic": 0.76, "jewish": 0.12, "orthodox": 0.07, "other": 0.05}))
     if a3 == "FIN":
-        # Grand Duchy — Lutheran; not in 1897 census but inside empire
-        return (n, "protestant", normalize_shares({"protestant": 0.98, "orthodox": 0.015, "other": 0.005}))
+        return None
 
-    # Congress Poland — Catholic
+    # Congress Poland only — not Prussian west or Galician south
     if a3 == "POL":
+        if not any(k in nl for k in POL_CONGRESS):
+            return None
         return (n, "catholic", normalize_shares({"catholic": 0.74, "jewish": 0.14, "orthodox": 0.08, "protestant": 0.04}))
 
     if a3 == "BLR":
@@ -119,9 +135,19 @@ def classify(a3: str, name: str) -> tuple[str, str, dict[str, float]] | None:
         return (n, "orthodox", normalize_shares({"orthodox": 0.70, "catholic": 0.12, "jewish": 0.12, "other": 0.06}))
 
     if a3 == "UKR":
-        # Right-bank / west more Catholic-Uniate historically under AH; under RU mostly Orthodox
-        if any(x in nl for x in ["l'viv", "lviv", "ivano", "ternopil", "chernivtsi", "zakarp"]):
-            # mostly AH in 1897 — skip fringe outside RU outline
+        # AH / outside empire: Galicia, Bukovina, Transcarpathia
+        if any(
+            x in nl
+            for x in [
+                "l'viv",
+                "lviv",
+                "ivano",
+                "ternopil",
+                "chernivtsi",
+                "zakarp",
+                "transcarp",
+            ]
+        ):
             return None
         return (n, "orthodox", normalize_shares({"orthodox": 0.78, "jewish": 0.10, "catholic": 0.06, "other": 0.06}))
 
@@ -179,22 +205,83 @@ def classify(a3: str, name: str) -> tuple[str, str, dict[str, float]] | None:
 
 def base_density(religion: str, a3: str, name: str) -> float:
     nl = name.lower()
-    if any(x in nl for x in ["moscow", "moskva", "petersburg", "warsaw", "warszawa", "kyiv", "kiev"]):
-        return 1800
-    if a3 in {"POL", "UKR", "BLR", "MDA"}:
-        return 70
-    if a3 in {"EST", "LVA", "LTU", "FIN"}:
-        return 25
+    if any(
+        x in nl
+        for x in [
+            "moscow",
+            "moskva",
+            "petersburg",
+            "warsaw",
+            "warszawa",
+            "kyiv",
+            "kiev",
+            "masovian",
+            "łódź",
+            "lodz",
+        ]
+    ):
+        return 2800
+    if a3 == "POL":
+        return 95
+    if a3 in {"UKR", "BLR", "MDA"}:
+        return 75
+    if a3 in {"EST", "LVA", "LTU"}:
+        return 28
     if religion == "muslim" and a3 in {"UZB", "TKM", "KGZ", "TJK", "AZE"}:
-        return 18
-    if a3 == "KAZ":
-        return 8
-    if religion == "buddhist":
-        return 4
-    if a3 == "RUS":
-        if any(x in nl for x in ["siber", "yakut", "chukot", "magadan", "kamchat", "arkhangelsk", "murmansk"]):
-            return 2
         return 22
+    if a3 == "KAZ":
+        return 6
+    if religion == "buddhist":
+        return 3
+    if a3 == "RUS":
+        if any(
+            x in nl
+            for x in [
+                "siber",
+                "yakut",
+                "chukot",
+                "magadan",
+                "kamchat",
+                "arkhangelsk",
+                "murmansk",
+                "nenets",
+                "yamalo",
+                "khanty",
+                "tuva",
+                "buryat",
+                "sakha",
+                "amur",
+                "khabarovsk",
+                "primorsky",
+                "sakhalin",
+                "zabaykal",
+                "irkutsk",
+                "krasnoyarsk",
+                "tomsk",
+                "omsk",
+                "novosibirsk",
+                "kemerovo",
+                "altai",
+            ]
+        ):
+            return 1.8
+        if any(
+            x in nl
+            for x in [
+                "tula",
+                "tver",
+                "vladimir",
+                "ryazan",
+                "kaluga",
+                "ivanovo",
+                "yaroslavl",
+                "nizhny",
+                "leningrad",
+                "novgorod",
+            ]
+        ):
+            return 55
+        return 18
     return 20
 
 
@@ -227,9 +314,6 @@ def main() -> None:
             if not geom.is_empty:
                 dissolve_buckets["Courland–Livonia (Latvia)"].append(geom)
             continue
-        if a3 == "FIN" and type_en == "region":
-            # Prefer provinces over overlapping regions
-            continue
         classified = classify(a3, name)
         if not classified:
             continue
@@ -244,16 +328,15 @@ def main() -> None:
             pt = geom.representative_point()
         except Exception:
             continue
-        if not outline.contains(pt) and not outline.intersects(geom):
-            if a3 not in {"RUS", "UKR", "BLR", "POL", "FIN", "EST", "LTU"}:
-                continue
+        # Require real overlap with the empire outline — never keep full modern
+        # provinces that only touch the buffer (western Poland, Transcarpathia…).
+        if not outline.intersects(geom):
+            continue
         try:
             clipped = make_valid(geom.intersection(outline))
-            if clipped.is_empty:
-                clipped = geom
         except Exception:
-            clipped = geom
-        if clipped.is_empty or clipped.area < 1e-3:
+            continue
+        if clipped.is_empty or clipped.area < max(1e-3, geom.area * 0.15):
             continue
         clipped = simplify(clipped)
         slug = slugify(f"{a3}-{name}")
@@ -363,7 +446,7 @@ def main() -> None:
                 "year": 1897,
                 "mapMode": "plurality",
                 "primaryMetric": "religion",
-                "note": "Empire-scoped map on modern provinces inside the 1914 Russian outline, painted by approximate 1897 religion majority. Finland (Grand Duchy) included though not in the 1897 census. Unit mixes are illustrative — not official uyezd tables.",
+                "note": "Empire-scoped map on modern provinces inside the 1914 Russian outline, painted by approximate 1897 religion majority. Finland omitted (Grand Duchy; not in the 1897 census). Only Congress Poland is shown on the western fringe — not Prussian or Habsburg Poland. Unit mixes are illustrative — not official uyezd tables.",
                 "source": "Russian Empire Census 1897 (religion) for empire totals and regional majorities. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Russian Empire 1914.",
                 "sourceUrl": "https://en.wikipedia.org/wiki/Russian_Empire_Census",
                 "geoUrl": "/geo/historic/russian-empire-1897.json",

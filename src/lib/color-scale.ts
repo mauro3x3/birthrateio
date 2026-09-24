@@ -328,3 +328,55 @@ export function buildClassedScale(
     max,
   };
 }
+
+/** Log-spaced class breaks — better when density spans orders of magnitude. */
+export function buildLogClassedScale(
+  values: number[],
+  classes = 5,
+  palette: [number, number, number][] = CLASSED_WARM,
+): ColorScale & { ranges: { lo: number; hi: number; color: string }[] } {
+  const sorted = values
+    .filter((v) => Number.isFinite(v) && v > 0)
+    .sort((a, b) => a - b);
+  if (sorted.length === 0) {
+    return buildClassedScale(values, classes, palette);
+  }
+  const min = sorted[0]!;
+  const max = sorted[sorted.length - 1]!;
+  if (max / min < 8) {
+    return buildClassedScale(values, classes, palette);
+  }
+  const k = Math.max(2, Math.min(classes, palette.length));
+  const logMin = Math.log(min);
+  const logMax = Math.log(max);
+  const breaks: number[] = [];
+  for (let i = 1; i < k; i++) {
+    breaks.push(Math.exp(logMin + ((logMax - logMin) * i) / k));
+  }
+  const colors = palette.slice(0, breaks.length + 1);
+  const rgb = (c: [number, number, number]) =>
+    `rgb(${c[0]}, ${c[1]}, ${c[2]})`;
+  const classOf = (v: number) => {
+    if (!Number.isFinite(v) || v <= 0) return 0;
+    for (let i = 0; i < breaks.length; i++) {
+      if (v < breaks[i]!) return i;
+    }
+    return breaks.length;
+  };
+  const ranges: { lo: number; hi: number; color: string }[] = [];
+  for (let i = 0; i < colors.length; i++) {
+    const lo = i === 0 ? min : breaks[i - 1]!;
+    const hi = i === breaks.length ? max : breaks[i]!;
+    ranges.push({ lo, hi, color: rgb(colors[i]!) });
+  }
+  return {
+    color: (value: number) => rgb(colors[classOf(value)] ?? colors[0]!),
+    legend: ranges.map((r) => ({
+      value: Math.sqrt(r.lo * r.hi),
+      color: r.color,
+    })),
+    ranges,
+    min,
+    max,
+  };
+}

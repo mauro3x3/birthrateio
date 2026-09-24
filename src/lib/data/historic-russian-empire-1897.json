@@ -5,7 +5,7 @@
   "year": 1897,
   "mapMode": "plurality",
   "primaryMetric": "religion",
-  "note": "Empire-scoped map on modern provinces inside the 1914 Russian outline, painted by approximate 1897 religion majority. Finland (Grand Duchy) included though not in the 1897 census. Unit mixes are illustrative \u2014 not official uyezd tables.",
+  "note": "Empire-scoped map on modern provinces inside the 1914 Russian outline, painted by approximate 1897 religion majority. Finland omitted (Grand Duchy; not in the 1897 census). Only Congress Poland is shown on the western fringe \u2014 not Prussian or Habsburg Poland. Unit mixes are illustrative \u2014 not official uyezd tables.",
   "source": "Russian Empire Census 1897 (religion) for empire totals and regional majorities. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Russian Empire 1914.",
   "sourceUrl": "https://en.wikipedia.org/wiki/Russian_Empire_Census",
   "geoUrl": "/geo/historic/russian-empire-1897.json",
@@ -61,7 +61,7 @@
     "buddhist": 0.004,
     "other": 0.02
   },
-  "totalPopulation": 125324217,
+  "totalPopulation": 126371569,
   "areas": [
     {
       "code": "ru-ukr-chernihiv",
@@ -72,8 +72,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 31696.8,
-      "density": 19.5,
-      "population": 618088,
+      "density": 19.4,
+      "population": 614918,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -96,8 +96,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 40671.3,
-      "density": 19.5,
-      "population": 793090,
+      "density": 19.4,
+      "population": 789023,
       "shares": {
         "orthodox": 0.7,
         "catholic": 0.12,
@@ -120,8 +120,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 19734.3,
-      "density": 19.5,
-      "population": 384819,
+      "density": 19.4,
+      "population": 382845,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -144,8 +144,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 32906.3,
-      "density": 19.5,
-      "population": 641673,
+      "density": 19.4,
+      "population": 638382,
       "shares": {
         "catholic": 0.42,
         "orthodox": 0.4,
@@ -168,8 +168,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 20271.3,
-      "density": 19.5,
-      "population": 395290,
+      "density": 19.4,
+      "population": 393263,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -192,8 +192,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 29662.4,
-      "density": 19.5,
-      "population": 578417,
+      "density": 19.4,
+      "population": 575451,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -216,8 +216,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 27034.0,
-      "density": 501.5,
-      "population": 13557551,
+      "density": 724.1,
+      "population": 19575319,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -240,8 +240,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 7262.8,
-      "density": 5.0,
-      "population": 36314,
+      "density": 5.7,
+      "population": 41398,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -262,8 +262,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 279643.9,
-      "density": 2.2,
-      "population": 615217,
+      "density": 1.6,
+      "population": 447430,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -284,8 +284,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 222014.6,
-      "density": 2.2,
-      "population": 488432,
+      "density": 1.6,
+      "population": 355223,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -306,8 +306,8 @@
       "nationality": null,
       "adm0": "TJK",
       "areaKm2": 25730.9,
-      "density": 5.0,
-      "population": 128654,
+      "density": 5.7,
+      "population": 146666,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -328,8 +328,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 39805.2,
-      "density": 19.5,
-      "population": 776201,
+      "density": 19.4,
+      "population": 772221,
       "shares": {
         "orthodox": 0.7,
         "catholic": 0.12,
@@ -352,8 +352,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 7057.1,
-      "density": 7.0,
-      "population": 49400,
+      "density": 7.2,
+      "population": 50811,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -376,8 +376,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 9725.4,
-      "density": 7.0,
-      "population": 68078,
+      "density": 7.2,
+      "population": 70023,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -400,8 +400,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 25160.7,
-      "density": 19.5,
-      "population": 490634,
+      "density": 19.4,
+      "population": 488118,
       "shares": {
         "catholic": 0.42,
         "orthodox": 0.4,
@@ -424,8 +424,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 5681.0,
-      "density": 7.0,
-      "population": 39767,
+      "density": 7.2,
+      "population": 40903,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -448,8 +448,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 92779.9,
-      "density": 6.1,
-      "population": 565957,
+      "density": 4.7,
+      "population": 436066,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -472,8 +472,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 3645.9,
-      "density": 7.0,
-      "population": 25521,
+      "density": 7.2,
+      "population": 26250,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -496,8 +496,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 4895.3,
-      "density": 7.0,
-      "population": 34267,
+      "density": 7.2,
+      "population": 35246,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -520,8 +520,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2059.7,
-      "density": 7.0,
-      "population": 14418,
+      "density": 7.2,
+      "population": 14830,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -544,8 +544,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2444.0,
-      "density": 7.0,
-      "population": 17108,
+      "density": 7.2,
+      "population": 17597,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -568,8 +568,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 55798.0,
-      "density": 6.1,
-      "population": 340368,
+      "density": 4.7,
+      "population": 262251,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -592,8 +592,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 7808.7,
-      "density": 7.0,
-      "population": 54661,
+      "density": 7.2,
+      "population": 56223,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -616,8 +616,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 3957.4,
-      "density": 7.0,
-      "population": 27702,
+      "density": 7.2,
+      "population": 28493,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -640,8 +640,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 4495.2,
-      "density": 7.0,
-      "population": 31466,
+      "density": 7.2,
+      "population": 32365,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -664,8 +664,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 8535.9,
-      "density": 7.0,
-      "population": 59751,
+      "density": 7.2,
+      "population": 61458,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -677,28 +677,6 @@
         "jewish": 0.12,
         "orthodox": 0.07,
         "other": 0.05
-      }
-    },
-    {
-      "code": "ru-fin-lapland",
-      "slug": "ru-fin-lapland",
-      "name": "Lapland",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 3413.8,
-      "density": 7.0,
-      "population": 23897,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
       }
     },
     {
@@ -710,8 +688,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 74718.8,
-      "density": 6.1,
-      "population": 455785,
+      "density": 4.7,
+      "population": 351178,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -734,8 +712,8 @@
       "nationality": null,
       "adm0": "GEO",
       "areaKm2": 2507.0,
-      "density": 5.6,
-      "population": 14039,
+      "density": 5.2,
+      "population": 13036,
       "shares": {
         "orthodox": 0.85,
         "armenian": 0.08,
@@ -758,8 +736,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 14548.4,
-      "density": 6.1,
-      "population": 88745,
+      "density": 4.7,
+      "population": 68377,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -780,8 +758,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 12631.4,
-      "density": 6.1,
-      "population": 77052,
+      "density": 4.7,
+      "population": 59368,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -804,8 +782,8 @@
       "nationality": null,
       "adm0": "GEO",
       "areaKm2": 1217.8,
-      "density": 5.6,
-      "population": 6820,
+      "density": 5.2,
+      "population": 6333,
       "shares": {
         "orthodox": 0.85,
         "armenian": 0.08,
@@ -828,8 +806,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 7888.9,
-      "density": 6.1,
-      "population": 48122,
+      "density": 4.7,
+      "population": 37078,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -841,30 +819,6 @@
         "muslim": 0.04,
         "protestant": 0.02,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-geo-shida-kartli",
-      "slug": "ru-geo-shida-kartli",
-      "name": "Shida Kartli",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "GEO",
-      "areaKm2": 605.5,
-      "density": 5.6,
-      "population": 3391,
-      "shares": {
-        "orthodox": 0.85,
-        "armenian": 0.08,
-        "muslim": 0.04,
-        "other": 0.03
-      },
-      "religionShares": {
-        "orthodox": 0.85,
-        "armenian": 0.08,
-        "muslim": 0.04,
-        "other": 0.03
       }
     },
     {
@@ -876,8 +830,8 @@
       "nationality": null,
       "adm0": "GEO",
       "areaKm2": 828.9,
-      "density": 5.6,
-      "population": 4642,
+      "density": 5.2,
+      "population": 4310,
       "shares": {
         "orthodox": 0.85,
         "armenian": 0.08,
@@ -900,8 +854,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 3252.6,
-      "density": 6.1,
-      "population": 19841,
+      "density": 4.7,
+      "population": 15287,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -924,8 +878,8 @@
       "nationality": null,
       "adm0": "GEO",
       "areaKm2": 1441.7,
-      "density": 5.6,
-      "population": 8074,
+      "density": 5.2,
+      "population": 7497,
       "shares": {
         "orthodox": 0.85,
         "armenian": 0.08,
@@ -948,8 +902,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 16235.4,
-      "density": 6.1,
-      "population": 99036,
+      "density": 4.7,
+      "population": 76306,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -961,30 +915,6 @@
         "muslim": 0.04,
         "protestant": 0.02,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-geo-kakheti",
-      "slug": "ru-geo-kakheti",
-      "name": "Kakheti",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "GEO",
-      "areaKm2": 1249.7,
-      "density": 5.6,
-      "population": 6998,
-      "shares": {
-        "orthodox": 0.85,
-        "armenian": 0.08,
-        "muslim": 0.04,
-        "other": 0.03
-      },
-      "religionShares": {
-        "orthodox": 0.85,
-        "armenian": 0.08,
-        "muslim": 0.04,
-        "other": 0.03
       }
     },
     {
@@ -996,8 +926,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 50173.2,
-      "density": 6.1,
-      "population": 306057,
+      "density": 4.7,
+      "population": 235814,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -1018,8 +948,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 42390.2,
-      "density": 5.0,
-      "population": 211951,
+      "density": 5.7,
+      "population": 241624,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1040,8 +970,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 45558.7,
-      "density": 5.0,
-      "population": 227794,
+      "density": 5.7,
+      "population": 259685,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1062,8 +992,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 29040.6,
-      "density": 5.0,
-      "population": 145203,
+      "density": 5.7,
+      "population": 165531,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1084,8 +1014,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 140088.4,
-      "density": 2.2,
-      "population": 308194,
+      "density": 1.6,
+      "population": 224141,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -1106,8 +1036,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 19630.1,
-      "density": 5.0,
-      "population": 98150,
+      "density": 5.7,
+      "population": 111892,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1128,8 +1058,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 11514.3,
-      "density": 5.0,
-      "population": 57572,
+      "density": 5.7,
+      "population": 65632,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1150,8 +1080,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 115568.3,
-      "density": 2.2,
-      "population": 254250,
+      "density": 1.6,
+      "population": 184909,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -1172,8 +1102,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 33859.6,
-      "density": 5.0,
-      "population": 169298,
+      "density": 5.7,
+      "population": 193000,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1194,8 +1124,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 15008.9,
-      "density": 5.0,
-      "population": 75044,
+      "density": 5.7,
+      "population": 85551,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1216,8 +1146,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 7571.2,
-      "density": 5.0,
-      "population": 37856,
+      "density": 5.7,
+      "population": 43156,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1238,8 +1168,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 4268.2,
-      "density": 5.0,
-      "population": 21341,
+      "density": 5.7,
+      "population": 24329,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1260,8 +1190,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 16919.5,
-      "density": 5.0,
-      "population": 84598,
+      "density": 5.7,
+      "population": 96441,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1271,126 +1201,6 @@
         "muslim": 0.9,
         "orthodox": 0.06,
         "other": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-silesian",
-      "slug": "ru-pol-silesian",
-      "name": "Silesian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 7725.3,
-      "density": 19.5,
-      "population": 150643,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-lesser-poland",
-      "slug": "ru-pol-lesser-poland",
-      "name": "Lesser Poland",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 3689.7,
-      "density": 19.5,
-      "population": 71949,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-subcarpathian",
-      "slug": "ru-pol-subcarpathian",
-      "name": "Subcarpathian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 2659.9,
-      "density": 19.5,
-      "population": 51868,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-lower-silesian",
-      "slug": "ru-pol-lower-silesian",
-      "name": "Lower Silesian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 19676.1,
-      "density": 19.5,
-      "population": 383684,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-opole",
-      "slug": "ru-pol-opole",
-      "name": "Opole",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 1666.8,
-      "density": 19.5,
-      "population": 32503,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
       }
     },
     {
@@ -1402,8 +1212,8 @@
       "nationality": null,
       "adm0": "TJK",
       "areaKm2": 28717.1,
-      "density": 5.0,
-      "population": 143586,
+      "density": 5.7,
+      "population": 163687,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1424,8 +1234,8 @@
       "nationality": null,
       "adm0": "TJK",
       "areaKm2": 63653.5,
-      "density": 5.0,
-      "population": 318268,
+      "density": 5.7,
+      "population": 362825,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -1435,30 +1245,6 @@
         "muslim": 0.9,
         "orthodox": 0.06,
         "other": 0.04
-      }
-    },
-    {
-      "code": "ru-ukr-transcarpathia",
-      "slug": "ru-ukr-transcarpathia",
-      "name": "Transcarpathia",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "UKR",
-      "areaKm2": 12974.7,
-      "density": 19.5,
-      "population": 253007,
-      "shares": {
-        "orthodox": 0.78,
-        "jewish": 0.1,
-        "catholic": 0.06,
-        "other": 0.06
-      },
-      "religionShares": {
-        "orthodox": 0.78,
-        "jewish": 0.1,
-        "catholic": 0.06,
-        "other": 0.06
       }
     },
     {
@@ -1470,8 +1256,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 4765.6,
-      "density": 7.0,
-      "population": 33359,
+      "density": 7.2,
+      "population": 34312,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -1494,32 +1280,8 @@
       "nationality": null,
       "adm0": "POL",
       "areaKm2": 20730.8,
-      "density": 19.5,
-      "population": 404251,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-warmian-masurian",
-      "slug": "ru-pol-warmian-masurian",
-      "name": "Warmian-Masurian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 3028.8,
-      "density": 19.5,
-      "population": 59062,
+      "density": 24.6,
+      "population": 509978,
       "shares": {
         "catholic": 0.74,
         "jewish": 0.14,
@@ -1542,8 +1304,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 141828.5,
-      "density": 0.6,
-      "population": 85097,
+      "density": 0.5,
+      "population": 70914,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -1566,8 +1328,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 172625.3,
-      "density": 6.1,
-      "population": 1053014,
+      "density": 4.7,
+      "population": 811339,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -1579,94 +1341,6 @@
         "muslim": 0.04,
         "protestant": 0.02,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-fin-northern-ostrobothnia",
-      "slug": "ru-fin-northern-ostrobothnia",
-      "name": "Northern Ostrobothnia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 1148.9,
-      "density": 7.0,
-      "population": 8042,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-kainuu",
-      "slug": "ru-fin-kainuu",
-      "name": "Kainuu",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 2403.8,
-      "density": 7.0,
-      "population": 16827,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-north-karelia",
-      "slug": "ru-fin-north-karelia",
-      "name": "North Karelia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 2896.7,
-      "density": 7.0,
-      "population": 20277,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-south-karelia",
-      "slug": "ru-fin-south-karelia",
-      "name": "South Karelia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 338.0,
-      "density": 7.0,
-      "population": 2366,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
       }
     },
     {
@@ -1678,8 +1352,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 82235.4,
-      "density": 6.1,
-      "population": 501636,
+      "density": 14.2,
+      "population": 1167743,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -1691,28 +1365,6 @@
         "muslim": 0.04,
         "protestant": 0.02,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-fin-kymenlaakso",
-      "slug": "ru-fin-kymenlaakso",
-      "name": "Kymenlaakso",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 5494.5,
-      "density": 7.0,
-      "population": 38462,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
       }
     },
     {
@@ -1724,8 +1376,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 230.7,
-      "density": 5.0,
-      "population": 1154,
+      "density": 5.7,
+      "population": 1315,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1748,8 +1400,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 394.8,
-      "density": 5.0,
-      "population": 1974,
+      "density": 5.7,
+      "population": 2250,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1772,8 +1424,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 533.1,
-      "density": 5.0,
-      "population": 2666,
+      "density": 5.7,
+      "population": 3039,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1796,8 +1448,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 1192.3,
-      "density": 5.0,
-      "population": 5962,
+      "density": 5.7,
+      "population": 6796,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1820,56 +1472,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 345.3,
-      "density": 5.0,
-      "population": 1726,
-      "shares": {
-        "muslim": 0.82,
-        "armenian": 0.1,
-        "orthodox": 0.05,
-        "other": 0.03
-      },
-      "religionShares": {
-        "muslim": 0.82,
-        "armenian": 0.1,
-        "orthodox": 0.05,
-        "other": 0.03
-      }
-    },
-    {
-      "code": "ru-aze-s-ki",
-      "slug": "ru-aze-s-ki",
-      "name": "\u015e\u0259ki",
-      "plurality": "muslim",
-      "religion": "muslim",
-      "nationality": null,
-      "adm0": "AZE",
-      "areaKm2": 232.2,
-      "density": 5.0,
-      "population": 1161,
-      "shares": {
-        "muslim": 0.82,
-        "armenian": 0.1,
-        "orthodox": 0.05,
-        "other": 0.03
-      },
-      "religionShares": {
-        "muslim": 0.82,
-        "armenian": 0.1,
-        "orthodox": 0.05,
-        "other": 0.03
-      }
-    },
-    {
-      "code": "ru-aze-qax",
-      "slug": "ru-aze-qax",
-      "name": "Qax",
-      "plurality": "muslim",
-      "religion": "muslim",
-      "nationality": null,
-      "adm0": "AZE",
-      "areaKm2": 131.0,
-      "density": 5.0,
-      "population": 655,
+      "density": 5.7,
+      "population": 1968,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1892,8 +1496,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 318.9,
-      "density": 5.0,
-      "population": 1594,
+      "density": 5.7,
+      "population": 1818,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -1905,54 +1509,6 @@
         "armenian": 0.1,
         "orthodox": 0.05,
         "other": 0.03
-      }
-    },
-    {
-      "code": "ru-pol-lubusz",
-      "slug": "ru-pol-lubusz",
-      "name": "Lubusz",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 13894.8,
-      "density": 19.5,
-      "population": 270949,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-west-pomeranian",
-      "slug": "ru-pol-west-pomeranian",
-      "name": "West Pomeranian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 23667.5,
-      "density": 19.5,
-      "population": 461516,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
       }
     },
     {
@@ -1964,8 +1520,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 21581.7,
-      "density": 19.5,
-      "population": 420843,
+      "density": 19.4,
+      "population": 418685,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -1988,8 +1544,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 230.3,
-      "density": 19.5,
-      "population": 4491,
+      "density": 19.4,
+      "population": 4468,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2010,8 +1566,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 26574.8,
-      "density": 19.5,
-      "population": 518209,
+      "density": 19.4,
+      "population": 515551,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -2034,8 +1590,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 376.1,
-      "density": 19.5,
-      "population": 7334,
+      "density": 19.4,
+      "population": 7296,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2056,8 +1612,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 723.0,
-      "density": 19.5,
-      "population": 14098,
+      "density": 19.4,
+      "population": 14026,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2078,8 +1634,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 677.8,
-      "density": 19.5,
-      "population": 13217,
+      "density": 19.4,
+      "population": 13149,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2100,8 +1656,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 715.5,
-      "density": 19.5,
-      "population": 13952,
+      "density": 19.4,
+      "population": 13881,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2122,8 +1678,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 603.3,
-      "density": 19.5,
-      "population": 11764,
+      "density": 19.4,
+      "population": 11704,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2144,8 +1700,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 684.2,
-      "density": 19.5,
-      "population": 13342,
+      "density": 19.4,
+      "population": 13273,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2166,8 +1722,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 912.5,
-      "density": 19.5,
-      "population": 17794,
+      "density": 19.4,
+      "population": 17702,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2188,8 +1744,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 923.4,
-      "density": 19.5,
-      "population": 18006,
+      "density": 19.4,
+      "population": 17914,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2210,8 +1766,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 318.4,
-      "density": 19.5,
-      "population": 6209,
+      "density": 19.4,
+      "population": 6177,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -2232,8 +1788,8 @@
       "nationality": null,
       "adm0": "POL",
       "areaKm2": 24595.9,
-      "density": 19.5,
-      "population": 479620,
+      "density": 24.6,
+      "population": 605059,
       "shares": {
         "catholic": 0.74,
         "jewish": 0.14,
@@ -2245,30 +1801,6 @@
         "jewish": 0.14,
         "orthodox": 0.08,
         "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-rus-kaliningrad",
-      "slug": "ru-rus-kaliningrad",
-      "name": "Kaliningrad",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "RUS",
-      "areaKm2": 1242.5,
-      "density": 6.1,
-      "population": 7579,
-      "shares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
-      },
-      "religionShares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
       }
     },
     {
@@ -2280,8 +1812,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 3759.7,
-      "density": 7.0,
-      "population": 26318,
+      "density": 7.2,
+      "population": 27070,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -2304,8 +1836,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 50256.0,
-      "density": 6.1,
-      "population": 306562,
+      "density": 4.7,
+      "population": 236203,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2328,8 +1860,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 28766.4,
-      "density": 19.5,
-      "population": 560945,
+      "density": 19.4,
+      "population": 558068,
       "shares": {
         "orthodox": 0.7,
         "catholic": 0.12,
@@ -2352,8 +1884,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 35124.1,
-      "density": 6.1,
-      "population": 214257,
+      "density": 4.7,
+      "population": 165083,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2376,8 +1908,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 23435.6,
-      "density": 19.5,
-      "population": 456994,
+      "density": 19.4,
+      "population": 454651,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -2400,8 +1932,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 30096.9,
-      "density": 6.1,
-      "population": 183591,
+      "density": 4.7,
+      "population": 141455,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2424,8 +1956,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 27692.2,
-      "density": 6.1,
-      "population": 168922,
+      "density": 4.7,
+      "population": 130153,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2448,8 +1980,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 31324.6,
-      "density": 19.5,
-      "population": 610830,
+      "density": 19.4,
+      "population": 607697,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -2472,8 +2004,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 26275.3,
-      "density": 19.5,
-      "population": 512368,
+      "density": 19.4,
+      "population": 509741,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -2496,8 +2028,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 52082.8,
-      "density": 6.1,
-      "population": 317705,
+      "density": 4.7,
+      "population": 244789,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2520,8 +2052,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 101390.9,
-      "density": 6.1,
-      "population": 618484,
+      "density": 4.7,
+      "population": 476537,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2544,8 +2076,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 26572.6,
-      "density": 19.5,
-      "population": 518166,
+      "density": 19.4,
+      "population": 515508,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -2568,8 +2100,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 352582.2,
-      "density": 1.1,
-      "population": 387840,
+      "density": 0.8,
+      "population": 282066,
       "shares": {
         "buddhist": 0.48,
         "orthodox": 0.4,
@@ -2590,8 +2122,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 168936.6,
-      "density": 1.1,
-      "population": 185830,
+      "density": 0.8,
+      "population": 135149,
       "shares": {
         "buddhist": 0.48,
         "orthodox": 0.4,
@@ -2612,8 +2144,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 431816.7,
-      "density": 6.1,
-      "population": 2634082,
+      "density": 4.7,
+      "population": 2029538,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2636,8 +2168,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 360376.7,
-      "density": 6.1,
-      "population": 2198298,
+      "density": 0.5,
+      "population": 180188,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2660,8 +2192,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 35902.1,
-      "density": 6.1,
-      "population": 219003,
+      "density": 4.7,
+      "population": 168740,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2684,8 +2216,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 780067.9,
-      "density": 6.1,
-      "population": 4758414,
+      "density": 0.5,
+      "population": 390034,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2708,8 +2240,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 165240.6,
-      "density": 6.1,
-      "population": 1007968,
+      "density": 4.7,
+      "population": 776631,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -2732,8 +2264,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 4839.4,
-      "density": 5.0,
-      "population": 24197,
+      "density": 5.7,
+      "population": 27585,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2754,8 +2286,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 20911.5,
-      "density": 5.0,
-      "population": 104558,
+      "density": 5.7,
+      "population": 119196,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2776,8 +2308,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 16525.8,
-      "density": 5.0,
-      "population": 82629,
+      "density": 5.7,
+      "population": 94197,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2798,8 +2330,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 29120.8,
-      "density": 5.0,
-      "population": 145604,
+      "density": 5.7,
+      "population": 165989,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2820,8 +2352,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 19440.6,
-      "density": 5.0,
-      "population": 97203,
+      "density": 5.7,
+      "population": 110811,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2842,8 +2374,8 @@
       "nationality": null,
       "adm0": "TJK",
       "areaKm2": 24102.1,
-      "density": 5.0,
-      "population": 120510,
+      "density": 5.7,
+      "population": 137382,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2864,8 +2396,8 @@
       "nationality": null,
       "adm0": "TKM",
       "areaKm2": 93579.6,
-      "density": 5.0,
-      "population": 467898,
+      "density": 5.7,
+      "population": 533404,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2886,8 +2418,8 @@
       "nationality": null,
       "adm0": "TKM",
       "areaKm2": 85363.3,
-      "density": 5.0,
-      "population": 426816,
+      "density": 5.7,
+      "population": 486571,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2908,8 +2440,8 @@
       "nationality": null,
       "adm0": "TKM",
       "areaKm2": 100649.4,
-      "density": 5.0,
-      "population": 503247,
+      "density": 5.7,
+      "population": 573702,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2919,30 +2451,6 @@
         "muslim": 0.9,
         "orthodox": 0.06,
         "other": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-pomeranian",
-      "slug": "ru-pol-pomeranian",
-      "name": "Pomeranian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 18658.9,
-      "density": 19.5,
-      "population": 363849,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
       }
     },
     {
@@ -2954,8 +2462,8 @@
       "nationality": null,
       "adm0": "TKM",
       "areaKm2": 118573.8,
-      "density": 5.0,
-      "population": 592869,
+      "density": 5.7,
+      "population": 675871,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -2976,8 +2484,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 164787.6,
-      "density": 2.2,
-      "population": 362533,
+      "density": 1.6,
+      "population": 263660,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -2998,8 +2506,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 223416.2,
-      "density": 2.2,
-      "population": 491516,
+      "density": 1.6,
+      "population": 357466,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -3020,8 +2528,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 165394.0,
-      "density": 5.0,
-      "population": 826970,
+      "density": 5.7,
+      "population": 942746,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -3042,8 +2550,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 301729.6,
-      "density": 2.2,
-      "population": 663805,
+      "density": 1.6,
+      "population": 482767,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -3064,8 +2572,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 110043.9,
-      "density": 5.0,
-      "population": 550220,
+      "density": 5.7,
+      "population": 627250,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -3086,8 +2594,8 @@
       "nationality": null,
       "adm0": "TKM",
       "areaKm2": 73150.8,
-      "density": 5.0,
-      "population": 365754,
+      "density": 5.7,
+      "population": 416960,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -3108,8 +2616,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 7011.5,
-      "density": 5.0,
-      "population": 35058,
+      "density": 5.7,
+      "population": 39966,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -3130,8 +2638,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 40300.1,
-      "density": 5.0,
-      "population": 201500,
+      "density": 5.7,
+      "population": 229711,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -3152,8 +2660,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 98437.4,
-      "density": 2.2,
-      "population": 216562,
+      "density": 1.6,
+      "population": 157500,
       "shares": {
         "orthodox": 0.48,
         "muslim": 0.45,
@@ -3174,8 +2682,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 159377.5,
-      "density": 6.1,
-      "population": 972203,
+      "density": 4.7,
+      "population": 749074,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3198,8 +2706,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 72074.3,
-      "density": 6.1,
-      "population": 439653,
+      "density": 4.7,
+      "population": 338749,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3222,8 +2730,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 141106.8,
-      "density": 6.1,
-      "population": 860751,
+      "density": 0.5,
+      "population": 70553,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3246,8 +2754,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 200548.7,
-      "density": 2.2,
-      "population": 441207,
+      "density": 1.6,
+      "population": 320878,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -3268,8 +2776,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 123878.8,
-      "density": 2.2,
-      "population": 272533,
+      "density": 1.6,
+      "population": 198206,
       "shares": {
         "orthodox": 0.48,
         "muslim": 0.45,
@@ -3290,8 +2798,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 177438.8,
-      "density": 6.1,
-      "population": 1082377,
+      "density": 0.5,
+      "population": 88719,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3314,8 +2822,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 88475.4,
-      "density": 6.1,
-      "population": 539700,
+      "density": 4.7,
+      "population": 415834,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3338,8 +2846,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 171269.7,
-      "density": 6.1,
-      "population": 1044745,
+      "density": 4.7,
+      "population": 804968,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3362,8 +2870,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 124853.3,
-      "density": 6.1,
-      "population": 761605,
+      "density": 4.7,
+      "population": 586811,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3386,8 +2894,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 153900.6,
-      "density": 2.2,
-      "population": 338581,
+      "density": 1.6,
+      "population": 246241,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -3408,8 +2916,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 101924.3,
-      "density": 6.1,
-      "population": 621738,
+      "density": 4.7,
+      "population": 479044,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3432,8 +2940,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 45955.2,
-      "density": 6.1,
-      "population": 280327,
+      "density": 4.7,
+      "population": 215989,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3456,8 +2964,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 113056.4,
-      "density": 6.1,
-      "population": 689644,
+      "density": 4.7,
+      "population": 531365,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3480,8 +2988,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 112213.2,
-      "density": 2.2,
-      "population": 246869,
+      "density": 1.6,
+      "population": 179541,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -3502,8 +3010,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 3930.4,
-      "density": 7.0,
-      "population": 27513,
+      "density": 7.2,
+      "population": 28299,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3526,8 +3034,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2205.6,
-      "density": 7.0,
-      "population": 15439,
+      "density": 7.2,
+      "population": 15880,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3550,8 +3058,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 3715.9,
-      "density": 7.0,
-      "population": 26011,
+      "density": 7.2,
+      "population": 26754,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3574,8 +3082,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2919.2,
-      "density": 7.0,
-      "population": 20434,
+      "density": 7.2,
+      "population": 21018,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3598,8 +3106,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 26398.7,
-      "density": 6.1,
-      "population": 161032,
+      "density": 4.7,
+      "population": 124074,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -3620,8 +3128,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 25327.7,
-      "density": 19.5,
-      "population": 493890,
+      "density": 19.4,
+      "population": 491357,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -3644,8 +3152,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 461650.5,
-      "density": 1.1,
-      "population": 507816,
+      "density": 0.8,
+      "population": 369320,
       "shares": {
         "buddhist": 0.48,
         "orthodox": 0.4,
@@ -3655,30 +3163,6 @@
         "buddhist": 0.48,
         "orthodox": 0.4,
         "other": 0.12
-      }
-    },
-    {
-      "code": "ru-rus-sakhalin",
-      "slug": "ru-rus-sakhalin",
-      "name": "Sakhalin",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "RUS",
-      "areaKm2": 85924.6,
-      "density": 6.1,
-      "population": 524140,
-      "shares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
-      },
-      "religionShares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
       }
     },
     {
@@ -3690,8 +3174,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 27038.0,
-      "density": 19.5,
-      "population": 527241,
+      "density": 19.4,
+      "population": 524537,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -3714,8 +3198,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 739.8,
-      "density": 6.1,
-      "population": 4513,
+      "density": 4.7,
+      "population": 3477,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -3736,8 +3220,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 23424.9,
-      "density": 19.5,
-      "population": 456786,
+      "density": 19.4,
+      "population": 454443,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -3760,8 +3244,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 590989.1,
-      "density": 6.1,
-      "population": 3605034,
+      "density": 4.7,
+      "population": 2777649,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3784,8 +3268,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 678289.6,
-      "density": 6.1,
-      "population": 4137567,
+      "density": 0.5,
+      "population": 339145,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3808,8 +3292,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 167322.8,
-      "density": 6.1,
-      "population": 1020669,
+      "density": 0.5,
+      "population": 83661,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3832,8 +3316,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 3018140.4,
-      "density": 0.6,
-      "population": 1810884,
+      "density": 0.5,
+      "population": 1509070,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3856,8 +3340,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2343.1,
-      "density": 7.0,
-      "population": 16402,
+      "density": 7.2,
+      "population": 16870,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3880,8 +3364,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 4406.5,
-      "density": 7.0,
-      "population": 30846,
+      "density": 7.2,
+      "population": 31727,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3904,8 +3388,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 3462.2,
-      "density": 7.0,
-      "population": 24235,
+      "density": 7.2,
+      "population": 24928,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -3928,8 +3412,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 2043.9,
-      "density": 501.5,
-      "population": 1025016,
+      "density": 724.1,
+      "population": 1479988,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -3941,72 +3425,6 @@
         "muslim": 0.04,
         "protestant": 0.02,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-fin-uusimaa",
-      "slug": "ru-fin-uusimaa",
-      "name": "Uusimaa",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 9009.5,
-      "density": 7.0,
-      "population": 63066,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-ostrobothnia",
-      "slug": "ru-fin-ostrobothnia",
-      "name": "Ostrobothnia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 7273.2,
-      "density": 7.0,
-      "population": 50912,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-central-ostrobothnia",
-      "slug": "ru-fin-central-ostrobothnia",
-      "name": "Central Ostrobothnia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 5305.2,
-      "density": 7.0,
-      "population": 37136,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
       }
     },
     {
@@ -4018,8 +3436,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 385710.9,
-      "density": 6.1,
-      "population": 2352836,
+      "density": 4.7,
+      "population": 1812841,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4042,8 +3460,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 2287025.7,
-      "density": 6.1,
-      "population": 13950857,
+      "density": 0.5,
+      "population": 1143513,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4066,8 +3484,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 73466.4,
-      "density": 1.1,
-      "population": 80813,
+      "density": 0.8,
+      "population": 58773,
       "shares": {
         "buddhist": 0.48,
         "orthodox": 0.4,
@@ -4088,80 +3506,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 458236.6,
-      "density": 0.6,
-      "population": 274942,
-      "shares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
-      },
-      "religionShares": {
-        "orthodox": 0.88,
-        "muslim": 0.04,
-        "protestant": 0.02,
-        "other": 0.06
-      }
-    },
-    {
-      "code": "ru-est-saare",
-      "slug": "ru-est-saare",
-      "name": "Saare",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "EST",
-      "areaKm2": 50.2,
-      "density": 7.0,
-      "population": 351,
-      "shares": {
-        "protestant": 0.78,
-        "orthodox": 0.12,
-        "catholic": 0.05,
-        "other": 0.05
-      },
-      "religionShares": {
-        "protestant": 0.78,
-        "orthodox": 0.12,
-        "catholic": 0.05,
-        "other": 0.05
-      }
-    },
-    {
-      "code": "ru-est-hiiu",
-      "slug": "ru-est-hiiu",
-      "name": "Hiiu",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "EST",
-      "areaKm2": 1051.0,
-      "density": 7.0,
-      "population": 7357,
-      "shares": {
-        "protestant": 0.78,
-        "orthodox": 0.12,
-        "catholic": 0.05,
-        "other": 0.05
-      },
-      "religionShares": {
-        "protestant": 0.78,
-        "orthodox": 0.12,
-        "catholic": 0.05,
-        "other": 0.05
-      }
-    },
-    {
-      "code": "ru-rus",
-      "slug": "ru-rus",
-      "name": "",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "RUS",
-      "areaKm2": 2.4,
-      "density": 6.1,
-      "population": 15,
+      "density": 0.5,
+      "population": 229118,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4184,8 +3530,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 28335.4,
-      "density": 19.5,
-      "population": 552540,
+      "density": 19.4,
+      "population": 549707,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -4208,8 +3554,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 20417.3,
-      "density": 19.5,
-      "population": 398137,
+      "density": 19.4,
+      "population": 396096,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -4232,8 +3578,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 31790.0,
-      "density": 19.5,
-      "population": 619905,
+      "density": 19.4,
+      "population": 616726,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -4256,8 +3602,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 21183.4,
-      "density": 19.5,
-      "population": 413076,
+      "density": 19.4,
+      "population": 410958,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -4280,8 +3626,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 24469.0,
-      "density": 19.5,
-      "population": 477146,
+      "density": 19.4,
+      "population": 474699,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -4304,8 +3650,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 395.3,
-      "density": 19.5,
-      "population": 7708,
+      "density": 19.4,
+      "population": 7669,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4326,8 +3672,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 480.5,
-      "density": 19.5,
-      "population": 9370,
+      "density": 19.4,
+      "population": 9322,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4348,8 +3694,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 320.5,
-      "density": 19.5,
-      "population": 6250,
+      "density": 19.4,
+      "population": 6218,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4370,8 +3716,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 13.5,
-      "density": 19.5,
-      "population": 263,
+      "density": 19.4,
+      "population": 262,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4392,30 +3738,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 353.4,
-      "density": 19.5,
-      "population": 6891,
-      "shares": {
-        "orthodox": 0.82,
-        "jewish": 0.1,
-        "other": 0.08
-      },
-      "religionShares": {
-        "orthodox": 0.82,
-        "jewish": 0.1,
-        "other": 0.08
-      }
-    },
-    {
-      "code": "ru-mda-floresti",
-      "slug": "ru-mda-floresti",
-      "name": "Flore\u015fti",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "MDA",
-      "areaKm2": 105.7,
-      "density": 19.5,
-      "population": 2061,
+      "density": 19.4,
+      "population": 6856,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4436,8 +3760,8 @@
       "nationality": null,
       "adm0": "MDA",
       "areaKm2": 437.6,
-      "density": 19.5,
-      "population": 8533,
+      "density": 19.4,
+      "population": 8489,
       "shares": {
         "orthodox": 0.82,
         "jewish": 0.1,
@@ -4458,8 +3782,8 @@
       "nationality": null,
       "adm0": "LTU",
       "areaKm2": 8134.1,
-      "density": 7.0,
-      "population": 56939,
+      "density": 7.2,
+      "population": 58566,
       "shares": {
         "catholic": 0.76,
         "jewish": 0.12,
@@ -4471,28 +3795,6 @@
         "jewish": 0.12,
         "orthodox": 0.07,
         "other": 0.05
-      }
-    },
-    {
-      "code": "ru-mda-drochia",
-      "slug": "ru-mda-drochia",
-      "name": "Drochia",
-      "plurality": "orthodox",
-      "religion": "orthodox",
-      "nationality": null,
-      "adm0": "MDA",
-      "areaKm2": 67.0,
-      "density": 19.5,
-      "population": 1306,
-      "shares": {
-        "orthodox": 0.82,
-        "jewish": 0.1,
-        "other": 0.08
-      },
-      "religionShares": {
-        "orthodox": 0.82,
-        "jewish": 0.1,
-        "other": 0.08
       }
     },
     {
@@ -4504,8 +3806,8 @@
       "nationality": null,
       "adm0": "KGZ",
       "areaKm2": 121.6,
-      "density": 5.0,
-      "population": 608,
+      "density": 5.7,
+      "population": 693,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -4526,8 +3828,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2917.1,
-      "density": 7.0,
-      "population": 20420,
+      "density": 7.2,
+      "population": 21003,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -4550,8 +3852,8 @@
       "nationality": null,
       "adm0": "EST",
       "areaKm2": 2553.8,
-      "density": 7.0,
-      "population": 17877,
+      "density": 7.2,
+      "population": 18387,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
@@ -4574,8 +3876,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 39304.1,
-      "density": 19.5,
-      "population": 766430,
+      "density": 19.4,
+      "population": 762500,
       "shares": {
         "orthodox": 0.7,
         "catholic": 0.12,
@@ -4598,8 +3900,8 @@
       "nationality": null,
       "adm0": "AZE",
       "areaKm2": 370.1,
-      "density": 5.0,
-      "population": 1850,
+      "density": 5.7,
+      "population": 2110,
       "shares": {
         "muslim": 0.82,
         "armenian": 0.1,
@@ -4622,8 +3924,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 142691.0,
-      "density": 6.1,
-      "population": 870415,
+      "density": 4.7,
+      "population": 670648,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -4644,8 +3946,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 194053.5,
-      "density": 6.1,
-      "population": 1183726,
+      "density": 4.7,
+      "population": 912051,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4668,8 +3970,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 531823.0,
-      "density": 6.1,
-      "population": 3244120,
+      "density": 0.5,
+      "population": 265912,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4692,8 +3994,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 24286.3,
-      "density": 6.1,
-      "population": 148146,
+      "density": 4.7,
+      "population": 114146,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4716,8 +4018,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 34441.2,
-      "density": 6.1,
-      "population": 210091,
+      "density": 4.7,
+      "population": 161874,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4740,8 +4042,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 313912.3,
-      "density": 6.1,
-      "population": 1914865,
+      "density": 0.5,
+      "population": 156956,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4764,8 +4066,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 67714.2,
-      "density": 6.1,
-      "population": 413057,
+      "density": 4.7,
+      "population": 318257,
       "shares": {
         "muslim": 0.55,
         "orthodox": 0.35,
@@ -4786,8 +4088,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 37143.8,
-      "density": 6.1,
-      "population": 226577,
+      "density": 4.7,
+      "population": 174576,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4810,8 +4112,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 43322.6,
-      "density": 6.1,
-      "population": 264268,
+      "density": 4.7,
+      "population": 203616,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4834,8 +4136,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 95016.2,
-      "density": 6.1,
-      "population": 579599,
+      "density": 0.5,
+      "population": 47508,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4858,8 +4160,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 24733.1,
-      "density": 6.1,
-      "population": 150872,
+      "density": 4.7,
+      "population": 116246,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4882,8 +4184,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 772442.0,
-      "density": 6.1,
-      "population": 4711896,
+      "density": 0.5,
+      "population": 386221,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4906,8 +4208,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 59400.9,
-      "density": 6.1,
-      "population": 362345,
+      "density": 4.7,
+      "population": 279184,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4930,8 +4232,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 25854.8,
-      "density": 6.1,
-      "population": 157714,
+      "density": 4.7,
+      "population": 121518,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4954,8 +4256,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 29357.5,
-      "density": 6.1,
-      "population": 179081,
+      "density": 14.2,
+      "population": 416876,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -4978,8 +4280,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 59902.8,
-      "density": 6.1,
-      "population": 365407,
+      "density": 4.7,
+      "population": 281543,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5002,8 +4304,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 35899.1,
-      "density": 6.1,
-      "population": 218985,
+      "density": 14.2,
+      "population": 509767,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5026,8 +4328,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 29378.1,
-      "density": 6.1,
-      "population": 179206,
+      "density": 14.2,
+      "population": 417169,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5050,8 +4352,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 39508.6,
-      "density": 6.1,
-      "population": 241002,
+      "density": 14.2,
+      "population": 561022,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5074,8 +4376,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 23591.7,
-      "density": 6.1,
-      "population": 143909,
+      "density": 14.2,
+      "population": 335002,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5098,8 +4400,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 74939.4,
-      "density": 6.1,
-      "population": 457130,
+      "density": 4.7,
+      "population": 352215,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5122,8 +4424,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 25404.5,
-      "density": 6.1,
-      "population": 154967,
+      "density": 14.2,
+      "population": 360744,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5146,8 +4448,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 18356.3,
-      "density": 6.1,
-      "population": 111973,
+      "density": 4.7,
+      "population": 86275,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5170,8 +4472,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 145381.6,
-      "density": 6.1,
-      "population": 886828,
+      "density": 4.7,
+      "population": 683294,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5194,8 +4496,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 54943.5,
-      "density": 6.1,
-      "population": 335155,
+      "density": 14.2,
+      "population": 780198,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5218,8 +4520,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 84545.2,
-      "density": 6.1,
-      "population": 515726,
+      "density": 14.2,
+      "population": 1200542,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5242,8 +4544,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 43893.1,
-      "density": 6.1,
-      "population": 267748,
+      "density": 4.7,
+      "population": 206298,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5266,8 +4568,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 2804.6,
-      "density": 501.5,
-      "population": 1406507,
+      "density": 724.1,
+      "population": 2030811,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5290,8 +4592,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 23417.4,
-      "density": 6.1,
-      "population": 142846,
+      "density": 4.7,
+      "population": 110062,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5314,8 +4616,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 119916.1,
-      "density": 6.1,
-      "population": 731488,
+      "density": 4.7,
+      "population": 563606,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5338,8 +4640,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 41873.4,
-      "density": 6.1,
-      "population": 255428,
+      "density": 4.7,
+      "population": 196805,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5362,8 +4664,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 415939.0,
-      "density": 6.1,
-      "population": 2537228,
+      "density": 4.7,
+      "population": 1954913,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5386,8 +4688,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 160914.5,
-      "density": 6.1,
-      "population": 981578,
+      "density": 4.7,
+      "population": 756298,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5410,8 +4712,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 53115.3,
-      "density": 6.1,
-      "population": 324003,
+      "density": 4.7,
+      "population": 249642,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5434,8 +4736,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 66734.1,
-      "density": 6.1,
-      "population": 407078,
+      "density": 4.7,
+      "population": 313650,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5458,8 +4760,8 @@
       "nationality": null,
       "adm0": "RUS",
       "areaKm2": 8060.7,
-      "density": 6.1,
-      "population": 49170,
+      "density": 4.7,
+      "population": 37885,
       "shares": {
         "orthodox": 0.88,
         "muslim": 0.04,
@@ -5482,8 +4784,8 @@
       "nationality": null,
       "adm0": "POL",
       "areaKm2": 35113.7,
-      "density": 19.5,
-      "population": 684717,
+      "density": 724.1,
+      "population": 25425830,
       "shares": {
         "catholic": 0.74,
         "jewish": 0.14,
@@ -5506,56 +4808,8 @@
       "nationality": null,
       "adm0": "POL",
       "areaKm2": 18520.0,
-      "density": 19.5,
-      "population": 361140,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-kuyavian-pomeranian",
-      "slug": "ru-pol-kuyavian-pomeranian",
-      "name": "Kuyavian-Pomeranian",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 7357.1,
-      "density": 19.5,
-      "population": 143463,
-      "shares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      },
-      "religionShares": {
-        "catholic": 0.74,
-        "jewish": 0.14,
-        "orthodox": 0.08,
-        "protestant": 0.04
-      }
-    },
-    {
-      "code": "ru-pol-greater-poland",
-      "slug": "ru-pol-greater-poland",
-      "name": "Greater Poland",
-      "plurality": "catholic",
-      "religion": "catholic",
-      "nationality": null,
-      "adm0": "POL",
-      "areaKm2": 6574.9,
-      "density": 19.5,
-      "population": 128211,
+      "density": 724.1,
+      "population": 13410332,
       "shares": {
         "catholic": 0.74,
         "jewish": 0.14,
@@ -5578,8 +4832,8 @@
       "nationality": null,
       "adm0": "POL",
       "areaKm2": 11080.0,
-      "density": 19.5,
-      "population": 216060,
+      "density": 24.6,
+      "population": 272568,
       "shares": {
         "catholic": 0.74,
         "jewish": 0.14,
@@ -5602,8 +4856,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 146221.2,
-      "density": 2.2,
-      "population": 321687,
+      "density": 1.6,
+      "population": 233954,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -5624,8 +4878,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 429603.0,
-      "density": 2.2,
-      "population": 945127,
+      "density": 1.6,
+      "population": 687365,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -5635,116 +4889,6 @@
         "muslim": 0.72,
         "orthodox": 0.22,
         "other": 0.06
-      }
-    },
-    {
-      "code": "ru-fin-northern-savonia",
-      "slug": "ru-fin-northern-savonia",
-      "name": "Northern Savonia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 19764.0,
-      "density": 7.0,
-      "population": 138348,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-southern-savonia",
-      "slug": "ru-fin-southern-savonia",
-      "name": "Southern Savonia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 19131.7,
-      "density": 7.0,
-      "population": 133922,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-central-finland",
-      "slug": "ru-fin-central-finland",
-      "name": "Central Finland",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 19305.1,
-      "density": 7.0,
-      "population": 135136,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-southern-ostrobothnia",
-      "slug": "ru-fin-southern-ostrobothnia",
-      "name": "Southern Ostrobothnia",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 13899.2,
-      "density": 7.0,
-      "population": 97294,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      }
-    },
-    {
-      "code": "ru-fin-paijat-hame",
-      "slug": "ru-fin-paijat-hame",
-      "name": "P\u00e4ij\u00e4t-H\u00e4me",
-      "plurality": "protestant",
-      "religion": "protestant",
-      "nationality": null,
-      "adm0": "FIN",
-      "areaKm2": 5986.8,
-      "density": 7.0,
-      "population": 41908,
-      "shares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
-      },
-      "religionShares": {
-        "protestant": 0.98,
-        "orthodox": 0.015,
-        "other": 0.005
       }
     },
     {
@@ -5756,8 +4900,8 @@
       "nationality": null,
       "adm0": "BLR",
       "areaKm2": 607.1,
-      "density": 19.5,
-      "population": 11838,
+      "density": 19.4,
+      "population": 11778,
       "shares": {
         "orthodox": 0.7,
         "catholic": 0.12,
@@ -5780,8 +4924,8 @@
       "nationality": null,
       "adm0": "UKR",
       "areaKm2": 1648.2,
-      "density": 501.5,
-      "population": 826572,
+      "density": 724.1,
+      "population": 1193462,
       "shares": {
         "orthodox": 0.78,
         "jewish": 0.1,
@@ -5804,8 +4948,8 @@
       "nationality": null,
       "adm0": "UZB",
       "areaKm2": 237.6,
-      "density": 5.0,
-      "population": 1188,
+      "density": 5.7,
+      "population": 1354,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -5826,8 +4970,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 279.8,
-      "density": 2.2,
-      "population": 616,
+      "density": 1.6,
+      "population": 448,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -5848,8 +4992,8 @@
       "nationality": null,
       "adm0": "KAZ",
       "areaKm2": 583.1,
-      "density": 2.2,
-      "population": 1283,
+      "density": 1.6,
+      "population": 933,
       "shares": {
         "muslim": 0.72,
         "orthodox": 0.22,
@@ -5870,8 +5014,8 @@
       "nationality": null,
       "adm0": "TJK",
       "areaKm2": 125.8,
-      "density": 5.0,
-      "population": 629,
+      "density": 5.7,
+      "population": 717,
       "shares": {
         "muslim": 0.9,
         "orthodox": 0.06,
@@ -5892,8 +5036,8 @@
       "nationality": null,
       "adm0": "LVA",
       "areaKm2": 64537.6,
-      "density": 7.0,
-      "population": 451763,
+      "density": 7.2,
+      "population": 464671,
       "shares": {
         "protestant": 0.78,
         "orthodox": 0.12,
