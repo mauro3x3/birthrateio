@@ -20,6 +20,10 @@ import {
 } from "@/lib/sources/uk-census-data";
 import { CompositionDonut } from "@/components/composition-donut";
 import { MAP_OCEAN } from "@/lib/map-path-style";
+import {
+  demographicsShareUrl,
+  downloadMapSharePng,
+} from "@/lib/map-share-export";
 import { formatNumber, cn } from "@/lib/utils";
 
 const RegionChoroplethMap = dynamic(
@@ -77,6 +81,10 @@ export function CensusMapExplorer({
     () => resolved.mapMode === "plurality",
   );
   const [selectedCode, setSelectedCode] = React.useState<string | null>(null);
+  const [exporting, setExporting] = React.useState(false);
+  const [exportWhenPanelOpens, setExportWhenPanelOpens] = React.useState(false);
+  const frameRef = React.useRef<HTMLDivElement>(null);
+  const exportingRef = React.useRef(false);
 
   React.useEffect(() => {
     setSlug(initialSlug);
@@ -318,6 +326,46 @@ export function CensusMapExplorer({
     window.history.replaceState(null, "", `/demographics/${next}`);
   };
 
+  const shareUrl = demographicsShareUrl(resolved.slug);
+
+  const captureSharePng = React.useCallback(async () => {
+    const node = frameRef.current;
+    if (!node || exportingRef.current) return;
+    exportingRef.current = true;
+    setExporting(true);
+    try {
+      await downloadMapSharePng({
+        node,
+        iso3: resolved.iso3,
+        fileSlug: `demographics-${resolved.slug}`,
+        background: MAP_OCEAN.atlas,
+      });
+    } catch (err) {
+      console.error("Census map PNG export failed", err);
+    } finally {
+      exportingRef.current = false;
+      setExporting(false);
+    }
+  }, [resolved.iso3, resolved.slug]);
+
+  const requestSharePng = React.useCallback(() => {
+    if (!panelOpen) {
+      setExportWhenPanelOpens(true);
+      setPanelOpen(true);
+      return;
+    }
+    void captureSharePng();
+  }, [captureSharePng, panelOpen]);
+
+  React.useEffect(() => {
+    if (!exportWhenPanelOpens || !panelOpen) return;
+    const t = window.setTimeout(() => {
+      setExportWhenPanelOpens(false);
+      void captureSharePng();
+    }, 450);
+    return () => window.clearTimeout(t);
+  }, [captureSharePng, exportWhenPanelOpens, panelOpen]);
+
   const msoaLoading =
     resolved.builtin === "uk" &&
     level?.id === "msoa" &&
@@ -325,10 +373,11 @@ export function CensusMapExplorer({
 
   return (
     <div
-      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      ref={frameRef}
+      className="br-map-share relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
-      <div className="absolute inset-0">
+      <div className="br-map-canvas absolute inset-0">
         {level && mapData.length > 0 ? (
           <RegionChoroplethMap
             geoUrl={level.geoUrl}
@@ -352,7 +401,7 @@ export function CensusMapExplorer({
                 : `${areaLabel}: ${group?.shortLabel ?? ""}`
             }
             legendPlacement="bottom-right"
-            revision={`${resolved.slug}-${level.id}-${parentCode ?? "all"}-${isPlurality ? "pl" : "sh"}`}
+            revision={`${resolved.slug}-${level.id}-${parentCode ?? "all"}-${isPlurality ? "pl" : "sh"}-${panelOpen ? "p" : "f"}-${exporting ? "x" : "v"}`}
             filterIds={filterIds}
             adaptiveStroke={areas.length > 80}
             oceanColor={MAP_OCEAN.atlas}
@@ -370,7 +419,10 @@ export function CensusMapExplorer({
         )}
       </div>
 
-      <div className="pointer-events-none absolute right-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground shadow-sm backdrop-blur-sm">
+      <div
+        data-export-ignore
+        className="pointer-events-none absolute right-3 top-14 z-[1100] rounded-sm border border-black/10 bg-white/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-muted-foreground shadow-sm backdrop-blur-sm"
+      >
         {level?.label}
         {parentCode ? ` · ${areas.length}` : ""}
       </div>
@@ -390,18 +442,30 @@ export function CensusMapExplorer({
                 {msoaLoading ? " · loading…" : ""}
               </p>
             </div>
-            <button
-              type="button"
-              aria-label="Hide panel"
-              onClick={() => setPanelOpen(false)}
-              className="shrink-0 rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              Close
-            </button>
+            <div className="flex shrink-0 items-start gap-1">
+              <button
+                type="button"
+                data-export-ignore
+                disabled={exporting}
+                onClick={requestSharePng}
+                className="rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground disabled:opacity-60"
+              >
+                {exporting ? "Saving…" : "Download image"}
+              </button>
+              <button
+                type="button"
+                data-export-ignore
+                aria-label="Hide panel"
+                onClick={() => setPanelOpen(false)}
+                className="shrink-0 rounded-sm px-2 py-1 text-xs text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                Close
+              </button>
+            </div>
           </div>
 
           <div className="min-h-0 flex-1 space-y-4 overflow-y-auto px-4 py-4">
-            <div>
+            <div data-export-ignore>
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Country
               </p>
@@ -438,7 +502,7 @@ export function CensusMapExplorer({
               </div>
             </div>
 
-            <div>
+            <div data-export-ignore>
               <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                 Map labels
               </p>
@@ -496,6 +560,7 @@ export function CensusMapExplorer({
                   </div>
                   <button
                     type="button"
+                    data-export-ignore
                     onClick={() => setSelectedCode(null)}
                     className="shrink-0 text-[10px] uppercase tracking-[0.14em] text-muted-foreground hover:text-foreground"
                   >
@@ -576,15 +641,15 @@ export function CensusMapExplorer({
                     </p>
                   </div>
                 ) : (
-                  <div className="mt-3">
+                  <div className="br-map-share-tfr mt-3">
                     <p
-                      className="text-3xl font-semibold tabular-nums tracking-tight text-foreground"
+                      className="br-map-share-tfr-value text-3xl font-semibold tabular-nums tracking-tight text-foreground"
                       key={`${selectedArea.code}-${group?.id}`}
                     >
                       {formatNumber(selectedArea.shares[group?.id] ?? 0, 1)}%
                     </p>
-                    <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
-                      {group?.shortLabel}
+                    <p className="br-map-share-tfr-label mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                      {selectedArea.name} · {group?.shortLabel}
                     </p>
                     {selectedArea.population > 0 ? (
                       <p className="mt-2 text-[12px] text-muted-foreground">
@@ -673,17 +738,17 @@ export function CensusMapExplorer({
                   </p>
                 </>
               ) : selectedArea ? null : (
-                <>
+                <div className="br-map-share-tfr">
                   <p
-                    className="text-4xl font-semibold tabular-nums tracking-tight text-foreground"
+                    className="br-map-share-tfr-value text-4xl font-semibold tabular-nums tracking-tight text-foreground"
                     key={`${resolved.slug}-${group?.id}-${parentCode ?? "nat"}`}
                   >
                     {formatNumber(headline.shares[group?.id] ?? 0, 1)}%
                   </p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+                  <p className="br-map-share-tfr-label mt-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                     {headline.name} · {group?.shortLabel}
                   </p>
-                </>
+                </div>
               )}
             </div>
 
@@ -722,7 +787,7 @@ export function CensusMapExplorer({
             ) : null}
 
             {resolved.levels.length > 1 && (
-              <div className="space-y-2">
+              <div data-export-ignore className="space-y-2">
                 <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   Geography
                 </p>
@@ -748,6 +813,7 @@ export function CensusMapExplorer({
 
             {parentAreas.length > 0 && (
               <select
+                data-export-ignore
                 aria-label="Area"
                 className="flex h-9 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:border-ring"
                 value={parentCode ?? ""}
@@ -763,7 +829,7 @@ export function CensusMapExplorer({
             )}
 
             {!isPlurality ? (
-              <div className="space-y-1">
+              <div data-export-ignore className="space-y-1">
                 <p className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   {resolved.topicLabel}
                 </p>
@@ -928,6 +994,7 @@ export function CensusMapExplorer({
               </a>
               .{" "}
               <Link
+                data-export-ignore
                 href="/demographics/us"
                 className="underline underline-offset-2 hover:text-foreground"
               >
@@ -938,14 +1005,31 @@ export function CensusMapExplorer({
           </div>
         </aside>
       ) : (
-        <button
-          type="button"
-          onClick={() => setPanelOpen(true)}
-          className="absolute left-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3 py-2 text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground shadow-sm backdrop-blur-md hover:border-foreground/25 hover:text-foreground"
+        <div
+          data-export-ignore
+          className="absolute left-3 top-3 z-[1100] flex gap-2"
         >
-          Controls
-        </button>
+          <button
+            type="button"
+            onClick={() => setPanelOpen(true)}
+            className="rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md"
+          >
+            Show panel
+          </button>
+          <button
+            type="button"
+            disabled={exporting}
+            onClick={requestSharePng}
+            className="rounded-sm border border-black/10 bg-white/95 px-3 py-1.5 text-xs shadow-md disabled:opacity-60"
+          >
+            {exporting ? "Saving…" : "Download image"}
+          </button>
+        </div>
       )}
+
+      <p className="br-map-share-url absolute right-3 top-3 z-[1100] rounded-sm border border-black/10 bg-white/95 px-3.5 py-2 font-serif text-base font-semibold tracking-tight text-foreground shadow-md">
+        {shareUrl}
+      </p>
     </div>
   );
 }

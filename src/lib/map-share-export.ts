@@ -4,6 +4,10 @@ export function mapShareUrl(iso3: string): string {
   return `birthrate.io/maps/${iso3.toLowerCase()}`;
 }
 
+export function demographicsShareUrl(slug: string): string {
+  return `birthrate.io/demographics/${slug}`;
+}
+
 function skipExportNode(node: Node): boolean {
   if (!(node instanceof HTMLElement)) return true;
   if (node.dataset.exportIgnore != null) return false;
@@ -28,8 +32,10 @@ export async function downloadMapSharePng(opts: {
   node: HTMLElement;
   iso3: string;
   background: string;
+  /** Filename slug (defaults to iso3). Use for demographics routes. */
+  fileSlug?: string;
 }): Promise<void> {
-  const { node, iso3, background } = opts;
+  const { node, iso3, background, fileSlug } = opts;
   node.classList.add("br-exporting");
   await new Promise<void>((resolve) =>
     requestAnimationFrame(() => requestAnimationFrame(() => resolve())),
@@ -49,7 +55,8 @@ export async function downloadMapSharePng(opts: {
     });
     const a = document.createElement("a");
     a.href = dataUrl;
-    a.download = `birthrate-maps-${iso3.toLowerCase()}.png`;
+    const slug = (fileSlug ?? iso3).toLowerCase().replace(/[^a-z0-9-]+/g, "-");
+    a.download = `birthrate-maps-${slug}.png`;
     a.click();
   } finally {
     node.classList.remove("br-exporting");

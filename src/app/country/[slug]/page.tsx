@@ -1606,8 +1606,11 @@ export default async function CountryPage({
             description="Total fertility rate by first-level administrative division."
           >
             <p className="text-sm text-muted-foreground">
-              <Link href="/states" className="underline underline-offset-2">
-                Browse subnational fertility for all countries →
+              <Link
+                href={`/maps/${country.iso3.toLowerCase()}`}
+                className="underline underline-offset-2"
+              >
+                Open the regional fertility map →
               </Link>
             </p>
             <div className="overflow-x-auto rounded-lg border">

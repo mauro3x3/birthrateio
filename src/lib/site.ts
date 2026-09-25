@@ -162,11 +162,6 @@ export const navTopics: NavTopic[] = [
         href: "/demographics/us",
         description: "Race and Hispanic-origin map for U.S. states",
       },
-      {
-        title: "States & provinces",
-        href: "/states",
-        description: "Subnational fertility maps and tables",
-      },
     ],
   },
   {

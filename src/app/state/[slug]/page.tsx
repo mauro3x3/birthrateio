@@ -260,8 +260,11 @@ export default async function StatePage({
             ← Back to {admin1.country.name}
           </Link>
           {" · "}
-          <Link href="/states" className="underline underline-offset-2">
-            All states &amp; provinces
+          <Link
+            href={`/maps/${admin1.country.iso3.toLowerCase()}`}
+            className="underline underline-offset-2"
+          >
+            Regional map
           </Link>
         </p>
       </div>

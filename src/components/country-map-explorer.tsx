@@ -40,6 +40,15 @@ const METRIC_ORDER: MapMetricId[] = [
   "religion",
 ];
 
+/** Always listed when data exists; the rest sit behind “Show all”. */
+const PRIMARY_METRICS: MapMetricId[] = [
+  "tfr",
+  "population",
+  "pop-growth",
+  "gfr",
+  "religion",
+];
+
 const METRIC_LABELS: Record<MapMetricId, string> = {
   tfr: "Total fertility rate",
   "median-age": "Median age",
@@ -120,6 +129,7 @@ export function CountryMapExplorer({
   const [variantId, setVariantId] = React.useState<string | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
   const [showValues, setShowValues] = React.useState(false);
+  const [showAllMetrics, setShowAllMetrics] = React.useState(false);
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
   const [combineSelection, setCombineSelection] = React.useState(true);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
@@ -161,6 +171,16 @@ export function CountryMapExplorer({
   const activeTab = tabs?.find((t) => t.id === tabId) ?? tabs?.[0];
   const shareMode = activeTab?.kind === "shares" && country.shares != null;
   const viewMetrics = shareMode ? [] : (activeTab?.metrics ?? country.metrics);
+  const visibleMetricIds = React.useMemo(() => {
+    if (showAllMetrics) return METRIC_ORDER;
+    return METRIC_ORDER.filter((id) => {
+      if (id === metricId) return true;
+      if (!PRIMARY_METRICS.includes(id)) return false;
+      if (id === "religion") return religionPack != null;
+      return Boolean(metricOf(viewMetrics, id));
+    });
+  }, [showAllMetrics, metricId, religionPack, viewMetrics]);
+  const hiddenMetricCount = METRIC_ORDER.length - visibleMetricIds.length;
   const geoUrl = religionMode
     ? religionPack.geoUrl
     : shareMode
@@ -176,6 +196,7 @@ export function CountryMapExplorer({
     setTabId(null);
     setVariantId(null);
     setShareMetric("population");
+    setShowAllMetrics(false);
   }, [iso3]);
 
   React.useEffect(() => {
@@ -418,6 +439,7 @@ export function CountryMapExplorer({
     setIso3(next);
     setYear(null);
     setMetricId("tfr");
+    setShowAllMetrics(false);
     // Keep the URL shareable without a Next navigation — that remounts the
     // page behind the root loading skeleton and leaves the map hidden.
     window.history.replaceState(null, "", `/maps/${next.toLowerCase()}`);
@@ -762,7 +784,7 @@ export function CountryMapExplorer({
                 </>
               ) : (
                 <>
-              {METRIC_ORDER.map((id) => {
+              {visibleMetricIds.map((id) => {
                 const m = metricOf(viewMetrics, id);
                 const religionOk = id === "religion" && religionPack != null;
                 const locked = id === "religion" ? !religionOk : !m;
@@ -801,6 +823,17 @@ export function CountryMapExplorer({
                   </button>
                 );
               })}
+              {hiddenMetricCount > 0 || showAllMetrics ? (
+                <button
+                  type="button"
+                  onClick={() => setShowAllMetrics((v) => !v)}
+                  className="w-full rounded-sm px-2.5 py-2 text-left text-[12px] text-muted-foreground underline-offset-2 hover:bg-muted hover:text-foreground hover:underline"
+                >
+                  {showAllMetrics
+                    ? "Show fewer indicators"
+                    : `Show all indicators (${hiddenMetricCount} more)`}
+                </button>
+              ) : null}
               <p className="pt-1 text-[11px] leading-relaxed text-muted-foreground">
                 {religionMode && religionPack
                   ? religionPack.note

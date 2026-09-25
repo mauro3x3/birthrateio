@@ -31,7 +31,6 @@ const STARTERS = [
 /** Full-viewport choropleths: the launcher sits on the legend. */
 function hideOnFullscreenMap(pathname: string) {
   if (pathname === "/maps" || pathname.startsWith("/maps/")) return true;
-  if (pathname === "/states") return true;
   if (pathname.startsWith("/demographics/") && pathname !== "/demographics") {
     return true;
   }

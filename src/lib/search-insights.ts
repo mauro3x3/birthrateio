@@ -693,7 +693,6 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "South America fertility", href: "/maps/southamerica", region: "South America" },
     { title: "United States fertility by state", href: "/maps/usa", region: "USA" },
     { title: "Census maps", href: "/demographics", region: "Worldwide" },
-    { title: "States & provinces", href: "/states", region: "Worldwide" },
     { title: "World fertility", href: "/fertility", region: "Worldwide" },
   ],
   "/demographics": [

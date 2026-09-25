@@ -14,6 +14,12 @@ const nextConfig = {
   },
   // Required for PostHog — their API uses trailing slashes (/e/, /s/).
   skipTrailingSlashRedirect: true,
+  async redirects() {
+    return [
+      // Subnational fertility now lives under Regional maps.
+      { source: "/states", destination: "/maps", permanent: true },
+    ];
+  },
   async rewrites() {
     return [
       {

@@ -65,11 +65,6 @@ export const TOPIC_META: TopicMeta[] = [
         note: "The other half of natural change",
       },
       {
-        title: "States & provinces",
-        href: "/states",
-        note: "Subnational fertility within countries",
-      },
-      {
         title: "Census maps",
         href: "/demographics",
         note: "Ethnicity, ancestry, and country of birth",
@@ -394,48 +389,13 @@ export const TOPIC_META: TopicMeta[] = [
         note: "How city fertility compares to national",
       },
       {
-        title: "States & provinces",
-        href: "/states",
-        note: "Regional detail between city and country",
+        title: "Regional maps",
+        href: "/maps",
+        note: "State and province fertility choropleths",
       },
     ],
     caveats: [
       "City figures cover the urban agglomeration (contiguous built-up area), which rarely matches municipal boundaries.",
-    ],
-  },
-  {
-    href: "/states",
-    title: "States & provinces",
-    indicators: [SLUG.fertility, SLUG.generalFertilityRate],
-    related: [
-      {
-        title: "Fertility",
-        href: "/fertility",
-        note: "National fertility rates",
-      },
-      {
-        title: "Regional maps",
-        href: "/maps",
-        note: "Labeled choropleths for more countries",
-      },
-      {
-        title: "Cities",
-        href: "/cities",
-        note: "Metro-level detail",
-      },
-      {
-        title: "Census maps",
-        href: "/demographics",
-        note: "Ethnicity, ancestry, and country of birth",
-      },
-      {
-        title: "US demographics",
-        href: "/demographics/us",
-        note: "Composition of U.S. states",
-      },
-    ],
-    caveats: [
-      "Subnational definitions and reference years differ by country, so cross-country comparison of regions is unreliable.",
     ],
   },
   {
@@ -452,11 +412,6 @@ export const TOPIC_META: TopicMeta[] = [
         title: "Historic empire maps",
         href: "/maps/historic",
         note: "Ottoman, Russian, Habsburg, German, British India, Qing and more",
-      },
-      {
-        title: "States & provinces",
-        href: "/states",
-        note: "Tables and interactive explorers for the same geographies",
       },
       {
         title: "Census maps",
@@ -549,8 +504,8 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Ethnic group for England & Wales",
       },
       {
-        title: "States & provinces",
-        href: "/states",
+        title: "Regional maps",
+        href: "/maps/usa",
         note: "Fertility by U.S. state",
       },
       {
