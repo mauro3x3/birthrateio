@@ -1,0 +1,36 @@
+{
+  "iso3": "ISR",
+  "slug": "israel",
+  "country": "Israel",
+  "metric": "tfr_by_religiosity",
+  "unit": "children per woman",
+  "decimals": 1,
+  "period": "2022-2024",
+  "periodLabel": "2022–24",
+  "definition": "Period total fertility rate by the woman's self-reported level of religiosity, from the Israel Central Bureau of Statistics. Separate ladders for Jewish and Muslim women. The Jewish Ultra-Orthodox (Haredi) rate of 6.8 is the CBS religiosity estimate for 2022–24 — distinct from the religion-only table (Jewish / Muslim / Druze / Arab) and from the older Israel Democracy Institute Haredi estimate of 6.4 for 2020–2022. Southern-District exclusions remove Negev Bedouin from the Muslim comparison.",
+  "source": "Israel Central Bureau of Statistics — Fertility of Jewish and Other Women in Israel by Level of Religiosity (2022–24)",
+  "sourceUrl": "https://www.cbs.gov.il/en/publications/Pages/2023/Fertility-of-Jewish-and-Other-Women-in-Israel-by-Level-of-Religiosity-1979%E2%80%932022.aspx",
+  "jewish": {
+    "total": 3.1,
+    "groups": [
+      { "id": "haredi", "label": "Ultra-Orthodox (Haredi)", "shortLabel": "Haredi", "tfr": 6.8 },
+      { "id": "dati", "label": "Religious (Dati)", "shortLabel": "Religious", "tfr": 3.7 },
+      { "id": "traditional-religious", "label": "Traditional-Religious", "shortLabel": "Trad. religious", "tfr": 2.7 },
+      { "id": "traditional-not-religious", "label": "Traditional-Not Religious", "shortLabel": "Trad. not relig.", "tfr": 2.1 },
+      { "id": "secular", "label": "Not Religious or Secular", "shortLabel": "Secular", "tfr": 1.9 }
+    ]
+  },
+  "muslim": {
+    "total": 2.5,
+    "groups": [
+      { "id": "religious", "label": "Religious or Very Religious", "shortLabel": "Religious+", "tfr": 2.7 },
+      { "id": "not-religious", "label": "Not So Religious / Not Religious", "shortLabel": "Not religious", "tfr": 2.1 }
+    ],
+    "excludingSouthern": {
+      "note": "Excludes the Southern District and removes Negev Bedouin.",
+      "all": 2.2,
+      "notReligious": 1.8,
+      "notReligiousPrecise": 1.76
+    }
+  }
+}

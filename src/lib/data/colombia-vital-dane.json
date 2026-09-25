@@ -1,0 +1,50 @@
+{
+  "iso3": "COL",
+  "slug": "colombia",
+  "country": "Colombia",
+  "note": "DANE Estadísticas Vitales — national tasa global de fecundidad (TGF) fell from 1.7 in 2016–18 to 1.0 in 2025. Live births were 433,678 in 2025 (−4.5% vs 2024). Department maps on /maps/col still use the published 2023–24 TGF tables (national 1.2 / 1.1).",
+  "source": "DANE, Estadísticas Vitales — Chart 7 national TGF 2016–2025 and year-accumulated 2025pr births/deaths release (20 Mar 2026), one-decimal published TGF.",
+  "sourceUrl": "https://www.dane.gov.co/index.php/estadisticas-por-tema/salud/nacimientos-y-defunciones/nacimientos/nacimientos-2025",
+  "estimatedTfr": 1.0,
+  "estimatedTfrYear": 2025,
+  "nationalTfr": [
+    { "year": 2016, "tfr": 1.7 },
+    { "year": 2017, "tfr": 1.7 },
+    { "year": 2018, "tfr": 1.7 },
+    { "year": 2019, "tfr": 1.6 },
+    { "year": 2020, "tfr": 1.5 },
+    { "year": 2021, "tfr": 1.5 },
+    { "year": 2022, "tfr": 1.4 },
+    { "year": 2023, "tfr": 1.2 },
+    { "year": 2024, "tfr": 1.1 },
+    { "year": 2025, "tfr": 1.0 }
+  ],
+  "generalFertilityRate": [
+    { "year": 2016, "perThousandWomen15to49": 51.8 },
+    { "year": 2025, "perThousandWomen15to49": 30.9 }
+  ],
+  "vitalStats": [
+    {
+      "period": "January–December 2024",
+      "liveBirths": 453901,
+      "deaths": 275778,
+      "naturalIncrease": 178123
+    },
+    {
+      "period": "January–December 2025",
+      "liveBirths": 433678,
+      "deaths": 283378,
+      "naturalIncrease": 150300
+    }
+  ],
+  "infantMortality": [
+    { "year": 2022, "perThousandLiveBirths": 11.7 },
+    { "year": 2025, "perThousandLiveBirths": 10.2 }
+  ],
+  "neighbors": [
+    { "name": "Ecuador", "tfr": 1.5 },
+    { "name": "Peru", "tfr": 1.5 },
+    { "name": "Venezuela", "tfr": 2.0 },
+    { "name": "Brazil", "tfr": 1.5 }
+  ]
+}

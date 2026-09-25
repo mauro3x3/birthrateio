@@ -93,6 +93,7 @@ const FEATURED = [
   "NGA",
   "BRA",
   "COL",
+  "ARG",
   "IDN",
   "IRN",
   "IRQ",

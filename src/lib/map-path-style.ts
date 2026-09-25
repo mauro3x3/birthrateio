@@ -14,7 +14,7 @@ export const MAP_OCEAN = {
  * Fill-matched strokes anti-alias into light speckles (esp. Firefox); avoid them.
  */
 export function countryBorderStyle(
-  kind: "cinema" | "light" = "cinema",
+  kind: "cinema" | "light" | "atlas" = "cinema",
 ): Pick<PathOptions, "stroke" | "color" | "weight" | "opacity" | "lineJoin" | "lineCap"> {
   if (kind === "cinema") {
     return {
@@ -23,6 +23,18 @@ export function countryBorderStyle(
       // separates same-tone neighbours without white cracks.
       color: "rgba(0, 0, 0, 0.72)",
       weight: 0.85,
+      opacity: 1,
+      lineJoin: "round",
+      lineCap: "round",
+    };
+  }
+  if (kind === "atlas") {
+    // Eurostat Statistical Atlas style — thin dark seams stay readable
+    // at continental zoom (NUTS 3 etc.), not fill-matched blobs.
+    return {
+      stroke: true,
+      color: "rgba(48, 58, 72, 0.55)",
+      weight: 0.55,
       opacity: 1,
       lineJoin: "round",
       lineCap: "round",

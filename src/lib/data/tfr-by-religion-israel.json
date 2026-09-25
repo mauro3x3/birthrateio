@@ -5,7 +5,7 @@
   "metric": "tfr_by_religion",
   "unit": "children per woman",
   "decimals": 2,
-  "definition": "Period total fertility rate by religion of the woman. Long series from CBS live-births/fertility releases (1960, 2000–2020) and Statistical Abstract 2024 diagrams (2022–2023). 2023: Jewish 3.00, Muslim 2.81, Druze 1.75, Arab women 2.66, national 2.85. Jewish and Muslim period rates crossed around 2020. Haredi (ultra-Orthodox) fertility is not in this religion table; the Israel Democracy Institute reports 6.4 children per woman in 2020–2022 versus 2.5 among other Jewish women.",
+  "definition": "Period total fertility rate by religion of the woman. Long series from CBS live-births/fertility releases (1960, 2000–2020) and Statistical Abstract 2024 diagrams (2022–2023). 2023: Jewish 3.00, Muslim 2.81, Druze 1.75, Arab women 2.66, national 2.85. Jewish and Muslim period rates crossed around 2020. Religiosity within Jewish and Muslim populations (Haredi 6.8 in 2022–24, secular Jewish 1.9, etc.) is a separate CBS table — see tfr-by-religiosity-israel.json. The Israel Democracy Institute’s earlier Haredi estimate was 6.4 for 2020–2022.",
   "source": "CBS live births and fertility in Israel 2020 (table, 1960–2020); CBS Statistical Abstract of Israel 2024 — population and fertility diagrams (2022–2023)",
   "sourceUrl": "https://www.cbs.gov.il/he/mediarelease/doclib/2022/062/01_22_062t3.pdf",
   "statbank": "https://www.cbs.gov.il/en/publications/Pages/2023/Fertility-of-Jewish-and-Other-Women-in-Israel-by-Level-of-Religiosity-1979%E2%80%932022.aspx",

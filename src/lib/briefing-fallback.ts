@@ -172,7 +172,7 @@ export function compiledBriefing(opts: {
     groups: {
       heading: "Not one fertility rate",
       body: groupLine + (facts.iso3 === "ISR"
-        ? " Jewish and Muslim period rates have converged since the 1960s, when Muslim TFR was above 9. The remaining gap that matters for coalition math is religiosity inside the Jewish population (Haredi vs other), which CBS does not put on this religion table — cite IDI for that split."
+        ? " Jewish and Muslim period rates have converged since the 1960s, when Muslim TFR was above 9. The remaining gap that matters for coalition math is religiosity inside the Jewish population: CBS 2022–24 puts Ultra-Orthodox (Haredi) at 6.8 versus 1.9 for not-religious/secular Jewish women."
         : facts.iso3 === "USA"
           ? " These are NCHS rates by race and Hispanic origin of the mother — not ancestry, language, or religion."
           : facts.groupTfr?.headline.includes("DHS")

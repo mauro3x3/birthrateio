@@ -20,9 +20,16 @@ import {
   HISTORIC_FERTILITY_SOURCE,
 } from "@/components/historic-fertility-note";
 import { TfrAncestryChart } from "@/components/tfr-ancestry-chart";
-import { getTfrAncestryPack } from "@/lib/sources/tfr-by-ancestry-data";
+import {
+  getIsraelReligiosityPack,
+  getTfrAncestryPack,
+} from "@/lib/sources/tfr-by-ancestry-data";
 import { getCountryMapEntry } from "@/lib/country-map-atlas";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
+import {
+  GroupedBarChart,
+  GroupedBarLegend,
+} from "@/components/charts/grouped-bar-chart";
 import { PopulationPyramidPlayer } from "@/components/population-pyramid-player";
 import {
   CompositionChart,
@@ -260,6 +267,7 @@ export default async function CountryPage({
   const crimeAvailability = CRIME_AVAILABILITY_BY_ISO3.get(country.iso3) ?? null;
   const crimeMeta = getCrimeMeta(country.iso3);
   const ancestryPack = getTfrAncestryPack(country.iso3);
+  const israelReligiosity = getIsraelReligiosityPack(country.iso3);
   const countryMap = getCountryMapEntry(country.iso3);
   const hasCrimeBreakdown =
     crimeAncestry.groups.length > 0 ||
@@ -700,6 +708,97 @@ export default async function CountryPage({
           {ancestryPack && (
             <div className="lg:col-span-2">
               <TfrAncestryChart pack={ancestryPack} />
+            </div>
+          )}
+
+          {israelReligiosity && (
+            <div className="lg:col-span-2 space-y-4">
+              <div className="grid gap-4 lg:grid-cols-2">
+                <ChartCard
+                  title={`Jewish women by religiosity · ${israelReligiosity.periodLabel}`}
+                  subtitle={`All Jewish women ${israelReligiosity.jewish.total}`}
+                  source={israelReligiosity.source}
+                  sourceUrl={israelReligiosity.sourceUrl}
+                >
+                  <GroupedBarLegend
+                    series={[
+                      {
+                        key: "tfr",
+                        label: "TFR",
+                        color: "hsl(213 62% 32%)",
+                      },
+                    ]}
+                  />
+                  <GroupedBarChart
+                    data={israelReligiosity.jewish.groups.map((g) => ({
+                      group: g.shortLabel,
+                      tfr: g.tfr,
+                    }))}
+                    series={[
+                      {
+                        key: "tfr",
+                        label: "TFR",
+                        color: "hsl(213 62% 32%)",
+                      },
+                    ]}
+                    xKey="group"
+                    height={280}
+                    decimals={1}
+                    referenceY={2.1}
+                    referenceLabel="Replacement"
+                    showValues
+                  />
+                </ChartCard>
+                <ChartCard
+                  title={`Muslim women by religiosity · ${israelReligiosity.periodLabel}`}
+                  subtitle={`All Muslim women ${israelReligiosity.muslim.total}`}
+                  source={israelReligiosity.source}
+                  sourceUrl={israelReligiosity.sourceUrl}
+                >
+                  <GroupedBarLegend
+                    series={[
+                      {
+                        key: "tfr",
+                        label: "TFR",
+                        color: "hsl(142 42% 36%)",
+                      },
+                    ]}
+                  />
+                  <GroupedBarChart
+                    data={[
+                      ...israelReligiosity.muslim.groups.map((g) => ({
+                        group: g.shortLabel,
+                        tfr: g.tfr,
+                      })),
+                      {
+                        group: "Not relig.†",
+                        tfr: israelReligiosity.muslim.excludingSouthern
+                          .notReligiousPrecise,
+                      },
+                    ]}
+                    series={[
+                      {
+                        key: "tfr",
+                        label: "TFR",
+                        color: "hsl(142 42% 36%)",
+                      },
+                    ]}
+                    xKey="group"
+                    height={280}
+                    decimals={1}
+                    referenceY={2.1}
+                    referenceLabel="Replacement"
+                    showValues
+                  />
+                </ChartCard>
+              </div>
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                {israelReligiosity.definition} †
+                {israelReligiosity.muslim.excludingSouthern.note} Non-religious
+                non-Bedouin Muslim women:{" "}
+                {israelReligiosity.muslim.excludingSouthern.notReligiousPrecise}{" "}
+                (sub-replacement).
+              </p>
             </div>
           )}
 

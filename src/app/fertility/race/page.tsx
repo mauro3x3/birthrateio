@@ -15,6 +15,7 @@ import {
   IRANIAN_DIASPORA_EXOGAMY,
   AZERBAIJAN_VITAL_2026,
   EGYPT_VITAL_2025,
+  COLOMBIA_VITAL_DANE,
   BOLIVIA_INE_PROJECTIONS,
   US_INTERMARRIAGE_PEW,
   JEWISH_INTERMARRIAGE_PEW,
@@ -36,7 +37,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Fertility by race, origin & income",
   description:
-    "U.S. fertility by race since 1980, European NSO mixed marriages and second-generation endogamy, UK ethnic partnerships, MENA consanguinity, Jewish and Iranian inmarriage, Asian co-ethnic marriage, GDP–fertility scatter, Egypt CAPMAS vitals, and recent national releases.",
+    "U.S. fertility by race since 1980, European NSO mixed marriages and second-generation endogamy, UK ethnic partnerships, MENA consanguinity, Jewish and Iranian inmarriage, Asian co-ethnic marriage, GDP–fertility scatter, Egypt CAPMAS and Colombia DANE vitals, and recent national releases.",
   alternates: { canonical: "/fertility/race" },
 };
 
@@ -65,6 +66,16 @@ export default async function FertilityByRacePage() {
     deaths: egyFull[1]!.deaths - egyFull[0]!.deaths,
     natural: egyFull[1]!.naturalIncrease - egyFull[0]!.naturalIncrease,
   };
+  const colVital = COLOMBIA_VITAL_DANE.vitalStats;
+  const colDiff = {
+    births: colVital[1]!.liveBirths - colVital[0]!.liveBirths,
+    deaths: colVital[1]!.deaths - colVital[0]!.deaths,
+    natural: colVital[1]!.naturalIncrease - colVital[0]!.naturalIncrease,
+  };
+  const colTfrRows = COLOMBIA_VITAL_DANE.nationalTfr.map((r) => ({
+    year: r.year,
+    tfr: r.tfr,
+  }));
   const egyPartialDiff = {
     births: egyPartial[1]!.liveBirths - egyPartial[0]!.liveBirths,
     deaths: egyPartial[1]!.deaths - egyPartial[0]!.deaths,
@@ -1338,6 +1349,120 @@ export default async function FertilityByRacePage() {
             {" · "}
             <Link href="/maps/mena" className="link-editorial">
               MENA map
+            </Link>
+          </p>
+        </section>
+
+        <section>
+          <SectionHeading
+            id="colombia-dane"
+            title="Colombia — DANE national fertility"
+            description={COLOMBIA_VITAL_DANE.note}
+            tocLabel="Colombia"
+          />
+          <div className="mt-5 grid gap-8 lg:grid-cols-2">
+            <ChartCard
+              title="Total fertility rate, national total"
+              subtitle="DANE Estadísticas Vitales · 2016–2025"
+              source={COLOMBIA_VITAL_DANE.source}
+              sourceUrl={COLOMBIA_VITAL_DANE.sourceUrl}
+            >
+              <MultiSeriesChart
+                data={colTfrRows}
+                xKey="year"
+                series={[{ key: "tfr", label: "TGF", color: "#6b5b95" }]}
+                yDomain={[1, 2]}
+                yTicks={[1, 1.2, 1.4, 1.6, 1.8, 2]}
+                showValues
+                height={280}
+              />
+            </ChartCard>
+            <div className="overflow-x-auto">
+              <p className="mb-2 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                Live births & deaths
+              </p>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-border text-left text-[0.7rem] uppercase tracking-wide text-muted-foreground">
+                    <th className="py-2 pr-4">Period</th>
+                    <th className="py-2 pr-4">Live births</th>
+                    <th className="py-2 pr-4">Deaths</th>
+                    <th className="py-2 pr-4">Natural increase</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {colVital.map((r) => (
+                    <tr key={r.period} className="border-b border-border/60">
+                      <td className="py-2 pr-4">{r.period}</td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.liveBirths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.deaths.toLocaleString()}
+                      </td>
+                      <td className="py-2 pr-4 tabular-nums">
+                        {r.naturalIncrease.toLocaleString()}
+                      </td>
+                    </tr>
+                  ))}
+                  <tr className="border-b border-border font-medium">
+                    <td className="py-2 pr-4">Difference</td>
+                    <td className="py-2 pr-4 tabular-nums text-destructive">
+                      {colDiff.births.toLocaleString()} (
+                      {(
+                        (colDiff.births / colVital[0]!.liveBirths) *
+                        100
+                      ).toFixed(1)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums">
+                      +{colDiff.deaths.toLocaleString()} (
+                      {(
+                        (colDiff.deaths / colVital[0]!.deaths) *
+                        100
+                      ).toFixed(1)}
+                      %)
+                    </td>
+                    <td className="py-2 pr-4 tabular-nums text-destructive">
+                      {colDiff.natural.toLocaleString()}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mt-4 text-sm text-muted-foreground">
+                General fertility rate{" "}
+                {COLOMBIA_VITAL_DANE.generalFertilityRate[0]!.year}:{" "}
+                {
+                  COLOMBIA_VITAL_DANE.generalFertilityRate[0]!
+                    .perThousandWomen15to49
+                }{" "}
+                → {COLOMBIA_VITAL_DANE.generalFertilityRate[1]!.year}:{" "}
+                {
+                  COLOMBIA_VITAL_DANE.generalFertilityRate[1]!
+                    .perThousandWomen15to49
+                }{" "}
+                births per 1,000 women 15–49. Infant mortality{" "}
+                {COLOMBIA_VITAL_DANE.infantMortality[0]!.year}:{" "}
+                {COLOMBIA_VITAL_DANE.infantMortality[0]!.perThousandLiveBirths} →{" "}
+                {COLOMBIA_VITAL_DANE.infantMortality[1]!.year}:{" "}
+                {COLOMBIA_VITAL_DANE.infantMortality[1]!.perThousandLiveBirths}{" "}
+                per 1,000 live births.
+              </p>
+            </div>
+          </div>
+          <p className="mt-3 text-sm text-muted-foreground">
+            National TGF {COLOMBIA_VITAL_DANE.estimatedTfr} in{" "}
+            {COLOMBIA_VITAL_DANE.estimatedTfrYear}. Neighbours:{" "}
+            {COLOMBIA_VITAL_DANE.neighbors
+              .map((n) => `${n.name} ${n.tfr}`)
+              .join(" · ")}
+            .{" "}
+            <Link href="/country/colombia" className="link-editorial">
+              Colombia country page
+            </Link>
+            {" · "}
+            <Link href="/maps/col" className="link-editorial">
+              Department map
             </Link>
           </p>
         </section>

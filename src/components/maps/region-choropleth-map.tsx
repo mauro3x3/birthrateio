@@ -49,26 +49,11 @@ function SelectionPane() {
 }
 
 /**
- * Thin / hide contrasting polygon seams when zoomed out so dense areas
- * (London MSOAs) don’t wash out. Always keep a fill-matched stroke so
- * anti-aliased gaps don’t show the ocean as a black/white spiderweb.
+ * Dense neighbourhood layers (UK MSOA): soften seams only when zoomed
+ * into borough scale. At continental / country zoom keep Eurostat-style
+ * dark hairlines so districts stay readable without a Google-Maps-style
+ * “detail appears on zoom” washout.
  */
-function parseCssRgb(color: string): [number, number, number] | null {
-  const rgb = color.match(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
-  if (rgb) return [Number(rgb[1]), Number(rgb[2]), Number(rgb[3])];
-  const hex = color.trim().match(/^#([0-9a-f]{6})$/i);
-  if (!hex) return null;
-  const n = parseInt(hex[1], 16);
-  return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
-}
-
-function darkenCssColor(color: string, amount = 0.16): string {
-  const rgb = parseCssRgb(color);
-  if (!rgb) return color;
-  const d = (c: number) => Math.max(0, Math.round(c * (1 - amount)));
-  return `rgb(${d(rgb[0])}, ${d(rgb[1])}, ${d(rgb[2])})`;
-}
-
 function AdaptiveStrokeSync({
   layerRef,
   cinema,
@@ -93,27 +78,33 @@ function AdaptiveStrokeSync({
       };
       if (!path.setStyle) return;
       if (path.feature) path.setStyle(baseStyle(path.feature));
-      const fill =
-        typeof path.options.fillColor === "string" && path.options.fillColor
-          ? path.options.fillColor
-          : cinema
-            ? "#161616"
-            : "#cfd6de";
 
-      // National / regional: fill-matched stroke seals anti-alias gaps
-      // (ocean peeking through as a white/black spiderweb).
-      if (z < 10.25) {
+      // Continent / country / metro overview — keep every district edge
+      // visible (Eurostat Statistical Atlas look).
+      if (z < 8.75) {
         path.setStyle({
           stroke: true,
-          weight: 2.75,
+          weight: z < 5 ? 0.45 : 0.55,
           opacity: 1,
-          color: cinema ? fill : darkenCssColor(fill, 0.28),
+          color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.55)",
           lineJoin: "round",
           lineCap: "round",
         });
         return;
       }
-      // Borough / city: light seams on top of a thin seal.
+      // Approaching neighbourhood scale — still a readable seam.
+      if (z < 10.25) {
+        path.setStyle({
+          stroke: true,
+          weight: 0.65,
+          opacity: 1,
+          color: cinema ? "rgba(0,0,0,0.4)" : "rgba(48, 58, 72, 0.42)",
+          lineJoin: "round",
+          lineCap: "round",
+        });
+        return;
+      }
+      // Borough / city: soft seal so dense MSOAs don’t wash out as fences.
       if (z < 11.5) {
         path.setStyle({
           stroke: true,
@@ -526,9 +517,9 @@ function ValueLabels({
     });
 
     const halfW =
-      zoom < 3.5 ? 56 : zoom < 4.5 ? 46 : zoom < 5.5 ? 38 : zoom < 7 ? 30 : 22;
+      zoom < 3.5 ? 32 : zoom < 4.5 ? 28 : zoom < 5.5 ? 24 : zoom < 7 ? 20 : 16;
     const halfHBase =
-      zoom < 3.5 ? 14 : zoom < 4.5 ? 12 : zoom < 5.5 ? 11 : zoom < 7 ? 10 : 9;
+      zoom < 3.5 ? 9 : zoom < 4.5 ? 8 : zoom < 5.5 ? 8 : zoom < 7 ? 7 : 7;
     const taken: { x: number; y: number; w: number; h: number }[] = [];
     const size = map.getSize();
     const pad = 8;
@@ -874,8 +865,8 @@ export function RegionChoroplethMap({
   /** Only render / fit these feature ids (e.g. MSOAs inside one LAD). */
   filterIds,
   /**
-   * Hide/thin borders at low zoom so dense neighbourhood layers don’t
-   * wash out as white city blobs (UK MSOA national view).
+   * Zoom-aware borders for dense layers (UK MSOA, NUTS 3). Continental
+   * zoom keeps Eurostat-style hairlines; neighbourhood zoom softens seams.
    */
   adaptiveStroke = false,
   fitPadding,
@@ -906,7 +897,14 @@ export function RegionChoroplethMap({
   hrefPrefix?: string;
   revision?: string;
   variant?: "light" | "cinema";
-  legend?: { label: string; color: string }[];
+  legend?: {
+    label: string;
+    color: string;
+    /** Inclusive low edge for hover-isolate (numeric legends). */
+    min?: number;
+    /** High edge for hover-isolate; last bin is inclusive. */
+    max?: number;
+  }[];
   fit?: "bounds" | "usa";
   fitMaxZoom?: number;
   navigate?: boolean;
@@ -951,9 +949,17 @@ export function RegionChoroplethMap({
   );
   const geoJsonRef = React.useRef<L.GeoJSON | null>(null);
   const cinema = variant === "cinema";
-  const border = countryBorderStyle(cinema ? "cinema" : "light");
+  const border = countryBorderStyle(cinema ? "cinema" : "atlas");
   const ocean =
     oceanColor ?? (cinema ? MAP_OCEAN.cinema : MAP_OCEAN.light);
+  const [legendHover, setLegendHover] = React.useState<number | null>(null);
+  const isolatable = Boolean(
+    legend?.some((b) => b.min != null && b.max != null),
+  );
+
+  React.useEffect(() => {
+    setLegendHover(null);
+  }, [revision, legendTitle]);
 
   React.useEffect(() => {
     if (geoDataProp) {
@@ -1054,8 +1060,24 @@ export function RegionChoroplethMap({
       const datum = id ? byId.get(id) : undefined;
       const selected = Boolean(id && selectedSet.has(id));
       const painted = id ? fillForId?.(id) : undefined;
-      const fillColor =
-        blobMode && selected && blobFill
+      const mutedFill = cinema ? "#1a1a1a" : "#ffffff";
+      let isolatedOut = false;
+      if (legendHover != null && legend && isolatable && datum) {
+        const bin = legend[legendHover];
+        if (bin?.min != null && bin.max != null) {
+          const isLast = legendHover === legend.length - 1;
+          const inBin = isLast
+            ? datum.value >= bin.min && datum.value <= bin.max
+            : datum.value >= bin.min && datum.value < bin.max;
+          isolatedOut = !inBin;
+        }
+      } else if (legendHover != null && legend && painted) {
+        // Categorical legends (e.g. religion): match by fill color.
+        isolatedOut = painted !== legend[legendHover]?.color;
+      }
+      const fillColor = isolatedOut
+        ? mutedFill
+        : blobMode && selected && blobFill
           ? blobFill
           : painted
             ? painted
@@ -1066,15 +1088,24 @@ export function RegionChoroplethMap({
                 : "rgba(120, 130, 145, 0.22)";
       return {
         fillColor,
-        fillOpacity: blobMode && !selected ? 0.78 : 1,
+        fillOpacity: isolatedOut
+          ? cinema
+            ? 0.35
+            : 0.92
+          : blobMode && !selected
+            ? 0.78
+            : 1,
         fillRule: "nonzero",
         ...border,
         ...(adaptiveStroke
           ? {
+              // Initial paint matches continental AdaptiveStrokeSync hairlines;
+              // zoomend refreshes weight/colour. Avoid fill-matched strokes —
+              // they erase district edges until deep zoom.
               stroke: true,
-              weight: 2.75,
+              weight: 0.55,
               opacity: 1,
-              color: fillColor,
+              color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.55)",
               lineJoin: "round" as const,
               lineCap: "round" as const,
             }
@@ -1091,6 +1122,9 @@ export function RegionChoroplethMap({
       colorFor,
       featureId,
       fillForId,
+      isolatable,
+      legend,
+      legendHover,
       selectedSet,
     ],
   );
@@ -1306,12 +1340,13 @@ export function RegionChoroplethMap({
       {legend && legend.length > 0 && (
         <div
           className={cn(
-            "pointer-events-none absolute bottom-3 z-[1000] rounded-md px-3 py-2.5 shadow-sm backdrop-blur-md",
+            "absolute bottom-3 z-[1000] rounded-md px-3 py-2.5 shadow-sm backdrop-blur-md",
             legendPlacement === "bottom-right" ? "right-3" : "left-3",
             cinema
               ? "bg-black/55 text-white/70"
               : "border bg-white/95 text-muted-foreground",
           )}
+          onMouseLeave={() => setLegendHover(null)}
         >
           <p
             className={cn(
@@ -1322,19 +1357,85 @@ export function RegionChoroplethMap({
             {legendTitle ??
               (unit === "%" ? "Percent of population" : unit || "Value")}
           </p>
-          <ul className="space-y-1">
-            {legend.map((bin) => (
-              <li key={bin.label} className="flex items-center gap-2 text-[11px]">
-                <span
-                  className="h-3 w-3 shrink-0 rounded-sm border border-black/10"
-                  style={{ background: bin.color }}
-                />
-                <span className={cinema ? "text-white/70" : "text-foreground/80"}>
-                  {bin.label}
-                </span>
-              </li>
-            ))}
-          </ul>
+          {isolatable ? (
+            <div className="w-[200px] sm:w-[240px]">
+              <div className="flex h-3.5 overflow-hidden rounded-sm border border-black/10">
+                {legend.map((bin, i) => {
+                  const dimmed =
+                    legendHover != null && legendHover !== i;
+                  return (
+                    <button
+                      key={`${bin.label}-${i}`}
+                      type="button"
+                      title={bin.label}
+                      aria-label={`Highlight regions around ${bin.label}`}
+                      className="h-full flex-1 transition-opacity"
+                      style={{
+                        background: bin.color,
+                        opacity: dimmed ? 0.22 : 1,
+                      }}
+                      onMouseEnter={() => setLegendHover(i)}
+                      onFocus={() => setLegendHover(i)}
+                      onBlur={() => setLegendHover(null)}
+                    />
+                  );
+                })}
+              </div>
+              <div
+                className={cn(
+                  "mt-1 flex justify-between gap-1 text-[10px] tabular-nums",
+                  cinema ? "text-white/55" : "text-foreground/70",
+                )}
+              >
+                <span>{legend[0]?.label}</span>
+                {legend.length > 2 ? (
+                  <span>{legend[Math.floor(legend.length / 2)]?.label}</span>
+                ) : null}
+                <span>{legend[legend.length - 1]?.label}</span>
+              </div>
+              <p
+                className={cn(
+                  "mt-1.5 text-[10px] leading-snug",
+                  cinema ? "text-white/40" : "text-muted-foreground",
+                )}
+              >
+                Hover a colour to isolate it on the map
+              </p>
+            </div>
+          ) : (
+            <ul className="space-y-1">
+              {legend.map((bin, i) => {
+                const dimmed =
+                  legendHover != null && legendHover !== i;
+                return (
+                  <li key={`${bin.label}-${i}`}>
+                    <button
+                      type="button"
+                      className={cn(
+                        "flex w-full items-center gap-2 text-left text-[11px] transition-opacity",
+                        dimmed && "opacity-30",
+                      )}
+                      onMouseEnter={() => setLegendHover(i)}
+                      onFocus={() => setLegendHover(i)}
+                      onBlur={() => setLegendHover(null)}
+                    >
+                      <span
+                        className="h-3 w-3 shrink-0 rounded-sm border border-black/10"
+                        style={{ background: bin.color }}
+                      />
+                      <span
+                        className={
+                          cinema ? "text-white/70" : "text-foreground/80"
+                        }
+                      >
+                        {bin.label}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       )}
     </div>

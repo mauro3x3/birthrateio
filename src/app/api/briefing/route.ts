@@ -201,7 +201,7 @@ Ids mean:
 - neighbors: 60–100 words. Name the peers and why a politician should care that next door looks different.
 - trajectory: fertility path; timing vs quantum.
 - age: who is already born. 2040 vs 2060.
-- groups: official splits only. For Israel, convergence of Jewish/Muslim TFR since 1960, then Haredi as IDI not CBS. For the US, NCHS race and Hispanic-origin TFR only.
+- groups: official splits only. For Israel, convergence of Jewish/Muslim TFR since 1960, then CBS religiosity (Haredi 6.8 in 2022–24 vs secular Jewish 1.9); IDI for employment/fiscal context. For the US, NCHS race and Hispanic-origin TFR only.
 - composition: race/ethnicity or religion share of residents. Use POPULATION COMPOSITION / RELIGION figures. Label projections clearly. Explain why group age structure, geography, and relative growth matter for schools, local politics, and the future electorate — descriptive, not a campaign brief.
 - labor: use LABOR MODEL numbers. Taxpayers vs retirees.
 - migration: net flows plus foreign-born stock and top origins/destinations when present. Label UN DESA as stock. Include the migration fiscal note if provided.

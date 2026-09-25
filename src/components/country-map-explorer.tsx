@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { buildColorScale } from "@/lib/color-scale";
+import { buildColorScale, legendIsolateBins } from "@/lib/color-scale";
 import {
   getCountryMapAtlas,
   type CountryMapEntry,
@@ -63,6 +63,7 @@ const MAP_FIT_CLAMP: Partial<
   EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
   AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
   COL: { west: -79.15, south: -4.35, east: -66.8, north: 12.55 },
+  ARG: { west: -73.6, south: -55.15, east: -53.5, north: -21.7 },
   BRA: { west: -74.2, south: -34.0, east: -34.6, north: 5.4 },
   YEM: { west: 42.4, south: 12.1, east: 54.7, north: 19.1 },
   IRQ: { west: 38.7, south: 28.9, east: 48.7, north: 37.5 },
@@ -118,10 +119,7 @@ export function CountryMapExplorer({
   );
   const [variantId, setVariantId] = React.useState<string | null>(null);
   const [panelOpen, setPanelOpen] = React.useState(true);
-  const [showValues, setShowValues] = React.useState(() => {
-    const iso = initialIso3.toUpperCase();
-    return iso !== "MENA" && iso !== "EU";
-  });
+  const [showValues, setShowValues] = React.useState(false);
   const [selectedIds, setSelectedIds] = React.useState<string[]>([]);
   const [combineSelection, setCombineSelection] = React.useState(true);
   const [MapView, setMapView] = React.useState<MapComponent | null>(null);
@@ -181,15 +179,6 @@ export function CountryMapExplorer({
   }, [iso3]);
 
   React.useEffect(() => {
-    setShowValues(
-      !(
-        kind === "province" &&
-        (country.iso3 === "MENA" || country.iso3 === "EU")
-      ),
-    );
-  }, [country.iso3, kind]);
-
-  React.useEffect(() => {
     if (metricId === "religion" && religionPack) return;
     const available = viewMetrics.map((m) => m.id);
     if (!available.includes(metricId)) {
@@ -220,6 +209,25 @@ export function CountryMapExplorer({
   const regions = metric && activeYear != null
     ? (valuesByYear?.[activeYear] ?? [])
     : [];
+
+  React.useEffect(() => {
+    // Dense continental layers read like Eurostat with colour + borders only —
+    // sparse value labels confuse at continent zoom.
+    const dense =
+      country.iso3 === "MENA" ||
+      country.iso3 === "EU" ||
+      country.iso3 === "AFRICA" ||
+      country.iso3 === "CARIBBEAN" ||
+      country.iso3 === "SOUTHAMERICA" ||
+      country.iso3 === "SEASIA" ||
+      country.iso3 === "CENTRALAMERICA" ||
+      country.iso3 === "CENTRALASIA" ||
+      country.iso3 === "NORTHAMERICA" ||
+      country.iso3 === "OCEANIA" ||
+      kind === "district";
+    setShowValues(!dense);
+  }, [country.iso3, kind]);
+
   const values = regions
     .map((r) => r.value)
     .filter((v): v is number => v != null && Number.isFinite(v));
@@ -314,13 +322,11 @@ export function CountryMapExplorer({
         label: g.shortLabel,
         color: g.color,
       }))
-    : scale.legend.map((s) => ({
-        label:
-          metric?.id === "population"
-            ? formatNumber(s.value, 0)
-            : formatNumber(s.value, metric?.decimals ?? 2),
-        color: s.color,
-      }));
+    : legendIsolateBins(scale, (v) =>
+        metric?.id === "population" || metric?.id === "working-age"
+          ? formatCompact(v)
+          : formatNumber(v, metric?.decimals ?? 2),
+      );
 
   const formatValue = React.useCallback(
     (v: number) => {
@@ -494,6 +500,7 @@ export function CountryMapExplorer({
                   OCEANIA: 2.35,
                   BRA: 5.2,
                   COL: 6.4,
+                  ARG: 3.85,
                   IDN: 4.2,
                   IRN: 5.8,
                   IRQ: 6.6,
@@ -625,6 +632,7 @@ export function CountryMapExplorer({
                       "NGA",
                       "BRA",
                       "COL",
+                      "ARG",
                       "IDN",
                       "IRN",
                       "EU",
@@ -881,7 +889,8 @@ export function CountryMapExplorer({
                 </span>
               </button>
               <p className="mt-1.5 text-[11px] leading-relaxed text-muted-foreground">
-                Shift-click regions on the map to add them up.
+                Dense district maps default to colour only (Eurostat-style). Turn
+                values on when zoomed in. Shift-click regions to add them up.
               </p>
             </div>
             )}

@@ -77,13 +77,13 @@ function PieSliceLabel({
 }: PieLabelProps) {
   if (!name || percent < 0.04) return null;
   const label = pieCalloutName(String(name));
-  const r = outerRadius + 14;
+  const r = outerRadius + 12;
   const x = cx + r * Math.cos(-midAngle * RADIAN);
   const y = cy + r * Math.sin(-midAngle * RADIAN);
   const onRight = x >= cx;
   return (
     <text
-      x={x}
+      x={onRight ? x + 2 : x - 2}
       y={y}
       fill={fill ?? "#334155"}
       textAnchor={onRight ? "start" : "end"}
@@ -167,10 +167,10 @@ function PieBlock({
         className={
           layout === "page"
             ? showSliceNames
-              ? "h-[320px] w-full max-w-[360px] sm:h-[380px] sm:max-w-[420px]"
+              ? "h-[360px] w-full max-w-[440px] sm:h-[420px] sm:max-w-[520px]"
               : "h-[280px] w-full max-w-[320px] sm:h-[340px] sm:max-w-[380px]"
             : showSliceNames
-              ? "h-[280px] w-full max-w-[320px] sm:h-[320px] sm:max-w-[360px]"
+              ? "h-[320px] w-full max-w-[380px] sm:h-[380px] sm:max-w-[440px]"
               : "h-[240px] w-full max-w-[280px] sm:h-[280px] sm:max-w-[320px]"
         }
       >
@@ -178,7 +178,7 @@ function PieBlock({
           <PieChart
             margin={
               showSliceNames
-                ? { top: 12, right: 56, bottom: 12, left: 56 }
+                ? { top: 10, right: 36, bottom: 10, left: 36 }
                 : { top: 0, right: 0, bottom: 0, left: 0 }
             }
           >
@@ -189,7 +189,7 @@ function PieBlock({
               nameKey="name"
               cx="50%"
               cy="50%"
-              outerRadius={showSliceNames ? "62%" : "88%"}
+              outerRadius={showSliceNames ? "78%" : "88%"}
               paddingAngle={0.6}
               isAnimationActive={false}
               stroke="#fff"
@@ -262,8 +262,13 @@ export function RegionSharePies({
           : "flex flex-col"
       }
     >
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-16">
-        <PieBlock
+      <div
+        className={
+          showSliceNames
+            ? "mx-auto flex w-full max-w-6xl flex-col gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-12"
+            : "mx-auto flex w-full max-w-5xl flex-col gap-10 lg:flex-row lg:items-start lg:justify-center lg:gap-16"
+        }
+      >        <PieBlock
           title={`${region.name} population by country`}
           totalLabel={`Share of residents · ${popYearLabel ?? ""}`}
           slices={left}

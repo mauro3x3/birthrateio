@@ -2,6 +2,7 @@ import denmark from "../data/tfr-by-ancestry-denmark.json";
 import norway from "../data/tfr-by-background-norway.json";
 import india from "../data/tfr-by-religion-india.json";
 import israel from "../data/tfr-by-religion-israel.json";
+import israelReligiosity from "../data/tfr-by-religiosity-israel.json";
 import austria from "../data/tfr-by-origin-austria.json";
 import kosovo from "../data/tfr-by-ethnicity-kosovo.json";
 import availability from "../data/tfr-by-ancestry-availability.json";
@@ -139,6 +140,17 @@ export const TFR_ANCESTRY_PACKS = PACKS;
 
 export function getTfrAncestryPack(iso3: string): TfrAncestryPack | undefined {
   return PACKS.find((p) => p.iso3 === iso3.toUpperCase());
+}
+
+export type IsraelReligiosityPack = typeof israelReligiosity;
+
+export const ISRAEL_TFR_BY_RELIGIOSITY =
+  israelReligiosity as IsraelReligiosityPack;
+
+export function getIsraelReligiosityPack(
+  iso3: string,
+): IsraelReligiosityPack | undefined {
+  return iso3.toUpperCase() === "ISR" ? ISRAEL_TFR_BY_RELIGIOSITY : undefined;
 }
 
 export function tfrAncestryOverlay(pack: TfrAncestryPack) {

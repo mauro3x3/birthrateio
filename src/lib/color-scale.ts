@@ -246,6 +246,55 @@ export function buildColorScale(
   return { color, legend, min, max, mid: legendMid };
 }
 
+/** Class bins from continuous legend stops — for hover-to-isolate legends. */
+export type LegendIsolateBin = {
+  label: string;
+  color: string;
+  min: number;
+  max: number;
+};
+
+export function legendIsolateBins(
+  scale: ColorScale,
+  formatLabel: (value: number) => string,
+): LegendIsolateBin[] {
+  const stops = scale.legend;
+  if (stops.length === 0) return [];
+  if (stops.length === 1) {
+    return [
+      {
+        label: formatLabel(stops[0].value),
+        color: stops[0].color,
+        min: scale.min,
+        max: scale.max,
+      },
+    ];
+  }
+  return stops.map((s, i) => {
+    const lo =
+      i === 0 ? Number.NEGATIVE_INFINITY : (stops[i - 1]!.value + s.value) / 2;
+    const hi =
+      i === stops.length - 1
+        ? Number.POSITIVE_INFINITY
+        : (s.value + stops[i + 1]!.value) / 2;
+    return {
+      label: formatLabel(s.value),
+      color: s.color,
+      min: lo,
+      max: hi,
+    };
+  });
+}
+
+export function valueInLegendBin(
+  value: number,
+  bin: LegendIsolateBin,
+  isLast: boolean,
+): boolean {
+  if (isLast) return value >= bin.min && value <= bin.max;
+  return value >= bin.min && value < bin.max;
+}
+
 // Classed choropleth for population / density — high-contrast steps that
 // stay readable on atlas water (#c4d3e0). Cream → amber → coral → wine.
 const CLASSED_WARM: [number, number, number][] = [
