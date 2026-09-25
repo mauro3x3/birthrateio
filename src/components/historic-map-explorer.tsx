@@ -99,6 +99,23 @@ const FIT: Record<
     clamp: { west: 19.5, south: 38.5, east: 150, north: 72 },
     maxZoom: 4.6,
   },
+  "yugoslavia-1931": {
+    clamp: { west: 13.3, south: 40.7, east: 23.2, north: 47.0 },
+    maxZoom: 7.4,
+  },
+  "french-algeria-1936": {
+    // Frame the Tell / Oranie–Algiers–Constantine belt; Sahara wilayas stay on the layer.
+    clamp: { west: -2.6, south: 32.4, east: 9.2, north: 37.5 },
+    maxZoom: 7.0,
+  },
+  "ottoman-empire-1914": {
+    clamp: { west: 24.5, south: 29.5, east: 49.5, north: 43.5 },
+    maxZoom: 5.8,
+  },
+  "africa-1880": {
+    clamp: { west: -20, south: -36, east: 52, north: 38 },
+    maxZoom: 4.2,
+  },
   "empires-1914": {
     clamp: { west: -25, south: 12, east: 120, north: 72 },
     maxZoom: 5.5,
@@ -412,7 +429,7 @@ export function HistoricMapExplorer({
 
   return (
     <div
-      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      className="relative isolate h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
       <div className="absolute inset-0">

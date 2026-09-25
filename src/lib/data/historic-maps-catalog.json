@@ -128,11 +128,12 @@
       "year": 1914,
       "metric": "millet-plurality",
       "kind": "historic-vilayet",
-      "status": "planned",
+      "status": "live",
       "region": "Near East & Balkans",
       "blurb": "Vilayet- and sanjak-level Muslim, Greek Orthodox, Armenian, Jewish and other millets on the eve of World War I — Anatolia, the Levant, Mesopotamia and the remaining Balkans before the empire dissolved.",
-      "source": "Ottoman official statistics and millet estimates, c. 1881–1914 (vilayet yearbooks / 1914 demographic compilations).",
+      "source": "Ottoman official statistics and millet estimates, c. 1881–1914. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Ottoman Empire 1914.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+      "geoUrl": "/geo/historic/ottoman-empire-1914.json",
       "groups": [
         {
           "id": "muslim",
@@ -169,8 +170,7 @@
           "shortLabel": "Other / mixed",
           "color": "#95a5a6"
         }
-      ],
-      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
+      ]
     },
     {
       "id": "austria-hungary-nationalities-1910",
@@ -440,11 +440,12 @@
       "year": 1931,
       "metric": "ethnicity-plurality",
       "kind": "historic-district",
-      "status": "planned",
+      "status": "live",
       "region": "Balkans",
       "blurb": "Serbs, Croats, Slovenes, Bosnian Muslims, Macedonians, Albanians, Hungarians and Germans across banovinas — the interwar kingdom before World War II and the later SFRY.",
-      "source": "Kingdom of Yugoslavia census 1931 (mother tongue / nationality).",
-      "sourceUrl": "https://en.wikipedia.org/wiki/Kingdom_of_Yugoslavia",
+      "source": "Kingdom of Yugoslavia census 1931 (nationality / mother tongue / religion). Unit borders: Natural Earth admin-1 clipped to historical-basemaps Yugoslavia 1930.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Subdivisions_of_the_Kingdom_of_Yugoslavia",
+      "geoUrl": "/geo/historic/yugoslavia-1931.json",
       "groups": [
         {
           "id": "serb",
@@ -491,8 +492,7 @@
           "shortLabel": "Other",
           "color": "#95a5a6"
         }
-      ],
-      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
+      ]
     },
     {
       "id": "poland-1931",
@@ -720,11 +720,12 @@
       "year": 1936,
       "metric": "community-plurality",
       "kind": "historic-commune",
-      "status": "planned",
+      "status": "live",
       "region": "North Africa",
       "blurb": "Muslim Algerian, European settler (pied-noir) and Jewish majorities by commune — colonial Algeria between the conquest and independence.",
-      "source": "French Algeria censuses / colonial statistics, mid-1930s.",
+      "source": "French Algeria censuses / colonial statistics, mid-1930s. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Algeria 1930.",
       "sourceUrl": "https://en.wikipedia.org/wiki/French_Algeria",
+      "geoUrl": "/geo/historic/french-algeria-1936.json",
       "groups": [
         {
           "id": "muslim",
@@ -746,8 +747,54 @@
           "shortLabel": "Other",
           "color": "#95a5a6"
         }
-      ],
-      "statusNote": "Needs historic administrative GIS (uyezd / vilayet / kreis / district polygons) matched to period census tables. Borders from today’s maps would be misleading — we are waiting on open historic boundary files (e.g. Heidelberg 1897 / Ristat), which are behind archive download walls from this build environment."
+      ]
+    },
+    {
+      "id": "africa-pre-berlin-1880",
+      "slug": "africa-1880",
+      "title": "Africa before the Berlin Conference, c. 1880",
+      "empire": "Africa",
+      "year": 1880,
+      "metric": "polity-type",
+      "kind": "historic-state",
+      "status": "live",
+      "region": "Africa",
+      "blurb": "African kingdoms, Muslim caliphates, Ethiopia and Liberia, Boer republics, and the thin European coastal footholds that existed before the 1884–85 Berlin Conference scrambled the interior.",
+      "source": "Borders: historical-basemaps world_1880. Polity coding by birthrate.io from period political geography.",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Berlin_Conference",
+      "geoUrl": "/geo/historic/africa-1880.json",
+      "groups": [
+        {
+          "id": "muslim-polity",
+          "shortLabel": "Muslim polity",
+          "color": "#1e8449"
+        },
+        {
+          "id": "christian-polity",
+          "shortLabel": "Christian polity",
+          "color": "#5dade2"
+        },
+        {
+          "id": "african-kingdom",
+          "shortLabel": "African kingdom",
+          "color": "#d4a017"
+        },
+        {
+          "id": "boer-republic",
+          "shortLabel": "Boer republic",
+          "color": "#c0392b"
+        },
+        {
+          "id": "european-foothold",
+          "shortLabel": "European foothold",
+          "color": "#2874a6"
+        },
+        {
+          "id": "other",
+          "shortLabel": "Other / unnamed",
+          "color": "#95a5a6"
+        }
+      ]
     },
     {
       "id": "safavid-persia-religion-c1700",

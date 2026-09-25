@@ -41,10 +41,11 @@ const REGION_ORDER = [
   "Central Europe",
   "Eurasia",
   "Balkans",
+  "Africa",
+  "North Africa",
   "South Asia",
   "East Asia",
   "Southeast Asia",
-  "North Africa",
   "Other",
 ];
 

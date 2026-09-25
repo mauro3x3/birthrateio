@@ -145,7 +145,7 @@ export function UkCensusExplorer({
 
   return (
     <div
-      className="relative h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
+      className="relative isolate h-[calc(100dvh-3.75rem)] min-h-[32rem] overflow-hidden text-foreground"
       style={{ background: MAP_OCEAN.atlas }}
     >
       {/* Full-bleed map — light ONS-style stage */}

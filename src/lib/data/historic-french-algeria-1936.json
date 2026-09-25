@@ -1,0 +1,847 @@
+{
+  "id": "french-algeria-1936",
+  "slug": "french-algeria-1936",
+  "title": "Communities in French Algeria, c. 1936",
+  "year": 1936,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Colony-scoped map on modern wilayas inside the 1930 Algeria outline, painted by approximate mid-1930s community majorities. European plurality marks the Oranie / Algiers / B\u00f4ne settler belt \u2014 commune-level pied-noir GIS is not openly available. No wilaya had a Jewish plurality; Jewish shares appear in dig-in for Constantine, Algiers and Oran. Unit mixes are illustrative, not official commune tables.",
+  "source": "French Algeria censuses / colonial statistics, mid-1930s (colony totals and regional settler patterns). Unit borders: Natural Earth admin-1 clipped to historical-basemaps Algeria 1930.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/French_Algeria",
+  "geoUrl": "/geo/historic/french-algeria-1936.json",
+  "groups": [
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim Algerian",
+      "color": "#1e8449"
+    },
+    {
+      "id": "european",
+      "shortLabel": "European",
+      "color": "#2874a6"
+    },
+    {
+      "id": "jewish",
+      "shortLabel": "Jewish",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "nationalShares": {
+    "muslim": 0.86,
+    "european": 0.125,
+    "jewish": 0.015
+  },
+  "totalPopulation": 7278403,
+  "areas": [
+    {
+      "code": "dz-adrar",
+      "slug": "dz-adrar",
+      "name": "Adrar",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 479664.7,
+      "density": 0.5,
+      "population": 239832,
+      "shares": {
+        "muslim": 0.97,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "dz-tamanghasset",
+      "slug": "dz-tamanghasset",
+      "name": "Tamanghasset",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 612043.1,
+      "density": 0.5,
+      "population": 306022,
+      "shares": {
+        "muslim": 0.97,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "dz-tindouf",
+      "slug": "dz-tindouf",
+      "name": "Tindouf",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 153214.8,
+      "density": 0.5,
+      "population": 76607,
+      "shares": {
+        "muslim": 0.97,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "dz-bechar",
+      "slug": "dz-bechar",
+      "name": "B\u00e9char",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 165495.8,
+      "density": 0.5,
+      "population": 82748,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-el-tarf",
+      "slug": "dz-el-tarf",
+      "name": "El Tarf",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 2736.8,
+      "density": 10.8,
+      "population": 29557,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-el-oued",
+      "slug": "dz-el-oued",
+      "name": "El Oued",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 46452.2,
+      "density": 10.8,
+      "population": 501684,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-tebessa",
+      "slug": "dz-tebessa",
+      "name": "T\u00e9bessa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 13498.6,
+      "density": 10.8,
+      "population": 145785,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-souk-ahras",
+      "slug": "dz-souk-ahras",
+      "name": "Souk Ahras",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4057.5,
+      "density": 10.8,
+      "population": 43821,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-ouargla",
+      "slug": "dz-ouargla",
+      "name": "Ouargla",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 211249.3,
+      "density": 0.5,
+      "population": 105625,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-illizi",
+      "slug": "dz-illizi",
+      "name": "Illizi",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 196360.8,
+      "density": 0.5,
+      "population": 98180,
+      "shares": {
+        "muslim": 0.97,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "dz-naama",
+      "slug": "dz-naama",
+      "name": "Na\u00e2ma",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 30853.9,
+      "density": 10.8,
+      "population": 333222,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-tlemcen",
+      "slug": "dz-tlemcen",
+      "name": "Tlemcen",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 9604.0,
+      "density": 10.8,
+      "population": 103723,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-annaba",
+      "slug": "dz-annaba",
+      "name": "Annaba (B\u00f4ne)",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 1462.5,
+      "density": 36.8,
+      "population": 53820,
+      "shares": {
+        "european": 0.48,
+        "muslim": 0.46,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-skikda",
+      "slug": "dz-skikda",
+      "name": "Skikda (Philippeville)",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 4113.0,
+      "density": 36.8,
+      "population": 151358,
+      "shares": {
+        "european": 0.48,
+        "muslim": 0.46,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-jijel",
+      "slug": "dz-jijel",
+      "name": "Jijel",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 2406.4,
+      "density": 10.8,
+      "population": 25989,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-bejaia",
+      "slug": "dz-bejaia",
+      "name": "B\u00e9ja\u00efa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 3512.9,
+      "density": 32.9,
+      "population": 115574,
+      "shares": {
+        "muslim": 0.94,
+        "european": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-tizi-ouzou",
+      "slug": "dz-tizi-ouzou",
+      "name": "Tizi Ouzou",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 2807.6,
+      "density": 32.9,
+      "population": 92370,
+      "shares": {
+        "muslim": 0.94,
+        "european": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-boumerdes",
+      "slug": "dz-boumerdes",
+      "name": "Boumerd\u00e8s",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 1237.9,
+      "density": 10.8,
+      "population": 13369,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-alger",
+      "slug": "dz-alger",
+      "name": "Alger (Algiers)",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 190.2,
+      "density": 36.8,
+      "population": 6999,
+      "shares": {
+        "european": 0.48,
+        "muslim": 0.42,
+        "jewish": 0.08,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-tipaza",
+      "slug": "dz-tipaza",
+      "name": "Tipaza",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 1976.7,
+      "density": 36.8,
+      "population": 72743,
+      "shares": {
+        "european": 0.46,
+        "muslim": 0.48,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-chlef",
+      "slug": "dz-chlef",
+      "name": "Chlef",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4322.5,
+      "density": 10.8,
+      "population": 46683,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-mostaganem",
+      "slug": "dz-mostaganem",
+      "name": "Mostaganem",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 2250.8,
+      "density": 36.8,
+      "population": 82829,
+      "shares": {
+        "european": 0.46,
+        "muslim": 0.48,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-oran",
+      "slug": "dz-oran",
+      "name": "Oran (Oranie)",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 2541.7,
+      "density": 36.8,
+      "population": 93535,
+      "shares": {
+        "european": 0.52,
+        "muslim": 0.4,
+        "jewish": 0.06,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-ain-temouchent",
+      "slug": "dz-ain-temouchent",
+      "name": "A\u00efn T\u00e9mouchent",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 1932.8,
+      "density": 36.8,
+      "population": 71127,
+      "shares": {
+        "european": 0.46,
+        "muslim": 0.48,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-setif",
+      "slug": "dz-setif",
+      "name": "S\u00e9tif",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 6203.6,
+      "density": 32.9,
+      "population": 204098,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-bordj-bou-arreridj",
+      "slug": "dz-bordj-bou-arreridj",
+      "name": "Bordj Bou Arr\u00e9ridj",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4063.8,
+      "density": 10.8,
+      "population": 43889,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-bouira",
+      "slug": "dz-bouira",
+      "name": "Bouira",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4541.3,
+      "density": 10.8,
+      "population": 49046,
+      "shares": {
+        "muslim": 0.94,
+        "european": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-blida",
+      "slug": "dz-blida",
+      "name": "Blida",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 1932.1,
+      "density": 32.9,
+      "population": 63566,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-tissemsilt",
+      "slug": "dz-tissemsilt",
+      "name": "Tissemsilt",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 3035.0,
+      "density": 10.8,
+      "population": 32778,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-ain-defla",
+      "slug": "dz-ain-defla",
+      "name": "A\u00efn Defla",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4622.3,
+      "density": 10.8,
+      "population": 49921,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-relizane",
+      "slug": "dz-relizane",
+      "name": "Relizane",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 4919.2,
+      "density": 10.8,
+      "population": 53127,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-el-bayadh",
+      "slug": "dz-el-bayadh",
+      "name": "El Bayadh",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 68616.2,
+      "density": 10.8,
+      "population": 741055,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-saida",
+      "slug": "dz-saida",
+      "name": "Sa\u00efda",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 9354.4,
+      "density": 10.8,
+      "population": 101028,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-sidi-bel-abbes",
+      "slug": "dz-sidi-bel-abbes",
+      "name": "Sidi Bel Abb\u00e8s",
+      "plurality": "european",
+      "nationality": "european",
+      "adm0": "DZA",
+      "areaKm2": 7605.6,
+      "density": 36.8,
+      "population": 279886,
+      "shares": {
+        "european": 0.46,
+        "muslim": 0.48,
+        "jewish": 0.04,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-mascara",
+      "slug": "dz-mascara",
+      "name": "Mascara",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 5778.5,
+      "density": 10.8,
+      "population": 62408,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-ghardaia",
+      "slug": "dz-ghardaia",
+      "name": "Gharda\u00efa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 75825.6,
+      "density": 10.8,
+      "population": 818916,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-laghouat",
+      "slug": "dz-laghouat",
+      "name": "Laghouat",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 27148.8,
+      "density": 10.8,
+      "population": 293207,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-medea",
+      "slug": "dz-medea",
+      "name": "M\u00e9d\u00e9a",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 9070.2,
+      "density": 10.8,
+      "population": 97958,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-tiaret",
+      "slug": "dz-tiaret",
+      "name": "Tiaret",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 20341.3,
+      "density": 10.8,
+      "population": 219686,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-m-sila",
+      "slug": "dz-m-sila",
+      "name": "M'Sila",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 17766.3,
+      "density": 10.8,
+      "population": 191876,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-batna",
+      "slug": "dz-batna",
+      "name": "Batna",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 12081.1,
+      "density": 10.8,
+      "population": 130476,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-khenchela",
+      "slug": "dz-khenchela",
+      "name": "Khenchela",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 9870.1,
+      "density": 10.8,
+      "population": 106597,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-guelma",
+      "slug": "dz-guelma",
+      "name": "Guelma",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 3779.1,
+      "density": 10.8,
+      "population": 40814,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-constantine",
+      "slug": "dz-constantine",
+      "name": "Constantine",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 2138.5,
+      "density": 42.6,
+      "population": 91100,
+      "shares": {
+        "muslim": 0.72,
+        "european": 0.16,
+        "jewish": 0.1,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "dz-mila",
+      "slug": "dz-mila",
+      "name": "Mila",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 3562.1,
+      "density": 10.8,
+      "population": 38471,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-oum-el-bouaghi",
+      "slug": "dz-oum-el-bouaghi",
+      "name": "Oum el Bouaghi",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 6367.0,
+      "density": 10.8,
+      "population": 68764,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-biskra",
+      "slug": "dz-biskra",
+      "name": "Biskra",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 20875.4,
+      "density": 10.8,
+      "population": 225454,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    },
+    {
+      "code": "dz-djelfa",
+      "slug": "dz-djelfa",
+      "name": "Djelfa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "DZA",
+      "areaKm2": 35285.2,
+      "density": 10.8,
+      "population": 381080,
+      "shares": {
+        "muslim": 0.88,
+        "european": 0.09,
+        "jewish": 0.02,
+        "other": 0.01
+      }
+    }
+  ]
+}

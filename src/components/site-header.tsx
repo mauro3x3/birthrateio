@@ -76,7 +76,7 @@ export function SiteHeader() {
       ));
 
   return (
-    <header className="site-header sticky top-0 z-40 w-full">
+    <header className="site-header sticky top-0 z-50 w-full">
       <div className="container flex h-[3.75rem] items-center gap-3">
         <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <BrandMark />

@@ -126,16 +126,49 @@ export default function HistoricMapsHubPage() {
           <p>
             {liveCount > 0 ? (
               <>
-                Start with the live{" "}
+                Live maps include{" "}
                 <Link
                   href="/maps/historic/austria-hungary-1910"
                   className="link-editorial font-medium"
                 >
-                  Austria-Hungary 1910 nationalities
-                </Link>{" "}
-                map — empire-scoped crownlands painted by census language
-                majority. More Dual Monarchy detail and other empires follow as
-                historic GIS is matched.
+                  Austria-Hungary 1910
+                </Link>
+                ,{" "}
+                <Link
+                  href="/maps/historic/russian-empire-1897"
+                  className="link-editorial font-medium"
+                >
+                  Russian Empire 1897
+                </Link>
+                ,{" "}
+                <Link
+                  href="/maps/historic/ottoman-empire-1914"
+                  className="link-editorial font-medium"
+                >
+                  Ottoman Empire 1914
+                </Link>
+                ,{" "}
+                <Link
+                  href="/maps/historic/yugoslavia-1931"
+                  className="link-editorial font-medium"
+                >
+                  Yugoslavia 1931
+                </Link>
+                ,{" "}
+                <Link
+                  href="/maps/historic/french-algeria-1936"
+                  className="link-editorial font-medium"
+                >
+                  French Algeria 1936
+                </Link>
+                , and{" "}
+                <Link
+                  href="/maps/historic/africa-1880"
+                  className="link-editorial font-medium"
+                >
+                  Africa 1880
+                </Link>
+                . More empires follow as historic GIS is matched.
               </>
             ) : null}
           </p>

@@ -153,6 +153,10 @@
 }
 
 /* Regional map PNG — hide chrome, keep map + panel + share URL. */
+.br-map-share {
+  /* Keep Leaflet/panel z-indexes from covering the site header mega-menus. */
+  isolation: isolate;
+}
 .br-map-share.br-exporting [data-export-ignore],
 .br-map-share.br-exporting .leaflet-control-container {
   display: none !important;

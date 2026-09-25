@@ -1,0 +1,2814 @@
+{
+  "id": "yugoslavia-ethnicity-1931",
+  "slug": "yugoslavia-1931",
+  "title": "Ethnicity in the Kingdom of Yugoslavia, 1931",
+  "year": 1931,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Kingdom-scoped map on modern counties / cantons / districts inside the 1930 Yugoslavia outline, painted by approximate 1931 nationality majorities (banovina-era patterns). Banovina polygons are not openly available. Macedonian is shown for Vardar South Slavs \u2014 the 1931 census usually folded them into Serbs. Unit mixes are illustrative, not official banovina tables.",
+  "source": "Kingdom of Yugoslavia census 1931 (nationality / mother tongue / religion) for kingdom totals and regional majorities. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Yugoslavia 1930.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Subdivisions_of_the_Kingdom_of_Yugoslavia",
+  "geoUrl": "/geo/historic/yugoslavia-1931.json",
+  "groups": [
+    {
+      "id": "serb",
+      "shortLabel": "Serb",
+      "color": "#1a5276"
+    },
+    {
+      "id": "croat",
+      "shortLabel": "Croat",
+      "color": "#2874a6"
+    },
+    {
+      "id": "slovene",
+      "shortLabel": "Slovene",
+      "color": "#5dade2"
+    },
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim (Bosniak)",
+      "color": "#1e8449"
+    },
+    {
+      "id": "macedonian",
+      "shortLabel": "Macedonian",
+      "color": "#27ae60"
+    },
+    {
+      "id": "albanian",
+      "shortLabel": "Albanian",
+      "color": "#922b21"
+    },
+    {
+      "id": "hungarian",
+      "shortLabel": "Hungarian",
+      "color": "#c0392b"
+    },
+    {
+      "id": "german",
+      "shortLabel": "German",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "religionGroups": [
+    {
+      "id": "orthodox",
+      "shortLabel": "Orthodox",
+      "color": "#4a2c6a"
+    },
+    {
+      "id": "catholic",
+      "shortLabel": "Catholic",
+      "color": "#f4d03f"
+    },
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim",
+      "color": "#27ae60"
+    },
+    {
+      "id": "protestant",
+      "shortLabel": "Protestant",
+      "color": "#5dade2"
+    },
+    {
+      "id": "jewish",
+      "shortLabel": "Jewish",
+      "color": "#a569bd"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other",
+      "color": "#95a5a6"
+    }
+  ],
+  "nationalShares": {
+    "serb": 0.388,
+    "croat": 0.237,
+    "slovene": 0.083,
+    "muslim": 0.069,
+    "macedonian": 0.055,
+    "albanian": 0.032,
+    "german": 0.036,
+    "hungarian": 0.034,
+    "other": 0.066
+  },
+  "nationalReligionShares": {
+    "orthodox": 0.484,
+    "catholic": 0.373,
+    "muslim": 0.111,
+    "protestant": 0.016,
+    "jewish": 0.005,
+    "other": 0.011
+  },
+  "totalPopulation": 13929928,
+  "areas": [
+    {
+      "code": "yu-bih-banja-luka",
+      "slug": "yu-bih-banja-luka",
+      "name": "Banja Luka",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 8922.8,
+      "density": 44.2,
+      "population": 394388,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-bijeljina",
+      "slug": "yu-bih-bijeljina",
+      "name": "Bijeljina",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 1285.8,
+      "density": 44.2,
+      "population": 56832,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-bosnian-podrinje",
+      "slug": "yu-bih-bosnian-podrinje",
+      "name": "Bosnian Podrinje",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 535.8,
+      "density": 44.2,
+      "population": 23682,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-brcko-distrikt",
+      "slug": "yu-bih-brcko-distrikt",
+      "name": "Br\u010dko Distrikt",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 157.0,
+      "density": 44.2,
+      "population": 6939,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-central-bosnia",
+      "slug": "yu-bih-central-bosnia",
+      "name": "Central Bosnia",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 3418.1,
+      "density": 44.2,
+      "population": 151080,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-doboj",
+      "slug": "yu-bih-doboj",
+      "name": "Doboj",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 2339.3,
+      "density": 44.2,
+      "population": 103397,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-foca",
+      "slug": "yu-bih-foca",
+      "name": "Fo\u010da",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 2801.7,
+      "density": 44.2,
+      "population": 123835,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-herzegovina-neretva-mixed",
+      "slug": "yu-bih-herzegovina-neretva-mixed",
+      "name": "Herzegovina-Neretva (mixed)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 4799.2,
+      "density": 44.2,
+      "population": 212125,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-posavina",
+      "slug": "yu-bih-posavina",
+      "name": "Posavina",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "BIH",
+      "areaKm2": 587.0,
+      "density": 44.2,
+      "population": 25945,
+      "shares": {
+        "croat": 0.7,
+        "muslim": 0.16,
+        "serb": 0.1,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-bih-sarajevo",
+      "slug": "yu-bih-sarajevo",
+      "name": "Sarajevo",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 1407.9,
+      "density": 44.2,
+      "population": 62229,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-sarajevo-romanija",
+      "slug": "yu-bih-sarajevo-romanija",
+      "name": "Sarajevo-romanija",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 2190.3,
+      "density": 44.2,
+      "population": 96811,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-trebinje",
+      "slug": "yu-bih-trebinje",
+      "name": "Trebinje",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 3216.8,
+      "density": 44.2,
+      "population": 142183,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-tuzla",
+      "slug": "yu-bih-tuzla",
+      "name": "Tuzla",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 3027.8,
+      "density": 44.2,
+      "population": 133829,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-una-sana",
+      "slug": "yu-bih-una-sana",
+      "name": "Una-Sana",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 4793.2,
+      "density": 44.2,
+      "population": 211859,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-vlasenica",
+      "slug": "yu-bih-vlasenica",
+      "name": "Vlasenica",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "BIH",
+      "areaKm2": 2208.7,
+      "density": 44.2,
+      "population": 97625,
+      "shares": {
+        "serb": 0.55,
+        "muslim": 0.28,
+        "croat": 0.12,
+        "other": 0.05
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-west-bosnia",
+      "slug": "yu-bih-west-bosnia",
+      "name": "West Bosnia",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 5268.5,
+      "density": 44.2,
+      "population": 232868,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-bih-west-herzegovina",
+      "slug": "yu-bih-west-herzegovina",
+      "name": "West Herzegovina",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "BIH",
+      "areaKm2": 1514.2,
+      "density": 44.2,
+      "population": 66928,
+      "shares": {
+        "croat": 0.7,
+        "muslim": 0.16,
+        "serb": 0.1,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-bih-zenica-doboj",
+      "slug": "yu-bih-zenica-doboj",
+      "name": "Zenica-Doboj",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "religion": "muslim",
+      "adm0": "BIH",
+      "areaKm2": 3414.3,
+      "density": 44.2,
+      "population": 150912,
+      "shares": {
+        "muslim": 0.52,
+        "serb": 0.28,
+        "croat": 0.14,
+        "other": 0.06
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-hrv-bjelovarsko-bilogorska",
+      "slug": "yu-hrv-bjelovarsko-bilogorska",
+      "name": "Bjelovarsko-bilogorska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 2674.5,
+      "density": 57.9,
+      "population": 154854,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-brodsko-posavska",
+      "slug": "yu-hrv-brodsko-posavska",
+      "name": "Brodsko-Posavska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 4225.6,
+      "density": 57.9,
+      "population": 244662,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-dubrovacko-neretvanska",
+      "slug": "yu-hrv-dubrovacko-neretvanska",
+      "name": "Dubrovacko-Neretvanska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 912.3,
+      "density": 57.9,
+      "population": 52822,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-grad-zagreb",
+      "slug": "yu-hrv-grad-zagreb",
+      "name": "Grad Zagreb",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 706.8,
+      "density": 337.9,
+      "population": 238828,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-karlovacka",
+      "slug": "yu-hrv-karlovacka",
+      "name": "Karlovacka",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 3291.2,
+      "density": 57.9,
+      "population": 190560,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-koprivnicko-krizevacka",
+      "slug": "yu-hrv-koprivnicko-krizevacka",
+      "name": "Koprivni\u010dko-Kri\u017eeva\u010dka",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 1671.2,
+      "density": 57.9,
+      "population": 96762,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-krapinsko-zagorska",
+      "slug": "yu-hrv-krapinsko-zagorska",
+      "name": "Krapinsko-Zagorska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 1259.7,
+      "density": 57.9,
+      "population": 72937,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-licko-senjska",
+      "slug": "yu-hrv-licko-senjska",
+      "name": "Licko-Senjska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 3704.8,
+      "density": 57.9,
+      "population": 214508,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-medimurska",
+      "slug": "yu-hrv-medimurska",
+      "name": "Medimurska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 800.2,
+      "density": 57.9,
+      "population": 46332,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-osjecko-baranjska",
+      "slug": "yu-hrv-osjecko-baranjska",
+      "name": "Osjecko-Baranjska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 3580.5,
+      "density": 57.9,
+      "population": 207311,
+      "shares": {
+        "croat": 0.58,
+        "serb": 0.32,
+        "other": 0.1
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-primorsko-goranska",
+      "slug": "yu-hrv-primorsko-goranska",
+      "name": "Primorsko-Goranska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 1980.7,
+      "density": 57.9,
+      "population": 114683,
+      "shares": {
+        "croat": 0.72,
+        "other": 0.28
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-sisacko-moslavacka",
+      "slug": "yu-hrv-sisacko-moslavacka",
+      "name": "Sisacko-Moslavacka",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 5057.6,
+      "density": 57.9,
+      "population": 292835,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-splitsko-dalmatinska",
+      "slug": "yu-hrv-splitsko-dalmatinska",
+      "name": "Splitsko-Dalmatinska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 3603.5,
+      "density": 57.9,
+      "population": 208643,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-varazdinska",
+      "slug": "yu-hrv-varazdinska",
+      "name": "Vara\u017edinska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 1195.5,
+      "density": 57.9,
+      "population": 69219,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-viroviticko-podravska",
+      "slug": "yu-hrv-viroviticko-podravska",
+      "name": "Viroviticko-Podravska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 2086.3,
+      "density": 57.9,
+      "population": 120797,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-vukovarsko-srijemska",
+      "slug": "yu-hrv-vukovarsko-srijemska",
+      "name": "Vukovarsko-Srijemska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 2345.2,
+      "density": 57.9,
+      "population": 135787,
+      "shares": {
+        "croat": 0.58,
+        "serb": 0.32,
+        "other": 0.1
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-zadarska",
+      "slug": "yu-hrv-zadarska",
+      "name": "Zadarska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 5853.6,
+      "density": 57.9,
+      "population": 338923,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-zagrebacka",
+      "slug": "yu-hrv-zagrebacka",
+      "name": "Zagrebacka",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 2675.0,
+      "density": 337.9,
+      "population": 903882,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-hrv-sibensko-kninska",
+      "slug": "yu-hrv-sibensko-kninska",
+      "name": "\u0160ibensko-Kninska",
+      "plurality": "croat",
+      "nationality": "croat",
+      "religion": "catholic",
+      "adm0": "HRV",
+      "areaKm2": 1718.1,
+      "density": 57.9,
+      "population": 99478,
+      "shares": {
+        "croat": 0.82,
+        "serb": 0.1,
+        "other": 0.08
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-kos-gnjilane",
+      "slug": "yu-kos-gnjilane",
+      "name": "Gnjilane",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 1364.5,
+      "density": 56.3,
+      "population": 76821,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-kosovska-mitrovica",
+      "slug": "yu-kos-kosovska-mitrovica",
+      "name": "Kosovska Mitrovica",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 2101.6,
+      "density": 56.3,
+      "population": 118320,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-pec",
+      "slug": "yu-kos-pec",
+      "name": "Pe\u0107",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 1393.9,
+      "density": 56.3,
+      "population": 78477,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-pristina",
+      "slug": "yu-kos-pristina",
+      "name": "Pristina",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 2095.0,
+      "density": 56.3,
+      "population": 117948,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-prizren",
+      "slug": "yu-kos-prizren",
+      "name": "Prizren",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 1718.3,
+      "density": 56.3,
+      "population": 96740,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-urosevac",
+      "slug": "yu-kos-urosevac",
+      "name": "Uro\u0161evac",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 1014.3,
+      "density": 56.3,
+      "population": 57105,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-kos-akovica",
+      "slug": "yu-kos-akovica",
+      "name": "\u0110akovica",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "KOS",
+      "areaKm2": 1217.9,
+      "density": 56.3,
+      "population": 68568,
+      "shares": {
+        "albanian": 0.68,
+        "serb": 0.22,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-western-macedonia-albanian",
+      "slug": "yu-mkd-western-macedonia-albanian",
+      "name": "Western Macedonia (Albanian)",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "MKD",
+      "areaKm2": 4914.1,
+      "density": 38.6,
+      "population": 189684,
+      "shares": {
+        "albanian": 0.62,
+        "macedonian": 0.28,
+        "other": 0.1
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-bosilovo",
+      "slug": "yu-mkd-bosilovo",
+      "name": "Bosilovo",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 160.0,
+      "density": 38.6,
+      "population": 6176,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-drugovo",
+      "slug": "yu-mkd-drugovo",
+      "name": "Drugovo",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 377.1,
+      "density": 38.6,
+      "population": 14556,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-eastern",
+      "slug": "yu-mkd-eastern",
+      "name": "Eastern",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 3092.9,
+      "density": 38.6,
+      "population": 119386,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-gevgelija",
+      "slug": "yu-mkd-gevgelija",
+      "name": "Gevgelija",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 463.7,
+      "density": 38.6,
+      "population": 17899,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-greater-skopje",
+      "slug": "yu-mkd-greater-skopje",
+      "name": "Greater Skopje",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 315.4,
+      "density": 38.6,
+      "population": 12174,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-jegunovce",
+      "slug": "yu-mkd-jegunovce",
+      "name": "Jegunovce",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 172.0,
+      "density": 38.6,
+      "population": 6639,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-mogila",
+      "slug": "yu-mkd-mogila",
+      "name": "Mogila",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 246.4,
+      "density": 38.6,
+      "population": 9511,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-northeastern",
+      "slug": "yu-mkd-northeastern",
+      "name": "Northeastern",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 2443.8,
+      "density": 38.6,
+      "population": 94331,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-oslomej",
+      "slug": "yu-mkd-oslomej",
+      "name": "Oslomej",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 111.6,
+      "density": 38.6,
+      "population": 4308,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-pelagonia",
+      "slug": "yu-mkd-pelagonia",
+      "name": "Pelagonia",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 3354.5,
+      "density": 38.6,
+      "population": 129484,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-plasnica",
+      "slug": "yu-mkd-plasnica",
+      "name": "Plasnica",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 59.3,
+      "density": 38.6,
+      "population": 2289,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-rosoman",
+      "slug": "yu-mkd-rosoman",
+      "name": "Rosoman",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 130.9,
+      "density": 38.6,
+      "population": 5053,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-skopje",
+      "slug": "yu-mkd-skopje",
+      "name": "Skopje",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 937.6,
+      "density": 38.6,
+      "population": 36191,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-southeastern",
+      "slug": "yu-mkd-southeastern",
+      "name": "Southeastern",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 2134.0,
+      "density": 38.6,
+      "population": 82372,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-southwestern",
+      "slug": "yu-mkd-southwestern",
+      "name": "Southwestern",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 2560.4,
+      "density": 38.6,
+      "population": 98831,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-staro-nagoricane",
+      "slug": "yu-mkd-staro-nagoricane",
+      "name": "Staro Nagori\u010dane",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 487.8,
+      "density": 38.6,
+      "population": 18829,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-strumitsa",
+      "slug": "yu-mkd-strumitsa",
+      "name": "Strumitsa",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 320.3,
+      "density": 38.6,
+      "population": 12364,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-vardar",
+      "slug": "yu-mkd-vardar",
+      "name": "Vardar",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 3044.8,
+      "density": 38.6,
+      "population": 117529,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mkd-zrnovci",
+      "slug": "yu-mkd-zrnovci",
+      "name": "Zrnovci",
+      "plurality": "macedonian",
+      "nationality": "macedonian",
+      "religion": "orthodox",
+      "adm0": "MKD",
+      "areaKm2": 42.2,
+      "density": 38.6,
+      "population": 1629,
+      "shares": {
+        "macedonian": 0.72,
+        "albanian": 0.12,
+        "serb": 0.08,
+        "other": 0.08
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-andrijevica",
+      "slug": "yu-mne-andrijevica",
+      "name": "Andrijevica",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 341.4,
+      "density": 25.7,
+      "population": 8774,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-bar",
+      "slug": "yu-mne-bar",
+      "name": "Bar",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 573.5,
+      "density": 25.7,
+      "population": 14739,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-berane",
+      "slug": "yu-mne-berane",
+      "name": "Berane",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 733.1,
+      "density": 25.7,
+      "population": 18841,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-bijelo-polje",
+      "slug": "yu-mne-bijelo-polje",
+      "name": "Bijelo Polje",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 792.1,
+      "density": 25.7,
+      "population": 20357,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-budva",
+      "slug": "yu-mne-budva",
+      "name": "Budva",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 119.3,
+      "density": 25.7,
+      "population": 3066,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-cetinje",
+      "slug": "yu-mne-cetinje",
+      "name": "Cetinje",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 972.7,
+      "density": 25.7,
+      "population": 24998,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-danilovgrad",
+      "slug": "yu-mne-danilovgrad",
+      "name": "Danilovgrad",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 506.1,
+      "density": 25.7,
+      "population": 13007,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-herceg-novi",
+      "slug": "yu-mne-herceg-novi",
+      "name": "Herceg Novi",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 221.3,
+      "density": 25.7,
+      "population": 5687,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-kolasin",
+      "slug": "yu-mne-kolasin",
+      "name": "Kola\u0161in",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 855.0,
+      "density": 25.7,
+      "population": 21974,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-kotor",
+      "slug": "yu-mne-kotor",
+      "name": "Kotor",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 294.3,
+      "density": 25.7,
+      "population": 7564,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-mojkovac",
+      "slug": "yu-mne-mojkovac",
+      "name": "Mojkovac",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 363.2,
+      "density": 25.7,
+      "population": 9334,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-niksic",
+      "slug": "yu-mne-niksic",
+      "name": "Nik\u0161ic",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 2045.3,
+      "density": 25.7,
+      "population": 52564,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-plav",
+      "slug": "yu-mne-plav",
+      "name": "Plav",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "MNE",
+      "areaKm2": 505.1,
+      "density": 25.7,
+      "population": 12981,
+      "shares": {
+        "albanian": 0.7,
+        "serb": 0.18,
+        "other": 0.12
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-pljevlja",
+      "slug": "yu-mne-pljevlja",
+      "name": "Pljevlja",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 1337.2,
+      "density": 25.7,
+      "population": 34366,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-pluzine",
+      "slug": "yu-mne-pluzine",
+      "name": "Plu\u017eine",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 878.3,
+      "density": 25.7,
+      "population": 22572,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-podgorica",
+      "slug": "yu-mne-podgorica",
+      "name": "Podgorica",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 1444.8,
+      "density": 25.7,
+      "population": 37131,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-rozaje",
+      "slug": "yu-mne-rozaje",
+      "name": "Ro\u017eaje",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "MNE",
+      "areaKm2": 401.4,
+      "density": 25.7,
+      "population": 10316,
+      "shares": {
+        "albanian": 0.7,
+        "serb": 0.18,
+        "other": 0.12
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-ulcinj",
+      "slug": "yu-mne-ulcinj",
+      "name": "Ulcinj",
+      "plurality": "albanian",
+      "nationality": "albanian",
+      "religion": "muslim",
+      "adm0": "MNE",
+      "areaKm2": 294.4,
+      "density": 25.7,
+      "population": 7566,
+      "shares": {
+        "albanian": 0.7,
+        "serb": 0.18,
+        "other": 0.12
+      },
+      "religionShares": {
+        "muslim": 0.78,
+        "orthodox": 0.14,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-savnik",
+      "slug": "yu-mne-savnik",
+      "name": "\u0160avnik",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 538.9,
+      "density": 25.7,
+      "population": 13850,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-mne-zabljak",
+      "slug": "yu-mne-zabljak",
+      "name": "\u017dabljak",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "MNE",
+      "areaKm2": 457.6,
+      "density": 25.7,
+      "population": 11760,
+      "shares": {
+        "serb": 0.8,
+        "albanian": 0.1,
+        "other": 0.1
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-borski",
+      "slug": "yu-srb-borski",
+      "name": "Borski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3789.6,
+      "density": 52.3,
+      "population": 198196,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-branicevski",
+      "slug": "yu-srb-branicevski",
+      "name": "Branicevski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 4182.4,
+      "density": 52.3,
+      "population": 218740,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-grad-beograd",
+      "slug": "yu-srb-grad-beograd",
+      "name": "Grad Beograd",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3355.9,
+      "density": 337.9,
+      "population": 1133959,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-jablanicki",
+      "slug": "yu-srb-jablanicki",
+      "name": "Jablanicki",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2770.1,
+      "density": 52.3,
+      "population": 144876,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-juzno-backi",
+      "slug": "yu-srb-juzno-backi",
+      "name": "Ju\u017eno-Backi",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 4262.0,
+      "density": 52.3,
+      "population": 222903,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-juzno-banatski",
+      "slug": "yu-srb-juzno-banatski",
+      "name": "Ju\u017eno-Banatski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 4049.2,
+      "density": 52.3,
+      "population": 211773,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-kolubarski",
+      "slug": "yu-srb-kolubarski",
+      "name": "Kolubarski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2521.4,
+      "density": 52.3,
+      "population": 131869,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-macvanski",
+      "slug": "yu-srb-macvanski",
+      "name": "Macvanski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3229.7,
+      "density": 52.3,
+      "population": 168913,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-moravicki",
+      "slug": "yu-srb-moravicki",
+      "name": "Moravicki",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3033.1,
+      "density": 52.3,
+      "population": 158631,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-nisavski",
+      "slug": "yu-srb-nisavski",
+      "name": "Ni\u0161avski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2726.2,
+      "density": 52.3,
+      "population": 142580,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-pcinjski",
+      "slug": "yu-srb-pcinjski",
+      "name": "Pcinjski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3270.8,
+      "density": 52.3,
+      "population": 171063,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-pirotski",
+      "slug": "yu-srb-pirotski",
+      "name": "Pirotski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2671.5,
+      "density": 52.3,
+      "population": 139719,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-podunavski",
+      "slug": "yu-srb-podunavski",
+      "name": "Podunavski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 1399.7,
+      "density": 52.3,
+      "population": 73204,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-pomoravski",
+      "slug": "yu-srb-pomoravski",
+      "name": "Pomoravski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 5253.6,
+      "density": 52.3,
+      "population": 274763,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-raski",
+      "slug": "yu-srb-raski",
+      "name": "Ra\u0161ki",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3759.3,
+      "density": 52.3,
+      "population": 196611,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-severno-backi-backa-banat",
+      "slug": "yu-srb-severno-backi-backa-banat",
+      "name": "Severno-Backi (Ba\u010dka / Banat)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "adm0": "SRB",
+      "areaKm2": 1654.9,
+      "density": 46.7,
+      "population": 77284,
+      "shares": {
+        "hungarian": 0.48,
+        "serb": 0.28,
+        "german": 0.14,
+        "other": 0.1
+      },
+      "religionShares": {
+        "catholic": 0.55,
+        "protestant": 0.28,
+        "orthodox": 0.12,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "yu-srb-severno-banatski-backa-banat",
+      "slug": "yu-srb-severno-banatski-backa-banat",
+      "name": "Severno-Banatski (Ba\u010dka / Banat)",
+      "plurality": "hungarian",
+      "nationality": "hungarian",
+      "religion": "catholic",
+      "adm0": "SRB",
+      "areaKm2": 2242.9,
+      "density": 46.7,
+      "population": 104743,
+      "shares": {
+        "hungarian": 0.48,
+        "serb": 0.28,
+        "german": 0.14,
+        "other": 0.1
+      },
+      "religionShares": {
+        "catholic": 0.55,
+        "protestant": 0.28,
+        "orthodox": 0.12,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "yu-srb-srednje-banatski-banat-swabian",
+      "slug": "yu-srb-srednje-banatski-banat-swabian",
+      "name": "Srednje-Banatski (Banat Swabian)",
+      "plurality": "german",
+      "nationality": "german",
+      "religion": "catholic",
+      "adm0": "SRB",
+      "areaKm2": 3133.8,
+      "density": 46.7,
+      "population": 146348,
+      "shares": {
+        "german": 0.42,
+        "serb": 0.28,
+        "hungarian": 0.16,
+        "other": 0.14
+      },
+      "religionShares": {
+        "catholic": 0.62,
+        "protestant": 0.22,
+        "orthodox": 0.12,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-sremski",
+      "slug": "yu-srb-sremski",
+      "name": "Sremski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3440.8,
+      "density": 52.3,
+      "population": 179954,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-toplicki",
+      "slug": "yu-srb-toplicki",
+      "name": "Toplicki",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2312.6,
+      "density": 52.3,
+      "population": 120949,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-zajecarski",
+      "slug": "yu-srb-zajecarski",
+      "name": "Zajecarski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 3521.2,
+      "density": 52.3,
+      "population": 184159,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-zapadno-backi",
+      "slug": "yu-srb-zapadno-backi",
+      "name": "Zapadno-Backi",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2358.2,
+      "density": 52.3,
+      "population": 123334,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-zlatiborski",
+      "slug": "yu-srb-zlatiborski",
+      "name": "Zlatiborski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 6146.0,
+      "density": 52.3,
+      "population": 321436,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-srb-sumadijski",
+      "slug": "yu-srb-sumadijski",
+      "name": "\u0160umadijski",
+      "plurality": "serb",
+      "nationality": "serb",
+      "religion": "orthodox",
+      "adm0": "SRB",
+      "areaKm2": 2379.3,
+      "density": 52.3,
+      "population": 124437,
+      "shares": {
+        "serb": 0.86,
+        "other": 0.14
+      },
+      "religionShares": {
+        "orthodox": 0.86,
+        "muslim": 0.06,
+        "catholic": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "yu-svn-gorenjska",
+      "slug": "yu-svn-gorenjska",
+      "name": "Gorenjska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 1151.7,
+      "density": 62.7,
+      "population": 72212,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-jugovzhodna-slovenija",
+      "slug": "yu-svn-jugovzhodna-slovenija",
+      "name": "Jugovzhodna Slovenija",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 2723.5,
+      "density": 62.7,
+      "population": 170763,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-koroska",
+      "slug": "yu-svn-koroska",
+      "name": "Koro\u0161ka",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 1014.4,
+      "density": 62.7,
+      "population": 63603,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-notranjsko-kraska",
+      "slug": "yu-svn-notranjsko-kraska",
+      "name": "Notranjsko-kra\u0161ka",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 368.0,
+      "density": 62.7,
+      "population": 23074,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-osrednjeslovenska",
+      "slug": "yu-svn-osrednjeslovenska",
+      "name": "Osrednjeslovenska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 2493.7,
+      "density": 62.7,
+      "population": 156355,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-podravska",
+      "slug": "yu-svn-podravska",
+      "name": "Podravska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 1995.7,
+      "density": 62.7,
+      "population": 125130,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-pomurska",
+      "slug": "yu-svn-pomurska",
+      "name": "Pomurska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 1438.5,
+      "density": 62.7,
+      "population": 90194,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-savinjska",
+      "slug": "yu-svn-savinjska",
+      "name": "Savinjska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 2390.8,
+      "density": 62.7,
+      "population": 149903,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-spodnjeposavska",
+      "slug": "yu-svn-spodnjeposavska",
+      "name": "Spodnjeposavska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 808.2,
+      "density": 62.7,
+      "population": 50674,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "yu-svn-zasavska",
+      "slug": "yu-svn-zasavska",
+      "name": "Zasavska",
+      "plurality": "slovene",
+      "nationality": "slovene",
+      "religion": "catholic",
+      "adm0": "SVN",
+      "areaKm2": 249.2,
+      "density": 62.7,
+      "population": 15625,
+      "shares": {
+        "slovene": 0.92,
+        "german": 0.04,
+        "other": 0.04
+      },
+      "religionShares": {
+        "catholic": 0.88,
+        "orthodox": 0.06,
+        "other": 0.06
+      }
+    }
+  ]
+}

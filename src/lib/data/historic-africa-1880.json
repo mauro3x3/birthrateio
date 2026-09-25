@@ -1,0 +1,1133 @@
+{
+  "id": "africa-pre-berlin-1880",
+  "slug": "africa-1880",
+  "title": "Africa before the Berlin Conference, c. 1880",
+  "year": 1880,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "State-level overview on 1880 borders \u2014 African kingdoms, Muslim caliphates and sultanates, Ethiopia and Liberia, Boer republics, and the thin European coastal footholds that existed before the 1884\u201385 Berlin Conference scrambled the interior. Not a census map: colours mark polity type, not ethnolinguistic majorities inside each state.",
+  "source": "Borders: historical-basemaps world_1880. Polity coding by birthrate.io from period political geography.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Berlin_Conference",
+  "geoUrl": "/geo/historic/africa-1880.json",
+  "groups": [
+    {
+      "id": "muslim-polity",
+      "shortLabel": "Muslim polity",
+      "color": "#1e8449"
+    },
+    {
+      "id": "christian-polity",
+      "shortLabel": "Christian polity",
+      "color": "#5dade2"
+    },
+    {
+      "id": "african-kingdom",
+      "shortLabel": "African kingdom",
+      "color": "#d4a017"
+    },
+    {
+      "id": "boer-republic",
+      "shortLabel": "Boer republic",
+      "color": "#c0392b"
+    },
+    {
+      "id": "european-foothold",
+      "shortLabel": "European foothold",
+      "color": "#2874a6"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other / unnamed",
+      "color": "#95a5a6"
+    }
+  ],
+  "nationalShares": {
+    "african-kingdom": 0.34,
+    "muslim-polity": 0.3,
+    "european-foothold": 0.18,
+    "boer-republic": 0.06,
+    "christian-polity": 0.05,
+    "other": 0.07
+  },
+  "totalPopulation": 101493982,
+  "areas": [
+    {
+      "code": "af1880-united-kingdom-of-great-britain-and-ireland",
+      "slug": "af1880-united-kingdom-of-great-britain-and-ireland",
+      "name": "United Kingdom of Great Britain and Ireland",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "United Kingdom of Great Britain and Ireland",
+      "areaKm2": 22042896.2,
+      "density": 0.9,
+      "population": 19838607,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-spain",
+      "slug": "af1880-spain",
+      "name": "Spain",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Spain",
+      "areaKm2": 1815533.8,
+      "density": 0.9,
+      "population": 1633980,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-morocco",
+      "slug": "af1880-morocco",
+      "name": "Morocco",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Morocco",
+      "areaKm2": 580695.0,
+      "density": 2.4,
+      "population": 1393668,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-mozambique",
+      "slug": "af1880-mozambique",
+      "name": "Mozambique",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Portugal",
+      "areaKm2": 983347.6,
+      "density": 0.9,
+      "population": 885013,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-cape-colony",
+      "slug": "af1880-cape-colony",
+      "name": "Cape Colony",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Cape Colony",
+      "areaKm2": 548369.9,
+      "density": 1.3,
+      "population": 712881,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-natal",
+      "slug": "af1880-natal",
+      "name": "Natal",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Natal",
+      "areaKm2": 45097.3,
+      "density": 1.3,
+      "population": 58626,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-basutoland",
+      "slug": "af1880-basutoland",
+      "name": "Basutoland",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Basutoland",
+      "areaKm2": 33255.9,
+      "density": 0.9,
+      "population": 29930,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-zululand",
+      "slug": "af1880-zululand",
+      "name": "Zululand",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Zululand",
+      "areaKm2": 25345.9,
+      "density": 1.3,
+      "population": 32950,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-swaziland",
+      "slug": "af1880-swaziland",
+      "name": "Swaziland",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Swaziland",
+      "areaKm2": 13889.5,
+      "density": 1.3,
+      "population": 18056,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-orange-free-state",
+      "slug": "af1880-orange-free-state",
+      "name": "Orange Free State",
+      "plurality": "boer-republic",
+      "nationality": "boer-republic",
+      "adm0": "Orange Free State",
+      "areaKm2": 126149.7,
+      "density": 0.6,
+      "population": 75690,
+      "shares": {
+        "boer-republic": 1.0
+      }
+    },
+    {
+      "code": "af1880-transvaal",
+      "slug": "af1880-transvaal",
+      "name": "Transvaal",
+      "plurality": "boer-republic",
+      "nationality": "boer-republic",
+      "adm0": "Transvaal",
+      "areaKm2": 257226.8,
+      "density": 0.6,
+      "population": 154336,
+      "shares": {
+        "boer-republic": 1.0
+      }
+    },
+    {
+      "code": "af1880-griqualand-west",
+      "slug": "af1880-griqualand-west",
+      "name": "Griqualand West",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Griqualand West",
+      "areaKm2": 46763.1,
+      "density": 0.9,
+      "population": 42087,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-ndebele",
+      "slug": "af1880-ndebele",
+      "name": "Ndebele",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Ndebele",
+      "areaKm2": 50950.2,
+      "density": 1.3,
+      "population": 66235,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-ngwato",
+      "slug": "af1880-ngwato",
+      "name": "Ngwato",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Ngwato",
+      "areaKm2": 30221.4,
+      "density": 1.3,
+      "population": 39288,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-lozi",
+      "slug": "af1880-lozi",
+      "name": "Lozi",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Lozi",
+      "areaKm2": 128489.4,
+      "density": 1.3,
+      "population": 167036,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-sultanate-of-zanzibar",
+      "slug": "af1880-sultanate-of-zanzibar",
+      "name": "Sultanate of Zanzibar",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Sultanate of Zanzibar",
+      "areaKm2": 614766.0,
+      "density": 1.5,
+      "population": 922149,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-shona",
+      "slug": "af1880-shona",
+      "name": "Shona",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Shona",
+      "areaKm2": 119240.9,
+      "density": 1.3,
+      "population": 155013,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-barotse",
+      "slug": "af1880-barotse",
+      "name": "Barotse",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Barotse",
+      "areaKm2": 73418.1,
+      "density": 1.3,
+      "population": 95444,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-bunyoro",
+      "slug": "af1880-bunyoro",
+      "name": "Bunyoro",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Bunyoro",
+      "areaKm2": 74507.5,
+      "density": 1.3,
+      "population": 96860,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-buganda",
+      "slug": "af1880-buganda",
+      "name": "Buganda",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Buganda",
+      "areaKm2": 52397.2,
+      "density": 1.3,
+      "population": 68116,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-yeke",
+      "slug": "af1880-yeke",
+      "name": "Yeke",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Yeke",
+      "areaKm2": 138968.5,
+      "density": 1.3,
+      "population": 180659,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-mirambo-unyanyembe-ukimbu",
+      "slug": "af1880-mirambo-unyanyembe-ukimbu",
+      "name": "Mirambo Unyanyembe Ukimbu",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Mirambo Unyanyembe Ukimbu",
+      "areaKm2": 157236.3,
+      "density": 1.3,
+      "population": 204407,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-burundi",
+      "slug": "af1880-burundi",
+      "name": "Burundi",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Burundi",
+      "areaKm2": 14083.8,
+      "density": 1.3,
+      "population": 18309,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-nguni",
+      "slug": "af1880-nguni",
+      "name": "Nguni",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Nguni",
+      "areaKm2": 25915.1,
+      "density": 1.3,
+      "population": 33690,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-rwanda",
+      "slug": "af1880-rwanda",
+      "name": "Rwanda",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Rwanda",
+      "areaKm2": 18609.7,
+      "density": 1.3,
+      "population": 24193,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-sultanate-of-utetera",
+      "slug": "af1880-sultanate-of-utetera",
+      "name": "Sultanate of Utetera",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Sultanate of Utetera",
+      "areaKm2": 291308.8,
+      "density": 1.5,
+      "population": 436963,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-lunda",
+      "slug": "af1880-lunda",
+      "name": "Lunda",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Lunda",
+      "areaKm2": 55843.9,
+      "density": 1.3,
+      "population": 72597,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-luba",
+      "slug": "af1880-luba",
+      "name": "Luba",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Luba",
+      "areaKm2": 17600.5,
+      "density": 1.3,
+      "population": 22881,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-kuba",
+      "slug": "af1880-kuba",
+      "name": "Kuba",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Kuba",
+      "areaKm2": 45908.5,
+      "density": 1.3,
+      "population": 59681,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-angola-portugal",
+      "slug": "af1880-angola-portugal",
+      "name": "Angola (Portugal)",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Portugal",
+      "areaKm2": 111788.2,
+      "density": 0.9,
+      "population": 100609,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-ovimbundu",
+      "slug": "af1880-ovimbundu",
+      "name": "Ovimbundu",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Ovimbundu",
+      "areaKm2": 44649.0,
+      "density": 1.3,
+      "population": 58044,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-mbailundu",
+      "slug": "af1880-mbailundu",
+      "name": "Mbailundu",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Mbailundu",
+      "areaKm2": 52998.3,
+      "density": 1.3,
+      "population": 68898,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-congo",
+      "slug": "af1880-congo",
+      "name": "Congo",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "France",
+      "areaKm2": 74775.6,
+      "density": 0.9,
+      "population": 67298,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-teke",
+      "slug": "af1880-teke",
+      "name": "Teke",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Teke",
+      "areaKm2": 75097.6,
+      "density": 1.3,
+      "population": 97627,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-yaka",
+      "slug": "af1880-yaka",
+      "name": "Yaka",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Yaka",
+      "areaKm2": 61888.1,
+      "density": 1.3,
+      "population": 80455,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-algeria-fr",
+      "slug": "af1880-algeria-fr",
+      "name": "Algeria (FR)",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "France",
+      "areaKm2": 375725.3,
+      "density": 1.3,
+      "population": 488443,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-kanem-bornu",
+      "slug": "af1880-kanem-bornu",
+      "name": "Kanem-Bornu",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Kanem-Bornu",
+      "areaKm2": 265503.0,
+      "density": 1.5,
+      "population": 398254,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-ibadan",
+      "slug": "af1880-ibadan",
+      "name": "Ibadan",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Ibadan",
+      "areaKm2": 32611.3,
+      "density": 1.3,
+      "population": 42395,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-benin",
+      "slug": "af1880-benin",
+      "name": "Benin",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Benin",
+      "areaKm2": 13254.7,
+      "density": 1.3,
+      "population": 17231,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-lagos",
+      "slug": "af1880-lagos",
+      "name": "Lagos",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Lagos",
+      "areaKm2": 6240.5,
+      "density": 0.9,
+      "population": 5616,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-cotonou",
+      "slug": "af1880-cotonou",
+      "name": "Cotonou",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Cotonou",
+      "areaKm2": 2166.9,
+      "density": 0.9,
+      "population": 1950,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-gold-coast-gb",
+      "slug": "af1880-gold-coast-gb",
+      "name": "Gold Coast (GB)",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Great Britain",
+      "areaKm2": 27186.6,
+      "density": 0.9,
+      "population": 24468,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-ivory-coast",
+      "slug": "af1880-ivory-coast",
+      "name": "Ivory Coast",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Ivory Coast",
+      "areaKm2": 15480.5,
+      "density": 0.9,
+      "population": 13932,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-asante",
+      "slug": "af1880-asante",
+      "name": "Asante",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Asante",
+      "areaKm2": 59572.5,
+      "density": 1.3,
+      "population": 77444,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-sierra-leone",
+      "slug": "af1880-sierra-leone",
+      "name": "Sierra Leone",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Sierra Leone",
+      "areaKm2": 27076.8,
+      "density": 0.9,
+      "population": 24369,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-liberia",
+      "slug": "af1880-liberia",
+      "name": "Liberia",
+      "plurality": "christian-polity",
+      "nationality": "christian-polity",
+      "adm0": "Liberia",
+      "areaKm2": 52779.5,
+      "density": 1.1,
+      "population": 58057,
+      "shares": {
+        "christian-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-gambia",
+      "slug": "af1880-gambia",
+      "name": "Gambia",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Gambia",
+      "areaKm2": 5797.7,
+      "density": 0.9,
+      "population": 5218,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-portuguese-guinea",
+      "slug": "af1880-portuguese-guinea",
+      "name": "Portuguese Guinea",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Portuguese Guinea",
+      "areaKm2": 9775.1,
+      "density": 0.9,
+      "population": 8798,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-senegal-fr",
+      "slug": "af1880-senegal-fr",
+      "name": "Senegal (FR)",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "France",
+      "areaKm2": 125626.2,
+      "density": 0.9,
+      "population": 113064,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-futa-toro",
+      "slug": "af1880-futa-toro",
+      "name": "Futa Toro",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Futa Toro",
+      "areaKm2": 56027.6,
+      "density": 1.5,
+      "population": 84041,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-mossi-states",
+      "slug": "af1880-mossi-states",
+      "name": "Mossi States",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Mossi States",
+      "areaKm2": 189008.1,
+      "density": 1.3,
+      "population": 245711,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-futa-jalon",
+      "slug": "af1880-futa-jalon",
+      "name": "Futa Jalon",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Futa Jalon",
+      "areaKm2": 37903.1,
+      "density": 1.5,
+      "population": 56855,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-ato-trading-confederacy",
+      "slug": "af1880-ato-trading-confederacy",
+      "name": "Ato trading confederacy",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Ato trading confederacy",
+      "areaKm2": 12040.9,
+      "density": 1.3,
+      "population": 15653,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-spanish-guinea",
+      "slug": "af1880-spanish-guinea",
+      "name": "Spanish Guinea",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Spanish Guinea",
+      "areaKm2": 12077.5,
+      "density": 0.9,
+      "population": 10870,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-gabon",
+      "slug": "af1880-gabon",
+      "name": "Gabon",
+      "plurality": "european-foothold",
+      "nationality": "european-foothold",
+      "adm0": "Gabon",
+      "areaKm2": 29591.2,
+      "density": 0.9,
+      "population": 26632,
+      "shares": {
+        "european-foothold": 1.0
+      }
+    },
+    {
+      "code": "af1880-ethiopia",
+      "slug": "af1880-ethiopia",
+      "name": "Ethiopia",
+      "plurality": "christian-polity",
+      "nationality": "christian-polity",
+      "adm0": "Ethiopia",
+      "areaKm2": 342044.4,
+      "density": 1.9,
+      "population": 649884,
+      "shares": {
+        "christian-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-harer-egypt",
+      "slug": "af1880-harer-egypt",
+      "name": "Harer (Egypt)",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Harer (Egypt)",
+      "areaKm2": 146525.3,
+      "density": 2.4,
+      "population": 351661,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-persia",
+      "slug": "af1880-persia",
+      "name": "Persia",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Persia",
+      "areaKm2": 2157417.8,
+      "density": 1.3,
+      "population": 2804643,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-imerina",
+      "slug": "af1880-imerina",
+      "name": "Imerina",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Imerina",
+      "areaKm2": 294499.4,
+      "density": 1.3,
+      "population": 382849,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-madagascar",
+      "slug": "af1880-madagascar",
+      "name": "Madagascar",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Madagascar",
+      "areaKm2": 588538.6,
+      "density": 1.3,
+      "population": 765100,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-dahomey",
+      "slug": "af1880-dahomey",
+      "name": "Dahomey",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Dahomey",
+      "areaKm2": 31233.6,
+      "density": 1.3,
+      "population": 40604,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-sokoto-caliphate",
+      "slug": "af1880-sokoto-caliphate",
+      "name": "Sokoto Caliphate",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Sokoto Caliphate",
+      "areaKm2": 896008.6,
+      "density": 1.5,
+      "population": 1344013,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-borgu-states",
+      "slug": "af1880-borgu-states",
+      "name": "Borgu States",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Borgu States",
+      "areaKm2": 127239.4,
+      "density": 1.3,
+      "population": 165411,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-oyo",
+      "slug": "af1880-oyo",
+      "name": "Oyo",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Oyo",
+      "areaKm2": 26531.2,
+      "density": 1.3,
+      "population": 34491,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-calabar",
+      "slug": "af1880-calabar",
+      "name": "Calabar",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Calabar",
+      "areaKm2": 11780.9,
+      "density": 1.3,
+      "population": 15315,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-sultanate-of-damagaram",
+      "slug": "af1880-sultanate-of-damagaram",
+      "name": "Sultanate of Damagaram",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Sultanate of Damagaram",
+      "areaKm2": 64631.6,
+      "density": 1.5,
+      "population": 96947,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-opobo",
+      "slug": "af1880-opobo",
+      "name": "Opobo",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Opobo",
+      "areaKm2": 7033.7,
+      "density": 1.3,
+      "population": 9144,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-wadai-empire",
+      "slug": "af1880-wadai-empire",
+      "name": "Wadai Empire",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Wadai Empire",
+      "areaKm2": 223703.4,
+      "density": 1.5,
+      "population": 335555,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-dendi-kingdom",
+      "slug": "af1880-dendi-kingdom",
+      "name": "Dendi Kingdom",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Dendi Kingdom",
+      "areaKm2": 108685.1,
+      "density": 1.5,
+      "population": 163028,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-kong-empire",
+      "slug": "af1880-kong-empire",
+      "name": "Kong Empire",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Kong Empire",
+      "areaKm2": 211680.8,
+      "density": 1.3,
+      "population": 275185,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-wassoulou-empire",
+      "slug": "af1880-wassoulou-empire",
+      "name": "Wassoulou Empire",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Wassoulou Empire",
+      "areaKm2": 39045.6,
+      "density": 1.5,
+      "population": 58568,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-tukular-caliphate",
+      "slug": "af1880-tukular-caliphate",
+      "name": "Tukular Caliphate",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Tukular Caliphate",
+      "areaKm2": 300587.6,
+      "density": 1.5,
+      "population": 450881,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-rabih-az-zubayr",
+      "slug": "af1880-rabih-az-zubayr",
+      "name": "Rabih az-Zubayr",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Rabih az-Zubayr",
+      "areaKm2": 90399.4,
+      "density": 1.5,
+      "population": 135599,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-egypt",
+      "slug": "af1880-egypt",
+      "name": "Egypt",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Ottoman Empire",
+      "areaKm2": 2724630.1,
+      "density": 2.4,
+      "population": 6539112,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-ottoman-empire",
+      "slug": "af1880-ottoman-empire",
+      "name": "Ottoman Empire",
+      "plurality": "muslim-polity",
+      "nationality": "muslim-polity",
+      "adm0": "Ottoman Empire",
+      "areaKm2": 7733126.0,
+      "density": 1.5,
+      "population": 11599689,
+      "shares": {
+        "muslim-polity": 1.0
+      }
+    },
+    {
+      "code": "af1880-russian-empire",
+      "slug": "af1880-russian-empire",
+      "name": "Russian Empire",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Russian Empire",
+      "areaKm2": 24507455.6,
+      "density": 1.3,
+      "population": 31859692,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    },
+    {
+      "code": "af1880-fiji",
+      "slug": "af1880-fiji",
+      "name": "Fiji",
+      "plurality": "african-kingdom",
+      "nationality": "african-kingdom",
+      "adm0": "Fiji",
+      "areaKm2": 10527180.3,
+      "density": 1.3,
+      "population": 13685334,
+      "shares": {
+        "african-kingdom": 1.0
+      }
+    }
+  ]
+}

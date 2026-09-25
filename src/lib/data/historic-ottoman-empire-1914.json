@@ -1,0 +1,2737 @@
+{
+  "id": "ottoman-millet-1914",
+  "slug": "ottoman-empire-1914",
+  "title": "Ethnoreligious communities in the Ottoman Empire, c. 1914",
+  "year": 1914,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Empire-scoped map on modern provinces inside the 1914 Ottoman outline, painted by approximate late-Ottoman millet majorities (Aegean Greek Orthodox, eastern Armenian highland, Tur Abdin Assyrian, Mount Lebanon Christian). Vilayet polygons are not openly available. Egypt is omitted (de facto British). Unit mixes are illustrative \u2014 not official salname tables. Armenia/Greek figures reflect the eve-of-war demography before wartime destruction and population transfers.",
+  "source": "Ottoman official statistics and millet estimates, c. 1881\u20131914 (vilayet yearbooks / demographic compilations). Unit borders: Natural Earth admin-1 clipped to historical-basemaps Ottoman Empire 1914.",
+  "sourceUrl": "https://en.wikipedia.org/wiki/Ottoman_Empire",
+  "geoUrl": "/geo/historic/ottoman-empire-1914.json",
+  "groups": [
+    {
+      "id": "muslim",
+      "shortLabel": "Muslim",
+      "color": "#1e8449"
+    },
+    {
+      "id": "greek-orthodox",
+      "shortLabel": "Greek Orthodox",
+      "color": "#2874a6"
+    },
+    {
+      "id": "armenian",
+      "shortLabel": "Armenian",
+      "color": "#922b21"
+    },
+    {
+      "id": "jewish",
+      "shortLabel": "Jewish",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "assyrian",
+      "shortLabel": "Assyrian / Syriac",
+      "color": "#b9770e"
+    },
+    {
+      "id": "other-christian",
+      "shortLabel": "Other Christian",
+      "color": "#5dade2"
+    },
+    {
+      "id": "other",
+      "shortLabel": "Other / mixed",
+      "color": "#95a5a6"
+    }
+  ],
+  "nationalShares": {
+    "muslim": 0.74,
+    "greek-orthodox": 0.1,
+    "armenian": 0.07,
+    "other-christian": 0.03,
+    "assyrian": 0.015,
+    "jewish": 0.015,
+    "other": 0.03
+  },
+  "totalPopulation": 20993288,
+  "areas": [
+    {
+      "code": "ot-isr-hadarom",
+      "slug": "ot-isr-hadarom",
+      "name": "HaDarom",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 14592.1,
+      "density": 14.7,
+      "population": 214504,
+      "shares": {
+        "muslim": 0.72,
+        "other-christian": 0.12,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ot-isr-hazafon",
+      "slug": "ot-isr-hazafon",
+      "name": "HaZafon",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 4682.3,
+      "density": 14.7,
+      "population": 68830,
+      "shares": {
+        "muslim": 0.72,
+        "other-christian": 0.12,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ot-isr-haifa",
+      "slug": "ot-isr-haifa",
+      "name": "Haifa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 889.7,
+      "density": 14.7,
+      "population": 13079,
+      "shares": {
+        "muslim": 0.72,
+        "other-christian": 0.12,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ot-isr-hamerkaz",
+      "slug": "ot-isr-hamerkaz",
+      "name": "HaMerkaz",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 1281.1,
+      "density": 14.7,
+      "population": 18832,
+      "shares": {
+        "muslim": 0.72,
+        "other-christian": 0.12,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ot-lbn-an-nabatiyah",
+      "slug": "ot-lbn-an-nabatiyah",
+      "name": "An Nabatiyah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "LBN",
+      "areaKm2": 1069.2,
+      "density": 14.7,
+      "population": 15717,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-lbn-south-lebanon",
+      "slug": "ot-lbn-south-lebanon",
+      "name": "South Lebanon",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "LBN",
+      "areaKm2": 975.2,
+      "density": 14.7,
+      "population": 14335,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-undof",
+      "slug": "ot-syr-undof",
+      "name": "UNDOF",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 260.1,
+      "density": 14.7,
+      "population": 3823,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-lbn-beqaa",
+      "slug": "ot-lbn-beqaa",
+      "name": "Beqaa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "LBN",
+      "areaKm2": 3909.2,
+      "density": 14.7,
+      "population": 57465,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-lbn-north-lebanon",
+      "slug": "ot-lbn-north-lebanon",
+      "name": "North Lebanon (Mount Lebanon)",
+      "plurality": "other-christian",
+      "nationality": "other-christian",
+      "adm0": "LBN",
+      "areaKm2": 2006.3,
+      "density": 14.7,
+      "population": 29493,
+      "shares": {
+        "other-christian": 0.52,
+        "muslim": 0.36,
+        "greek-orthodox": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-syr-homs-hims",
+      "slug": "ot-syr-homs-hims",
+      "name": "Homs (Hims)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 27401.7,
+      "density": 14.7,
+      "population": 402805,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-tartus",
+      "slug": "ot-syr-tartus",
+      "name": "Tartus",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 1885.6,
+      "density": 14.7,
+      "population": 27718,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-rif-dimashq",
+      "slug": "ot-syr-rif-dimashq",
+      "name": "Rif Dimashq",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 11852.4,
+      "density": 14.7,
+      "population": 174230,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-artvin",
+      "slug": "ot-tur-artvin",
+      "name": "Artvin",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7835.2,
+      "density": 14.7,
+      "population": 115177,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-dihok",
+      "slug": "ot-irq-dihok",
+      "name": "Dihok",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 6558.7,
+      "density": 14.7,
+      "population": 96413,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-sirnak",
+      "slug": "ot-tur-sirnak",
+      "name": "Sirnak (Tur Abdin / Hakkari)",
+      "plurality": "assyrian",
+      "nationality": "assyrian",
+      "adm0": "TUR",
+      "areaKm2": 6436.4,
+      "density": 9.1,
+      "population": 58571,
+      "shares": {
+        "assyrian": 0.42,
+        "muslim": 0.4,
+        "armenian": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ot-tur-hakkari",
+      "slug": "ot-tur-hakkari",
+      "name": "Hakkari (Tur Abdin / Hakkari)",
+      "plurality": "assyrian",
+      "nationality": "assyrian",
+      "adm0": "TUR",
+      "areaKm2": 7482.9,
+      "density": 9.1,
+      "population": 68094,
+      "shares": {
+        "assyrian": 0.42,
+        "muslim": 0.4,
+        "armenian": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ot-irq-arbil",
+      "slug": "ot-irq-arbil",
+      "name": "Arbil",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 14497.9,
+      "density": 14.7,
+      "population": 213119,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-igdir",
+      "slug": "ot-tur-igdir",
+      "name": "I\u011fdir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3940.0,
+      "density": 14.7,
+      "population": 57918,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-agri",
+      "slug": "ot-tur-agri",
+      "name": "Agri (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 10027.4,
+      "density": 9.1,
+      "population": 91249,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-van",
+      "slug": "ot-tur-van",
+      "name": "Van (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 19455.1,
+      "density": 9.1,
+      "population": 177041,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-kwt-al-jahrah",
+      "slug": "ot-kwt-al-jahrah",
+      "name": "Al Jahrah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "KWT",
+      "areaKm2": 3680.8,
+      "density": 1.3,
+      "population": 4785,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-irq-al-basrah",
+      "slug": "ot-irq-al-basrah",
+      "name": "Al-Basrah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 16846.4,
+      "density": 14.7,
+      "population": 247642,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-al-muthannia",
+      "slug": "ot-irq-al-muthannia",
+      "name": "Al-Muthannia",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 34723.6,
+      "density": 14.7,
+      "population": 510437,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-hasaka-al-haksa",
+      "slug": "ot-syr-hasaka-al-haksa",
+      "name": "Hasaka (Al Haksa)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 22437.7,
+      "density": 14.7,
+      "population": 329834,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-mardin",
+      "slug": "ot-tur-mardin",
+      "name": "Mardin (Tur Abdin / Hakkari)",
+      "plurality": "assyrian",
+      "nationality": "assyrian",
+      "adm0": "TUR",
+      "areaKm2": 10122.9,
+      "density": 9.1,
+      "population": 92118,
+      "shares": {
+        "assyrian": 0.42,
+        "muslim": 0.4,
+        "armenian": 0.1,
+        "other": 0.08
+      }
+    },
+    {
+      "code": "ot-syr-ar-raqqah",
+      "slug": "ot-syr-ar-raqqah",
+      "name": "Ar Raqqah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 18355.9,
+      "density": 14.7,
+      "population": 269832,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-sanliurfa",
+      "slug": "ot-tur-sanliurfa",
+      "name": "Sanliurfa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 19915.8,
+      "density": 14.7,
+      "population": 292762,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-aleppo",
+      "slug": "ot-syr-aleppo",
+      "name": "Aleppo",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 18957.0,
+      "density": 58.8,
+      "population": 1114672,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-kilis",
+      "slug": "ot-tur-kilis",
+      "name": "Kilis",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 1328.4,
+      "density": 14.7,
+      "population": 19527,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-gaziantep",
+      "slug": "ot-tur-gaziantep",
+      "name": "Gaziantep",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7354.1,
+      "density": 14.7,
+      "population": 108105,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-hatay",
+      "slug": "ot-tur-hatay",
+      "name": "Hatay",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 5616.8,
+      "density": 14.7,
+      "population": 82567,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-idlib",
+      "slug": "ot-syr-idlib",
+      "name": "Idlib",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 5647.1,
+      "density": 14.7,
+      "population": 83012,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-lattakia",
+      "slug": "ot-syr-lattakia",
+      "name": "Lattakia",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 2382.7,
+      "density": 14.7,
+      "population": 35026,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-irq-as-sulaymaniyah",
+      "slug": "ot-irq-as-sulaymaniyah",
+      "name": "As-Sulaymaniyah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 17276.2,
+      "density": 14.7,
+      "population": 253960,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-diyala",
+      "slug": "ot-irq-diyala",
+      "name": "Diyala",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 19771.7,
+      "density": 14.7,
+      "population": 290644,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-wasit",
+      "slug": "ot-irq-wasit",
+      "name": "Wasit",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 17622.3,
+      "density": 14.7,
+      "population": 259048,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-maysan",
+      "slug": "ot-irq-maysan",
+      "name": "Maysan",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 16047.3,
+      "density": 14.7,
+      "population": 235895,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-jor-irbid",
+      "slug": "ot-jor-irbid",
+      "name": "Irbid",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 1785.4,
+      "density": 14.7,
+      "population": 26245,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-madaba",
+      "slug": "ot-jor-madaba",
+      "name": "Madaba",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 1256.4,
+      "density": 14.7,
+      "population": 18469,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-karak",
+      "slug": "ot-jor-karak",
+      "name": "Karak",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 3483.1,
+      "density": 14.7,
+      "population": 51202,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-tafilah",
+      "slug": "ot-jor-tafilah",
+      "name": "Tafilah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 2171.2,
+      "density": 14.7,
+      "population": 31917,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-aqaba",
+      "slug": "ot-jor-aqaba",
+      "name": "Aqaba",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 6454.2,
+      "density": 14.7,
+      "population": 94877,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-balqa",
+      "slug": "ot-jor-balqa",
+      "name": "Balqa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 1136.4,
+      "density": 14.7,
+      "population": 16705,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-mafraq",
+      "slug": "ot-jor-mafraq",
+      "name": "Mafraq",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 3145.2,
+      "density": 14.7,
+      "population": 46234,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-as-suwayda",
+      "slug": "ot-syr-as-suwayda",
+      "name": "As Suwayda'",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 5352.4,
+      "density": 14.7,
+      "population": 78680,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-dar-a",
+      "slug": "ot-syr-dar-a",
+      "name": "Dar`a",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 3947.4,
+      "density": 14.7,
+      "population": 58027,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-irq-al-anbar",
+      "slug": "ot-irq-al-anbar",
+      "name": "Al-Anbar",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 76413.2,
+      "density": 14.7,
+      "population": 1123274,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-an-najaf",
+      "slug": "ot-irq-an-najaf",
+      "name": "An-Najaf",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 21287.4,
+      "density": 14.7,
+      "population": 312925,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-sau-al-jawf",
+      "slug": "ot-sau-al-jawf",
+      "name": "Al Jawf",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 19513.4,
+      "density": 1.3,
+      "population": 25367,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-ma-an",
+      "slug": "ot-jor-ma-an",
+      "name": "Ma`an",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 19515.9,
+      "density": 14.7,
+      "population": 286884,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-amman",
+      "slug": "ot-jor-amman",
+      "name": "Amman",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 6542.8,
+      "density": 14.7,
+      "population": 96179,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-zarqa",
+      "slug": "ot-jor-zarqa",
+      "name": "Zarqa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 1808.3,
+      "density": 14.7,
+      "population": 26582,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-irq-ninawa",
+      "slug": "ot-irq-ninawa",
+      "name": "Ninawa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 37884.1,
+      "density": 14.7,
+      "population": 556896,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-dayr-az-zawr",
+      "slug": "ot-syr-dayr-az-zawr",
+      "name": "Dayr Az Zawr",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 26722.6,
+      "density": 14.7,
+      "population": 392822,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-najran",
+      "slug": "ot-sau-najran",
+      "name": "Najran",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 7429.0,
+      "density": 1.3,
+      "population": 9658,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-sa-dah",
+      "slug": "ot-yem-sa-dah",
+      "name": "Sa`dah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 12070.2,
+      "density": 1.3,
+      "population": 15691,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-asir",
+      "slug": "ot-sau-asir",
+      "name": "`Asir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 54964.7,
+      "density": 1.3,
+      "population": 71454,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-hajjah",
+      "slug": "ot-yem-hajjah",
+      "name": "Hajjah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 9040.9,
+      "density": 1.3,
+      "population": 11753,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-jizan",
+      "slug": "ot-sau-jizan",
+      "name": "Jizan",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 14424.1,
+      "density": 1.3,
+      "population": 18751,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-al-jawf",
+      "slug": "ot-yem-al-jawf",
+      "name": "Al Jawf",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 7881.5,
+      "density": 1.3,
+      "population": 10246,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-quneitra",
+      "slug": "ot-syr-quneitra",
+      "name": "Quneitra",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 305.8,
+      "density": 14.7,
+      "population": 4495,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-isr-jerusalem",
+      "slug": "ot-isr-jerusalem",
+      "name": "Jerusalem (Jerusalem sanjak)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 649.4,
+      "density": 14.7,
+      "population": 9546,
+      "shares": {
+        "muslim": 0.55,
+        "jewish": 0.18,
+        "other-christian": 0.18,
+        "other": 0.09
+      }
+    },
+    {
+      "code": "ot-irq-sala-ad-din",
+      "slug": "ot-irq-sala-ad-din",
+      "name": "Sala ad-Din",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 25568.5,
+      "density": 14.7,
+      "population": 375857,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-at-ta-mim",
+      "slug": "ot-irq-at-ta-mim",
+      "name": "At-Ta'mim",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 10538.3,
+      "density": 14.7,
+      "population": 154913,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-sau-tabuk",
+      "slug": "ot-sau-tabuk",
+      "name": "Tabuk",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 81388.0,
+      "density": 1.3,
+      "population": 105804,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-al-madinah",
+      "slug": "ot-sau-al-madinah",
+      "name": "Al Madinah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 107475.5,
+      "density": 1.3,
+      "population": 139718,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-makkah",
+      "slug": "ot-sau-makkah",
+      "name": "Makkah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 91554.4,
+      "density": 1.3,
+      "population": 119021,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-al-hudaydah",
+      "slug": "ot-yem-al-hudaydah",
+      "name": "Al Hudaydah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 14255.5,
+      "density": 1.3,
+      "population": 18532,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-ta-izz",
+      "slug": "ot-yem-ta-izz",
+      "name": "Ta`izz",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 9368.3,
+      "density": 1.3,
+      "population": 12179,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-lahij",
+      "slug": "ot-yem-lahij",
+      "name": "Lahij",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 606.1,
+      "density": 1.3,
+      "population": 788,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-shabwah",
+      "slug": "ot-yem-shabwah",
+      "name": "Shabwah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 59.9,
+      "density": 1.3,
+      "population": 78,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-isr-tel-aviv",
+      "slug": "ot-isr-tel-aviv",
+      "name": "Tel Aviv",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "ISR",
+      "areaKm2": 169.4,
+      "density": 14.7,
+      "population": 2490,
+      "shares": {
+        "muslim": 0.72,
+        "other-christian": 0.12,
+        "jewish": 0.1,
+        "other": 0.06
+      }
+    },
+    {
+      "code": "ot-tur-istanbul",
+      "slug": "ot-tur-istanbul",
+      "name": "Istanbul",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 2000.1,
+      "density": 58.8,
+      "population": 117606,
+      "shares": {
+        "muslim": 0.55,
+        "greek-orthodox": 0.22,
+        "armenian": 0.12,
+        "jewish": 0.06,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-canakkale",
+      "slug": "ot-tur-canakkale",
+      "name": "\u00c7anakkale (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 8351.3,
+      "density": 14.7,
+      "population": 122764,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-rize",
+      "slug": "ot-tur-rize",
+      "name": "Rize",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3785.1,
+      "density": 14.7,
+      "population": 55641,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-trabzon",
+      "slug": "ot-tur-trabzon",
+      "name": "Trabzon",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 5007.6,
+      "density": 14.7,
+      "population": 73612,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-giresun",
+      "slug": "ot-tur-giresun",
+      "name": "Giresun",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6811.5,
+      "density": 14.7,
+      "population": 100129,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-ordu",
+      "slug": "ot-tur-ordu",
+      "name": "Ordu",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 5847.7,
+      "density": 14.7,
+      "population": 85961,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-samsun",
+      "slug": "ot-tur-samsun",
+      "name": "Samsun",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 9476.1,
+      "density": 14.7,
+      "population": 139299,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-sinop",
+      "slug": "ot-tur-sinop",
+      "name": "Sinop",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6220.2,
+      "density": 14.7,
+      "population": 91437,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-kastamonu",
+      "slug": "ot-tur-kastamonu",
+      "name": "Kastamonu",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 13135.5,
+      "density": 14.7,
+      "population": 193092,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-bart-n",
+      "slug": "ot-tur-bart-n",
+      "name": "Bart\u0131n",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 2087.9,
+      "density": 14.7,
+      "population": 30692,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-zinguldak",
+      "slug": "ot-tur-zinguldak",
+      "name": "Zinguldak",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3242.5,
+      "density": 14.7,
+      "population": 47665,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-duzce",
+      "slug": "ot-tur-duzce",
+      "name": "D\u00fczce",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 2574.7,
+      "density": 14.7,
+      "population": 37848,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-sakarya",
+      "slug": "ot-tur-sakarya",
+      "name": "Sakarya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 4259.5,
+      "density": 14.7,
+      "population": 62615,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-kocaeli",
+      "slug": "ot-tur-kocaeli",
+      "name": "Kocaeli",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3980.1,
+      "density": 14.7,
+      "population": 58507,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-yalova",
+      "slug": "ot-tur-yalova",
+      "name": "Yalova",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 688.4,
+      "density": 14.7,
+      "population": 10119,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-bursa",
+      "slug": "ot-tur-bursa",
+      "name": "Bursa",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 10936.5,
+      "density": 14.7,
+      "population": 160767,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-balikesir",
+      "slug": "ot-tur-balikesir",
+      "name": "Balikesir (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 14402.7,
+      "density": 14.7,
+      "population": 211720,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-izmir",
+      "slug": "ot-tur-izmir",
+      "name": "Izmir (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 12573.5,
+      "density": 58.8,
+      "population": 739322,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-aydin",
+      "slug": "ot-tur-aydin",
+      "name": "Aydin (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 7944.5,
+      "density": 14.7,
+      "population": 116784,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-mugla",
+      "slug": "ot-tur-mugla",
+      "name": "Mugla (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 12619.6,
+      "density": 14.7,
+      "population": 185508,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-antalya",
+      "slug": "ot-tur-antalya",
+      "name": "Antalya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 21289.1,
+      "density": 14.7,
+      "population": 312950,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-mersin",
+      "slug": "ot-tur-mersin",
+      "name": "Mersin",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 15339.4,
+      "density": 14.7,
+      "population": 225489,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-adana",
+      "slug": "ot-tur-adana",
+      "name": "Adana",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 15379.8,
+      "density": 14.7,
+      "population": 226083,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-lbn-mount-lebanon",
+      "slug": "ot-lbn-mount-lebanon",
+      "name": "Mount Lebanon (Mount Lebanon)",
+      "plurality": "other-christian",
+      "nationality": "other-christian",
+      "adm0": "LBN",
+      "areaKm2": 2029.9,
+      "density": 14.7,
+      "population": 29840,
+      "shares": {
+        "other-christian": 0.52,
+        "muslim": 0.36,
+        "greek-orthodox": 0.06,
+        "jewish": 0.03,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-grc-notio-aigaio",
+      "slug": "ot-grc-notio-aigaio",
+      "name": "Notio Aigaio (Thrace)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "GRC",
+      "areaKm2": 59.3,
+      "density": 8.2,
+      "population": 486,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-grc-voreio-aigaio",
+      "slug": "ot-grc-voreio-aigaio",
+      "name": "Voreio Aigaio (Thrace)",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "GRC",
+      "areaKm2": 34.4,
+      "density": 8.2,
+      "population": 282,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-yem-ma-rib",
+      "slug": "ot-yem-ma-rib",
+      "name": "Ma'rib",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 8490.4,
+      "density": 1.3,
+      "population": 11038,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-sana-a",
+      "slug": "ot-yem-sana-a",
+      "name": "Sana'a",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 11716.2,
+      "density": 1.3,
+      "population": 15231,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-raymah",
+      "slug": "ot-yem-raymah",
+      "name": "Raymah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 1840.3,
+      "density": 1.3,
+      "population": 2392,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-al-bayda",
+      "slug": "ot-yem-al-bayda",
+      "name": "Al Bayda'",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 2490.3,
+      "density": 1.3,
+      "population": 3237,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-amran",
+      "slug": "ot-yem-amran",
+      "name": "Amran",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 7882.2,
+      "density": 1.3,
+      "population": 10247,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-al-dali",
+      "slug": "ot-yem-al-dali",
+      "name": "Al Dali'",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 1038.9,
+      "density": 1.3,
+      "population": 1351,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-ibb",
+      "slug": "ot-yem-ibb",
+      "name": "Ibb",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 5350.9,
+      "density": 1.3,
+      "population": 6956,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-al-mahwit",
+      "slug": "ot-yem-al-mahwit",
+      "name": "Al Mahwit",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 2271.0,
+      "density": 1.3,
+      "population": 2952,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-yem-dhamar",
+      "slug": "ot-yem-dhamar",
+      "name": "Dhamar",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 7780.7,
+      "density": 1.3,
+      "population": 10115,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-bolu",
+      "slug": "ot-tur-bolu",
+      "name": "Bolu",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 8586.4,
+      "density": 14.7,
+      "population": 126220,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-ankara",
+      "slug": "ot-tur-ankara",
+      "name": "Ankara",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 25727.7,
+      "density": 14.7,
+      "population": 378197,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-bilecik",
+      "slug": "ot-tur-bilecik",
+      "name": "Bilecik",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 5294.1,
+      "density": 14.7,
+      "population": 77823,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-eskisehir",
+      "slug": "ot-tur-eskisehir",
+      "name": "Eskisehir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 13756.5,
+      "density": 14.7,
+      "population": 202221,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-cankiri",
+      "slug": "ot-tur-cankiri",
+      "name": "\u00c7ankiri",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7684.0,
+      "density": 14.7,
+      "population": 112955,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-karabuk",
+      "slug": "ot-tur-karabuk",
+      "name": "Karab\u00fck",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3982.6,
+      "density": 14.7,
+      "population": 58544,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-tokat",
+      "slug": "ot-tur-tokat",
+      "name": "Tokat",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 9416.7,
+      "density": 14.7,
+      "population": 138425,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-sivas",
+      "slug": "ot-tur-sivas",
+      "name": "Sivas",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 28166.7,
+      "density": 14.7,
+      "population": 414050,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-corum",
+      "slug": "ot-tur-corum",
+      "name": "\u00c7orum",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 12552.7,
+      "density": 14.7,
+      "population": 184525,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-amasya",
+      "slug": "ot-tur-amasya",
+      "name": "Amasya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6254.1,
+      "density": 14.7,
+      "population": 91935,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-syr-hamah",
+      "slug": "ot-syr-hamah",
+      "name": "Hamah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 10242.4,
+      "density": 14.7,
+      "population": 150563,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-ha-il",
+      "slug": "ot-sau-ha-il",
+      "name": "Ha'il",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 44.1,
+      "density": 1.3,
+      "population": 57,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-sau-al-bahah",
+      "slug": "ot-sau-al-bahah",
+      "name": "Al Bahah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SAU",
+      "areaKm2": 10344.5,
+      "density": 1.3,
+      "population": 13448,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-ajlun",
+      "slug": "ot-jor-ajlun",
+      "name": "Ajlun",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 416.3,
+      "density": 14.7,
+      "population": 6120,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-jor-jarash",
+      "slug": "ot-jor-jarash",
+      "name": "Jarash",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "JOR",
+      "areaKm2": 408.1,
+      "density": 14.7,
+      "population": 5999,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-tur-kutahya",
+      "slug": "ot-tur-kutahya",
+      "name": "K\u00fctahya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 12075.5,
+      "density": 14.7,
+      "population": 177510,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-konya",
+      "slug": "ot-tur-konya",
+      "name": "Konya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 40358.2,
+      "density": 14.7,
+      "population": 593266,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-karaman",
+      "slug": "ot-tur-karaman",
+      "name": "Karaman",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 8989.4,
+      "density": 14.7,
+      "population": 132144,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-nigde",
+      "slug": "ot-tur-nigde",
+      "name": "Nigde",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6680.3,
+      "density": 14.7,
+      "population": 98200,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-kayseri",
+      "slug": "ot-tur-kayseri",
+      "name": "Kayseri",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 17578.5,
+      "density": 14.7,
+      "population": 258404,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-isparta",
+      "slug": "ot-tur-isparta",
+      "name": "Isparta",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 8754.5,
+      "density": 14.7,
+      "population": 128691,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-manisa",
+      "slug": "ot-tur-manisa",
+      "name": "Manisa (Aegean)",
+      "plurality": "greek-orthodox",
+      "nationality": "greek-orthodox",
+      "adm0": "TUR",
+      "areaKm2": 12918.4,
+      "density": 14.7,
+      "population": 189900,
+      "shares": {
+        "greek-orthodox": 0.48,
+        "muslim": 0.42,
+        "armenian": 0.05,
+        "jewish": 0.03,
+        "other": 0.02
+      }
+    },
+    {
+      "code": "ot-tur-denizli",
+      "slug": "ot-tur-denizli",
+      "name": "Denizli",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 11138.1,
+      "density": 14.7,
+      "population": 163730,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-burdur",
+      "slug": "ot-tur-burdur",
+      "name": "Burdur",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7270.2,
+      "density": 14.7,
+      "population": 106872,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-aksaray",
+      "slug": "ot-tur-aksaray",
+      "name": "Aksaray",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7772.5,
+      "density": 14.7,
+      "population": 114256,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-nevsehir",
+      "slug": "ot-tur-nevsehir",
+      "name": "Nevsehir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 5314.3,
+      "density": 14.7,
+      "population": 78120,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-yozgat",
+      "slug": "ot-tur-yozgat",
+      "name": "Yozgat",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 13769.1,
+      "density": 14.7,
+      "population": 202406,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-kirsehir",
+      "slug": "ot-tur-kirsehir",
+      "name": "Kirsehir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6405.3,
+      "density": 14.7,
+      "population": 94158,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-usak",
+      "slug": "ot-tur-usak",
+      "name": "Usak",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 4437.6,
+      "density": 14.7,
+      "population": 65233,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-erzincan",
+      "slug": "ot-tur-erzincan",
+      "name": "Erzincan",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 11390.8,
+      "density": 14.7,
+      "population": 167445,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-tunceli",
+      "slug": "ot-tur-tunceli",
+      "name": "Tunceli (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 7914.3,
+      "density": 9.1,
+      "population": 72020,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-afyonkarahisar",
+      "slug": "ot-tur-afyonkarahisar",
+      "name": "Afyonkarahisar",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 14817.4,
+      "density": 14.7,
+      "population": 217816,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-kinkkale",
+      "slug": "ot-tur-kinkkale",
+      "name": "Kinkkale",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 4682.5,
+      "density": 14.7,
+      "population": 68833,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-k-maras",
+      "slug": "ot-tur-k-maras",
+      "name": "K. Maras",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 14435.9,
+      "density": 14.7,
+      "population": 212208,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-mus",
+      "slug": "ot-tur-mus",
+      "name": "Mus (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 7724.6,
+      "density": 9.1,
+      "population": 70294,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-erzurum",
+      "slug": "ot-tur-erzurum",
+      "name": "Erzurum (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 23791.0,
+      "density": 9.1,
+      "population": 216498,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-malatya",
+      "slug": "ot-tur-malatya",
+      "name": "Malatya",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 11804.5,
+      "density": 14.7,
+      "population": 173526,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-elazig",
+      "slug": "ot-tur-elazig",
+      "name": "Elazig (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 9295.2,
+      "density": 9.1,
+      "population": 84586,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-bitlis",
+      "slug": "ot-tur-bitlis",
+      "name": "Bitlis (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 8989.4,
+      "density": 9.1,
+      "population": 81804,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-bingol",
+      "slug": "ot-tur-bingol",
+      "name": "Bing\u00f6l (eastern vilayets)",
+      "plurality": "armenian",
+      "nationality": "armenian",
+      "adm0": "TUR",
+      "areaKm2": 8443.3,
+      "density": 9.1,
+      "population": 76834,
+      "shares": {
+        "armenian": 0.46,
+        "muslim": 0.42,
+        "assyrian": 0.05,
+        "other-christian": 0.04,
+        "other": 0.03
+      }
+    },
+    {
+      "code": "ot-tur-osmaniye",
+      "slug": "ot-tur-osmaniye",
+      "name": "Osmaniye",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 2892.8,
+      "density": 14.7,
+      "population": 42524,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-adiyaman",
+      "slug": "ot-tur-adiyaman",
+      "name": "Adiyaman",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 7179.9,
+      "density": 14.7,
+      "population": 105545,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-diyarbakir",
+      "slug": "ot-tur-diyarbakir",
+      "name": "Diyarbakir",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 15169.3,
+      "density": 14.7,
+      "population": 222989,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-batman",
+      "slug": "ot-tur-batman",
+      "name": "Batman",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 4117.4,
+      "density": 14.7,
+      "population": 60526,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-siirt",
+      "slug": "ot-tur-siirt",
+      "name": "Siirt",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6469.8,
+      "density": 14.7,
+      "population": 95106,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-bayburt",
+      "slug": "ot-tur-bayburt",
+      "name": "Bayburt",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 3527.3,
+      "density": 14.7,
+      "population": 51851,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-tur-gumushane",
+      "slug": "ot-tur-gumushane",
+      "name": "G\u00fcm\u00fcshane",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "TUR",
+      "areaKm2": 6329.6,
+      "density": 14.7,
+      "population": 93045,
+      "shares": {
+        "muslim": 0.86,
+        "greek-orthodox": 0.05,
+        "armenian": 0.04,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-baghdad",
+      "slug": "ot-irq-baghdad",
+      "name": "Baghdad",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 651.3,
+      "density": 58.8,
+      "population": 38296,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-babil",
+      "slug": "ot-irq-babil",
+      "name": "Babil",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 6704.8,
+      "density": 14.7,
+      "population": 98561,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-al-qadisiyyah",
+      "slug": "ot-irq-al-qadisiyyah",
+      "name": "Al-Q\u0101disiyyah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 8546.8,
+      "density": 14.7,
+      "population": 125638,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-dhi-qar",
+      "slug": "ot-irq-dhi-qar",
+      "name": "Dhi-Qar",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 13716.4,
+      "density": 14.7,
+      "population": 201631,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-irq-karbala",
+      "slug": "ot-irq-karbala",
+      "name": "Karbala'",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "IRQ",
+      "areaKm2": 4961.6,
+      "density": 14.7,
+      "population": 72936,
+      "shares": {
+        "muslim": 0.88,
+        "assyrian": 0.04,
+        "jewish": 0.03,
+        "other": 0.05
+      }
+    },
+    {
+      "code": "ot-yem-amanat-al-asimah",
+      "slug": "ot-yem-amanat-al-asimah",
+      "name": "Amanat Al Asimah",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "YEM",
+      "areaKm2": 390.4,
+      "density": 1.3,
+      "population": 508,
+      "shares": {
+        "muslim": 0.96,
+        "other": 0.04
+      }
+    },
+    {
+      "code": "ot-syr-damascus",
+      "slug": "ot-syr-damascus",
+      "name": "Damascus",
+      "plurality": "muslim",
+      "nationality": "muslim",
+      "adm0": "SYR",
+      "areaKm2": 102.4,
+      "density": 58.8,
+      "population": 6021,
+      "shares": {
+        "muslim": 0.82,
+        "other-christian": 0.1,
+        "greek-orthodox": 0.04,
+        "other": 0.04
+      }
+    }
+  ]
+}
