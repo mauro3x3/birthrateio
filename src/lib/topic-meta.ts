@@ -201,6 +201,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "UK vs DE/ES/FR lifetime balance by pay percentile",
       },
       {
+        title: "Citizens leaving and coming home",
+        href: "/migration/citizen-flows",
+        note: "EU/EFTA nationals emigrating vs returning, per 1,000",
+      },
+      {
         title: "Workers vs retirees",
         href: "/workers-retirees",
         note: "Age structure that shapes labour supply",

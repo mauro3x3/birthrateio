@@ -28,6 +28,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/migration",
     "/migration/buergergeld",
     "/migration/fiscal-balance",
+    "/migration/citizen-flows",
     "/mortality",
     "/crime",
     "/workers-retirees",

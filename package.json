@@ -24,6 +24,7 @@
     "build:eurostat-returns": "node scripts/build-eurostat-returns.js",
     "build:eurostat-lfpr": "node scripts/build-eurostat-lfpr.js",
     "build:eurostat-illegal-presence": "node scripts/build-eurostat-illegal-presence.js",
+    "build:eurostat-citizen-flows": "node scripts/build-eurostat-citizen-flows.js",
     "build:unhcr-refugees": "node scripts/build-unhcr-refugees.js",
     "build:irregular-stocks": "node scripts/build-irregular-stocks.js",
     "build:india-population-pmtiles": "python3 scripts/build-india-population-pmtiles.py",

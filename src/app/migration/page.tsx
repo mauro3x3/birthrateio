@@ -384,6 +384,18 @@ export default async function MigrationPage() {
           description="Enforcement and labour series for EU/EFTA reporters. Useful for Europe; not a global ranking."
         />
 
+        <div className="rounded-sm border border-border/70 bg-muted/20 px-4 py-3 text-sm leading-relaxed">
+          <p className="font-medium text-foreground">
+            <Link href="/migration/citizen-flows" className="link-editorial">
+              Citizens leaving and coming home
+            </Link>
+          </p>
+          <p className="mt-1 text-muted-foreground">
+            Nationals who emigrated vs returned, per 1,000 citizens — EU and
+            EFTA bubble chart from Eurostat citizenship tables.
+          </p>
+        </div>
+
         {(orderedToLeave.length > 0 || returnedAfterOrder.length > 0) && (
           <div className="space-y-4">
             <h3 className="font-serif text-base font-semibold text-primary">

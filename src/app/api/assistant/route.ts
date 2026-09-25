@@ -17,6 +17,7 @@ const SITE_MAP = `
 - /population : Population explorer (rankings, projections, growth calculator)
 - /population/shares : Where the births are — Wikipedia-style pies of each region's residents and estimated births by country (Africa, Europe, MENA, Oceania, …)
 - /migration : Migration explorer (net migration & foreign-born maps, rankings)
+- /migration/citizen-flows : EU & EFTA nationals leaving vs returning home (Eurostat citizenship flows bubble chart, per 1,000 citizens)
 - /mortality : Mortality explorer — life expectancy, historic death rates (HMD), under-five mortality as far back as sources allow
 - /crime : Crime by ancestry/origin — charts where NSOs publish data, plus an availability registry for countries that don't
 - /workers-retirees : Workers vs retirees — compare 15–64 vs 65+ and workers-per-retiree across countries through ~2060
