@@ -358,7 +358,14 @@ const STATISTICS: StatisticDef[] = [
     href: "/maps/bra",
     region: "Brazil",
     topicIds: ["fertility", "maps"],
-    keywords: ["brazil fertility", "ibge tfr", "brazil map"],
+    keywords: [
+      "brazil fertility",
+      "ibge tfr",
+      "brazil map",
+      "brazil states tfr history",
+      "rondonia fertility",
+      "sao paulo tfr",
+    ],
   },
   {
     id: "tfr-maps-idn",

@@ -281,10 +281,12 @@ export function CountryMapExplorer({
         values,
         metric?.scale ?? "sequential",
         metric?.mid,
-        // Fixed domain so decade scrubbing stays comparable (Asia 1960–2020).
+        // Fixed domain so decade scrubbing stays comparable.
         country.iso3 === "PANASIA" && metric?.id === "tfr"
           ? { min: 1.0, max: 8.0 }
-          : undefined,
+          : country.iso3 === "BRA" && metric?.id === "tfr"
+            ? { min: 1.0, max: 10.5 }
+            : undefined,
       ),
     [values, metric?.scale, metric?.mid, metric?.id, country.iso3],
   );

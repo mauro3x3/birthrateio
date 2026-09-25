@@ -660,6 +660,64 @@ BRAZIL_BIRTHGAUGE_2024 = {
     "Federal": 1.39,
 }
 
+# Sacco & Mendes Borges Tabla 2 — Brasil 1940–2010 TGF de período by UF
+# (IBGE Dinâmica Demográfica), in L. M. González ed. ¿Convergencia demográfica?
+# https://www.aacademica.org/leandro.m.gonzalez/57.pdf
+BRAZIL_TFR_YEARS = [1940, 1950, 1960, 1970, 1980, 1991, 2000, 2010]
+BRAZIL_TFR_HISTORY = {
+    "Rondônia": [8.55, 9.51, 10.21, 9.72, 6.18, 3.47, 2.74, 1.96],
+    "Acre": [8.71, 9.68, 10.40, 9.90, 6.88, 4.90, 3.63, 2.81],
+    "Amazonas": [7.66, 8.44, 9.07, 8.55, 6.75, 4.47, 3.32, 2.59],
+    "Roraima": [7.54, 8.38, 9.00, 8.57, 6.58, 4.77, 3.55, 2.58],
+    "Pará": [6.80, 7.48, 7.99, 7.72, 6.31, 4.19, 3.14, 2.38],
+    "Amapá": [7.25, 8.06, 8.65, 8.24, 6.97, 4.62, 3.88, 2.69],
+    "Tocantins": [6.67, 7.41, 7.96, 7.58, 6.00, 3.86, 2.94, 2.18],
+    "Maranhão": [6.64, 6.86, 7.11, 7.26, 6.93, 4.64, 3.20, 2.47],
+    "Piauí": [7.45, 8.10, 7.78, 7.84, 6.54, 3.78, 2.74, 1.97],
+    "Ceará": [8.30, 7.88, 7.53, 7.74, 6.05, 3.73, 2.84, 1.96],
+    "Rio Grande do Norte": [8.37, 8.31, 8.21, 8.44, 5.67, 3.36, 2.63, 1.91],
+    "Paraíba": [8.39, 8.07, 7.58, 7.74, 6.19, 3.72, 2.53, 1.97],
+    "Pernambuco": [6.65, 7.17, 7.18, 7.03, 5.40, 3.26, 2.58, 1.94],
+    "Alagoas": [6.62, 7.25, 7.33, 7.58, 6.67, 4.04, 3.13, 2.22],
+    "Sergipe": [6.73, 7.44, 7.24, 7.87, 6.03, 3.58, 2.87, 1.97],
+    "Bahia": [6.75, 7.39, 7.32, 7.48, 6.23, 3.61, 2.49, 1.89],
+    "Minas Gerais": [7.69, 7.56, 7.69, 6.17, 4.31, 2.67, 2.22, 1.72],
+    "Espírito Santo": [7.06, 7.19, 7.63, 6.44, 4.28, 2.75, 2.16, 1.75],
+    "Rio de Janeiro": [4.41, 4.38, 4.53, 3.80, 2.94, 2.09, 2.06, 1.68],
+    "São Paulo": [5.02, 4.65, 4.87, 3.94, 3.24, 2.28, 2.08, 1.70],
+    "Paraná": [5.97, 6.27, 6.51, 6.40, 4.12, 2.61, 2.22, 1.76],
+    "Santa Catarina": [6.56, 7.23, 7.30, 6.10, 3.82, 2.57, 2.08, 1.65],
+    "Rio Grande do Sul": [5.08, 5.22, 5.11, 4.29, 3.11, 2.39, 2.16, 1.67],
+    "Mato Grosso do Sul": [6.18, 6.77, 6.37, 6.54, 4.39, 2.92, 2.41, 2.02],
+    "Mato Grosso": [6.62, 7.25, 6.82, 7.00, 4.70, 3.06, 2.43, 2.01],
+    "Goiás": [5.71, 6.11, 6.16, 5.87, 4.30, 2.50, 2.23, 1.74],
+    "Distrito Federal": [6.85, 6.85, 6.85, 5.56, 3.62, 2.36, 2.00, 1.65],
+    "Federal": [6.85, 6.85, 6.85, 5.56, 3.62, 2.36, 2.00, 1.65],
+}
+BRAZIL_TFR_NATIONAL_MEAN = {
+    1940: 6.90,
+    1950: 7.29,
+    1960: 7.42,
+    1970: 7.09,
+    1980: 5.34,
+    1991: 3.41,
+    2000: 2.68,
+    2010: 2.03,
+}
+BRAZIL_TFR_NOTE = (
+    "Historic years 1940–2010 are period TFR by today’s UF geography "
+    "(Tocantins and Mato Grosso do Sul back-cast on post-split borders). "
+    "Colour domain is fixed (1–10.5) so decades are comparable when you scrub. "
+    "2024 is BirthGauge from registered births and IBGE women of childbearing "
+    "age — not the same method as the census-based historic series."
+)
+BRAZIL_TFR_SOURCE = (
+    "Sacco & Mendes Borges, Tabla 2 — Brasil 1940–2010 TGF de período by state, "
+    "from IBGE Departamento de Estudos e Análise da Dinâmica Demográfica "
+    "(in L. M. González, ed., ¿Convergencia demográfica?)."
+)
+BRAZIL_TFR_SOURCE_URL = "https://www.aacademica.org/leandro.m.gonzalez/57.pdf"
+
 
 # BPS BRS No. 51/05/Th. XXIX, 5 May 2026 — Lampiran 2 (TFR by province, SUPAS 2025).
 BPS_IDN_TFR_2025 = {
@@ -767,28 +825,96 @@ def main():
 
     new_maps = []
 
-    print("Brazil BirthGauge 2024…")
-    nat, bra_table = 1.48, BRAZIL_BIRTHGAUGE_2024
-    feats, regions, n, tot, unmatched = match_admin1("BRA", bra_table, admin1["features"], "brazil")
+    print("Brazil state TFR history + BirthGauge 2024…")
+    # Geometry from BirthGauge table (same names as historic UFs).
+    feats, regions2024, n, tot, unmatched = match_admin1(
+        "BRA", BRAZIL_BIRTHGAUGE_2024, admin1["features"], "brazil"
+    )
     print(f"  BRA matched {n}/{tot}")
     if unmatched:
         print("    unmatched", unmatched)
     if n >= 20:
+        geo_url = write_geo("bra-tfr", feats, max_pts=80)
+        slug_by_name = {r["name"]: r for r in regions2024}
+        # Prefer Distrito Federal label when both DF aliases matched.
+        for r in regions2024:
+            if r["name"] == "Federal":
+                r["name"] = "Distrito Federal"
+        for i, year in enumerate(BRAZIL_TFR_YEARS):
+            regions = []
+            for name, series in BRAZIL_TFR_HISTORY.items():
+                if name == "Federal":
+                    continue  # same polygon as Distrito Federal
+                base = slug_by_name.get(name) or slug_by_name.get(
+                    "Distrito Federal" if name == "Distrito Federal" else name
+                )
+                if base is None and name == "Distrito Federal":
+                    base = slug_by_name.get("Federal")
+                if base is None:
+                    continue
+                regions.append(
+                    {
+                        "id": base["id"],
+                        "slug": base["slug"],
+                        "name": "Distrito Federal"
+                        if name in ("Distrito Federal", "Federal")
+                        else name,
+                        "value": series[i],
+                    }
+                )
+            # Dedupe DF if both aliases somehow produced rows.
+            seen = set()
+            deduped = []
+            for r in regions:
+                if r["slug"] in seen:
+                    continue
+                seen.add(r["slug"])
+                deduped.append(r)
+            new_maps.append(
+                catalog_entry(
+                    id=f"bra-tfr-{year}",
+                    iso3="BRA",
+                    country="Brazil",
+                    title=f"Total fertility rate, Brazil {year}",
+                    kind="state",
+                    year=year,
+                    national=BRAZIL_TFR_NATIONAL_MEAN[year],
+                    source=f"{BRAZIL_TFR_SOURCE} Year {year}.",
+                    sourceUrl=BRAZIL_TFR_SOURCE_URL,
+                    geoUrl=geo_url,
+                    note=BRAZIL_TFR_NOTE,
+                    regions=deduped,
+                    mid=2.1,
+                )
+            )
+            print(f"  BRA {year}: {len(deduped)} states")
         new_maps.append(
             catalog_entry(
-                id="bra-tfr",
+                id="bra-tfr-2024",
                 iso3="BRA",
                 country="Brazil",
                 title="Total fertility rate, Brazil 2024",
                 kind="state",
                 year=2024,
-                national=nat,
-                source="BirthGauge, Total Fertility Rate (Children per Woman), Brazil 2024 — state TFR from registered live births and IBGE women of childbearing age. National TFR 1.48.",
+                national=1.48,
+                source=(
+                    "BirthGauge, Total Fertility Rate (Children per Woman), "
+                    "Brazil 2024 — state TFR from registered live births and "
+                    "IBGE women of childbearing age. National TFR 1.48."
+                ),
                 sourceUrl="https://x.com/BirthGauge",
-                geoUrl=write_geo("bra-tfr", feats, max_pts=80),
-                note="2024 state TFR compiled by BirthGauge from births and the IBGE childbearing-age population. The IBGE 2024 population-projection TFT (1.57) is a 2023 estimate and is not used here.",
-                regions=regions,
+                geoUrl=geo_url,
+                note=BRAZIL_TFR_NOTE,
+                regions=regions2024,
+                mid=2.1,
             )
+        )
+        # Legacy id kept for managed-set / old references.
+        new_maps.append(
+            {
+                **new_maps[-1],
+                "id": "bra-tfr",
+            }
         )
 
     print("Indonesia SUPAS 2025…")
@@ -947,6 +1073,8 @@ def main():
     managed.update(
         {
             "bra-tfr",
+            "bra-tfr-2024",
+            *[f"bra-tfr-{y}" for y in BRAZIL_TFR_YEARS],
             "idn-tfr",
             "eth-tfr",
             "eu-tfr",
