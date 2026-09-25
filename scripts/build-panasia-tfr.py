@@ -139,26 +139,37 @@ def nearest_year(series: dict[int, tuple[float, str]], target: int, window: int 
     return None, None
 
 
-def crosses_antimeridian(geom: dict) -> bool:
-    xs: list[float] = []
+def buffer_geom_safe(geom, pad: float):
+    """Buffer a (multi)polygon part-by-part so date-line pieces stay intact."""
+    from shapely.ops import unary_union
 
-    def walk(c):
-        if isinstance(c, (list, tuple)) and c and isinstance(c[0], (int, float)):
-            xs.append(float(c[0]))
-            return
-        if isinstance(c, (list, tuple)):
-            for x in c:
-                walk(x)
-
-    walk(geom.get("coordinates"))
-    if not xs:
-        return False
-    return (max(xs) - min(xs)) > 180
+    if geom.geom_type == "Polygon":
+        minx, _, maxx, _ = geom.bounds
+        if (maxx - minx) > 180:
+            return geom
+        return geom.buffer(pad, join_style=1, mitre_limit=2.5, quad_segs=8)
+    if geom.geom_type == "MultiPolygon":
+        parts = []
+        for p in geom.geoms:
+            minx, _, maxx, _ = p.bounds
+            if (maxx - minx) > 180:
+                parts.append(p)
+            else:
+                parts.append(
+                    p.buffer(pad, join_style=1, mitre_limit=2.5, quad_segs=8)
+                )
+        return unary_union(parts)
+    return geom
 
 
 def write_panasia_geo(bsm, features: list[dict]) -> str:
-    """Higher-detail admin-0 + outline-clipped seam seal (skip antimeridian)."""
-    from shapely.geometry import mapping, shape
+    """Higher-detail admin-0 + outline-clipped seam seal.
+
+    Russia is buffered part-by-part (not skipped) so the long RUS–Kazakhstan /
+    Mongolia frontier closes. The outline is expanded by the same pad so
+    inter-country voids are fillable.
+    """
+    from shapely.geometry import Polygon, mapping, shape
     from shapely.ops import unary_union
     from shapely.validation import make_valid
 
@@ -168,10 +179,9 @@ def write_panasia_geo(bsm, features: list[dict]) -> str:
         props = dict(feat.get("properties") or {})
         iso = props.get("iso3") or ""
         geom = feat.get("geometry") or {}
-        # Keep Russia intact — mainland is split across many NE rings; dropping
-        # all but 6 leaves rectangular voids across Siberia.
+        # Keep Russia intact — mainland is split across many NE rings.
         max_polys = 80 if iso == "RUS" else 12
-        max_pts = 220 if iso == "RUS" else 140
+        max_pts = 260 if iso == "RUS" else 160
         geom = sub.keep_mainlands(geom, max_polys=max_polys)
         coords = geom.get("coordinates")
         geom = {
@@ -187,8 +197,6 @@ def write_panasia_geo(bsm, features: list[dict]) -> str:
             }
         )
 
-    # Outline-clipped buffer so neighbours overlap without eating the coast,
-    # and without destroying Russia across the date line.
     geoms = []
     for f in out:
         try:
@@ -197,36 +205,35 @@ def write_panasia_geo(bsm, features: list[dict]) -> str:
             geoms.append(None)
 
     valid = [g for g in geoms if g is not None and not g.is_empty]
-    outline = make_valid(unary_union(valid))
-    # Fill lakes/holes in the continental outline so buffers don't leak inward.
-    try:
-        from shapely.geometry import Polygon
 
-        def fill_holes(g):
-            if g.geom_type == "Polygon":
-                return Polygon(g.exterior)
-            if g.geom_type == "MultiPolygon":
-                return unary_union([Polygon(p.exterior) for p in g.geoms])
-            return g
+    def fill_holes(g):
+        if g.geom_type == "Polygon":
+            return Polygon(g.exterior)
+        if g.geom_type == "MultiPolygon":
+            return unary_union([Polygon(p.exterior) for p in g.geoms])
+        return g
 
-        outline = fill_holes(outline)
-    except Exception:
-        pass
+    pad = 0.12
+    outline = fill_holes(make_valid(unary_union(valid)))
+    # Expand outline so buffers can close voids that simplify opened between
+    # neighbours (otherwise clip-to-outline leaves the crack as ocean forever).
+    seal_mask = outline.buffer(0.28, join_style=1, quad_segs=8)
 
-    pad = 0.012
+    # Deeper pad along the long Russia / Central Asia frontier where RDP
+    # scallops leave multi-tenths-of-a-degree voids.
+    frontier = {"RUS", "KAZ", "MNG", "CHN"}
     for feat, geom in zip(out, geoms):
         if geom is None or geom.is_empty:
             continue
-        if crosses_antimeridian(feat["geometry"]):
-            # Leave date-line countries alone — buffering them creates voids.
-            continue
+        iso = (feat.get("properties") or {}).get("iso3") or ""
+        use_pad = 0.25 if iso in frontier else pad
         try:
-            expanded = geom.buffer(pad, join_style=1, mitre_limit=2.5, quad_segs=8)
-            clipped = make_valid(expanded.intersection(outline))
-            if clipped.is_empty or clipped.area < geom.area * 0.5:
+            expanded = buffer_geom_safe(geom, use_pad)
+            clipped = make_valid(expanded.intersection(seal_mask))
+            if clipped.is_empty or clipped.area < geom.area * 0.45:
                 continue
-            simplified = clipped.simplify(0.0015, preserve_topology=True)
-            if simplified.is_empty or simplified.area < geom.area * 0.5:
+            simplified = clipped.simplify(0.002, preserve_topology=True)
+            if simplified.is_empty or simplified.area < geom.area * 0.45:
                 simplified = clipped
             feat["geometry"] = mapping(make_valid(simplified))
         except Exception:
