@@ -352,11 +352,13 @@ def write_geo(map_id: str, features: list[dict], max_pts: int = 90) -> str:
         json.dumps({"type": "FeatureCollection", "features": out}, separators=(",", ":")),
         encoding="utf-8",
     )
-    # Overlap neighbours slightly so RDP seams don’t flash atlas ocean.
+    # Overlap neighbours so RDP seams don’t flash atlas ocean. Outline-clipped
+    # buffer (default pad 0.04°) closes triple-junction holes without growing
+    # the coastline — Brazil states need more than a hairline pad.
     try:
         import seal_map_seams as seal_mod
 
-        seal_mod.seal_file(path, pad=0.004)
+        seal_mod.seal_file(path, pad=0.04)
     except Exception as e:
         try:
             spec = importlib.util.spec_from_file_location(
@@ -365,7 +367,7 @@ def write_geo(map_id: str, features: list[dict], max_pts: int = 90) -> str:
             seal_mod = importlib.util.module_from_spec(spec)
             assert spec.loader
             spec.loader.exec_module(seal_mod)
-            seal_mod.seal_file(path, pad=0.004)
+            seal_mod.seal_file(path, pad=0.04)
         except Exception as e2:
             print(f"  (seam seal skipped for {map_id}: {e2})", flush=True)
     return rel
