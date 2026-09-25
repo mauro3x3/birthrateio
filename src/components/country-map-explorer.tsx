@@ -26,11 +26,35 @@ type MapComponent = typeof import("@/components/maps/region-choropleth-map").Reg
 
 const METRIC_ORDER: MapMetricId[] = [
   "tfr",
+  "median-age",
+  "working-age-pct",
+  "working-age",
+  "natural-change",
+  "net-migration",
+  "employment",
+  "employment-gap",
+  "neet",
   "population",
   "pop-growth",
   "gfr",
   "religion",
 ];
+
+const METRIC_LABELS: Record<MapMetricId, string> = {
+  tfr: "Total fertility rate",
+  "median-age": "Median age",
+  "working-age-pct": "Working-age share",
+  "working-age": "Working-age people",
+  "natural-change": "Natural change",
+  "net-migration": "Net migration",
+  employment: "Employment rate",
+  "employment-gap": "Gender employment gap",
+  neet: "NEET rate",
+  population: "Population",
+  "pop-growth": "Population change",
+  gfr: "General fertility rate",
+  religion: "Religion",
+};
 
 /** Default camera ignores overseas islands / Siberia so Download image frames the continent. */
 const MAP_FIT_CLAMP: Partial<
@@ -308,10 +332,30 @@ export function CountryMapExplorer({
         );
       }
       if (!metric) return String(v);
-      if (metric.id === "pop-growth") {
-        return `${v > 0 ? "+" : ""}${formatNumber(v, 1)}%`;
+      if (
+        metric.id === "pop-growth" ||
+        metric.id === "natural-change" ||
+        metric.id === "net-migration" ||
+        metric.id === "employment-gap"
+      ) {
+        const suffix =
+          metric.id === "natural-change" || metric.id === "net-migration"
+            ? "‰"
+            : metric.id === "employment-gap"
+              ? " pp"
+              : "%";
+        return `${v > 0 ? "+" : ""}${formatNumber(v, metric.decimals)}${suffix}`;
       }
-      if (metric.id === "population") return formatNumber(v, 0);
+      if (metric.id === "population" || metric.id === "working-age") {
+        return formatCompact(v);
+      }
+      if (
+        metric.id === "working-age-pct" ||
+        metric.id === "employment" ||
+        metric.id === "neet"
+      ) {
+        return `${formatNumber(v, metric.decimals)}%`;
+      }
       return formatNumber(v, metric.decimals);
     },
     [metric, religionMode, religionPack, religionGroupById],
@@ -325,7 +369,8 @@ export function CountryMapExplorer({
       .filter((r): r is NonNullable<typeof r> => r != null && r.value != null);
   }, [regions, selectedIds]);
 
-  const additiveMetric = metric?.id === "population";
+  const additiveMetric =
+    metric?.id === "population" || metric?.id === "working-age";
   const selectedAggregate = React.useMemo(() => {
     if (selectedRegions.length === 0) return null;
     const vals = selectedRegions.map((r) => r.value as number);
@@ -713,16 +758,7 @@ export function CountryMapExplorer({
                 const m = metricOf(viewMetrics, id);
                 const religionOk = id === "religion" && religionPack != null;
                 const locked = id === "religion" ? !religionOk : !m;
-                const label =
-                  id === "tfr"
-                    ? "Total fertility rate"
-                    : id === "population"
-                      ? "Population"
-                      : id === "pop-growth"
-                        ? "Population change"
-                        : id === "religion"
-                          ? "Religion"
-                          : "General fertility rate";
+                const label = METRIC_LABELS[id];
                 const active =
                   id === "religion"
                     ? religionMode

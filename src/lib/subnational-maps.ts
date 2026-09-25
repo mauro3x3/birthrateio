@@ -1,3 +1,15 @@
+export type SubnationalMapMetric =
+  | "tfr"
+  | "pop-change"
+  | "median-age"
+  | "working-age"
+  | "working-age-pct"
+  | "natural-change"
+  | "net-migration"
+  | "employment"
+  | "employment-gap"
+  | "neet";
+
 export type SubnationalRegion = {
   id: string;
   slug: string;
@@ -10,7 +22,7 @@ export type SubnationalMap = {
   iso3: string;
   country: string;
   title: string;
-  metric: "tfr" | "pop-change";
+  metric: SubnationalMapMetric;
   unit: string;
   kind: string;
   year: number;
@@ -20,7 +32,7 @@ export type SubnationalMap = {
   sourceUrl: string;
   credit: string | null;
   geoUrl: string;
-  scale: "plasma" | "diverging-growth" | "diverging-tfr";
+  scale: "plasma" | "diverging-growth" | "diverging-tfr" | "sequential";
   mid?: number;
   labelValues: boolean;
   /** Optional country-picker tab when a country has more than one map. */

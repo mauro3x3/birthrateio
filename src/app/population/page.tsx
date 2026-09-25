@@ -175,6 +175,26 @@ export default async function PopulationPage() {
 
       <section>
         <SectionHeading
+          id="europe-change"
+          title="Europe: who grew, who shrank"
+        />
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+          GHSL population grids, 2000 vs 2025. Every inhabited cell is green
+          (growth) or pink (decline) — cities and sunbelt coasts versus
+          emptying interiors.
+        </p>
+        <p className="mt-3">
+          <Link
+            href="/population/europe-change"
+            className="link-editorial font-medium"
+          >
+            Open the Europe change map
+          </Link>
+        </p>
+      </section>
+
+      <section>
+        <SectionHeading
           id="compare-regions"
           title="Compare regions yourself"
         />

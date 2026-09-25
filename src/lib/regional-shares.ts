@@ -42,7 +42,12 @@ export function tidyCountryName(name: string): string {
     .replace(/^Slovak Republic$/, "Slovakia")
     .replace(/^Turkiye$/, "Türkiye")
     .replace(/^Korea, Rep\.$/, "South Korea")
-    .replace(/^Kyrgyz Republic$/, "Kyrgyzstan");
+    .replace(/^Kyrgyz Republic$/, "Kyrgyzstan")
+    .replace(/^Venezuela, RB$/, "Venezuela")
+    .replace(
+      /^United Kingdom of Great Britain and Northern Ireland$/,
+      "United Kingdom",
+    );
 }
 
 export const REGIONAL_SHARES_SOURCE = FILE.source;

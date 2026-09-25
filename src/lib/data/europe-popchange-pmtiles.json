@@ -1,0 +1,19 @@
+{
+  "title": "Europe: population change 2000–2025",
+  "source": "GHSL GHS-POP R2023A (European Commission JRC) — resident population grids for 2000 and 2025 at 30 arc-seconds.",
+  "sourceUrl": "https://human-settlement.emergency.copernicus.eu/download.php",
+  "yearFrom": 2000,
+  "yearTo": 2025,
+  "resolution": "30arcsec (~1km)",
+  "pmtilesPath": "/tiles/europe-popchange.pmtiles",
+  "layer": "popchange",
+  "note": "Each point is an inhabited GHSL cell. Green = more people in 2025 than 2000; pink = fewer. Uninhabited cells are left blank (basemap gray). Built at 30 arc-sec for a browser-friendly tileset; the classic 3 arc-sec maps are a larger offline rebuild.",
+  "bounds": [-25, 34, 45, 72],
+  "minZoom": 2,
+  "maxZoom": 11,
+  "colors": {
+    "growth": "#2f9e6b",
+    "decline": "#e45c8a",
+    "uninhabited": "#d4d4d4"
+  }
+}

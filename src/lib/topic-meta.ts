@@ -141,6 +141,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "WorldPop PMTiles night-lights style map",
       },
       {
+        title: "Europe population change",
+        href: "/population/europe-change",
+        note: "GHSL 2000→2025 growth and decline grid",
+      },
+      {
         title: "Compare regional populations",
         href: "/population/compare",
         note: "Paint provinces into groups and download a map",

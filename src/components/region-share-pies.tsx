@@ -27,6 +27,74 @@ const SLICE_COLORS = [
   "#64748b",
 ];
 const OTHER_FILL = "#e2e8f0";
+const RADIAN = Math.PI / 180;
+
+/** Short labels for crowded pie callouts; legend keeps the full name. */
+function pieCalloutName(name: string): string {
+  switch (name) {
+    case "United Kingdom":
+      return "UK";
+    case "United States":
+      return "US";
+    case "Dominican Republic":
+      return "Dom. Rep.";
+    case "Papua New Guinea":
+      return "PNG";
+    case "Central African Republic":
+      return "CAR";
+    case "Bosnia and Herzegovina":
+      return "Bosnia";
+    case "United Arab Emirates":
+      return "UAE";
+    case "Costa Rica":
+      return "C. Rica";
+    case "El Salvador":
+      return "El Salv.";
+    default:
+      return name;
+  }
+}
+
+type PieLabelProps = {
+  cx?: number;
+  cy?: number;
+  midAngle?: number;
+  outerRadius?: number;
+  name?: string;
+  percent?: number;
+  fill?: string;
+};
+
+/** Position callouts outside the pie with correct textAnchor so left/right sides stay in view. */
+function PieSliceLabel({
+  cx = 0,
+  cy = 0,
+  midAngle = 0,
+  outerRadius = 0,
+  name,
+  percent = 0,
+  fill,
+}: PieLabelProps) {
+  if (!name || percent < 0.04) return null;
+  const label = pieCalloutName(String(name));
+  const r = outerRadius + 14;
+  const x = cx + r * Math.cos(-midAngle * RADIAN);
+  const y = cy + r * Math.sin(-midAngle * RADIAN);
+  const onRight = x >= cx;
+  return (
+    <text
+      x={x}
+      y={y}
+      fill={fill ?? "#334155"}
+      textAnchor={onRight ? "start" : "end"}
+      dominantBaseline="central"
+      fontSize={11}
+      fontWeight={500}
+    >
+      {label}
+    </text>
+  );
+}
 
 type ColoredSlice = ShareSlice & { color: string };
 
@@ -98,12 +166,22 @@ function PieBlock({
       <div
         className={
           layout === "page"
-            ? "h-[280px] w-full max-w-[320px] sm:h-[340px] sm:max-w-[380px]"
-            : "h-[240px] w-full max-w-[280px] sm:h-[280px] sm:max-w-[320px]"
+            ? showSliceNames
+              ? "h-[320px] w-full max-w-[360px] sm:h-[380px] sm:max-w-[420px]"
+              : "h-[280px] w-full max-w-[320px] sm:h-[340px] sm:max-w-[380px]"
+            : showSliceNames
+              ? "h-[280px] w-full max-w-[320px] sm:h-[320px] sm:max-w-[360px]"
+              : "h-[240px] w-full max-w-[280px] sm:h-[280px] sm:max-w-[320px]"
         }
       >
         <ResponsiveContainer width="100%" height="100%">
-          <PieChart>
+          <PieChart
+            margin={
+              showSliceNames
+                ? { top: 12, right: 56, bottom: 12, left: 56 }
+                : { top: 0, right: 0, bottom: 0, left: 0 }
+            }
+          >
             <Tooltip content={<SliceTooltip />} />
             <Pie
               data={data}
@@ -111,18 +189,20 @@ function PieBlock({
               nameKey="name"
               cx="50%"
               cy="50%"
-              outerRadius={showSliceNames ? "72%" : "88%"}
+              outerRadius={showSliceNames ? "62%" : "88%"}
               paddingAngle={0.6}
               isAnimationActive={false}
               stroke="#fff"
               strokeWidth={1}
-              label={
+              label={showSliceNames ? PieSliceLabel : false}
+              labelLine={
                 showSliceNames
-                  ? ({ name, percent }) =>
-                      percent >= 0.04 ? String(name) : ""
+                  ? {
+                      stroke: "#94a3b8",
+                      strokeWidth: 1,
+                    }
                   : false
               }
-              labelLine={showSliceNames}
             >
               {data.map((s) => (
                 <Cell key={s.iso3 ?? s.name} fill={s.color} />

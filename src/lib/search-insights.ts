@@ -620,6 +620,7 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "Where the births are", href: "/population/shares", region: "Worldwide" },
     { title: "Compare regional populations", href: "/population/compare", region: "Worldwide" },
     { title: "India population dots", href: "/population/india-dots", region: "India" },
+    { title: "Europe population change", href: "/population/europe-change", region: "Europe" },
     { title: "India population", href: "/population/india", region: "India" },
     { title: "China population", href: "/population/china", region: "China" },
     { title: "Nigeria population", href: "/population/nigeria", region: "Africa" },

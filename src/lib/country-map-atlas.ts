@@ -7,7 +7,21 @@ import {
   type RegionalShareSet,
 } from "@/lib/regional-shares";
 
-export type MapMetricId = "tfr" | "population" | "pop-growth" | "gfr" | "religion";
+export type MapMetricId =
+  | "tfr"
+  | "population"
+  | "pop-growth"
+  | "gfr"
+  | "religion"
+  | "median-age"
+  | "working-age"
+  | "working-age-pct"
+  | "natural-change"
+  | "net-migration"
+  | "employment"
+  | "employment-gap"
+  | "neet";
+
 
 export type CountryMapRegion = {
   id: string;
@@ -271,6 +285,104 @@ function catalogPopChange(layer: SubnationalMap): CountryMapMetric {
   };
 }
 
+const CATALOG_METRIC_META: Partial<
+  Record<
+    SubnationalMap["metric"],
+    {
+      id: MapMetricId;
+      label: string;
+      decimals: number;
+      scale?: ScaleType;
+    }
+  >
+> = {
+  "median-age": {
+    id: "median-age",
+    label: "Median age",
+    decimals: 1,
+    scale: "plasma",
+  },
+  "working-age": {
+    id: "working-age",
+    label: "Working-age population",
+    decimals: 0,
+    scale: "sequential",
+  },
+  "working-age-pct": {
+    id: "working-age-pct",
+    label: "Working-age share",
+    decimals: 1,
+    scale: "sequential",
+  },
+  "natural-change": {
+    id: "natural-change",
+    label: "Natural population change",
+    decimals: 1,
+    scale: "diverging-growth",
+  },
+  "net-migration": {
+    id: "net-migration",
+    label: "Net migration",
+    decimals: 1,
+    scale: "diverging-growth",
+  },
+  employment: {
+    id: "employment",
+    label: "Employment rate",
+    decimals: 1,
+    scale: "sequential",
+  },
+  "employment-gap": {
+    id: "employment-gap",
+    label: "Gender employment gap",
+    decimals: 1,
+    scale: "diverging-growth",
+  },
+  neet: {
+    id: "neet",
+    label: "NEET rate",
+    decimals: 1,
+    scale: "sequential",
+  },
+};
+
+function catalogLayerToMetric(layer: SubnationalMap): CountryMapMetric | null {
+  if (layer.metric === "tfr") return tfrMapsToMetric([layer]);
+  if (layer.metric === "pop-change") return catalogPopChange(layer);
+  const meta = CATALOG_METRIC_META[layer.metric];
+  if (!meta) return null;
+  const scale: ScaleType =
+    layer.scale === "diverging-tfr"
+      ? "diverging-tfr"
+      : layer.scale === "plasma"
+        ? "plasma"
+        : layer.scale === "diverging-growth"
+          ? "diverging-growth"
+          : meta.scale ?? "sequential";
+  return {
+    id: meta.id,
+    label: meta.label,
+    unit: layer.unit,
+    decimals: meta.decimals,
+    scale,
+    mid: layer.mid,
+    years: [layer.year],
+    yearFrom: layer.yearFrom,
+    valuesByYear: {
+      [layer.year]: layer.regions.map((r) => ({
+        id: r.id,
+        slug: r.slug,
+        name: r.name,
+        value: r.value,
+      })),
+    },
+    nationalByYear: { [layer.year]: layer.national },
+    sourceByYear: { [layer.year]: layer.source },
+    sourceUrl: layer.sourceUrl,
+    credit: layer.credit,
+  };
+}
+
 function adminPopulation(iso3: string): CountryMapMetric | null {
   const slugs = divisionsByIso3().get(iso3);
   if (!slugs) return null;
@@ -407,10 +519,10 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
   const entries: CountryMapEntry[] = [];
   for (const [iso3, layers] of byIso) {
     const first = layers[0];
-    const tfrLayers = layers.filter((m) => m.metric === "tfr");
+    const tabbed = layers.filter((m) => m.tab);
     const splitTabs =
-      tfrLayers.some((m) => m.tab) &&
-      new Set(tfrLayers.map((m) => m.geoUrl)).size > 1;
+      new Set(tabbed.map((m) => m.tab)).size > 1 ||
+      new Set(tabbed.map((m) => m.geoUrl)).size > 1;
 
     const extraMetrics: CountryMapMetric[] = [];
     const pop = adminPopulation(iso3);
@@ -422,27 +534,60 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
     const gfr = adminGfr(iso3);
     if (gfr) extraMetrics.push(gfr);
 
+    const TAB_ORDER = ["Provinces", "Districts", "Countries"];
     const mapTabs: CountryMapTab[] | undefined = splitTabs
-      ? [...tfrLayers]
+      ? [...new Set(tabbed.map((m) => m.tab!))]
           .sort((a, b) => {
-            const ap = a.kind === "country" ? 1 : 0;
-            const bp = b.kind === "country" ? 1 : 0;
-            return ap - bp;
+            const ai = TAB_ORDER.indexOf(a);
+            const bi = TAB_ORDER.indexOf(b);
+            if (ai === -1 && bi === -1) return a.localeCompare(b);
+            if (ai === -1) return 1;
+            if (bi === -1) return -1;
+            return ai - bi;
           })
-          .map((m) => ({
-            id: m.id,
-            label: m.tab ?? m.kind,
-            geoUrl: m.geoUrl,
-            kind: m.kind,
-            note: m.note,
-            metrics: [tfrMapsToMetric([m])],
-          }))
+          .map((tab) => {
+            const group = tabbed.filter((m) => m.tab === tab);
+            const metrics = group
+              .map((m) => catalogLayerToMetric(m))
+              .filter((m): m is CountryMapMetric => m != null);
+            // Stable indicator order within a tab
+            const order = [
+              "tfr",
+              "median-age",
+              "working-age-pct",
+              "working-age",
+              "natural-change",
+              "net-migration",
+              "employment",
+              "employment-gap",
+              "neet",
+              "population",
+              "pop-growth",
+              "gfr",
+            ] as MapMetricId[];
+            metrics.sort(
+              (a, b) => order.indexOf(a.id) - order.indexOf(b.id),
+            );
+            return {
+              id: group[0].id,
+              label: tab,
+              geoUrl: group[0].geoUrl,
+              kind: group[0].kind,
+              note: group.find((m) => m.note)?.note,
+              metrics,
+            };
+          })
       : undefined;
 
     const tfr = catalogToTfr(layers);
     const metrics: CountryMapMetric[] = [];
     if (tfr) {
       metrics.push(ADMIN1_GEO[iso3] ? mergeAdmin1TfrYears(iso3, tfr) : tfr);
+    }
+    for (const layer of layers) {
+      if (layer.metric === "tfr" || layer.metric === "pop-change") continue;
+      const m = catalogLayerToMetric(layer);
+      if (m && !metrics.some((x) => x.id === m.id)) metrics.push(m);
     }
     metrics.push(...extraMetrics);
 

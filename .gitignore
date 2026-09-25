@@ -37,7 +37,10 @@ yarn-error.log*
 /.cache
 /data/raw
 /data/worldpop
+/data/ghsl
+/data/eurostat
 /data/pmtiles
+/data/ryb-2026.json
 /.tmp-map-build
 /.tmp-pylib/
 
