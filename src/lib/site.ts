@@ -224,6 +224,11 @@ export const navTopics: NavTopic[] = [
         description: "Demographic scenario simulator",
       },
       {
+        title: "Stories",
+        href: "/stories",
+        description: "Animated rankings — play and download GIF or video",
+      },
+      {
         title: "Fertility clock",
         href: "/clock",
         description: "Live fertility countdown",
@@ -288,6 +293,7 @@ export const referenceNav: NavLink[] = [
 export const primaryNav: NavLink[] = [
   { title: "Topics", href: "/topics" },
   { title: "Maps", href: "/maps" },
+  { title: "Stories", href: "/stories" },
   { title: "Tools", href: "/topics#tools" },
   { title: "Cities", href: "/cities" },
   { title: "Clock", href: "/clock" },

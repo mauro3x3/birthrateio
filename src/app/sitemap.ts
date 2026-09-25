@@ -7,6 +7,7 @@ import {
 } from "@/lib/country-topics";
 import { getCountryMapAtlas } from "@/lib/country-map-atlas";
 import { CENSUS_COUNTRIES } from "@/lib/sources/census-maps-data";
+import { STORY_CATALOG } from "@/lib/stories";
 
 export const revalidate = 86400;
 
@@ -31,6 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/crime",
     "/workers-retirees",
     "/maps",
+    "/stories",
     "/demographics",
     "/demographics/us",
     "/gdp",
@@ -69,6 +71,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const censusRoutes = CENSUS_COUNTRIES.filter((c) => c.slug !== "uk").map(
     (c) => ({
       url: `${base}/demographics/${c.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    }),
+  );
+
+  const storyRoutes = STORY_CATALOG.filter((s) => s.status === "live").map(
+    (s) => ({
+      url: `${base}/stories/${s.slug}`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
@@ -174,6 +185,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticRoutes,
     ...mapCountryRoutes,
     ...censusRoutes,
+    ...storyRoutes,
     ...countryRoutes,
     ...briefRoutes,
     ...topicCountryRoutes,

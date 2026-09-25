@@ -1363,16 +1363,13 @@ export default async function FertilityByRacePage() {
           <div className="mt-5 grid gap-8 lg:grid-cols-2">
             <ChartCard
               title="Total fertility rate, national total"
-              subtitle="DANE Estadísticas Vitales · 2016–2025"
+              description="DANE Estadísticas Vitales · 2016–2025"
               source={COLOMBIA_VITAL_DANE.source}
-              sourceUrl={COLOMBIA_VITAL_DANE.sourceUrl}
             >
               <MultiSeriesChart
                 data={colTfrRows}
                 xKey="year"
                 series={[{ key: "tfr", label: "TGF", color: "#6b5b95" }]}
-                yDomain={[1, 2]}
-                yTicks={[1, 1.2, 1.4, 1.6, 1.8, 2]}
                 showValues
                 height={280}
               />

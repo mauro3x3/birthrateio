@@ -716,9 +716,8 @@ export default async function CountryPage({
               <div className="grid gap-4 lg:grid-cols-2">
                 <ChartCard
                   title={`Jewish women by religiosity · ${israelReligiosity.periodLabel}`}
-                  subtitle={`All Jewish women ${israelReligiosity.jewish.total}`}
+                  description={`All Jewish women ${israelReligiosity.jewish.total}`}
                   source={israelReligiosity.source}
-                  sourceUrl={israelReligiosity.sourceUrl}
                 >
                   <GroupedBarLegend
                     series={[
@@ -751,9 +750,8 @@ export default async function CountryPage({
                 </ChartCard>
                 <ChartCard
                   title={`Muslim women by religiosity · ${israelReligiosity.periodLabel}`}
-                  subtitle={`All Muslim women ${israelReligiosity.muslim.total}`}
+                  description={`All Muslim women ${israelReligiosity.muslim.total}`}
                   source={israelReligiosity.source}
-                  sourceUrl={israelReligiosity.sourceUrl}
                 >
                   <GroupedBarLegend
                     series={[

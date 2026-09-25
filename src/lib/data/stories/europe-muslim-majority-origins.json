@@ -1,0 +1,565 @@
+{
+  "id": "europe-muslim-majority-origins",
+  "slug": "europe-muslim-majority-origins",
+  "title": "Born in Muslim-majority countries \u2014 Europe",
+  "subtitle": "Foreign-born stock from Muslim-majority origins, 1990\u20132024",
+  "metricLabel": "Residents",
+  "metricKind": "count",
+  "unit": "",
+  "decimals": 0,
+  "topN": 15,
+  "years": [
+    1990,
+    2000,
+    2010,
+    2015,
+    2020,
+    2024
+  ],
+  "note": "UN DESA International Migrant Stock: people living in each European country who were born in a Muslim-majority country. This is not a religion census \u2014 European-born children of those communities are not counted, and some origin countries are religiously mixed. Turkey, Albania and Kosovo are treated as origins, not as destinations in this race.",
+  "source": "UN DESA International Migrant Stock 2024 (bilateral corridors compiled from national statistical offices).",
+  "sourceUrl": "https://www.un.org/development/desa/pd/content/international-migrant-stock",
+  "sidebarTitle": "Europe total (selected destinations)",
+  "series": [
+    {
+      "id": "deu",
+      "iso3": "DEU",
+      "name": "Germany",
+      "flag": "\ud83c\udde9\ud83c\uddea",
+      "color": "#1a5276",
+      "values": {
+        "1990": 1425148,
+        "2000": 2257186,
+        "2010": 2587572,
+        "2015": 2776838,
+        "2020": 3712152,
+        "2024": 4324402
+      }
+    },
+    {
+      "id": "fra",
+      "iso3": "FRA",
+      "name": "France",
+      "flag": "\ud83c\uddeb\ud83c\uddf7",
+      "color": "#2874a6",
+      "values": {
+        "1990": 2728722,
+        "2000": 2801895,
+        "2010": 3260624,
+        "2015": 3537569,
+        "2020": 3859428,
+        "2024": 4158689
+      }
+    },
+    {
+      "id": "ita",
+      "iso3": "ITA",
+      "name": "Italy",
+      "flag": "\ud83c\uddee\ud83c\uddf9",
+      "color": "#922b21",
+      "values": {
+        "1990": 254954,
+        "2000": 506133,
+        "2010": 1220697,
+        "2015": 1455923,
+        "2020": 1804123,
+        "2024": 2026058
+      }
+    },
+    {
+      "id": "gbr",
+      "iso3": "GBR",
+      "name": "United Kingdom",
+      "flag": "\ud83c\uddec\ud83c\udde7",
+      "color": "#5dade2",
+      "values": {
+        "1990": 442611,
+        "2000": 684317,
+        "2010": 1160828,
+        "2015": 1340948,
+        "2020": 1519386,
+        "2024": 1656827
+      }
+    },
+    {
+      "id": "esp",
+      "iso3": "ESP",
+      "name": "Spain",
+      "flag": "\ud83c\uddea\ud83c\uddf8",
+      "color": "#c0392b",
+      "values": {
+        "1990": 108720,
+        "2000": 323052,
+        "2010": 997003,
+        "2015": 963394,
+        "2020": 1228595,
+        "2024": 1485609
+      }
+    },
+    {
+      "id": "nld",
+      "iso3": "NLD",
+      "name": "Netherlands",
+      "flag": "\ud83c\uddf3\ud83c\uddf1",
+      "color": "#e67e22",
+      "values": {
+        "1990": 504425,
+        "2000": 621660,
+        "2010": 654027,
+        "2015": 667352,
+        "2020": 752163,
+        "2024": 847558
+      }
+    },
+    {
+      "id": "swe",
+      "iso3": "SWE",
+      "name": "Sweden",
+      "flag": "\ud83c\uddf8\ud83c\uddea",
+      "color": "#1e8449",
+      "values": {
+        "1990": 112256,
+        "2000": 194815,
+        "2010": 349772,
+        "2015": 491215,
+        "2020": 712943,
+        "2024": 837730
+      }
+    },
+    {
+      "id": "grc",
+      "iso3": "GRC",
+      "name": "Greece",
+      "flag": "\ud83c\uddec\ud83c\uddf7",
+      "color": "#8e44ad",
+      "values": {
+        "1990": 200502,
+        "2000": 577045,
+        "2010": 651626,
+        "2015": 612024,
+        "2020": 689034,
+        "2024": 731965
+      }
+    },
+    {
+      "id": "ukr",
+      "iso3": "UKR",
+      "name": "Ukraine",
+      "flag": "\ud83c\uddfa\ud83c\udde6",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 669601,
+        "2000": 710053,
+        "2010": 619541,
+        "2015": 623807,
+        "2020": 634225,
+        "2024": 642701
+      }
+    },
+    {
+      "id": "bel",
+      "iso3": "BEL",
+      "name": "Belgium",
+      "flag": "\ud83c\udde7\ud83c\uddea",
+      "color": "#7d3c98",
+      "values": {
+        "1990": 171231,
+        "2000": 227238,
+        "2010": 389535,
+        "2015": 475344,
+        "2020": 564814,
+        "2024": 666758
+      }
+    },
+    {
+      "id": "aut",
+      "iso3": "AUT",
+      "name": "Austria",
+      "flag": "\ud83c\udde6\ud83c\uddf9",
+      "color": "#b9770e",
+      "values": {
+        "1990": 100631,
+        "2000": 151390,
+        "2010": 211120,
+        "2015": 269164,
+        "2020": 328325,
+        "2024": 397500
+      }
+    },
+    {
+      "id": "che",
+      "iso3": "CHE",
+      "name": "Switzerland",
+      "flag": "\ud83c\udde8\ud83c\udded",
+      "color": "#1abc9c",
+      "values": {
+        "1990": 90394,
+        "2000": 104157,
+        "2010": 130372,
+        "2015": 150610,
+        "2020": 188093,
+        "2024": 217268
+      }
+    },
+    {
+      "id": "nor",
+      "iso3": "NOR",
+      "name": "Norway",
+      "flag": "\ud83c\uddf3\ud83c\uddf4",
+      "color": "#16a085",
+      "values": {
+        "1990": 30242,
+        "2000": 54547,
+        "2010": 110697,
+        "2015": 151233,
+        "2020": 189589,
+        "2024": 210814
+      }
+    },
+    {
+      "id": "dnk",
+      "iso3": "DNK",
+      "name": "Denmark",
+      "flag": "\ud83c\udde9\ud83c\uddf0",
+      "color": "#d35400",
+      "values": {
+        "1990": 56770,
+        "2000": 105740,
+        "2010": 128844,
+        "2015": 155893,
+        "2020": 182163,
+        "2024": 194692
+      }
+    },
+    {
+      "id": "fin",
+      "iso3": "FIN",
+      "name": "Finland",
+      "flag": "\ud83c\uddeb\ud83c\uddee",
+      "color": "#2980b9",
+      "values": {
+        "1990": 3285,
+        "2000": 14430,
+        "2010": 34770,
+        "2015": 62262,
+        "2020": 79216,
+        "2024": 93251
+      }
+    },
+    {
+      "id": "mkd",
+      "iso3": "MKD",
+      "name": "North Macedonia",
+      "flag": "\ud83c\uddf2\ud83c\uddf0",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 58387,
+        "2000": 89801,
+        "2010": 91813,
+        "2015": 89685,
+        "2020": 90095,
+        "2024": 90416
+      }
+    },
+    {
+      "id": "bgr",
+      "iso3": "BGR",
+      "name": "Bulgaria",
+      "flag": "\ud83c\udde7\ud83c\uddec",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 2553,
+        "2000": 7311,
+        "2010": 17330,
+        "2015": 40407,
+        "2020": 46594,
+        "2024": 64074
+      }
+    },
+    {
+      "id": "prt",
+      "iso3": "PRT",
+      "name": "Portugal",
+      "flag": "\ud83c\uddf5\ud83c\uddf9",
+      "color": "#27ae60",
+      "values": {
+        "1990": 7931,
+        "2000": 25912,
+        "2010": 39117,
+        "2015": 44338,
+        "2020": 52910,
+        "2024": 59522
+      }
+    },
+    {
+      "id": "hun",
+      "iso3": "HUN",
+      "name": "Hungary",
+      "flag": "\ud83c\udded\ud83c\uddfa",
+      "color": "#a93226",
+      "values": {
+        "1990": 7607,
+        "2000": 9224,
+        "2010": 14849,
+        "2015": 46354,
+        "2020": 27010,
+        "2024": 31860
+      }
+    },
+    {
+      "id": "cyp",
+      "iso3": "CYP",
+      "name": "Cyprus",
+      "flag": "\ud83c\udde8\ud83c\uddfe",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 4461,
+        "2000": 8154,
+        "2010": 22556,
+        "2015": 23824,
+        "2020": 30683,
+        "2024": 32565
+      }
+    },
+    {
+      "id": "mda",
+      "iso3": "MDA",
+      "name": "Moldova",
+      "flag": "\ud83c\uddf2\ud83c\udde9",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 32287,
+        "2000": 15092,
+        "2010": 8674,
+        "2015": 7162,
+        "2020": 5332,
+        "2024": 4632
+      }
+    },
+    {
+      "id": "mlt",
+      "iso3": "MLT",
+      "name": "Malta",
+      "flag": "\ud83c\uddf2\ud83c\uddf9",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 1390,
+        "2000": 2092,
+        "2010": 6677,
+        "2015": 8130,
+        "2020": 17670,
+        "2024": 30712
+      }
+    },
+    {
+      "id": "ltu",
+      "iso3": "LTU",
+      "name": "Lithuania",
+      "flag": "\ud83c\uddf1\ud83c\uddf9",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 25886,
+        "2000": 11415,
+        "2010": 9159,
+        "2015": 7789,
+        "2020": 7840,
+        "2024": 8256
+      }
+    },
+    {
+      "id": "cze",
+      "iso3": "CZE",
+      "name": "Czechia",
+      "flag": "\ud83c\udde8\ud83c\uddff",
+      "color": "#5499c7",
+      "values": {
+        "1990": 1,
+        "2000": 2811,
+        "2010": 13972,
+        "2015": 17571,
+        "2020": 20387,
+        "2024": 22519
+      }
+    },
+    {
+      "id": "pol",
+      "iso3": "POL",
+      "name": "Poland",
+      "flag": "\ud83c\uddf5\ud83c\uddf1",
+      "color": "#c0392b",
+      "values": {
+        "1990": 4179,
+        "2000": 6428,
+        "2010": 11544,
+        "2015": 14407,
+        "2020": 17935,
+        "2024": 20150
+      }
+    },
+    {
+      "id": "lux",
+      "iso3": "LUX",
+      "name": "Luxembourg",
+      "flag": "\ud83c\uddf1\ud83c\uddfa",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 1188,
+        "2000": 1194,
+        "2010": 892,
+        "2015": 1355,
+        "2020": 17166,
+        "2024": 19828
+      }
+    },
+    {
+      "id": "lva",
+      "iso3": "LVA",
+      "name": "Latvia",
+      "flag": "\ud83c\uddf1\ud83c\uddfb",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 3053,
+        "2000": 17978,
+        "2010": 14568,
+        "2015": 12245,
+        "2020": 12990,
+        "2024": 11964
+      }
+    },
+    {
+      "id": "irl",
+      "iso3": "IRL",
+      "name": "Ireland",
+      "flag": "\ud83c\uddee\ud83c\uddea",
+      "color": "#229954",
+      "values": {
+        "1990": 708,
+        "2000": 2942,
+        "2010": 7888,
+        "2015": 12019,
+        "2020": 14470,
+        "2024": 16059
+      }
+    },
+    {
+      "id": "est",
+      "iso3": "EST",
+      "name": "Estonia",
+      "flag": "\ud83c\uddea\ud83c\uddea",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 15410,
+        "2000": 7618,
+        "2010": 8548,
+        "2015": 8267,
+        "2020": 9810,
+        "2024": 9994
+      }
+    },
+    {
+      "id": "rou",
+      "iso3": "ROU",
+      "name": "Romania",
+      "flag": "\ud83c\uddf7\ud83c\uddf4",
+      "color": "#f39c12",
+      "values": {
+        "1990": 3448,
+        "2000": 7674,
+        "2010": 9473,
+        "2015": 10241,
+        "2020": 11668,
+        "2024": 12845
+      }
+    },
+    {
+      "id": "svk",
+      "iso3": "SVK",
+      "name": "Slovakia",
+      "flag": "\ud83c\uddf8\ud83c\uddf0",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 230,
+        "2000": 1915,
+        "2010": 2102,
+        "2015": 2791,
+        "2020": 3645,
+        "2024": 3964
+      }
+    },
+    {
+      "id": "isl",
+      "iso3": "ISL",
+      "name": "Iceland",
+      "flag": "\ud83c\uddee\ud83c\uddf8",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 300,
+        "2000": 409,
+        "2010": 728,
+        "2015": 947,
+        "2020": 2204,
+        "2024": 3335
+      }
+    },
+    {
+      "id": "mne",
+      "iso3": "MNE",
+      "name": "Montenegro",
+      "flag": "\ud83c\uddf2\ud83c\uddea",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 2594,
+        "2000": 2594,
+        "2010": 2094,
+        "2015": 2841,
+        "2020": 2849,
+        "2024": 2826
+      }
+    },
+    {
+      "id": "srb",
+      "iso3": "SRB",
+      "name": "Serbia",
+      "flag": "\ud83c\uddf7\ud83c\uddf8",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 1614,
+        "2000": 774,
+        "2010": 1192,
+        "2015": 1638,
+        "2020": 2326,
+        "2024": 2756
+      }
+    },
+    {
+      "id": "svn",
+      "iso3": "SVN",
+      "name": "Slovenia",
+      "flag": "\ud83c\uddf8\ud83c\uddee",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 96,
+        "2000": 487,
+        "2010": 899,
+        "2015": 1243,
+        "2020": 2105,
+        "2024": 2387
+      }
+    },
+    {
+      "id": "hrv",
+      "iso3": "HRV",
+      "name": "Croatia",
+      "flag": "\ud83c\udded\ud83c\uddf7",
+      "color": "#5d6d7e",
+      "values": {
+        "1990": 409,
+        "2000": 510,
+        "2010": 1380,
+        "2015": 1387,
+        "2020": 1276,
+        "2024": 1214
+      }
+    }
+  ]
+}

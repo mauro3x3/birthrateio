@@ -30,6 +30,7 @@ const SITE_MAP = `
 - /demographics/russia : Russia 2021 census ethnic group by federal subject (Rosstat VPN-2020)
 - /demographics/<country> : Same census-map explorer for other European countries (France, Italy, Netherlands, …)
 - /state/<slug> : Subnational profile — population & fertility for a state/province/Land
+- /stories and /stories/<slug> : Animated bar-chart races (play + GIF/MP4 export). First live story: Europe residents born in Muslim-majority countries (UN DESA migrant stock).
 - /gdp : GDP explorer (rankings, GDP per capita, growth)
 - /cities : Cities database
 - /compare?countries=slug1,slug2,slug3 : Overlay multiple countries on any indicator. Optional from=&to= years zoom the chart (e.g. from=2000&to=2022).

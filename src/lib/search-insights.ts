@@ -694,6 +694,21 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "United States fertility by state", href: "/maps/usa", region: "USA" },
     { title: "Census maps", href: "/demographics", region: "Worldwide" },
     { title: "World fertility", href: "/fertility", region: "Worldwide" },
+    { title: "Stories — animated rankings", href: "/stories", region: "Worldwide" },
+  ],
+  "/stories": [
+    {
+      title: "Born in Muslim-majority countries — Europe",
+      href: "/stories/europe-muslim-majority-origins",
+      region: "Europe",
+    },
+    {
+      title: "Europe by population",
+      href: "/stories/europe-population",
+      region: "Europe",
+    },
+    { title: "Migration explorer", href: "/migration", region: "Worldwide" },
+    { title: "Census maps", href: "/demographics", region: "Worldwide" },
   ],
   "/demographics": [
     { title: "US race and Hispanic origin", href: "/demographics/us", region: "USA" },
