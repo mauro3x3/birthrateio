@@ -139,6 +139,109 @@ def nearest_year(series: dict[int, tuple[float, str]], target: int, window: int 
     return None, None
 
 
+def crosses_antimeridian(geom: dict) -> bool:
+    xs: list[float] = []
+
+    def walk(c):
+        if isinstance(c, (list, tuple)) and c and isinstance(c[0], (int, float)):
+            xs.append(float(c[0]))
+            return
+        if isinstance(c, (list, tuple)):
+            for x in c:
+                walk(x)
+
+    walk(geom.get("coordinates"))
+    if not xs:
+        return False
+    return (max(xs) - min(xs)) > 180
+
+
+def write_panasia_geo(bsm, features: list[dict]) -> str:
+    """Higher-detail admin-0 + outline-clipped seam seal (skip antimeridian)."""
+    from shapely.geometry import mapping, shape
+    from shapely.ops import unary_union
+    from shapely.validation import make_valid
+
+    sub = bsm.bsm  # build-subnational-maps helpers
+    out = []
+    for feat in features:
+        props = dict(feat.get("properties") or {})
+        iso = props.get("iso3") or ""
+        geom = feat.get("geometry") or {}
+        # Keep Russia intact — mainland is split across many NE rings; dropping
+        # all but 6 leaves rectangular voids across Siberia.
+        max_polys = 80 if iso == "RUS" else 12
+        max_pts = 220 if iso == "RUS" else 140
+        geom = sub.keep_mainlands(geom, max_polys=max_polys)
+        coords = geom.get("coordinates")
+        geom = {
+            "type": geom.get("type"),
+            "coordinates": sub.simplify_coords(coords, max_pts),
+        }
+        out.append(
+            {
+                "type": "Feature",
+                "id": feat.get("id"),
+                "properties": props,
+                "geometry": geom,
+            }
+        )
+
+    # Outline-clipped buffer so neighbours overlap without eating the coast,
+    # and without destroying Russia across the date line.
+    geoms = []
+    for f in out:
+        try:
+            geoms.append(make_valid(shape(f["geometry"])))
+        except Exception:
+            geoms.append(None)
+
+    valid = [g for g in geoms if g is not None and not g.is_empty]
+    outline = make_valid(unary_union(valid))
+    # Fill lakes/holes in the continental outline so buffers don't leak inward.
+    try:
+        from shapely.geometry import Polygon
+
+        def fill_holes(g):
+            if g.geom_type == "Polygon":
+                return Polygon(g.exterior)
+            if g.geom_type == "MultiPolygon":
+                return unary_union([Polygon(p.exterior) for p in g.geoms])
+            return g
+
+        outline = fill_holes(outline)
+    except Exception:
+        pass
+
+    pad = 0.012
+    for feat, geom in zip(out, geoms):
+        if geom is None or geom.is_empty:
+            continue
+        if crosses_antimeridian(feat["geometry"]):
+            # Leave date-line countries alone — buffering them creates voids.
+            continue
+        try:
+            expanded = geom.buffer(pad, join_style=1, mitre_limit=2.5, quad_segs=8)
+            clipped = make_valid(expanded.intersection(outline))
+            if clipped.is_empty or clipped.area < geom.area * 0.5:
+                continue
+            simplified = clipped.simplify(0.0015, preserve_topology=True)
+            if simplified.is_empty or simplified.area < geom.area * 0.5:
+                simplified = clipped
+            feat["geometry"] = mapping(make_valid(simplified))
+        except Exception:
+            continue
+
+    rel = "/geo/maps/panasia-tfr.json"
+    path = ROOT / "public" / rel.lstrip("/")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(
+        json.dumps({"type": "FeatureCollection", "features": out}, separators=(",", ":")),
+        encoding="utf-8",
+    )
+    return rel
+
+
 def main() -> None:
     bsm = load_bsm()
     print("Natural Earth admin-0…", flush=True)
@@ -166,7 +269,7 @@ def main() -> None:
                 "properties": {"name": name, "slug": slug, "iso3": code},
             }
         )
-    geo_url = bsm.write_geo("panasia-tfr", feats, max_pts=55)
+    geo_url = write_panasia_geo(bsm, feats)
     print(f"geo {geo_url} ({len(feats)} polygons)")
 
     slug_by_iso = {

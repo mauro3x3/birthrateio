@@ -71,7 +71,7 @@ const MAP_FIT_CLAMP: Partial<
 > = {
   EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
   AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
-  PANASIA: { west: 24.5, south: -12.5, east: 150, north: 56 },
+  PANASIA: { west: 24.5, south: -12.5, east: 155, north: 72 },
   COL: { west: -79.15, south: -4.35, east: -66.8, north: 12.55 },
   ARG: { west: -73.6, south: -55.15, east: -53.5, north: -21.7 },
   BRA: { west: -74.2, south: -34.0, east: -34.6, north: 5.4 },
@@ -535,7 +535,7 @@ export function CountryMapExplorer({
                   RUS: 3.6,
                   AFRICA: 4.5,
                   EU: 4.15,
-                  PANASIA: 2.65,
+                  PANASIA: 2.35,
                   SOUTHAMERICA: 2.9,
                   MENA: 3.2,
                   SAU: 5.8,
@@ -589,6 +589,7 @@ export function CountryMapExplorer({
               revision={`${country.iso3}-${geoUrl}-${metric?.id ?? metricId}-${variant?.id ?? "base"}-${activeYear}-${panelOpen ? "p" : "f"}-${showValues ? "v" : "h"}`}
               oceanColor={MAP_OCEAN.atlas}
               variant="light"
+              preferCanvas
               adaptiveStroke={country.iso3 !== "USA"}
               showLabels={religionMode ? false : showValues}
               selectedIds={selectedIds}

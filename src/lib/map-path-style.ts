@@ -29,12 +29,12 @@ export function countryBorderStyle(
     };
   }
   if (kind === "atlas") {
-    // Eurostat Statistical Atlas style — thin dark seams stay readable
-    // at continental zoom (NUTS 3 etc.), not fill-matched blobs.
+    // Slightly heavier than a hairline so RDP seams don’t flash ocean
+    // (stroke is painted under fill via CSS paint-order).
     return {
       stroke: true,
-      color: "rgba(48, 58, 72, 0.55)",
-      weight: 0.55,
+      color: "rgba(48, 58, 72, 0.45)",
+      weight: 1.05,
       opacity: 1,
       lineJoin: "round",
       lineCap: "round",

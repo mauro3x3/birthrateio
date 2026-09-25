@@ -427,12 +427,12 @@ def write_geo(map_id: str, features: list[dict]) -> str:
     if china:
         close_enclave_gaps(features, CHINA_ENCLAVES)
     out = [simplify_feature(f, max_pts=max_pts) for f in features]
-    if china:
-        # Seal after simplify so independently-reduced borders still overlap.
-        try:
-            seal_internal_gaps(out, buffer_deg=0.06)
-        except ImportError:
-            print("shapely not installed; china map gaps not sealed")
+    # Seal after simplify so independently-reduced borders still overlap
+    # (otherwise atlas ocean flashes between states/provinces).
+    try:
+        seal_internal_gaps(out, buffer_deg=0.06 if china else 0.004)
+    except ImportError:
+        print(f"shapely not installed; {map_id} gaps not sealed")
     fc = {"type": "FeatureCollection", "features": out}
     path.write_text(json.dumps(fc, separators=(",", ":")), encoding="utf-8")
     return rel

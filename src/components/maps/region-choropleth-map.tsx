@@ -84,9 +84,9 @@ function AdaptiveStrokeSync({
       if (z < 8.75) {
         path.setStyle({
           stroke: true,
-          weight: z < 5 ? 0.45 : 0.55,
+          weight: z < 5 ? 0.9 : 1.05,
           opacity: 1,
-          color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.55)",
+          color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.45)",
           lineJoin: "round",
           lineCap: "round",
         });
@@ -96,7 +96,7 @@ function AdaptiveStrokeSync({
       if (z < 10.25) {
         path.setStyle({
           stroke: true,
-          weight: 0.65,
+          weight: 0.85,
           opacity: 1,
           color: cinema ? "rgba(0,0,0,0.4)" : "rgba(48, 58, 72, 0.42)",
           lineJoin: "round",
@@ -1100,12 +1100,12 @@ export function RegionChoroplethMap({
         ...(adaptiveStroke
           ? {
               // Initial paint matches continental AdaptiveStrokeSync hairlines;
-              // zoomend refreshes weight/colour. Avoid fill-matched strokes —
-              // they erase district edges until deep zoom.
+              // zoomend refreshes weight/colour. Stroke under fill (CSS) seals
+              // simplify gaps without fill-matched speckles.
               stroke: true,
-              weight: 0.55,
+              weight: 1.05,
               opacity: 1,
-              color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.55)",
+              color: cinema ? "rgba(0,0,0,0.55)" : "rgba(48, 58, 72, 0.45)",
               lineJoin: "round" as const,
               lineCap: "round" as const,
             }

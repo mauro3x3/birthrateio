@@ -288,22 +288,23 @@
   color: rgba(255, 255, 255, 0.75) !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
-/* Crisper vector edges — dark hairline seams (never fill-matched strokes). */
+/* Crisper vector edges — stroke under fill seals micro-gaps from simplify. */
 .leaflet-container svg path {
   stroke-linejoin: round;
   stroke-linecap: round;
   shape-rendering: geometricPrecision;
+  paint-order: stroke fill;
 }
 .leaflet-container.br-cinema-map {
   background: #0a0a0a !important;
 }
 .leaflet-container.br-cinema-map svg path {
-  /* Stroke under fill so coasts melt into the ocean; seams stay between fills. */
   paint-order: stroke fill;
 }
-/* Dense choropleths: crisp edges; hairlines sit on top of fills (Eurostat). */
+/* Dense choropleths: same seal; hairlines still read between fills. */
 .leaflet-container.br-dense-choropleth svg path {
   shape-rendering: geometricPrecision;
+  paint-order: stroke fill;
 }
 .leaflet-tooltip {
   border: 1px solid hsl(var(--border));
