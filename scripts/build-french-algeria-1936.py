@@ -76,9 +76,17 @@ def fold(name: str) -> str:
     return s.lower().strip()
 
 
-def simplify(geom, tol=0.012):
+def simplify(geom, tol=0.01):
     try:
         return make_valid(geom).simplify(tol, preserve_topology=True)
+    except Exception:
+        return geom
+
+
+def close_seams(geom, pad=0.0035):
+    try:
+        g = make_valid(geom.buffer(pad))
+        return g if not g.is_empty else geom
     except Exception:
         return geom
 
@@ -185,7 +193,7 @@ def main() -> None:
             continue
         if clipped.is_empty or clipped.area < 0.0015:
             continue
-        geom = simplify(clipped)
+        geom = close_seams(simplify(clipped))
         if geom.is_empty:
             continue
 

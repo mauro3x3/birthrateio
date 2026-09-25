@@ -1265,7 +1265,7 @@ export function RegionChoroplethMap({
           boxZoom={false}
           scrollWheelZoom
           zoomControl={false}
-          preferCanvas={false}
+          preferCanvas={preferCanvas}
           className={cinema ? "br-cinema-map" : adaptiveStroke ? "br-dense-choropleth" : undefined}
           style={{ height: "100%", width: "100%", background: ocean }}
         >

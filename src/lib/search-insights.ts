@@ -686,6 +686,7 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "Mexico fertility by state", href: "/maps/mex", region: "Mexico" },
     { title: "Europe fertility by province", href: "/maps/eu", region: "Europe" },
     { title: "Middle East fertility", href: "/maps/mena", region: "Middle East" },
+    { title: "Asia fertility (1960–2020)", href: "/maps/panasia", region: "Asia" },
     { title: "Historic empire maps", href: "/maps/historic", region: "Worldwide" },
     { title: "Saudi Arabia fertility by region", href: "/maps/sau", region: "Middle East" },
     { title: "Africa fertility map", href: "/maps/africa", region: "Africa" },

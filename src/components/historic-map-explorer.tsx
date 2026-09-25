@@ -4,7 +4,7 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { HistoricMapEntry } from "@/lib/sources/historic-maps-data";
-import { buildClassedScale, buildLogClassedScale } from "@/lib/color-scale";
+import { buildColorScale } from "@/lib/color-scale";
 import { MAP_OCEAN } from "@/lib/map-path-style";
 import { cn, formatCompact, formatNumber } from "@/lib/utils";
 
@@ -104,13 +104,13 @@ const FIT: Record<
     maxZoom: 7.4,
   },
   "french-algeria-1936": {
-    // Frame the Tell / Oranie–Algiers–Constantine belt; Sahara wilayas stay on the layer.
-    clamp: { west: -2.6, south: 32.4, east: 9.2, north: 37.5 },
-    maxZoom: 7.0,
+    // Include Sahara so fitBounds doesn't over-zoom the Tell belt.
+    clamp: { west: -9.2, south: 18.8, east: 12.4, north: 38.0 },
+    maxZoom: 5.35,
   },
   "ottoman-empire-1914": {
-    clamp: { west: 24.5, south: 29.5, east: 49.5, north: 43.5 },
-    maxZoom: 5.8,
+    clamp: { west: 22.5, south: 28.5, east: 50.5, north: 43.8 },
+    maxZoom: 5.5,
   },
   "africa-1880": {
     clamp: { west: -20, south: -36, east: 52, north: 38 },
@@ -161,12 +161,8 @@ export function HistoricMapExplorer({
   );
 
   React.useEffect(() => {
-    // Numbers on by default for pop/density so the layer is readable.
-    if (metric === "population" || metric === "density") {
-      setShowValues(true);
-    } else {
-      setShowValues(false);
-    }
+    // Keep numbers off by default — dense historic mosaics get unreadable fast.
+    setShowValues(false);
   }, [metric]);
 
   const formatPop = React.useCallback((v: number) => {
@@ -179,17 +175,8 @@ export function HistoricMapExplorer({
   const formatDens = React.useCallback((v: number) => {
     if (v >= 100) return formatNumber(v, 0);
     if (v >= 10) return formatNumber(v, 1);
-    return formatNumber(v, 1);
+    return formatNumber(v, 2);
   }, []);
-
-  const formatRange = React.useCallback(
-    (lo: number, hi: number, kind: "population" | "density") => {
-      const fmt = kind === "population" ? formatPop : formatDens;
-      const unit = kind === "density" ? "/km²" : "";
-      return `${fmt(lo)}–${fmt(hi)}${unit}`;
-    },
-    [formatPop, formatDens],
-  );
 
   const groupById = React.useMemo(() => {
     const list =
@@ -248,18 +235,18 @@ export function HistoricMapExplorer({
   }, [scopedAreas, selectedCode]);
 
   const popScale = React.useMemo(() => {
-    return buildClassedScale(
+    return buildColorScale(
       scopedAreas.map((a) => a.population).filter((v) => v > 0),
-      5,
+      "sequential-historic-log",
     );
   }, [scopedAreas]);
 
   const densityScale = React.useMemo(() => {
-    return buildLogClassedScale(
+    return buildColorScale(
       scopedAreas
         .map((a) => a.density ?? 0)
         .filter((v) => Number.isFinite(v) && v > 0),
-      5,
+      "sequential-historic-log",
     );
   }, [scopedAreas]);
 
@@ -313,15 +300,20 @@ export function HistoricMapExplorer({
       }));
     }
     const scale = metric === "population" ? popScale : densityScale;
-    return scale.ranges.map((r) => ({
-      label: formatRange(
-        r.lo,
-        r.hi,
-        metric === "population" ? "population" : "density",
-      ),
-      color: r.color,
+    const fmt = metric === "population" ? formatPop : formatDens;
+    const unit = metric === "density" ? "/km²" : "";
+    return scale.legend.map((s) => ({
+      label: `${fmt(s.value)}${unit}`,
+      color: s.color,
     }));
-  }, [metric, activeGroups, popScale, densityScale, formatRange]);
+  }, [
+    metric,
+    activeGroups,
+    popScale,
+    densityScale,
+    formatPop,
+    formatDens,
+  ]);
 
   const legendTitle =
     metric === "nationality"
@@ -329,8 +321,8 @@ export function HistoricMapExplorer({
       : metric === "religion"
         ? `${pack.year} religion`
         : metric === "population"
-          ? "Population (quintiles)"
-          : "People / km² (log bins)";
+          ? "Population"
+          : "People / km²";
 
   const formatValue = React.useCallback(
     (v: number) => {
@@ -421,11 +413,13 @@ export function HistoricMapExplorer({
   }, [isAh, scope, pack.totalPopulation, scopedAreas]);
 
   const scopeHeading =
-    scope === "empire"
-      ? "Empire population (1910)"
-      : scope === "austria"
-        ? "Cisleithania (1910)"
-        : "Transleithania (1910)";
+    isAh && scope === "empire"
+      ? `Empire population (${pack.year})`
+      : isAh && scope === "austria"
+        ? `Cisleithania (${pack.year})`
+        : isAh && scope === "hungary"
+          ? `Transleithania (${pack.year})`
+          : `Population (${pack.year})`;
 
   return (
     <div
@@ -457,6 +451,8 @@ export function HistoricMapExplorer({
           showLabels={showLabels}
           labelMode={labelMode}
           selectedIds={selectedCode ? [selectedCode] : []}
+          preferCanvas={pack.areas.length > 40}
+          adaptiveStroke={pack.areas.length > 40}
           onRegionActivate={(d) =>
             setSelectedCode((prev) => (prev === d.id ? null : d.id))
           }
@@ -784,8 +780,8 @@ export function HistoricMapExplorer({
               </p>
               <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
                 {metric === "population"
-                  ? "Five equal-count classes (light → dark wine). Numbers toggle on by default. Totals scaled to empire population."
-                  : "Log-spaced density classes (people/km²) so steppe vs cities stay distinct. Darker = denser."}
+                  ? "Continuous log colour (parchment → ink). Toggle numbers only when you need them — dense mosaics get noisy fast. Totals scaled to period population."
+                  : "Continuous log colour for people/km². Cities and coasts read dark; steppe and desert stay pale."}
                 {scopePop ? (
                   <>
                     {" "}

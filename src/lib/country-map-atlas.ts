@@ -100,6 +100,7 @@ const FEATURED = [
   "MEX",
   "EU",
   "MENA",
+  "PANASIA",
   "SAU",
   "MAR",
   "JOR",

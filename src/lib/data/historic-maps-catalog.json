@@ -126,23 +126,33 @@
       "title": "Ethnoreligious communities in the Ottoman Empire, c. 1914",
       "empire": "Ottoman Empire",
       "year": 1914,
-      "metric": "millet-plurality",
+      "metric": "ethnicity-religion",
       "kind": "historic-vilayet",
       "status": "live",
       "region": "Near East & Balkans",
-      "blurb": "Vilayet- and sanjak-level Muslim, Greek Orthodox, Armenian, Jewish and other millets on the eve of World War I — Anatolia, the Levant, Mesopotamia and the remaining Balkans before the empire dissolved.",
-      "source": "Ottoman official statistics and millet estimates, c. 1881–1914. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Ottoman Empire 1914.",
+      "blurb": "Turkish, Arab and Kurdish majorities alongside Greek, Armenian and Assyrian belts — with a separate Sunni / Shia / Alevi religion layer — on modern provinces inside the 1914 Ottoman outline.",
+      "source": "Ottoman official statistics and demographic compilations, c. 1881–1914. Unit borders: Natural Earth admin-1 clipped to historical-basemaps Ottoman Empire 1914.",
       "sourceUrl": "https://en.wikipedia.org/wiki/Ottoman_Empire",
       "geoUrl": "/geo/historic/ottoman-empire-1914.json",
       "groups": [
         {
-          "id": "muslim",
-          "shortLabel": "Muslim",
+          "id": "turkish",
+          "shortLabel": "Turkish",
           "color": "#1e8449"
         },
         {
-          "id": "greek-orthodox",
-          "shortLabel": "Greek Orthodox",
+          "id": "arab",
+          "shortLabel": "Arab",
+          "color": "#27ae60"
+        },
+        {
+          "id": "kurdish",
+          "shortLabel": "Kurdish",
+          "color": "#196f3d"
+        },
+        {
+          "id": "greek",
+          "shortLabel": "Greek",
           "color": "#2874a6"
         },
         {
@@ -151,14 +161,14 @@
           "color": "#922b21"
         },
         {
-          "id": "jewish",
-          "shortLabel": "Jewish",
-          "color": "#8e44ad"
-        },
-        {
           "id": "assyrian",
           "shortLabel": "Assyrian / Syriac",
           "color": "#b9770e"
+        },
+        {
+          "id": "jewish",
+          "shortLabel": "Jewish",
+          "color": "#8e44ad"
         },
         {
           "id": "other-christian",

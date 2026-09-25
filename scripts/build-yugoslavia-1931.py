@@ -158,6 +158,15 @@ def simplify(geom, tol=0.01):
         return geom
 
 
+def close_seams(geom, pad=0.003):
+    """Slight positive buffer so clip+simplify micro-gaps don't show as ocean holes."""
+    try:
+        g = make_valid(geom.buffer(pad))
+        return g if not g.is_empty else geom
+    except Exception:
+        return geom
+
+
 def ensure_outline() -> None:
     if OUTLINE.exists():
         return
@@ -404,6 +413,7 @@ def main() -> None:
         a3 = bucket["a3"]
         try:
             geom = simplify(make_valid(unary_union(bucket["geoms"])))
+            geom = close_seams(geom)
         except Exception:
             continue
         if geom.is_empty or geom.area < 0.003:

@@ -66,6 +66,17 @@ const DIVERGING_GROWTH_DARK: ScaleStop[] = [
   { t: 1, color: [90, 160, 210] },
 ];
 
+// Soft parchment → stone → ink for historic population / density maps.
+// Calmer than wine quintiles; stays readable on atlas water (#c4d3e0).
+const SEQUENTIAL_HISTORIC: ScaleStop[] = [
+  { t: 0, color: [245, 240, 230] },
+  { t: 0.2, color: [220, 208, 186] },
+  { t: 0.4, color: [176, 168, 148] },
+  { t: 0.6, color: [112, 128, 132] },
+  { t: 0.8, color: [58, 82, 96] },
+  { t: 1, color: [28, 48, 62] },
+];
+
 // Single-hue copper wash for dark maps (sequential).
 const SEQUENTIAL_DARK: ScaleStop[] = [
   { t: 0, color: [42, 40, 38] },
@@ -119,6 +130,8 @@ function interp(stops: ScaleStop[], t: number): string {
 export type ScaleType =
   | "sequential"
   | "sequential-log"
+  | "sequential-historic"
+  | "sequential-historic-log"
   | "diverging"
   | "diverging-dark"
   | "diverging-growth"
@@ -149,6 +162,9 @@ function stopsFor(type: ScaleType): ScaleStop[] {
       return DIVERGING;
     case "sequential-dark":
       return SEQUENTIAL_DARK;
+    case "sequential-historic":
+    case "sequential-historic-log":
+      return SEQUENTIAL_HISTORIC;
     case "plasma":
       return PLASMA;
     case "diverging-tfr":
@@ -196,7 +212,7 @@ export function buildColorScale(
     min = q(0.02);
     max = q(0.98);
   }
-  const isLog = type === "sequential-log";
+  const isLog = type === "sequential-log" || type === "sequential-historic-log";
   const stops = stopsFor(type);
   const diverging = isDivergingScale(type);
 

@@ -114,10 +114,19 @@ def slugify(name: str) -> str:
     return f"ah-{s}"
 
 
-def simplify(geom, tol=0.012):
+def simplify(geom, tol=0.01):
     try:
         g = make_valid(geom)
         return g.simplify(tol, preserve_topology=True)
+    except Exception:
+        return geom
+
+
+def close_seams(geom, pad=0.003):
+    """Slight positive buffer so clip+simplify micro-gaps don't show as ocean holes."""
+    try:
+        g = make_valid(geom.buffer(pad))
+        return g if not g.is_empty else geom
     except Exception:
         return geom
 
@@ -218,37 +227,50 @@ def area_km2(geom) -> float:
 
 
 def base_density(plural: str, display: str, a3: str, half: str) -> float:
-    """People per km² prior (scaled to ~51.4M empire total)."""
+    """People per km² prior — geographic spread, then scaled to ~51.4M empire total."""
     dl = display.lower()
-    if "wien" in dl or "vienna" in dl or "budapest" in dl:
+    # Capitals / industrial cores
+    if any(x in dl for x in ("wien", "vienna", "budapest", "prague", "praha")):
         return 2200
-    if a3 == "AUT" and plural == "german":
-        return 95
-    if "sudeten" in dl:
-        return 110
-    if plural == "czech":
-        return 130
-    if half == "transleithania" and plural == "hungarian":
-        return 85
-    if plural == "slovak":
-        return 70
-    if plural == "romanian":
-        return 55
-    if plural == "serbo-croat":
-        return 60
+    if any(x in dl for x in ("trieste", "tries", "fiume", "rijeka", "lwow", "lviv", "lemberg")):
+        return 450
+    if any(x in dl for x in ("brno", "brünn", "ostrava", "krakow", "kraków", "krakau")):
+        return 320
+    # Mountain / steppe / karst — sparse
     if half == "bosnia":
-        return 45
-    if plural == "polish":
-        return 90
+        return 38
+    if any(x in dl for x in ("karnten", "kärnten", "tirol", "tyrol", "salzburg", "vorarlberg")):
+        return 42
+    if any(x in dl for x in ("dalmac", "dalmat", "istarska", "istria", "primorsko")):
+        return 48
     if plural == "ruthenian":
-        return 70
+        return 58
+    if plural == "romanian":
+        return 52
+    if plural == "slovak":
+        return 68
+    if plural == "serbo-croat":
+        return 62
     if plural == "slovene":
-        return 65
+        return 70
     if plural == "italian":
-        return 100
+        return 115
+    if "sudeten" in dl:
+        return 125
+    if plural == "czech":
+        return 145
+    if plural == "polish":
+        return 95
+    if a3 == "AUT" and plural == "german":
+        return 105
+    if half == "transleithania" and plural == "hungarian":
+        # Interior plain denser than the periphery
+        if any(x in dl for x in ("pest", "buda", "csongrad", "bekes", "hajdu")):
+            return 110
+        return 72
     if plural == "german":
-        return 80
-    return 70
+        return 88
+    return 65
 
 
 TARGET_POP = 51_390_000  # ~1910 Dual Monarchy (ex-Bosnia ~48.5M + Bosnia ~1.9M)
@@ -517,8 +539,7 @@ def main() -> None:
             continue
         name = rec.get("name") or ""
         type_en = (rec.get("type_en") or "").lower()
-        if a3 == "HUN" and type_en in {"city", "capital city"}:
-            continue
+        # Keep Budapest / free cities — skipping them left holes in the crown lands.
         classified = classify(a3, name)
         if not classified:
             continue
@@ -538,11 +559,11 @@ def main() -> None:
                 continue
         try:
             clipped = make_valid(geom.intersection(outline))
-            if clipped.is_empty:
-                clipped = geom
         except Exception:
-            clipped = geom
-        if clipped.is_empty or clipped.area < 1e-4:
+            continue
+        # Drop poor clips (same rule as Russian Empire) — never keep the full
+        # modern province when it barely overlaps the Dual Monarchy.
+        if clipped.is_empty or clipped.area < max(1e-4, geom.area * 0.12):
             continue
 
         if a3 == "SVN":
@@ -552,7 +573,7 @@ def main() -> None:
             dissolve_buckets["Bosnia and Herzegovina"].append(clipped)
             continue
 
-        clipped = simplify(clipped)
+        clipped = close_seams(simplify(clipped))
         slug = slugify(f"{a3}-{name}")
         area = enrich_area(
             code=slug,
@@ -589,7 +610,7 @@ def main() -> None:
         if not geoms:
             continue
         plural, a3 = dissolve_meta[label]
-        merged = simplify(unary_union(geoms), 0.02)
+        merged = close_seams(simplify(unary_union(geoms), 0.02))
         if merged.is_empty:
             continue
         slug = slugify(label)

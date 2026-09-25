@@ -63899,6 +63899,2620 @@
       "unit": "children per woman",
       "min": 0.8,
       "max": 1.4
+    },
+    {
+      "id": "panasia-tfr-1960",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 1960",
+      "kind": "country",
+      "year": 1960,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 1960 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 7.28
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 6.5
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 4.79
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 5.88
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 6.74
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 7.26
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 7.32
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 6.7
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 4.45
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 3.39
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 2.94
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 5.08
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 5.5
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 5.92
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 7.52
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 5.3
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 3.87
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 7.6
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 2.0
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 4.5
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 5.31
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 6.31
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 5.99
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 7.22
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 6.29
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 5.88
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 5.35
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 4.96
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 6.71
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 5.9
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 6.82
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 6.41
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 6.07
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 7.28
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 6.8
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 7.0
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 3.57
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 6.53
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 2.52
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 7.63
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 5.76
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 7.5
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 6.33
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 6.24
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 6.59
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 6.32
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 6.38
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 6.61
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 6.27
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 7.99
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 2.0,
+      "max": 7.99,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-1970",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 1970",
+      "kind": "country",
+      "year": 1970,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 1970 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 7.4
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 6.52
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 3.33
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 4.91
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 6.84
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 6.43
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 5.8
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 6.65
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 6.08
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 3.06
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 2.69
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 3.39
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 5.49
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 5.62
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 6.8
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 7.07
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 3.78
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 8.18
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 2.13
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 3.5
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 5.2
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 6.07
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 4.53
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 7.03
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 6.31
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 5.19
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 4.39
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 2.08
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 7.39
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 5.68
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 7.31
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 5.04
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 5.87
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 7.52
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 6.8
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 6.22
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 3.85
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 6.23
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.99
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 7.58
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 3.07
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 7.62
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 5.45
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 6.91
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 6.4
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 5.66
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 5.78
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 6.31
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 6.02
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 8.23
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 1.99,
+      "max": 8.23,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-1980",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 1980",
+      "kind": "country",
+      "year": 1980,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 1980 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 7.64
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 5.95
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 2.48
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 3.5
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 6.33
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 4.76
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 4.07
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 6.51
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 2.74
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 2.3
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 2.35
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 2.05
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 4.5
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 4.78
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 6.63
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 6.59
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 3.24
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 7.29
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.75
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 3.09
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 4.22
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 5.77
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 2.82
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 5.18
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 6.33
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 4.01
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 3.73
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 1.73
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 7.23
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 4.79
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 6.21
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 4.04
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 5.6
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 7.89
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 6.73
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 5.11
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 2.84
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 5.33
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.89
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 7.14
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 1.82
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 7.12
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 3.29
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 6.21
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 5.3
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 5.22
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 4.45
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 5.04
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 4.79
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 8.71
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 1.73,
+      "max": 8.71,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-1990",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 1990",
+      "kind": "country",
+      "year": 1990,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 1990 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 7.58
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 4.51
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 2.71
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 2.74
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 4.51
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 3.82
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 3.29
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 5.6
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 2.51
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 2.4
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 2.31
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 1.27
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 3.11
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 4.04
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 4.93
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 5.93
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 2.82
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 5.54
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.54
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 2.75
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 3.63
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 5.64
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 1.57
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 3.49
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 6.06
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 3.27
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 2.54
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 1.71
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 6.13
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 3.5
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 4.5
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 3.3
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 5.21
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 6.46
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 6.36
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 4.32
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 2.39
+        },
+        {
+          "id": "panasia-west-bank-and-gaza",
+          "slug": "panasia-west-bank-and-gaza",
+          "name": "West Bank and Gaza",
+          "value": 6.81
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 4.23
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.89
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 5.8
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 1.83
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 5.56
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 2.06
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 5.46
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 4.29
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 5.81
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 3.11
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 4.12
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 3.6
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 8.61
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 1.27,
+      "max": 8.61,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-2000",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 2000",
+      "kind": "country",
+      "year": 2000,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 2000 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 7.57
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 2.73
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 1.3
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 2.0
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 3.28
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 2.8
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 2.4
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 3.38
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 1.63
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 1.64
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 1.61
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 1.03
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 2.5
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 3.35
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 2.0
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 4.92
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 2.95
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 3.86
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.36
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 1.9
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 2.4
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 3.79
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 1.48
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 2.89
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 4.43
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 2.6
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 2.21
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 0.93
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 2.69
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 2.81
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 2.2
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 2.94
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 3.98
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 3.85
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 5.35
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 3.75
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 1.94
+        },
+        {
+          "id": "panasia-west-bank-and-gaza",
+          "slug": "panasia-west-bank-and-gaza",
+          "name": "West Bank and Gaza",
+          "value": 5.46
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 3.07
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.2
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 4.21
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 1.6
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 4.07
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 1.73
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 3.49
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 2.9
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 5.93
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 2.49
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 2.7
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 2.03
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 6.32
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 0.93,
+      "max": 7.57,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-2010",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 2010",
+      "kind": "country",
+      "year": 2010,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 2010 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 6.2
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 1.56
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 1.5
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 1.92
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 2.38
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 1.99
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 1.94
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 2.25
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 1.69
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 1.43
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 1.97
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 1.13
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 2.46
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 2.6
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 1.75
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 4.46
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 3.03
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 3.78
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.39
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 2.61
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 3.1
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 2.86
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 1.23
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 2.04
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 3.14
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 2.26
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 2.13
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 1.07
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 2.35
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 2.33
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 2.4
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 2.14
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 2.54
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 2.97
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 4.4
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 3.31
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 1.89
+        },
+        {
+          "id": "panasia-west-bank-and-gaza",
+          "slug": "panasia-west-bank-and-gaza",
+          "name": "West Bank and Gaza",
+          "value": 4.43
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 2.14
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.57
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 2.81
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 1.15
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 3.35
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 1.56
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 3.46
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 2.85
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 4.82
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 2.08
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 2.44
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 1.91
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 4.81
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 1.07,
+      "max": 6.2,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-2020",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 2020",
+      "kind": "country",
+      "year": 2020,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 2020 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 5.14
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 1.29
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 1.7
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 1.7
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 2.17
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 1.86
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 1.8
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 1.5
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 1.24
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 1.36
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 1.98
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 0.88
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 2.19
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 2.05
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 1.7
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 3.42
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 2.9
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 2.79
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.33
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 3.13
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 3.1
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 2.7
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 0.84
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 2.03
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 2.54
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 2.31
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 2.01
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 0.84
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 1.61
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 2.18
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 2.9
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 1.68
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 2.05
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 2.64
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 3.77
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 2.08
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 1.82
+        },
+        {
+          "id": "panasia-west-bank-and-gaza",
+          "slug": "panasia-west-bank-and-gaza",
+          "name": "West Bank and Gaza",
+          "value": 3.51
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 1.68
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.5
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 2.27
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 1.1
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 2.84
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 1.26
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 3.21
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 2.79
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 3.01
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 1.77
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 3.06
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 1.96
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 4.6
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 0.84,
+      "max": 5.14,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
+    },
+    {
+      "id": "panasia-tfr-2024",
+      "iso3": "PANASIA",
+      "country": "Asia",
+      "title": "Total fertility rate, Asia 2024",
+      "kind": "country",
+      "year": 2024,
+      "national": null,
+      "source": "World Bank World Development Indicators, SP.DYN.TFRT.IN \u2014 total fertility rate (births per woman), 2024 (\u00b12 years when the calendar year is missing).",
+      "sourceUrl": "https://data.worldbank.org/indicator/SP.DYN.TFRT.IN",
+      "geoUrl": "/geo/maps/panasia-tfr.json",
+      "note": "National TFR for Asia and the Middle East (Maghreb is on the MENA / Africa maps). Russia is included for continental framing. Decade frames 1960\u20132020 plus the latest WDI year. Colour domain is fixed (1\u20138) so years are comparable when you scrub.",
+      "regions": [
+        {
+          "id": "panasia-afghanistan",
+          "slug": "panasia-afghanistan",
+          "name": "Afghanistan",
+          "value": 4.76
+        },
+        {
+          "id": "panasia-united-arab-emirates",
+          "slug": "panasia-united-arab-emirates",
+          "name": "United Arab Emirates",
+          "value": 1.21
+        },
+        {
+          "id": "panasia-armenia",
+          "slug": "panasia-armenia",
+          "name": "Armenia",
+          "value": 1.7
+        },
+        {
+          "id": "panasia-azerbaijan",
+          "slug": "panasia-azerbaijan",
+          "name": "Azerbaijan",
+          "value": 1.43
+        },
+        {
+          "id": "panasia-bangladesh",
+          "slug": "panasia-bangladesh",
+          "name": "Bangladesh",
+          "value": 2.14
+        },
+        {
+          "id": "panasia-bahrain",
+          "slug": "panasia-bahrain",
+          "name": "Bahrain",
+          "value": 1.8
+        },
+        {
+          "id": "panasia-brunei-darussalam",
+          "slug": "panasia-brunei-darussalam",
+          "name": "Brunei Darussalam",
+          "value": 1.73
+        },
+        {
+          "id": "panasia-bhutan",
+          "slug": "panasia-bhutan",
+          "name": "Bhutan",
+          "value": 1.45
+        },
+        {
+          "id": "panasia-china",
+          "slug": "panasia-china",
+          "name": "China",
+          "value": 1.01
+        },
+        {
+          "id": "panasia-cyprus",
+          "slug": "panasia-cyprus",
+          "name": "Cyprus",
+          "value": 1.38
+        },
+        {
+          "id": "panasia-georgia",
+          "slug": "panasia-georgia",
+          "name": "Georgia",
+          "value": 1.8
+        },
+        {
+          "id": "panasia-hong-kong-sar-china",
+          "slug": "panasia-hong-kong-sar-china",
+          "name": "Hong Kong SAR, China",
+          "value": 0.84
+        },
+        {
+          "id": "panasia-indonesia",
+          "slug": "panasia-indonesia",
+          "name": "Indonesia",
+          "value": 2.12
+        },
+        {
+          "id": "panasia-india",
+          "slug": "panasia-india",
+          "name": "India",
+          "value": 1.96
+        },
+        {
+          "id": "panasia-iran-islamic-rep",
+          "slug": "panasia-iran-islamic-rep",
+          "name": "Iran, Islamic Rep.",
+          "value": 1.68
+        },
+        {
+          "id": "panasia-iraq",
+          "slug": "panasia-iraq",
+          "name": "Iraq",
+          "value": 3.22
+        },
+        {
+          "id": "panasia-israel",
+          "slug": "panasia-israel",
+          "name": "Israel",
+          "value": 2.87
+        },
+        {
+          "id": "panasia-jordan",
+          "slug": "panasia-jordan",
+          "name": "Jordan",
+          "value": 2.6
+        },
+        {
+          "id": "panasia-japan",
+          "slug": "panasia-japan",
+          "name": "Japan",
+          "value": 1.15
+        },
+        {
+          "id": "panasia-kazakhstan",
+          "slug": "panasia-kazakhstan",
+          "name": "Kazakhstan",
+          "value": 2.98
+        },
+        {
+          "id": "panasia-kyrgyz-republic",
+          "slug": "panasia-kyrgyz-republic",
+          "name": "Kyrgyz Republic",
+          "value": 2.6
+        },
+        {
+          "id": "panasia-cambodia",
+          "slug": "panasia-cambodia",
+          "name": "Cambodia",
+          "value": 2.55
+        },
+        {
+          "id": "panasia-korea-rep",
+          "slug": "panasia-korea-rep",
+          "name": "Korea, Rep.",
+          "value": 0.75
+        },
+        {
+          "id": "panasia-kuwait",
+          "slug": "panasia-kuwait",
+          "name": "Kuwait",
+          "value": 1.56
+        },
+        {
+          "id": "panasia-lao-pdr",
+          "slug": "panasia-lao-pdr",
+          "name": "Lao PDR",
+          "value": 2.4
+        },
+        {
+          "id": "panasia-lebanon",
+          "slug": "panasia-lebanon",
+          "name": "Lebanon",
+          "value": 2.23
+        },
+        {
+          "id": "panasia-sri-lanka",
+          "slug": "panasia-sri-lanka",
+          "name": "Sri Lanka",
+          "value": 1.95
+        },
+        {
+          "id": "panasia-macao-sar-china",
+          "slug": "panasia-macao-sar-china",
+          "name": "Macao SAR, China",
+          "value": 0.58
+        },
+        {
+          "id": "panasia-maldives",
+          "slug": "panasia-maldives",
+          "name": "Maldives",
+          "value": 1.56
+        },
+        {
+          "id": "panasia-myanmar",
+          "slug": "panasia-myanmar",
+          "name": "Myanmar",
+          "value": 2.1
+        },
+        {
+          "id": "panasia-mongolia",
+          "slug": "panasia-mongolia",
+          "name": "Mongolia",
+          "value": 2.5
+        },
+        {
+          "id": "panasia-malaysia",
+          "slug": "panasia-malaysia",
+          "name": "Malaysia",
+          "value": 1.54
+        },
+        {
+          "id": "panasia-nepal",
+          "slug": "panasia-nepal",
+          "name": "Nepal",
+          "value": 1.96
+        },
+        {
+          "id": "panasia-oman",
+          "slug": "panasia-oman",
+          "name": "Oman",
+          "value": 2.51
+        },
+        {
+          "id": "panasia-pakistan",
+          "slug": "panasia-pakistan",
+          "name": "Pakistan",
+          "value": 3.55
+        },
+        {
+          "id": "panasia-philippines",
+          "slug": "panasia-philippines",
+          "name": "Philippines",
+          "value": 1.89
+        },
+        {
+          "id": "panasia-korea-dem-people-s-rep",
+          "slug": "panasia-korea-dem-people-s-rep",
+          "name": "Korea, Dem. People's Rep.",
+          "value": 1.78
+        },
+        {
+          "id": "panasia-west-bank-and-gaza",
+          "slug": "panasia-west-bank-and-gaza",
+          "name": "West Bank and Gaza",
+          "value": 3.25
+        },
+        {
+          "id": "panasia-qatar",
+          "slug": "panasia-qatar",
+          "name": "Qatar",
+          "value": 1.72
+        },
+        {
+          "id": "panasia-russian-federation",
+          "slug": "panasia-russian-federation",
+          "name": "Russian Federation",
+          "value": 1.42
+        },
+        {
+          "id": "panasia-saudi-arabia",
+          "slug": "panasia-saudi-arabia",
+          "name": "Saudi Arabia",
+          "value": 2.31
+        },
+        {
+          "id": "panasia-singapore",
+          "slug": "panasia-singapore",
+          "name": "Singapore",
+          "value": 0.97
+        },
+        {
+          "id": "panasia-syrian-arab-republic",
+          "slug": "panasia-syrian-arab-republic",
+          "name": "Syrian Arab Republic",
+          "value": 2.7
+        },
+        {
+          "id": "panasia-thailand",
+          "slug": "panasia-thailand",
+          "name": "Thailand",
+          "value": 1.2
+        },
+        {
+          "id": "panasia-tajikistan",
+          "slug": "panasia-tajikistan",
+          "name": "Tajikistan",
+          "value": 3.04
+        },
+        {
+          "id": "panasia-turkmenistan",
+          "slug": "panasia-turkmenistan",
+          "name": "Turkmenistan",
+          "value": 2.66
+        },
+        {
+          "id": "panasia-timor-leste",
+          "slug": "panasia-timor-leste",
+          "name": "Timor-Leste",
+          "value": 2.63
+        },
+        {
+          "id": "panasia-turkiye",
+          "slug": "panasia-turkiye",
+          "name": "Turkiye",
+          "value": 1.48
+        },
+        {
+          "id": "panasia-uzbekistan",
+          "slug": "panasia-uzbekistan",
+          "name": "Uzbekistan",
+          "value": 3.49
+        },
+        {
+          "id": "panasia-viet-nam",
+          "slug": "panasia-viet-nam",
+          "name": "Viet Nam",
+          "value": 1.9
+        },
+        {
+          "id": "panasia-yemen-rep",
+          "slug": "panasia-yemen-rep",
+          "name": "Yemen, Rep.",
+          "value": 4.5
+        }
+      ],
+      "scale": "plasma",
+      "mid": 2.1,
+      "labelValues": false,
+      "min": 0.58,
+      "max": 4.76,
+      "metric": "tfr",
+      "unit": "children per woman",
+      "credit": null
     }
   ]
 }

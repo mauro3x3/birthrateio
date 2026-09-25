@@ -71,6 +71,7 @@ const MAP_FIT_CLAMP: Partial<
 > = {
   EU: { west: -24.5, south: 35, east: 60, north: 71.6 },
   AFRICA: { west: -17.6, south: -35.2, east: 51.5, north: 37.5 },
+  PANASIA: { west: 24.5, south: -12.5, east: 150, north: 56 },
   COL: { west: -79.15, south: -4.35, east: -66.8, north: 12.55 },
   ARG: { west: -73.6, south: -55.15, east: -53.5, north: -21.7 },
   BRA: { west: -74.2, south: -34.0, east: -34.6, north: 5.4 },
@@ -122,6 +123,7 @@ export function CountryMapExplorer({
   const [iso3, setIso3] = React.useState(initialIso3.toUpperCase());
   const [metricId, setMetricId] = React.useState<MapMetricId>("tfr");
   const [year, setYear] = React.useState<number | null>(null);
+  const [playingYears, setPlayingYears] = React.useState(false);
   const [tabId, setTabId] = React.useState<string | null>(null);
   const [shareMetric, setShareMetric] = React.useState<"population" | "births">(
     "population",
@@ -227,6 +229,25 @@ export function CountryMapExplorer({
     if (metric && activeYear != null) setYear(activeYear);
   }, [metric, activeYear]);
 
+  React.useEffect(() => {
+    setPlayingYears(false);
+  }, [country.iso3, metricId]);
+
+  const yearsKey = years.join(",");
+  React.useEffect(() => {
+    if (!playingYears || years.length < 2) return;
+    const ascending = [...years].sort((a, b) => a - b);
+    const id = window.setInterval(() => {
+      setYear((prev) => {
+        const cur = prev ?? ascending[0]!;
+        const i = ascending.indexOf(cur);
+        const next = ascending[(i + 1) % ascending.length]!;
+        return next;
+      });
+    }, 1100);
+    return () => window.clearInterval(id);
+  }, [playingYears, yearsKey, years]);
+
   const regions = metric && activeYear != null
     ? (valuesByYear?.[activeYear] ?? [])
     : [];
@@ -238,6 +259,7 @@ export function CountryMapExplorer({
       country.iso3 === "MENA" ||
       country.iso3 === "EU" ||
       country.iso3 === "AFRICA" ||
+      country.iso3 === "PANASIA" ||
       country.iso3 === "CARIBBEAN" ||
       country.iso3 === "SOUTHAMERICA" ||
       country.iso3 === "SEASIA" ||
@@ -259,8 +281,12 @@ export function CountryMapExplorer({
         values,
         metric?.scale ?? "sequential",
         metric?.mid,
+        // Fixed domain so decade scrubbing stays comparable (Asia 1960–2020).
+        country.iso3 === "PANASIA" && metric?.id === "tfr"
+          ? { min: 1.0, max: 8.0 }
+          : undefined,
       ),
-    [values, metric?.scale, metric?.mid],
+    [values, metric?.scale, metric?.mid, metric?.id, country.iso3],
   );
 
   const mapData = React.useMemo(() => {
@@ -509,6 +535,7 @@ export function CountryMapExplorer({
                   RUS: 3.6,
                   AFRICA: 4.5,
                   EU: 4.15,
+                  PANASIA: 2.65,
                   SOUTHAMERICA: 2.9,
                   MENA: 3.2,
                   SAU: 5.8,
@@ -659,6 +686,7 @@ export function CountryMapExplorer({
                       "IRN",
                       "EU",
                       "MENA",
+                      "PANASIA",
                       "SAU",
                       "MAR",
                       "JOR",
@@ -885,17 +913,35 @@ export function CountryMapExplorer({
                 <label className="text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
                   Year
                 </label>
-                <select
-                  className="mt-1.5 flex h-9 w-full rounded-sm border border-input bg-background px-3 text-sm outline-none focus:border-ring"
-                  value={activeYear ?? ""}
-                  onChange={(e) => setYear(Number(e.target.value))}
-                >
-                  {years.map((y) => (
-                    <option key={y} value={y}>
-                      {y}
-                    </option>
-                  ))}
-                </select>
+                <div className="mt-1.5 flex gap-1.5">
+                  <select
+                    className="flex h-9 min-w-0 flex-1 rounded-sm border border-input bg-background px-3 text-sm outline-none focus:border-ring"
+                    value={activeYear ?? ""}
+                    onChange={(e) => {
+                      setPlayingYears(false);
+                      setYear(Number(e.target.value));
+                    }}
+                  >
+                    {years.map((y) => (
+                      <option key={y} value={y}>
+                        {y}
+                      </option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    onClick={() => setPlayingYears((p) => !p)}
+                    className={cn(
+                      "h-9 shrink-0 rounded-sm border px-3 text-sm font-medium transition-colors",
+                      playingYears
+                        ? "border-foreground bg-foreground text-background"
+                        : "border-input bg-background text-muted-foreground hover:text-foreground",
+                    )}
+                    aria-pressed={playingYears}
+                  >
+                    {playingYears ? "Pause" : "Play"}
+                  </button>
+                </div>
               </div>
             )}
 

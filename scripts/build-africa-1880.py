@@ -180,22 +180,83 @@ def classify(name: str, subject: str) -> str:
     return "african-kingdom"
 
 
-def in_africa(b) -> bool:
+# World / Eurasia leftovers whose bbox overlaps Africa (Russian Empire spans
+# −180…180, Ottoman covers Anatolia+Egypt, Fiji wraps the antimeridian…).
+EXCLUDE_NAMES = {
+    "russian empire",
+    "ottoman empire",
+    "persia",
+    "fiji",
+    "united kingdom of great britain and ireland",
+    "spain",
+    "france",
+    "germany",
+    "austria-hungary",
+    "austria hungary",
+    "italy",
+    "portugal",
+    "netherlands",
+    "belgium",
+    "sweden",
+    "norway",
+    "denmark",
+    "china",
+    "japan",
+    "united states of america",
+    "united states",
+    "brazil",
+    "mexico",
+    "india",
+    "british india",
+    "arabia",
+    "oman",
+    "qatar",
+    "trucial oman",
+    "malta",
+    "greece",
+    "romania",
+    "serbia",
+    "bulgaria",
+}
+
+
+def in_africa(b, name: str = "", subject: str = "") -> bool:
     minx, miny, maxx, maxy = b
+    nl = fold(name)
+    sl = fold(subject)
+    if nl in EXCLUDE_NAMES or sl in EXCLUDE_NAMES:
+        return False
+    # Explicit Eurasian leftovers that often pass a loose bbox test.
+    if any(
+        x in nl
+        for x in (
+            "russian empire",
+            "ottoman empire",
+            "austrian empire",
+            "german empire",
+            "british empire",
+            "chinese empire",
+            "persian",
+        )
+    ):
+        return False
+
+    # Continent-sized / antimeridian-wrapping leftovers (streaks across the map).
+    if (maxx - minx) > 55 or (maxy - miny) > 55:
+        return False
     if maxx < -20 or minx > 52:
         return False
     if maxy < -36 or miny > 38:
         return False
-    # Drop pure Mediterranean Europe / Arabia east of Suez fringe
-    if minx > 43 and miny > 12 and "madag" not in "":
-        # keep Horn / Madagascar handled separately
-        if miny > 12 and maxx > 52:
-            return False
-    if minx > 48 and miny > 12:  # Arabia / Gulf
+
+    # Require the bbox centre to sit in Africa (+ Madagascar), not merely overlap.
+    cx = (minx + maxx) / 2
+    cy = (miny + maxy) / 2
+    if cx < -18 or cx > 51 or cy < -35 or cy > 37.5:
         return False
-    if miny > 35.5 and maxx < 20:  # southern Europe
+    if cx > 43 and cy > 12:  # Arabia / Gulf
         return False
-    if miny > 34 and minx > 10 and maxx < 30 and maxy > 36:  # Aegean scraps
+    if cy > 36 and cx < 35:  # southern Europe / Aegean
         return False
     return True
 
@@ -239,16 +300,13 @@ def main() -> None:
         name = (p.get("NAME") or "").strip()
         subject = (p.get("SUBJECTO") or "").strip()
         b = rough_bounds(f["geometry"])
-        if not b or not in_africa(b):
-            continue
-        # Drop giant unnamed continent-sized leftovers and anonymous scraps
         if not name:
             continue
-        if not name and (b[2] - b[0]) > 40:
+        if not b or not in_africa(b, name, subject):
             continue
 
         kind = classify(name, subject)
-        if kind == "other" and fold(name) in {"arabia", "oman", "qatar", "trucial oman", "malta"}:
+        if kind == "other" and fold(name) in EXCLUDE_NAMES:
             continue
 
         label = name or "Unnamed polity"
