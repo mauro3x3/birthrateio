@@ -505,21 +505,23 @@ function ValueLabels({
     const zoom = map.getZoom();
     const maxArea = Math.max(...candidates.map((c) => c.area), 1e-9);
     const maxVal = Math.max(...candidates.map((c) => Math.abs(c.value)), 1e-9);
-    // Blend size + magnitude so tiny high-share regions (e.g. Chechnya) still
-    // compete with vast empty oblasts when zoomed out.
+    const logMax = Math.log1p(maxArea);
+    // Log-area so one giant (Russia on Pan-Asia) doesn't crush mid-size
+    // countries like India to ~0. Weight area heavily — high-magnitude
+    // micro-states (Gulf TFR) must not steal labels from the big shapes.
+    // Tiny high-share regions still get a value bump when areas are close.
+    const score = (c: (typeof candidates)[number]) =>
+      0.78 * (Math.log1p(c.area) / logMax) +
+      0.22 * (Math.abs(c.value) / maxVal);
     const ranked = [...candidates].sort((a, b) => {
       if (a.prefer !== b.prefer) return a.prefer ? -1 : 1;
-      const ia =
-        0.55 * (a.area / maxArea) + 0.45 * (Math.abs(a.value) / maxVal);
-      const ib =
-        0.55 * (b.area / maxArea) + 0.45 * (Math.abs(b.value) / maxVal);
-      return ib - ia;
+      return score(b) - score(a);
     });
 
     const halfW =
-      zoom < 3.5 ? 32 : zoom < 4.5 ? 28 : zoom < 5.5 ? 24 : zoom < 7 ? 20 : 16;
+      zoom < 3.5 ? 26 : zoom < 4.5 ? 24 : zoom < 5.5 ? 22 : zoom < 7 ? 18 : 16;
     const halfHBase =
-      zoom < 3.5 ? 9 : zoom < 4.5 ? 8 : zoom < 5.5 ? 8 : zoom < 7 ? 7 : 7;
+      zoom < 3.5 ? 8 : zoom < 4.5 ? 8 : zoom < 5.5 ? 7 : zoom < 7 ? 7 : 6;
     const taken: { x: number; y: number; w: number; h: number }[] = [];
     const size = map.getSize();
     const pad = 8;
