@@ -26,6 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/population/india-dots",
     "/population/europe-change",
     "/population/compare",
+    "/population/rankings",
     "/migration",
     "/migration/buergergeld",
     "/migration/fiscal-balance",

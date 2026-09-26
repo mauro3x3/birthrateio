@@ -53,6 +53,38 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "China, India, Nigeria and others as % of world people and babies, 1950–2100 — with UN medium forecast.",
   },
   {
+    id: "india-dots",
+    kicker: "Population",
+    title: "India as population dots",
+    href: "/population/india-dots",
+    description:
+      "WorldPop 2025 grid as glowing dots — zoom in and tiles stream from a single PMTiles archive.",
+  },
+  {
+    id: "europe-change",
+    kicker: "Population",
+    title: "Europe: who grew, who shrank",
+    href: "/population/europe-change",
+    description:
+      "GHSL 2000→2025 settlement change — green growth, pink decline, gray empty.",
+  },
+  {
+    id: "region-compare",
+    kicker: "Population",
+    title: "Compare regions yourself",
+    href: "/population/compare",
+    description:
+      "Paint provinces into groups, sum their populations, and download a social-ready image.",
+  },
+  {
+    id: "population-rankings",
+    kicker: "Population",
+    title: "Population rankings",
+    href: "/population/rankings",
+    description:
+      "Most populous countries, fastest growth, density, dependency, rural share, and urban growth.",
+  },
+  {
     id: "tfr-race",
     kicker: "Fertility",
     title: "Fertility by race, origin & income",

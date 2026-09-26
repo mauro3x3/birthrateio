@@ -22,6 +22,7 @@ import {
   niceTicks,
   niceYearTicks,
 } from "@/components/charts/axis";
+import { useChartExporting } from "@/components/charts/chart-display";
 import { cn } from "@/lib/utils";
 import type { WorldShareCountry } from "@/lib/sources/world-shares-data";
 
@@ -40,6 +41,7 @@ export function WorldSharesSeriesChart({
   forecastFrom: number;
   height?: number;
 }) {
+  const exporting = useChartExporting();
   const [metric, setMetric] = React.useState<Metric>("population");
   const [selected, setSelected] = React.useState<string[]>(() =>
     defaultIso3s
@@ -110,58 +112,72 @@ export function WorldSharesSeriesChart({
     return -1;
   };
 
+  const metricLabel =
+    metric === "population" ? "Population share" : "Births share";
+
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="inline-flex border border-border">
-          {(
-            [
-              ["population", "Population share"],
-              ["births", "Births share"],
-            ] as const
-          ).map(([id, label]) => (
-            <button
-              key={id}
-              type="button"
-              onClick={() => setMetric(id)}
-              className={cn(
-                "px-3 py-1.5 text-xs font-medium transition-colors",
-                metric === id
-                  ? "bg-foreground text-background"
-                  : "bg-card text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {label}
-            </button>
-          ))}
+      {exporting ? (
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <p className="text-sm font-medium text-foreground">{metricLabel}</p>
+          <p className="text-[12px] text-muted-foreground">
+            Shaded area = UN medium forecast from {forecastFrom}.
+          </p>
         </div>
-        <p className="text-[11px] text-muted-foreground">
-          Shaded area = UN medium forecast from {forecastFrom}.
-        </p>
-      </div>
+      ) : (
+        <>
+          <div className="flex flex-wrap items-center gap-2" data-export-ignore>
+            <div className="inline-flex border border-border">
+              {(
+                [
+                  ["population", "Population share"],
+                  ["births", "Births share"],
+                ] as const
+              ).map(([id, label]) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => setMetric(id)}
+                  className={cn(
+                    "px-3 py-1.5 text-xs font-medium transition-colors",
+                    metric === id
+                      ? "bg-foreground text-background"
+                      : "bg-card text-muted-foreground hover:text-foreground",
+                  )}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+            <p className="text-[11px] text-muted-foreground">
+              Shaded area = UN medium forecast from {forecastFrom}.
+            </p>
+          </div>
 
-      <div className="flex flex-wrap gap-1.5">
-        {countries.slice(0, 60).map((c) => {
-          const on = selected.includes(c.iso3);
-          return (
-            <button
-              key={c.iso3}
-              type="button"
-              onClick={() => toggle(c.iso3)}
-              className={cn(
-                "border px-2 py-0.5 text-[11px] transition-colors",
-                on
-                  ? "border-foreground/40 bg-foreground text-background"
-                  : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground",
-              )}
-              aria-pressed={on}
-            >
-              {c.flag ? `${c.flag} ` : ""}
-              {c.name}
-            </button>
-          );
-        })}
-      </div>
+          <div className="flex flex-wrap gap-1.5" data-export-ignore>
+            {countries.slice(0, 60).map((c) => {
+              const on = selected.includes(c.iso3);
+              return (
+                <button
+                  key={c.iso3}
+                  type="button"
+                  onClick={() => toggle(c.iso3)}
+                  className={cn(
+                    "border px-2 py-0.5 text-[11px] transition-colors",
+                    on
+                      ? "border-foreground/40 bg-foreground text-background"
+                      : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground",
+                  )}
+                  aria-pressed={on}
+                >
+                  {c.flag ? `${c.flag} ` : ""}
+                  {c.name}
+                </button>
+              );
+            })}
+          </div>
+        </>
+      )}
 
       <ChartFrame height={height}>
         {(width) => (
@@ -271,11 +287,13 @@ export function WorldSharesSeriesChart({
         )}
       </ChartFrame>
 
-      <p className="text-[11px] text-muted-foreground">
-        Select up to {MAX_SERIES} countries. Values are percent of the world
-        total that year (
-        {metric === "population" ? "residents" : "births"}).
-      </p>
+      {exporting ? null : (
+        <p className="text-[11px] text-muted-foreground" data-export-ignore>
+          Select up to {MAX_SERIES} countries. Values are percent of the world
+          total that year (
+          {metric === "population" ? "residents" : "births"}).
+        </p>
+      )}
     </div>
   );
 }

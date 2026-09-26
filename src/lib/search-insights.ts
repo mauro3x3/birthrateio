@@ -617,7 +617,7 @@ const STATISTICS: StatisticDef[] = [
   {
     id: "pop-rank",
     title: "Countries by population",
-    href: "/population#population-rankings",
+    href: "/population/rankings",
     region: "Worldwide",
     topicIds: ["population", "demography"],
     keywords: ["largest population", "most populous", "population ranking"],
@@ -669,10 +669,12 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "Italy fertility rate", href: "/fertility/italy", region: "Italy" },
     { title: "Compare fertility rates across countries", href: "/compare?metric=fertility-rate", region: "Worldwide" },
     { title: "Fertility maps by region", href: "/maps", region: "Worldwide" },
-    { title: "World population rankings", href: "/population#population-rankings", region: "Worldwide" },
+    { title: "World population rankings", href: "/population/rankings", region: "Worldwide" },
   ],
   "/population": [
     { title: "Where the births are", href: "/population/shares", region: "Worldwide" },
+    { title: "Share of world population & births", href: "/population/world-shares", region: "Worldwide" },
+    { title: "Population rankings", href: "/population/rankings", region: "Worldwide" },
     { title: "Compare regional populations", href: "/population/compare", region: "Worldwide" },
     { title: "India population dots", href: "/population/india-dots", region: "India" },
     { title: "Europe population change", href: "/population/europe-change", region: "Europe" },

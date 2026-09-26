@@ -151,6 +151,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Paint provinces into groups and download a map",
       },
       {
+        title: "Population rankings",
+        href: "/population/rankings",
+        note: "Size, growth, density, dependency, urban–rural",
+      },
+      {
         title: "Workers vs retirees",
         href: "/workers-retirees",
         note: "Working-age and 65+ through 2060",
