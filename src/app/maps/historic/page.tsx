@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Historic empire maps — Religion, nationality, and old borders",
   description:
-    "Interactive Austria-Hungary nationalities & religion, Russian Empire 1897 religions, and planned Ottoman, German, British India district maps.",
+    "Interactive historic maps: 1914 world in 82 equal-population regions, Austria-Hungary nationalities, Russian Empire 1897 religions, Ottoman, Yugoslavia, French Algeria, and Africa before Berlin.",
   alternates: { canonical: "/maps/historic" },
 };
 
@@ -127,6 +127,13 @@ export default function HistoricMapsHubPage() {
             {liveCount > 0 ? (
               <>
                 Live maps include{" "}
+                <Link
+                  href="/maps/historic/world-pop82-1914"
+                  className="link-editorial font-medium"
+                >
+                  82 equal-population regions 1914
+                </Link>
+                ,{" "}
                 <Link
                   href="/maps/historic/austria-hungary-1910"
                   className="link-editorial font-medium"

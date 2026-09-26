@@ -146,9 +146,15 @@ export default async function PopulationPage() {
           babies. A younger country can account for more of the births than of
           the residents.
         </p>
-        <p className="mt-3">
+        <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1">
           <Link href="/population/shares" className="link-editorial font-medium">
             Africa, Europe, Oceania, and the rest
+          </Link>
+          <Link
+            href="/population/world-shares"
+            className="link-editorial font-medium"
+          >
+            Share of world population &amp; births →
           </Link>
         </p>
       </section>

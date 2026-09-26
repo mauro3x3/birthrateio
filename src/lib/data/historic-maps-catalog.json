@@ -1,6 +1,28 @@
 {
   "maps": [
     {
+      "id": "world-pop82-1914",
+      "slug": "world-pop82-1914",
+      "title": "World divided into 82 equal-population regions, 1914",
+      "empire": "World",
+      "year": 1914,
+      "metric": "equal-population",
+      "kind": "historic-region",
+      "status": "live",
+      "region": "Overview",
+      "blurb": "The 1914 world carved into 82 regions of about 20 million people each — Europe and eastern China shatter into many tiles; Canada, Siberia, the Congo and Australasia become huge blocs. Equal population first; period borders second.",
+      "source": "Equal-population regionalization (~20M per region). Digitized from the MapPorn reconstruction by u/Avishtanikuris.",
+      "sourceUrl": "https://www.reddit.com/r/MapPorn/comments/1je6455/the_world_divided_into_82_even_regions_of/",
+      "geoUrl": "/geo/historic/world-pop82-1914.json",
+      "groups": [
+        {
+          "id": "equal",
+          "shortLabel": "~20 million each",
+          "color": "#2980b9"
+        }
+      ]
+    },
+    {
       "id": "empires-1914-overview",
       "slug": "empires-1914",
       "title": "Great powers & empires, 1914",

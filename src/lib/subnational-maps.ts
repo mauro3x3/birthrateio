@@ -8,7 +8,8 @@ export type SubnationalMapMetric =
   | "net-migration"
   | "employment"
   | "employment-gap"
-  | "neet";
+  | "neet"
+  | "divorce-marriage";
 
 export type SubnationalRegion = {
   id: string;

@@ -1,0 +1,1413 @@
+{
+  "id": "world-pop82-1914",
+  "slug": "world-pop82-1914",
+  "title": "World divided into 82 equal-population regions, 1914",
+  "year": 1914,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Each region held about 20 million people in 1914 (82 \u00d7 20M \u2248 1.64 billion). Regions follow period borders and cultural areas where possible, but equal population comes first (e.g. Nepal fused with Awadh; sparse continents form huge blocs). Polygons digitized from the public equal-population reconstruction; region names follow on-map labels and period geography.",
+  "source": "Equal-population regionalization of the 1914 world (~20 million per region). Digitized from the MapPorn reconstruction by u/Avishtanikuris; each region is an equal-population target, not a new census count.",
+  "sourceUrl": "https://www.reddit.com/r/MapPorn/comments/1je6455/the_world_divided_into_82_even_regions_of/",
+  "geoUrl": "/geo/historic/world-pop82-1914.json",
+  "groups": [
+    {
+      "id": "p82-01",
+      "shortLabel": "Mexico",
+      "color": "#c0392b"
+    },
+    {
+      "id": "p82-02",
+      "shortLabel": "Laurentia",
+      "color": "#2980b9"
+    },
+    {
+      "id": "p82-03",
+      "shortLabel": "California",
+      "color": "#27ae60"
+    },
+    {
+      "id": "p82-04",
+      "shortLabel": "Great Plains",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "p82-05",
+      "shortLabel": "Southeast",
+      "color": "#d35400"
+    },
+    {
+      "id": "p82-06",
+      "shortLabel": "Hudsonia",
+      "color": "#16a085"
+    },
+    {
+      "id": "p82-07",
+      "shortLabel": "Bolivaria",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "p82-08",
+      "shortLabel": "R\u00edo de la Plata",
+      "color": "#f39c12"
+    },
+    {
+      "id": "p82-09",
+      "shortLabel": "Great Lakes",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "p82-10",
+      "shortLabel": "Ungava",
+      "color": "#3498db"
+    },
+    {
+      "id": "p82-11",
+      "shortLabel": "New England",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "p82-12",
+      "shortLabel": "Brazil",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "p82-13",
+      "shortLabel": "Greenland",
+      "color": "#e67e22"
+    },
+    {
+      "id": "p82-14",
+      "shortLabel": "Nordland",
+      "color": "#34495e"
+    },
+    {
+      "id": "p82-15",
+      "shortLabel": "Iceland",
+      "color": "#f1c40f"
+    },
+    {
+      "id": "p82-16",
+      "shortLabel": "Guinea",
+      "color": "#e91e63"
+    },
+    {
+      "id": "p82-17",
+      "shortLabel": "Maghreb",
+      "color": "#00bcd4"
+    },
+    {
+      "id": "p82-18",
+      "shortLabel": "Sahel",
+      "color": "#8bc34a"
+    },
+    {
+      "id": "p82-19",
+      "shortLabel": "Iberia",
+      "color": "#ff5722"
+    },
+    {
+      "id": "p82-20",
+      "shortLabel": "Britain",
+      "color": "#607d8b"
+    },
+    {
+      "id": "p82-21",
+      "shortLabel": "Upper Guinea",
+      "color": "#795548"
+    },
+    {
+      "id": "p82-22",
+      "shortLabel": "Portugal",
+      "color": "#009688"
+    },
+    {
+      "id": "p82-23",
+      "shortLabel": "France",
+      "color": "#3f51b5"
+    },
+    {
+      "id": "p82-24",
+      "shortLabel": "Algeria",
+      "color": "#ff9800"
+    },
+    {
+      "id": "p82-25",
+      "shortLabel": "France East",
+      "color": "#4caf50"
+    },
+    {
+      "id": "p82-26",
+      "shortLabel": "Low Countries",
+      "color": "#9c27b0"
+    },
+    {
+      "id": "p82-27",
+      "shortLabel": "Scandinavia",
+      "color": "#2196f3"
+    },
+    {
+      "id": "p82-28",
+      "shortLabel": "Italy",
+      "color": "#ffc107"
+    },
+    {
+      "id": "p82-29",
+      "shortLabel": "Congo",
+      "color": "#673ab7"
+    },
+    {
+      "id": "p82-30",
+      "shortLabel": "Rhineland",
+      "color": "#cddc39"
+    },
+    {
+      "id": "p82-31",
+      "shortLabel": "Balkans",
+      "color": "#ff5252"
+    },
+    {
+      "id": "p82-32",
+      "shortLabel": "Germany",
+      "color": "#7e57c2"
+    },
+    {
+      "id": "p82-33",
+      "shortLabel": "Zambezia",
+      "color": "#26a69a"
+    },
+    {
+      "id": "p82-34",
+      "shortLabel": "Hungary",
+      "color": "#5c6bc0"
+    },
+    {
+      "id": "p82-35",
+      "shortLabel": "Poland",
+      "color": "#ffa726"
+    },
+    {
+      "id": "p82-36",
+      "shortLabel": "Ubangi",
+      "color": "#66bb6a"
+    },
+    {
+      "id": "p82-37",
+      "shortLabel": "Egypt",
+      "color": "#ab47bc"
+    },
+    {
+      "id": "p82-38",
+      "shortLabel": "Zanj",
+      "color": "#42a5f5"
+    },
+    {
+      "id": "p82-39",
+      "shortLabel": "Anatolia",
+      "color": "#d4e157"
+    },
+    {
+      "id": "p82-40",
+      "shortLabel": "Ukraine",
+      "color": "#ef5350"
+    },
+    {
+      "id": "p82-41",
+      "shortLabel": "Mashriq",
+      "color": "#5e35b1"
+    },
+    {
+      "id": "p82-42",
+      "shortLabel": "Arctic Russia",
+      "color": "#29b6f6"
+    },
+    {
+      "id": "p82-43",
+      "shortLabel": "Madagascar",
+      "color": "#9ccc65"
+    },
+    {
+      "id": "p82-44",
+      "shortLabel": "Moscovia",
+      "color": "#ec407a"
+    },
+    {
+      "id": "p82-45",
+      "shortLabel": "Persia",
+      "color": "#26c6da"
+    },
+    {
+      "id": "p82-46",
+      "shortLabel": "Turkestan",
+      "color": "#ffca28"
+    },
+    {
+      "id": "p82-47",
+      "shortLabel": "Arabia",
+      "color": "#8d6e63"
+    },
+    {
+      "id": "p82-48",
+      "shortLabel": "Sindh",
+      "color": "#78909c"
+    },
+    {
+      "id": "p82-49",
+      "shortLabel": "Aparanta",
+      "color": "#43a047"
+    },
+    {
+      "id": "p82-50",
+      "shortLabel": "Malabar",
+      "color": "#1e88e5"
+    },
+    {
+      "id": "p82-51",
+      "shortLabel": "Konkan",
+      "color": "#fb8c00"
+    },
+    {
+      "id": "p82-52",
+      "shortLabel": "Gujarat",
+      "color": "#8e24aa"
+    },
+    {
+      "id": "p82-53",
+      "shortLabel": "Ceylon",
+      "color": "#00897b"
+    },
+    {
+      "id": "p82-54",
+      "shortLabel": "Awadh",
+      "color": "#3949ab"
+    },
+    {
+      "id": "p82-55",
+      "shortLabel": "Deccan",
+      "color": "#f4511e"
+    },
+    {
+      "id": "p82-56",
+      "shortLabel": "Western China",
+      "color": "#7cb342"
+    },
+    {
+      "id": "p82-57",
+      "shortLabel": "Brahmaputra",
+      "color": "#c0ca33"
+    },
+    {
+      "id": "p82-58",
+      "shortLabel": "Burma",
+      "color": "#6d4c41"
+    },
+    {
+      "id": "p82-59",
+      "shortLabel": "Siberia",
+      "color": "#546e7a"
+    },
+    {
+      "id": "p82-60",
+      "shortLabel": "Java",
+      "color": "#039be5"
+    },
+    {
+      "id": "p82-61",
+      "shortLabel": "Nanming",
+      "color": "#fdd835"
+    },
+    {
+      "id": "p82-62",
+      "shortLabel": "Yunnan",
+      "color": "#d81b60"
+    },
+    {
+      "id": "p82-63",
+      "shortLabel": "Siam",
+      "color": "#00acc1"
+    },
+    {
+      "id": "p82-64",
+      "shortLabel": "Sichuan",
+      "color": "#7b1fa2"
+    },
+    {
+      "id": "p82-65",
+      "shortLabel": "Guangxi",
+      "color": "#f57c00"
+    },
+    {
+      "id": "p82-66",
+      "shortLabel": "Lingnan",
+      "color": "#2e7d32"
+    },
+    {
+      "id": "p82-67",
+      "shortLabel": "Guizhou",
+      "color": "#1565c0"
+    },
+    {
+      "id": "p82-68",
+      "shortLabel": "Henan",
+      "color": "#6a1b9a"
+    },
+    {
+      "id": "p82-69",
+      "shortLabel": "Annam",
+      "color": "#ef6c00"
+    },
+    {
+      "id": "p82-70",
+      "shortLabel": "Bashu",
+      "color": "#4527a0"
+    },
+    {
+      "id": "p82-71",
+      "shortLabel": "Yue",
+      "color": "#00838f"
+    },
+    {
+      "id": "p82-72",
+      "shortLabel": "Min",
+      "color": "#ad1457"
+    },
+    {
+      "id": "p82-73",
+      "shortLabel": "Jiangxi",
+      "color": "#33691e"
+    },
+    {
+      "id": "p82-74",
+      "shortLabel": "Insulindia",
+      "color": "#283593"
+    },
+    {
+      "id": "p82-75",
+      "shortLabel": "Moluccas",
+      "color": "#e65100"
+    },
+    {
+      "id": "p82-76",
+      "shortLabel": "Minzhe",
+      "color": "#4a148c"
+    },
+    {
+      "id": "p82-77",
+      "shortLabel": "Zhongyuan",
+      "color": "#1b5e20"
+    },
+    {
+      "id": "p82-78",
+      "shortLabel": "New Guinea",
+      "color": "#0d47a1"
+    },
+    {
+      "id": "p82-79",
+      "shortLabel": "Australasia",
+      "color": "#b71c1c"
+    },
+    {
+      "id": "p82-80",
+      "shortLabel": "New Zealand South",
+      "color": "#004d40"
+    },
+    {
+      "id": "p82-81",
+      "shortLabel": "Oceania",
+      "color": "#880e4f"
+    },
+    {
+      "id": "p82-82",
+      "shortLabel": "New Zealand",
+      "color": "#311b92"
+    }
+  ],
+  "nationalShares": {
+    "p82-01": 0.0122,
+    "p82-02": 0.0122,
+    "p82-03": 0.0122,
+    "p82-04": 0.0122,
+    "p82-05": 0.0122,
+    "p82-06": 0.0122,
+    "p82-07": 0.0122,
+    "p82-08": 0.0122,
+    "p82-09": 0.0122,
+    "p82-10": 0.0122,
+    "p82-11": 0.0122,
+    "p82-12": 0.0122,
+    "p82-13": 0.0122,
+    "p82-14": 0.0122,
+    "p82-15": 0.0122,
+    "p82-16": 0.0122,
+    "p82-17": 0.0122,
+    "p82-18": 0.0122,
+    "p82-19": 0.0122,
+    "p82-20": 0.0122,
+    "p82-21": 0.0122,
+    "p82-22": 0.0122,
+    "p82-23": 0.0122,
+    "p82-24": 0.0122,
+    "p82-25": 0.0122,
+    "p82-26": 0.0122,
+    "p82-27": 0.0122,
+    "p82-28": 0.0122,
+    "p82-29": 0.0122,
+    "p82-30": 0.0122,
+    "p82-31": 0.0122,
+    "p82-32": 0.0122,
+    "p82-33": 0.0122,
+    "p82-34": 0.0122,
+    "p82-35": 0.0122,
+    "p82-36": 0.0122,
+    "p82-37": 0.0122,
+    "p82-38": 0.0122,
+    "p82-39": 0.0122,
+    "p82-40": 0.0122,
+    "p82-41": 0.0122,
+    "p82-42": 0.0122,
+    "p82-43": 0.0122,
+    "p82-44": 0.0122,
+    "p82-45": 0.0122,
+    "p82-46": 0.0122,
+    "p82-47": 0.0122,
+    "p82-48": 0.0122,
+    "p82-49": 0.0122,
+    "p82-50": 0.0122,
+    "p82-51": 0.0122,
+    "p82-52": 0.0122,
+    "p82-53": 0.0122,
+    "p82-54": 0.0122,
+    "p82-55": 0.0122,
+    "p82-56": 0.0122,
+    "p82-57": 0.0122,
+    "p82-58": 0.0122,
+    "p82-59": 0.0122,
+    "p82-60": 0.0122,
+    "p82-61": 0.0122,
+    "p82-62": 0.0122,
+    "p82-63": 0.0122,
+    "p82-64": 0.0122,
+    "p82-65": 0.0122,
+    "p82-66": 0.0122,
+    "p82-67": 0.0122,
+    "p82-68": 0.0122,
+    "p82-69": 0.0122,
+    "p82-70": 0.0122,
+    "p82-71": 0.0122,
+    "p82-72": 0.0122,
+    "p82-73": 0.0122,
+    "p82-74": 0.0122,
+    "p82-75": 0.0122,
+    "p82-76": 0.0122,
+    "p82-77": 0.0122,
+    "p82-78": 0.0122,
+    "p82-79": 0.0122,
+    "p82-80": 0.0122,
+    "p82-81": 0.0122,
+    "p82-82": 0.0122
+  },
+  "totalPopulation": 1640000000,
+  "areas": [
+    {
+      "code": "p82-01",
+      "slug": "p82-01",
+      "name": "Mexico",
+      "plurality": "p82-01",
+      "nationality": "p82-01",
+      "population": 20000000,
+      "shares": {
+        "p82-01": 1.0
+      }
+    },
+    {
+      "code": "p82-02",
+      "slug": "p82-02",
+      "name": "Laurentia",
+      "plurality": "p82-02",
+      "nationality": "p82-02",
+      "population": 20000000,
+      "shares": {
+        "p82-02": 1.0
+      }
+    },
+    {
+      "code": "p82-03",
+      "slug": "p82-03",
+      "name": "California",
+      "plurality": "p82-03",
+      "nationality": "p82-03",
+      "population": 20000000,
+      "shares": {
+        "p82-03": 1.0
+      }
+    },
+    {
+      "code": "p82-04",
+      "slug": "p82-04",
+      "name": "Great Plains",
+      "plurality": "p82-04",
+      "nationality": "p82-04",
+      "population": 20000000,
+      "shares": {
+        "p82-04": 1.0
+      }
+    },
+    {
+      "code": "p82-05",
+      "slug": "p82-05",
+      "name": "Southeast",
+      "plurality": "p82-05",
+      "nationality": "p82-05",
+      "population": 20000000,
+      "shares": {
+        "p82-05": 1.0
+      }
+    },
+    {
+      "code": "p82-06",
+      "slug": "p82-06",
+      "name": "Hudsonia",
+      "plurality": "p82-06",
+      "nationality": "p82-06",
+      "population": 20000000,
+      "shares": {
+        "p82-06": 1.0
+      }
+    },
+    {
+      "code": "p82-07",
+      "slug": "p82-07",
+      "name": "Bolivaria",
+      "plurality": "p82-07",
+      "nationality": "p82-07",
+      "population": 20000000,
+      "shares": {
+        "p82-07": 1.0
+      }
+    },
+    {
+      "code": "p82-08",
+      "slug": "p82-08",
+      "name": "R\u00edo de la Plata",
+      "plurality": "p82-08",
+      "nationality": "p82-08",
+      "population": 20000000,
+      "shares": {
+        "p82-08": 1.0
+      }
+    },
+    {
+      "code": "p82-09",
+      "slug": "p82-09",
+      "name": "Great Lakes",
+      "plurality": "p82-09",
+      "nationality": "p82-09",
+      "population": 20000000,
+      "shares": {
+        "p82-09": 1.0
+      }
+    },
+    {
+      "code": "p82-10",
+      "slug": "p82-10",
+      "name": "Ungava",
+      "plurality": "p82-10",
+      "nationality": "p82-10",
+      "population": 20000000,
+      "shares": {
+        "p82-10": 1.0
+      }
+    },
+    {
+      "code": "p82-11",
+      "slug": "p82-11",
+      "name": "New England",
+      "plurality": "p82-11",
+      "nationality": "p82-11",
+      "population": 20000000,
+      "shares": {
+        "p82-11": 1.0
+      }
+    },
+    {
+      "code": "p82-12",
+      "slug": "p82-12",
+      "name": "Brazil",
+      "plurality": "p82-12",
+      "nationality": "p82-12",
+      "population": 20000000,
+      "shares": {
+        "p82-12": 1.0
+      }
+    },
+    {
+      "code": "p82-13",
+      "slug": "p82-13",
+      "name": "Greenland",
+      "plurality": "p82-13",
+      "nationality": "p82-13",
+      "population": 20000000,
+      "shares": {
+        "p82-13": 1.0
+      }
+    },
+    {
+      "code": "p82-14",
+      "slug": "p82-14",
+      "name": "Nordland",
+      "plurality": "p82-14",
+      "nationality": "p82-14",
+      "population": 20000000,
+      "shares": {
+        "p82-14": 1.0
+      }
+    },
+    {
+      "code": "p82-15",
+      "slug": "p82-15",
+      "name": "Iceland",
+      "plurality": "p82-15",
+      "nationality": "p82-15",
+      "population": 20000000,
+      "shares": {
+        "p82-15": 1.0
+      }
+    },
+    {
+      "code": "p82-16",
+      "slug": "p82-16",
+      "name": "Guinea",
+      "plurality": "p82-16",
+      "nationality": "p82-16",
+      "population": 20000000,
+      "shares": {
+        "p82-16": 1.0
+      }
+    },
+    {
+      "code": "p82-17",
+      "slug": "p82-17",
+      "name": "Maghreb",
+      "plurality": "p82-17",
+      "nationality": "p82-17",
+      "population": 20000000,
+      "shares": {
+        "p82-17": 1.0
+      }
+    },
+    {
+      "code": "p82-18",
+      "slug": "p82-18",
+      "name": "Sahel",
+      "plurality": "p82-18",
+      "nationality": "p82-18",
+      "population": 20000000,
+      "shares": {
+        "p82-18": 1.0
+      }
+    },
+    {
+      "code": "p82-19",
+      "slug": "p82-19",
+      "name": "Iberia",
+      "plurality": "p82-19",
+      "nationality": "p82-19",
+      "population": 20000000,
+      "shares": {
+        "p82-19": 1.0
+      }
+    },
+    {
+      "code": "p82-20",
+      "slug": "p82-20",
+      "name": "Britain",
+      "plurality": "p82-20",
+      "nationality": "p82-20",
+      "population": 20000000,
+      "shares": {
+        "p82-20": 1.0
+      }
+    },
+    {
+      "code": "p82-21",
+      "slug": "p82-21",
+      "name": "Upper Guinea",
+      "plurality": "p82-21",
+      "nationality": "p82-21",
+      "population": 20000000,
+      "shares": {
+        "p82-21": 1.0
+      }
+    },
+    {
+      "code": "p82-22",
+      "slug": "p82-22",
+      "name": "Portugal",
+      "plurality": "p82-22",
+      "nationality": "p82-22",
+      "population": 20000000,
+      "shares": {
+        "p82-22": 1.0
+      }
+    },
+    {
+      "code": "p82-23",
+      "slug": "p82-23",
+      "name": "France",
+      "plurality": "p82-23",
+      "nationality": "p82-23",
+      "population": 20000000,
+      "shares": {
+        "p82-23": 1.0
+      }
+    },
+    {
+      "code": "p82-24",
+      "slug": "p82-24",
+      "name": "Algeria",
+      "plurality": "p82-24",
+      "nationality": "p82-24",
+      "population": 20000000,
+      "shares": {
+        "p82-24": 1.0
+      }
+    },
+    {
+      "code": "p82-25",
+      "slug": "p82-25",
+      "name": "France East",
+      "plurality": "p82-25",
+      "nationality": "p82-25",
+      "population": 20000000,
+      "shares": {
+        "p82-25": 1.0
+      }
+    },
+    {
+      "code": "p82-26",
+      "slug": "p82-26",
+      "name": "Low Countries",
+      "plurality": "p82-26",
+      "nationality": "p82-26",
+      "population": 20000000,
+      "shares": {
+        "p82-26": 1.0
+      }
+    },
+    {
+      "code": "p82-27",
+      "slug": "p82-27",
+      "name": "Scandinavia",
+      "plurality": "p82-27",
+      "nationality": "p82-27",
+      "population": 20000000,
+      "shares": {
+        "p82-27": 1.0
+      }
+    },
+    {
+      "code": "p82-28",
+      "slug": "p82-28",
+      "name": "Italy",
+      "plurality": "p82-28",
+      "nationality": "p82-28",
+      "population": 20000000,
+      "shares": {
+        "p82-28": 1.0
+      }
+    },
+    {
+      "code": "p82-29",
+      "slug": "p82-29",
+      "name": "Congo",
+      "plurality": "p82-29",
+      "nationality": "p82-29",
+      "population": 20000000,
+      "shares": {
+        "p82-29": 1.0
+      }
+    },
+    {
+      "code": "p82-30",
+      "slug": "p82-30",
+      "name": "Rhineland",
+      "plurality": "p82-30",
+      "nationality": "p82-30",
+      "population": 20000000,
+      "shares": {
+        "p82-30": 1.0
+      }
+    },
+    {
+      "code": "p82-31",
+      "slug": "p82-31",
+      "name": "Balkans",
+      "plurality": "p82-31",
+      "nationality": "p82-31",
+      "population": 20000000,
+      "shares": {
+        "p82-31": 1.0
+      }
+    },
+    {
+      "code": "p82-32",
+      "slug": "p82-32",
+      "name": "Germany",
+      "plurality": "p82-32",
+      "nationality": "p82-32",
+      "population": 20000000,
+      "shares": {
+        "p82-32": 1.0
+      }
+    },
+    {
+      "code": "p82-33",
+      "slug": "p82-33",
+      "name": "Zambezia",
+      "plurality": "p82-33",
+      "nationality": "p82-33",
+      "population": 20000000,
+      "shares": {
+        "p82-33": 1.0
+      }
+    },
+    {
+      "code": "p82-34",
+      "slug": "p82-34",
+      "name": "Hungary",
+      "plurality": "p82-34",
+      "nationality": "p82-34",
+      "population": 20000000,
+      "shares": {
+        "p82-34": 1.0
+      }
+    },
+    {
+      "code": "p82-35",
+      "slug": "p82-35",
+      "name": "Poland",
+      "plurality": "p82-35",
+      "nationality": "p82-35",
+      "population": 20000000,
+      "shares": {
+        "p82-35": 1.0
+      }
+    },
+    {
+      "code": "p82-36",
+      "slug": "p82-36",
+      "name": "Ubangi",
+      "plurality": "p82-36",
+      "nationality": "p82-36",
+      "population": 20000000,
+      "shares": {
+        "p82-36": 1.0
+      }
+    },
+    {
+      "code": "p82-37",
+      "slug": "p82-37",
+      "name": "Egypt",
+      "plurality": "p82-37",
+      "nationality": "p82-37",
+      "population": 20000000,
+      "shares": {
+        "p82-37": 1.0
+      }
+    },
+    {
+      "code": "p82-38",
+      "slug": "p82-38",
+      "name": "Zanj",
+      "plurality": "p82-38",
+      "nationality": "p82-38",
+      "population": 20000000,
+      "shares": {
+        "p82-38": 1.0
+      }
+    },
+    {
+      "code": "p82-39",
+      "slug": "p82-39",
+      "name": "Anatolia",
+      "plurality": "p82-39",
+      "nationality": "p82-39",
+      "population": 20000000,
+      "shares": {
+        "p82-39": 1.0
+      }
+    },
+    {
+      "code": "p82-40",
+      "slug": "p82-40",
+      "name": "Ukraine",
+      "plurality": "p82-40",
+      "nationality": "p82-40",
+      "population": 20000000,
+      "shares": {
+        "p82-40": 1.0
+      }
+    },
+    {
+      "code": "p82-41",
+      "slug": "p82-41",
+      "name": "Mashriq",
+      "plurality": "p82-41",
+      "nationality": "p82-41",
+      "population": 20000000,
+      "shares": {
+        "p82-41": 1.0
+      }
+    },
+    {
+      "code": "p82-42",
+      "slug": "p82-42",
+      "name": "Arctic Russia",
+      "plurality": "p82-42",
+      "nationality": "p82-42",
+      "population": 20000000,
+      "shares": {
+        "p82-42": 1.0
+      }
+    },
+    {
+      "code": "p82-43",
+      "slug": "p82-43",
+      "name": "Madagascar",
+      "plurality": "p82-43",
+      "nationality": "p82-43",
+      "population": 20000000,
+      "shares": {
+        "p82-43": 1.0
+      }
+    },
+    {
+      "code": "p82-44",
+      "slug": "p82-44",
+      "name": "Moscovia",
+      "plurality": "p82-44",
+      "nationality": "p82-44",
+      "population": 20000000,
+      "shares": {
+        "p82-44": 1.0
+      }
+    },
+    {
+      "code": "p82-45",
+      "slug": "p82-45",
+      "name": "Persia",
+      "plurality": "p82-45",
+      "nationality": "p82-45",
+      "population": 20000000,
+      "shares": {
+        "p82-45": 1.0
+      }
+    },
+    {
+      "code": "p82-46",
+      "slug": "p82-46",
+      "name": "Turkestan",
+      "plurality": "p82-46",
+      "nationality": "p82-46",
+      "population": 20000000,
+      "shares": {
+        "p82-46": 1.0
+      }
+    },
+    {
+      "code": "p82-47",
+      "slug": "p82-47",
+      "name": "Arabia",
+      "plurality": "p82-47",
+      "nationality": "p82-47",
+      "population": 20000000,
+      "shares": {
+        "p82-47": 1.0
+      }
+    },
+    {
+      "code": "p82-48",
+      "slug": "p82-48",
+      "name": "Sindh",
+      "plurality": "p82-48",
+      "nationality": "p82-48",
+      "population": 20000000,
+      "shares": {
+        "p82-48": 1.0
+      }
+    },
+    {
+      "code": "p82-49",
+      "slug": "p82-49",
+      "name": "Aparanta",
+      "plurality": "p82-49",
+      "nationality": "p82-49",
+      "population": 20000000,
+      "shares": {
+        "p82-49": 1.0
+      }
+    },
+    {
+      "code": "p82-50",
+      "slug": "p82-50",
+      "name": "Malabar",
+      "plurality": "p82-50",
+      "nationality": "p82-50",
+      "population": 20000000,
+      "shares": {
+        "p82-50": 1.0
+      }
+    },
+    {
+      "code": "p82-51",
+      "slug": "p82-51",
+      "name": "Konkan",
+      "plurality": "p82-51",
+      "nationality": "p82-51",
+      "population": 20000000,
+      "shares": {
+        "p82-51": 1.0
+      }
+    },
+    {
+      "code": "p82-52",
+      "slug": "p82-52",
+      "name": "Gujarat",
+      "plurality": "p82-52",
+      "nationality": "p82-52",
+      "population": 20000000,
+      "shares": {
+        "p82-52": 1.0
+      }
+    },
+    {
+      "code": "p82-53",
+      "slug": "p82-53",
+      "name": "Ceylon",
+      "plurality": "p82-53",
+      "nationality": "p82-53",
+      "population": 20000000,
+      "shares": {
+        "p82-53": 1.0
+      }
+    },
+    {
+      "code": "p82-54",
+      "slug": "p82-54",
+      "name": "Awadh",
+      "plurality": "p82-54",
+      "nationality": "p82-54",
+      "population": 20000000,
+      "shares": {
+        "p82-54": 1.0
+      }
+    },
+    {
+      "code": "p82-55",
+      "slug": "p82-55",
+      "name": "Deccan",
+      "plurality": "p82-55",
+      "nationality": "p82-55",
+      "population": 20000000,
+      "shares": {
+        "p82-55": 1.0
+      }
+    },
+    {
+      "code": "p82-56",
+      "slug": "p82-56",
+      "name": "Western China",
+      "plurality": "p82-56",
+      "nationality": "p82-56",
+      "population": 20000000,
+      "shares": {
+        "p82-56": 1.0
+      }
+    },
+    {
+      "code": "p82-57",
+      "slug": "p82-57",
+      "name": "Brahmaputra",
+      "plurality": "p82-57",
+      "nationality": "p82-57",
+      "population": 20000000,
+      "shares": {
+        "p82-57": 1.0
+      }
+    },
+    {
+      "code": "p82-58",
+      "slug": "p82-58",
+      "name": "Burma",
+      "plurality": "p82-58",
+      "nationality": "p82-58",
+      "population": 20000000,
+      "shares": {
+        "p82-58": 1.0
+      }
+    },
+    {
+      "code": "p82-59",
+      "slug": "p82-59",
+      "name": "Siberia",
+      "plurality": "p82-59",
+      "nationality": "p82-59",
+      "population": 20000000,
+      "shares": {
+        "p82-59": 1.0
+      }
+    },
+    {
+      "code": "p82-60",
+      "slug": "p82-60",
+      "name": "Java",
+      "plurality": "p82-60",
+      "nationality": "p82-60",
+      "population": 20000000,
+      "shares": {
+        "p82-60": 1.0
+      }
+    },
+    {
+      "code": "p82-61",
+      "slug": "p82-61",
+      "name": "Nanming",
+      "plurality": "p82-61",
+      "nationality": "p82-61",
+      "population": 20000000,
+      "shares": {
+        "p82-61": 1.0
+      }
+    },
+    {
+      "code": "p82-62",
+      "slug": "p82-62",
+      "name": "Yunnan",
+      "plurality": "p82-62",
+      "nationality": "p82-62",
+      "population": 20000000,
+      "shares": {
+        "p82-62": 1.0
+      }
+    },
+    {
+      "code": "p82-63",
+      "slug": "p82-63",
+      "name": "Siam",
+      "plurality": "p82-63",
+      "nationality": "p82-63",
+      "population": 20000000,
+      "shares": {
+        "p82-63": 1.0
+      }
+    },
+    {
+      "code": "p82-64",
+      "slug": "p82-64",
+      "name": "Sichuan",
+      "plurality": "p82-64",
+      "nationality": "p82-64",
+      "population": 20000000,
+      "shares": {
+        "p82-64": 1.0
+      }
+    },
+    {
+      "code": "p82-65",
+      "slug": "p82-65",
+      "name": "Guangxi",
+      "plurality": "p82-65",
+      "nationality": "p82-65",
+      "population": 20000000,
+      "shares": {
+        "p82-65": 1.0
+      }
+    },
+    {
+      "code": "p82-66",
+      "slug": "p82-66",
+      "name": "Lingnan",
+      "plurality": "p82-66",
+      "nationality": "p82-66",
+      "population": 20000000,
+      "shares": {
+        "p82-66": 1.0
+      }
+    },
+    {
+      "code": "p82-67",
+      "slug": "p82-67",
+      "name": "Guizhou",
+      "plurality": "p82-67",
+      "nationality": "p82-67",
+      "population": 20000000,
+      "shares": {
+        "p82-67": 1.0
+      }
+    },
+    {
+      "code": "p82-68",
+      "slug": "p82-68",
+      "name": "Henan",
+      "plurality": "p82-68",
+      "nationality": "p82-68",
+      "population": 20000000,
+      "shares": {
+        "p82-68": 1.0
+      }
+    },
+    {
+      "code": "p82-69",
+      "slug": "p82-69",
+      "name": "Annam",
+      "plurality": "p82-69",
+      "nationality": "p82-69",
+      "population": 20000000,
+      "shares": {
+        "p82-69": 1.0
+      }
+    },
+    {
+      "code": "p82-70",
+      "slug": "p82-70",
+      "name": "Bashu",
+      "plurality": "p82-70",
+      "nationality": "p82-70",
+      "population": 20000000,
+      "shares": {
+        "p82-70": 1.0
+      }
+    },
+    {
+      "code": "p82-71",
+      "slug": "p82-71",
+      "name": "Yue",
+      "plurality": "p82-71",
+      "nationality": "p82-71",
+      "population": 20000000,
+      "shares": {
+        "p82-71": 1.0
+      }
+    },
+    {
+      "code": "p82-72",
+      "slug": "p82-72",
+      "name": "Min",
+      "plurality": "p82-72",
+      "nationality": "p82-72",
+      "population": 20000000,
+      "shares": {
+        "p82-72": 1.0
+      }
+    },
+    {
+      "code": "p82-73",
+      "slug": "p82-73",
+      "name": "Jiangxi",
+      "plurality": "p82-73",
+      "nationality": "p82-73",
+      "population": 20000000,
+      "shares": {
+        "p82-73": 1.0
+      }
+    },
+    {
+      "code": "p82-74",
+      "slug": "p82-74",
+      "name": "Insulindia",
+      "plurality": "p82-74",
+      "nationality": "p82-74",
+      "population": 20000000,
+      "shares": {
+        "p82-74": 1.0
+      }
+    },
+    {
+      "code": "p82-75",
+      "slug": "p82-75",
+      "name": "Moluccas",
+      "plurality": "p82-75",
+      "nationality": "p82-75",
+      "population": 20000000,
+      "shares": {
+        "p82-75": 1.0
+      }
+    },
+    {
+      "code": "p82-76",
+      "slug": "p82-76",
+      "name": "Minzhe",
+      "plurality": "p82-76",
+      "nationality": "p82-76",
+      "population": 20000000,
+      "shares": {
+        "p82-76": 1.0
+      }
+    },
+    {
+      "code": "p82-77",
+      "slug": "p82-77",
+      "name": "Zhongyuan",
+      "plurality": "p82-77",
+      "nationality": "p82-77",
+      "population": 20000000,
+      "shares": {
+        "p82-77": 1.0
+      }
+    },
+    {
+      "code": "p82-78",
+      "slug": "p82-78",
+      "name": "New Guinea",
+      "plurality": "p82-78",
+      "nationality": "p82-78",
+      "population": 20000000,
+      "shares": {
+        "p82-78": 1.0
+      }
+    },
+    {
+      "code": "p82-79",
+      "slug": "p82-79",
+      "name": "Australasia",
+      "plurality": "p82-79",
+      "nationality": "p82-79",
+      "population": 20000000,
+      "shares": {
+        "p82-79": 1.0
+      }
+    },
+    {
+      "code": "p82-80",
+      "slug": "p82-80",
+      "name": "New Zealand South",
+      "plurality": "p82-80",
+      "nationality": "p82-80",
+      "population": 20000000,
+      "shares": {
+        "p82-80": 1.0
+      }
+    },
+    {
+      "code": "p82-81",
+      "slug": "p82-81",
+      "name": "Oceania",
+      "plurality": "p82-81",
+      "nationality": "p82-81",
+      "population": 20000000,
+      "shares": {
+        "p82-81": 1.0
+      }
+    },
+    {
+      "code": "p82-82",
+      "slug": "p82-82",
+      "name": "New Zealand",
+      "plurality": "p82-82",
+      "nationality": "p82-82",
+      "population": 20000000,
+      "shares": {
+        "p82-82": 1.0
+      }
+    }
+  ]
+}

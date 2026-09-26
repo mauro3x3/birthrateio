@@ -27,7 +27,7 @@ export default async function ComparePage({
     <div>
       <PageHeader
         title="Compare Countries"
-        description="Overlay demographic and economic indicators for up to 8 countries. Share the URL to share your comparison."
+        description="Overlay fertility, births, and other indicators — with 2024+ BirthGauge years so compare matches the maps. Two countries unlock a ratio panel built for posting."
       />
       <div className="container py-8">
         <Suspense>

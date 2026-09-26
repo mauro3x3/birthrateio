@@ -40,8 +40,11 @@ export function formatByUnit(
   if (u.includes("us$") || u.includes("usd") || u.includes("$")) {
     return "$" + formatCompact(value);
   }
-  if (u.includes("people") || u.includes("person") || u.includes("count")) {
+  if (u.includes("people") || u.includes("person") || u.includes("count") || u === "births") {
     return formatCompact(value);
+  }
+  if (u.includes("ratio")) {
+    return formatNumber(value, decimals);
   }
   if (u.includes("%") || u.includes("percent")) {
     return formatNumber(value, 1) + "%";

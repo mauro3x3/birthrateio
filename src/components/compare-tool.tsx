@@ -31,6 +31,8 @@ import { HISTORIC_FERTILITY_SOURCE } from "@/components/historic-fertility-note"
 
 const METRICS = [
   { slug: "fertility-rate", label: "Fertility Rate" },
+  { slug: "live-births", label: "Live births" },
+  { slug: "birth-rate", label: "Crude Birth Rate" },
   { slug: "population", label: "Population" },
   { slug: "population-growth", label: "Population Growth" },
   { slug: "gdp", label: "GDP" },
@@ -39,10 +41,59 @@ const METRICS = [
   { slug: "life-expectancy", label: "Life Expectancy" },
 ];
 
+/** One-click story setups people actually post. */
+const PRESETS: Array<{
+  id: string;
+  label: string;
+  countries: string[];
+  metric: string;
+  from?: number;
+  blurb: string;
+}> = [
+  {
+    id: "china-us-births",
+    label: "China vs US births",
+    countries: ["china", "united-states"],
+    metric: "live-births",
+    from: 1950,
+    blurb: "Levels + how many Chinese births per American birth",
+  },
+  {
+    id: "tfr-asia-americas",
+    label: "Japan · US · India · Colombia",
+    countries: ["japan", "united-states", "india", "colombia"],
+    metric: "fertility-rate",
+    from: 1960,
+    blurb: "The viral TFR overlay, with 2024+ BirthGauge years",
+  },
+  {
+    id: "eu-low",
+    label: "Italy · Spain · France · Germany",
+    countries: ["italy", "spain", "france", "germany"],
+    metric: "fertility-rate",
+    from: 1960,
+    blurb: "Southern and Northern Europe on one frame",
+  },
+  {
+    id: "korea-japan",
+    label: "South Korea vs Japan",
+    countries: ["south-korea", "japan"],
+    metric: "fertility-rate",
+    from: 1960,
+    blurb: "The ultra-low East Asian pair",
+  },
+];
+
 interface CompareData {
   countries: CountryOption[];
   rows: Record<string, number | null>[];
-  meta: { name: string; unit: string; decimals: number } | null;
+  meta: {
+    name: string;
+    unit: string;
+    decimals: number;
+    source?: string;
+    freshened?: boolean;
+  } | null;
 }
 
 function parseYearParam(value: string | null): number | null {
@@ -175,6 +226,42 @@ export function CompareTool({
     color: colorAt(i),
   }));
 
+  const ratioSeries = React.useMemo(() => {
+    if (data.countries.length !== 2) return null;
+    const [a, b] = data.countries;
+    if (!a || !b) return null;
+    const rows = visibleRows
+      .map((row) => {
+        const av = row[a.slug];
+        const bv = row[b.slug];
+        if (typeof av !== "number" || typeof bv !== "number" || bv === 0) {
+          return null;
+        }
+        return { year: row.year as number, ratio: av / bv };
+      })
+      .filter(Boolean) as { year: number; ratio: number }[];
+    if (rows.length < 2) return null;
+    return {
+      a,
+      b,
+      rows,
+      series: [
+        {
+          key: "ratio",
+          label: `${a.name} per ${b.name}`,
+          color: colorAt(0),
+        },
+      ],
+    };
+  }, [data.countries, visibleRows]);
+
+  const applyPreset = (p: (typeof PRESETS)[number]) => {
+    setSelected(p.countries);
+    setMetric(p.metric);
+    setFromYear(p.from ?? null);
+    setToYear(null);
+  };
+
   const latest = data.countries.map((c, i) => {
     let val: number | null = null;
     let year: number | null = null;
@@ -193,6 +280,36 @@ export function CompareTool({
 
   return (
     <div className="space-y-8">
+      <div className="space-y-3">
+        <p className="text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-muted-foreground">
+          Story presets
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {PRESETS.map((p) => {
+            const active =
+              p.metric === metric &&
+              p.countries.length === selected.length &&
+              p.countries.every((s, i) => selected[i] === s);
+            return (
+              <button
+                key={p.id}
+                type="button"
+                onClick={() => applyPreset(p)}
+                title={p.blurb}
+                className={cn(
+                  "rounded-none border px-3 py-1.5 text-left text-sm transition-colors",
+                  active
+                    ? "border-foreground bg-foreground text-background"
+                    : "border-border bg-background text-foreground hover:border-foreground/40",
+                )}
+              >
+                {p.label}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
       <div className="flex flex-col gap-4 border-b border-border pb-5 lg:flex-row lg:items-center lg:justify-between">
         <CountryMultiSelect
           options={options}
@@ -227,15 +344,17 @@ export function CompareTool({
           loading
             ? "Loading series…"
             : windowStart != null && windowEnd != null
-              ? `Overlay ${windowStart}–${windowEnd}. Drag the handles to stretch the dates.`
+              ? `Overlay ${windowStart}–${windowEnd}. Drag the handles to stretch the dates. Download PNG to post.`
               : "Overlay time series for the selected countries."
         }
         source={
-          metric === "fertility-rate" && span != null && span.min < 1960
-            ? HISTORIC_FERTILITY_SOURCE
-            : metric === "life-expectancy" && span != null && span.min < 1960
-              ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
-              : "World Bank"
+          data.meta?.source
+            ? data.meta.source
+            : metric === "fertility-rate" && span != null && span.min < 1960
+              ? HISTORIC_FERTILITY_SOURCE
+              : metric === "life-expectancy" && span != null && span.min < 1960
+                ? "OWID / HMD / UN (pre-1960) · World Bank (from 1960)"
+                : "World Bank"
         }
         csvRows={visibleRows}
         csvName={
@@ -243,6 +362,7 @@ export function CompareTool({
             ? `compare-${metric}-${windowStart}-${windowEnd}`
             : `compare-${metric}`
         }
+        defaultShowValues={data.countries.length <= 2}
       >
         <MultiSeriesChart
           data={visibleRows}
@@ -254,6 +374,7 @@ export function CompareTool({
           referenceLabel={
             metric === "fertility-rate" ? "Replacement" : undefined
           }
+          endLabelStyle={data.countries.length <= 2 ? "datawrapper" : "auto"}
         />
         {span && span.max > span.min && windowStart != null && windowEnd != null ? (
           <div
@@ -339,6 +460,30 @@ export function CompareTool({
           </div>
         ) : null}
       </ChartCard>
+
+      {ratioSeries ? (
+        <ChartCard
+          title={`${ratioSeries.a.name} per ${ratioSeries.b.name}`}
+          description={
+            metric === "live-births"
+              ? `${ratioSeries.a.name} live births for every one in ${ratioSeries.b.name}. The shareable companion to the levels chart above.`
+              : `How many ${data.meta?.name?.toLowerCase() ?? "units"} in ${ratioSeries.a.name} for each one in ${ratioSeries.b.name}.`
+          }
+          source={data.meta?.source ?? "World Bank"}
+          csvRows={ratioSeries.rows}
+          csvName={`compare-ratio-${ratioSeries.a.slug}-${ratioSeries.b.slug}`}
+          defaultShowValues
+        >
+          <MultiSeriesChart
+            data={ratioSeries.rows}
+            series={ratioSeries.series}
+            unit="ratio"
+            decimals={2}
+            height={280}
+            endLabelStyle="datawrapper"
+          />
+        </ChartCard>
+      ) : null}
 
       <section className="border-t border-border pt-5">
         <SectionHeading

@@ -25,6 +25,13 @@ export default function DemographicsHubPage() {
           <Link href="/maps" className="link-editorial font-medium">
             regional maps
           </Link>
+          . For divorces relative to marriages across Europe, see{" "}
+          <Link
+            href="/demographics/divorce-marriage"
+            className="link-editorial font-medium"
+          >
+            divorces per 100 marriages
+          </Link>
           .
         </p>
         <div className="mt-5">

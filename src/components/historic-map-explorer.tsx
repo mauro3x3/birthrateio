@@ -116,6 +116,10 @@ const FIT: Record<
     clamp: { west: -20, south: -36, east: 52, north: 38 },
     maxZoom: 4.2,
   },
+  "world-pop82-1914": {
+    clamp: { west: -170, south: -58, east: 175, north: 75 },
+    maxZoom: 3.2,
+  },
   "empires-1914": {
     clamp: { west: -25, south: 12, east: 120, north: 72 },
     maxZoom: 5.5,
@@ -143,21 +147,28 @@ export function HistoricMapExplorer({
   pack: HistoricMapPack;
 }) {
   const isAh = pack.slug === "austria-hungary-1910";
+  const isEqualPop = pack.slug === "world-pop82-1914";
   const hasReligion = Boolean(
-    pack.religionGroups?.length ||
-      pack.primaryMetric === "religion" ||
-      pack.areas.some((a) => a.religion),
+    !isEqualPop &&
+      (pack.religionGroups?.length ||
+        pack.primaryMetric === "religion" ||
+        pack.areas.some((a) => a.religion)),
   );
   const hasNationality = Boolean(
-    pack.primaryMetric !== "religion" ||
+    isEqualPop ||
+      pack.primaryMetric !== "religion" ||
       pack.areas.some((a) => a.nationality),
   );
-  const [showNames, setShowNames] = React.useState(false);
+  const [showNames, setShowNames] = React.useState(isEqualPop);
   const [showValues, setShowValues] = React.useState(false);
   const [selectedCode, setSelectedCode] = React.useState<string | null>(null);
   const [scope, setScope] = React.useState<ScopeId>("empire");
   const [metric, setMetric] = React.useState<MetricId>(
-    pack.primaryMetric === "religion" ? "religion" : "nationality",
+    isEqualPop
+      ? "nationality"
+      : pack.primaryMetric === "religion"
+        ? "religion"
+        : "nationality",
   );
 
   React.useEffect(() => {
@@ -293,6 +304,8 @@ export function HistoricMapExplorer({
   );
 
   const legend = React.useMemo(() => {
+    // 82 unique colours — a full swatch legend is noise; rely on hover / names.
+    if (isEqualPop) return [];
     if (metric === "nationality" || metric === "religion") {
       return activeGroups.map((g) => ({
         label: g.shortLabel,
@@ -307,6 +320,7 @@ export function HistoricMapExplorer({
       color: s.color,
     }));
   }, [
+    isEqualPop,
     metric,
     activeGroups,
     popScale,
@@ -315,8 +329,9 @@ export function HistoricMapExplorer({
     formatDens,
   ]);
 
-  const legendTitle =
-    metric === "nationality"
+  const legendTitle = isEqualPop
+    ? undefined
+    : metric === "nationality"
       ? `${pack.year} majority`
       : metric === "religion"
         ? `${pack.year} religion`
@@ -518,11 +533,18 @@ export function HistoricMapExplorer({
               {(
                 [
                   ...(hasNationality
-                    ? ([["nationality", "Ethnicity"]] as const)
+                    ? ([
+                        [
+                          "nationality",
+                          isEqualPop ? "Regions" : "Ethnicity",
+                        ],
+                      ] as const)
                     : []),
                   ...(hasReligion ? ([["religion", "Religion"]] as const) : []),
                   ["population", "Population"],
-                  ["density", "Density"],
+                  ...(!isEqualPop
+                    ? ([["density", "Density"]] as const)
+                    : []),
                 ] as const
               ).map(([id, label]) => (
                 <button
@@ -610,7 +632,9 @@ export function HistoricMapExplorer({
                     className="inline-block h-3 w-3 rounded-sm border border-black/10"
                     style={{ background: selectedGroup.color }}
                   />
-                  {selectedGroup.shortLabel} majority
+                  {isEqualPop
+                    ? "~20 million people (1914)"
+                    : `${selectedGroup.shortLabel} majority`}
                 </p>
               ) : null}
               {metric === "population" || metric === "density" ? (
@@ -659,7 +683,7 @@ export function HistoricMapExplorer({
                 </p>
               ) : null}
 
-              {selectedBreakdown.length > 0 ? (
+              {selectedBreakdown.length > 0 && !isEqualPop ? (
                 <>
                   <p className="mt-3 text-[0.65rem] font-semibold uppercase tracking-wide text-muted-foreground">
                     {metric === "religion"
@@ -704,12 +728,15 @@ export function HistoricMapExplorer({
             </div>
           ) : (
             <p className="mb-3 text-xs text-muted-foreground">
-              Click a district for its group mix and population.
+              {isEqualPop
+                ? "Click a region — each held about 20 million people in 1914."
+                : "Click a district for its group mix and population."}
             </p>
           )}
 
           {(metric === "nationality" || metric === "religion") &&
-          scopeEthnicRows.length > 0 ? (
+          scopeEthnicRows.length > 0 &&
+          !isEqualPop ? (
             <>
               <p className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
                 {metric === "religion"

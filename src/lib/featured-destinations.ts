@@ -45,6 +45,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "Share of a region's residents, and share of its babies — country by country. A younger country can punch above its population.",
   },
   {
+    id: "world-shares",
+    kicker: "Population",
+    title: "Share of world population & births",
+    href: "/population/world-shares",
+    description:
+      "China, India, Nigeria and others as % of world people and babies, 1950–2100 — with UN medium forecast.",
+  },
+  {
     id: "tfr-race",
     kicker: "Fertility",
     title: "Fertility by race, origin & income",

@@ -20,7 +20,8 @@ export type MapMetricId =
   | "net-migration"
   | "employment"
   | "employment-gap"
-  | "neet";
+  | "neet"
+  | "divorce-marriage";
 
 
 export type CountryMapRegion = {
@@ -262,6 +263,57 @@ function catalogToTfr(layers: SubnationalMap[]): CountryMapMetric | null {
   return tfrMapsToMetric(tfrMaps);
 }
 
+/** Merge multi-year catalog layers that share a metric id (like TFR scrubbers). */
+function catalogYearsToMetric(
+  layers: SubnationalMap[],
+  meta: {
+    id: MapMetricId;
+    label: string;
+    decimals: number;
+    scale?: ScaleType;
+  },
+): CountryMapMetric | null {
+  if (layers.length === 0) return null;
+  const valuesByYear: Record<number, CountryMapRegion[]> = {};
+  const nationalByYear: Record<number, number | null> = {};
+  const sourceByYear: Record<number, string> = {};
+  let credit: string | null = null;
+  let mid: number | undefined;
+  let scale: ScaleType = meta.scale ?? "sequential";
+  for (const m of layers) {
+    valuesByYear[m.year] = m.regions.map((r) => ({
+      id: r.id,
+      slug: r.slug,
+      name: r.name,
+      value: r.value,
+    }));
+    nationalByYear[m.year] = m.national;
+    sourceByYear[m.year] = m.source;
+    if (m.credit) credit = m.credit;
+    if (m.mid != null) mid = m.mid;
+    if (m.scale === "diverging-tfr") scale = "diverging-tfr";
+    else if (m.scale === "plasma") scale = "plasma";
+    else if (m.scale === "diverging-growth") scale = "diverging-growth";
+  }
+  const years = Object.keys(valuesByYear)
+    .map(Number)
+    .sort((a, b) => b - a);
+  return {
+    id: meta.id,
+    label: meta.label,
+    unit: layers[0].unit,
+    decimals: meta.decimals,
+    scale,
+    mid,
+    years,
+    valuesByYear,
+    nationalByYear,
+    sourceByYear,
+    sourceUrl: layers[0].sourceUrl,
+    credit,
+  };
+}
+
 function catalogPopChange(layer: SubnationalMap): CountryMapMetric {
   return {
     id: "pop-growth",
@@ -345,6 +397,12 @@ const CATALOG_METRIC_META: Partial<
     label: "NEET rate",
     decimals: 1,
     scale: "sequential",
+  },
+  "divorce-marriage": {
+    id: "divorce-marriage",
+    label: "Divorces per 100 marriages",
+    decimals: 1,
+    scale: "plasma",
   },
 };
 
@@ -555,6 +613,7 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
             // Stable indicator order within a tab
             const order = [
               "tfr",
+              "divorce-marriage",
               "median-age",
               "working-age-pct",
               "working-age",
@@ -586,8 +645,18 @@ export function getCountryMapAtlas(): CountryMapEntry[] {
     if (tfr) {
       metrics.push(ADMIN1_GEO[iso3] ? mergeAdmin1TfrYears(iso3, tfr) : tfr);
     }
+    const divorceMarriage = catalogYearsToMetric(
+      layers.filter((m) => m.metric === "divorce-marriage"),
+      CATALOG_METRIC_META["divorce-marriage"]!,
+    );
+    if (divorceMarriage) metrics.push(divorceMarriage);
     for (const layer of layers) {
-      if (layer.metric === "tfr" || layer.metric === "pop-change") continue;
+      if (
+        layer.metric === "tfr" ||
+        layer.metric === "pop-change" ||
+        layer.metric === "divorce-marriage"
+      )
+        continue;
       const m = catalogLayerToMetric(layer);
       if (m && !metrics.some((x) => x.id === m.id)) metrics.push(m);
     }

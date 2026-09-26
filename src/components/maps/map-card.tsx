@@ -54,6 +54,9 @@ export function MapCard({
   frameStats,
   height = 400,
   appearance = "cinema",
+  focusIso3s,
+  focusCamera,
+  focusClamp,
 }: {
   /** Anchor target; also picked up by the in-page table of contents. */
   id?: string;
@@ -70,6 +73,9 @@ export function MapCard({
   height?: number;
   /** Cinema = dark stage. Light = atlas paper (readable for learning). */
   appearance?: "cinema" | "light";
+  focusIso3s?: string[] | null;
+  focusCamera?: { center: [number, number]; zoom: number } | null;
+  focusClamp?: { west: number; south: number; east: number; north: number } | null;
 }) {
   const lastIdx = Math.max(0, frames.length - 1);
   const [idx, setIdx] = React.useState(lastIdx);
@@ -327,6 +333,9 @@ export function MapCard({
           height={height}
           variant={cinema ? "cinema" : "immersive"}
           hideLegend
+          focusIso3s={focusIso3s}
+          focusCamera={focusCamera}
+          focusClamp={focusClamp}
         />
       </div>
 

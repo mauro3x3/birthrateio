@@ -131,6 +131,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Who makes up a region's people, and who makes up its births",
       },
       {
+        title: "Share of world population & births",
+        href: "/population/world-shares",
+        note: "Country % of world people and babies, 1950–2100",
+      },
+      {
         title: "India population dots",
         href: "/population/india-dots",
         note: "WorldPop PMTiles night-lights style map",
@@ -463,6 +468,11 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Census maps",
     indicators: [],
     related: [
+      {
+        title: "Divorces per 100 marriages",
+        href: "/demographics/divorce-marriage",
+        note: "Eurostat ratio map and time series across Europe",
+      },
       {
         title: "US demographics",
         href: "/demographics/us",

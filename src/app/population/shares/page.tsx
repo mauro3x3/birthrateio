@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Suspense } from "react";
 import { PageHeader } from "@/components/page-header";
 import { RegionSharesExplorer } from "@/components/region-shares-explorer";
@@ -24,6 +25,16 @@ export default async function RegionalSharesPage({
         title="Where the births are"
         description="Share of a region's people, and share of its babies — country by country. A younger population punches above its weight; an older one accounts for fewer births than its size suggests."
       />
+      <div className="container border-b py-3 text-sm text-muted-foreground">
+        Looking for each country’s share of the <em>world</em>? See{" "}
+        <Link
+          href="/population/world-shares"
+          className="link-editorial font-medium"
+        >
+          population &amp; births as % of world
+        </Link>
+        .
+      </div>
       <div className="border-b bg-[hsl(40_28%_97%)]">
         <Suspense
           fallback={

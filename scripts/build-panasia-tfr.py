@@ -332,7 +332,7 @@ def main() -> None:
                 "National TFR for Asia and the Middle East (Maghreb is on the "
                 "MENA / Africa maps). Russia is included for continental framing. "
                 "Decade frames 1960–2020 plus the latest WDI year. Colour domain "
-                "is fixed (1–8) so years are comparable when you scrub."
+                "is fixed (1–9) so years are comparable when you scrub."
             ),
             regions=regions,
             scale="plasma",

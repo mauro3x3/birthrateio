@@ -26,6 +26,7 @@ type MapComponent = typeof import("@/components/maps/region-choropleth-map").Reg
 
 const METRIC_ORDER: MapMetricId[] = [
   "tfr",
+  "divorce-marriage",
   "median-age",
   "working-age-pct",
   "working-age",
@@ -43,14 +44,68 @@ const METRIC_ORDER: MapMetricId[] = [
 /** Always listed when data exists; the rest sit behind “Show all”. */
 const PRIMARY_METRICS: MapMetricId[] = [
   "tfr",
+  "divorce-marriage",
   "population",
   "pop-growth",
   "gfr",
   "religion",
 ];
 
+/** Fixed TFR domains so decade / survey scrubbing stays comparable. */
+const TFR_FIXED_DOMAIN: Record<string, { min: number; max: number }> = {
+  PANASIA: { min: 1.0, max: 9.0 },
+  AFRICA: { min: 1.0, max: 8.5 },
+  MENA: { min: 1.0, max: 9.0 },
+  EU: { min: 1.0, max: 4.0 },
+  SOUTHAMERICA: { min: 1.0, max: 7.5 },
+  CARIBBEAN: { min: 1.0, max: 7.0 },
+  SEASIA: { min: 1.0, max: 7.5 },
+  CENTRALAMERICA: { min: 1.0, max: 8.0 },
+  CENTRALASIA: { min: 1.0, max: 7.5 },
+  NORTHAMERICA: { min: 1.0, max: 4.5 },
+  OCEANIA: { min: 1.0, max: 7.5 },
+  BRA: { min: 1.0, max: 10.5 },
+  NGA: { min: 2.0, max: 8.5 },
+  KEN: { min: 2.0, max: 8.5 },
+  PHL: { min: 1.5, max: 6.5 },
+  ZAF: { min: 1.5, max: 5.5 },
+  JOR: { min: 1.5, max: 8.0 },
+  AGO: { min: 2.0, max: 8.5 },
+  NPL: { min: 1.5, max: 6.5 },
+  GHA: { min: 2.0, max: 7.5 },
+  BGD: { min: 1.5, max: 7.0 },
+  TZA: { min: 2.0, max: 8.0 },
+  ZMB: { min: 2.0, max: 8.0 },
+  MWI: { min: 2.0, max: 8.0 },
+  MLI: { min: 2.5, max: 8.5 },
+  SEN: { min: 2.0, max: 8.0 },
+  BFA: { min: 2.5, max: 8.5 },
+  KHM: { min: 1.5, max: 6.5 },
+  TJK: { min: 1.5, max: 6.5 },
+  MOZ: { min: 2.0, max: 8.0 },
+  PAK: { min: 2.0, max: 8.0 },
+  IND: { min: 1.0, max: 5.0 },
+  DEU: { min: 1.0, max: 2.5 },
+  RUS: { min: 1.0, max: 3.0 },
+  USA: { min: 1.0, max: 3.5 },
+  JPN: { min: 0.8, max: 2.5 },
+  KOR: { min: 0.5, max: 2.5 },
+  IDN: { min: 1.5, max: 5.5 },
+  AUS: { min: 1.2, max: 2.3 },
+  CAN: { min: 1.0, max: 3.5 },
+  TUR: { min: 1.0, max: 4.0 },
+  MEX: { min: 1.0, max: 3.5 },
+};
+
+/** Fixed divorce/marriage domains so year scrubbing stays comparable. */
+const DIVORCE_MARRIAGE_FIXED_DOMAIN: Record<string, { min: number; max: number }> =
+  {
+    EU: { min: 5, max: 75 },
+  };
+
 const METRIC_LABELS: Record<MapMetricId, string> = {
   tfr: "Total fertility rate",
+  "divorce-marriage": "Divorces per 100 marriages",
   "median-age": "Median age",
   "working-age-pct": "Working-age share",
   "working-age": "Working-age people",
@@ -281,11 +336,10 @@ export function CountryMapExplorer({
         values,
         metric?.scale ?? "sequential",
         metric?.mid,
-        // Fixed domain so decade scrubbing stays comparable.
-        country.iso3 === "PANASIA" && metric?.id === "tfr"
-          ? { min: 1.0, max: 8.0 }
-          : country.iso3 === "BRA" && metric?.id === "tfr"
-            ? { min: 1.0, max: 10.5 }
+        metric?.id === "tfr"
+          ? TFR_FIXED_DOMAIN[country.iso3]
+          : metric?.id === "divorce-marriage"
+            ? DIVORCE_MARRIAGE_FIXED_DOMAIN[country.iso3]
             : undefined,
       ),
     [values, metric?.scale, metric?.mid, metric?.id, country.iso3],

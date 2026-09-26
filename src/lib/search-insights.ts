@@ -175,6 +175,19 @@ const STATISTICS: StatisticDef[] = [
     keywords: ["compare fertility", "compare tfr"],
   },
   {
+    id: "births-compare",
+    title: "Compare live births — China vs US style",
+    href: "/compare?countries=china,united-states&metric=live-births&from=1950",
+    region: "Worldwide",
+    topicIds: ["fertility", "population"],
+    keywords: [
+      "compare births",
+      "china us births",
+      "live births overlay",
+      "births ratio",
+    ],
+  },
+  {
     id: "tfr-history",
     title: "Fertility since 1800",
     href: "/fertility#since-1800",
