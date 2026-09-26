@@ -136,6 +136,11 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Country % of world people and babies, 1950–2100",
       },
       {
+        title: "World population growth map",
+        href: "/population/growth",
+        note: "Annual % change timeline by country",
+      },
+      {
         title: "India population dots",
         href: "/population/india-dots",
         note: "WorldPop PMTiles night-lights style map",

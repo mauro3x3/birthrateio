@@ -53,6 +53,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "China, India, Nigeria and others as % of world people and babies, 1950–2100 — with UN medium forecast.",
   },
   {
+    id: "population-growth",
+    kicker: "Population",
+    title: "World population growth map",
+    href: "/population/growth",
+    description:
+      "Annual % change by country on a scrubable timeline — who is growing, who is shrinking.",
+  },
+  {
     id: "india-dots",
     kicker: "Population",
     title: "India as population dots",
@@ -83,6 +91,14 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
     href: "/population/rankings",
     description:
       "Most populous countries, fastest growth, density, dependency, rural share, and urban growth.",
+  },
+  {
+    id: "workers-retirees",
+    kicker: "Population",
+    title: "Workers vs retirees",
+    href: "/workers-retirees",
+    description:
+      "Working-age and 65+ headcounts — compare countries through 2060.",
   },
   {
     id: "tfr-race",

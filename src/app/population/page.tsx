@@ -4,14 +4,10 @@ import { TopicShell } from "@/components/topic-shell";
 import { SectionHeading } from "@/components/section-heading";
 import { ExploreDestinationGrid } from "@/components/explore-destination-grid";
 import { PopulationCalculator } from "@/components/population-calculator";
-import { TimelineExplorer } from "@/components/maps/timeline-explorer";
 import { featuredById } from "@/lib/featured-destinations";
 import {
   getIndicatorsUpdatedAt,
-  getMapFrames,
   getRanking,
-  getWeightedGlobalByYear,
-  getWorldByYear,
   getWorldLatestValue,
 } from "@/lib/queries";
 import { SLUG } from "@/lib/indicators";
@@ -22,14 +18,13 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Population Explorer — World Population Rankings & Projections",
   description:
-    "World population hub: growth map, share of world births, India dots, Europe change, rankings, and a growth calculator.",
+    "Population directory: share of world births, growth map, India dots, Europe change, rankings, and a growth calculator.",
   alternates: { canonical: "/population" },
 };
 
 export default async function PopulationPage() {
-  const [growthFrames, popRanking, growthRanking, popAll, growthAll, updatedAt] =
+  const [popRanking, growthRanking, popAll, growthAll, updatedAt] =
     await Promise.all([
-      safe(getMapFrames(SLUG.populationGrowth, { step: 1, maxFrames: 60 }), []),
       safe(getRanking(SLUG.population, { order: "desc", limit: 15 }), []),
       safe(getRanking(SLUG.populationGrowth, { order: "desc", limit: 15 }), []),
       safe(getRanking(SLUG.population, { order: "desc" }), []),
@@ -40,30 +35,6 @@ export default async function PopulationPage() {
       ),
     ]);
 
-  const years = growthFrames.map((f) => f.year);
-  const world = await safe(
-    getWorldByYear(SLUG.populationGrowth, years),
-    {} as Record<number, number>,
-  );
-  const globalGrowth = Object.keys(world).length
-    ? world
-    : await safe(
-        getWeightedGlobalByYear(SLUG.populationGrowth, SLUG.population, years),
-        {} as Record<number, number>,
-      );
-
-  const timelineFrames = growthFrames.map((f) => ({
-    year: f.year,
-    data: f.data.map((d) => ({
-      iso3: d.iso3,
-      slug: d.slug,
-      name: d.name,
-      value: d.value,
-      continent: d.continent,
-    })),
-  }));
-
-  // Calculator needs broader coverage than the hub top-15 preview.
   const growthAllBySlug = new Map(growthAll.map((r) => [r.slug, r]));
   const calcCountries = popAll
     .map((p) => {
@@ -81,19 +52,28 @@ export default async function PopulationPage() {
     .filter((c): c is NonNullable<typeof c> => c != null);
 
   const worldPopLatest = await safe(getWorldLatestValue(SLUG.population), null);
+  const worldGrowthLatest = await safe(
+    getWorldLatestValue(SLUG.populationGrowth),
+    null,
+  );
   const worldPop = worldPopLatest?.value ?? 8_000_000_000;
-  const latestGrowthYear = years[years.length - 1];
-  const worldGrowth =
-    (latestGrowthYear != null ? globalGrowth[latestGrowthYear] : undefined) ??
-    0.9;
+  const worldGrowth = worldGrowthLatest?.value ?? 0.9;
 
-  const destinations = [
+  const charts = [
     featuredById("world-shares"),
     featuredById("birth-shares"),
+  ].filter((d): d is NonNullable<typeof d> => d != null);
+
+  const maps = [
+    featuredById("population-growth"),
     featuredById("india-dots"),
     featuredById("europe-change"),
     featuredById("region-compare"),
+  ].filter((d): d is NonNullable<typeof d> => d != null);
+
+  const tables = [
     featuredById("population-rankings"),
+    featuredById("workers-retirees"),
   ].filter((d): d is NonNullable<typeof d> => d != null);
 
   return (
@@ -101,7 +81,7 @@ export default async function PopulationPage() {
       title="Population"
       path="/population"
       updatedAt={updatedAt}
-      description="World population by country — pick a map or chart below, or scrub the growth timeline."
+      description="Pick a chart or map — each tool is its own page. The growth timeline is no longer dumped on this hub."
       intro={
         <>
           <p>
@@ -110,35 +90,49 @@ export default async function PopulationPage() {
             of those people are children, workers, or of retirement age.
           </p>
           <p>
-            Use the cards for dedicated explorers (world shares, India dots,
-            Europe change). Rankings and denser tables live on their own page so
-            this hub stays scannable.
+            This page is a directory. Open a card for the full explorer — share
+            of world births, settlement maps, rankings — instead of scrolling
+            past a full-screen map.
           </p>
         </>
-      }
-      hero={
-        <TimelineExplorer
-          frames={timelineFrames}
-          globalByYear={globalGrowth}
-          unit="% annual"
-          decimals={2}
-          scaleType="diverging-growth-dark"
-          mid={0}
-          source="World Bank"
-          headline="Global"
-          metricLabel="% annual growth"
-        />
       }
     >
       <section>
         <SectionHeading
-          id="explorers"
-          title="Maps and charts"
-          description="Each tool is its own page — open one instead of scrolling forever."
-          tocLabel="Explorers"
+          id="charts"
+          title="Charts"
+          description="Country shares of world people and babies — history and UN forecast."
+          tocLabel="Charts"
         />
         <div className="mt-5">
-          <ExploreDestinationGrid items={destinations} />
+          <ExploreDestinationGrid items={charts} />
+        </div>
+      </section>
+
+      <section>
+        <SectionHeading
+          id="maps"
+          title="Maps"
+          description="Growth timeline, India dots, Europe change, and paint-your-own regions."
+          tocLabel="Maps"
+        />
+        <div className="mt-5">
+          <ExploreDestinationGrid items={maps} />
+        </div>
+      </section>
+
+      <section>
+        <SectionHeading
+          id="tables"
+          title="Rankings and ageing"
+          description="League tables and the workers-vs-retirees projection."
+          tocLabel="Tables"
+        />
+        <div className="mt-5">
+          <ExploreDestinationGrid
+            items={tables}
+            className="sm:grid-cols-2 lg:grid-cols-2"
+          />
         </div>
       </section>
 
@@ -152,7 +146,7 @@ export default async function PopulationPage() {
           <PopulationCalculator
             countries={calcCountries}
             defaultPopulation={Math.round(worldPop)}
-            defaultGrowth={Number(worldGrowth.toFixed(2))}
+            defaultGrowth={Number(Number(worldGrowth).toFixed(2))}
           />
         </div>
       </section>
@@ -163,8 +157,7 @@ export default async function PopulationPage() {
           title="Quick rankings"
           description={
             <>
-              Top of the league tables. Full density, dependency, rural, and
-              urban lists:{" "}
+              Top of the league tables. Full lists:{" "}
               <Link href="/population/rankings" className="link-editorial">
                 all population rankings
               </Link>

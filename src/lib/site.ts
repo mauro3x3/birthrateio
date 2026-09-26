@@ -84,7 +84,7 @@ export const navTopics: NavTopic[] = [
     title: "People",
     href: "/topics#people",
     description:
-      "Fertility, population size, migration, mortality, and cities.",
+      "Fertility, migration, mortality, ageing, and cities.",
     links: [
       {
         title: "Why birthrates matter",
@@ -99,21 +99,16 @@ export const navTopics: NavTopic[] = [
           "Total fertility since 1800, nowcasts, rankings, and TFR by ancestry or religion where published",
       },
       {
-        title: "Population",
-        href: "/population",
-        description: "Population levels, growth, and projections",
+        title: "Fertility by race & origin",
+        href: "/fertility/race",
+        description:
+          "U.S. race TFR, Austria origin, Kosovo ethnicity, and GDP–fertility scatter",
       },
       {
-        title: "Compare regions",
-        href: "/population/compare",
+        title: "Many mothers, or large families?",
+        href: "/fertility/many-mothers-or-large-families",
         description:
-          "Paint provinces into groups, sum populations, download a map",
-      },
-      {
-        title: "Where the births are",
-        href: "/population/shares",
-        description:
-          "Each region's people, and which countries account for its births",
+          "Decompose the same TFR into how many women become mothers vs family size",
       },
       {
         title: "Migration",
@@ -126,9 +121,68 @@ export const navTopics: NavTopic[] = [
         description: "Death rates and longevity indicators",
       },
       {
+        title: "Workers vs retirees",
+        href: "/workers-retirees",
+        description:
+          "Working-age and 65+ headcounts — compare countries through 2060",
+      },
+      {
         title: "Cities",
         href: "/cities",
         description: "World metropolitan areas database",
+      },
+    ],
+  },
+  {
+    id: "population",
+    title: "Population",
+    href: "/population",
+    description:
+      "Size, growth, world shares, and settlement maps.",
+    links: [
+      {
+        title: "Population hub",
+        href: "/population",
+        description: "Directory of charts, maps, rankings, and the growth calculator",
+      },
+      {
+        title: "Share of world population & births",
+        href: "/population/world-shares",
+        description:
+          "China, India, Nigeria and others as % of world people and babies, 1950–2100",
+      },
+      {
+        title: "Where the births are",
+        href: "/population/shares",
+        description:
+          "Each region's people, and which countries account for its births",
+      },
+      {
+        title: "World growth map",
+        href: "/population/growth",
+        description: "Annual % change by country — scrubable timeline",
+      },
+      {
+        title: "India population dots",
+        href: "/population/india-dots",
+        description: "WorldPop 2025 grid as glowing dots from a PMTiles archive",
+      },
+      {
+        title: "Europe: who grew, who shrank",
+        href: "/population/europe-change",
+        description: "GHSL 2000→2025 settlement growth and decline",
+      },
+      {
+        title: "Compare regions",
+        href: "/population/compare",
+        description:
+          "Paint provinces into groups, sum populations, download a map",
+      },
+      {
+        title: "Population rankings",
+        href: "/population/rankings",
+        description:
+          "Size, growth, density, dependency, rural share, urban growth",
       },
     ],
   },
@@ -162,24 +216,33 @@ export const navTopics: NavTopic[] = [
         href: "/demographics/us",
         description: "Race and Hispanic-origin map for U.S. states",
       },
+      {
+        title: "World growth map",
+        href: "/population/growth",
+        description: "Annual population growth % by country",
+      },
+      {
+        title: "Europe population change",
+        href: "/population/europe-change",
+        description: "GHSL settlement growth and decline, 2000–2025",
+      },
+      {
+        title: "India population dots",
+        href: "/population/india-dots",
+        description: "WorldPop night-lights style population map",
+      },
     ],
   },
   {
     id: "society",
     title: "Society",
     href: "/topics#society",
-    description: "Crime, ageing, and related social indicators.",
+    description: "Crime and related social indicators.",
     links: [
       {
         title: "Crime",
         href: "/crime",
         description: "Homicide and crime rates by country",
-      },
-      {
-        title: "Workers vs retirees",
-        href: "/workers-retirees",
-        description:
-          "Working-age and 65+ headcounts — compare countries through 2060",
       },
     ],
   },

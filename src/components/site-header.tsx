@@ -100,7 +100,7 @@ export function SiteHeader() {
             </DropdownMenuTrigger>
             <DropdownMenuContent
               align="start"
-              className="w-[min(44rem,calc(100vw-2rem))] p-3"
+              className="w-[min(56rem,calc(100vw-2rem))] p-3"
             >
               <div className="mb-2 flex items-center justify-between gap-3 px-1">
                 <DropdownMenuLabel className="p-0 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
@@ -113,7 +113,7 @@ export function SiteHeader() {
                   All topics →
                 </Link>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {navTopics.map((topic) => (
                   <div key={topic.id} className="rounded-sm bg-muted/50 p-2.5">
                     <p className="mb-1.5 text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
