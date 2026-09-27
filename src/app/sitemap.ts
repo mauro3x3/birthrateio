@@ -11,6 +11,86 @@ import { STORY_CATALOG } from "@/lib/stories";
 
 export const revalidate = 86400;
 
+/**
+ * High-interest countries for the topic × country matrix in the sitemap.
+ * Full matrix (~1k URLs of near-identical templates) reads as thin/doorway
+ * content to AdSense reviewers — keep the rich `/country/[slug]` profiles as
+ * the primary indexable unit, and only advertise a curated topic subset.
+ */
+const SITEMAP_TOPIC_COUNTRY_SLUGS = new Set([
+  "united-states",
+  "china",
+  "india",
+  "indonesia",
+  "pakistan",
+  "nigeria",
+  "brazil",
+  "bangladesh",
+  "russian-federation",
+  "mexico",
+  "japan",
+  "ethiopia",
+  "philippines",
+  "egypt-arab-rep",
+  "vietnam",
+  "congo-dem-rep",
+  "turkiye",
+  "germany",
+  "thailand",
+  "united-kingdom",
+  "france",
+  "italy",
+  "south-africa",
+  "korea-rep",
+  "spain",
+  "colombia",
+  "argentina",
+  "canada",
+  "poland",
+  "saudi-arabia",
+  "ukraine",
+  "morocco",
+  "uzbekistan",
+  "malaysia",
+  "peru",
+  "angola",
+  "ghana",
+  "mozambique",
+  "yemen-rep",
+  "australia",
+  "madagascar",
+  "cote-d-ivoire",
+  "nepal",
+  "cameroon",
+  "niger",
+  "taiwan",
+  "sri-lanka",
+  "burkina-faso",
+  "mali",
+  "romania",
+  "malawi",
+  "chile",
+  "kazakhstan",
+  "zambia",
+  "guatemala",
+  "ecuador",
+  "syria",
+  "netherlands",
+  "sweden",
+  "israel",
+  "switzerland",
+  "hong-kong-sar-china",
+  "austria",
+  "belgium",
+  "singapore",
+  "denmark",
+  "finland",
+  "norway",
+  "ireland",
+  "new-zealand",
+  "iran-islamic-rep",
+]);
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = siteConfig.url;
   const staticRoutes = [
@@ -24,7 +104,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/population/shares",
     "/population/world-shares",
     "/population/growth",
-    "/population/india-dots",
     "/population/europe-change",
     "/population/compare",
     "/population/rankings",
@@ -54,6 +133,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/contact",
     "/privacy",
     "/terms",
+    "/disclaimer",
     "/why",
     "/brief",
     "/methodology",
@@ -92,19 +172,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   let countryRoutes: MetadataRoute.Sitemap = [];
-  let briefRoutes: MetadataRoute.Sitemap = [];
   let topicCountryRoutes: MetadataRoute.Sitemap = [];
-  let cityRoutes: MetadataRoute.Sitemap = [];
   let stateRoutes: MetadataRoute.Sitemap = [];
   let compareRoutes: MetadataRoute.Sitemap = [];
 
   try {
-    const [countries, cities, states] = await Promise.all([
+    const [countries, states] = await Promise.all([
       prisma.country.findMany({
         where: { isAggregate: false },
-        select: { slug: true, updatedAt: true, continent: true },
+        select: { slug: true, updatedAt: true },
       }),
-      prisma.city.findMany({ select: { slug: true, updatedAt: true } }),
       prisma.admin1.findMany({ select: { slug: true, updatedAt: true } }),
     ]);
 
@@ -117,44 +194,35 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }));
 
-    briefRoutes = countries.map((c) => ({
-      url: `${base}/country/${c.slug}/brief`,
-      lastModified: c.updatedAt,
-      changeFrequency: "weekly" as const,
-      priority: 0.55,
-    }));
+    // Curated topic × country only (not the full doorway matrix).
+    topicCountryRoutes = countries
+      .filter((c) => SITEMAP_TOPIC_COUNTRY_SLUGS.has(c.slug))
+      .flatMap((c) =>
+        COUNTRY_TOPICS.map((topic) => ({
+          url: `${base}${topic.hubPath}/${c.slug}`,
+          lastModified: c.updatedAt,
+          changeFrequency: "weekly" as const,
+          priority: 0.55,
+        })),
+      );
 
-    // Topic × country — the programmatic SEO matrix (~5 × 200 URLs).
-    topicCountryRoutes = countries.flatMap((c) =>
-      COUNTRY_TOPICS.map((topic) => ({
-        url: `${base}${topic.hubPath}/${c.slug}`,
-        lastModified: c.updatedAt,
-        changeFrequency: "weekly" as const,
-        priority: 0.65,
-      })),
-    );
-
-    cityRoutes = cities.map((c) => ({
-      url: `${base}/city/${c.slug}`,
-      lastModified: c.updatedAt,
-      changeFrequency: "monthly" as const,
-      priority: 0.5,
-    }));
-
+    // States/provinces with census-style maps — keep, but cities stay off the
+    // sitemap (many are thin UN WUP stubs).
     stateRoutes = states.map((s) => ({
       url: `${base}/state/${s.slug}`,
       lastModified: s.updatedAt,
       changeFrequency: "weekly" as const,
-      priority: 0.55,
+      priority: 0.5,
     }));
 
-    // Curated high-interest pairs + same-continent neighbours (capped).
+    // Curated compare pairs only — the old continent mesh flooded the index
+    // with near-identical side-by-side pages.
     const pairKeys = new Set<string>();
-    const addPair = (x: string, y: string) => {
-      if (!slugSet.has(x) || !slugSet.has(y) || x === y) return;
+    for (const [x, y] of SEO_COMPARE_PAIRS) {
+      if (!slugSet.has(x) || !slugSet.has(y) || x === y) continue;
       const [lo, hi] = x < y ? [x, y] : [y, x];
       const key = `${lo}/${hi}`;
-      if (pairKeys.has(key)) return;
+      if (pairKeys.has(key)) continue;
       pairKeys.add(key);
       compareRoutes.push({
         url: `${base}/compare/${lo}/${hi}`,
@@ -162,25 +230,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "weekly",
         priority: 0.55,
       });
-    };
-
-    for (const [x, y] of SEO_COMPARE_PAIRS) addPair(x, y);
-
-    // Up to 8 peers per country within continent → bounded compare surface.
-    const byContinent = new Map<string, string[]>();
-    for (const c of countries) {
-      if (!c.continent) continue;
-      const list = byContinent.get(c.continent) ?? [];
-      list.push(c.slug);
-      byContinent.set(c.continent, list);
-    }
-    for (const slugs of byContinent.values()) {
-      const sorted = [...slugs].sort();
-      for (let i = 0; i < sorted.length; i++) {
-        for (let j = i + 1; j < Math.min(i + 9, sorted.length); j++) {
-          addPair(sorted[i], sorted[j]);
-        }
-      }
     }
   } catch {
     // DB not available at build time — static routes still emitted.
@@ -192,10 +241,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...censusRoutes,
     ...storyRoutes,
     ...countryRoutes,
-    ...briefRoutes,
     ...topicCountryRoutes,
     ...compareRoutes,
     ...stateRoutes,
-    ...cityRoutes,
   ];
 }

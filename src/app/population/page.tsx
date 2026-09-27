@@ -87,12 +87,26 @@ export default async function PopulationPage() {
           <p>
             Population is a stock; growth is a flow. Fertility, mortality, and
             net migration all move the total, but age structure decides how many
-            of those people are children, workers, or of retirement age.
+            of those people are children, workers, or of retirement age. Two
+            countries with the same headcount can face opposite pressures if one
+            is a youth bulge and the other is a rectangle with a heavy top.
           </p>
           <p>
-            This page is a directory. Open a card for the full explorer — share
-            of world births, settlement maps, rankings — instead of scrolling
-            past a full-screen map.
+            This hub is a directory of explorers, not a single dump of every
+            chart. Use share-of-world series for who will hold the next
+            generation of births, the growth map for where stock is rising or
+            falling, and the workers–retirees view for the pension arithmetic.
+            Country profiles still carry the full national time series and UN
+            projection variants.
+          </p>
+          <p>
+            Figures come from World Bank and UN World Population Prospects
+            unless a page names a national office. Projections are scenarios —
+            medium is the conventional reference, not a promise. Definitions:{" "}
+            <Link href="/glossary" className="link-editorial">
+              glossary
+            </Link>
+            .
           </p>
         </>
       }

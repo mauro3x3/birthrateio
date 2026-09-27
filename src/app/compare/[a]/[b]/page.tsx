@@ -7,6 +7,7 @@ import { CompareTool } from "@/components/compare-tool";
 import { CiteThis } from "@/components/data/cite-this";
 import { canonicalPathname } from "@/lib/canonical-path";
 import { resolveCountrySlug } from "@/lib/country-aliases";
+import { SEO_COMPARE_PAIRS } from "@/lib/country-topics";
 import {
   getAllCountries,
   getCountryBySlug,
@@ -19,6 +20,13 @@ import { siteConfig } from "@/lib/site";
 import { formatCompact, formatNumber } from "@/lib/utils";
 
 export const revalidate = 86400;
+
+const CURATED_COMPARE_KEYS = new Set(
+  SEO_COMPARE_PAIRS.map(([x, y]) => {
+    const [lo, hi] = x < y ? [x, y] : [y, x];
+    return `${lo}/${hi}`;
+  }),
+);
 
 export async function generateMetadata({
   params,
@@ -38,6 +46,9 @@ export async function generateMetadata({
   const title = `${ca.name} vs ${cb.name} — Demographics Compared`;
   const description = `Side-by-side comparison of fertility, population, GDP and migration for ${ca.name} and ${cb.name}. Charts and rankings from World Bank and UN data.`;
   const path = canonicalPathname(`/compare/${ca.slug}/${cb.slug}`);
+  const [lo, hi] =
+    ca.slug < cb.slug ? [ca.slug, cb.slug] : [cb.slug, ca.slug];
+  const curated = CURATED_COMPARE_KEYS.has(`${lo}/${hi}`);
   return {
     title,
     description,
@@ -48,6 +59,8 @@ export async function generateMetadata({
       url: path,
       type: "article",
     },
+    // Tool URLs are infinite; only curated pairs stay indexable.
+    ...(curated ? {} : { robots: { index: false, follow: true } }),
   };
 }
 

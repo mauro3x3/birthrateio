@@ -56,8 +56,13 @@ export const supportConfig = {
 };
 
 export const contactConfig = {
-  /** Public org inbox. Empty until a birthrate.io address is ready. */
-  organisationsEmail: null as string | null,
+  /**
+   * Public inbox for privacy / partnership / press.
+   * Set NEXT_PUBLIC_CONTACT_EMAIL when a birthrate.io mailbox is live.
+   * Until then the contact page routes through the contribute form.
+   */
+  organisationsEmail:
+    process.env.NEXT_PUBLIC_CONTACT_EMAIL?.trim() || (null as string | null),
 };
 
 export type NavLink = {
@@ -344,6 +349,11 @@ export const referenceNav: NavLink[] = [
     title: "Privacy",
     href: "/privacy",
     description: "Cookies, analytics, and advertising",
+  },
+  {
+    title: "Disclaimer",
+    href: "/disclaimer",
+    description: "Reference data — not advice or official publication",
   },
   {
     title: "Terms",

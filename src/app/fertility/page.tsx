@@ -96,14 +96,30 @@ export default async function FertilityPage() {
             age-specific birth rates throughout her life. It is not completed
             cohort fertility, and a single-year bounce often reflects timing
             (delayed births) rather than a permanent change in family size.
+            Replacement is about 2.1 in low-mortality countries — higher where
+            child mortality is still material.
           </p>
           <p>
-            Replacement is about 2.1 children per woman in low-mortality
-            countries. Most of Europe and East Asia sit well below that; parts of
-            sub-Saharan Africa remain well above. Where statistical offices
-            publish ancestry, religion, or education splits, those pages matter
-            more than the national average for schools and politics — see the
-            caveats under &ldquo;What this page measures.&rdquo;
+            Most of Europe and East Asia sit well below replacement; parts of
+            sub-Saharan Africa remain well above, even where national TFR is
+            falling from a higher base. The timeline map and rankings below use
+            the World Bank / UN harmonised series. Where statistical offices
+            publish ancestry, religion, education, or wealth splits, those
+            explorers matter more than the national average for schools and
+            politics — and they are labelled as country-specific categories, not
+            global league tables.
+          </p>
+          <p>
+            For the short briefing on why the series matters for pensions,
+            labour, and elections, see{" "}
+            <Link href="/why" className="link-editorial">
+              why birthrates matter
+            </Link>
+            . Method and caveats:{" "}
+            <Link href="/methodology" className="link-editorial">
+              methodology
+            </Link>
+            .
           </p>
         </>
       }

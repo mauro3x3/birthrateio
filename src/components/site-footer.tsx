@@ -153,6 +153,9 @@ export function SiteFooter() {
             <Link href="/terms" className="underline hover:text-foreground">
               Terms
             </Link>
+            <Link href="/disclaimer" className="underline hover:text-foreground">
+              Disclaimer
+            </Link>
             <Link href="/contact" className="underline hover:text-foreground">
               Contact
             </Link>

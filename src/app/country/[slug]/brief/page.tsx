@@ -30,6 +30,8 @@ export async function generateMetadata({
     description,
     alternates: { canonical: path },
     openGraph: { title, description, url: path, type: "article" },
+    // Interactive builder — valuable for users, thin as an index target.
+    robots: { index: false, follow: true },
   };
 }
 

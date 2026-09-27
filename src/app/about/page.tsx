@@ -167,6 +167,39 @@ export default function AboutPage() {
 
         <section className="space-y-3">
           <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
+            Who publishes this
+          </h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            birthrate.io is an independently published public-interest data site
+            — not a government agency, university department, or partisan
+            campaign. It is maintained as a continuous project: series are
+            refreshed from upstream providers, maps and explorers are curated,
+            and reader corrections are worked into the pipeline. There is no
+            paywall for ordinary reading; ads and{" "}
+            <Link href="/support" className="link-editorial">
+              voluntary donations
+            </Link>{" "}
+            cover hosting and tooling.
+          </p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            For press, partnerships, or privacy requests, use{" "}
+            <Link href="/contact" className="link-editorial">
+              contact
+            </Link>
+            . For a wrong figure, use{" "}
+            <Link href="/contribute" className="link-editorial">
+              contribute
+            </Link>
+            . Legal framing:{" "}
+            <Link href="/disclaimer" className="link-editorial">
+              disclaimer
+            </Link>
+            .
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
             Corrections
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground">

@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description:
     "Interactive MapLibre + PMTiles dot-density map of India from WorldPop 2025 1 km population grids. Modeled people per cell, randomized within pixels.",
   alternates: { canonical: "/population/india-dots" },
+  // Archive is gitignored / not hosted yet — hide empty basemap from indexers.
+  ...(!process.env.NEXT_PUBLIC_INDIA_POP_PMTILES_URL?.trim()
+    ? { robots: { index: false, follow: true } }
+    : {}),
 };
 
 export default function IndiaPopulationDotsPage() {
