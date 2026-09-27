@@ -129,26 +129,18 @@ export function PopulationChangeMap({
         }
 
         const tilesUrl = resolveTilesUrl(url);
-        // Probe the archive early so we can show a clear message instead of
-        // an empty basemap when the gitignored file isn't on the host.
-        const head = await fetch(tilesUrl, {
-          method: "HEAD",
+        // Probe early so a missing archive shows a clear banner instead of an
+        // empty basemap. Prefer a tiny range GET — some hosts reject HEAD.
+        const probe = await fetch(tilesUrl, {
+          headers: { Range: "bytes=0-15" },
           mode: "cors",
         }).catch(() => null);
         if (cancelled) return;
-        if (!head || !head.ok) {
-          // Some CDNs disallow HEAD — fall through to GET of first byte.
-          const probe = await fetch(tilesUrl, {
-            headers: { Range: "bytes=0-1" },
-            mode: "cors",
-          }).catch(() => null);
-          if (cancelled) return;
-          if (!probe || !(probe.ok || probe.status === 206)) {
-            setError(
-              "Population-change tiles are missing on this host. Set NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL to a public .pmtiles URL (R2/S3), or place europe-popchange.pmtiles in public/tiles for local dev.",
-            );
-            return;
-          }
+        if (!probe || !(probe.ok || probe.status === 206)) {
+          setError(
+            "Population-change tiles are missing on this host. Expected /tiles/europe-popchange.pmtiles (or set NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL).",
+          );
+          return;
         }
 
         const midLon = (bounds[0] + bounds[2]) / 2;
@@ -229,7 +221,7 @@ export function PopulationChangeMap({
           const msg = e?.error?.message ?? "";
           if (/pmtiles|popchange|Failed to fetch|404/i.test(msg)) {
             setError(
-              "Could not load population-change tiles. Check NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL / public/tiles/europe-popchange.pmtiles.",
+              "Could not load population-change tiles from /tiles/europe-popchange.pmtiles.",
             );
           }
         });

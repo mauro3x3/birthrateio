@@ -44,5 +44,7 @@ yarn-error.log*
 /.tmp-map-build
 /.tmp-pylib/
 
-# generated population tiles (rebuild with scripts/build-india-population-pmtiles.py)
+# generated population tiles (rebuild with scripts/build-*-pmtiles*)
+# Europe change is small enough to ship in-repo for production; India stays external.
 /public/tiles/*.pmtiles
+!/public/tiles/europe-popchange.pmtiles
