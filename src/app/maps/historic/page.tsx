@@ -12,7 +12,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Historic empire maps — Religion, nationality, and old borders",
   description:
-    "Interactive historic maps: 1914 world in 82 equal-population regions, Austria-Hungary nationalities, Russian Empire 1897 religions, Ottoman, Yugoslavia, French Algeria, and Africa before Berlin.",
+    "Interactive historic maps: world in 82 equal-population regions from 1914 to 2050, Austria-Hungary nationalities, Russian Empire 1897 religions, Ottoman, Yugoslavia, French Algeria, and Africa before Berlin.",
   alternates: { canonical: "/maps/historic" },
 };
 
@@ -128,10 +128,10 @@ export default function HistoricMapsHubPage() {
               <>
                 Live maps include{" "}
                 <Link
-                  href="/maps/historic/world-pop82-1914"
+                  href="/maps/historic/world-pop82"
                   className="link-editorial font-medium"
                 >
-                  82 equal-population regions 1914
+                  82 equal-population regions (1914–2050)
                 </Link>
                 ,{" "}
                 <Link

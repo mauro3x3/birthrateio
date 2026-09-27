@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowDownUp, Download } from "lucide-react";
+import { ArrowDownUp, Download, Eye, EyeOff } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -27,6 +27,7 @@ import {
 } from "@/components/country-multi-select";
 import type { LaborExplorerRow } from "@/lib/briefing-labor";
 import { downloadFile, toCSV, cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 type SortKey =
   | "name"
@@ -177,16 +178,51 @@ export function WorkersRetireesExplorer({
   const [spotlight, setSpotlight] = React.useState(
     () => DEFAULT_COMPARE.find((s) => bySlug.has(s)) ?? rows[0]?.slug ?? "",
   );
-
-  const selectSpotlight = React.useCallback(
-    (slug: string) => {
-      setSpotlight(slug);
-      setSelected((prev) =>
-        prev.includes(slug) || prev.length >= 6 ? prev : [...prev, slug],
-      );
-    },
-    [],
+  const [hiddenSlugs, setHiddenSlugs] = React.useState<Set<string>>(
+    () => new Set(),
   );
+  const [mutedContinents, setMutedContinents] = React.useState<Set<string>>(
+    () => new Set(),
+  );
+  const [listQuery, setListQuery] = React.useState("");
+
+  const selectSpotlight = React.useCallback((slug: string) => {
+    setSpotlight(slug);
+    setHiddenSlugs((prev) => {
+      if (!prev.has(slug)) return prev;
+      const next = new Set(prev);
+      next.delete(slug);
+      return next;
+    });
+    setSelected((prev) =>
+      prev.includes(slug) || prev.length >= 6 ? prev : [...prev, slug],
+    );
+  }, []);
+
+  const toggleHidden = React.useCallback((slug: string) => {
+    setHiddenSlugs((prev) => {
+      const next = new Set(prev);
+      if (next.has(slug)) next.delete(slug);
+      else next.add(slug);
+      return next;
+    });
+  }, []);
+
+  const toggleContinent = React.useCallback((continent: string) => {
+    setMutedContinents((prev) => {
+      const next = new Set(prev);
+      if (next.has(continent)) next.delete(continent);
+      else next.add(continent);
+      return next;
+    });
+  }, []);
+
+  const listRows = React.useMemo(() => {
+    const q = listQuery.trim().toLowerCase();
+    let list = [...rows].sort((a, b) => b.now.workingMil - a.now.workingMil);
+    if (q) list = list.filter((r) => r.name.toLowerCase().includes(q));
+    return list;
+  }, [rows, listQuery]);
 
   const filtered = React.useMemo(() => {
     let list = rows;
@@ -225,28 +261,20 @@ export function WorkersRetireesExplorer({
     .map((s) => bySlug.get(s))
     .filter((r): r is LaborExplorerRow => r != null);
 
-  const compareData = compareRows.length
-    ? [
-        Object.fromEntries([
-          ["period", compareRows[0].now.year],
-          ...compareRows.map((c) => [c.slug, ratio(c.now.workersPerRetiree)]),
-        ]),
-        Object.fromEntries([
-          ["period", compareRows[0].at2040.year],
-          ...compareRows.map((c) => [
-            c.slug,
-            ratio(c.at2040.workersPerRetiree),
-          ]),
-        ]),
-        Object.fromEntries([
-          ["period", compareRows[0].at2060.year],
-          ...compareRows.map((c) => [
-            c.slug,
-            ratio(c.at2060.workersPerRetiree),
-          ]),
-        ]),
-      ]
-    : [];
+  const compareData = React.useMemo(() => {
+    if (compareRows.length === 0) return [];
+    const anchor = compareRows.reduce((best, r) =>
+      r.path.length > best.path.length ? r : best,
+    );
+    return anchor.path.map((b, i) => {
+      const row: Record<string, number | string | null> = { year: b.year };
+      for (const c of compareRows) {
+        const pt = c.path[Math.min(i, c.path.length - 1)];
+        row[c.slug] = pt ? ratio(pt.workersPerRetiree) : null;
+      }
+      return row;
+    });
+  }, [compareRows]);
 
   const compareSeries = compareRows.map((c) => ({
     key: c.slug,
@@ -255,23 +283,11 @@ export function WorkersRetireesExplorer({
 
   const spot = bySlug.get(spotlight);
   const spotData = spot
-    ? [
-        {
-          period: String(spot.now.year),
-          working: spot.now.workingMil,
-          retirees: spot.now.oldMil,
-        },
-        {
-          period: String(spot.at2040.year),
-          working: spot.at2040.workingMil,
-          retirees: spot.at2040.oldMil,
-        },
-        {
-          period: String(spot.at2060.year),
-          working: spot.at2060.workingMil,
-          retirees: spot.at2060.oldMil,
-        },
-      ]
+    ? spot.path.map((b) => ({
+        period: String(b.year),
+        working: b.workingMil,
+        retirees: b.oldMil,
+      }))
     : [];
 
   const spotSeries = [
@@ -292,6 +308,8 @@ export function WorkersRetireesExplorer({
       })),
     [rows],
   );
+
+  const visibleCount = rows.length - hiddenSlugs.size;
 
   const leaderboardValid = React.useMemo(
     () =>
@@ -341,35 +359,135 @@ export function WorkersRetireesExplorer({
             Who&rsquo;s aging fastest?
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Each bubble is a country: today&rsquo;s workers-per-retiree ratio
-            (x-axis) against the ~2060 projection (y-axis), both on a log
-            scale. Bubble size is today&rsquo;s working-age population.
-            Countries below the dashed line are projected to have{" "}
-            <em>fewer</em> workers per retiree in 2060 than today.
+            Today&rsquo;s workers-per-retiree (x) against the ~2060 projection
+            (y), both log-scaled. Bubble size is working-age population. Below
+            the dashed line means fewer workers per retiree by 2060. Hide
+            countries from the list, or click a region swatch to mute a whole
+            continent.
           </p>
         </div>
-        <ChartCard
-          title="Workers per retiree: today vs ~2060"
-          description="Log–log scatter. Below the diagonal = ratio falling by 2060."
-          source="World Bank"
-          csvName="workers-per-retiree-scatter"
-          csvRows={rows.map((r) => ({
-            country: r.name,
-            iso3: r.iso3,
-            region: r.continent ?? "",
-            workers_per_retiree_now: ratio(r.now.workersPerRetiree),
-            workers_per_retiree_2060: ratio(r.at2060.workersPerRetiree),
-            working_age_now_millions: r.now.workingMil,
-          }))}
-          valueLabels={false}
-        >
-          <AgingScatterChart
-            rows={scatterRows}
-            height={480}
-            highlightSlug={spotlight}
-            onSelect={selectSpotlight}
-          />
-        </ChartCard>
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16.5rem]">
+          <ChartCard
+            title="Workers per retiree: today vs ~2060"
+            description="Log–log scatter. Below the diagonal = ratio falling by 2060."
+            source="World Bank"
+            csvName="workers-per-retiree-scatter"
+            csvRows={rows.map((r) => ({
+              country: r.name,
+              iso3: r.iso3,
+              region: r.continent ?? "",
+              workers_per_retiree_now: ratio(r.now.workersPerRetiree),
+              workers_per_retiree_2060: ratio(r.at2060.workersPerRetiree),
+              working_age_now_millions: r.now.workingMil,
+            }))}
+            valueLabels={false}
+          >
+            <AgingScatterChart
+              rows={scatterRows}
+              height={480}
+              highlightSlug={spotlight}
+              hiddenSlugs={hiddenSlugs}
+              mutedContinents={mutedContinents}
+              onToggleContinent={toggleContinent}
+              onSelect={selectSpotlight}
+            />
+          </ChartCard>
+
+          <aside className="flex max-h-[36rem] flex-col border border-border bg-card lg:max-h-none lg:self-stretch">
+            <div className="space-y-2 border-b border-border p-3">
+              <div className="flex items-center justify-between gap-2">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-muted-foreground">
+                  Countries
+                </p>
+                <p className="text-[11px] tabular-nums text-muted-foreground">
+                  {visibleCount}/{rows.length}
+                </p>
+              </div>
+              <Input
+                value={listQuery}
+                onChange={(e) => setListQuery(e.target.value)}
+                placeholder="Find a country…"
+                className="h-8 rounded-none text-sm"
+              />
+              <div className="flex flex-wrap gap-1.5">
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-7 rounded-none px-2 text-[11px]"
+                  onClick={() => setHiddenSlugs(new Set())}
+                >
+                  Show all
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="h-7 rounded-none px-2 text-[11px]"
+                  onClick={() =>
+                    setHiddenSlugs(new Set(rows.map((r) => r.slug)))
+                  }
+                >
+                  Hide all
+                </Button>
+              </div>
+            </div>
+            <ul className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
+              {listRows.map((r) => {
+                const hidden = hiddenSlugs.has(r.slug);
+                const active = spotlight === r.slug;
+                return (
+                  <li key={r.slug} className="border-b border-border/60">
+                    <div
+                      className={cn(
+                        "flex items-center gap-1 px-1.5 py-1",
+                        active && "bg-muted/60",
+                        hidden && "opacity-45",
+                      )}
+                    >
+                      <button
+                        type="button"
+                        onClick={() => selectSpotlight(r.slug)}
+                        className="flex min-w-0 flex-1 items-center gap-1.5 px-1 py-1 text-left"
+                      >
+                        <span
+                          className="h-2 w-2 shrink-0 rounded-full"
+                          style={{
+                            background: colorForContinent(r.continent),
+                          }}
+                        />
+                        <span className="shrink-0 text-sm leading-none">
+                          {r.flagEmoji ?? "🏳️"}
+                        </span>
+                        <span className="min-w-0 truncate text-[12px] font-medium text-foreground">
+                          {r.name}
+                        </span>
+                        <span className="ml-auto shrink-0 text-[11px] tabular-nums text-muted-foreground">
+                          {ratio(r.now.workersPerRetiree).toFixed(1)}
+                        </span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => toggleHidden(r.slug)}
+                        className="shrink-0 p-1.5 text-muted-foreground hover:text-foreground"
+                        aria-label={
+                          hidden ? `Show ${r.name}` : `Hide ${r.name}`
+                        }
+                        title={hidden ? "Show on scatter" : "Hide from scatter"}
+                      >
+                        {hidden ? (
+                          <EyeOff className="h-3.5 w-3.5" />
+                        ) : (
+                          <Eye className="h-3.5 w-3.5" />
+                        )}
+                      </button>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          </aside>
+        </div>
       </section>
 
       <section className="space-y-4">
@@ -378,9 +496,8 @@ export function WorkersRetireesExplorer({
             Compare trajectories
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Workers per retiree (ages 15–64 ÷ 65+), modeled from today’s
-            pyramid. Pick up to 6 countries to see how the ratio moves toward
-            2060.
+            Workers per retiree (ages 15–64 ÷ 65+), modeled in 5-year steps from
+            today&apos;s pyramid through ~2060. Pick up to 6 countries.
           </p>
         </div>
         <CountryMultiSelect
@@ -391,20 +508,19 @@ export function WorkersRetireesExplorer({
         />
         <ChartCard
           title="Workers per retiree"
-          description="Modeled 15–64 ÷ 65+. 2040 is mostly already born; TFR shows up more by 2060."
+          description="Modeled every 5 years. 2040 working-age cohorts are mostly already born; TFR shows up more by 2060."
           source="World Bank"
           csvName="workers-per-retiree-compare"
           csvRows={compareData}
-          defaultShowValues
         >
           {compareSeries.length > 0 ? (
             <MultiSeriesChart
               data={compareData}
               series={compareSeries}
-              xKey="period"
+              xKey="year"
               unit="workers per retiree"
               decimals={2}
-              height={380}
+              height={400}
             />
           ) : (
             <p className="py-16 text-center text-sm text-muted-foreground">
@@ -450,7 +566,6 @@ export function WorkersRetireesExplorer({
               subject={spot.name}
               csvName={`${spot.slug}-workers-retirees`}
               csvRows={spotData}
-              defaultShowValues
             >
               <GroupedBarChart
                 data={spotData}

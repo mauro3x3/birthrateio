@@ -16,6 +16,7 @@ const PopulationChangeMap = dynamic(
 );
 
 type Props = {
+  url: string;
   layer: string;
   bounds: [number, number, number, number];
   minZoom: number;

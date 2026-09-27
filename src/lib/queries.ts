@@ -542,6 +542,144 @@ export const getMapFrames = unstable_cache(
   { revalidate: 3600, tags: ["indicators"] },
 );
 
+/** Prefer round decades (1980, 1990, …) plus the latest available year. */
+function pickDecadeYears(
+  available: number[],
+  opts: { minYear?: number; maxFrames?: number } = {},
+): number[] {
+  const minYear = opts.minYear ?? 1960;
+  const maxFrames = opts.maxFrames ?? 12;
+  const sorted = [...new Set(available)].sort((a, b) => a - b);
+  if (sorted.length === 0) return [];
+  const latest = sorted[sorted.length - 1]!;
+  const set = new Set(sorted);
+  const decades: number[] = [];
+  for (let y = Math.ceil(minYear / 10) * 10; y <= latest; y += 10) {
+    if (set.has(y)) decades.push(y);
+  }
+  let picked = decades.length >= 4 ? decades : [];
+  if (picked.length === 0) {
+    // Sparse series: walk back ~10 years at a time through whatever exists.
+    for (let i = sorted.length - 1; i >= 0 && picked.length < maxFrames; i--) {
+      const y = sorted[i]!;
+      if (picked.length === 0 || picked[0]! - y >= 8) picked.unshift(y);
+    }
+  }
+  if (!picked.includes(latest)) picked = [...picked, latest];
+  picked = [...new Set(picked)].sort((a, b) => a - b);
+  if (picked.length <= maxFrames) return picked;
+  const first = picked[0]!;
+  const last = picked[picked.length - 1]!;
+  const inner = picked.slice(1, -1);
+  const need = maxFrames - 2;
+  const out = [first];
+  for (let i = 0; i < need; i++) {
+    const idx = Math.round(((i + 1) / (need + 1)) * (inner.length - 1));
+    out.push(inner[Math.max(0, Math.min(inner.length - 1, idx))]!);
+  }
+  out.push(last);
+  return [...new Set(out)].sort((a, b) => a - b);
+}
+
+/**
+ * Workers per retiree ≈ (share aged 15–64) / (share aged 65+), from World Bank
+ * age-structure series — historical decades for the atlas map scrubber.
+ */
+export const getWorkersPerRetireeHistoryFrames = unstable_cache(
+  async () => {
+    const [workingId, oldId] = await Promise.all([
+      indicatorId(SLUG.popShare15to64),
+      indicatorId(SLUG.popShare65plus),
+    ]);
+    if (!workingId || !oldId) {
+      return [] as { year: number; data: RankingRow[] }[];
+    }
+
+    const [workingYears, oldYears] = await Promise.all([
+      getYearsForIndicator(SLUG.popShare15to64),
+      getYearsForIndicator(SLUG.popShare65plus),
+    ]);
+    const oldSet = new Set(oldYears);
+    const common = workingYears.filter((y) => oldSet.has(y));
+    const picked = pickDecadeYears(common, { minYear: 1960, maxFrames: 12 });
+    if (picked.length === 0) return [] as { year: number; data: RankingRow[] }[];
+
+    const rows = await prisma.indicatorValue.findMany({
+      where: {
+        indicatorId: { in: [workingId, oldId] },
+        subjectType: "COUNTRY",
+        year: { in: picked },
+        dimension: null,
+        country: { isAggregate: false },
+      },
+      select: {
+        indicatorId: true,
+        value: true,
+        year: true,
+        country: { select: RANKING_COUNTRY_SELECT },
+      },
+    });
+
+    type Cell = {
+      working?: number;
+      old?: number;
+      iso3: string;
+      slug: string;
+      name: string;
+      flagEmoji: string | null;
+      continent: string | null;
+    };
+    const byYearIso = new Map<string, Cell>();
+    for (const r of rows) {
+      if (!r.country) continue;
+      const key = `${r.year}:${r.country.iso3}`;
+      const cell = byYearIso.get(key) ?? {
+        iso3: r.country.iso3,
+        slug: r.country.slug,
+        name: r.country.name,
+        flagEmoji: r.country.flagEmoji,
+        continent: r.country.continent,
+      };
+      if (r.indicatorId === workingId) cell.working = r.value;
+      else cell.old = r.value;
+      byYearIso.set(key, cell);
+    }
+
+    return picked
+      .map((year) => {
+        const data: RankingRow[] = [];
+        for (const [key, cell] of byYearIso) {
+          if (!key.startsWith(`${year}:`)) continue;
+          const w = cell.working;
+          const o = cell.old;
+          if (
+            w == null ||
+            o == null ||
+            !Number.isFinite(w) ||
+            !Number.isFinite(o) ||
+            o <= 0
+          ) {
+            continue;
+          }
+          data.push({
+            iso3: cell.iso3,
+            slug: cell.slug,
+            name: cell.name,
+            flagEmoji: cell.flagEmoji,
+            continent: cell.continent,
+            value: w / o,
+            year,
+          });
+        }
+        data.sort((a, b) => b.value - a.value);
+        return { year, data };
+      })
+      .filter((f) => f.data.length > 0);
+  },
+  ["workers-per-retiree-history-frames"],
+  { revalidate: 3600, tags: ["indicators"] },
+);
+
 /**
  * Official World aggregate series for an indicator (World Bank "WLD" row),
  * returned as year → value. Falls back to an empty object when unavailable.

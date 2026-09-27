@@ -120,11 +120,20 @@ const FIT: Record<
     clamp: { west: -170, south: -58, east: 175, north: 75 },
     maxZoom: 3.2,
   },
+  "world-pop82": {
+    clamp: { west: -170, south: -58, east: 175, north: 75 },
+    maxZoom: 3.2,
+  },
   "empires-1914": {
     clamp: { west: -25, south: 12, east: 120, north: 72 },
     maxZoom: 5.5,
   },
 };
+
+function resolveFitSlug(slug: string): string {
+  if (slug.startsWith("world-pop82")) return "world-pop82";
+  return slug;
+}
 
 function isHalf(v: string | undefined): v is HalfId {
   return v === "cisleithania" || v === "transleithania" || v === "bosnia";
@@ -147,7 +156,16 @@ export function HistoricMapExplorer({
   pack: HistoricMapPack;
 }) {
   const isAh = pack.slug === "austria-hungary-1910";
-  const isEqualPop = pack.slug === "world-pop82-1914";
+  const isEqualPop = pack.slug.startsWith("world-pop82");
+  const equalPopMillions = React.useMemo(() => {
+    if (!isEqualPop || !pack.totalPopulation || pack.areas.length === 0) {
+      return 20;
+    }
+    return Math.max(
+      1,
+      Math.round(pack.totalPopulation / pack.areas.length / 1e6),
+    );
+  }, [isEqualPop, pack.totalPopulation, pack.areas.length]);
   const hasReligion = Boolean(
     !isEqualPop &&
       (pack.religionGroups?.length ||
@@ -360,11 +378,11 @@ export function HistoricMapExplorer({
 
   const showLabels = showNames || showValues;
 
-  const fitKey =
+  const fitLookup =
     isAh && scope !== "empire"
       ? `austria-hungary-1910:${scope}`
-      : pack.slug;
-  const fit = FIT[fitKey] ?? FIT[pack.slug] ?? FIT["austria-hungary-1910"]!;
+      : resolveFitSlug(pack.slug);
+  const fit = FIT[fitLookup] ?? FIT[pack.slug] ?? FIT["austria-hungary-1910"]!;
   const selected = selectedCode ? areaByCode.get(selectedCode) : null;
   const selectedGroupId = selected ? areaGroupId(selected) : null;
   const selectedGroup = selectedGroupId
@@ -633,7 +651,7 @@ export function HistoricMapExplorer({
                     style={{ background: selectedGroup.color }}
                   />
                   {isEqualPop
-                    ? "~20 million people (1914)"
+                    ? `~${formatPop(selected.population)} people (${pack.year})`
                     : `${selectedGroup.shortLabel} majority`}
                 </p>
               ) : null}
@@ -729,7 +747,7 @@ export function HistoricMapExplorer({
           ) : (
             <p className="mb-3 text-xs text-muted-foreground">
               {isEqualPop
-                ? "Click a region — each held about 20 million people in 1914."
+                ? `Click a region — each held about ${equalPopMillions} million people in ${pack.year}.`
                 : "Click a district for its group mix and population."}
             </p>
           )}

@@ -1,0 +1,1413 @@
+{
+  "id": "world-pop82-1990",
+  "slug": "world-pop82-1990",
+  "title": "World divided into 82 equal-population regions, 1990",
+  "year": 1990,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Each region holds about 65 million people in 1990 (82 \u00d7 65M \u2248 5.32 billion). Partitioned by recursive geographic bipartition of countries (large states split by province or longitude strips). Equal population first \u2014 borders are modern Natural Earth outlines, not period frontiers.",
+  "source": "Population: Our World in Data / UN World Population Prospects (and Gapminder historical estimates before 1950). Borders: Natural Earth admin-0 (110m), with admin-1 splits for China, India, USA, and Russia where available.",
+  "sourceUrl": "https://ourworldindata.org/grapher/population-with-un-projections",
+  "geoUrl": "/geo/historic/world-pop82-1990.json",
+  "groups": [
+    {
+      "id": "e82-1990-01",
+      "shortLabel": "Alaska",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-02",
+      "shortLabel": "Montana \u00b7 California",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-03",
+      "shortLabel": "Mexico",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-04",
+      "shortLabel": "Canada",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-05",
+      "shortLabel": "Texas \u00b7 Kansas",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-06",
+      "shortLabel": "Cuba \u00b7 Ecuador",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-07",
+      "shortLabel": "Colombia \u00b7 Peru",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-08",
+      "shortLabel": "Venezuela \u00b7 Dominican Rep.",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-09",
+      "shortLabel": "Argentina \u00b7 Chile",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-10",
+      "shortLabel": "Brazil 1",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-11",
+      "shortLabel": "Brazil 2",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-1990-12",
+      "shortLabel": "Morocco \u00b7 Portugal",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-1990-13",
+      "shortLabel": "France \u00b7 Spain",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-1990-14",
+      "shortLabel": "United Kingdom",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-1990-15",
+      "shortLabel": "Ghana \u00b7 C\u00f4te d'Ivoire",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-16",
+      "shortLabel": "Algeria \u00b7 Mali",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-17",
+      "shortLabel": "Netherlands",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-18",
+      "shortLabel": "Nigeria",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-19",
+      "shortLabel": "Germany",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-20",
+      "shortLabel": "Italy",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-21",
+      "shortLabel": "Poland \u00b7 Czechia",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-22",
+      "shortLabel": "Romania \u00b7 Hungary",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-23",
+      "shortLabel": "Dem. Rep. Congo",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-24",
+      "shortLabel": "South Africa",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-25",
+      "shortLabel": "Sudan \u00b7 Uganda",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-1990-26",
+      "shortLabel": "Egypt",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-1990-27",
+      "shortLabel": "Turkey",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-1990-28",
+      "shortLabel": "Tanzania \u00b7 Mozambique",
+      "color": "#7f8c8d"
+    },
+    {
+      "id": "e82-1990-29",
+      "shortLabel": "Ukraine",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-30",
+      "shortLabel": "Ethiopia \u00b7 Kenya",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-31",
+      "shortLabel": "Iraq \u00b7 Syria",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-32",
+      "shortLabel": "Yemen \u00b7 Saudi Arabia",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-33",
+      "shortLabel": "Iran",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-34",
+      "shortLabel": "Kazakhstan \u00b7 Yamalo-Nenets Autonomous Okrug",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-35",
+      "shortLabel": "Uzbekistan \u00b7 Jammu and Kashmir",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-36",
+      "shortLabel": "Karnataka",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-37",
+      "shortLabel": "Pakistan 1",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-38",
+      "shortLabel": "Gujarat",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-39",
+      "shortLabel": "Pakistan 2",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-1990-40",
+      "shortLabel": "Rajasthan",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-1990-41",
+      "shortLabel": "Maharashtra",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-1990-42",
+      "shortLabel": "Ladakh \u00b7 Himachal Pradesh",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-1990-43",
+      "shortLabel": "Tamil Nadu",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-44",
+      "shortLabel": "Madhya Pradesh",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-45",
+      "shortLabel": "Xinjiang 1",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-46",
+      "shortLabel": "Andhra Pradesh \u00b7 Telangana",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-47",
+      "shortLabel": "Uttar Pradesh",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-48",
+      "shortLabel": "Odisha \u00b7 Chhattisgarh",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-49",
+      "shortLabel": "Tibet 1",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-50",
+      "shortLabel": "Jharkhand \u00b7 Nepal",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-51",
+      "shortLabel": "Xinjiang 2",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-52",
+      "shortLabel": "Bihar \u00b7 West Bengal",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-53",
+      "shortLabel": "Bangladesh 1",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-1990-54",
+      "shortLabel": "Xinjiang 3",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-1990-55",
+      "shortLabel": "Bangladesh 2",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-1990-56",
+      "shortLabel": "Tibet 2",
+      "color": "#7f8c8d"
+    },
+    {
+      "id": "e82-1990-57",
+      "shortLabel": "Arunachal Pradesh \u00b7 Assam",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-58",
+      "shortLabel": "Qinghai",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-59",
+      "shortLabel": "Krasnoyarsk Krai",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-60",
+      "shortLabel": "Yunnan \u00b7 Myanmar",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-61",
+      "shortLabel": "Thailand",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-62",
+      "shortLabel": "Gansu",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-63",
+      "shortLabel": "Sichuan",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-64",
+      "shortLabel": "Indonesia 1",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-65",
+      "shortLabel": "Vietnam",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-66",
+      "shortLabel": "Guangxi \u00b7 Guizhou",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-67",
+      "shortLabel": "Inner Mongolia 1",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-1990-68",
+      "shortLabel": "Shaanxi \u00b7 Hubei",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-1990-69",
+      "shortLabel": "Hunan \u00b7 Guangdong",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-1990-70",
+      "shortLabel": "Hebei \u00b7 Shanxi",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-1990-71",
+      "shortLabel": "Indonesia 2",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-72",
+      "shortLabel": "Taiwan \u00b7 Jiangxi",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-1990-73",
+      "shortLabel": "Shandong \u00b7 Anhui",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-1990-74",
+      "shortLabel": "Inner Mongolia 2",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-1990-75",
+      "shortLabel": "Philippines",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-1990-76",
+      "shortLabel": "Jilin \u00b7 Liaoning",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-1990-77",
+      "shortLabel": "South Korea \u00b7 North Korea",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-1990-78",
+      "shortLabel": "Heilongjiang",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-1990-79",
+      "shortLabel": "Sakha (Yakutia)",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-1990-80",
+      "shortLabel": "Japan 1",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-1990-81",
+      "shortLabel": "Indonesia 3",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-1990-82",
+      "shortLabel": "Japan 2",
+      "color": "#2980b9"
+    }
+  ],
+  "nationalShares": {
+    "e82-1990-01": 0.013168,
+    "e82-1990-02": 0.013065,
+    "e82-1990-03": 0.01558,
+    "e82-1990-04": 0.013362,
+    "e82-1990-05": 0.013289,
+    "e82-1990-06": 0.009993,
+    "e82-1990-07": 0.011533,
+    "e82-1990-08": 0.006195,
+    "e82-1990-09": 0.010033,
+    "e82-1990-10": 0.015637,
+    "e82-1990-11": 0.01376,
+    "e82-1990-12": 0.011084,
+    "e82-1990-13": 0.018793,
+    "e82-1990-14": 0.010792,
+    "e82-1990-15": 0.006162,
+    "e82-1990-16": 0.012341,
+    "e82-1990-17": 0.003795,
+    "e82-1990-18": 0.01827,
+    "e82-1990-19": 0.018203,
+    "e82-1990-20": 0.010728,
+    "e82-1990-21": 0.014235,
+    "e82-1990-22": 0.013102,
+    "e82-1990-23": 0.009787,
+    "e82-1990-24": 0.01058,
+    "e82-1990-25": 0.012136,
+    "e82-1990-26": 0.010985,
+    "e82-1990-27": 0.017925,
+    "e82-1990-28": 0.012822,
+    "e82-1990-29": 0.012845,
+    "e82-1990-30": 0.013371,
+    "e82-1990-31": 0.008487,
+    "e82-1990-32": 0.005768,
+    "e82-1990-33": 0.010982,
+    "e82-1990-34": 0.010087,
+    "e82-1990-35": 0.013067,
+    "e82-1990-36": 0.014426,
+    "e82-1990-37": 0.011671,
+    "e82-1990-38": 0.009424,
+    "e82-1990-39": 0.013317,
+    "e82-1990-40": 0.018195,
+    "e82-1990-41": 0.015651,
+    "e82-1990-42": 0.011861,
+    "e82-1990-43": 0.008132,
+    "e82-1990-44": 0.016292,
+    "e82-1990-45": 0.013037,
+    "e82-1990-46": 0.016721,
+    "e82-1990-47": 0.012959,
+    "e82-1990-48": 0.01489,
+    "e82-1990-49": 0.012429,
+    "e82-1990-50": 0.007778,
+    "e82-1990-51": 0.013784,
+    "e82-1990-52": 0.009673,
+    "e82-1990-53": 0.011871,
+    "e82-1990-54": 0.012702,
+    "e82-1990-55": 0.011485,
+    "e82-1990-56": 0.01149,
+    "e82-1990-57": 0.010965,
+    "e82-1990-58": 0.016289,
+    "e82-1990-59": 0.00677,
+    "e82-1990-60": 0.015264,
+    "e82-1990-61": 0.011684,
+    "e82-1990-62": 0.011191,
+    "e82-1990-63": 0.010613,
+    "e82-1990-64": 0.011738,
+    "e82-1990-65": 0.012322,
+    "e82-1990-66": 0.009458,
+    "e82-1990-67": 0.014847,
+    "e82-1990-68": 0.014789,
+    "e82-1990-69": 0.008713,
+    "e82-1990-70": 0.009243,
+    "e82-1990-71": 0.011755,
+    "e82-1990-72": 0.010005,
+    "e82-1990-73": 0.011158,
+    "e82-1990-74": 0.016696,
+    "e82-1990-75": 0.015227,
+    "e82-1990-76": 0.008456,
+    "e82-1990-77": 0.012414,
+    "e82-1990-78": 0.012659,
+    "e82-1990-79": 0.006127,
+    "e82-1990-80": 0.013031,
+    "e82-1990-81": 0.016032,
+    "e82-1990-82": 0.012802
+  },
+  "totalPopulation": 5315934940,
+  "areas": [
+    {
+      "code": "e82-1990-01",
+      "slug": "e82-1990-01",
+      "name": "Alaska",
+      "plurality": "e82-1990-01",
+      "nationality": "e82-1990-01",
+      "population": 70002574,
+      "shares": {
+        "e82-1990-01": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-02",
+      "slug": "e82-1990-02",
+      "name": "Montana \u00b7 California",
+      "plurality": "e82-1990-02",
+      "nationality": "e82-1990-02",
+      "population": 69454121,
+      "shares": {
+        "e82-1990-02": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-03",
+      "slug": "e82-1990-03",
+      "name": "Mexico",
+      "plurality": "e82-1990-03",
+      "nationality": "e82-1990-03",
+      "population": 82820170,
+      "shares": {
+        "e82-1990-03": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-04",
+      "slug": "e82-1990-04",
+      "name": "Canada",
+      "plurality": "e82-1990-04",
+      "nationality": "e82-1990-04",
+      "population": 71030603,
+      "shares": {
+        "e82-1990-04": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-05",
+      "slug": "e82-1990-05",
+      "name": "Texas \u00b7 Kansas",
+      "plurality": "e82-1990-05",
+      "nationality": "e82-1990-05",
+      "population": 70643519,
+      "shares": {
+        "e82-1990-05": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-06",
+      "slug": "e82-1990-06",
+      "name": "Cuba \u00b7 Ecuador",
+      "plurality": "e82-1990-06",
+      "nationality": "e82-1990-06",
+      "population": 53121258,
+      "shares": {
+        "e82-1990-06": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-07",
+      "slug": "e82-1990-07",
+      "name": "Colombia \u00b7 Peru",
+      "plurality": "e82-1990-07",
+      "nationality": "e82-1990-07",
+      "population": 61309280,
+      "shares": {
+        "e82-1990-07": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-08",
+      "slug": "e82-1990-08",
+      "name": "Venezuela \u00b7 Dominican Rep.",
+      "plurality": "e82-1990-08",
+      "nationality": "e82-1990-08",
+      "population": 32933822,
+      "shares": {
+        "e82-1990-08": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-09",
+      "slug": "e82-1990-09",
+      "name": "Argentina \u00b7 Chile",
+      "plurality": "e82-1990-09",
+      "nationality": "e82-1990-09",
+      "population": 53335612,
+      "shares": {
+        "e82-1990-09": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-10",
+      "slug": "e82-1990-10",
+      "name": "Brazil 1",
+      "plurality": "e82-1990-10",
+      "nationality": "e82-1990-10",
+      "population": 83125411,
+      "shares": {
+        "e82-1990-10": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-11",
+      "slug": "e82-1990-11",
+      "name": "Brazil 2",
+      "plurality": "e82-1990-11",
+      "nationality": "e82-1990-11",
+      "population": 73147955,
+      "shares": {
+        "e82-1990-11": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-12",
+      "slug": "e82-1990-12",
+      "name": "Morocco \u00b7 Portugal",
+      "plurality": "e82-1990-12",
+      "nationality": "e82-1990-12",
+      "population": 58920754,
+      "shares": {
+        "e82-1990-12": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-13",
+      "slug": "e82-1990-13",
+      "name": "France \u00b7 Spain",
+      "plurality": "e82-1990-13",
+      "nationality": "e82-1990-13",
+      "population": 99899721,
+      "shares": {
+        "e82-1990-13": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-14",
+      "slug": "e82-1990-14",
+      "name": "United Kingdom",
+      "plurality": "e82-1990-14",
+      "nationality": "e82-1990-14",
+      "population": 57367867,
+      "shares": {
+        "e82-1990-14": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-15",
+      "slug": "e82-1990-15",
+      "name": "Ghana \u00b7 C\u00f4te d'Ivoire",
+      "plurality": "e82-1990-15",
+      "nationality": "e82-1990-15",
+      "population": 32756482,
+      "shares": {
+        "e82-1990-15": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-16",
+      "slug": "e82-1990-16",
+      "name": "Algeria \u00b7 Mali",
+      "plurality": "e82-1990-16",
+      "nationality": "e82-1990-16",
+      "population": 65606056,
+      "shares": {
+        "e82-1990-16": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-17",
+      "slug": "e82-1990-17",
+      "name": "Netherlands",
+      "plurality": "e82-1990-17",
+      "nationality": "e82-1990-17",
+      "population": 20171910,
+      "shares": {
+        "e82-1990-17": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-18",
+      "slug": "e82-1990-18",
+      "name": "Nigeria",
+      "plurality": "e82-1990-18",
+      "nationality": "e82-1990-18",
+      "population": 97120926,
+      "shares": {
+        "e82-1990-18": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-19",
+      "slug": "e82-1990-19",
+      "name": "Germany",
+      "plurality": "e82-1990-19",
+      "nationality": "e82-1990-19",
+      "population": 96763806,
+      "shares": {
+        "e82-1990-19": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-20",
+      "slug": "e82-1990-20",
+      "name": "Italy",
+      "plurality": "e82-1990-20",
+      "nationality": "e82-1990-20",
+      "population": 57031457,
+      "shares": {
+        "e82-1990-20": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-21",
+      "slug": "e82-1990-21",
+      "name": "Poland \u00b7 Czechia",
+      "plurality": "e82-1990-21",
+      "nationality": "e82-1990-21",
+      "population": 75670152,
+      "shares": {
+        "e82-1990-21": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-22",
+      "slug": "e82-1990-22",
+      "name": "Romania \u00b7 Hungary",
+      "plurality": "e82-1990-22",
+      "nationality": "e82-1990-22",
+      "population": 69649787,
+      "shares": {
+        "e82-1990-22": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-23",
+      "slug": "e82-1990-23",
+      "name": "Dem. Rep. Congo",
+      "plurality": "e82-1990-23",
+      "nationality": "e82-1990-23",
+      "population": 52026991,
+      "shares": {
+        "e82-1990-23": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-24",
+      "slug": "e82-1990-24",
+      "name": "South Africa",
+      "plurality": "e82-1990-24",
+      "nationality": "e82-1990-24",
+      "population": 56240703,
+      "shares": {
+        "e82-1990-24": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-25",
+      "slug": "e82-1990-25",
+      "name": "Sudan \u00b7 Uganda",
+      "plurality": "e82-1990-25",
+      "nationality": "e82-1990-25",
+      "population": 64515596,
+      "shares": {
+        "e82-1990-25": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-26",
+      "slug": "e82-1990-26",
+      "name": "Egypt",
+      "plurality": "e82-1990-26",
+      "nationality": "e82-1990-26",
+      "population": 58396625,
+      "shares": {
+        "e82-1990-26": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-27",
+      "slug": "e82-1990-27",
+      "name": "Turkey",
+      "plurality": "e82-1990-27",
+      "nationality": "e82-1990-27",
+      "population": 95285900,
+      "shares": {
+        "e82-1990-27": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-28",
+      "slug": "e82-1990-28",
+      "name": "Tanzania \u00b7 Mozambique",
+      "plurality": "e82-1990-28",
+      "nationality": "e82-1990-28",
+      "population": 68163129,
+      "shares": {
+        "e82-1990-28": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-29",
+      "slug": "e82-1990-29",
+      "name": "Ukraine",
+      "plurality": "e82-1990-29",
+      "nationality": "e82-1990-29",
+      "population": 68281781,
+      "shares": {
+        "e82-1990-29": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-30",
+      "slug": "e82-1990-30",
+      "name": "Ethiopia \u00b7 Kenya",
+      "plurality": "e82-1990-30",
+      "nationality": "e82-1990-30",
+      "population": 71081959,
+      "shares": {
+        "e82-1990-30": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-31",
+      "slug": "e82-1990-31",
+      "name": "Iraq \u00b7 Syria",
+      "plurality": "e82-1990-31",
+      "nationality": "e82-1990-31",
+      "population": 45118112,
+      "shares": {
+        "e82-1990-31": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-32",
+      "slug": "e82-1990-32",
+      "name": "Yemen \u00b7 Saudi Arabia",
+      "plurality": "e82-1990-32",
+      "nationality": "e82-1990-32",
+      "population": 30663670,
+      "shares": {
+        "e82-1990-32": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-33",
+      "slug": "e82-1990-33",
+      "name": "Iran",
+      "plurality": "e82-1990-33",
+      "nationality": "e82-1990-33",
+      "population": 58380098,
+      "shares": {
+        "e82-1990-33": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-34",
+      "slug": "e82-1990-34",
+      "name": "Kazakhstan \u00b7 Yamalo-Nenets Autonomous Okrug",
+      "plurality": "e82-1990-34",
+      "nationality": "e82-1990-34",
+      "population": 53621725,
+      "shares": {
+        "e82-1990-34": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-35",
+      "slug": "e82-1990-35",
+      "name": "Uzbekistan \u00b7 Jammu and Kashmir",
+      "plurality": "e82-1990-35",
+      "nationality": "e82-1990-35",
+      "population": 69460743,
+      "shares": {
+        "e82-1990-35": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-36",
+      "slug": "e82-1990-36",
+      "name": "Karnataka",
+      "plurality": "e82-1990-36",
+      "nationality": "e82-1990-36",
+      "population": 76685619,
+      "shares": {
+        "e82-1990-36": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-37",
+      "slug": "e82-1990-37",
+      "name": "Pakistan 1",
+      "plurality": "e82-1990-37",
+      "nationality": "e82-1990-37",
+      "population": 62040543,
+      "shares": {
+        "e82-1990-37": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-38",
+      "slug": "e82-1990-38",
+      "name": "Gujarat",
+      "plurality": "e82-1990-38",
+      "nationality": "e82-1990-38",
+      "population": 50098404,
+      "shares": {
+        "e82-1990-38": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-39",
+      "slug": "e82-1990-39",
+      "name": "Pakistan 2",
+      "plurality": "e82-1990-39",
+      "nationality": "e82-1990-39",
+      "population": 70794887,
+      "shares": {
+        "e82-1990-39": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-40",
+      "slug": "e82-1990-40",
+      "name": "Rajasthan",
+      "plurality": "e82-1990-40",
+      "nationality": "e82-1990-40",
+      "population": 96723027,
+      "shares": {
+        "e82-1990-40": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-41",
+      "slug": "e82-1990-41",
+      "name": "Maharashtra",
+      "plurality": "e82-1990-41",
+      "nationality": "e82-1990-41",
+      "population": 83197855,
+      "shares": {
+        "e82-1990-41": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-42",
+      "slug": "e82-1990-42",
+      "name": "Ladakh \u00b7 Himachal Pradesh",
+      "plurality": "e82-1990-42",
+      "nationality": "e82-1990-42",
+      "population": 63053304,
+      "shares": {
+        "e82-1990-42": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-43",
+      "slug": "e82-1990-43",
+      "name": "Tamil Nadu",
+      "plurality": "e82-1990-43",
+      "nationality": "e82-1990-43",
+      "population": 43230410,
+      "shares": {
+        "e82-1990-43": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-44",
+      "slug": "e82-1990-44",
+      "name": "Madhya Pradesh",
+      "plurality": "e82-1990-44",
+      "nationality": "e82-1990-44",
+      "population": 86608465,
+      "shares": {
+        "e82-1990-44": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-45",
+      "slug": "e82-1990-45",
+      "name": "Xinjiang 1",
+      "plurality": "e82-1990-45",
+      "nationality": "e82-1990-45",
+      "population": 69305022,
+      "shares": {
+        "e82-1990-45": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-46",
+      "slug": "e82-1990-46",
+      "name": "Andhra Pradesh \u00b7 Telangana",
+      "plurality": "e82-1990-46",
+      "nationality": "e82-1990-46",
+      "population": 88887674,
+      "shares": {
+        "e82-1990-46": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-47",
+      "slug": "e82-1990-47",
+      "name": "Uttar Pradesh",
+      "plurality": "e82-1990-47",
+      "nationality": "e82-1990-47",
+      "population": 68889602,
+      "shares": {
+        "e82-1990-47": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-48",
+      "slug": "e82-1990-48",
+      "name": "Odisha \u00b7 Chhattisgarh",
+      "plurality": "e82-1990-48",
+      "nationality": "e82-1990-48",
+      "population": 79154803,
+      "shares": {
+        "e82-1990-48": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-49",
+      "slug": "e82-1990-49",
+      "name": "Tibet 1",
+      "plurality": "e82-1990-49",
+      "nationality": "e82-1990-49",
+      "population": 66072903,
+      "shares": {
+        "e82-1990-49": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-50",
+      "slug": "e82-1990-50",
+      "name": "Jharkhand \u00b7 Nepal",
+      "plurality": "e82-1990-50",
+      "nationality": "e82-1990-50",
+      "population": 41349102,
+      "shares": {
+        "e82-1990-50": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-51",
+      "slug": "e82-1990-51",
+      "name": "Xinjiang 2",
+      "plurality": "e82-1990-51",
+      "nationality": "e82-1990-51",
+      "population": 73276137,
+      "shares": {
+        "e82-1990-51": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-52",
+      "slug": "e82-1990-52",
+      "name": "Bihar \u00b7 West Bengal",
+      "plurality": "e82-1990-52",
+      "nationality": "e82-1990-52",
+      "population": 51419863,
+      "shares": {
+        "e82-1990-52": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-53",
+      "slug": "e82-1990-53",
+      "name": "Bangladesh 1",
+      "plurality": "e82-1990-53",
+      "nationality": "e82-1990-53",
+      "population": 63108092,
+      "shares": {
+        "e82-1990-53": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-54",
+      "slug": "e82-1990-54",
+      "name": "Xinjiang 3",
+      "plurality": "e82-1990-54",
+      "nationality": "e82-1990-54",
+      "population": 67524245,
+      "shares": {
+        "e82-1990-54": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-55",
+      "slug": "e82-1990-55",
+      "name": "Bangladesh 2",
+      "plurality": "e82-1990-55",
+      "nationality": "e82-1990-55",
+      "population": 61054568,
+      "shares": {
+        "e82-1990-55": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-56",
+      "slug": "e82-1990-56",
+      "name": "Tibet 2",
+      "plurality": "e82-1990-56",
+      "nationality": "e82-1990-56",
+      "population": 61081266,
+      "shares": {
+        "e82-1990-56": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-57",
+      "slug": "e82-1990-57",
+      "name": "Arunachal Pradesh \u00b7 Assam",
+      "plurality": "e82-1990-57",
+      "nationality": "e82-1990-57",
+      "population": 58289733,
+      "shares": {
+        "e82-1990-57": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-58",
+      "slug": "e82-1990-58",
+      "name": "Qinghai",
+      "plurality": "e82-1990-58",
+      "nationality": "e82-1990-58",
+      "population": 86591714,
+      "shares": {
+        "e82-1990-58": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-59",
+      "slug": "e82-1990-59",
+      "name": "Krasnoyarsk Krai",
+      "plurality": "e82-1990-59",
+      "nationality": "e82-1990-59",
+      "population": 35986230,
+      "shares": {
+        "e82-1990-59": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-60",
+      "slug": "e82-1990-60",
+      "name": "Yunnan \u00b7 Myanmar",
+      "plurality": "e82-1990-60",
+      "nationality": "e82-1990-60",
+      "population": 81139938,
+      "shares": {
+        "e82-1990-60": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-61",
+      "slug": "e82-1990-61",
+      "name": "Thailand",
+      "plurality": "e82-1990-61",
+      "nationality": "e82-1990-61",
+      "population": 62113083,
+      "shares": {
+        "e82-1990-61": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-62",
+      "slug": "e82-1990-62",
+      "name": "Gansu",
+      "plurality": "e82-1990-62",
+      "nationality": "e82-1990-62",
+      "population": 59491963,
+      "shares": {
+        "e82-1990-62": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-63",
+      "slug": "e82-1990-63",
+      "name": "Sichuan",
+      "plurality": "e82-1990-63",
+      "nationality": "e82-1990-63",
+      "population": 56416107,
+      "shares": {
+        "e82-1990-63": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-64",
+      "slug": "e82-1990-64",
+      "name": "Indonesia 1",
+      "plurality": "e82-1990-64",
+      "nationality": "e82-1990-64",
+      "population": 62397355,
+      "shares": {
+        "e82-1990-64": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-65",
+      "slug": "e82-1990-65",
+      "name": "Vietnam",
+      "plurality": "e82-1990-65",
+      "nationality": "e82-1990-65",
+      "population": 65504551,
+      "shares": {
+        "e82-1990-65": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-66",
+      "slug": "e82-1990-66",
+      "name": "Guangxi \u00b7 Guizhou",
+      "plurality": "e82-1990-66",
+      "nationality": "e82-1990-66",
+      "population": 50279404,
+      "shares": {
+        "e82-1990-66": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-67",
+      "slug": "e82-1990-67",
+      "name": "Inner Mongolia 1",
+      "plurality": "e82-1990-67",
+      "nationality": "e82-1990-67",
+      "population": 78927483,
+      "shares": {
+        "e82-1990-67": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-68",
+      "slug": "e82-1990-68",
+      "name": "Shaanxi \u00b7 Hubei",
+      "plurality": "e82-1990-68",
+      "nationality": "e82-1990-68",
+      "population": 78618431,
+      "shares": {
+        "e82-1990-68": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-69",
+      "slug": "e82-1990-69",
+      "name": "Hunan \u00b7 Guangdong",
+      "plurality": "e82-1990-69",
+      "nationality": "e82-1990-69",
+      "population": 46318868,
+      "shares": {
+        "e82-1990-69": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-70",
+      "slug": "e82-1990-70",
+      "name": "Hebei \u00b7 Shanxi",
+      "plurality": "e82-1990-70",
+      "nationality": "e82-1990-70",
+      "population": 49136457,
+      "shares": {
+        "e82-1990-70": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-71",
+      "slug": "e82-1990-71",
+      "name": "Indonesia 2",
+      "plurality": "e82-1990-71",
+      "nationality": "e82-1990-71",
+      "population": 62486561,
+      "shares": {
+        "e82-1990-71": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-72",
+      "slug": "e82-1990-72",
+      "name": "Taiwan \u00b7 Jiangxi",
+      "plurality": "e82-1990-72",
+      "nationality": "e82-1990-72",
+      "population": 53187107,
+      "shares": {
+        "e82-1990-72": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-73",
+      "slug": "e82-1990-73",
+      "name": "Shandong \u00b7 Anhui",
+      "plurality": "e82-1990-73",
+      "nationality": "e82-1990-73",
+      "population": 59313775,
+      "shares": {
+        "e82-1990-73": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-74",
+      "slug": "e82-1990-74",
+      "name": "Inner Mongolia 2",
+      "plurality": "e82-1990-74",
+      "nationality": "e82-1990-74",
+      "population": 88753902,
+      "shares": {
+        "e82-1990-74": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-75",
+      "slug": "e82-1990-75",
+      "name": "Philippines",
+      "plurality": "e82-1990-75",
+      "nationality": "e82-1990-75",
+      "population": 80943154,
+      "shares": {
+        "e82-1990-75": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-76",
+      "slug": "e82-1990-76",
+      "name": "Jilin \u00b7 Liaoning",
+      "plurality": "e82-1990-76",
+      "nationality": "e82-1990-76",
+      "population": 44952391,
+      "shares": {
+        "e82-1990-76": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-77",
+      "slug": "e82-1990-77",
+      "name": "South Korea \u00b7 North Korea",
+      "plurality": "e82-1990-77",
+      "nationality": "e82-1990-77",
+      "population": 65992446,
+      "shares": {
+        "e82-1990-77": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-78",
+      "slug": "e82-1990-78",
+      "name": "Heilongjiang",
+      "plurality": "e82-1990-78",
+      "nationality": "e82-1990-78",
+      "population": 67293305,
+      "shares": {
+        "e82-1990-78": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-79",
+      "slug": "e82-1990-79",
+      "name": "Sakha (Yakutia)",
+      "plurality": "e82-1990-79",
+      "nationality": "e82-1990-79",
+      "population": 32571533,
+      "shares": {
+        "e82-1990-79": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-80",
+      "slug": "e82-1990-80",
+      "name": "Japan 1",
+      "plurality": "e82-1990-80",
+      "nationality": "e82-1990-80",
+      "population": 69272015,
+      "shares": {
+        "e82-1990-80": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-81",
+      "slug": "e82-1990-81",
+      "name": "Indonesia 3",
+      "plurality": "e82-1990-81",
+      "nationality": "e82-1990-81",
+      "population": 85226609,
+      "shares": {
+        "e82-1990-81": 1.0
+      }
+    },
+    {
+      "code": "e82-1990-82",
+      "slug": "e82-1990-82",
+      "name": "Japan 2",
+      "plurality": "e82-1990-82",
+      "nationality": "e82-1990-82",
+      "population": 68054755,
+      "shares": {
+        "e82-1990-82": 1.0
+      }
+    }
+  ]
+}

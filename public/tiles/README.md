@@ -10,5 +10,9 @@
 #      (node extract → tippecanoe → public/tiles/europe-popchange.pmtiles)
 #
 # For production, host the .pmtiles on object storage (R2/S3) with CORS +
-# range requests, then set NEXT_PUBLIC_INDIA_POP_PMTILES_URL or
-# NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL.
+# range requests, then set in Vercel:
+#   NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL=https://…/europe-popchange.pmtiles
+#   NEXT_PUBLIC_INDIA_POP_PMTILES_URL=https://…/india-population.pmtiles
+# The browser streams tiles via the pmtiles:// protocol (no serverless proxy).
+# Without that env var, production shows an empty basemap — the archives are
+# gitignored and not deployed with the app.

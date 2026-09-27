@@ -10,6 +10,7 @@ import {
 } from "recharts";
 import { XAxis, YAxis } from "recharts";
 import { ChartFrame } from "./chart-frame";
+import { cn } from "@/lib/utils";
 
 export interface AgingScatterRow {
   slug: string;
@@ -25,13 +26,13 @@ export interface AgingScatterRow {
 }
 
 export const CONTINENT_COLORS: Record<string, string> = {
-  Africa: "#c9822b",
-  Americas: "#2f7d75",
-  Asia: "#b1483f",
-  Europe: "#3a5a8c",
-  "Middle East & North Africa": "#8a5fb0",
+  Africa: "#b56a1e",
+  Americas: "#1f6f68",
+  Asia: "#a33d36",
+  Europe: "#2f4f7a",
+  "Middle East & North Africa": "#7a4f9c",
 };
-const FALLBACK_COLOR = "#94a3b8";
+const FALLBACK_COLOR = "#64748b";
 
 export function colorForContinent(continent: string | null | undefined) {
   return (continent && CONTINENT_COLORS[continent]) || FALLBACK_COLOR;
@@ -40,7 +41,9 @@ export function colorForContinent(continent: string | null | undefined) {
 const TICKS = [1, 2, 3, 5, 10, 20, 30, 50, 80, 120];
 
 function niceLogDomain(values: number[]): [number, number] {
-  const finite = values.filter((v) => Number.isFinite(v) && v > 0).sort((a, b) => a - b);
+  const finite = values
+    .filter((v) => Number.isFinite(v) && v > 0)
+    .sort((a, b) => a - b);
   if (finite.length === 0) return [1, 10];
   const q = (p: number) =>
     finite[Math.min(finite.length - 1, Math.floor(p * (finite.length - 1)))];
@@ -59,9 +62,9 @@ function niceLogDomain(values: number[]): [number, number] {
 }
 
 function radiusFor(sizeMil: number, maxSizeMil: number) {
-  const v = Math.max(sizeMil, 0.02);
+  const v = Math.max(sizeMil, 0.05);
   const t = Math.log1p(v) / Math.log1p(Math.max(maxSizeMil, 1));
-  return 4 + 15 * Math.max(0, Math.min(1, t));
+  return 3.5 + 14 * Math.max(0, Math.min(1, t));
 }
 
 type DotPayload = AgingScatterRow & { x: number; y: number };
@@ -96,11 +99,10 @@ function ScatterDot({
         <circle
           cx={cx}
           cy={cy}
-          r={r + 5}
+          r={r + 4}
           fill="none"
           stroke={color}
-          strokeWidth={2}
-          strokeDasharray="2 2"
+          strokeWidth={1.75}
         />
       )}
       <circle
@@ -108,18 +110,18 @@ function ScatterDot({
         cy={cy}
         r={r}
         fill={color}
-        fillOpacity={0.75}
-        stroke="#fff"
-        strokeWidth={1}
+        fillOpacity={highlighted ? 0.92 : 0.62}
+        stroke={highlighted ? color : "rgba(255,255,255,0.9)"}
+        strokeWidth={highlighted ? 1.5 : 0.75}
       />
       {labeled && (
         <text
           x={cx}
-          y={cy - r - 5}
+          y={cy - r - 4}
           textAnchor="middle"
-          fontSize={10.5}
+          fontSize={10}
           fontWeight={600}
-          fill="#1e293b"
+          fill="#0f172a"
         >
           {payload.flagEmoji ? `${payload.flagEmoji} ` : ""}
           {payload.name}
@@ -174,7 +176,9 @@ function ScatterTooltip({
         </p>
         <p
           className={
-            delta < 0 ? "font-medium text-rose-700" : "font-medium text-emerald-700"
+            delta < 0
+              ? "font-medium text-rose-700"
+              : "font-medium text-emerald-700"
           }
         >
           {delta > 0 ? "+" : ""}
@@ -195,15 +199,37 @@ export function AgingScatterChart({
   rows,
   height = 460,
   highlightSlug,
+  hiddenSlugs,
   onSelect,
+  onToggleContinent,
+  mutedContinents,
 }: {
   rows: AgingScatterRow[];
   height?: number;
   highlightSlug?: string | null;
+  /** Countries omitted from the plot (still listed in the side panel). */
+  hiddenSlugs?: ReadonlySet<string> | string[];
   onSelect?: (slug: string) => void;
+  /** Click a legend swatch to mute/unmute a whole region. */
+  onToggleContinent?: (continent: string) => void;
+  mutedContinents?: ReadonlySet<string> | string[];
 }) {
+  const hidden = React.useMemo(() => {
+    if (!hiddenSlugs) return new Set<string>();
+    return hiddenSlugs instanceof Set ? hiddenSlugs : new Set(hiddenSlugs);
+  }, [hiddenSlugs]);
+
+  const muted = React.useMemo(() => {
+    if (!mutedContinents) return new Set<string>();
+    return mutedContinents instanceof Set
+      ? mutedContinents
+      : new Set(mutedContinents);
+  }, [mutedContinents]);
+
   const valid = rows.filter(
     (r) =>
+      !hidden.has(r.slug) &&
+      !(r.continent && muted.has(r.continent)) &&
       Number.isFinite(r.now) &&
       r.now > 0 &&
       Number.isFinite(r.at2060) &&
@@ -216,7 +242,7 @@ export function AgingScatterChart({
         className="flex items-center justify-center text-sm text-muted-foreground"
         style={{ height }}
       >
-        No data available
+        No countries visible — unhide some from the list.
       </div>
     );
   }
@@ -229,21 +255,25 @@ export function AgingScatterChart({
   const labeledSlugs = new Set<string>();
   [...valid]
     .sort((a, b) => b.sizeMil - a.sizeMil)
-    .slice(0, 6)
+    .slice(0, 5)
     .forEach((r) => labeledSlugs.add(r.slug));
-  [...valid]
-    .sort((a, b) => a.now - b.now)
-    .slice(0, 2)
-    .forEach((r) => labeledSlugs.add(r.slug));
-  if (highlightSlug) labeledSlugs.add(highlightSlug);
+  if (highlightSlug && !hidden.has(highlightSlug)) {
+    labeledSlugs.add(highlightSlug);
+  }
 
+  // Paint small bubbles first so large countries sit on top.
   const groups = new Map<string, DotPayload[]>();
-  for (const r of valid) {
+  const ordered = [...valid].sort((a, b) => a.sizeMil - b.sizeMil);
+  for (const r of ordered) {
     const key = r.continent ?? "Other";
     const list = groups.get(key) ?? [];
     list.push({ ...r, x: clamp(r.now), y: clamp(r.at2060) });
     groups.set(key, list);
   }
+
+  const allContinents = Array.from(
+    new Set(rows.map((r) => r.continent).filter(Boolean) as string[]),
+  ).sort();
 
   const diagonal = [
     { x: domain[0], y: domain[0] },
@@ -252,24 +282,40 @@ export function AgingScatterChart({
 
   return (
     <div style={{ width: "100%", minWidth: 0 }}>
-      <div className="mb-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5">
-        {Array.from(groups.keys())
-          .sort()
-          .map((continent) => (
-            <span
+      <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+        {allContinents.map((continent) => {
+          const isMuted = muted.has(continent);
+          return (
+            <button
               key={continent}
-              className="flex items-center gap-1.5 text-xs text-foreground"
+              type="button"
+              onClick={() => onToggleContinent?.(continent)}
+              className={cn(
+                "flex items-center gap-1.5 text-xs transition-opacity",
+                isMuted
+                  ? "text-muted-foreground/50 line-through"
+                  : "text-foreground",
+              )}
+              title={
+                isMuted
+                  ? `Show ${continent}`
+                  : `Hide ${continent} from the scatter`
+              }
             >
               <span
                 className="h-2.5 w-2.5 shrink-0 rounded-full"
-                style={{ background: colorForContinent(continent) }}
+                style={{
+                  background: colorForContinent(continent),
+                  opacity: isMuted ? 0.35 : 1,
+                }}
               />
               {continent}
-            </span>
-          ))}
+            </button>
+          );
+        })}
         <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
           <span className="inline-block h-2 w-5 border-t border-dashed border-slate-400" />
-          No change by 2060
+          No change
         </span>
       </div>
       <ChartFrame height={height}>
@@ -280,7 +326,7 @@ export function AgingScatterChart({
             margin={{ top: 18, right: 16, left: 4, bottom: 22 }}
             style={{ cursor: "crosshair" }}
           >
-            <CartesianGrid stroke="#e5e7eb" strokeDasharray="3 3" />
+            <CartesianGrid stroke="#e8e4dc" strokeDasharray="3 3" />
             <XAxis
               type="number"
               dataKey="x"

@@ -203,7 +203,7 @@ export const navTopics: NavTopic[] = [
         title: "Historic empires",
         href: "/maps/historic",
         description:
-          "Ottoman, Russian, Habsburg, German, British India, Qing — religion and nationality from old censuses",
+          "Ottoman, Russian, Habsburg, equal-population world 1914–2050, and more",
       },
       {
         title: "Census maps",

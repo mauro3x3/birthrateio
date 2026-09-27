@@ -1,0 +1,1413 @@
+{
+  "id": "world-pop82-2050",
+  "slug": "world-pop82-2050",
+  "title": "World divided into 82 equal-population regions, 2050",
+  "year": 2050,
+  "mapMode": "plurality",
+  "primaryMetric": "nationality",
+  "note": "Each region holds about 118 million people in 2050 (82 \u00d7 118M \u2248 9.67 billion). Partitioned by recursive geographic bipartition of countries (large states split by province or longitude strips). Equal population first \u2014 borders are modern Natural Earth outlines, not period frontiers.",
+  "source": "Population: Our World in Data / UN World Population Prospects (and Gapminder historical estimates before 1950). Borders: Natural Earth admin-0 (110m), with admin-1 splits for China, India, USA, and Russia where available.",
+  "sourceUrl": "https://ourworldindata.org/grapher/population-with-un-projections",
+  "geoUrl": "/geo/historic/world-pop82-2050.json",
+  "groups": [
+    {
+      "id": "e82-2050-01",
+      "shortLabel": "Alaska",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-02",
+      "shortLabel": "Montana \u00b7 California",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-03",
+      "shortLabel": "Mexico",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-04",
+      "shortLabel": "Canada",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-05",
+      "shortLabel": "Texas \u00b7 Kansas",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-06",
+      "shortLabel": "Haiti \u00b7 Dominican Rep.",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-07",
+      "shortLabel": "Colombia \u00b7 Venezuela",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-08",
+      "shortLabel": "Argentina \u00b7 Chile",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-09",
+      "shortLabel": "Brazil 1",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-10",
+      "shortLabel": "Brazil 2 \u00b7 Peru",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-11",
+      "shortLabel": "Mali \u00b7 Morocco",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-2050-12",
+      "shortLabel": "C\u00f4te d'Ivoire \u00b7 Guinea",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-2050-13",
+      "shortLabel": "France \u00b7 Spain",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-2050-14",
+      "shortLabel": "United Kingdom",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-2050-15",
+      "shortLabel": "Ghana \u00b7 Burkina Faso",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-16",
+      "shortLabel": "Nigeria 1",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-17",
+      "shortLabel": "Algeria \u00b7 Niger",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-18",
+      "shortLabel": "Nigeria 2",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-19",
+      "shortLabel": "Germany",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-20",
+      "shortLabel": "Nigeria 3",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-21",
+      "shortLabel": "Cameroon",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-22",
+      "shortLabel": "Italy",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-23",
+      "shortLabel": "Chad",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-24",
+      "shortLabel": "South Africa \u00b7 Angola",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-25",
+      "shortLabel": "Dem. Rep. Congo 1",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-2050-26",
+      "shortLabel": "Poland \u00b7 Ukraine",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-2050-27",
+      "shortLabel": "Dem. Rep. Congo 2",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-2050-28",
+      "shortLabel": "Egypt",
+      "color": "#7f8c8d"
+    },
+    {
+      "id": "e82-2050-29",
+      "shortLabel": "Sudan",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-30",
+      "shortLabel": "Zambia \u00b7 Malawi",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-31",
+      "shortLabel": "Uganda",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-32",
+      "shortLabel": "Turkey",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-33",
+      "shortLabel": "Tanzania",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-34",
+      "shortLabel": "Kenya",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-35",
+      "shortLabel": "Mozambique \u00b7 Madagascar",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-36",
+      "shortLabel": "Ethiopia 1 \u00b7 Saudi Arabia",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-37",
+      "shortLabel": "Iraq \u00b7 Syria",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-38",
+      "shortLabel": "Ethiopia 2",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-39",
+      "shortLabel": "Yemen \u00b7 Somaliland",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-2050-40",
+      "shortLabel": "Iran",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-2050-41",
+      "shortLabel": "Uzbekistan",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-2050-42",
+      "shortLabel": "Pakistan 1",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-2050-43",
+      "shortLabel": "Afghanistan",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-44",
+      "shortLabel": "Pakistan 2",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-45",
+      "shortLabel": "Kazakhstan \u00b7 Tajikistan",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-46",
+      "shortLabel": "Gujarat",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-47",
+      "shortLabel": "Pakistan 3",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-48",
+      "shortLabel": "Rajasthan",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-49",
+      "shortLabel": "Maharashtra",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-50",
+      "shortLabel": "Ladakh \u00b7 Himachal Pradesh",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-51",
+      "shortLabel": "Karnataka \u00b7 Andhra Pradesh",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-52",
+      "shortLabel": "Uttarakhand \u00b7 Haryana",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-53",
+      "shortLabel": "Madhya Pradesh",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-2050-54",
+      "shortLabel": "Tamil Nadu \u00b7 Sri Lanka",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-2050-55",
+      "shortLabel": "Chhattisgarh \u00b7 Telangana",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-2050-56",
+      "shortLabel": "Xinjiang 1",
+      "color": "#7f8c8d"
+    },
+    {
+      "id": "e82-2050-57",
+      "shortLabel": "Uttar Pradesh",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-58",
+      "shortLabel": "Odisha",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-59",
+      "shortLabel": "Bihar \u00b7 Jharkhand",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-60",
+      "shortLabel": "West Bengal",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-61",
+      "shortLabel": "Tibet",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-62",
+      "shortLabel": "Bangladesh 1",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-63",
+      "shortLabel": "Xinjiang 2",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-64",
+      "shortLabel": "Bangladesh 2",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-65",
+      "shortLabel": "Arunachal Pradesh \u00b7 Assam",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-66",
+      "shortLabel": "Russia",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-67",
+      "shortLabel": "Myanmar \u00b7 Yunnan",
+      "color": "#1abc9c"
+    },
+    {
+      "id": "e82-2050-68",
+      "shortLabel": "Qinghai \u00b7 Sichuan",
+      "color": "#9b59b6"
+    },
+    {
+      "id": "e82-2050-69",
+      "shortLabel": "Gansu",
+      "color": "#e67e22"
+    },
+    {
+      "id": "e82-2050-70",
+      "shortLabel": "Thailand",
+      "color": "#34495e"
+    },
+    {
+      "id": "e82-2050-71",
+      "shortLabel": "Indonesia 1",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-72",
+      "shortLabel": "Vietnam \u00b7 Malaysia",
+      "color": "#2980b9"
+    },
+    {
+      "id": "e82-2050-73",
+      "shortLabel": "Guangxi \u00b7 Guangdong",
+      "color": "#27ae60"
+    },
+    {
+      "id": "e82-2050-74",
+      "shortLabel": "Shaanxi \u00b7 Hebei",
+      "color": "#8e44ad"
+    },
+    {
+      "id": "e82-2050-75",
+      "shortLabel": "Hunan \u00b7 Hubei",
+      "color": "#d35400"
+    },
+    {
+      "id": "e82-2050-76",
+      "shortLabel": "Inner Mongolia",
+      "color": "#16a085"
+    },
+    {
+      "id": "e82-2050-77",
+      "shortLabel": "Indonesia 2",
+      "color": "#2c3e50"
+    },
+    {
+      "id": "e82-2050-78",
+      "shortLabel": "South Korea \u00b7 Shandong",
+      "color": "#f39c12"
+    },
+    {
+      "id": "e82-2050-79",
+      "shortLabel": "Philippines",
+      "color": "#e74c3c"
+    },
+    {
+      "id": "e82-2050-80",
+      "shortLabel": "Heilongjiang \u00b7 Jilin",
+      "color": "#3498db"
+    },
+    {
+      "id": "e82-2050-81",
+      "shortLabel": "Indonesia 3",
+      "color": "#c0392b"
+    },
+    {
+      "id": "e82-2050-82",
+      "shortLabel": "Japan",
+      "color": "#2980b9"
+    }
+  ],
+  "nationalShares": {
+    "e82-2050-01": 0.010927,
+    "e82-2050-02": 0.010794,
+    "e82-2050-03": 0.020228,
+    "e82-2050-04": 0.009014,
+    "e82-2050-05": 0.008713,
+    "e82-2050-06": 0.012074,
+    "e82-2050-07": 0.011734,
+    "e82-2050-08": 0.009992,
+    "e82-2050-09": 0.011458,
+    "e82-2050-10": 0.015225,
+    "e82-2050-11": 0.013377,
+    "e82-2050-12": 0.010444,
+    "e82-2050-13": 0.014068,
+    "e82-2050-14": 0.011611,
+    "e82-2050-15": 0.013054,
+    "e82-2050-16": 0.012734,
+    "e82-2050-17": 0.011588,
+    "e82-2050-18": 0.012953,
+    "e82-2050-19": 0.009776,
+    "e82-2050-20": 0.012199,
+    "e82-2050-21": 0.006421,
+    "e82-2050-22": 0.011437,
+    "e82-2050-23": 0.004018,
+    "e82-2050-24": 0.01669,
+    "e82-2050-25": 0.016795,
+    "e82-2050-26": 0.011841,
+    "e82-2050-27": 0.011112,
+    "e82-2050-28": 0.016711,
+    "e82-2050-29": 0.00881,
+    "e82-2050-30": 0.007801,
+    "e82-2050-31": 0.008833,
+    "e82-2050-32": 0.012814,
+    "e82-2050-33": 0.015897,
+    "e82-2050-34": 0.008643,
+    "e82-2050-35": 0.015207,
+    "e82-2050-36": 0.017583,
+    "e82-2050-37": 0.015013,
+    "e82-2050-38": 0.015208,
+    "e82-2050-39": 0.014014,
+    "e82-2050-40": 0.012609,
+    "e82-2050-41": 0.006395,
+    "e82-2050-42": 0.012972,
+    "e82-2050-43": 0.010469,
+    "e82-2050-44": 0.012861,
+    "e82-2050-45": 0.005352,
+    "e82-2050-46": 0.010027,
+    "e82-2050-47": 0.015626,
+    "e82-2050-48": 0.019419,
+    "e82-2050-49": 0.016607,
+    "e82-2050-50": 0.006913,
+    "e82-2050-51": 0.018606,
+    "e82-2050-52": 0.005746,
+    "e82-2050-53": 0.017388,
+    "e82-2050-54": 0.011245,
+    "e82-2050-55": 0.013653,
+    "e82-2050-56": 0.011752,
+    "e82-2050-57": 0.017771,
+    "e82-2050-58": 0.008454,
+    "e82-2050-59": 0.009675,
+    "e82-2050-60": 0.004671,
+    "e82-2050-61": 0.014363,
+    "e82-2050-62": 0.011149,
+    "e82-2050-63": 0.011889,
+    "e82-2050-64": 0.012842,
+    "e82-2050-65": 0.010098,
+    "e82-2050-66": 0.014075,
+    "e82-2050-67": 0.01303,
+    "e82-2050-68": 0.019586,
+    "e82-2050-69": 0.00672,
+    "e82-2050-70": 0.01014,
+    "e82-2050-71": 0.011276,
+    "e82-2050-72": 0.016007,
+    "e82-2050-73": 0.005409,
+    "e82-2050-74": 0.008272,
+    "e82-2050-75": 0.011657,
+    "e82-2050-76": 0.017502,
+    "e82-2050-77": 0.011154,
+    "e82-2050-78": 0.011032,
+    "e82-2050-79": 0.015903,
+    "e82-2050-80": 0.015254,
+    "e82-2050-81": 0.016752,
+    "e82-2050-82": 0.010869
+  },
+  "totalPopulation": 9671806872,
+  "areas": [
+    {
+      "code": "e82-2050-01",
+      "slug": "e82-2050-01",
+      "name": "Alaska",
+      "plurality": "e82-2050-01",
+      "nationality": "e82-2050-01",
+      "population": 105684146,
+      "shares": {
+        "e82-2050-01": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-02",
+      "slug": "e82-2050-02",
+      "name": "Montana \u00b7 California",
+      "plurality": "e82-2050-02",
+      "nationality": "e82-2050-02",
+      "population": 104396863,
+      "shares": {
+        "e82-2050-02": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-03",
+      "slug": "e82-2050-03",
+      "name": "Mexico",
+      "plurality": "e82-2050-03",
+      "nationality": "e82-2050-03",
+      "population": 195643884,
+      "shares": {
+        "e82-2050-03": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-04",
+      "slug": "e82-2050-04",
+      "name": "Canada",
+      "plurality": "e82-2050-04",
+      "nationality": "e82-2050-04",
+      "population": 87177721,
+      "shares": {
+        "e82-2050-04": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-05",
+      "slug": "e82-2050-05",
+      "name": "Texas \u00b7 Kansas",
+      "plurality": "e82-2050-05",
+      "nationality": "e82-2050-05",
+      "population": 84273534,
+      "shares": {
+        "e82-2050-05": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-06",
+      "slug": "e82-2050-06",
+      "name": "Haiti \u00b7 Dominican Rep.",
+      "plurality": "e82-2050-06",
+      "nationality": "e82-2050-06",
+      "population": 116773373,
+      "shares": {
+        "e82-2050-06": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-07",
+      "slug": "e82-2050-07",
+      "name": "Colombia \u00b7 Venezuela",
+      "plurality": "e82-2050-07",
+      "nationality": "e82-2050-07",
+      "population": 113491984,
+      "shares": {
+        "e82-2050-07": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-08",
+      "slug": "e82-2050-08",
+      "name": "Argentina \u00b7 Chile",
+      "plurality": "e82-2050-08",
+      "nationality": "e82-2050-08",
+      "population": 96637437,
+      "shares": {
+        "e82-2050-08": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-09",
+      "slug": "e82-2050-09",
+      "name": "Brazil 1",
+      "plurality": "e82-2050-09",
+      "nationality": "e82-2050-09",
+      "population": 110820709,
+      "shares": {
+        "e82-2050-09": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-10",
+      "slug": "e82-2050-10",
+      "name": "Brazil 2 \u00b7 Peru",
+      "plurality": "e82-2050-10",
+      "nationality": "e82-2050-10",
+      "population": 147252468,
+      "shares": {
+        "e82-2050-10": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-11",
+      "slug": "e82-2050-11",
+      "name": "Mali \u00b7 Morocco",
+      "plurality": "e82-2050-11",
+      "nationality": "e82-2050-11",
+      "population": 129375071,
+      "shares": {
+        "e82-2050-11": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-12",
+      "slug": "e82-2050-12",
+      "name": "C\u00f4te d'Ivoire \u00b7 Guinea",
+      "plurality": "e82-2050-12",
+      "nationality": "e82-2050-12",
+      "population": 101010443,
+      "shares": {
+        "e82-2050-12": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-13",
+      "slug": "e82-2050-13",
+      "name": "France \u00b7 Spain",
+      "plurality": "e82-2050-13",
+      "nationality": "e82-2050-13",
+      "population": 136063653,
+      "shares": {
+        "e82-2050-13": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-14",
+      "slug": "e82-2050-14",
+      "name": "United Kingdom",
+      "plurality": "e82-2050-14",
+      "nationality": "e82-2050-14",
+      "population": 112304098,
+      "shares": {
+        "e82-2050-14": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-15",
+      "slug": "e82-2050-15",
+      "name": "Ghana \u00b7 Burkina Faso",
+      "plurality": "e82-2050-15",
+      "nationality": "e82-2050-15",
+      "population": 126251269,
+      "shares": {
+        "e82-2050-15": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-16",
+      "slug": "e82-2050-16",
+      "name": "Nigeria 1",
+      "plurality": "e82-2050-16",
+      "nationality": "e82-2050-16",
+      "population": 123156282,
+      "shares": {
+        "e82-2050-16": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-17",
+      "slug": "e82-2050-17",
+      "name": "Algeria \u00b7 Niger",
+      "plurality": "e82-2050-17",
+      "nationality": "e82-2050-17",
+      "population": 112079431,
+      "shares": {
+        "e82-2050-17": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-18",
+      "slug": "e82-2050-18",
+      "name": "Nigeria 2",
+      "plurality": "e82-2050-18",
+      "nationality": "e82-2050-18",
+      "population": 125275995,
+      "shares": {
+        "e82-2050-18": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-19",
+      "slug": "e82-2050-19",
+      "name": "Germany",
+      "plurality": "e82-2050-19",
+      "nationality": "e82-2050-19",
+      "population": 94553487,
+      "shares": {
+        "e82-2050-19": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-20",
+      "slug": "e82-2050-20",
+      "name": "Nigeria 3",
+      "plurality": "e82-2050-20",
+      "nationality": "e82-2050-20",
+      "population": 117981549,
+      "shares": {
+        "e82-2050-20": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-21",
+      "slug": "e82-2050-21",
+      "name": "Cameroon",
+      "plurality": "e82-2050-21",
+      "nationality": "e82-2050-21",
+      "population": 62102794,
+      "shares": {
+        "e82-2050-21": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-22",
+      "slug": "e82-2050-22",
+      "name": "Italy",
+      "plurality": "e82-2050-22",
+      "nationality": "e82-2050-22",
+      "population": 110611971,
+      "shares": {
+        "e82-2050-22": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-23",
+      "slug": "e82-2050-23",
+      "name": "Chad",
+      "plurality": "e82-2050-23",
+      "nationality": "e82-2050-23",
+      "population": 38857686,
+      "shares": {
+        "e82-2050-23": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-24",
+      "slug": "e82-2050-24",
+      "name": "South Africa \u00b7 Angola",
+      "plurality": "e82-2050-24",
+      "nationality": "e82-2050-24",
+      "population": 161422465,
+      "shares": {
+        "e82-2050-24": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-25",
+      "slug": "e82-2050-25",
+      "name": "Dem. Rep. Congo 1",
+      "plurality": "e82-2050-25",
+      "nationality": "e82-2050-25",
+      "population": 162440610,
+      "shares": {
+        "e82-2050-25": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-26",
+      "slug": "e82-2050-26",
+      "name": "Poland \u00b7 Ukraine",
+      "plurality": "e82-2050-26",
+      "nationality": "e82-2050-26",
+      "population": 114527747,
+      "shares": {
+        "e82-2050-26": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-27",
+      "slug": "e82-2050-27",
+      "name": "Dem. Rep. Congo 2",
+      "plurality": "e82-2050-27",
+      "nationality": "e82-2050-27",
+      "population": 107472094,
+      "shares": {
+        "e82-2050-27": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-28",
+      "slug": "e82-2050-28",
+      "name": "Egypt",
+      "plurality": "e82-2050-28",
+      "nationality": "e82-2050-28",
+      "population": 161630196,
+      "shares": {
+        "e82-2050-28": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-29",
+      "slug": "e82-2050-29",
+      "name": "Sudan",
+      "plurality": "e82-2050-29",
+      "nationality": "e82-2050-29",
+      "population": 85206382,
+      "shares": {
+        "e82-2050-29": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-30",
+      "slug": "e82-2050-30",
+      "name": "Zambia \u00b7 Malawi",
+      "plurality": "e82-2050-30",
+      "nationality": "e82-2050-30",
+      "population": 75445059,
+      "shares": {
+        "e82-2050-30": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-31",
+      "slug": "e82-2050-31",
+      "name": "Uganda",
+      "plurality": "e82-2050-31",
+      "nationality": "e82-2050-31",
+      "population": 85431201,
+      "shares": {
+        "e82-2050-31": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-32",
+      "slug": "e82-2050-32",
+      "name": "Turkey",
+      "plurality": "e82-2050-32",
+      "nationality": "e82-2050-32",
+      "population": 123931954,
+      "shares": {
+        "e82-2050-32": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-33",
+      "slug": "e82-2050-33",
+      "name": "Tanzania",
+      "plurality": "e82-2050-33",
+      "nationality": "e82-2050-33",
+      "population": 153752812,
+      "shares": {
+        "e82-2050-33": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-34",
+      "slug": "e82-2050-34",
+      "name": "Kenya",
+      "plurality": "e82-2050-34",
+      "nationality": "e82-2050-34",
+      "population": 83593234,
+      "shares": {
+        "e82-2050-34": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-35",
+      "slug": "e82-2050-35",
+      "name": "Mozambique \u00b7 Madagascar",
+      "plurality": "e82-2050-35",
+      "nationality": "e82-2050-35",
+      "population": 147081244,
+      "shares": {
+        "e82-2050-35": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-36",
+      "slug": "e82-2050-36",
+      "name": "Ethiopia 1 \u00b7 Saudi Arabia",
+      "plurality": "e82-2050-36",
+      "nationality": "e82-2050-36",
+      "population": 170061324,
+      "shares": {
+        "e82-2050-36": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-37",
+      "slug": "e82-2050-37",
+      "name": "Iraq \u00b7 Syria",
+      "plurality": "e82-2050-37",
+      "nationality": "e82-2050-37",
+      "population": 145204658,
+      "shares": {
+        "e82-2050-37": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-38",
+      "slug": "e82-2050-38",
+      "name": "Ethiopia 2",
+      "plurality": "e82-2050-38",
+      "nationality": "e82-2050-38",
+      "population": 147087577,
+      "shares": {
+        "e82-2050-38": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-39",
+      "slug": "e82-2050-39",
+      "name": "Yemen \u00b7 Somaliland",
+      "plurality": "e82-2050-39",
+      "nationality": "e82-2050-39",
+      "population": 135541776,
+      "shares": {
+        "e82-2050-39": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-40",
+      "slug": "e82-2050-40",
+      "name": "Iran",
+      "plurality": "e82-2050-40",
+      "nationality": "e82-2050-40",
+      "population": 121949873,
+      "shares": {
+        "e82-2050-40": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-41",
+      "slug": "e82-2050-41",
+      "name": "Uzbekistan",
+      "plurality": "e82-2050-41",
+      "nationality": "e82-2050-41",
+      "population": 61850457,
+      "shares": {
+        "e82-2050-41": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-42",
+      "slug": "e82-2050-42",
+      "name": "Pakistan 1",
+      "plurality": "e82-2050-42",
+      "nationality": "e82-2050-42",
+      "population": 125466660,
+      "shares": {
+        "e82-2050-42": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-43",
+      "slug": "e82-2050-43",
+      "name": "Afghanistan",
+      "plurality": "e82-2050-43",
+      "nationality": "e82-2050-43",
+      "population": 101250686,
+      "shares": {
+        "e82-2050-43": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-44",
+      "slug": "e82-2050-44",
+      "name": "Pakistan 2",
+      "plurality": "e82-2050-44",
+      "nationality": "e82-2050-44",
+      "population": 124385512,
+      "shares": {
+        "e82-2050-44": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-45",
+      "slug": "e82-2050-45",
+      "name": "Kazakhstan \u00b7 Tajikistan",
+      "plurality": "e82-2050-45",
+      "nationality": "e82-2050-45",
+      "population": 51761863,
+      "shares": {
+        "e82-2050-45": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-46",
+      "slug": "e82-2050-46",
+      "name": "Gujarat",
+      "plurality": "e82-2050-46",
+      "nationality": "e82-2050-46",
+      "population": 96980457,
+      "shares": {
+        "e82-2050-46": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-47",
+      "slug": "e82-2050-47",
+      "name": "Pakistan 3",
+      "plurality": "e82-2050-47",
+      "nationality": "e82-2050-47",
+      "population": 151128705,
+      "shares": {
+        "e82-2050-47": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-48",
+      "slug": "e82-2050-48",
+      "name": "Rajasthan",
+      "plurality": "e82-2050-48",
+      "nationality": "e82-2050-48",
+      "population": 187815231,
+      "shares": {
+        "e82-2050-48": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-49",
+      "slug": "e82-2050-49",
+      "name": "Maharashtra",
+      "plurality": "e82-2050-49",
+      "nationality": "e82-2050-49",
+      "population": 160621106,
+      "shares": {
+        "e82-2050-49": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-50",
+      "slug": "e82-2050-50",
+      "name": "Ladakh \u00b7 Himachal Pradesh",
+      "plurality": "e82-2050-50",
+      "nationality": "e82-2050-50",
+      "population": 66861889,
+      "shares": {
+        "e82-2050-50": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-51",
+      "slug": "e82-2050-51",
+      "name": "Karnataka \u00b7 Andhra Pradesh",
+      "plurality": "e82-2050-51",
+      "nationality": "e82-2050-51",
+      "population": 179954761,
+      "shares": {
+        "e82-2050-51": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-52",
+      "slug": "e82-2050-52",
+      "name": "Uttarakhand \u00b7 Haryana",
+      "plurality": "e82-2050-52",
+      "nationality": "e82-2050-52",
+      "population": 55574012,
+      "shares": {
+        "e82-2050-52": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-53",
+      "slug": "e82-2050-53",
+      "name": "Madhya Pradesh",
+      "plurality": "e82-2050-53",
+      "nationality": "e82-2050-53",
+      "population": 168174936,
+      "shares": {
+        "e82-2050-53": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-54",
+      "slug": "e82-2050-54",
+      "name": "Tamil Nadu \u00b7 Sri Lanka",
+      "plurality": "e82-2050-54",
+      "nationality": "e82-2050-54",
+      "population": 108757816,
+      "shares": {
+        "e82-2050-54": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-55",
+      "slug": "e82-2050-55",
+      "name": "Chhattisgarh \u00b7 Telangana",
+      "plurality": "e82-2050-55",
+      "nationality": "e82-2050-55",
+      "population": 132046800,
+      "shares": {
+        "e82-2050-55": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-56",
+      "slug": "e82-2050-56",
+      "name": "Xinjiang 1",
+      "plurality": "e82-2050-56",
+      "nationality": "e82-2050-56",
+      "population": 113659453,
+      "shares": {
+        "e82-2050-56": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-57",
+      "slug": "e82-2050-57",
+      "name": "Uttar Pradesh",
+      "plurality": "e82-2050-57",
+      "nationality": "e82-2050-57",
+      "population": 171882108,
+      "shares": {
+        "e82-2050-57": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-58",
+      "slug": "e82-2050-58",
+      "name": "Odisha",
+      "plurality": "e82-2050-58",
+      "nationality": "e82-2050-58",
+      "population": 81769529,
+      "shares": {
+        "e82-2050-58": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-59",
+      "slug": "e82-2050-59",
+      "name": "Bihar \u00b7 Jharkhand",
+      "plurality": "e82-2050-59",
+      "nationality": "e82-2050-59",
+      "population": 93576792,
+      "shares": {
+        "e82-2050-59": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-60",
+      "slug": "e82-2050-60",
+      "name": "West Bengal",
+      "plurality": "e82-2050-60",
+      "nationality": "e82-2050-60",
+      "population": 45176634,
+      "shares": {
+        "e82-2050-60": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-61",
+      "slug": "e82-2050-61",
+      "name": "Tibet",
+      "plurality": "e82-2050-61",
+      "nationality": "e82-2050-61",
+      "population": 138915926,
+      "shares": {
+        "e82-2050-61": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-62",
+      "slug": "e82-2050-62",
+      "name": "Bangladesh 1",
+      "plurality": "e82-2050-62",
+      "nationality": "e82-2050-62",
+      "population": 107831333,
+      "shares": {
+        "e82-2050-62": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-63",
+      "slug": "e82-2050-63",
+      "name": "Xinjiang 2",
+      "plurality": "e82-2050-63",
+      "nationality": "e82-2050-63",
+      "population": 114987703,
+      "shares": {
+        "e82-2050-63": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-64",
+      "slug": "e82-2050-64",
+      "name": "Bangladesh 2",
+      "plurality": "e82-2050-64",
+      "nationality": "e82-2050-64",
+      "population": 124203782,
+      "shares": {
+        "e82-2050-64": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-65",
+      "slug": "e82-2050-65",
+      "name": "Arunachal Pradesh \u00b7 Assam",
+      "plurality": "e82-2050-65",
+      "nationality": "e82-2050-65",
+      "population": 97670572,
+      "shares": {
+        "e82-2050-65": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-66",
+      "slug": "e82-2050-66",
+      "name": "Russia",
+      "plurality": "e82-2050-66",
+      "nationality": "e82-2050-66",
+      "population": 136132783,
+      "shares": {
+        "e82-2050-66": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-67",
+      "slug": "e82-2050-67",
+      "name": "Myanmar \u00b7 Yunnan",
+      "plurality": "e82-2050-67",
+      "nationality": "e82-2050-67",
+      "population": 126024302,
+      "shares": {
+        "e82-2050-67": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-68",
+      "slug": "e82-2050-68",
+      "name": "Qinghai \u00b7 Sichuan",
+      "plurality": "e82-2050-68",
+      "nationality": "e82-2050-68",
+      "population": 189435538,
+      "shares": {
+        "e82-2050-68": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-69",
+      "slug": "e82-2050-69",
+      "name": "Gansu",
+      "plurality": "e82-2050-69",
+      "nationality": "e82-2050-69",
+      "population": 64994967,
+      "shares": {
+        "e82-2050-69": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-70",
+      "slug": "e82-2050-70",
+      "name": "Thailand",
+      "plurality": "e82-2050-70",
+      "nationality": "e82-2050-70",
+      "population": 98071470,
+      "shares": {
+        "e82-2050-70": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-71",
+      "slug": "e82-2050-71",
+      "name": "Indonesia 1",
+      "plurality": "e82-2050-71",
+      "nationality": "e82-2050-71",
+      "population": 109054604,
+      "shares": {
+        "e82-2050-71": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-72",
+      "slug": "e82-2050-72",
+      "name": "Vietnam \u00b7 Malaysia",
+      "plurality": "e82-2050-72",
+      "nationality": "e82-2050-72",
+      "population": 154818230,
+      "shares": {
+        "e82-2050-72": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-73",
+      "slug": "e82-2050-73",
+      "name": "Guangxi \u00b7 Guangdong",
+      "plurality": "e82-2050-73",
+      "nationality": "e82-2050-73",
+      "population": 52319516,
+      "shares": {
+        "e82-2050-73": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-74",
+      "slug": "e82-2050-74",
+      "name": "Shaanxi \u00b7 Hebei",
+      "plurality": "e82-2050-74",
+      "nationality": "e82-2050-74",
+      "population": 80000725,
+      "shares": {
+        "e82-2050-74": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-75",
+      "slug": "e82-2050-75",
+      "name": "Hunan \u00b7 Hubei",
+      "plurality": "e82-2050-75",
+      "nationality": "e82-2050-75",
+      "population": 112748458,
+      "shares": {
+        "e82-2050-75": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-76",
+      "slug": "e82-2050-76",
+      "name": "Inner Mongolia",
+      "plurality": "e82-2050-76",
+      "nationality": "e82-2050-76",
+      "population": 169279772,
+      "shares": {
+        "e82-2050-76": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-77",
+      "slug": "e82-2050-77",
+      "name": "Indonesia 2",
+      "plurality": "e82-2050-77",
+      "nationality": "e82-2050-77",
+      "population": 107881620,
+      "shares": {
+        "e82-2050-77": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-78",
+      "slug": "e82-2050-78",
+      "name": "South Korea \u00b7 Shandong",
+      "plurality": "e82-2050-78",
+      "nationality": "e82-2050-78",
+      "population": 106703990,
+      "shares": {
+        "e82-2050-78": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-79",
+      "slug": "e82-2050-79",
+      "name": "Philippines",
+      "plurality": "e82-2050-79",
+      "nationality": "e82-2050-79",
+      "population": 153808032,
+      "shares": {
+        "e82-2050-79": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-80",
+      "slug": "e82-2050-80",
+      "name": "Heilongjiang \u00b7 Jilin",
+      "plurality": "e82-2050-80",
+      "nationality": "e82-2050-80",
+      "population": 147529764,
+      "shares": {
+        "e82-2050-80": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-81",
+      "slug": "e82-2050-81",
+      "name": "Indonesia 3",
+      "plurality": "e82-2050-81",
+      "nationality": "e82-2050-81",
+      "population": 162019162,
+      "shares": {
+        "e82-2050-81": 1.0
+      }
+    },
+    {
+      "code": "e82-2050-82",
+      "slug": "e82-2050-82",
+      "name": "Japan",
+      "plurality": "e82-2050-82",
+      "nationality": "e82-2050-82",
+      "population": 105123163,
+      "shares": {
+        "e82-2050-82": 1.0
+      }
+    }
+  ]
+}

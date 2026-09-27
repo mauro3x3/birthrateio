@@ -1,0 +1,50 @@
+{
+  "id": "world-pop82",
+  "title": "World in 82 equal-population regions",
+  "blurb": "The same idea as the 1914 MapPorn reconstruction: carve the world into 82 regions of equal population. Scrub years to watch dense belts shatter and empty continents stay huge.",
+  "nRegions": 82,
+  "years": [
+    {
+      "year": 1945,
+      "slug": "world-pop82-1945",
+      "geoUrl": "/geo/historic/world-pop82-1945.json",
+      "packPath": "historic-world-pop82-1945.json",
+      "targetPop": 28958548,
+      "worldPop": 2374600919,
+      "nRegions": 82
+    },
+    {
+      "year": 1990,
+      "slug": "world-pop82-1990",
+      "geoUrl": "/geo/historic/world-pop82-1990.json",
+      "packPath": "historic-world-pop82-1990.json",
+      "targetPop": 64828475,
+      "worldPop": 5315934940,
+      "nRegions": 82
+    },
+    {
+      "year": 2026,
+      "slug": "world-pop82-2026",
+      "geoUrl": "/geo/historic/world-pop82-2026.json",
+      "packPath": "historic-world-pop82-2026.json",
+      "targetPop": 101122614,
+      "worldPop": 8292054336,
+      "nRegions": 82
+    },
+    {
+      "year": 2050,
+      "slug": "world-pop82-2050",
+      "geoUrl": "/geo/historic/world-pop82-2050.json",
+      "packPath": "historic-world-pop82-2050.json",
+      "targetPop": 117948864,
+      "worldPop": 9671806872,
+      "nRegions": 82
+    }
+  ],
+  "digitized1914": {
+    "year": 1914,
+    "slug": "world-pop82-1914",
+    "href": "/maps/historic/world-pop82-1914",
+    "note": "Hand-digitized from the MapPorn reconstruction (period regionalization)."
+  }
+}

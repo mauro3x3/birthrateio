@@ -15,6 +15,10 @@ import frenchAlgeria1936 from "@/lib/data/historic-french-algeria-1936.json";
 import ottomanEmpire1914 from "@/lib/data/historic-ottoman-empire-1914.json";
 import africa1880 from "@/lib/data/historic-africa-1880.json";
 import worldPop82 from "@/lib/data/historic-world-pop82-1914.json";
+import worldPop821945 from "@/lib/data/historic-world-pop82-1945.json";
+import worldPop821990 from "@/lib/data/historic-world-pop82-1990.json";
+import worldPop822026 from "@/lib/data/historic-world-pop82-2026.json";
+import worldPop822050 from "@/lib/data/historic-world-pop82-2050.json";
 
 export const revalidate = 86400;
 
@@ -26,12 +30,18 @@ const PACKS: Record<string, HistoricMapPack> = {
   "ottoman-empire-1914": ottomanEmpire1914 as unknown as HistoricMapPack,
   "africa-1880": africa1880 as unknown as HistoricMapPack,
   "world-pop82-1914": worldPop82 as unknown as HistoricMapPack,
+  "world-pop82-1945": worldPop821945 as unknown as HistoricMapPack,
+  "world-pop82-1990": worldPop821990 as unknown as HistoricMapPack,
+  "world-pop82-2026": worldPop822026 as unknown as HistoricMapPack,
+  "world-pop82-2050": worldPop822050 as unknown as HistoricMapPack,
 };
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return HISTORIC_MAPS.filter((m) => m.status === "live").map((m) => ({
+  return HISTORIC_MAPS.filter(
+    (m) => m.status === "live" && Boolean(PACKS[m.slug]),
+  ).map((m) => ({
     slug: m.slug,
   }));
 }

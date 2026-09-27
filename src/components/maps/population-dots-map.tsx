@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Protocol } from "pmtiles";
 
 type Props = {
+  /** Absolute or same-origin URL to the `.pmtiles` archive. */
   url: string;
   layer: string;
   bounds: [number, number, number, number];
@@ -13,7 +15,6 @@ type Props = {
 
 const MAPLIBRE_JS = "/maplibre-gl.js";
 const MAPLIBRE_CSS = "/maplibre-gl.css";
-const MAPLIBRE_WORKER = "/maplibre-gl-csp-worker.js";
 
 function loadScript(src: string): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -46,6 +47,12 @@ function loadCss(href: string) {
   document.head.appendChild(link);
 }
 
+function resolveTilesUrl(url: string): string {
+  if (/^https?:\/\//i.test(url) || url.startsWith("pmtiles://")) return url;
+  const path = url.startsWith("/") ? url : `/${url}`;
+  return `${window.location.origin}${path}`;
+}
+
 type MapLibreGl = {
   Map: new (opts: Record<string, unknown>) => {
     on: (event: string, cb: (...args: unknown[]) => void) => void;
@@ -54,14 +61,34 @@ type MapLibreGl = {
     remove: () => void;
   };
   NavigationControl: new (opts?: Record<string, unknown>) => unknown;
+  addProtocol?: (
+    name: string,
+    fn: (...args: unknown[]) => unknown,
+  ) => void;
   setWorkerUrl?: (url: string) => void;
 };
 
+let protocolRegistered = false;
+
+function ensurePmtilesProtocol(maplibregl: MapLibreGl) {
+  const g = window as unknown as { __brPmtilesProtocol?: boolean };
+  if (g.__brPmtilesProtocol || protocolRegistered) return;
+  if (!maplibregl.addProtocol) return;
+  const protocol = new Protocol();
+  maplibregl.addProtocol(
+    "pmtiles",
+    protocol.tile as unknown as (...args: unknown[]) => unknown,
+  );
+  protocolRegistered = true;
+  g.__brPmtilesProtocol = true;
+}
+
 /**
- * Population dots via /api/tiles/india-pop/{z}/{x}/{y}.
- * Uses MapLibre 4 from CDN so the worker loads correctly under Next.js.
+ * Population dots via MapLibre + PMTiles (range requests).
+ * Set NEXT_PUBLIC_INDIA_POP_PMTILES_URL in production.
  */
 export function PopulationDotsMap({
+  url,
   layer,
   bounds,
   minZoom,
@@ -75,7 +102,6 @@ export function PopulationDotsMap({
     const el = containerRef.current;
     if (!el) return;
     let cancelled = false;
-    // CDN MapLibre instance — typed loosely on purpose
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let map: any = null;
 
@@ -90,6 +116,27 @@ export function PopulationDotsMap({
         maplibregl.setWorkerUrl?.(
           `${window.location.origin}/maplibre-gl-csp-worker.js`,
         );
+
+        if (!protocolRegistered && maplibregl.addProtocol) {
+          ensurePmtilesProtocol(maplibregl);
+        }
+
+        const tilesUrl = resolveTilesUrl(url);
+        const probe = await fetch(tilesUrl, {
+          headers: { Range: "bytes=0-1" },
+          mode: "cors",
+        }).catch(() => null);
+        if (cancelled) return;
+        if (!probe || !(probe.ok || probe.status === 206)) {
+          setError(
+            "India population tiles are missing on this host. Set NEXT_PUBLIC_INDIA_POP_PMTILES_URL to a public .pmtiles URL, or place india-population.pmtiles in public/tiles for local dev.",
+          );
+          return;
+        }
+
+        const pmtilesUrl = tilesUrl.startsWith("pmtiles://")
+          ? tilesUrl
+          : `pmtiles://${tilesUrl}`;
 
         map = new maplibregl.Map({
           container: el,
@@ -111,9 +158,7 @@ export function PopulationDotsMap({
               },
               population: {
                 type: "vector",
-                tiles: [
-                  `${window.location.origin}/api/tiles/india-pop/{z}/{x}/{y}`,
-                ],
+                url: pmtilesUrl,
                 minzoom: minZoom,
                 maxzoom: maxZoom,
               },
@@ -171,6 +216,15 @@ export function PopulationDotsMap({
           },
         });
 
+        map.on("error", (e: { error?: { message?: string } }) => {
+          const msg = e?.error?.message ?? "";
+          if (/pmtiles|population|Failed to fetch|404/i.test(msg)) {
+            setError(
+              "Could not load India population tiles. Check NEXT_PUBLIC_INDIA_POP_PMTILES_URL / public/tiles/india-population.pmtiles.",
+            );
+          }
+        });
+
         map.on("load", () => {
           map.fitBounds(
             [
@@ -184,9 +238,9 @@ export function PopulationDotsMap({
           new maplibregl.NavigationControl({ showCompass: false }),
           "top-right",
         );
-        (window as unknown as { __popMap?: unknown }).__popMap = map;
       } catch (err) {
-        if (!cancelled) setError(err instanceof Error ? err.message : String(err));
+        if (!cancelled)
+          setError(err instanceof Error ? err.message : String(err));
       }
     })();
 
@@ -194,7 +248,7 @@ export function PopulationDotsMap({
       cancelled = true;
       map?.remove();
     };
-  }, [layer, bounds, minZoom, maxZoom]);
+  }, [url, layer, bounds, minZoom, maxZoom]);
 
   return (
     <div className="relative">
@@ -206,9 +260,9 @@ export function PopulationDotsMap({
         }
       />
       {error && (
-        <p className="absolute inset-x-0 bottom-3 text-center text-sm text-red-300">
-          Map failed to load: {error}
-        </p>
+        <div className="absolute inset-x-3 bottom-3 rounded-sm border border-rose-400/40 bg-rose-950/90 px-3 py-2 text-center text-sm text-rose-100 sm:inset-x-6">
+          {error}
+        </div>
       )}
     </div>
   );

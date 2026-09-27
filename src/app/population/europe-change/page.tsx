@@ -15,6 +15,10 @@ export const metadata: Metadata = {
 };
 
 export default function EuropePopulationChangePage() {
+  const tilesUrl =
+    process.env.NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL?.trim() ||
+    euChange.pmtilesPath;
+
   return (
     <div className="container space-y-8 py-10">
       <PageHeader
@@ -47,6 +51,7 @@ export default function EuropePopulationChangePage() {
           </span>
         </div>
         <PopulationChangeMapLazy
+          url={tilesUrl}
           layer={euChange.layer}
           bounds={euChange.bounds as [number, number, number, number]}
           minZoom={euChange.minZoom}

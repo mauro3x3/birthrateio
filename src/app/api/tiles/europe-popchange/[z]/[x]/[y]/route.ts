@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { existsSync, readFileSync } from "fs";
 import path from "path";
 import { PMTiles } from "pmtiles";
 import { NextRequest, NextResponse } from "next/server";
@@ -9,27 +9,45 @@ export const dynamic = "force-dynamic";
 type Params = { params: Promise<{ z: string; x: string; y: string }> };
 
 let archive: PMTiles | null = null;
+let archiveError: string | null = null;
 
 function getArchive(): PMTiles {
   if (archive) return archive;
+  if (archiveError) throw new Error(archiveError);
+
+  const remote =
+    process.env.EU_POPCHANGE_PMTILES_URL?.trim() ||
+    process.env.NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL?.trim();
   const filePath = path.join(
     process.cwd(),
     "public/tiles/europe-popchange.pmtiles",
   );
-  const buf = readFileSync(filePath);
-  const source = {
-    getKey: () => filePath,
-    getBytes: async (offset: number, length: number) => ({
-      data: buf.buffer.slice(
-        buf.byteOffset + offset,
-        buf.byteOffset + offset + length,
-      ),
-    }),
-  };
-  archive = new PMTiles(
-    source as ConstructorParameters<typeof PMTiles>[0],
-  );
-  return archive;
+
+  if (existsSync(filePath)) {
+    const buf = readFileSync(filePath);
+    const source = {
+      getKey: () => filePath,
+      getBytes: async (offset: number, length: number) => ({
+        data: buf.buffer.slice(
+          buf.byteOffset + offset,
+          buf.byteOffset + offset + length,
+        ),
+      }),
+    };
+    archive = new PMTiles(
+      source as ConstructorParameters<typeof PMTiles>[0],
+    );
+    return archive;
+  }
+
+  if (remote) {
+    archive = new PMTiles(remote);
+    return archive;
+  }
+
+  archiveError =
+    "europe-popchange.pmtiles missing — set NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL or place the file in public/tiles/";
+  throw new Error(archiveError);
 }
 
 export async function GET(_req: NextRequest, { params }: Params) {
@@ -55,6 +73,7 @@ export async function GET(_req: NextRequest, { params }: Params) {
     });
   } catch (err) {
     console.error("[europe-popchange-tiles]", err);
-    return new NextResponse("Tile error", { status: 500 });
+    const msg = err instanceof Error ? err.message : "Tile error";
+    return new NextResponse(msg, { status: 500 });
   }
 }

@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { Protocol } from "pmtiles";
 
 type Props = {
+  /** Absolute or same-origin URL to the `.pmtiles` archive. */
+  url: string;
   layer: string;
   bounds: [number, number, number, number];
   minZoom: number;
   maxZoom: number;
   growthColor?: string;
   declineColor?: string;
-  tilesPath?: string;
   className?: string;
 };
 
@@ -47,6 +49,12 @@ function loadCss(href: string) {
   document.head.appendChild(link);
 }
 
+function resolveTilesUrl(url: string): string {
+  if (/^https?:\/\//i.test(url) || url.startsWith("pmtiles://")) return url;
+  const path = url.startsWith("/") ? url : `/${url}`;
+  return `${window.location.origin}${path}`;
+}
+
 type MapLibreGl = {
   Map: new (opts: Record<string, unknown>) => {
     on: (event: string, cb: (...args: unknown[]) => void) => void;
@@ -55,21 +63,42 @@ type MapLibreGl = {
     remove: () => void;
   };
   NavigationControl: new (opts?: Record<string, unknown>) => unknown;
+  addProtocol?: (
+    name: string,
+    fn: (...args: unknown[]) => unknown,
+  ) => void;
+  removeProtocol?: (name: string) => void;
   setWorkerUrl?: (url: string) => void;
 };
 
+let protocolRegistered = false;
+
+function ensurePmtilesProtocol(maplibregl: MapLibreGl) {
+  const g = window as unknown as { __brPmtilesProtocol?: boolean };
+  if (g.__brPmtilesProtocol || protocolRegistered) return;
+  if (!maplibregl.addProtocol) return;
+  const protocol = new Protocol();
+  maplibregl.addProtocol(
+    "pmtiles",
+    protocol.tile as unknown as (...args: unknown[]) => unknown,
+  );
+  protocolRegistered = true;
+  g.__brPmtilesProtocol = true;
+}
+
 /**
  * GHSL-style population change: green growth / pink decline over a light basemap.
- * Vector tiles from /api/tiles/europe-popchange/{z}/{x}/{y}.
+ * Streams from a PMTiles archive (range requests) — set
+ * NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL in production.
  */
 export function PopulationChangeMap({
+  url,
   layer,
   bounds,
   minZoom,
   maxZoom,
   growthColor = "#2f9e6b",
   declineColor = "#e45c8a",
-  tilesPath = "/api/tiles/europe-popchange/{z}/{x}/{y}",
   className,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -95,8 +124,38 @@ export function PopulationChangeMap({
           `${window.location.origin}/maplibre-gl-csp-worker.js`,
         );
 
+        if (!protocolRegistered && maplibregl.addProtocol) {
+          ensurePmtilesProtocol(maplibregl);
+        }
+
+        const tilesUrl = resolveTilesUrl(url);
+        // Probe the archive early so we can show a clear message instead of
+        // an empty basemap when the gitignored file isn't on the host.
+        const head = await fetch(tilesUrl, {
+          method: "HEAD",
+          mode: "cors",
+        }).catch(() => null);
+        if (cancelled) return;
+        if (!head || !head.ok) {
+          // Some CDNs disallow HEAD — fall through to GET of first byte.
+          const probe = await fetch(tilesUrl, {
+            headers: { Range: "bytes=0-1" },
+            mode: "cors",
+          }).catch(() => null);
+          if (cancelled) return;
+          if (!probe || !(probe.ok || probe.status === 206)) {
+            setError(
+              "Population-change tiles are missing on this host. Set NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL to a public .pmtiles URL (R2/S3), or place europe-popchange.pmtiles in public/tiles for local dev.",
+            );
+            return;
+          }
+        }
+
         const midLon = (bounds[0] + bounds[2]) / 2;
         const midLat = (bounds[1] + bounds[3]) / 2;
+        const pmtilesUrl = tilesUrl.startsWith("pmtiles://")
+          ? tilesUrl
+          : `pmtiles://${tilesUrl}`;
 
         map = new maplibregl.Map({
           container: el,
@@ -118,7 +177,7 @@ export function PopulationChangeMap({
               },
               popchange: {
                 type: "vector",
-                tiles: [`${window.location.origin}${tilesPath}`],
+                url: pmtilesUrl,
                 minzoom: minZoom,
                 maxzoom: maxZoom,
               },
@@ -140,29 +199,39 @@ export function PopulationChangeMap({
                     ["linear"],
                     ["zoom"],
                     2,
-                    0.55,
-                    5,
-                    1.1,
+                    0.9,
+                    4,
+                    1.4,
+                    6,
+                    2.2,
                     8,
-                    1.8,
+                    3.2,
                     11,
-                    2.6,
+                    4.5,
                   ],
                   "circle-color": [
-                    "match",
-                    ["get", "chg"],
-                    1,
+                    "case",
+                    [">=", ["to-number", ["get", "chg"]], 0.5],
                     growthColor,
-                    -1,
+                    ["<=", ["to-number", ["get", "chg"]], -0.5],
                     declineColor,
                     "#94a3b8",
                   ],
-                  "circle-opacity": 0.92,
+                  "circle-opacity": 0.9,
                   "circle-pitch-alignment": "map",
                 },
               },
             ],
           },
+        });
+
+        map.on("error", (e: { error?: { message?: string } }) => {
+          const msg = e?.error?.message ?? "";
+          if (/pmtiles|popchange|Failed to fetch|404/i.test(msg)) {
+            setError(
+              "Could not load population-change tiles. Check NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL / public/tiles/europe-popchange.pmtiles.",
+            );
+          }
         });
 
         map.on("load", () => {
@@ -189,13 +258,13 @@ export function PopulationChangeMap({
       map?.remove();
     };
   }, [
+    url,
     layer,
     bounds,
     minZoom,
     maxZoom,
     growthColor,
     declineColor,
-    tilesPath,
   ]);
 
   return (
@@ -208,9 +277,9 @@ export function PopulationChangeMap({
         }
       />
       {error && (
-        <p className="absolute inset-x-0 bottom-3 text-center text-sm text-red-700">
-          Map failed to load: {error}
-        </p>
+        <div className="absolute inset-x-3 bottom-3 rounded-sm border border-rose-300 bg-rose-50 px-3 py-2 text-center text-sm text-rose-900 shadow-sm sm:inset-x-6">
+          {error}
+        </div>
       )}
     </div>
   );

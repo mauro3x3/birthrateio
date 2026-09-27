@@ -258,6 +258,36 @@ export function MapCard({
         )}
       </header>
 
+      {animatable && frames.length <= 16 ? (
+        <div
+          className="flex flex-wrap gap-1 border-b border-border px-4 py-2 sm:px-5"
+          role="listbox"
+          aria-label="Year"
+        >
+          {frames.map((f, i) => (
+            <button
+              key={f.year}
+              type="button"
+              role="option"
+              aria-selected={i === safeIdx}
+              disabled={recording}
+              onClick={() => {
+                setPlaying(false);
+                setIdx(i);
+              }}
+              className={cn(
+                "border px-2 py-0.5 text-[11px] font-medium tabular-nums transition-colors",
+                i === safeIdx
+                  ? "border-foreground/40 bg-foreground text-background"
+                  : "border-border bg-card text-muted-foreground hover:border-foreground/30 hover:text-foreground",
+              )}
+            >
+              {f.year}
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       <div
         ref={captureRef}
         className={cn(

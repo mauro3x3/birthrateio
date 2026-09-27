@@ -28,6 +28,7 @@
     "build:eurostat-divorce-marriage": "node scripts/build-eurostat-divorce-marriage.js",
     "build:world-shares": "node scripts/build-world-shares.js",
     "build:world-pop82-1914": "python3 scripts/build-world-pop82-1914.py",
+    "build:world-pop82-years": "python3 scripts/build-world-pop82-years.py",
     "build:brazil-tfr-history": "node scripts/build-brazil-tfr-history.js",
     "build:continental-tfr-history": "python3 scripts/build-continental-tfr-history.py",
     "build:dhs-tfr-history": "node scripts/build-dhs-tfr-history.js",

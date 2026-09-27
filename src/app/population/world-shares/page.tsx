@@ -204,8 +204,8 @@ export default function WorldSharesPage() {
               compare countries
             </Link>
             {" · "}
-            <Link href="/maps/historic/world-pop82-1914" className="link-editorial">
-              1914 equal-population map
+            <Link href="/maps/historic/world-pop82" className="link-editorial">
+              Equal-population world, 1914–2050
             </Link>
           </p>
           <p>

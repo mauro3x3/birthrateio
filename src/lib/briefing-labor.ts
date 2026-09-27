@@ -27,6 +27,8 @@ export type LaborOutlook = {
   at2040: LaborBand;
   at2060: LaborBand;
   at2060Replacement: LaborBand;
+  /** Every 5-year step from base through ~2060 (inclusive). */
+  path: LaborBand[];
   note: string;
 };
 
@@ -107,6 +109,7 @@ export function computeLaborOutlook(opts: {
     at2040: band(snap2040.year, snap2040),
     at2060: band(snap2060.year, snap2060),
     at2060Replacement: band(snap2060r.year, snap2060r),
+    path: current.map((snap) => band(snap.year, snap)),
     note: LABOR_NOTE,
   };
 }
@@ -211,7 +214,7 @@ export const getAllLaborOutlooks = unstable_cache(
     out.sort((a, b) => b.now.workersPerRetiree - a.now.workersPerRetiree);
     return out;
   },
-  ["all-labor-outlooks"],
+  ["all-labor-outlooks-v2"],
   { revalidate: 86400, tags: ["indicators", "countries"] },
 );
 
@@ -238,6 +241,8 @@ export type LaborExplorerRow = {
   at2040: LaborExplorerBand;
   at2060: LaborExplorerBand;
   at2060Replacement: LaborExplorerBand;
+  /** 5-year path from now → ~2060 for trajectory charts. */
+  path: LaborExplorerBand[];
 };
 
 function toExplorerBand(b: LaborBand): LaborExplorerBand {
@@ -261,6 +266,7 @@ export function toLaborExplorerRows(rows: LaborOutlookRow[]): LaborExplorerRow[]
     at2040: toExplorerBand(r.at2040),
     at2060: toExplorerBand(r.at2060),
     at2060Replacement: toExplorerBand(r.at2060Replacement),
+    path: r.path.map(toExplorerBand),
   }));
 }
 
@@ -277,29 +283,33 @@ export type LaborTimelineFrame = {
   data: LaborTimelinePoint[];
 };
 
-/** Now / ~2040 / ~2060 frames for the animated "workers per retiree" map. */
+/** Path frames for the animated "workers per retiree" map (5-year steps). */
 export function toLaborTimelineFrames(
   rows: LaborExplorerRow[],
 ): LaborTimelineFrame[] {
   const sample = rows[0];
-  if (!sample) return [];
-  const bandsOf = (r: LaborExplorerRow) => [r.now, r.at2040, r.at2060];
-  const years = bandsOf(sample).map((b) => b.year);
-  return years.map((year, i) => ({
-    year,
-    data: rows
-      .map((r) => {
-        const b = bandsOf(r)[i];
-        return {
-          iso3: r.iso3,
-          slug: r.slug,
-          name: r.name,
-          value: b.workersPerRetiree,
-          continent: r.continent,
-        };
-      })
-      .filter((d) => Number.isFinite(d.value) && d.value > 0),
-  }));
+  if (!sample?.path.length) return [];
+  const n = Math.max(...rows.map((r) => r.path.length));
+  const frames: LaborTimelineFrame[] = [];
+  for (let i = 0; i < n; i++) {
+    const year = sample.path[Math.min(i, sample.path.length - 1)]!.year;
+    frames.push({
+      year,
+      data: rows
+        .map((r) => {
+          const b = r.path[Math.min(i, r.path.length - 1)]!;
+          return {
+            iso3: r.iso3,
+            slug: r.slug,
+            name: r.name,
+            value: b.workersPerRetiree,
+            continent: r.continent,
+          };
+        })
+        .filter((d) => Number.isFinite(d.value) && d.value > 0),
+    });
+  }
+  return frames;
 }
 
 /** Population-weighted global workers-per-retiree, keyed by frame year. */
@@ -307,20 +317,20 @@ export function globalWorkersPerRetireeByYear(
   rows: LaborExplorerRow[],
 ): Record<number, number> {
   const sample = rows[0];
-  if (!sample) return {};
-  const bandsOf = (r: LaborExplorerRow) => [r.now, r.at2040, r.at2060];
-  const years = bandsOf(sample).map((b) => b.year);
+  if (!sample?.path.length) return {};
   const out: Record<number, number> = {};
-  years.forEach((year, i) => {
+  const n = Math.max(...rows.map((r) => r.path.length));
+  for (let i = 0; i < n; i++) {
+    const year = sample.path[Math.min(i, sample.path.length - 1)]!.year;
     let working = 0;
     let old = 0;
     for (const r of rows) {
-      const b = bandsOf(r)[i];
+      const b = r.path[Math.min(i, r.path.length - 1)]!;
       working += b.workingMil;
       old += b.oldMil;
     }
     out[year] = old > 0 ? working / old : 0;
-  });
+  }
   return out;
 }
 
