@@ -7,7 +7,6 @@ import "leaflet/dist/leaflet.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooterGate } from "@/components/site-footer-gate";
 import { AssistantWidget } from "@/components/assistant-widget";
-import { CookieNotice } from "@/components/cookie-notice";
 import { PostHogProvider } from "@/components/posthog-provider";
 import { PostHogPageView } from "@/components/posthog-pageview";
 import { siteConfig } from "@/lib/site";
@@ -100,7 +99,6 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
             <SiteFooterGate />
           </div>
-          <CookieNotice />
           <AssistantWidget />
           <Analytics />
         </PostHogProvider>

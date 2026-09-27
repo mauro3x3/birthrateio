@@ -16,10 +16,10 @@
     2020,
     2024
   ],
-  "note": "UN DESA International Migrant Stock: people living in each European country who were born in a Muslim-majority country. This is not a religion census \u2014 European-born children of those communities are not counted, and some origin countries are religiously mixed. Turkey, Albania and Kosovo are treated as origins, not as destinations in this race.",
+  "note": "UN DESA International Migrant Stock: people living in each European country who were born in a Muslim-majority country. This is not a religion census \u2014 European-born children of those communities are not counted, and some origin countries are religiously mixed (e.g. many Germany-bound people born in Kazakhstan are ethnic Germans). Turkey, Albania and Kosovo are treated as origins, not as destinations in this race. Early-1990s Ukraine ranks high because of people born in Central Asian Soviet republics.",
   "source": "UN DESA International Migrant Stock 2024 (bilateral corridors compiled from national statistical offices).",
   "sourceUrl": "https://www.un.org/development/desa/pd/content/international-migrant-stock",
-  "sidebarTitle": "Europe total (selected destinations)",
+  "sidebarTitle": "Sum of ranked countries",
   "series": [
     {
       "id": "deu",

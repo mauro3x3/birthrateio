@@ -167,6 +167,40 @@ export default function AboutPage() {
 
         <section className="space-y-3">
           <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
+            Good starting questions
+          </h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted-foreground">
+            <li>
+              <Link href="/fertility" className="link-editorial">
+                Where is period TFR below replacement — and by how much?
+              </Link>
+            </li>
+            <li>
+              <Link href="/population/shares" className="link-editorial">
+                Which countries account for the world&apos;s births?
+              </Link>
+            </li>
+            <li>
+              <Link href="/workers-retirees" className="link-editorial">
+                How many workers per retiree, now and toward 2100?
+              </Link>
+            </li>
+            <li>
+              <Link href="/migration" className="link-editorial">
+                What does net migration change — and what does it not?
+              </Link>
+            </li>
+            <li>
+              <Link href="/maps" className="link-editorial">
+                Where do subnational fertility maps diverge from the national
+                average?
+              </Link>
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="section-rule font-serif text-xl font-semibold tracking-tight text-primary">
             Who publishes this
           </h2>
           <p className="text-sm leading-relaxed text-muted-foreground">

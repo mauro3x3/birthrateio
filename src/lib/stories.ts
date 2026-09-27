@@ -83,7 +83,8 @@ export const ASPECTS: {
   width: number;
   height: number;
 }[] = [
-  { id: "landscape", label: "Landscape", hint: "16:9 · YouTube", width: 960, height: 540 },
+  // Taller than classic 16:9 so 15 ranked bars fit under the title without overlap.
+  { id: "landscape", label: "Landscape", hint: "16:9 · YouTube", width: 1280, height: 720 },
   { id: "square", label: "Square", hint: "1:1 · feed", width: 720, height: 720 },
   { id: "portrait", label: "Portrait", hint: "9:16 · Reels", width: 540, height: 960 },
 ];
@@ -102,6 +103,53 @@ export function rankingForYear(
 }
 
 export function totalForYear(pack: StoryPack, year: number): number {
-  const key = String(year);
-  return pack.series.reduce((sum, s) => sum + (s.values[key] ?? 0), 0);
+  // Match the on-screen race: sum the ranked bars, not every series in the pack.
+  return rankingForYear(pack, year).reduce((sum, r) => sum + r.value, 0);
+}
+
+/** Linear interpolate sparse source years (decades / 5-yr stocks) to every calendar year. */
+export function densifyStoryPackAnnual(pack: StoryPack): StoryPack {
+  const anchors = [...pack.years].sort((a, b) => a - b);
+  if (anchors.length < 2) return pack;
+
+  const years: number[] = [];
+  for (let y = anchors[0]; y <= anchors[anchors.length - 1]; y++) years.push(y);
+  // Already annual — leave values alone.
+  if (years.length === anchors.length) return pack;
+
+  const series = pack.series.map((s) => {
+    const values: Record<string, number> = {};
+    for (const y of years) {
+      const exact = s.values[String(y)];
+      if (exact != null && Number.isFinite(exact)) {
+        values[String(y)] = exact;
+        continue;
+      }
+      let lo = anchors[0];
+      let hi = anchors[anchors.length - 1];
+      for (let i = 0; i < anchors.length - 1; i++) {
+        if (y >= anchors[i] && y <= anchors[i + 1]) {
+          lo = anchors[i];
+          hi = anchors[i + 1];
+          break;
+        }
+      }
+      const a = s.values[String(lo)];
+      const b = s.values[String(hi)];
+      if (a == null && b == null) continue;
+      if (a == null) {
+        values[String(y)] = Math.round(b!);
+        continue;
+      }
+      if (b == null) {
+        values[String(y)] = Math.round(a);
+        continue;
+      }
+      const t = hi === lo ? 0 : (y - lo) / (hi - lo);
+      values[String(y)] = Math.round(a + (b - a) * t);
+    }
+    return { ...s, values };
+  });
+
+  return { ...pack, years, series };
 }

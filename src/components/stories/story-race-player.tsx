@@ -8,31 +8,62 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import {
   ASPECTS,
+  densifyStoryPackAnnual,
   type AspectId,
   type StoryPack,
 } from "@/lib/stories";
 import { cn } from "@/lib/utils";
 
-const SPEEDS = [
-  { label: "0.5×", ms: 1400 },
-  { label: "1×", ms: 900 },
-  { label: "2×", ms: 500 },
-];
+function speedsForYearCount(n: number) {
+  // Sparse decade packs used ~900ms; annual packs need faster ticks.
+  if (n > 80) {
+    return [
+      { label: "0.5×", ms: 280 },
+      { label: "1×", ms: 140 },
+      { label: "2×", ms: 70 },
+    ];
+  }
+  if (n > 30) {
+    return [
+      { label: "0.5×", ms: 400 },
+      { label: "1×", ms: 200 },
+      { label: "2×", ms: 100 },
+    ];
+  }
+  return [
+    { label: "0.5×", ms: 1400 },
+    { label: "1×", ms: 900 },
+    { label: "2×", ms: 500 },
+  ];
+}
 
 function lerpYearIndex(years: number[], t: number): number {
   if (years.length <= 1) return 0;
   return Math.min(years.length - 1, Math.max(0, Math.round(t)));
 }
 
-export function StoryRacePlayer({ pack }: { pack: StoryPack }) {
+export function StoryRacePlayer({ pack: rawPack }: { pack: StoryPack }) {
+  const pack = React.useMemo(() => densifyStoryPackAnnual(rawPack), [rawPack]);
+  const speeds = React.useMemo(
+    () => speedsForYearCount(pack.years.length),
+    [pack.years.length],
+  );
   const [yearIdx, setYearIdx] = React.useState(0);
   const [playing, setPlaying] = React.useState(true);
-  const [speedMs, setSpeedMs] = React.useState(900);
+  const [speedMs, setSpeedMs] = React.useState(speeds[1]?.ms ?? 200);
   const [aspect, setAspect] = React.useState<AspectId>("landscape");
   const frameRef = React.useRef<HTMLDivElement>(null);
   const year = pack.years[yearIdx] ?? pack.years[0];
   const aspectDef = ASPECTS.find((a) => a.id === aspect) ?? ASPECTS[0];
   const compact = aspect !== "landscape";
+
+  React.useEffect(() => {
+    setSpeedMs(speeds[1]?.ms ?? 200);
+  }, [speeds]);
+
+  React.useEffect(() => {
+    setYearIdx(0);
+  }, [pack.slug]);
 
   React.useEffect(() => {
     if (!playing) return;
@@ -84,7 +115,7 @@ export function StoryRacePlayer({ pack }: { pack: StoryPack }) {
         </Button>
 
         <div className="flex items-center gap-1 rounded-sm border border-border p-0.5">
-          {SPEEDS.map((s) => (
+          {speeds.map((s) => (
             <button
               key={s.label}
               type="button"
@@ -124,7 +155,7 @@ export function StoryRacePlayer({ pack }: { pack: StoryPack }) {
           getNode={() => frameRef.current}
           frameCount={pack.years.length}
           renderFrame={renderFrame}
-          holdMs={Math.max(450, Math.round(speedMs * 0.85))}
+          holdMs={Math.max(80, Math.round(speedMs * 0.85))}
           fileBase={`birthrate-story-${pack.slug}-${aspect}`}
           onStart={() => setPlaying(false)}
           className="ml-auto"
@@ -134,11 +165,10 @@ export function StoryRacePlayer({ pack }: { pack: StoryPack }) {
       <div className="flex justify-center overflow-auto rounded-sm border border-border bg-muted/30 p-3 sm:p-5">
         <div
           ref={frameRef}
-          className="overflow-hidden rounded-sm shadow-md"
+          className="w-full overflow-hidden rounded-sm shadow-md"
           style={{
-            width: aspectDef.width,
-            height: aspectDef.height,
-            maxWidth: "100%",
+            maxWidth: aspectDef.width,
+            aspectRatio: `${aspectDef.width} / ${aspectDef.height}`,
           }}
         >
           <BarChartRaceFrame pack={pack} year={year} compact={compact} />
