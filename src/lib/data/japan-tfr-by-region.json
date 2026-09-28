@@ -1,0 +1,221 @@
+{
+  "id": "japan-tfr-by-region",
+  "title": "Japan’s total fertility rate by region",
+  "headline": "Kyushu, Hokkaido/Tohoku, and Tokyo",
+  "slug": "japan",
+  "iso3": "JPN",
+  "unit": "children per woman",
+  "decimals": 2,
+  "regions": [
+    {
+      "id": "kyushu",
+      "name": "Kyushu",
+      "prefectures": [
+        "Fukuoka",
+        "Saga",
+        "Nagasaki",
+        "Kumamoto",
+        "Oita",
+        "Miyazaki",
+        "Kagoshima"
+      ],
+      "note": "Simple average of seven Kyushu prefectures (excludes Okinawa)."
+    },
+    {
+      "id": "hokkaido-tohoku",
+      "name": "Hokkaido / Tohoku",
+      "prefectures": [
+        "Hokkaido",
+        "Aomori",
+        "Iwate",
+        "Miyagi",
+        "Akita",
+        "Yamagata",
+        "Fukushima"
+      ],
+      "note": "Simple average of Hokkaido and the six Tohoku prefectures."
+    },
+    {
+      "id": "tokyo",
+      "name": "Tokyo",
+      "prefectures": [
+        "Tokyo"
+      ],
+      "note": "Tokyo Metropolis prefecture TFR."
+    }
+  ],
+  "seriesKeys": [
+    "Kyushu",
+    "Hokkaido / Tohoku",
+    "Tokyo"
+  ],
+  "colors": {
+    "Kyushu": "#c9a227",
+    "Hokkaido / Tohoku": "#2a9d8f",
+    "Tokyo": "#c45c26"
+  },
+  "series": [
+    {
+      "year": 2000,
+      "Kyushu": 1.55,
+      "Hokkaido / Tohoku": 1.48,
+      "Tokyo": 1.07
+    },
+    {
+      "year": 2001,
+      "Kyushu": 1.53,
+      "Hokkaido / Tohoku": 1.45,
+      "Tokyo": 1.06
+    },
+    {
+      "year": 2002,
+      "Kyushu": 1.5,
+      "Hokkaido / Tohoku": 1.42,
+      "Tokyo": 1.04
+    },
+    {
+      "year": 2003,
+      "Kyushu": 1.48,
+      "Hokkaido / Tohoku": 1.4,
+      "Tokyo": 1.03
+    },
+    {
+      "year": 2004,
+      "Kyushu": 1.46,
+      "Hokkaido / Tohoku": 1.37,
+      "Tokyo": 1.01
+    },
+    {
+      "year": 2005,
+      "Kyushu": 1.43,
+      "Hokkaido / Tohoku": 1.34,
+      "Tokyo": 1.0
+    },
+    {
+      "year": 2006,
+      "Kyushu": 1.46,
+      "Hokkaido / Tohoku": 1.34,
+      "Tokyo": 1.02
+    },
+    {
+      "year": 2007,
+      "Kyushu": 1.5,
+      "Hokkaido / Tohoku": 1.34,
+      "Tokyo": 1.05
+    },
+    {
+      "year": 2008,
+      "Kyushu": 1.53,
+      "Hokkaido / Tohoku": 1.35,
+      "Tokyo": 1.09
+    },
+    {
+      "year": 2009,
+      "Kyushu": 1.52,
+      "Hokkaido / Tohoku": 1.32,
+      "Tokyo": 1.12
+    },
+    {
+      "year": 2010,
+      "Kyushu": 1.59,
+      "Hokkaido / Tohoku": 1.39,
+      "Tokyo": 1.12
+    },
+    {
+      "year": 2011,
+      "Kyushu": 1.59,
+      "Hokkaido / Tohoku": 1.37,
+      "Tokyo": 1.06
+    },
+    {
+      "year": 2012,
+      "Kyushu": 1.59,
+      "Hokkaido / Tohoku": 1.37,
+      "Tokyo": 1.09
+    },
+    {
+      "year": 2013,
+      "Kyushu": 1.61,
+      "Hokkaido / Tohoku": 1.4,
+      "Tokyo": 1.13
+    },
+    {
+      "year": 2014,
+      "Kyushu": 1.61,
+      "Hokkaido / Tohoku": 1.4,
+      "Tokyo": 1.15
+    },
+    {
+      "year": 2015,
+      "Kyushu": 1.64,
+      "Hokkaido / Tohoku": 1.43,
+      "Tokyo": 1.24
+    },
+    {
+      "year": 2016,
+      "Kyushu": 1.65,
+      "Hokkaido / Tohoku": 1.43,
+      "Tokyo": 1.24
+    },
+    {
+      "year": 2017,
+      "Kyushu": 1.65,
+      "Hokkaido / Tohoku": 1.41,
+      "Tokyo": 1.21
+    },
+    {
+      "year": 2018,
+      "Kyushu": 1.64,
+      "Hokkaido / Tohoku": 1.39,
+      "Tokyo": 1.2
+    },
+    {
+      "year": 2019,
+      "Kyushu": 1.6,
+      "Hokkaido / Tohoku": 1.34,
+      "Tokyo": 1.15
+    },
+    {
+      "year": 2020,
+      "Kyushu": 1.57,
+      "Hokkaido / Tohoku": 1.29,
+      "Tokyo": 1.12
+    },
+    {
+      "year": 2021,
+      "Kyushu": 1.56,
+      "Hokkaido / Tohoku": 1.27,
+      "Tokyo": 1.08
+    },
+    {
+      "year": 2022,
+      "Kyushu": 1.52,
+      "Hokkaido / Tohoku": 1.2,
+      "Tokyo": 1.04
+    },
+    {
+      "year": 2023,
+      "Kyushu": 1.43,
+      "Hokkaido / Tohoku": 1.15,
+      "Tokyo": 0.99
+    },
+    {
+      "year": 2024,
+      "Kyushu": 1.37,
+      "Hokkaido / Tohoku": 1.09,
+      "Tokyo": 0.96
+    }
+  ],
+  "interpolatedYears": [
+    2001,
+    2002,
+    2003,
+    2004,
+    2006
+  ],
+  "source": "Ministry of Health, Labour and Welfare, Vital Statistics (table 4-5: trends in total fertility rates by prefecture), via e-Stat / IPSS Population Statistics of Japan.",
+  "sourceUrl": "https://www.e-stat.go.jp/en/stat-search/files?stat_infid=000040320380",
+  "note": "Regional lines are unweighted (simple) averages of prefecture TFRs, matching the Japan Research Institute / nippon.com presentation. Okinawa is excluded from Kyushu. Years without a published prefecture figure in table 4-5 (2001–2004, 2006) are linearly interpolated between adjacent published years.",
+  "yearFrom": 2000,
+  "yearTo": 2024
+}

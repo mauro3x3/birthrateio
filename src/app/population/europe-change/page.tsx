@@ -10,7 +10,7 @@ export const revalidate = 86400;
 export const metadata: Metadata = {
   title: "Europe population change 2000–2025 — GHSL map",
   description:
-    "Interactive MapLibre map of Europe population growth and decline from GHSL GHS-POP grids, 2000 vs 2025. Green growing settlements, pink declining ones.",
+    "Interactive MapLibre map of Europe population growth and decline from GHSL GHS-POP grids, 2000 vs 2025. Green growing settlements, pink declining ones — click cells, switch styles, export PNG.",
   alternates: { canonical: "/population/europe-change" },
 };
 
@@ -58,6 +58,8 @@ export default function EuropePopulationChangePage() {
           maxZoom={euChange.maxZoom}
           growthColor={euChange.colors.growth}
           declineColor={euChange.colors.decline}
+          yearFrom={euChange.yearFrom}
+          yearTo={euChange.yearTo}
         />
       </div>
 
@@ -70,7 +72,9 @@ export default function EuropePopulationChangePage() {
           Same visual idea as the well-known GHSL settlement-change maps:
           every inhabited grid cell is either growing or shrinking. Cities
           light up green; emptying countryside and post-industrial belts show
-          pink. Zoom in — tiles stream from a single PMTiles archive.
+          pink. Use <strong className="font-medium text-foreground">Dense</strong>{" "}
+          for the filled look, click a cell for the local change, or export a
+          PNG.
         </p>
         <p className="text-sm text-muted-foreground">
           Source:{" "}

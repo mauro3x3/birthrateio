@@ -76,8 +76,8 @@ export default async function PopulationComparePage() {
               Population explorer
             </Link>
             {" · "}
-            <Link href="/population/india-dots" className="link-editorial">
-              India dots
+            <Link href="/population/europe-change" className="link-editorial">
+              Europe change map
             </Link>
             {" · "}
             <Link href="/population/shares" className="link-editorial">

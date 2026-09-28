@@ -27,6 +27,10 @@ import {
 import { getCountryMapEntry } from "@/lib/country-map-atlas";
 import { MultiSeriesChart } from "@/components/charts/multi-series-chart";
 import {
+  JAPAN_TFR_BY_REGION,
+  JAPAN_TFR_BY_REGION_SERIES,
+} from "@/lib/sources/japan-tfr-by-region-data";
+import {
   GroupedBarChart,
   GroupedBarLegend,
 } from "@/components/charts/grouped-bar-chart";
@@ -479,7 +483,9 @@ export default async function CountryPage({
       ? [{ id: "wellbeing", label: "Health & education" }]
       : []),
     ...(hasSociety ? [{ id: "society", label: "Society" }] : []),
-    ...(admin1Ranking.length > 0 ? [{ id: "states", label: "States" }] : []),
+    ...(admin1Ranking.length > 0 || slug === "japan"
+      ? [{ id: "states", label: slug === "japan" ? "Prefectures" : "States" }]
+      : []),
     ...(hasCrimeSection ? [{ id: "crime", label: "Crime" }] : []),
     { id: "why", label: "Why it matters" },
   ];
@@ -1597,20 +1603,46 @@ export default async function CountryPage({
           </CountryPanel>
         )}
 
-        {admin1Ranking.length > 0 && (
+        {(admin1Ranking.length > 0 || slug === "japan") && (
           <CountryPanel
             id="states"
-            title="States & provinces"
-            description="Total fertility rate by first-level administrative division."
+            title={slug === "japan" ? "Prefectures & regions" : "States & provinces"}
+            description={
+              slug === "japan"
+                ? "Prefecture fertility on the map, plus the Kyushu / Hokkaido–Tohoku / Tokyo regional contrast."
+                : "Total fertility rate by first-level administrative division."
+            }
           >
-            <p className="text-sm text-muted-foreground">
-              <Link
-                href={`/maps/${country.iso3.toLowerCase()}`}
-                className="underline underline-offset-2"
+            {slug === "japan" ? (
+              <ChartCard
+                title={JAPAN_TFR_BY_REGION.headline}
+                description={JAPAN_TFR_BY_REGION.note}
+                source={JAPAN_TFR_BY_REGION.source}
+                csvRows={JAPAN_TFR_BY_REGION.series}
+                csvName="japan-tfr-by-region"
               >
-                Open the regional fertility map →
-              </Link>
-            </p>
+                <MultiSeriesChart
+                  data={JAPAN_TFR_BY_REGION.series}
+                  series={JAPAN_TFR_BY_REGION_SERIES}
+                  height={360}
+                  decimals={2}
+                  unit="children per woman"
+                  showValues
+                  endLabelStyle="datawrapper"
+                />
+              </ChartCard>
+            ) : null}
+            {countryMap ? (
+              <p className="text-sm text-muted-foreground">
+                <Link
+                  href={`/maps/${country.iso3.toLowerCase()}`}
+                  className="underline underline-offset-2"
+                >
+                  Open the regional fertility map →
+                </Link>
+              </p>
+            ) : null}
+            {admin1Ranking.length > 0 ? (
             <div className="overflow-x-auto rounded-lg border">
               <table className="w-full min-w-[480px] text-left text-sm">
                 <thead className="border-b bg-muted/40 text-xs uppercase tracking-wide text-muted-foreground">
@@ -1660,6 +1692,7 @@ export default async function CountryPage({
                 </tbody>
               </table>
             </div>
+            ) : null}
           </CountryPanel>
         )}
 

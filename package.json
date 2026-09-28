@@ -36,6 +36,7 @@
     "build:eurostat-country-tfr-history": "node scripts/build-eurostat-country-tfr-history.js",
     "build:usa-tfr-history": "node scripts/build-usa-tfr-history.js",
     "build:japan-tfr-history": "node scripts/build-japan-tfr-history.js",
+    "build:japan-tfr-regions": "python3 scripts/build-japan-tfr-regions.py",
     "build:korea-tfr-history": "node scripts/build-korea-tfr-history.js",
     "build:canada-tfr-history": "node scripts/build-canada-tfr-history.js",
     "build:australia-tfr-history": "node scripts/build-australia-tfr-history.js",

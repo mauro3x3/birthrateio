@@ -73,6 +73,7 @@ export const CITY_FERTILITY: CityFertilitySeries[] = [
       { year: 2021, value: 1.08 },
       { year: 2022, value: 1.04 },
       { year: 2023, value: 0.99 },
+      { year: 2024, value: 0.96 },
     ],
   },
   {

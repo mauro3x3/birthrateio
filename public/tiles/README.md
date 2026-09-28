@@ -17,14 +17,3 @@ Optional override (CDN / R2 / S3 with CORS + HTTP range):
 ```bash
 NEXT_PUBLIC_EU_POPCHANGE_PMTILES_URL=https://…/europe-popchange.pmtiles
 ```
-
-## India population dots (`india-population.pmtiles`)
-
-Gitignored (~160 MB). Build locally, host on object storage, then set:
-
-```bash
-npm run build:india-population-pmtiles
-NEXT_PUBLIC_INDIA_POP_PMTILES_URL=https://…/india-population.pmtiles
-```
-
-The browser streams archives via the `pmtiles://` protocol (range requests).

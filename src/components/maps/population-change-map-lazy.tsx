@@ -23,6 +23,8 @@ type Props = {
   maxZoom: number;
   growthColor?: string;
   declineColor?: string;
+  yearFrom?: number;
+  yearTo?: number;
 };
 
 export function PopulationChangeMapLazy(props: Props) {

@@ -141,11 +141,6 @@ export const TOPIC_META: TopicMeta[] = [
         note: "Annual % change timeline by country",
       },
       {
-        title: "India population dots",
-        href: "/population/india-dots",
-        note: "WorldPop PMTiles night-lights style map",
-      },
-      {
         title: "Europe population change",
         href: "/population/europe-change",
         note: "GHSL 2000→2025 growth and decline grid",

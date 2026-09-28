@@ -61,14 +61,6 @@ export const FEATURED_DESTINATIONS: FeaturedDestination[] = [
       "Annual % change by country on a scrubable timeline — who is growing, who is shrinking.",
   },
   {
-    id: "india-dots",
-    kicker: "Population",
-    title: "India as population dots",
-    href: "/population/india-dots",
-    description:
-      "WorldPop 2025 grid as glowing dots — zoom in and tiles stream from a single PMTiles archive.",
-  },
-  {
     id: "europe-change",
     kicker: "Population",
     title: "Europe: who grew, who shrank",

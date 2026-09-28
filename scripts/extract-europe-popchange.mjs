@@ -123,10 +123,16 @@ async function main() {
       const px = col0 + (i % winW);
       const py = r + Math.floor(i / winW);
       const [lon, lat] = pixelToLonLat(img0, px, py);
+      // chg = sign; d/p0/p1 = people (rounded) for click inspection
       out.write(
         JSON.stringify({
           type: "Feature",
-          properties: { chg },
+          properties: {
+            chg,
+            d: Math.round(delta),
+            p0: Math.round(p0),
+            p1: Math.round(p1),
+          },
           geometry: { type: "Point", coordinates: [lon, lat] },
         }) + "\n",
       );

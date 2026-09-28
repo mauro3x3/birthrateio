@@ -18,7 +18,7 @@ export const revalidate = 3600;
 export const metadata: Metadata = {
   title: "Population Explorer — World Population Rankings & Projections",
   description:
-    "Population directory: share of world births, growth map, India dots, Europe change, rankings, and a growth calculator.",
+    "Population directory: share of world births, growth map, Europe change, rankings, and a growth calculator.",
   alternates: { canonical: "/population" },
 };
 
@@ -66,7 +66,6 @@ export default async function PopulationPage() {
 
   const maps = [
     featuredById("population-growth"),
-    featuredById("india-dots"),
     featuredById("europe-change"),
     featuredById("region-compare"),
   ].filter((d): d is NonNullable<typeof d> => d != null);
@@ -127,7 +126,7 @@ export default async function PopulationPage() {
         <SectionHeading
           id="maps"
           title="Maps"
-          description="Growth timeline, India dots, Europe change, and paint-your-own regions."
+          description="Growth timeline, Europe change, and paint-your-own regions."
           tocLabel="Maps"
         />
         <div className="mt-5">

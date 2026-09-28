@@ -168,11 +168,6 @@ export const navTopics: NavTopic[] = [
         description: "Annual % change by country — scrubable timeline",
       },
       {
-        title: "India population dots",
-        href: "/population/india-dots",
-        description: "WorldPop 2025 grid as glowing dots from a PMTiles archive",
-      },
-      {
         title: "Europe: who grew, who shrank",
         href: "/population/europe-change",
         description: "GHSL 2000→2025 settlement growth and decline",
@@ -230,11 +225,6 @@ export const navTopics: NavTopic[] = [
         title: "Europe population change",
         href: "/population/europe-change",
         description: "GHSL settlement growth and decline, 2000–2025",
-      },
-      {
-        title: "India population dots",
-        href: "/population/india-dots",
-        description: "WorldPop night-lights style population map",
       },
     ],
   },

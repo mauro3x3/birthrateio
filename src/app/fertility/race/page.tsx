@@ -26,6 +26,10 @@ import {
   CONSANGUINITY_MENA,
   GLOBAL_INTERMARRIAGE_RECENT,
 } from "@/lib/sources/fertility-spotlight-data";
+import {
+  JAPAN_TFR_BY_REGION,
+  JAPAN_TFR_BY_REGION_SERIES,
+} from "@/lib/sources/japan-tfr-by-region-data";
 import { getTfrAncestryPack } from "@/lib/sources/tfr-by-ancestry-data";
 import { TFR_US_HISPANIC_ORIGIN } from "@/lib/sources/tfr-by-group-data";
 import { getFertilityIncomeScatter } from "@/lib/queries";
@@ -332,6 +336,44 @@ export default async function FertilityByRacePage() {
             </p>
           </section>
         )}
+
+        <section>
+          <SectionHeading
+            id="japan-regions"
+            title="Japan — Kyushu, Hokkaido/Tohoku, Tokyo"
+            description={JAPAN_TFR_BY_REGION.note}
+            tocLabel="Japan regions"
+          />
+          <div className="mt-5">
+            <ChartCard
+              title={JAPAN_TFR_BY_REGION.headline}
+              description={`${JAPAN_TFR_BY_REGION.yearFrom}–${JAPAN_TFR_BY_REGION.yearTo} · simple averages of prefecture TFRs (Okinawa excluded from Kyushu).`}
+              source={JAPAN_TFR_BY_REGION.source}
+              csvRows={JAPAN_TFR_BY_REGION.series}
+              csvName="japan-tfr-by-region"
+            >
+              <MultiSeriesChart
+                data={JAPAN_TFR_BY_REGION.series}
+                series={JAPAN_TFR_BY_REGION_SERIES}
+                height={400}
+                decimals={2}
+                unit="children per woman"
+                showValues
+                endLabelStyle="datawrapper"
+              />
+            </ChartCard>
+          </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Prefecture map:{" "}
+            <Link href="/maps/jpn" className="link-editorial">
+              Japan regional fertility
+            </Link>
+            {" · "}
+            <Link href="/country/japan#states" className="link-editorial">
+              Japan country page
+            </Link>
+          </p>
+        </section>
 
         {kosovoPack && (
           <section>

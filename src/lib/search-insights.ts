@@ -677,7 +677,7 @@ const HUB_INSIGHTS: Record<string, RelatedInsight[]> = {
     { title: "World population growth map", href: "/population/growth", region: "Worldwide" },
     { title: "Population rankings", href: "/population/rankings", region: "Worldwide" },
     { title: "Compare regional populations", href: "/population/compare", region: "Worldwide" },
-    { title: "India population dots", href: "/population/india-dots", region: "India" },
+    { title: "India population", href: "/population/india", region: "India" },
     { title: "Europe population change", href: "/population/europe-change", region: "Europe" },
     { title: "India population", href: "/population/india", region: "India" },
     { title: "China population", href: "/population/china", region: "China" },
